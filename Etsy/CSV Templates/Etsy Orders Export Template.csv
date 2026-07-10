@@ -1,0 +1,2 @@
+order_id,order_date,item_title,listing_id,quantity,item_price_gbp,order_total_gbp,buyer_country,personalisation_text,was_gift,refunded
+XXXXXX,2026-01-01,"Personalised Street Sign",XXXXXX,1,24.99,27.49,United Kingdom,"14 Rose Avenue",Yes,No

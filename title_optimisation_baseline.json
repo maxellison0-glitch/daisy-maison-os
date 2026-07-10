@@ -1,0 +1,318 @@
+{
+  "baseline_date": "2026-07-03",
+  "baseline_window": "last_30d (Jun 1 - Jun 30 2026)",
+  "baseline_status": "FINAL - 30-day pre-change window. Upgraded from provisional 7-day baseline on 2026-07-03 digest run.",
+  "per_day_averages": {
+    "teacher": {
+      "impressions_per_day": 883.8,
+      "clicks_per_day": 10.7,
+      "conversions_per_day": 0.626,
+      "revenue_per_day": 20.0
+    },
+    "wedding": {
+      "impressions_per_day": 20754.7,
+      "clicks_per_day": 246.03,
+      "conversions_per_day": 17.939,
+      "revenue_per_day": 551.15
+    }
+  },
+  "note": "30-day pre-change baseline (Jun 1-30 2026) for the Jul 1 2026 title optimisation: titles rewritten to 'Personalised [Type] - [Design] | [Keywords] UK'. Teacher category keywords: teacher, teaching assistant. Wedding: wedding, bride, groom, mr & mrs, engagement.",
+  "teacher": {
+    "product_count": 65,
+    "impressions": 26514,
+    "clicks": 321,
+    "conversions": 18.78,
+    "revenue": 600.11,
+    "top_search_terms": [
+      {
+        "term": "teacher gifts",
+        "impressions": 553,
+        "clicks": 3,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "personalised teacher gifts",
+        "impressions": 548,
+        "clicks": 4,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "lego teacher gift",
+        "impressions": 247,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "male teacher gifts",
+        "impressions": 247,
+        "clicks": 3,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "special teacher gifts",
+        "impressions": 182,
+        "clicks": 3,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher retirement gifts",
+        "impressions": 150,
+        "clicks": 3,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher gift",
+        "impressions": 104,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher pebble art",
+        "impressions": 103,
+        "clicks": 2,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "thank you teacher gifts",
+        "impressions": 96,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "personalised teacher gift",
+        "impressions": 89,
+        "clicks": 1,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "sen teacher gifts",
+        "impressions": 89,
+        "clicks": 2,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher keyring",
+        "impressions": 87,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher lego",
+        "impressions": 87,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher leaving gifts",
+        "impressions": 86,
+        "clicks": 1,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher lego gift",
+        "impressions": 80,
+        "clicks": 2,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "nursery teacher gifts",
+        "impressions": 79,
+        "clicks": 2,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher pebble picture",
+        "impressions": 76,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "pebble art teacher gift",
+        "impressions": 76,
+        "clicks": 5,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "unique thank you teacher gifts",
+        "impressions": 73,
+        "clicks": 2,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "teacher presents",
+        "impressions": 64,
+        "clicks": 0,
+        "conversions": 0.0,
+        "revenue": 0.0
+      }
+    ]
+  },
+  "wedding": {
+    "product_count": 408,
+    "impressions": 622642,
+    "clicks": 7381,
+    "conversions": 538.18,
+    "revenue": 16534.59,
+    "top_search_terms": [
+      {
+        "term": "wedding gifts",
+        "impressions": 20406,
+        "clicks": 368,
+        "conversions": 31.5152,
+        "revenue": 958.26
+      },
+      {
+        "term": "wedding gift ideas",
+        "impressions": 10063,
+        "clicks": 149,
+        "conversions": 7.9705,
+        "revenue": 227.3
+      },
+      {
+        "term": "wedding gift",
+        "impressions": 8612,
+        "clicks": 124,
+        "conversions": 8.5833,
+        "revenue": 249.37
+      },
+      {
+        "term": "personalised wedding gifts",
+        "impressions": 6900,
+        "clicks": 206,
+        "conversions": 17.4325,
+        "revenue": 502.98
+      },
+      {
+        "term": "wedding gifts for couples",
+        "impressions": 3782,
+        "clicks": 71,
+        "conversions": 6.4615,
+        "revenue": 171.63
+      },
+      {
+        "term": "wedding anniversary gifts",
+        "impressions": 3703,
+        "clicks": 10,
+        "conversions": 1.0,
+        "revenue": 31.2
+      },
+      {
+        "term": "wedding present ideas",
+        "impressions": 3152,
+        "clicks": 57,
+        "conversions": 8.5,
+        "revenue": 262.01
+      },
+      {
+        "term": "wedding presents",
+        "impressions": 2807,
+        "clicks": 38,
+        "conversions": 5.5,
+        "revenue": 197.15
+      },
+      {
+        "term": "wedding present",
+        "impressions": 2338,
+        "clicks": 27,
+        "conversions": 3.0,
+        "revenue": 73.09
+      },
+      {
+        "term": "1st wedding anniversary gift",
+        "impressions": 2026,
+        "clicks": 11,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "wedding cards",
+        "impressions": 1667,
+        "clicks": 24,
+        "conversions": 2.0,
+        "revenue": 65.15
+      },
+      {
+        "term": "personalised wedding cards",
+        "impressions": 1627,
+        "clicks": 26,
+        "conversions": 1.6667,
+        "revenue": 40.63
+      },
+      {
+        "term": "ruby wedding anniversary",
+        "impressions": 1618,
+        "clicks": 4,
+        "conversions": 1.0,
+        "revenue": 28.45
+      },
+      {
+        "term": "personalised wedding gift",
+        "impressions": 1560,
+        "clicks": 48,
+        "conversions": 5.5028,
+        "revenue": 161.1
+      },
+      {
+        "term": "ruby wedding anniversary gifts",
+        "impressions": 1538,
+        "clicks": 20,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "wedding card",
+        "impressions": 1502,
+        "clicks": 15,
+        "conversions": 1.0,
+        "revenue": 28.9
+      },
+      {
+        "term": "40th wedding anniversary gift",
+        "impressions": 1436,
+        "clicks": 10,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "silver wedding anniversary",
+        "impressions": 1403,
+        "clicks": 1,
+        "conversions": 0.0,
+        "revenue": 0.0
+      },
+      {
+        "term": "wedding signs",
+        "impressions": 1232,
+        "clicks": 14,
+        "conversions": 1.0156,
+        "revenue": 26.86
+      },
+      {
+        "term": "wedding gifts for couples who have everything",
+        "impressions": 1220,
+        "clicks": 15,
+        "conversions": 0.5,
+        "revenue": 9.85
+      }
+    ]
+  }
+}

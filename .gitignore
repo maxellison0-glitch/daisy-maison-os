@@ -1,0 +1,13 @@
+# Sync only the compact operating context used by Daisy automations.
+*
+!.gitignore
+!README.md
+!operating systems/
+!operating systems/**
+!digests/
+!digests/**
+!Etsy/
+!Etsy/**
+!title_optimisation_baseline.json
+!daisy-maison-full-brief-for-codex.md
+
