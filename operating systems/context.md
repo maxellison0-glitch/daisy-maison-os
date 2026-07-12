@@ -22,7 +22,7 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 - **New focus: Teacher Gifts** (seasonal, end of school year) + **Wedding Gifts** (evergreen — run year-round)
 - Hero products: TBC for teacher gifts. Wedding gifts (Mr & Mrs sign) is the **evergreen anchor** — treat as a standing year-round campaign, not a seasonal burst.
 - **Mr & Mrs Personalised Street Sign** updated 26 Jun 2026: now has Small, Medium, and Large size variants (previously one size, one price). Change made for margin improvement. Daryl briefed.
-- **Add-on roadmap (logged, not yet live):** Goal is size-matched upsells at checkout — Large → gift box, Medium → easel, Small → mounting strips. When live, this will be a significant AOV and margin driver.
+- **Add-on roadmap:** Goal is size-matched upsells at checkout — Large → gift box, Medium → easel, Small → mounting strips. Cleaning-kit upsell was confirmed completed/ticked off by Max on 12 Jul 2026; exact placement, eligible products, and live verification are not yet recorded.
 - **Digest section to include:** Teacher vs Wedding split — orders and gross by product category each day, flag which is worth scaling.
 
 ---
@@ -128,6 +128,12 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 - **Personalised per-product reviews added to every landing page**: watch CVR — this stacks on the 2 Jul personalisation bug fix and upcoming delivery copy. Funnel baseline shifts again from 4 Jul.
 - **New upsell products NOT yet live** — coming w/c 6 Jul once photos done. Do not flag their absence.
 - Note for analysis: multiple changes landed at once (reviews + cart extras + prices), so attribute directionally, not precisely. 4 Jul itself is a mixed/partial day.
+
+## Site Changes Reported 12 Jul 2026
+
+- Max reports adding new products to the Daisy Maison website today. Product names, count, handles, and publication state were not specified here.
+- Cleaning-kit upsell marked completed/ticked off by Max. Exact storefront placement, eligible products, price, and live test status remain to be captured before performance attribution.
+- This supersedes the blanket 4 Jul note that all new upsell products were not yet live, specifically for the cleaning-kit lane. Other planned upsells remain individually unconfirmed.
 
 ## Handover ledger from Max's 4 Jul coding session (digest calendar items)
 
