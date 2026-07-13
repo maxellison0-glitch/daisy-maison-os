@@ -12,4 +12,6 @@
 !stock-automation/**
 !title_optimisation_baseline.json
 !daisy-maison-full-brief-for-codex.md
+!production-lab/
+!production-lab/**
 
