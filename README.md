@@ -39,12 +39,17 @@ details.
 
 ## Design Project Routing
 
-The Mr & Mrs street-sign artwork has one canonical project only:
+The Mr & Mrs street-sign system has one canonical project and one Jarvis entry:
 
 ```text
-%USERPROFILE%\MaxOS\projects\daisy-street-sign
+Project:    %USERPROFILE%\AA Daisy Maison OS\projects\daisy-street-sign
+Automation: %USERPROFILE%\AA Daisy Maison OS\workflows\starred\daisy-street-sign-automation.md
 ```
 
-Do not recreate `production-lab` or agent-specific artwork copies in this Daisy
-operating-context repository. The approved generator and outputs live under the
-MaxOS project's `artwork\` folder.
+The automation Markdown is the only street-sign document exposed as a primary
+Jarvis orb. Its sections provide the smaller context orbs. Generator code,
+assets, tests, references, and outputs stay inside the project and are loaded
+only when an agent is producing signs or improving the automation.
+
+Do not recreate `production-lab`, experiment briefs, handoff copies, or
+agent-specific artwork folders.

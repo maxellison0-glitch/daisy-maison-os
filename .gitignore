@@ -12,4 +12,10 @@
 !stock-automation/**
 !title_optimisation_baseline.json
 !daisy-maison-full-brief-for-codex.md
+!projects/
+!projects/daisy-street-sign/
+!projects/daisy-street-sign/**
+!workflows/
+!workflows/starred/
+!workflows/starred/daisy-street-sign-automation.md
 
