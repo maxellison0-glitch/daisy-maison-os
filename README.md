@@ -37,3 +37,14 @@ If pull or push reports a conflict, stop and report it. Never commit connector
 credentials, `.env` files, tokens, exports containing customer data, or payment
 details.
 
+## Design Project Routing
+
+The Mr & Mrs street-sign artwork has one canonical project only:
+
+```text
+%USERPROFILE%\MaxOS\projects\daisy-street-sign
+```
+
+Do not recreate `production-lab` or agent-specific artwork copies in this Daisy
+operating-context repository. The approved generator and outputs live under the
+MaxOS project's `artwork\` folder.
