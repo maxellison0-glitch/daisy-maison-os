@@ -21,3 +21,7 @@ projects/daisy-street-sign/**/*.pyc
 !workflows/starred/
 !workflows/starred/daisy-street-sign-automation.md
 
+
+!projects/gift-box/
+!projects/gift-box/**
+!workflows/starred/project-gift-box.md
