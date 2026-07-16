@@ -193,3 +193,25 @@ Needed before reliable ordering recommendations:
 - Supplier lead time.
 - Preferred reorder quantity or case quantity.
 - Confirmed add-on packaging rules.
+
+## User-Facing Report Layout Override (2026-07-16)
+
+Use this order and keep each section concise:
+
+1. **East of India** — show only products that are out of stock or have a
+   confirmed run-out signal, with product name, correct SKU, current stock, and
+   a direct product link. If none are out, say `None today`.
+2. **Amazon stock watch** — keep every relevant Amazon-sourced product found in
+   Gmail on watch until a delivery confirmation is seen. Once delivered, move
+   it into the relevant accessory or packaging stock owner and retain the order
+   evidence in the audit trail.
+3. **Accessories** — show tracked Shopify accessory counters separately from
+   East of India.
+4. **Packaging usage and order list** — show usage, receipt counters, exact
+   confirmed orders needed, and the packaging reference link. If quantity cannot
+   be calculated because on-hand or reorder thresholds are missing, name that
+   missing input exactly.
+
+Do not use a standalone `Critical reorder actions` section in the user-facing
+report. Put an item directly in its owning section and reserve `ORDER NOW` for
+confirmed reorder signals.

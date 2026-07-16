@@ -53,3 +53,11 @@ Important:
 - If the owner later supplies Etsy catch-up quantities or an ad hoc Etsy sale and explicitly asks Codex to apply/deduct/record the sync, then get inventory levels first and use set_inventory with compareQuantity and reason "correction"; update east-of-india-stock-state.md and tracker-change-log.md afterward.
 - If the owner asks only for help accessing Etsy sales data, help navigate/read Etsy and organize the quantities without changing Shopify or persistent state.
 ```
+
+## Current User-Facing Format Override (2026-07-16)
+
+The dated report is ordered: East of India (run-outs only, correct SKUs and
+direct links), Amazon stock watch (retain relevant items until delivery is
+confirmed, then transfer to the owning accessory/packaging tracker),
+Accessories, and Packaging usage and order list. Do not use a standalone
+Critical reorder actions section.

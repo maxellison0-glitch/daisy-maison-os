@@ -147,3 +147,14 @@ on-hand is not yet known. Do not wait for a second confirmation message.
 - Never treat Amazon delivered state as current on-hand if the item may already
   have been used.
 - Never store personal addresses, payment details, or long Amazon redirect URLs.
+
+## User-Facing Report Layout Override (2026-07-16)
+
+The report must be formatted as: **East of India**, **Amazon stock watch**,
+**Accessories**, then **Packaging usage and order list**. Remove the standalone
+Critical reorder actions section. East of India should show only out-of-stock
+or confirmed run-out products with correct SKUs and direct links; say `None
+today` when there are no run-outs. Keep every relevant Amazon upsell or
+operational product on watch until Gmail confirms delivery, then transfer it to
+the relevant accessory or packaging owner. Packaging must state exact confirmed
+orders needed or the precise missing input preventing a quantity calculation.

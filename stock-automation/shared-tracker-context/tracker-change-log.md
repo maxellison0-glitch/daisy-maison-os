@@ -50,3 +50,5 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
 - Added Macfarlane Packaging delivery note 10073374 / order 6277938: 300 custom boxes delivered, 150 corrugated sheets delivered, 1 Guardian paper roll delivered, and 1 Guardian roll still to follow. These are receipt counters, not total on-hand stock.
 - Max clarified the standing rule: a clear physical invoice or delivery note shown in a photo means the goods were delivered just now. Automatically apply legible receipt quantities, record the document reference and Europe/London processing timestamp, and use safe SKU mapping/compare-and-set checks.
 - Rule recorded at 2026-07-16 11:37:09 +01:00 Europe/London.
+- Max requested a clearer report layout: East of India run-outs first, Amazon stock watch second, Accessories third, and Packaging usage/order list fourth; removed the standalone Critical reorder actions presentation.
+- Amazon watch policy clarified: retain relevant upsell and operational products until delivery is confirmed, then transfer them to the owning stock tracker.
