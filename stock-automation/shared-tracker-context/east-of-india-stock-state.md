@@ -127,6 +127,11 @@ the Shopify `Shop location`, using reason `received`:
 The supplier-code-1568 line was mapped to Lucky Sixpence after searching the
 live Shopify catalog. No other inventory counters were changed.
 
+Standing receipt rule: a clear physical invoice or delivery note in a photo is
+treated as delivered just now. Apply legible quantities automatically, record
+the document reference and Europe/London processing timestamp, and keep any
+unmatched line separate until its SKU mapping is confirmed.
+
 ## Not Yet On Etsy
 
 Exclude these from Etsy sync prompt until the owner confirms an active Etsy listing exists:

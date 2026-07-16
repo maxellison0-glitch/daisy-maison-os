@@ -48,3 +48,5 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
 - Added Max-supplied East of India invoice evidence dated 2026-07-14, invoice 14044-82: Matchbox-Seal (5), supplier code 1568 line (20), Matchbox-Thanks teacher (25), and Handled tea light holder-Thank you (70).
 - Applied the East of India invoice quantities to Shopify with compare-and-set checks and reason `received`: Seal 1→6, Lucky Sixpence 36→56, Teacher Star 4→29, and Teacher Tea Light -3→67.
 - Added Macfarlane Packaging delivery note 10073374 / order 6277938: 300 custom boxes delivered, 150 corrugated sheets delivered, 1 Guardian paper roll delivered, and 1 Guardian roll still to follow. These are receipt counters, not total on-hand stock.
+- Max clarified the standing rule: a clear physical invoice or delivery note shown in a photo means the goods were delivered just now. Automatically apply legible receipt quantities, record the document reference and Europe/London processing timestamp, and use safe SKU mapping/compare-and-set checks.
+- Rule recorded at 2026-07-16 11:37:09 +01:00 Europe/London.

@@ -29,6 +29,20 @@ The tracker should produce one daily report with sections for East of India and
 accessory stock, packaging usage, and Amazon-sourced operational stock evidence.
 It should also produce one combined reorder draft, deduplicated by stock owner.
 
+### Physical Invoice / Delivery-Note Rule
+
+- A clear physical invoice or delivery note shown in a photo is treated as
+  confirmation that the goods were delivered just now.
+- Automatically apply the legible delivered quantities to the relevant stock
+  counter during that run; do not wait for a separate written confirmation.
+- Record the document number, document/order date, delivery date if shown, and
+  the exact Europe/London timestamp when the photo was processed.
+- For Shopify-owned stock, read current inventory first and use a compare-and-set
+  received update. For packaging or manual stock, record receipt counters and
+  update total on-hand only when the prior on-hand baseline is known.
+- If a line cannot be mapped confidently, record it as an unmatched receipt and
+  do not guess the stock owner or SKU.
+
 Amazon reference file:
 
 - `../reports/daisymaison-amazon-stock-reference.md`
