@@ -4,9 +4,9 @@ This is the canonical project for the Daisy Maison sentimental gift-box range.
 
 ## Status
 
-Max approved the complete concept family on 16 July 2026. Ten new concepts are
-saved in `artwork/concepts/`; the existing `Thank you for being amazing` box is
-the visual anchor for the range.
+Max approved the complete 11-design concept family on 16 July 2026. Ten new
+concepts are saved in `artwork/concepts/`; the existing `Thank you for being
+amazing` box is the eleventh design and visual anchor for the range.
 
 The artwork is **not yet laser-ready**. Current concepts are 1254 x 1254 px at
 96 dpi. The intended production master is 1181 x 1181 px at 300 dpi for a

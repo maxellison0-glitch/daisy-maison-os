@@ -6,7 +6,8 @@ Canonical context orb for designing and developing Daisy Maison's personalised g
 
 ## Current Status
 
-- Max approved ten new concept designs as one coherent range on 16 July 2026.
+- Max approved an 11-design family on 16 July 2026: ten new concepts plus the
+  existing `Thank you for being amazing` anchor.
 - Canonical concepts: `projects/gift-box/artwork/concepts/`.
 - Canonical production handoff: `projects/gift-box/README.md`.
 - Current files are 1254 x 1254 px at 96 dpi concepts, not laser-ready masters.
