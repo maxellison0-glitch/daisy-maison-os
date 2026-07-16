@@ -95,6 +95,22 @@ Current baseline:
 
 If new rolls are added, update this baseline date and quantity.
 
+## Supplier Purchase Evidence
+
+Invoice photo supplied by Max and recorded 2026-07-16. This is purchase/receipt
+evidence only; it does not directly update Shopify inventory.
+
+| Invoice date | Invoice number | Product code | Supplier description | Qty | Unit price |
+| --- | --- | ---: | --- | ---: | ---: |
+| 2026-07-14 | 14044-82 | 34 | Matchbox-Seal | 5 | GBP 2.50 |
+| 2026-07-14 | 14044-82 | 1568 | Suspension-Oil new borrowed blue | 20 | GBP 1.95 |
+| 2026-07-14 | 14044-82 | 5663 | Matchbox-Thanks teacher | 25 | GBP 2.50 |
+| 2026-07-14 | 14044-82 | 5706 | Handled tea light holder-Thank you | 70 | GBP 3.95 |
+
+Invoice totals shown: goods GBP 390.50, discount GBP 39.05, VAT GBP 70.29,
+invoice total GBP 421.74. Product-code/SKU mapping for the supplier lines still
+needs confirmation before allocating these quantities to Shopify stock rows.
+
 ## Not Yet On Etsy
 
 Exclude these from Etsy sync prompt until the owner confirms an active Etsy listing exists:

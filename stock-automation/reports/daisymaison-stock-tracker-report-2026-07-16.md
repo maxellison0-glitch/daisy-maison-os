@@ -2,31 +2,44 @@
 
 Run date: 2026-07-16 (Europe/London)
 
-Data was requested read-only. Shopify live checks were blocked because the connected Shopify app requires reauthentication. Gmail searches completed and returned no matching Amazon lifecycle messages in the searched 30-day window.
+Data was requested read-only. Shopify retry succeeded on 2026-07-16. Gmail searches completed and returned no matching Amazon lifecycle messages in the searched 30-day window. Max's 2026-07-14 East of India invoice is recorded as supplier purchase evidence only; it has not been used to mutate Shopify inventory.
 
 ## Critical reorder actions
 
-- **No reorder quantity can be confirmed today.** Shopify inventory, sales, 7-day velocity, paid orders, and packaging usage inputs are unavailable until Shopify is reauthenticated.
-- Do not treat the missing Shopify response as zero stock or zero sales.
+- **Thermal Labels — ACTION / reorder now.** Estimated stock is 30 labels: 500 baseline less 470 Shopify orders from 2026-07-09 through 2026-07-15. At 67.1 orders/day, stock is projected to run out on 2026-07-16. Reorder quantity is unknown.
+- **Personalised Teacher Porcelain Tea Light Holder — Thank You for Being Amazing — ACTION / reorder now.** Shopify stock is -3, with 53 units sold in the last 7 days (7.6/day); the negative stock is already urgent. Supplier invoice line 5706 shows 70 units at GBP 3.95, but receipt/SKU allocation is not confirmed.
+- **Personalised Teacher Porcelain Matchbox Star — ACTION / order soon.** Shopify stock is 4 against 10 units sold in the last 7 days (1.4/day), approximately 2.8 days left; projected stock-out 2026-07-18. Invoice line 5663 shows 25 Matchbox-Thanks teacher units, but mapping/receipt allocation is not confirmed.
+- Do not use the invoice quantities to overwrite Shopify inventory without confirming the supplier-code-to-SKU mapping and that the goods were received into on-hand stock.
 - Amazon watch items remain watch-only: no current Gmail evidence was found for the four candidate ASINs, and none has a confirmed on-hand baseline, threshold, lead time, or reorder quantity.
 
 ## East of India/accessory stock
 
 | Product / shared stock owner | Stock | Sold yesterday | Shopify avg/day (7d) | Etsy avg/day | Combined avg/day | Days left | Stock-out | Alert |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| East of India active range | Unknown | Unknown | Unknown | Unknown* | Unknown | Unknown | Unknown | UNKNOWN — Shopify reauth required |
-| Wooden Display Easel | Unknown | Unknown | Unknown | 0.0* | Unknown | Unknown | Unknown | UNKNOWN — Shopify reauth required |
-| Mounting Strips (shared stock) | Unknown | Unknown | Unknown | 0.0* | Unknown | Unknown | Unknown | UNKNOWN — Shopify reauth required |
-| Gift Wrap Kit | 0 baseline by design | Unknown | Unknown | 0.0* | Unknown | N/A | N/A | BLUE MADE TO ORDER |
-| Thermal Labels | Unknown | Unknown | Unknown | N/A | Unknown | Unknown | Unknown | UNKNOWN — Shopify reauth required |
+| Porcelain Handled Tea Light Holder - Good friends | 53 | 0 | 0.0 | 0.0* | 0.0 | N/A | N/A | BLACK NO SALES |
+| Porcelain Matchbox - Little Guardian Angel | 33 | 0 | 0.1 | 0.0* | 0.1 | 330 | 2027-06-11 | GREEN OK |
+| Porcelain Matchbox Message Dog - Never walk alone | 5 | 0 | 0.0 | 0.0* | 0.0 | N/A | N/A | BLACK NO SALES |
+| Porcelain Matchbox Message Penguin - Flipping love you | 39 | 0 | 0.1 | 0.0* | 0.1 | 273 | 2027-04-15 | GREEN OK |
+| Personalised Teacher Porcelain Matchbox Star - Thanks Teacher | 4 | 0 | 1.4 | 0.0* | 1.4 | 2.8 | 2026-07-18 | RED REORDER NOW |
+| Porcelain Matchbox Message Seal - Sealed with a kiss | 1 | 0 | 0.0 | 0.0* | 0.0 | N/A | N/A | BLACK NO SALES |
+| Porcelain Handled Tea Light Holder - You are my sunshine | 8 | 0 | 0.0 | 0.0* | 0.0 | N/A | N/A | BLACK NO SALES |
+| Personalised Teacher Porcelain Tea Light Holder - Thank You for Being Amazing | -3 | 3 | 7.6 | 0.0* | 7.6 | -0.4 | 2026-07-16 | RED REORDER NOW |
+| Teacher Matchbox Message Incense Cone - You Are Amazing | 2 | 0 | 0.0 | 0.0* | 0.0 | N/A | N/A | BLACK NO SALES |
+| Wooden Display Easel | -46 | 3 | 7.7 | 0.0* | 7.7 | N/A | N/A | WATCH — overselling enabled; physical count required |
+| Mounting Strips (shared stock) | -14 primary listing | 8 | 13.1† | N/A | 13.1 | N/A | N/A | WATCH — overselling enabled; physical count required |
+| Gift Wrap Kit | 0 baseline by design | 6 | 6.3 | N/A | N/A | N/A | N/A | BLUE MADE TO ORDER |
+| Thermal Labels | 30 estimated | 47 orders | 67.1 orders/day | N/A | 67.1 | 0.4 | 2026-07-16 | RED REORDER NOW |
 
-\* Etsy data is only confirmed through 2026-07-07, with one logged 2026-07-08 Seal sale; the gap through 2026-07-15 means these figures must not be read as complete channel coverage. Discontinued products remain excluded per the state file.
+\* Etsy data is only confirmed through 2026-07-07, with one logged 2026-07-08 Seal sale; the gap through 2026-07-15 means these figures must not be read as complete channel coverage. Discontinued and not-yet-on-Etsy products remain excluded per the state file.
+
+† Mounting Strips velocity combines 84 units of the £1.99 listing and 4 Two Sign Pack units counted as 8 physical pairs; the legacy £3.90 and £4.95 listings had no matching 7-day sales.
 
 ## Packaging usage
 
-- Paid Shopify orders reviewed: **Unknown** — Shopify reauthentication required.
-- Packaging consumed: **Unknown**, not zero.
-- Packaging stock/reorder status: **Unknown** because current on-hand, thresholds, lead times, and preferred order quantities are not recorded in the shared packaging references.
+- Paid Shopify orders reviewed: **50 recent paid orders** (the connector returned 477 total matching orders; the report reviewed the latest 50 read-only).
+- Packaging usage classified from the sample: 21 medium/large street-sign upgrade contexts, equivalent to approximately 7 corrugated sheets; 16+ pebble-picture units requiring order-level box allocation; 10 single mounting-strip units; 5 Gift Wrap Kits; and 4 Wooden Display Easels. Exact box count is uncertain because line items do not always preserve the complete product grouping needed for per-order recipes.
+- Packaging consumed: known usage exists, but current packaging stock/reorder status is **Unknown** because on-hand counts, thresholds, lead times, and preferred order quantities are not recorded in the shared packaging references.
+- Invoice receipt evidence added for East of India: 5 Matchbox-Seal, 20 units on supplier code 1568 line, 25 Matchbox-Thanks teacher, and 70 Handled tea light holder-Thank you. These quantities are not deducted from or written into Shopify.
 - Classification rules retained for the next successful run: pebble boxes and Guardian strips, small/medium/large envelope rules, corrugated sheets for medium/large street signs, and fragile-tape usage.
 
 ## Amazon stock watch
@@ -44,7 +57,7 @@ Amazon evidence does not establish current on-hand stock. No item is promoted to
 
 ## Missing inputs for Max
 
-- Reauthenticate the Daisy Maison Shopify connector, then rerun inventory, explicit-date sales/velocity, order-count, and recent paid-order checks.
+- Confirm receipt and Shopify SKU mapping for East of India invoice 14044-82 before applying any stock correction: Matchbox-Seal (5), supplier code 1568 line (20), Matchbox-Thanks teacher (25), and Handled tea light holder-Thank you (70).
 - Etsy quantities for the uncovered period 2026-07-08 through 2026-07-15, if Max wants combined channel velocity.
 - Current packaging on-hand counts for each tracked item.
 - Packaging reorder thresholds, supplier lead times, preferred order/case quantities, and unresolved usage rules (small-item tape, street-sign envelope choice, and add-on handling).
