@@ -1,20 +1,44 @@
 # Shared Stock Context
 
-This is the source-of-truth context for the Daisy Maison stock trackers.
+This is the source-of-truth context for the Daisy Maison stock tracker.
 
 ## Current Scope
 
-The first active Codex workflow covers packaging stock used by Shopify orders.
+The active direction is one daily stock tracker with multiple sections, not
+separate automations per stock category.
 
 Current data sources:
 
 - Shopify Daisy Maison store.
 - Supplier pricing from Macfarlane Packaging.
+- Gmail Amazon.co.uk / Amazon Business purchase and delivery messages for
+  Amazon-sourced operational supplies.
 - Human corrections from Daisy Maison operations.
 
 Future data sources:
 
 - Etsy orders and stock usage, using the Etsy prompt once provided.
+
+## Unified Stock Tracker
+
+Control file:
+
+- `../reports/daisymaison-stock-tracker-project.md`
+
+The tracker should produce one daily report with sections for East of India and
+accessory stock, packaging usage, and Amazon-sourced operational stock evidence.
+It should also produce one combined reorder draft, deduplicated by stock owner.
+
+Amazon reference file:
+
+- `../reports/daisymaison-amazon-stock-reference.md`
+
+Amazon-sourced stock should not run as its own automation. It should draft
+reorder suggestions with Amazon links only when a stock role, on-hand baseline,
+and reorder threshold exist. It must not place Amazon orders, mutate Shopify,
+send email, or mark messages. If an Amazon item is already authoritatively
+tracked by Shopify inventory or the packaging tracker, keep that existing
+tracker authoritative and use Amazon only as supplier/order evidence.
 
 ## Current Packaging Rules
 
@@ -134,6 +158,17 @@ photo.
 - Use full Shopify product GIDs for `get_product` and `get_inventory_levels`.
 - Pebble products are often findable by `tag:"Pebble People"`.
 - Street signs are findable by text search `"street sign"` but need better tagging later.
+
+## Packaging Receipt Evidence
+
+Macfarlane Packaging transport note supplied by Max on 2026-07-16:
+
+- Delivery note `10073374`, order `6277938`, order date 2026-07-14, dispatch/delivery date 2026-07-16.
+- `CPSW-0427-380-285-100` custom Daisy Maison boxes: **300 each delivered** (order quantity 300).
+- `PSW-0901-725-1135` 725 x 1135mm corrugated sheets: **150 delivered** (order quantity 150), equivalent to 450 street-sign package outputs under the current 3-per-sheet rule.
+- `PP2-7075-180-BR-GUARDIAN-REC` Guardian paper: **1 roll delivered** (order quantity 2); **1 roll remains to follow**. The delivered roll represents approximately 180 Guardian strips.
+
+These are receipt counters, not total on-hand counts. Existing stock and consumption before delivery remain unknown.
 
 ## Missing Stock Inputs
 

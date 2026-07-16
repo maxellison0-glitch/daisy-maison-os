@@ -37,7 +37,7 @@ Shopify retry succeeded on 2026-07-16. After Max explicitly asked to apply the i
 
 - Paid Shopify orders reviewed: **50 recent paid orders** (the connector returned 477 total matching orders; the report reviewed the latest 50 read-only).
 - Packaging usage classified from the sample: 21 medium/large street-sign upgrade contexts, equivalent to approximately 7 corrugated sheets; 16+ pebble-picture units requiring order-level box allocation; 10 single mounting-strip units; 5 Gift Wrap Kits; and 4 Wooden Display Easels. Exact box count is uncertain because line items do not always preserve the complete product grouping needed for per-order recipes.
-- Packaging consumed: known usage exists, but current packaging stock/reorder status is **Unknown** because on-hand counts, thresholds, lead times, and preferred order quantities are not recorded in the shared packaging references.
+- Packaging consumed: known usage exists. Receipt counters now recorded are 300 custom boxes, 150 corrugated sheets, and 1 Guardian paper roll delivered; 1 further Guardian roll remains to follow. Total on-hand after prior stock and usage is still **Unknown**.
 - Invoice receipt evidence applied to Shopify: Seal 1→6, Lucky Sixpence 36→56, Teacher Star 4→29, and Teacher Tea Light -3→67. No other counters were changed.
 - Classification rules retained for the next successful run: pebble boxes and Guardian strips, small/medium/large envelope rules, corrugated sheets for medium/large street signs, and fragile-tape usage.
 

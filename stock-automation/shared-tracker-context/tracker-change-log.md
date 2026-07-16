@@ -42,9 +42,9 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
   evidence, and future Etsy/manual coverage.
 - Removed the separate Amazon project lane so Amazon is a section/reference
   inside the unified daily tracker, not another scheduled automation.
-- After Max explicitly requested application to the counters, added the invoice quantities to Shopify with compare-and-set checks and reason `received`: Seal 1→6, Lucky Sixpence 36→56, Teacher Star 4→29, and Teacher Tea Light -3→67.
 
 ## 2026-07-16
 
 - Added Max-supplied East of India invoice evidence dated 2026-07-14, invoice 14044-82: Matchbox-Seal (5), supplier code 1568 line (20), Matchbox-Thanks teacher (25), and Handled tea light holder-Thank you (70).
-- Kept the invoice quantities as supplier purchase evidence only; no Shopify inventory mutation was made because product-code/SKU mapping and receipt allocation still need confirmation.
+- Applied the East of India invoice quantities to Shopify with compare-and-set checks and reason `received`: Seal 1→6, Lucky Sixpence 36→56, Teacher Star 4→29, and Teacher Tea Light -3→67.
+- Added Macfarlane Packaging delivery note 10073374 / order 6277938: 300 custom boxes delivered, 150 corrugated sheets delivered, 1 Guardian paper roll delivered, and 1 Guardian roll still to follow. These are receipt counters, not total on-hand stock.
