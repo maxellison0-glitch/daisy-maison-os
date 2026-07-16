@@ -90,10 +90,14 @@ All four have continue selling when out of stock enabled. Report them as one row
 
 Current baseline:
 
-- Baseline date: 2026-07-09
-- Baseline quantity: 500 labels
+- Baseline date: 2026-07-16
+- Baseline quantity: 250 labels (one remaining roll)
 
 If new rolls are added, update this baseline date and quantity.
+
+Max correction recorded 2026-07-16: the previous estimated 30 labels was wrong;
+physical stock is one roll of 250 labels. Thermal-label usage tracking restarts
+from 2026-07-17 against this corrected baseline.
 
 ## Supplier Purchase Evidence
 

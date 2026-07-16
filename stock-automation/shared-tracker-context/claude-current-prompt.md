@@ -46,7 +46,7 @@ ALSO include these extra tracked accessory products (not EastofIndia vendor, but
 
 - Gift Wrap Kit (gid://shopify/Product/10600061829459, variant gid://shopify/ProductVariant/53802540171603) — price £5.95, "continue selling when out of stock" is enabled. These are made fresh daily rather than held as stock — stock is intentionally kept at 0 as the baseline. Do NOT flag this as a reorder risk; see special case in Step 4.
 
-- Thermal Labels — NOT a Shopify product (no listing/inventory to query). This is a manually-tracked consumable: 1 order = 1 label used, regardless of what's in the order or how many items. Baseline: as of 8 July 2026, stock was confirmed at 500 labels (2 rolls × 250). See Step 3b and the special case in Step 4 for how to calculate current stock.
+- Thermal Labels — NOT a Shopify product (no listing/inventory to query). This is a manually-tracked consumable: 1 order = 1 label used, regardless of what's in the order or how many items. Historical baseline: as of 8 July 2026, stock was confirmed at 500 labels (2 rolls × 250). Current owner correction on 16 July 2026: stock is 250 labels (1 remaining roll); use the current baseline in east-of-india-stock-state.md for calculations.
 
 
 

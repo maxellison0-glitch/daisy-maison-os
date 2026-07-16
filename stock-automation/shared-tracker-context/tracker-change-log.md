@@ -52,3 +52,4 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
 - Rule recorded at 2026-07-16 11:37:09 +01:00 Europe/London.
 - Max requested a clearer report layout: East of India run-outs first, Amazon stock watch second, Accessories third, and Packaging usage/order list fourth; removed the standalone Critical reorder actions presentation.
 - Amazon watch policy clarified: retain relevant upsell and operational products until delivery is confirmed, then transfer them to the owning stock tracker.
+- Max corrected Thermal Labels to one remaining roll of 250 labels. Reset the manual baseline to 250 on 2026-07-16; usage tracking restarts 2026-07-17 and the prior 30-label estimate is superseded.

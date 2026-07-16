@@ -28,7 +28,7 @@ Keep these items on watch until Gmail confirms delivery. A delivery confirmation
 | Wooden Display Easel | -46 | 54 sold | Overselling enabled; physical count needed |
 | Mounting Strips shared stock | -14 primary listing | 92 physical pairs consumed | Overselling enabled; physical count needed |
 | Gift Wrap Kit | 0 by design | 44 kits | Made to order; no reorder |
-| Thermal Labels | 30 estimated | 470 orders since 2026-07-09 | **ORDER NOW**; quantity needs roll/buffer decision |
+| Thermal Labels | **250 (1 roll)** | Baseline reset 2026-07-16 | WATCH — no reorder threshold supplied |
 
 ## 4. Packaging usage and order list
 
@@ -46,7 +46,7 @@ These are receipt counters, not total on-hand after prior usage.
 
 ### Exact order list
 
-- **Thermal Labels — ORDER NOW.** Estimated 30 remaining. Exact order quantity is not calculable until the preferred roll quantity and target buffer are confirmed.
+- **Thermal Labels — 250 remaining (1 roll).** The previous estimate of 30 was corrected by Max. Tracking restarts from 2026-07-17; no reorder is raised until the threshold and target buffer are supplied.
 - **Packaging materials — no new order quantity confirmed today.** Current on-hand, reorder thresholds, lead times, and preferred case quantities are still missing. The 1 outstanding Guardian roll is already an incoming supplier line, not a new reorder.
 
 ### Recent usage
