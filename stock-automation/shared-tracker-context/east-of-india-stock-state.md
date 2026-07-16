@@ -111,6 +111,22 @@ Invoice totals shown: goods GBP 390.50, discount GBP 39.05, VAT GBP 70.29,
 invoice total GBP 421.74. Product-code/SKU mapping for the supplier lines still
 needs confirmation before allocating these quantities to Shopify stock rows.
 
+## Invoice Application Log
+
+On 2026-07-16 Max explicitly asked to apply the invoice to the Shopify
+inventory counters. The following compare-and-set updates were completed at
+the Shopify `Shop location`, using reason `received`:
+
+| Shopify item | Previous available | Invoice qty added | New available |
+| --- | ---: | ---: | ---: |
+| Porcelain Matchbox Message Seal - Sealed with a kiss | 1 | 5 | 6 |
+| Lucky Sixpence (Boxed) - Old, New, Borrowed, Blue | 36 | 20 | 56 |
+| Personalised Teacher Porcelain Matchbox Star - Thanks Teacher | 4 | 25 | 29 |
+| Personalised Teacher Porcelain Tea Light Holder - Thank You for Being Amazing | -3 | 70 | 67 |
+
+The supplier-code-1568 line was mapped to Lucky Sixpence after searching the
+live Shopify catalog. No other inventory counters were changed.
+
 ## Not Yet On Etsy
 
 Exclude these from Etsy sync prompt until the owner confirms an active Etsy listing exists:

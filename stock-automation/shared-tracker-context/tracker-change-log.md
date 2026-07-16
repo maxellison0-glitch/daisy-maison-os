@@ -42,6 +42,7 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
   evidence, and future Etsy/manual coverage.
 - Removed the separate Amazon project lane so Amazon is a section/reference
   inside the unified daily tracker, not another scheduled automation.
+- After Max explicitly requested application to the counters, added the invoice quantities to Shopify with compare-and-set checks and reason `received`: Seal 1→6, Lucky Sixpence 36→56, Teacher Star 4→29, and Teacher Tea Light -3→67.
 
 ## 2026-07-16
 
