@@ -4,12 +4,24 @@
 
 Canonical context orb for designing and developing Daisy Maison's personalised gift-box add-on. Use this entry when Max says Project Gift Box, gift box, or asks Claude/Codex to design gift-box artwork, copy, packaging, or the product workflow.
 
+## Current Status
+
+- Max approved ten new concept designs as one coherent range on 16 July 2026.
+- Canonical concepts: `projects/gift-box/artwork/concepts/`.
+- Canonical production handoff: `projects/gift-box/README.md`.
+- Current files are 1254 x 1254 px at 96 dpi concepts, not laser-ready masters.
+- Tomorrow's next step is a controlled 1181 x 1181 px / 300 dpi conversion and
+  one physical laser test before jig assembly.
+- The upsell is not yet confirmed live. Product scope, price, placement, and
+  attach-rate measurement remain open.
+
 ## Product Context
 
 - Product: Gift Box Add-On - White Kraft
 - Storefront: https://daisymaison.co.uk/products/gift-box-add-on-white-kraft
 - Brand: Daisy Maison
-- Current task: apply a personalised design/artwork system to the white kraft gift boxes and explore a coherent set of message and artwork variants.
+- Current task: promote the approved concept family into physical production,
+  then launch and measure the white-kraft gift-box upsell.
 - Reference photos: projects/gift-box/references/photo-1.jpg and projects/gift-box/references/photo-2.jpg
 
 ## Handwritten Brief Transcribed From The Photos
@@ -35,27 +47,29 @@ Canonical context orb for designing and developing Daisy Maison's personalised g
    - "Today is the day to celebrate you"
    - "From this day forward"
 
-These are transcriptions and concept prompts, not final approved copy. Preserve Max's wording when designing; flag uncertain handwriting rather than silently correcting it.
+This section preserves the historical transcription. The final approved wording
+and artwork mapping are recorded in `projects/gift-box/README.md`; use that file
+for production and do not silently revert to a candidate phrase above.
 
-## Design Brief For Claude
+## Approved Design System
 
-Create a tasteful Daisy Maison gift-box personalisation concept based on the actual white kraft box product and the supplied reference notes. Explore a small, coherent family of designs rather than unrelated illustrations:
+- Warm-white field with generous negative space.
+- Monochrome handmade graphite-and-ink artwork in the lower-right area.
+- Printed typewriter-style serif sentiment text; no cursive.
+- Shaded pebble hearts recur as a physical material, not flat icons.
+- Each illustration uniquely reinforces its sentiment while remaining part of
+  the same Daisy Maison family.
+- Preserve the approved exact wording recorded in `projects/gift-box/README.md`.
+- Do not claim laser-ready output until the 1181 x 1181 px / 300 dpi masters and
+  physical laser test are complete.
 
-- family / branch-and-birds;
-- mum / botanical hearts and flowers;
-- anniversary or couple / two birds and hearts;
-- general appreciation, new home, and seasonal variants.
+## Questions To Resolve Before Launch
 
-The result should be suitable for a physical white kraft gift box: simple, legible, production-aware artwork with a restrained Daisy Maison feel. Keep copy readable at gift-box scale. Separate confirmed text, proposed text, and questions for Max. Do not claim printer-ready output until the actual box dimensions, print/laser method, colour limitations, and safe artwork area are confirmed.
-
-## Questions To Resolve Before Production
-
-- Exact box dimensions and printable/safe area
-- Whether the artwork is printed, engraved, cut, or applied as a label/sticker
-- Available production colours and substrate limitations
-- Whether personalisation is one line, multiple lines, or a fixed design plus optional message
-- Final approved copy and spelling for each variant
+- Final safe area and laser placement after the physical test
+- Whether heavy jig borders are registration/cut marks or excluded artwork
+- Required design quantities in the 5 x 3 jig
 - Whether the product needs Shopify option/metafield changes
+- Eligible products, final price, storefront placement, and launch measurement
 
 ## Operating Rule
 
