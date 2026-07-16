@@ -25,3 +25,7 @@ projects/daisy-street-sign/**/*.pyc
 !projects/gift-box/
 !projects/gift-box/**
 !workflows/starred/project-gift-box.md
+
+!projects/social-prompts/
+!projects/social-prompts/**
+!workflows/starred/daisy-social-content-prompts.md
