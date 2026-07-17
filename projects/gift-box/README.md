@@ -4,9 +4,10 @@ This is the canonical project for the Daisy Maison sentimental gift-box range.
 
 ## Status
 
-Max approved the complete 11-design concept family on 16 July 2026. Ten new
-concepts are saved in `artwork/concepts/`; the existing `Thank you for being
-amazing` box is the eleventh design and visual anchor for the range.
+Max approved the initial 11-design concept family on 16 July 2026. The canonical
+folder now contains 14 visible concept PNGs in `artwork/concepts/` plus matching
+mockups in `artwork/mockups/`. The existing `Thank you for being amazing` box
+remains the visual anchor/reference for the range.
 
 The artwork is **not yet laser-ready**. Current concepts are 1254 x 1254 px at
 96 dpi. The intended production master is 1181 x 1181 px at 300 dpi for a
@@ -27,6 +28,10 @@ storefront launch remain pending.
 | `08-celebrate-you-giftbox-concept.png` | Today is the day to celebrate you | Daisy cake and parcel with a pebble-heart keepsake tag |
 | `09-from-this-day-forward-giftbox-concept.png` | From this day forward | Two flowering stems growing together from paired pebble hearts |
 | `10-lovely-you-giftbox-concept.png` | Lovely you | Floral hand mirror, reflected daisy, and pebble heart |
+| `11-celebrate-you-christening-graduation-friendship-concept.png` | Celebrate you | Multi-use celebration concept for christening, graduation, friendship or similar use cases |
+| `12-forever-in-my-heart-dog-remembrance.png` | Forever in my heart | Dog remembrance concept |
+| `13-forever-in-my-heart-letters-remembrance.png` | Forever in my heart | Letter/remembrance concept |
+| `14-wonderful-life-new-baby-world.png` | Welcome to this wonderful life / new baby world | New-baby concept |
 
 ## Collection Rules
 
