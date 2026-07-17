@@ -4,15 +4,13 @@ This is the canonical project for the Daisy Maison sentimental gift-box range.
 
 ## Status
 
-Max approved the initial 11-design concept family on 16 July 2026. The canonical
-folder now contains 14 visible concept PNGs in `artwork/concepts/` plus matching
-mockups in `artwork/mockups/`. The existing `Thank you for being amazing` box
-remains the visual anchor/reference for the range.
+The approved gift-box image range is materially ready for Shopify handoff. Max
+reports the physical prints are with Daisy, the images have been uploaded to the
+Shopify store, and the product drafts are believed to be mostly or fully built.
 
-The artwork is **not yet laser-ready**. Current concepts are 1254 x 1254 px at
-96 dpi. The intended production master is 1181 x 1181 px at 300 dpi for a
-10 x 10 cm panel. Laser testing, jig assembly, product scope, pricing, and
-storefront launch remain pending.
+This README is now the simple approved-range reference. Do not use old
+"tomorrow production handoff" notes as live instructions unless Max explicitly
+reopens production sizing, laser testing, or jig work.
 
 ## Approved Range
 
@@ -44,31 +42,6 @@ storefront launch remain pending.
   like part of the same Daisy Maison family.
 - Do not repeat the original watering-can and potted-tree composition as a new
   variant.
-
-## References
-
-- `references/photo-1.jpg` and `references/photo-2.jpg` - handwritten brief.
-- `references/gift-box-font-and-layout-reference.webp` - approved typography,
-  spacing, and box placement reference.
-- `references/teacher-box-sticker-prototype-1.jpg` and
-  `references/teacher-box-sticker-prototype-2.jpg` - earlier artwork studies.
-- `references/teacher-giftbox-jig-reference.jpg` - 5 x 3 production jig
-  reference.
-
-## Tomorrow's Production Handoff
-
-1. Promote approved concepts into `artwork/masters/` at 1181 x 1181 px and
-   300 dpi without changing composition or wording.
-2. Visually verify every final word, line break, safe margin, and fine line at
-   physical 10 x 10 cm size.
-3. Confirm whether the jig's heavy black borders are laser/cut registration or
-   should be excluded from the printed artwork.
-4. Run one physical laser test on the white kraft box and inspect contrast,
-   text readability, line survival, placement, and scorching.
-5. Assemble the approved production masters into the 5 x 3 jig only after the
-   laser test passes and the required design quantities are known.
-6. Confirm eligible products, price, storefront placement, and launch tracking
-   before treating the gift-box upsell as live.
 
 ## Canonical Location
 
