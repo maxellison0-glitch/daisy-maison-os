@@ -21,6 +21,7 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 - Father's Day has peaked (biggest day 14 Jun, wind-down confirmed 17 Jun). FD campaigns tapering off.
 - **New focus: Teacher Gifts** (seasonal, end of school year) + **Wedding Gifts** (evergreen — run year-round)
 - Hero products: TBC for teacher gifts. Wedding gifts (Mr & Mrs sign) is the **evergreen anchor** — treat as a standing year-round campaign, not a seasonal burst.
+- **Owner note 17 Jul 2026:** Push wedding in the near term. Teacher demand is fading and wedding is the proven base. A new pipeline of home products is coming and should start being advertised as soon as assets/listings are ready, likely over the next 1–2 weeks. Watch for those products appearing live before recommending spend.
 - **Mr & Mrs Personalised Street Sign** updated 26 Jun 2026: now has Small, Medium, and Large size variants (previously one size, one price). Change made for margin improvement. Daryl briefed.
 - **Add-on roadmap:** Goal is size-matched upsells at checkout — Large → gift box, Medium → easel, Small → mounting strips. Cleaning-kit upsell was confirmed completed/ticked off by Max on 12 Jul 2026; exact placement, eligible products, and live verification are not yet recorded.
 - **Digest section to include:** Teacher vs Wedding split — orders and gross by product category each day, flag which is worth scaling.
