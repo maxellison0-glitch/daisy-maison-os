@@ -66,3 +66,10 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
   possible same-day use, and does not authorize Shopify inventory mutation unless
   the SKU/variant mapping and compare-and-set received update are explicitly
   safe.
+- Corrected the 2026-07-20 Amazon receipt handling for order
+  `206-3457020-8782768`: the delivered email visibly includes L LIKED thermal
+  labels and Ormith 48-piece mounting pads as well as wood easels. These must be
+  recorded as receipt evidence, not omitted because they were missing from the
+  previous Amazon reference file.
+- Max corrected the L LIKED thermal labels pack basis: the delivered unit is a
+  pack of 2 rolls, 250 labels per roll, so receipt evidence is 500 labels total.
