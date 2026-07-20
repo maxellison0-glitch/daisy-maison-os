@@ -53,3 +53,16 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
 - Max requested a clearer report layout: East of India run-outs first, Amazon stock watch second, Accessories third, and Packaging usage/order list fourth; removed the standalone Critical reorder actions presentation.
 - Amazon watch policy clarified: retain relevant upsell and operational products until delivery is confirmed, then transfer them to the owning stock tracker.
 - Max corrected Thermal Labels to one remaining roll of 250 labels. Reset the manual baseline to 250 on 2026-07-16; usage tracking restarts 2026-07-17 and the prior 30-label estimate is superseded.
+
+## 2026-07-20
+
+- Max clarified that when Amazon orders are confirmed delivered, the stock
+  tracker should update automatically rather than only holding the fact in
+  MaxOS/email context.
+- Added explicit Amazon delivery-confirmation rule: delivered Amazon items move
+  into the relevant stock owner as receipt evidence, with delivered pack/unit
+  quantity where known.
+- Delivery confirmation still does not prove current remaining on-hand after
+  possible same-day use, and does not authorize Shopify inventory mutation unless
+  the SKU/variant mapping and compare-and-set received update are explicitly
+  safe.

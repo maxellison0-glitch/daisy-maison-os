@@ -54,6 +54,28 @@ send email, or mark messages. If an Amazon item is already authoritatively
 tracked by Shopify inventory or the packaging tracker, keep that existing
 tracker authoritative and use Amazon only as supplier/order evidence.
 
+### Amazon Delivery Confirmation Rule
+
+- When Gmail/Amazon evidence confirms an Amazon order has been delivered, update
+  the unified stock tracker automatically during that run.
+- Move the item out of `DISPATCHED`, `ARRIVING`, or `WATCH` delivery-wait state
+  into `DELIVERED <date>` receipt evidence under the relevant accessory,
+  packaging, or Amazon stock owner.
+- If the delivered item maps confidently to an owner with a known pack/unit
+  basis, record the delivered quantity as receipt evidence, e.g. `1 pack / 32
+  easels delivered`.
+- Do not treat delivery as proof of current remaining on-hand when same-day
+  consumption may already have happened. If prior on-hand, reorder threshold,
+  or usage owner is missing, say exactly what is missing rather than leaving the
+  delivery in limbo.
+- Do not mutate Shopify inventory from an Amazon delivery email unless the item
+  is a known Shopify-owned stock counter, the exact SKU/variant is mapped, and
+  the workflow is explicitly authorized to apply that compare-and-set received
+  update. Otherwise keep it as tracker/audit evidence only.
+- Keep payment-blocked, cancelled, refunded, or not-yet-dispatched Amazon orders
+  separate from delivered stock. A delivered substitute does not resolve a
+  different blocked order unless Max confirms it replaces the need.
+
 ## Current Packaging Rules
 
 See also:
