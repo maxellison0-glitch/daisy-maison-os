@@ -56,6 +56,11 @@ EOI-TL-GOODFRIENDS, EOI-MB-ANGEL, EOI-MB-BEAR, EOI-MB-DOG, EOI-MB-ELEPHANT, EOI-
 
 These four Shopify listings are different price/pack options for the same physical mounting-strip stock. Source: Amazon, next-day delivery available.
 
+Confirmed usage rule, 2026-07-20: one single mounting-strip order consumes 2
+physical sticky pads/strips; one double/two-sign mounting-strip order consumes
+4 physical sticky pads/strips. The Ormith 48-piece Amazon pack therefore covers
+24 single mounting-strip orders or 12 double/two-sign mounting-strip orders.
+
 - Primary physical-stock listing: `(GBP 1.99) Mounting Strips`
   - Product GID: `gid://shopify/Product/9848399855955`
   - SKU: `ACC-MOUNT-SINGLE`
@@ -65,7 +70,7 @@ These four Shopify listings are different price/pack options for the same physic
   - Product GID: `gid://shopify/Product/9858979135827`
 - Two Sign Pack:
   - Product GID: `gid://shopify/Product/10660622238035`
-  - Each unit sold consumes 2 pairs of the shared physical stock.
+  - Each unit sold consumes 2 pairs / 4 physical sticky pads/strips of the shared physical stock.
 
 All four have continue selling when out of stock enabled. Report them as one row: `Mounting Strips (shared stock)`.
 

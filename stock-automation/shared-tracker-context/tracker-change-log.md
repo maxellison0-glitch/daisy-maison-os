@@ -73,3 +73,7 @@ Use this file to record stock-tracker rule changes so Claude and Codex stay alig
   previous Amazon reference file.
 - Max corrected the L LIKED thermal labels pack basis: the delivered unit is a
   pack of 2 rolls, 250 labels per roll, so receipt evidence is 500 labels total.
+- Max confirmed the mounting-strip usage rule: one single mounting-strip order
+  uses 2 physical pads/strips and one double/two-sign mounting-strip order uses
+  4 physical pads/strips. The delivered Ormith 48-piece pack therefore covers
+  24 single mounting-strip orders or 12 double/two-sign orders.
