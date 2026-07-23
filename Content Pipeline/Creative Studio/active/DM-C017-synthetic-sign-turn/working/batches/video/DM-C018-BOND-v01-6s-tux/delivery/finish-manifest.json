@@ -1,0 +1,35 @@
+{
+  "concept": "DM-C018 Bond — 'Every surname deserves an entrance'",
+  "source_native_video": "delivery/DM-C018-BOND-native-6s-raw.mp4",
+  "master": "delivery/DM-C018-BOND-master-1080x1920-24fps.mp4",
+  "phone_preview": "delivery/DM-C018-BOND-phone-preview-720x1280.mp4",
+  "soundtrack": "delivery/DM-C018-BOND-original-soundtrack.wav",
+  "duration_seconds": 6.04,
+  "fps": 24,
+  "master_dimensions": "1080x1920",
+  "product_surface_compositing": false,
+  "caption_render_method": "Real browser (Chromium via Playwright) rendering HTML/CSS with the actual Raleway brand font; per-frame transparent screenshots composited over the graded video with ffmpeg. Not a static PIL/box overlay — native-quality anti-aliasing and animation.",
+  "allowed_finishing_only": [
+    "top hook typography (safe zone, browser-rendered)",
+    "bottom CTA typography (safe zone, browser-rendered)",
+    "subtle cool cinematic grade + gentle vignette (sign whites protected)",
+    "original synthetic reveal sting (tension riser -> impact -> warm resolve)",
+    "H.264/AAC encode + 720x1280 delivery scaling"
+  ],
+  "on_screen_copy": {
+    "hook": "Some surnames deserve an entrance.  (0.30-2.90s, top safe zone)",
+    "cta": "Personalise yours →  /  DAISYMAISON.CO.UK  (4.55-6.04s, bottom safe zone)"
+  },
+  "styling": {
+    "font": "Raleway (brand)",
+    "treatment": "white 700/600, subtle translucent dark chip (rgba(15,17,19,.36)) + soft shadow — native reel-caption look",
+    "grade_palette_ref": "cool spy-ink shadows #1B2A32, brand putty #B0AF9B, heart #D80027"
+  },
+  "ip_safety": "Bond-flavoured only. No James Bond / 007 marks, gun-barrel, or copyrighted theme. Sound is an original synthetic sting.",
+  "hashes": {
+    "master_sha256_prefix": "b009fa467ba34217",
+    "preview_sha256_prefix": "f87ac9cdce336c4b",
+    "soundtrack_sha256_prefix": "e886b65c5190a2d2"
+  },
+  "publish_status": "NOT PUBLISHED — awaiting Max's explicit publishing approval (gate 5)."
+}
