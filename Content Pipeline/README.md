@@ -1,9 +1,9 @@
 # Daisy Maison Content Pipeline
 
-This is the single entry point for organic Instagram, Facebook, and TikTok
-content. Its job is simple: turn Daisy's real products, personalisation, making,
-packing, and customer occasions into four strong posts each week, with a fifth
-only when the idea is worth making.
+This is the single entry point for organic Instagram, Facebook, TikTok, and
+YouTube Shorts content. Its job is simple: turn Daisy's real products,
+personalisation, making, packing, and customer occasions into four strong
+posts each week, with a fifth only when the idea is worth making.
 
 ## Start here every time
 
@@ -28,6 +28,15 @@ Two characters front the account: Max (real founder) and Freya (proposed
 social/creative lead). Their voice, personality and content roles live in
 `Personas/README.md` — read it before briefing any post that needs a caption
 voice or an on-camera presence.
+
+## Is it actually good enough to post?
+
+Before anything moves to `Ready for approval`, it passes
+`PUBLISH_READINESS.md` — a concrete PASS/EDIT/KILL check across hook,
+product fidelity, character consistency, brand tone, caption, platform fit,
+and a `virality_predictor` read. EDIT always names the specific fix; it is
+never "regenerate and hope." See `AUTOMATION.md` for how much of this loop
+runs unattended versus where Max's approval stays a deliberate checkpoint.
 
 ## Pipeline states
 
@@ -83,7 +92,11 @@ better pattern.
 ## Platform adaptation
 
 Do not blindly publish the identical wrapper everywhere. Reuse the idea and
-assets, then adapt them.
+assets, then adapt them. Full reasoning, format specs, and cadence guidance:
+`PLATFORM_STRATEGY.md`. Instagram is the anchor and TikTok is a co-equal
+native citizen, not an afterthought — both have proven or strongly-suited
+reach for this account; Facebook and YouTube Shorts distribute the same
+finished master rather than needing separate content.
 
 ### TikTok
 
@@ -105,6 +118,18 @@ assets, then adapt them.
 - Clear occasion, recipient, deadline, or decision-led posts are strongest.
 - Invite comments and shares naturally. Use links only when the post genuinely
   helps a shopper take the next step.
+
+### YouTube Shorts
+
+- Cross-post the same finished vertical master used for TikTok/Reels — don't
+  build separate YouTube-native content yet.
+- The advantage over TikTok/Reels is longevity: a good Short keeps surfacing
+  through YouTube search and suggested for months, not just the first
+  48-72 hours.
+- Post validated winners (things that already proved themselves elsewhere
+  first), not unproven concepts.
+- Long-form YouTube is a deliberate future consideration, not a current
+  priority — see `PLATFORM_STRATEGY.md` for the reasoning.
 
 ## Production and approval gates
 
