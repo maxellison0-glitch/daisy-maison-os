@@ -2,7 +2,7 @@
   "concept_id": "DM-C018-BOND",
   "batch": "hero-still-DM-C018-BOND-v01-tux",
   "stage": "Stage 4 — synthetic-Max hero (reveal end frame)",
-  "status": "generated-awaiting-human-hero-approval",
+  "status": "human-approved-hero-checkpoint",
   "theme_note": "Wardrobe nod: black tuxedo (007-flavoured). Theme is wardrobe only; the exact sign and workshop are unchanged. No James Bond/007 IP marks.",
   "model": "nano_banana_flash",
   "model_requested": "nano_banana_2",
@@ -41,5 +41,5 @@
   "quoted_date": "2026-07-23",
   "generated_date": "2026-07-23",
   "recommended_take": "03",
-  "human_approval": {"status": "pending", "approved_take": null, "approved_by": null, "note": "agent-pass only; Max is the gate. Gate 3 (white-back start) and video are blocked until Max approves one hero here."}
+  "human_approval": {"status": "approved", "approved_take": "03", "approved_path": "outputs/take-03.jpg", "approved_sha256": "bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98", "approved_by": "Max Ellison", "approved_date": "2026-07-23", "approval_quote": "3", "note": "Gate 2 passed. Take 03 is the approved reveal end-frame (tux hero) and the edit target for the white-back start (Stage 5)."}
 }
