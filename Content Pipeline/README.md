@@ -24,10 +24,11 @@ posts each week, with a fifth only when the idea is worth making.
 
 ## Who's writing and fronting this
 
-Two characters front the account: Max (real founder) and Freya (proposed
-social/creative lead). Their voice, personality and content roles live in
-`Personas/README.md` — read it before briefing any post that needs a caption
-voice or an on-camera presence.
+Three characters front the account: Max (real founder), Freya (proposed
+social/creative lead), and Alan (adopted main male character — not an
+accurate likeness of Max, see `Personas/MAX.md`). Their voice, personality
+and content roles live in `Personas/README.md` — read it before briefing
+any post that needs a caption voice or an on-camera presence.
 
 ## Is it actually good enough to post?
 

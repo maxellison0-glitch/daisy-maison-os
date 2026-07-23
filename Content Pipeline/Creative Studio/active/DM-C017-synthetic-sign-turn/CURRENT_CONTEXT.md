@@ -16,6 +16,16 @@ not be confused with the validated v03 run.
 
 DM-C016 remains preserved and paused. Do not resume hearts or gift-box work.
 
+## Correction, 23 July 2026
+
+The "synthetic-Max hero" referenced below (Hero Take 01, approved product
+checkpoint, the finished master) does not accurately resemble Max — he's
+confirmed this himself. Nothing in this production record is wrong or was
+regenerated; every finding about the sign, construction and video technique
+stands. Only the identity label changes: this is recast as its own
+character, Alan (`Content Pipeline/Personas/ALAN.md`), not a likeness of
+the real founder. Read "synthetic Max" below as Alan.
+
 ## Why the earlier v02 take was invalid
 
 - Its Seedance start/end reference used

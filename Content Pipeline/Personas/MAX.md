@@ -17,34 +17,28 @@ it ships, quietly pleased when something comes out right.
 Not polished-corporate, not a performed "founder story." Someone who is good
 at his trade and mildly obsessed with getting the details right.
 
-## Existing visual identity — already built, don't rebuild it
+## Visual identity — correction, 23 July 2026
 
-Unlike Freya, there's no bootstrapping problem here: real reference photos
-already exist (`Creative Studio/active/DM-C017-synthetic-sign-turn/source/
-max-workshop-profile-reference.webp`, `-back-reference.webp`,
-`-side-reference.webp`), and a synthetic-Max hero image is already
-generated, human-reviewed and locked — approved by Max himself 23 July
-2026, full provenance in
-`Creative Studio/active/DM-C017-synthetic-sign-turn/approvals/
-HERO_IMAGE_CHECKPOINT.md` (job ID, model, hash, the works). That approved
-image is the identity and camera/crop/lighting authority for every
-downstream synthetic-Max shot — treat it the same way Freya's locked hero
-is treated, not as a one-off.
+An earlier version of this file pointed to the DM-C017 synthetic hero image
+as Max's locked visual identity. That was wrong: Max has since confirmed
+the resemblance doesn't actually hold up, despite that image being
+generated and approved as a synthetic-Max likeness at the time. The image
+itself wasn't deleted or reworked — it's genuinely a good character, so
+it's been recast as its own distinct persona, **Alan** (`ALAN.md`), rather
+than kept in circulation under Max's real name and face.
 
-The product, not the person, is the actual creative centre. The finished,
-approved DM-C017 video already embodies this without anyone having to say
-so: its opening frame is hands, forearms, and the sign — face mostly out of
-shot. That's the template, not an exception: Max (and Freya) exist to give
-the account a consistent, recognisable thread and voice, not to become the
-visual subject of every post. The sign does that job.
+There is currently no accurate synthetic likeness of Max. If one is built
+later, it needs a real reference-photo pass and genuine likeness
+confirmation from Max — not a quick approval mid-production — before it's
+trusted as "him" in any content. Until then, Max's own visual presence in
+content is real Max, real photos or real footage, full stop.
 
-If a reusable Max Soul identity (same mechanism as
-`HIGGSFIELD_CHARACTER_BUILD.md` describes for Freya — train once, generate
-consistently forever, no more ad hoc reference-conditioning per shot) turns
-out to be worth the low credit cost later, it's a strictly easier build than
-Freya's: real photos plus an already-approved hero already clear the 5+
-reference-image bar Soul training needs. Not urgent given the above — noted
-here so it isn't lost, not because it's the current priority.
+The product, not the person, is still the actual creative centre either
+way. The finished, approved DM-C017 video already embodies this without
+anyone having to say so: its opening frame is hands, forearms, and the sign
+— face mostly out of shot. Max (and any character fronting the account)
+exist to give it a consistent, recognisable thread and voice, not to become
+the visual subject of every post. The sign does that job.
 
 ## Personality (grounded in what's already true of him)
 
@@ -86,16 +80,19 @@ Max fronts:
   weekly mix (`Content Pipeline/README.md`).
 - Founder-reaction content: seeing a finished order, catching an error,
   workshop Q&A.
-- Both lanes of the existing sign-video work: real Max for raw
-  behind-the-scenes, synthetic Max for the polished, repeatable product-reveal
-  format already proved in DM-C017 (8.5/10 realism, native turn, no overlay).
+- Real Max for raw behind-the-scenes and workshop content. The polished,
+  repeatable product-reveal format proved in DM-C017 (8.5/10 realism,
+  native turn, no overlay) is a real, working technique — it's just fronted
+  by Alan (`ALAN.md`) for now, not an accurate synthetic Max.
 
 ## What must never happen
 
-- Synthetic Max must never say something the real Max wouldn't stand behind —
-  no invented claims, no fabricated numbers, no unverified delivery or stock
-  promises. This is already the site-wide content rule; it applies doubly
-  when it's his own face and voice.
-- Any synthetic-Max clip needs his explicit sign-off before publishing, same
-  as every product video already requires under Creative Studio's approval
-  gate.
+- Real Max, on camera or in captions, must never say something he wouldn't
+  actually stand behind — no invented claims, no fabricated numbers, no
+  unverified delivery or stock promises. This is already the site-wide
+  content rule.
+- Nothing gets published as "Max" — synthetic or otherwise — without his
+  explicit sign-off, same as every product video already requires under
+  Creative Studio's approval gate. If a future synthetic-Max build happens,
+  likeness accuracy is part of that approval, not assumed from the prompt
+  working technically.
