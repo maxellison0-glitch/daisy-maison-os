@@ -1,0 +1,30 @@
+USE CASE: photorealistic natural source frame for a vertical Daisy Maison Instagram Reel.
+
+Create one coherent 9:16 camera photograph. This is a fully synthetic depiction of Max made with his consent. Do not add or clone any other person.
+
+REFERENCE ROLES:
+- Reference image 1 is the Max-approved, locked Daisy Maison Bond sign. It is the sole authority for the complete manufactured product and its printing. Use only the sign from this image. Do not copy, identify or recreate its cropped holder.
+- Reference image 2 is the consented synthetic-Max identity, black T-shirt, body scale and compact workshop authority. Preserve the same recognisable face, short brown-grey hair, subtle stubble, lean build and natural skin. Ignore and remove its old blank marker plate, coloured markers and all product geometry.
+
+PRIMARY REQUEST:
+Show the same synthetic Max waist-up in the same compact workshop, naturally holding the exact approved sign from reference image 1 at lower-chest height with two anatomically correct five-finger hands gripping only the extreme ends.
+
+LOCKED PRODUCT — CHANGE NOTHING:
+- Preserve reference image 1's complete sign as one indivisible manufactured object: exact outer silhouette, 4.56:1 proportion, broad black printed front band, shaped end areas, off-white inset, two mounting holes, rigid flat material, surface texture, print softness and shallow pale sheet construction.
+- Preserve verbatim "MR & MRS BOND".
+- Preserve verbatim "WHEN TWO NAMES BECOME ONE 27TH JUNE 2026".
+- Preserve the exact small red heart touching the ampersand, every letter form, spacing, line placement, hole and colour.
+- Do not redraw, retype, respell, restyle, simplify, narrow, enlarge or reinterpret any part of the sign.
+
+COMPOSITION:
+- Vertical 9:16, natural chest-height camera, believable 35-50 mm perspective.
+- Max and the sign face the camera. Max may glance naturally toward the sign or camera.
+- The sign is level, almost parallel to camera, fully inside frame and approximately 84-88 percent of frame width.
+- Keep clear workshop background above Max for a later opening hook, but add no text now.
+- Soft real workshop daylight, restrained contrast, natural pores, fabric texture, camera grain and slight lens softness.
+
+PHYSICAL INTEGRATION:
+The approved sign, fingers, reflections, shadows, focus, grain and lighting must exist together in one exposure. Fingers may overlap only the extreme black end areas and must not hide wording, the heart or either mounting hole. Preserve believable grip pressure, contact shadows and wrist anatomy.
+
+AVOID:
+No pasted panel, different-white insert, overlay seam, sticker, floating surface, mock-up screen, vector-sharp patch, extra hand, extra finger, duplicate sign, other person, caption, logo, UI or legible background wording. Do not reveal the back or side in this front-facing hero frame.

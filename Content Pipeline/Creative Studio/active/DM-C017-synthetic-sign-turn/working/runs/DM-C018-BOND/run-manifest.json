@@ -1,0 +1,78 @@
+{
+  "method": "wedding-sign-engineering-prompt-workflow-v1",
+  "validated_product_family": "white-wedding-sign",
+  "source_case": "DM-C017-JANNAWAY-v03",
+  "case_id": "DM-C018-BOND",
+  "slug": "DM-C018-BOND",
+  "line1": "MR & MRS BOND",
+  "line2": "WHEN TWO NAMES BECOME ONE 27TH JUNE 2026",
+  "demand_source": "INVENTED-SAFE-CONTENT",
+  "demand_note": "Clearly-labelled from-scratch invention chosen by Max for an engineering test with a popular surname. Not drawn from any customer order; no customer address, contact or payment data used.",
+  "excluded_unvalidated_families": [
+    "coloured-sign-black-text",
+    "coloured-sign-coloured-text",
+    "non-wedding-sign"
+  ],
+  "artwork": {
+    "svg": "assets/DM-C018-BOND-sign-face.svg",
+    "png": "assets/DM-C018-BOND-sign-face.png",
+    "pdf": "assets/DM-C018-BOND-sign-face.pdf",
+    "physical_size_mm": "570 x 125",
+    "proportion": "4.56:1",
+    "font": "Times New Roman regular, vertical scale 1.4",
+    "line1HorizontalScale": 1.0,
+    "signatureHorizontalScale": 0.864373,
+    "heartManualReviewRequired": false
+  },
+  "reference_slots": {
+    "real_front_master": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/01-front-product-only.jpg",
+    "approved_product_image": null,
+    "synthetic_max_identity": null,
+    "approved_hero_end": null,
+    "approved_white_back_start": null,
+    "real_front_to_edge": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/02-front-to-edge-product-only.jpg",
+    "real_back_to_edge": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/03-back-to-edge-product-only.jpg",
+    "real_white_back": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/04-white-back-product-only.jpg",
+    "privacy_cropped_real_turn": null
+  },
+  "creative_direction": {
+    "concept": "Every surname deserves an entrance — 6s 007-flavoured Bond spy-reveal",
+    "theme_scope": "wardrobe-nod-plus-themed-finish",
+    "duration_seconds": 6,
+    "on_screen_font": "Raleway (brand)",
+    "brand_palette": {"putty": "#B0AF9B", "paper": "#FAF8F4", "ink": "#232323", "heart": "#D80027", "spy_grade": "#1B2A32"},
+    "instagram": "@daisymaison",
+    "facebook": "daisymaisonuk",
+    "concept_board": "concept/DM-C018-BOND-concept-board.html",
+    "concept_brief": "concept/CONCEPT_BRIEF.md",
+    "ip_note": "Bond-flavoured only; no 007/James Bond marks, gun-barrel or copyrighted theme."
+  },
+  "human_gates": {
+    "product_image": true,
+    "synthetic_max_hero": false,
+    "plain_white_reverse": false,
+    "untouched_native_video": false,
+    "publishing": false
+  },
+  "stage_status": {
+    "stage1_exact_artwork": "complete",
+    "stage3_product_calibration_takes": "complete-take03-max-approved",
+    "concept_and_social_styling": "complete-v1-awaiting-direction",
+    "stage4_hero": "next (tux wardrobe nod)",
+    "stage5_white_back": "not-started",
+    "stage7_native_video": "not-started (blocked until three image gates pass)"
+  },
+  "generation_baseline": {
+    "image_model_display": "Nano Banana 2",
+    "image_model_internal": "nano_banana_flash",
+    "product_candidates": 4,
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "resolution_note": "Max requested 2k for this run; the validated JANNAWAY baseline was 1k. 2k costs 2 credits/take vs 1.5 at 1k.",
+    "credits_per_take": 2,
+    "product_batch_total_credits": 8
+  },
+  "paid_video_submit_allowed": false,
+  "product_surface_overlay_allowed": false,
+  "publishes": false
+}
