@@ -22,6 +22,13 @@ only when the idea is worth making.
 8. Record the 48-hour result, then the 7-day result. Feed the lesson into the
    next batch.
 
+## Who's writing and fronting this
+
+Two characters front the account: Max (real founder) and Freya (proposed
+social/creative lead). Their voice, personality and content roles live in
+`Personas/README.md` — read it before briefing any post that needs a caption
+voice or an on-camera presence.
+
 ## Pipeline states
 
 `Saved -> Selected -> Briefed -> Assets ready -> Editing -> Ready for approval -> Approved -> Scheduled -> Published -> Learned`
