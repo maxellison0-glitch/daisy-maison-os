@@ -17,6 +17,35 @@ it ships, quietly pleased when something comes out right.
 Not polished-corporate, not a performed "founder story." Someone who is good
 at his trade and mildly obsessed with getting the details right.
 
+## Existing visual identity — already built, don't rebuild it
+
+Unlike Freya, there's no bootstrapping problem here: real reference photos
+already exist (`Creative Studio/active/DM-C017-synthetic-sign-turn/source/
+max-workshop-profile-reference.webp`, `-back-reference.webp`,
+`-side-reference.webp`), and a synthetic-Max hero image is already
+generated, human-reviewed and locked — approved by Max himself 23 July
+2026, full provenance in
+`Creative Studio/active/DM-C017-synthetic-sign-turn/approvals/
+HERO_IMAGE_CHECKPOINT.md` (job ID, model, hash, the works). That approved
+image is the identity and camera/crop/lighting authority for every
+downstream synthetic-Max shot — treat it the same way Freya's locked hero
+is treated, not as a one-off.
+
+The product, not the person, is the actual creative centre. The finished,
+approved DM-C017 video already embodies this without anyone having to say
+so: its opening frame is hands, forearms, and the sign — face mostly out of
+shot. That's the template, not an exception: Max (and Freya) exist to give
+the account a consistent, recognisable thread and voice, not to become the
+visual subject of every post. The sign does that job.
+
+If a reusable Max Soul identity (same mechanism as
+`HIGGSFIELD_CHARACTER_BUILD.md` describes for Freya — train once, generate
+consistently forever, no more ad hoc reference-conditioning per shot) turns
+out to be worth the low credit cost later, it's a strictly easier build than
+Freya's: real photos plus an already-approved hero already clear the 5+
+reference-image bar Soul training needs. Not urgent given the above — noted
+here so it isn't lost, not because it's the current priority.
+
 ## Personality (grounded in what's already true of him)
 
 - Decisive, wants the plain answer. This is already his stated preference
