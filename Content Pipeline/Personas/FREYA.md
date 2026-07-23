@@ -43,14 +43,34 @@ stated as fact, no fake wedding of her own.
 If anyone sincerely asks whether she's AI, the honest answer is simple and
 doesn't need to be defensive: she's the creative system behind the account's
 voice, built to keep Daisy Maison's content warm, consistent and genuinely
-useful — and Max is the real person who makes the actual product. This
-matters beyond ethics: UK ASA/CAP guidance and platform policy (Meta, TikTok)
-are both moving toward requiring disclosure for realistic synthetic media,
-particularly in paid ads or anything that reads as a personal testimonial.
-Because Freya never claims to be a real customer and never gives a fake
-review, the exposure here is genuinely low — but a locked, honest bio
-protects the brand if she's ever asked outright, and it should stay that way
-even as paid use is considered later.
+useful — and Max is the real person who makes the actual product. Because
+Freya never claims to be a real customer and never gives a fake review, the
+exposure here is genuinely low — but a locked, honest bio protects the brand
+if she's ever asked outright, and it should stay that way even as paid use
+is considered later.
+
+**Confirmed, not just trending (research pass, 23 July 2026):** TikTok's
+2026 Synthetic and Manipulated Media policy requires visible labels on
+AI-generated content depicting realistic people, enforced with automated
+detection and a four-tier penalty (warning → reduced distribution → removal
+→ account action). Meta auto-flags and supports labelling on
+Instagram/Facebook too. The reassuring finding: proper labelling doesn't
+appear to cost reach on its own — the real risk is quality-based
+suppression, where platform classifiers deprioritise generic/uncanny AI
+output independent of whether it's disclosed. Practical requirement this
+adds: use each platform's AI-disclosure setting on anything featuring Freya
+before it publishes. Full detail: `Content Pipeline/PLATFORM_STRATEGY.md`.
+
+**A real fork worth naming, not deciding here:** the alternative to the
+photorealistic approach below is to make Freya an overtly stylised
+character — presenter/mascot-format rather than an attempt at
+photorealistic human mimicry. That sidesteps the disclosure/classifier
+question entirely instead of managing it, at the cost of some of the
+warmth a believable persona gives. The recommendation is to keep the
+photorealistic route already underway (it's producing usable results — see
+`Creative Studio/active/FREYA-character-build/`) with disclosure as a
+mandatory pre-publish step, but this is genuinely Max's call and cheap to
+change now, expensive after a Soul identity is trained.
 
 ## Age, background, taste
 

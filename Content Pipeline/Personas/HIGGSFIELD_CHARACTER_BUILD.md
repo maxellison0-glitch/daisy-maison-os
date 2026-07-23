@@ -134,14 +134,27 @@ everything else.
 
 ## Ethics and disclosure
 
-UK ASA/CAP guidance and platform policy (Meta, TikTok) are both moving
-toward requiring disclosure for realistic synthetic media, particularly in
-paid ads or anything that could read as a genuine testimonial. Because
-Freya is built and positioned as a brand creative/social-lead character —
-not a fake customer, not a fabricated review, not an impersonation of a
-real specific person — the exposure here is low. Two things worth keeping
-in place regardless: never let her appear in paid advertising without
-whatever labelling the platform requires at the time, and never let her
-make a first-person factual claim (a review, a "this happened to me" story)
-that isn't true. `FREYA.md`'s positioning section covers this in full; it's
-repeated here so it isn't missed by whoever picks this workflow up next.
+Confirmed, not just trending (research pass, 23 July 2026): TikTok's 2026
+Synthetic and Manipulated Media policy requires visible labels on
+AI-generated content depicting realistic people, with automated detection
+and a four-tier penalty (warning → reduced distribution → removal →
+account action). Meta auto-flags and supports labelling on
+Instagram/Facebook too. Labelling itself doesn't appear to cost reach — the
+real risk is platform classifiers deprioritising generic/uncanny AI output
+regardless of disclosure, which is exactly what the "no AI spectacle"
+consistency toolkit above already guards against.
+
+Concrete requirements, not just principles: use each platform's AI-content
+disclosure toggle on anything featuring Freya before it publishes. Never
+let her appear in paid advertising without whatever labelling the platform
+requires at the time. Never let her make a first-person factual claim (a
+review, a "this happened to me" story) that isn't true. Keep her current
+build non-talking/non-lip-synced (Phase 1 above) for now — realistic
+talking-head AI video is the category facing the tightest platform scrutiny
+right now, so it's the right thing to stay cautious on longest.
+
+`FREYA.md`'s positioning section also names a real alternative worth
+knowing about: an overtly stylised/mascot-format character sidesteps this
+whole disclosure question rather than managing it. Not adopted here, but
+cheap to switch to now and expensive to switch to after Soul training —
+worth Max seeing that fork explicitly rather than it staying implicit.
