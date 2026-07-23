@@ -2,7 +2,7 @@
   "concept_id": "DM-C018-BOND",
   "batch": "start-keyframe-DM-C018-BOND-v01-white-back",
   "stage": "Stage 5 — plain-white-back START frame (opening of the turn)",
-  "status": "generated-awaiting-human-start-approval",
+  "status": "human-approved-start-checkpoint",
   "model": "nano_banana_flash",
   "display_name": "Nano Banana 2",
   "aspect_ratio": "9:16",
@@ -31,5 +31,5 @@
   "cost": {"quoted_credits_per_take": 2, "quoted_total_credits": 8, "actual_total_credits": 8, "credits_before": 1382},
   "generated_date": "2026-07-23",
   "recommended_take": "03",
-  "human_approval": {"status": "pending", "approved_take": null, "approved_by": null, "note": "agent-pass only. This is the START frame; the video pairs it with hero Take 03 as END. Video (72 cr) blocked until Max approves this and gives explicit go for the spend."}
+  "human_approval": {"status": "approved", "approved_take": "03", "approved_path": "outputs/take-03.png", "approved_sha256": "f52d6fff903500483e6f5a40a882fe872936ae8e281178fede859450c127c5d9", "approved_by": "Max Ellison", "approved_date": "2026-07-23", "approval_quote": "yes, sir.", "note": "Gate 3 passed. Take 03 is the START frame; pairs with tux hero Take 03 as END. Max also gave explicit go for the 72-credit video spend."}
 }
