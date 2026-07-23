@@ -1,0 +1,23 @@
+{
+  "approved_source": "working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+  "source_crop": [
+    35,
+    630,
+    735,
+    825
+  ],
+  "video_crop": [
+    20,
+    820,
+    1060,
+    1225
+  ],
+  "first_readable_frame": 112,
+  "last_frame": 192,
+  "compared_frame_count": 81,
+  "fps": 24,
+  "readable_hold_seconds": 3.375,
+  "page_count": 9,
+  "every_readable_hold_frame_included": true,
+  "product_surface_modified": false
+}

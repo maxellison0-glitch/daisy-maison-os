@@ -1,0 +1,23 @@
+Create one continuous photorealistic 8-second vertical workshop shot with no edit, cut, transition, time jump, speed ramp or camera move.
+
+The start image is the authoritative first frame. The end image is the authoritative final frame. They show the same consented synthetic Max, the same black T-shirt, jewellery, compact workshop, camera position and one rigid Daisy Maison street sign. Preserve that identity and environment continuously.
+
+ACTION AND TIMING:
+- 0.00-0.70 seconds: Max holds the plain matte charcoal back of the sign towards camera. Natural breathing and a tiny anticipatory hand settle create curiosity.
+- 0.70-4.60 seconds: in one unbroken action, Max rolls the same plaque forward exactly 180 degrees around its long horizontal axis. The rotation is strictly monotonic: it never pauses, reverses, flips sideways, rolls beyond 180 degrees or changes axis. Both five-finger hands retain continuous contact at the extreme ends. Fingers, thumbs, wrists, forearms, elbows and shoulders rotate and bear the weight naturally. His gaze follows the object.
+- 4.60-8.00 seconds: the exact finished front from the end image faces camera and settles. Max holds it large, level and nearly parallel to camera long enough to read, then makes a subtle satisfied glance towards camera. Keep meaningful natural body and hand micro-motion; do not freeze him.
+
+PRODUCT LOCK:
+- One thin, rigid, perfectly flat plaque, 570 x 125 mm and 4.56:1.
+- Preserve the distinctive shaped ends, slim edge, black outer area, inset white panel and two mounting holes.
+- The plaque never bends, bows, twists, stretches, shrinks, thickens, melts or changes silhouette.
+- The back remains completely plain matte charcoal with no words, symbols or decoration.
+- At the reveal, reproduce the entire front face from the end image and exact artwork reference as one locked texture. It reads MR & MRS JANNAWAY on line one and WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026 on line two, with the same red heart, font, spacing, colours, holes and proportions. Do not retype, redraw, paraphrase or invent lettering.
+
+CAMERA AND CONTINUITY:
+- Locked tripod, chest-height, natural 35-50 mm perspective, 9:16 portrait.
+- No zoom, push-in, crop change, reframing, pan, tilt, roll, shake or focus jump.
+- One real-time take with ordinary natural speed, realistic motion blur, stable workshop lighting and contact shadows.
+- No second person, duplicate sign, extra limb, extra finger, merged hand, floating finger, broken wrist, hand teleport, object teleport, occlusion pop, background morph, caption, logo, UI or generated social text.
+
+The result must read as a genuine continuous human performance, not a still image with a rotating graphic.

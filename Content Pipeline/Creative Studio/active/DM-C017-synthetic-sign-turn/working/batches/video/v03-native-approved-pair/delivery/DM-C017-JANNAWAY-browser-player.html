@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DM-C017 Jannaway — validated Reel</title>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, sans-serif; }
+    body { margin: 0; background: #111; color: #fff; }
+    main { width: min(94vw, 520px); margin: 18px auto 40px; }
+    h1 { margin: 0 0 6px; font-size: 20px; }
+    p { color: #bbb; line-height: 1.4; }
+    video { width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 12px; }
+    .controls { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; margin-top: 10px; }
+    button, a { color: #111; background: #fff; border: 0; border-radius: 8px; padding: 10px 12px; font-weight: 700; text-decoration: none; }
+    input { width: 100%; }
+    .meta { display: flex; justify-content: space-between; gap: 10px; font-variant-numeric: tabular-nums; color: #bbb; margin: 8px 0 14px; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>DM-C017 Jannaway — finished proof</h1>
+    <p>8 seconds · 24 fps · 1080 × 1920 · native sign · no product overlay</p>
+    <video id="player" controls playsinline preload="metadata">
+      <source src="DM-C017-JANNAWAY-master-1080x1920-24fps.mp4" type="video/mp4">
+      Your browser cannot play this H.264 MP4. Use the download links below.
+    </video>
+    <div class="controls">
+      <button id="back" type="button">← 1 frame</button>
+      <input id="seek" type="range" min="0" max="191" step="1" value="0" aria-label="Frame">
+      <button id="forward" type="button">1 frame →</button>
+    </div>
+    <div class="meta">
+      <span id="frame">Frame 0 / 191</span>
+      <span id="time">0.000 s</span>
+    </div>
+    <div class="links">
+      <a href="DM-C017-JANNAWAY-master-1080x1920-24fps.mp4" download>Download master</a>
+      <a href="DM-C017-JANNAWAY-phone-preview-720x1280.mp4" download>Download phone preview</a>
+    </div>
+  </main>
+  <script>
+    const fps = 24;
+    const player = document.getElementById('player');
+    const seek = document.getElementById('seek');
+    const frame = document.getElementById('frame');
+    const time = document.getElementById('time');
+    function show(index) {
+      const clamped = Math.max(0, Math.min(191, Number(index)));
+      player.pause();
+      player.currentTime = clamped / fps;
+      seek.value = clamped;
+      frame.textContent = `Frame ${clamped} / 191`;
+      time.textContent = `${(clamped / fps).toFixed(3)} s`;
+    }
+    seek.addEventListener('input', () => show(seek.value));
+    document.getElementById('back').addEventListener('click', () => show(Number(seek.value) - 1));
+    document.getElementById('forward').addEventListener('click', () => show(Number(seek.value) + 1));
+    player.addEventListener('timeupdate', () => {
+      if (!player.paused) {
+        const index = Math.min(191, Math.floor(player.currentTime * fps));
+        seek.value = index;
+        frame.textContent = `Frame ${index} / 191`;
+        time.textContent = `${player.currentTime.toFixed(3)} s`;
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(Number(seek.value) - 1);
+      if (event.key === 'ArrowRight') show(Number(seek.value) + 1);
+    });
+  </script>
+</body>
+</html>

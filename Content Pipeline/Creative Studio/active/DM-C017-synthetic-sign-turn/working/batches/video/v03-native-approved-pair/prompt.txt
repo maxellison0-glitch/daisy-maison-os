@@ -1,0 +1,76 @@
+Create one native photorealistic 8.0-second vertical workshop video. It is one
+continuous real-time take with no edit, cut, transition, time jump, speed ramp,
+camera move or product-surface replacement.
+
+REFERENCE ROLES — KEEP THESE ROLES SEPARATE:
+
+- START_IMAGE is the authoritative first frame. It shows the consented
+  synthetic Max holding the completely plain white reverse of the sign.
+- END_IMAGE is the authoritative final frame. It shows the same synthetic Max,
+  workshop, hands, camera and the exact approved MR & MRS JANNAWAY sign face.
+  Match this frame exactly at the reveal and throughout the final hold.
+- IMAGE_REFERENCE_1 is the separately approved Jannaway product photograph. It
+  is exact front-face, colour, material, border, lettering and proportion truth.
+- IMAGE_REFERENCE_2 is a real Daisy Maison front-to-edge construction view.
+  Use it only for the thin pale edge, rigidity and physical transition. Ignore
+  its different wording.
+- IMAGE_REFERENCE_3 is a real Daisy Maison back-to-edge construction view.
+  Use it only for the thin pale edge, rigidity and physical transition.
+- IMAGE_REFERENCE_4 is a real Daisy Maison plain-white-back construction view.
+- VIDEO_REFERENCE is a face-excluded crop of a real Daisy Maison sign turn.
+  Use it only for the physical hand choreography, one-direction rotation,
+  changing perspective and realistic edge transition. Do not copy any person,
+  clothing, room, captions, lettering or identity from it.
+
+ACTION AND TIMING:
+
+- 0.00–0.60 seconds: the completely plain white reverse faces the camera. Max
+  makes only a small natural preparatory hand and body movement.
+- 0.60–4.80 seconds: Max turns the same rigid sign through exactly 180 degrees
+  in one smooth, strictly monotonic back-to-front yaw around the sign's vertical
+  axis. The rotation never pauses, reverses, changes axis or hides a cut. The
+  sign remains a horizontal plaque; its projected width narrows naturally to
+  the real thin edge at 90 degrees, then expands naturally to the front.
+- 4.80–5.30 seconds: the rotation completes and the exact approved Jannaway
+  front settles level and large towards camera.
+- 5.30–8.00 seconds: hold the exact approved front continuously readable for
+  2.70 seconds. Keep natural breathing, hand pressure and a subtle satisfied
+  expression; do not freeze the person or sign.
+
+IDENTITY, HAND AND CAMERA LOCK:
+
+- Preserve the same synthetic Max from START_IMAGE and END_IMAGE continuously:
+  same face, age, hair, skin, black T-shirt, jewellery and proportions.
+- Preserve the same workshop and locked chest-height tripod composition.
+- Both five-finger hands remain attached to the real extreme ends of the same
+  sign throughout. Hands, thumbs, wrists, forearms, elbows and shoulders bear
+  the turn naturally. No hand teleporting, extra or merged fingers, broken
+  wrists, duplicate arms, floating grip or occlusion pop.
+- Max's gaze follows the sign naturally, then resolves towards the finished
+  product. No second person.
+- No zoom, push-in, crop change, pan, tilt, roll, camera shake, focus jump,
+  background morph or lighting discontinuity.
+
+PRODUCT LOCK:
+
+- One thin, rigid, perfectly flat Daisy Maison plaque, exactly 570 × 125 mm and
+  4.56:1 in outer proportion, with the approved shaped ends and two holes.
+- The edge must match the supplied real edge views: shallow and pale/white. Do
+  not invent a thick slab, black side wall, bevel, foam board or wooden depth.
+- The reverse is completely plain white. It never has a black border, coloured
+  points, words, symbols, artwork or dark backing.
+- The black border exists on the printed front face only and ends cleanly at
+  the front surface.
+- The plaque never bends, bows, twists, stretches, shrinks, thickens, melts,
+  changes silhouette or changes material.
+- At the reveal, reproduce END_IMAGE and IMAGE_REFERENCE_1 as the native sign
+  face. It must read exactly:
+  MR & MRS JANNAWAY
+  WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026
+- Preserve the exact red heart, fonts, spacing, colour, holes, border and
+  proportions. Do not retype, redraw, paraphrase, substitute, animate or invent
+  any letter. No generated captions, hook, CTA, logo, social UI or watermark.
+
+The final result must look like a genuine continuous human performance with a
+real printed sign. It must not look like a still image, pasted graphic, tracked
+overlay or post-production replacement.

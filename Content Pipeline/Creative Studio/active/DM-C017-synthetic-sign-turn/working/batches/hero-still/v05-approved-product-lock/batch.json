@@ -1,0 +1,107 @@
+{
+  "concept_id": "DM-C017",
+  "batch": "hero-still-v05-approved-product-lock",
+  "status": "human-approved-hero-checkpoint",
+  "model": "nano_banana_flash",
+  "display_name": "Nano Banana 2",
+  "aspect_ratio": "9:16",
+  "resolution": "1k",
+  "take_count": 4,
+  "take_numbers": ["01", "02", "03", "04"],
+  "prompt_variation": false,
+  "references": [
+    {
+      "role": "max_approved_locked_product",
+      "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg",
+      "sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c"
+    },
+    {
+      "role": "consented_synthetic_max_identity_and_workshop_only",
+      "path": "working/motion/DM-C017-end-keyframe.png",
+      "invalid_product_plate_must_be_ignored": true
+    }
+  ],
+  "approved_product_may_change": false,
+  "other_person_identity_allowed": false,
+  "product_surface_compositing_allowed": false,
+  "human_approval_required_before_video": true,
+  "paid_video_allowed": false,
+  "job_ids": [
+    "166349ab-b616-4213-b385-f5e028ce7fb1",
+    "a0a8180f-b1c2-4ba0-99fb-160cbea1860b",
+    "6af1cfb7-6542-4690-aeb4-05ebddb997f3",
+    "7aea6341-a82b-47cd-ac72-a855025ee2fc"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "166349ab-b616-4213-b385-f5e028ce7fb1",
+      "path": "outputs/take-01.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 573004,
+      "sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8",
+      "agent_qc": "recommended-for-human-hero-approval",
+      "note": "Closest identity and pose continuity to the synthetic-Max source, natural product-directed gaze, strong hands and intact approved sign."
+    },
+    {
+      "take": "02",
+      "job_id": "a0a8180f-b1c2-4ba0-99fb-160cbea1860b",
+      "path": "outputs/take-02.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 582260,
+      "sha256": "3bd7be7ee6b5a66bb8c90af09ff7c67a15bc29b3de8d45f2702894202152c294",
+      "agent_qc": "pass-secondary",
+      "note": "Direct gaze and strong product hold; slightly less natural maker expression than Take 01."
+    },
+    {
+      "take": "03",
+      "job_id": "6af1cfb7-6542-4690-aeb4-05ebddb997f3",
+      "path": "outputs/take-03.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 587273,
+      "sha256": "c729feddfc36d8a19535124644a8eaf22b7c3638d0579664c992ec8101c1fe3d",
+      "agent_qc": "pass-secondary",
+      "note": "Largest readable sign and clean direct gaze; sign is slightly wider in frame than the requested target."
+    },
+    {
+      "take": "04",
+      "job_id": "7aea6341-a82b-47cd-ac72-a855025ee2fc",
+      "path": "outputs/take-04.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 585491,
+      "sha256": "10316551143ef31bc65c2cd2f6d03530efa3ee094f95a03526f1efe8c3b9ec34",
+      "agent_qc": "pass-secondary",
+      "note": "Good product and anatomy; sign sits lower and the pose is less matched to the identity endpoint."
+    }
+  ],
+  "contact_sheet": {
+    "path": "contact-sheet-identity-product-takes.jpg",
+    "bytes": 280434,
+    "sha256": "3b7f84b3d1b94593a6d0aefd3435cc0fb3457485dcaf7426eac45243a1e5eab4",
+    "layout": "top row: synthetic-Max identity, approved product Take 03, hero Take 01; bottom row: hero Takes 02, 03 and 04"
+  },
+  "cost": {
+    "quoted_credits_per_take": 1.5,
+    "quoted_total_credits": 6.0,
+    "actual_total_credits": 6.0
+  },
+  "quoted_date": "2026-07-23",
+  "generated_date": "2026-07-23",
+  "verified_account_balance_after": 1476,
+  "post_generation_product_surface_compositing": false,
+  "recommended_take": "01",
+  "human_approval": {
+    "status": "approved",
+    "approved_take": "01",
+    "approved_path": "outputs/take-01.jpg",
+    "approved_sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8",
+    "approved_date": "2026-07-23",
+    "approved_by": "Max Ellison",
+    "approval_quote": "keep gonig ma boi im here to suppport type shi",
+    "approval_interpretation": "Direct instruction to continue after being asked to approve the recommended Hero Take 01 or choose an alternative."
+  }
+}

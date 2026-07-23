@@ -1,0 +1,30 @@
+Create one photorealistic vertical 9:16 still image that will be the final reveal keyframe of an 8-second Daisy Maison Instagram Reel. This is a fully synthetic depiction of Max, made with his consent. Do not add any other person.
+
+REFERENCE ROLES ARE LOCKED:
+- Reference image 1 is the identity, clothing, pose scale and compact workshop anchor. Preserve the same recognisable synthetic Max: short brown-grey hair, subtle stubble, lean build, plain black T-shirt, watch and bracelets, natural skin texture, and the same believable small workshop.
+- Reference image 2 is the exact LightBurn-derived sign-face artwork. Copy the complete sign face from it as one indivisible design. Do not retype, reinterpret, redesign, redraw, restyle, spell-correct, simplify or invent any part.
+- Reference image 3 is material, construction, edge, scale and hand-contact evidence for a real Daisy Maison street sign only. Do not copy its bride, flowers, lighting setup, wording or background.
+
+PRODUCT TRUTH:
+- One thin, rigid, perfectly flat Large Daisy Maison plaque, exactly 570 x 125 mm and 4.56:1 in proportion.
+- Preserve the exact distinctive shaped ends, solid black outer area, inset white face, two small mounting holes and slim physical edge shown by the references.
+- The plaque must not bend, bow, twist, squash, stretch or change proportion.
+- The front face must reproduce reference image 2 exactly, including every letter, space, line break, colour, proportion, heart position and mounting-hole position.
+- The only visible wording is exactly:
+  MR & MRS JANNAWAY
+  WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026
+- Preserve the red heart touching the ampersand exactly as shown. No coloured fiducials, stickers or extra marks.
+
+COMPOSITION AND ANATOMY:
+- Waist-up portrait in the same compact workshop, camera locked at chest height with natural 35–50 mm perspective.
+- Max holds the sign horizontally at lower-chest height with two anatomically correct five-finger hands gripping only the extreme outer black ends.
+- Both hands, thumbs, fingers, wrists and forearms must connect plausibly. Fingers must not cover any lettering or mounting hole.
+- Make the plaque large and dominant: about 82–88% of the frame width, fully inside the frame, nearly parallel to the camera with less than 2 degrees of yaw or pitch so all lettering is large and readable.
+- Preserve believable contact shadows, edge lighting and finger occlusion. Keep the sign rigid.
+- Natural premium workshop realism, soft daylight, restrained contrast, no artificial glamour retouching.
+- No other people, extra hands, extra fingers, duplicate objects, floating fingers, warped wrists, legible background labels, captions, logos, UI, borders or social-media text.
+
+The result must look like one genuine camera exposure of synthetic Max holding the exact finished physical sign, not a pasted graphic or a generated mock-up.
+
+TAKE DIRECTION:
+Geometry-correction maker frame: the OUTER plaque silhouette must be exactly 4.56:1, matching the 570 x 125 mm LightBurn artwork with the correct taller height and shaped ends. Max glances naturally toward the plaque. The workshop contains no duplicate signs, sample signs or legible background wording.

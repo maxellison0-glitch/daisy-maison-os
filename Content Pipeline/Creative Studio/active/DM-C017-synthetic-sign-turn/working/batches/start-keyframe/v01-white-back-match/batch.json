@@ -1,0 +1,110 @@
+{
+  "concept_id": "DM-C017",
+  "batch": "start-keyframe-v01-white-back-match",
+  "status": "human-approved-video-start",
+  "model": "nano_banana_flash",
+  "display_name": "Nano Banana 2",
+  "aspect_ratio": "9:16",
+  "resolution": "1k",
+  "take_count": 4,
+  "take_numbers": ["01", "02", "03", "04"],
+  "prompt_variation": false,
+  "references": [
+    {
+      "role": "approved_hero_edit_target",
+      "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+      "sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8"
+    },
+    {
+      "role": "real_white_back",
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/04-white-back-product-only.jpg"
+    },
+    {
+      "role": "real_back_to_edge",
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/03-back-to-edge-product-only.jpg"
+    },
+    {
+      "role": "real_front_to_edge",
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/02-front-to-edge-product-only.jpg"
+    }
+  ],
+  "front_product_surface_compositing_allowed": false,
+  "paid_video_allowed_after_agent_qc": true,
+  "job_ids": [
+    "5a0efa3c-a069-4fb8-924d-e4d70d36c963",
+    "91686b80-e6b7-4cc3-8aae-0b72b3139d1c",
+    "2c04e7b0-972c-4f26-a9f5-fbca90e53717",
+    "50a5c9ed-34a4-4885-a061-ee8a31756472"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "5a0efa3c-a069-4fb8-924d-e4d70d36c963",
+      "path": "outputs/take-01.png",
+      "width": 768,
+      "height": 1376,
+      "bytes": 1287275,
+      "sha256": "0aabeee005246cd1a98dd747ac06049d9c4e62be3bb72360504f9545b0d7a702",
+      "agent_qc": "selected-for-video-start",
+      "note": "Closest composition and identity match to approved Hero Take 01; coherent white back, shaped ends and two holes; highest-quality native PNG."
+    },
+    {
+      "take": "02",
+      "job_id": "91686b80-e6b7-4cc3-8aae-0b72b3139d1c",
+      "path": "outputs/take-02.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 512523,
+      "sha256": "7c75bcacff26f86561a55035b431c4c8edfea518829320b912360d3d5a5ff2d9",
+      "agent_qc": "pass-secondary"
+    },
+    {
+      "take": "03",
+      "job_id": "2c04e7b0-972c-4f26-a9f5-fbca90e53717",
+      "path": "outputs/take-03.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 516509,
+      "sha256": "01f1143d145355dbb702681247b5332aaa9360dbd4ce9775776a3af8aabe1522",
+      "agent_qc": "pass-secondary"
+    },
+    {
+      "take": "04",
+      "job_id": "50a5c9ed-34a4-4885-a061-ee8a31756472",
+      "path": "outputs/take-04.jpg",
+      "width": 768,
+      "height": 1376,
+      "bytes": 516365,
+      "sha256": "87e6a773f5f142567376745f0454f03f8737c454a441e0ccc54a0f72134d7864",
+      "agent_qc": "pass-secondary"
+    }
+  ],
+  "contact_sheet": {
+    "path": "contact-sheet-real-back-end-starts.jpg",
+    "bytes": 235637,
+    "sha256": "a8cd596219c6fc7cdcb9884684390733bb94302cf233c6c16b92b91674ffee62",
+    "layout": "top row: real white back, approved front endpoint, start Take 01; bottom row: start Takes 02, 03 and 04"
+  },
+  "cost": {
+    "quoted_credits_per_take": 1.5,
+    "quoted_total_credits": 6.0,
+    "actual_total_credits": 6.0
+  },
+  "quoted_date": "2026-07-23",
+  "generated_date": "2026-07-23",
+  "verified_account_balance_after": 1470,
+  "selected_take": "01",
+  "selected_start_path": "outputs/take-01.png",
+  "selected_end_path": "../../hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+  "human_approval": {
+    "status": "approved",
+    "approved_take": "01",
+    "approved_path": "outputs/take-01.png",
+    "approved_sha256": "0aabeee005246cd1a98dd747ac06049d9c4e62be3bb72360504f9545b0d7a702",
+    "approved_date": "2026-07-23",
+    "approved_by": "Max Ellison",
+    "approval_quote": "ah yes spot on. continue",
+    "approval_context": "Max explicitly approved the isolated plain-white reverse after distinguishing it from the obsolete black-border four-point engineering marker."
+  },
+  "post_generation_product_surface_compositing": false
+}

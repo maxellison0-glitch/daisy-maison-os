@@ -1,0 +1,81 @@
+{
+  "concept_id": "DM-C017",
+  "batch": "video-v03-native-approved-pair",
+  "status": "finished-master-verified-native-video-human-approved",
+  "model": "seedance_2_0",
+  "display_name": "Seedance 2.0",
+  "mode": "std",
+  "resolution": "1080p",
+  "aspect_ratio": "9:16",
+  "duration_seconds": 8,
+  "bitrate_mode": "high",
+  "generate_audio": false,
+  "take_count": 1,
+  "job_id": "bf94cfac-e34f-4da7-8922-6cfc8322b1fc",
+  "result": {
+    "path": "seedance-raw.mp4",
+    "bytes": 38835249,
+    "sha256": "8239be73824ac44d5b89704e0fedc7b5ffc2744d62a0fb2f55f62125ce901c6e",
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260723_160835_bf94cfac-e34f-4da7-8922-6cfc8322b1fc.mp4"
+  },
+  "human_approval": {
+    "status": "approved",
+    "score_out_of_10": 8.5,
+    "approved_date": "2026-07-23",
+    "approved_by": "Max Ellison",
+    "approval_quote": "I would give that like an 8.5/10. It's pretty much solid from a realistic perspective.",
+    "approved_as_engineering_method": true
+  },
+  "cost": {
+    "quoted_credits": 72,
+    "actual_credits": 72,
+    "quoted_date": "2026-07-23",
+    "verified_account_balance_after": 1398
+  },
+  "rotation": {
+    "degrees": 180,
+    "axis": "vertical",
+    "monotonic": true,
+    "hard_cuts_allowed": false
+  },
+  "approved_start": {
+    "path": "../../../start-keyframe/v01-white-back-match/outputs/take-01.png",
+    "sha256": "0aabeee005246cd1a98dd747ac06049d9c4e62be3bb72360504f9545b0d7a702",
+    "human_approved": true
+  },
+  "approved_end": {
+    "path": "../../../hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+    "sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8",
+    "human_approved": true
+  },
+  "qc": {
+    "decoded_frames": 193,
+    "fps": 24,
+    "duration_seconds": 8.041666666666666,
+    "all_native_frames_inspected": true,
+    "hard_cut_detected": false,
+    "plain_white_reverse_pass": true,
+    "thin_pale_edge_pass": true,
+    "identity_pass": true,
+    "hands_pass": true,
+    "rigid_shape_pass": true,
+    "lettering_compare_first_frame": 112,
+    "lettering_compare_last_frame": 192,
+    "lettering_compare_frames": 81,
+    "readable_hold_seconds": 3.375,
+    "lettering_pass": true,
+    "native_product_realism_human_score_out_of_10": 8.5
+  },
+  "delivery": {
+    "master_path": "delivery/DM-C017-JANNAWAY-master-1080x1920-24fps.mp4",
+    "master_sha256": "7cfb52c26fa5727817e718e282a59bb5aa80377ee1730533629ad602d25a2a0b",
+    "master_frames": 192,
+    "master_duration_seconds": 8.0,
+    "phone_preview_path": "delivery/DM-C017-JANNAWAY-phone-preview-720x1280.mp4",
+    "phone_preview_sha256": "4730e21852a05367f4ac36a321e546ee3a9c3baea863befcb8432dd3fa82522f",
+    "audio_present": true,
+    "product_overlay_intersects_sign": false
+  },
+  "post_generation_product_surface_compositing": false,
+  "publish_allowed": false
+}

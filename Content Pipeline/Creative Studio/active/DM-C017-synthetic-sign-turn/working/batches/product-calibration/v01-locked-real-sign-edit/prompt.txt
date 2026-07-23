@@ -1,0 +1,11 @@
+EDIT REFERENCE IMAGE 1. Keep it the same real Daisy Maison product photograph.
+
+MAKE EXACTLY ONE CHANGE: replace only the printing on the front of the existing sign with the complete Jannaway printing shown in reference image 2.
+
+Reference image 1 is the locked authority for the manufactured object and photograph. Preserve its exact sign silhouette, overall proportions, broad black printed border and shaped end areas, white inset, two mounting holes, rigid flat material, shallow pale sheet depth, surface reflectance, perspective, hand contact, finger occlusion, contact shadows, background, crop, exposure, focus, grain and lens character. Do not narrow, redraw or reinterpret its black border. Do not change the person or reveal, identify, extend or invent the cropped holder.
+
+Reference image 2 is the LightBurn-derived replacement printing. Use it only to replace the existing front printing. Reproduce exactly: "MR & MRS JANNAWAY"; the small red heart touching the ampersand; "WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026"; the exact letter forms, spacing, line placement and relative scale. Do not add, omit, respell, restyle or paraphrase any character.
+
+The replacement printing must be physically printed into the same photographed surface with the same off-white tone, lighting, reflections, texture, softness and grain as the real sign. It must not look pasted on. No new white panel, different-white rectangle, sticker, floating layer, overlay seam, vector-sharp insert, mock-up or screen.
+
+Do not redesign or regenerate the sign. Do not alter anything except its existing printed content. Return one natural landscape product photograph with no new caption, logo or UI.

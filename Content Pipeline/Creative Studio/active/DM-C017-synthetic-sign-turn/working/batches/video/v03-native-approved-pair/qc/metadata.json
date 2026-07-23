@@ -1,0 +1,109 @@
+{
+  "video": "working/batches/video/v03-native-approved-pair/seedance-raw.mp4",
+  "bytes": 38835249,
+  "sha256": "8239be73824ac44d5b89704e0fedc7b5ffc2744d62a0fb2f55f62125ce901c6e",
+  "width": 1080,
+  "height": 1920,
+  "fps": 24.0,
+  "frames": 193,
+  "duration_seconds": 8.041666666666666,
+  "frame_files": 193,
+  "all_frames_in_dense_overview": true,
+  "all_frames_in_numbered_sheets": true,
+  "numbered_sheet_count": 9,
+  "endpoint_metrics": {
+    "approved_start_to_video_first_mae": 6.531248070987655,
+    "approved_start_to_video_first_psnr": 26.358139808544216,
+    "approved_end_to_video_last_mae": 9.479925250771604,
+    "approved_end_to_video_last_psnr": 21.544274556794765,
+    "note": "Compression and model synthesis make pixel identity impossible; these metrics support, but do not replace, visual QC."
+  },
+  "largest_frame_to_frame_differences": [
+    {
+      "between_frames": [
+        71,
+        72
+      ],
+      "mean_absdiff": 3.5792502572016462
+    },
+    {
+      "between_frames": [
+        23,
+        24
+      ],
+      "mean_absdiff": 3.0447852366255144
+    },
+    {
+      "between_frames": [
+        119,
+        120
+      ],
+      "mean_absdiff": 2.902375900205761
+    },
+    {
+      "between_frames": [
+        70,
+        71
+      ],
+      "mean_absdiff": 2.6676311728395063
+    },
+    {
+      "between_frames": [
+        110,
+        111
+      ],
+      "mean_absdiff": 2.499051568930041
+    },
+    {
+      "between_frames": [
+        111,
+        112
+      ],
+      "mean_absdiff": 2.482156635802469
+    },
+    {
+      "between_frames": [
+        112,
+        113
+      ],
+      "mean_absdiff": 2.4652134773662553
+    },
+    {
+      "between_frames": [
+        113,
+        114
+      ],
+      "mean_absdiff": 2.4552147633744856
+    },
+    {
+      "between_frames": [
+        95,
+        96
+      ],
+      "mean_absdiff": 2.4426118827160495
+    },
+    {
+      "between_frames": [
+        109,
+        110
+      ],
+      "mean_absdiff": 2.4408596965020575
+    },
+    {
+      "between_frames": [
+        114,
+        115
+      ],
+      "mean_absdiff": 2.427051183127572
+    },
+    {
+      "between_frames": [
+        108,
+        109
+      ],
+      "mean_absdiff": 2.395849408436214
+    }
+  ],
+  "agent_visual_qc": "pending",
+  "product_surface_compositing": false
+}

@@ -1,0 +1,23 @@
+{
+  "role": "motion_and_product_construction_only",
+  "source": "source/real-product-reference-pack/instagram-DPjdseCDbDR/daisymaison-reel-DPjdseCDbDR-video.mp4",
+  "source_width": 1080,
+  "source_height": 1920,
+  "source_fps": 30.0,
+  "source_frames": 300,
+  "crop": {
+    "x": 0,
+    "y": 760,
+    "width": 1080,
+    "height": 740
+  },
+  "source_frame_range": {
+    "start_inclusive": 60,
+    "end_exclusive": 181,
+    "purpose": "white-back through the real thin edge; excludes the readable source front"
+  },
+  "output": "working/batches/video/v03-native-approved-pair/inputs/real-turn-face-excluded.mp4",
+  "output_frames": 121,
+  "face_and_identity_excluded": true,
+  "must_not_supply_identity": true
+}

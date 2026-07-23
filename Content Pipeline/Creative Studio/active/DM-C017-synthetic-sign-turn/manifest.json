@@ -1,0 +1,700 @@
+{
+  "concept_id": "DM-C017",
+  "version": "v03-native-approved-pair",
+  "recorded_date": "2026-07-23",
+  "status": "validated-white-wedding-sign-engineering-prompt-workflow-not-published",
+  "published": false,
+  "validated_scope": {
+    "workflow_name": "Wedding Sign Engineering Prompt Workflow",
+    "product_family": "white wedding sign",
+    "proved_style": "white face and reverse, broad black front border, black Times New Roman wedding wording, red heart",
+    "not_validated": [
+      "coloured signs with black text",
+      "coloured signs with coloured text",
+      "non-wedding sign families"
+    ]
+  },
+  "concept": {
+    "duration_seconds": 8.0,
+    "fps": 24,
+    "frame_count": 192,
+    "action": "one continuous monotonic back-to-front 180-degree generated turn with no hard cut",
+    "motion_note": "Validated v03 uses one continuous monotonic back-to-front vertical-axis yaw.",
+    "hook": [
+      "THEIR NEW SURNAME",
+      "DESERVES A STREET SIGN"
+    ],
+    "cta": "PERSONALISE THEIRS →",
+    "suggested_caption": "Two names, one date, and a wedding gift nobody else owns. Personalise yours."
+  },
+  "sign": {
+    "line_1": "MR & MRS JANNAWAY",
+    "line_2": "WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026",
+    "source_type": "existing incoming order artwork",
+    "source_order_artwork": "projects/daisy-street-sign/artwork/orders/DM37174.svg",
+    "size": "Large",
+    "finished_size_mm": [
+      570,
+      125
+    ],
+    "aspect_ratio": 4.56,
+    "font": "Times New Roman regular",
+    "vertical_scale": 1.4,
+    "frame_and_text_colour": "#010101",
+    "panel_colour": "#FFFFFF",
+    "laser_ready": false,
+    "laser_ready_note": "The audited LightBurn contour and settings exist, but printer/RIP/nesting/laser handoff is not implemented and still requires office validation."
+  },
+  "shopify_demand": {
+    "access": "read-only",
+    "sample_scope": "latest 50 orders since 2026-04-01",
+    "matching_sign_units": 48,
+    "mr_and_mrs_surname_units": 43,
+    "units_with_date": 44,
+    "mutations": 0,
+    "private_customer_fields_saved": false
+  },
+  "canonical_sources": [
+    {
+      "path": "projects/daisy-street-sign/artwork/build.py",
+      "bytes": 12141,
+      "sha256": "0fa8a168613863f00cec42c0894c8d4e4c5a477f87dc47ee60ba02a04654c81b"
+    },
+    {
+      "path": "projects/daisy-street-sign/artwork/assets/times.ttf",
+      "bytes": 1195688,
+      "sha256": "2cff2a03d8034801979dd6d16f09b9a825c3d710fcf068f2ebfbf0e1425c87cf"
+    },
+    {
+      "path": "projects/daisy-street-sign/source/source-data.js",
+      "bytes": 13237,
+      "sha256": "c16852abf80a6d13ce3bfac4b44f5bcd15279278efe7fbfcf976a8beaf120492"
+    },
+    {
+      "path": "projects/daisy-street-sign/artwork/orders/DM37174.svg",
+      "bytes": 136818,
+      "sha256": "6f1c2bd68f0c88bd717197f45c91c3efd43e960e7f39bba5fbb7cda5b67fdf45"
+    },
+    {
+      "path": "projects/daisy-street-sign/artwork/orders/DM37174.png",
+      "bytes": 96045,
+      "sha256": "01bacd1127fa747a851b83408ba582d0d2585260317ea3557c96442399b416a2"
+    },
+    {
+      "path": "projects/daisy-street-sign/references/mr-mrs-live-product-reference.jpg",
+      "bytes": 368976,
+      "sha256": "160cbfd81c434437628cbc98f9799bca22ca99dd8a3b91c0ec56a91aa62cfcd3"
+    }
+  ],
+  "real_product_reference_pack": {
+    "status": "complete-construction-truth-only",
+    "source_url": "https://www.instagram.com/daisymaison/reel/DPjdseCDbDR/",
+    "source_owner": "Daisy Maison",
+    "downloaded_for": "internal product-reference and QC",
+    "video": {
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/daisymaison-reel-DPjdseCDbDR-video.mp4",
+      "bytes": 1509852,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "frame_count": 300,
+      "duration_seconds": 10.0,
+      "sha256": "c160fd4795e63afe277b440b45b2527544d7a099bd2502d13b2da88324a070b9"
+    },
+    "selected_views": [
+      {
+        "view": "printed-front",
+        "source_frame_zero_based": 240,
+        "time_seconds": 8.0,
+        "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/selected/01-front-frame-240-t08.000.jpg",
+        "sha256": "f584d777445a1abfdb3a436f8044aada4dd921bff200eb5ecca57c0691c7df03"
+      },
+      {
+        "view": "front-to-edge",
+        "source_frame_zero_based": 180,
+        "time_seconds": 6.0,
+        "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/selected/02-front-to-edge-frame-180-t06.000.jpg",
+        "sha256": "7562c36447d3a4cecd2dce2b44beda2af728635f5d36c8caf5f164aef18cf19b"
+      },
+      {
+        "view": "back-to-edge",
+        "source_frame_zero_based": 135,
+        "time_seconds": 4.5,
+        "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/selected/03-back-to-edge-frame-135-t04.500.jpg",
+        "sha256": "0efa9fb07149e428d7a7e4553a713cfcd2759115bc49ae1f43153514f7fe5c21"
+      },
+      {
+        "view": "white-back",
+        "source_frame_zero_based": 60,
+        "time_seconds": 2.0,
+        "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/selected/04-white-back-frame-060-t02.000.jpg",
+        "sha256": "b00ae16d857b02318b298bb1d627c9abf6a9cbd8fba0b4b142892bda467107e7"
+      }
+    ],
+    "product_only_crop_board": {
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/product-reference-pack.jpg",
+      "bytes": 42617,
+      "sha256": "84a1325a972ce2ae2f911d49af792c42062a46f0371babf4a821a9ee324a7ede"
+    },
+    "frame_browser": {
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/FRAME_BROWSER.html",
+      "requires_mp4_playback": false,
+      "sha256": "a5f6923617b7e0ecc22b825c541c605ecf37ee7ac7a3a4d30db2042c025abbbd"
+    },
+    "physical_truth": {
+      "edge": "very thin and pale/white",
+      "back": "plain white",
+      "black_perimeter": "front-face artwork only, not a black side or reverse",
+      "rigidity": "flat and rigid through the real turn"
+    },
+    "other_person_identity_reference_allowed": false,
+    "human_approved_exact_personalised_source_image": false
+  },
+  "exact_sign_assets": [
+    {
+      "path": "assets/DM-C017-JANNAWAY-V02-sign-face.svg",
+      "bytes": 136830,
+      "sha256": "e180b9e0a4a11825541d7c545fe01b534cf40bacc87c47383bc56fc2ea6b6184"
+    },
+    {
+      "path": "assets/DM-C017-JANNAWAY-V02-sign-face.png",
+      "bytes": 113513,
+      "pixels": [
+        2280,
+        500
+      ],
+      "sha256": "691c5ef8a68b7fc05e4971dd16d19c5c0af191c571080ca462bcd8563a50ce82"
+    },
+    {
+      "path": "assets/DM-C017-JANNAWAY-V02-sign-face.pdf",
+      "bytes": 138905,
+      "page_mm": [
+        570,
+        125
+      ],
+      "sha256": "1628f8a149312edca56216c0390cb7bdb52c5072804a48d5029407b57ce5456a"
+    }
+  ],
+  "synthetic_identity": {
+    "consent": "Max explicitly consented to synthetic use of his own likeness.",
+    "other_people_cloned": 0,
+    "source_references": [
+      {
+        "path": "source/max-workshop-back-reference.webp",
+        "sha256": "4a61f1f4ea8a13f27b41ff212a0f6e034f030529b64e8239a6ec856029252f51"
+      },
+      {
+        "path": "source/max-workshop-side-reference.webp",
+        "sha256": "2f0551c5deda735bfc80f129fae37c4ae5a5b4f39f0cb72042a8991cbd85b37e"
+      },
+      {
+        "path": "source/max-workshop-profile-reference.webp",
+        "sha256": "5a7129c797ef58736ba0387e2a0f67f8bc1b1ee021f903d7d03875907c30c397"
+      }
+    ]
+  },
+  "higgsfield_connection": {
+    "working_executable": "C:/Users/Max Ellison/AppData/Local/Programs/nodejs/node_modules/@higgsfield/cli/vendor/hf.exe",
+    "failed_wrapper": "higgsfield.cmd",
+    "failure_evidence": "Six wrapper jobs were stored as 1:1 with zero media references and only a 230-character first-paragraph prompt.",
+    "durable_rule": "Use vendor hf.exe, one prompt argument or --prompt=<value>, avoid embedded literal double quotes, quote with generate cost, and inspect generate get <id> --json.",
+    "malformed_job_ids": [
+      "29551b47-96cf-4012-a906-a772b221b10e",
+      "c3dbfbd1-d3bf-4deb-97ba-ac4191852b34",
+      "d2f00da2-2f16-48ed-aa2d-188f7313d989",
+      "b77b628c-79cb-4558-9aa3-ebb1933fa183",
+      "aca06530-8f63-4c95-8544-57b7e9f3ac26",
+      "acb6fd49-6d5d-48c5-bdde-2af3077ed9fa"
+    ],
+    "malformed_credits": 9.0
+  },
+  "stills": {
+    "model": "nano_banana_flash",
+    "display_name": "Nano Banana 2",
+    "resolution": "1k",
+    "aspect_ratio": "9:16",
+    "references_per_job": 3,
+    "valid_job_ids": [
+      "638bcec0-f347-42e2-9e5c-ff9499991121",
+      "0f67694c-4b09-4a97-9bf5-2591208ffcb1",
+      "28e294fe-942d-4246-874b-85a34136566a",
+      "75610b5a-e9ed-4b6a-a368-8d00e4e6d260",
+      "c256bc4b-3b2e-4065-b3d5-0d127fe2b93c",
+      "48d7a48b-f7dd-4205-9345-bed2775b1d04"
+    ],
+    "selected_job_id": "48d7a48b-f7dd-4205-9345-bed2775b1d04",
+    "credits_per_job": 1.5,
+    "valid_credits": 9.0,
+    "selected_output": {
+      "path": "working/batches/hero-still/v02-jannaway/outputs/take-08.png",
+      "bytes": 1564506,
+      "sha256": "1a8f5a1374fc9abc8e4a30d50921c3cc300c2bf6ac37a597a07fe268f1c16bbe"
+    },
+    "exact_face_output": {
+      "path": "working/batches/hero-still/v02-jannaway/hero-take-08-exact-face.png",
+      "bytes": 1324505,
+      "sha256": "16bab59954f0aaf0c5f558f28aa428c89b48bbeff170246a0b9db7741f501aaa",
+      "status": "rejected-composite-not-valid-video-reference"
+    }
+  },
+  "coherent_still_gate_v03": {
+    "status": "generated-all-rejected",
+    "model": "nano_banana_flash",
+    "display_name": "Nano Banana 2",
+    "resolution": "1k",
+    "aspect_ratio": "9:16",
+    "references_per_job": 6,
+    "product_surface_compositing_used": false,
+    "jobs": [
+      {
+        "take": "01",
+        "job_id": "76d6dd29-6a9a-4f89-b2ed-4913516fd7df",
+        "path": "working/batches/hero-still/v03-real-construction/outputs/take-01.png",
+        "sha256": "f02cb47e86e6f9d1a1b5e2b6bbe9fa6174a0e4864a635a2f69f3601bfe3216ab",
+        "agent_qc": "rejected-black-front-band-too-thin"
+      },
+      {
+        "take": "02",
+        "job_id": "c5f44c5f-55fe-4617-ad21-7dcb0f3b203a",
+        "path": "working/batches/hero-still/v03-real-construction/outputs/take-02.png",
+        "sha256": "7746386a40417a62a855afb44d422ded7ac3ffbc47ece1c43c5b4abc92162924",
+        "agent_qc": "rejected-black-front-band-too-thin"
+      },
+      {
+        "take": "03",
+        "job_id": "4f240f84-0622-488d-805f-191b6cd06763",
+        "path": "working/batches/hero-still/v03-real-construction/outputs/take-03.png",
+        "sha256": "f87bb500b9e94df5914d9e4fedd7afd9df9df8b427e55e50895cf3fb942b4aea",
+        "agent_qc": "rejected-missing-black-front-border"
+      },
+      {
+        "take": "04",
+        "job_id": "01436c8d-b89a-414a-91db-9db1ccd35954",
+        "path": "working/batches/hero-still/v03-real-construction/outputs/take-04.png",
+        "sha256": "f33e3e169e2f98d288347af6f1a2fa7c8c5b2a1c62eb37a1411385df8c0d3570",
+        "agent_qc": "rejected-black-front-band-too-thin"
+      }
+    ],
+    "quoted_credits_per_job": 1.5,
+    "actual_credits": 6.0,
+    "verified_account_balance_after": 1488,
+    "human_approval": {
+      "status": "ineligible-all-rejected",
+      "approved_take": null
+    }
+  },
+  "border_correction_gate_v04": {
+    "status": "aborted-before-generation",
+    "path": "working/batches/hero-still/v04-border-correction",
+    "model": "nano_banana_flash",
+    "quoted_credits_per_job": 1.5,
+    "planned_job_count": 4,
+    "actual_job_count": 0,
+    "actual_credits": 0,
+    "reason": "The prompt still split product truth across artwork, construction references and numeric geometry instead of locking one real manufactured sign and changing only its printing."
+  },
+  "product_calibration_v01": {
+    "status": "human-approved-validated-product-checkpoint",
+    "path": "working/batches/product-calibration/v01-locked-real-sign-edit",
+    "model": "nano_banana_flash",
+    "display_name": "Nano Banana 2",
+    "resolution": "1k",
+    "aspect_ratio": "16:9",
+    "references_per_job": 2,
+    "prompt_variation": false,
+    "locked_real_sign_master": {
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/01-front-product-only.jpg",
+      "bytes": 34135,
+      "sha256": "4de7858d22906267bfa0afa624693f92b89df798b427c948567f4a6152e8ab7b"
+    },
+    "replacement_printing": {
+      "path": "assets/DM-C017-JANNAWAY-V02-sign-face.png",
+      "sha256": "691c5ef8a68b7fc05e4971dd16d19c5c0af191c571080ca462bcd8563a50ce82"
+    },
+    "submitted_prompt": {
+      "path": "working/batches/product-calibration/v01-locked-real-sign-edit/prompt.txt",
+      "bytes": 1686,
+      "sha256": "cbfc7715231c47ba88d2dfd4e6e64a0a79659ccc6afd272d4e7449ef31b0cdc1"
+    },
+    "jobs": [
+      {
+        "take": "01",
+        "job_id": "6b50a1b2-ac90-4621-a763-bb0ea72a1902",
+        "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-01.jpg",
+        "width": 1376,
+        "height": 768,
+        "bytes": 519988,
+        "sha256": "e29d79e4c0c2ce53c2b0beb02d30364df68fdc31030cd44a65c1e4653b32e962",
+        "agent_qc": "rejected-exact-art-heart-simplified"
+      },
+      {
+        "take": "02",
+        "job_id": "91c3e535-fe6f-400b-9abe-a5c263ffd681",
+        "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-02.jpg",
+        "width": 1376,
+        "height": 768,
+        "bytes": 543447,
+        "sha256": "1ae83cca1afb4dda263604ee7bb09a7883acc5a8a0ba9fb4070ea00e3572a40e",
+        "agent_qc": "product-realism-candidate"
+      },
+      {
+        "take": "03",
+        "job_id": "4c0831d8-b5b2-4beb-960a-9848a5b76823",
+        "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg",
+        "width": 1376,
+        "height": 768,
+        "bytes": 555055,
+        "sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+        "agent_qc": "recommended-for-human-product-approval"
+      },
+      {
+        "take": "04",
+        "job_id": "8962bdd9-8bb4-4cc4-880a-2f1850d7d080",
+        "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-04.jpg",
+        "width": 1376,
+        "height": 768,
+        "bytes": 577800,
+        "sha256": "62039aaf5b53fb11c4625ddfa3ab82419712f4a9f679d0a7421e7f8638fe7d6b",
+        "agent_qc": "product-realism-candidate"
+      }
+    ],
+    "contact_sheet": {
+      "path": "working/batches/product-calibration/v01-locked-real-sign-edit/contact-sheet-master-target-takes.jpg",
+      "bytes": 256475,
+      "sha256": "1adfd7e7d9c086f70a3c6c0fe841c2cbd8de0bcc9e3a5e117670581c72926cd6"
+    },
+    "quoted_credits_per_job": 1.5,
+    "actual_credits": 6.0,
+    "verified_account_balance_after": 1482,
+    "product_surface_compositing_used": false,
+    "strict_automatic_pass": false,
+    "recommended_take": "03",
+    "remaining_exact_art_caveat": "The heart is natively re-rendered rather than demonstrably pixel-identical.",
+    "human_approval": {
+      "status": "approved",
+      "approved_take": "03",
+      "approved_path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg",
+      "approved_sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+      "approved_date": "2026-07-23",
+      "approved_by": "Max Ellison",
+      "approval_record": "approvals/PRODUCT_IMAGE_CHECKPOINT.md"
+    }
+  },
+  "hero_still_v05": {
+    "status": "human-approved-hero-checkpoint",
+    "path": "working/batches/hero-still/v05-approved-product-lock",
+    "model": "nano_banana_flash",
+    "display_name": "Nano Banana 2",
+    "resolution": "1k",
+    "aspect_ratio": "9:16",
+    "references_per_job": 2,
+    "prompt_variation": false,
+    "locked_product_source": {
+      "path": "working/batches/product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg",
+      "sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+      "human_approved": true
+    },
+    "synthetic_max_source": {
+      "path": "working/motion/DM-C017-end-keyframe.png",
+      "role": "identity, clothing, body scale and workshop only",
+      "invalid_marker_plate_ignored": true
+    },
+    "jobs": [
+      {
+        "take": "01",
+        "job_id": "166349ab-b616-4213-b385-f5e028ce7fb1",
+        "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+        "width": 768,
+        "height": 1376,
+        "bytes": 573004,
+        "sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8",
+        "agent_qc": "recommended-for-human-hero-approval"
+      },
+      {
+        "take": "02",
+        "job_id": "a0a8180f-b1c2-4ba0-99fb-160cbea1860b",
+        "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-02.jpg",
+        "width": 768,
+        "height": 1376,
+        "bytes": 582260,
+        "sha256": "3bd7be7ee6b5a66bb8c90af09ff7c67a15bc29b3de8d45f2702894202152c294",
+        "agent_qc": "pass-secondary"
+      },
+      {
+        "take": "03",
+        "job_id": "6af1cfb7-6542-4690-aeb4-05ebddb997f3",
+        "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-03.jpg",
+        "width": 768,
+        "height": 1376,
+        "bytes": 587273,
+        "sha256": "c729feddfc36d8a19535124644a8eaf22b7c3638d0579664c992ec8101c1fe3d",
+        "agent_qc": "pass-secondary"
+      },
+      {
+        "take": "04",
+        "job_id": "7aea6341-a82b-47cd-ac72-a855025ee2fc",
+        "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-04.jpg",
+        "width": 768,
+        "height": 1376,
+        "bytes": 585491,
+        "sha256": "10316551143ef31bc65c2cd2f6d03530efa3ee094f95a03526f1efe8c3b9ec34",
+        "agent_qc": "pass-secondary"
+      }
+    ],
+    "contact_sheet": {
+      "path": "working/batches/hero-still/v05-approved-product-lock/contact-sheet-identity-product-takes.jpg",
+      "bytes": 280434,
+      "sha256": "3b7f84b3d1b94593a6d0aefd3435cc0fb3457485dcaf7426eac45243a1e5eab4"
+    },
+    "quoted_credits_per_job": 1.5,
+    "actual_credits": 6.0,
+    "verified_account_balance_after": 1476,
+    "product_surface_compositing_used": false,
+    "recommended_take": "01",
+    "human_approval": {
+      "status": "approved",
+      "approved_take": "01",
+      "approved_path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+      "approved_sha256": "0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8",
+      "approved_date": "2026-07-23",
+      "approved_by": "Max Ellison",
+      "approval_record": "approvals/HERO_IMAGE_CHECKPOINT.md"
+    }
+  },
+  "video_generation": {
+    "model": "seedance_2_0",
+    "display_name": "Seedance 2.0",
+    "mode": "std",
+    "resolution": "1080p",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "duration_seconds": 8,
+    "bitrate_mode": "high",
+    "generate_audio": false,
+    "multi_shots": false,
+    "job_id": "7d7f3cb6-13ce-4721-bcc1-fc0d369de561",
+    "start_media_id": "d6675e0b-0224-4220-80b7-bd2692592e08",
+    "end_media_id": "ed03186d-b8ea-4966-9a4d-a61dbe9b8e8f",
+    "exact_art_media_id": "fec3fcac-f0db-4676-ba99-12a6d23b00f1",
+    "credits": 72,
+    "raw": {
+      "path": "working/batches/video/v02-jannaway/seedance-raw.mp4",
+      "bytes": 35954202,
+      "sha256": "fd187238800f91e2159d37d674da64bbe2078da61719c8e7398893a6a344f77a"
+    }
+  },
+  "deterministic_finish": {
+    "status": "retired-forbidden-product-surface-overlay",
+    "script": "tools/finish_seedance_reel.py",
+    "method": "SIFT source-to-frame homography from frame 84, backwards pyramidal optical flow, exact RGBA face mapping, photographed-face support clipping and semantic end-grip occlusion",
+    "mapped_frame_range": [
+      70,
+      191
+    ],
+    "mapped_frame_count": 122,
+    "generated_lettering_used_as_source": false,
+    "allowed_for_reuse": false,
+    "sound": "deterministic room texture, turn whoosh, settle/click and reveal chime"
+  },
+  "outputs": [
+    {
+      "path": "exports/DM-C017-JANNAWAY-master-1080x1920.mp4",
+      "bytes": 7325341,
+      "sha256": "0303e15853373c78188140edfc6e1b988fe735f7d5c8bcd458acba0e6685a9c6",
+      "video": "H.264 High, yuv420p, 1080x1920, 24 fps, 192 frames",
+      "audio": "AAC LC, 48 kHz stereo, approximately 192 kb/s",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "exports/DM-C017-JANNAWAY-phone-preview-720x1280.mp4",
+      "bytes": 1229929,
+      "sha256": "c5511c0e558f0287f78f8570b196b5d8ad9754f4d84d6bcc7c182089b487b6e4",
+      "video": "H.264, 720x1280, 24 fps, 192 frames",
+      "audio": "AAC",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "exports/DM-C017-JANNAWAY-synthetic-sound.wav",
+      "bytes": 1536044,
+      "sha256": "735c2e2da6663c85c8f475feb9c737db7a52d299ddef0d6416e06f13c7c77d66"
+    },
+    {
+      "path": "exports/DM-C017-JANNAWAY-browser-player.html",
+      "bytes": 1129,
+      "sha256": "8d65f5b246f8f7f4d9637cea1d4aa6aba9d33d7de341408d23780330cf533dac"
+    }
+  ],
+  "qc": {
+    "overall_pass": false,
+    "human_product_realism_pass": false,
+    "source_image_method_pass": false,
+    "native_product_surface_pass": false,
+    "thickness_pass": false,
+    "white_back_pass": false,
+    "product_surface_overlay_used": true,
+    "format_pass": true,
+    "continuity_pass": true,
+    "hard_cut_pass": true,
+    "identity_manual_pass": true,
+    "hands_manual_pass": true,
+    "rigid_sign_manual_pass": true,
+    "lettering_source_mapping_pass": true,
+    "consecutive_frame_difference_median": 1.0543055555555556,
+    "consecutive_frame_difference_max": 4.686628086419753,
+    "hard_cut_limit": 22.0,
+    "final_hold_ink_iou_min": 0.7035841685068795,
+    "final_hold_ink_iou_mean": 0.7149536602777566,
+    "metric_note": "Historical diagnostic only. Source-pixel mapping, format and continuity did not test coherent border colour, material, thin profile or white reverse and cannot constitute acceptance.",
+    "rejection_reasons": [
+      "The video reference still already contained a composited exact face.",
+      "The final product surface used a tracked whole-face replacement.",
+      "The replacement panel is visibly whiter than the physical border.",
+      "Missing edge references allowed an excessively thick sign.",
+      "Missing reverse reference allowed a black back instead of Daisy Maison white."
+    ],
+    "evidence": [
+      {
+        "path": "qc/DM-C017-JANNAWAY-V02/DM-C017-JANNAWAY-full-reel-filmstrip.jpg",
+        "bytes": 530028,
+        "sha256": "6b36607ccc6277822e5096505d2bdcc4205e64bc4c3b8ca8c63912bf8b1ee4a5"
+      },
+      {
+        "path": "qc/DM-C017-JANNAWAY-V02/DM-C017-JANNAWAY-source-vs-video-lettering-filmstrip.jpg",
+        "bytes": 906488,
+        "sha256": "af3d93cce16b9565357b526a392a5affdbda9f73231227fa269c7fbbd87f1e11"
+      },
+      {
+        "path": "qc/DM-C017-JANNAWAY-V02/DM-C017-JANNAWAY-frame-by-frame-lettering-QC.pdf",
+        "bytes": 5723359,
+        "sha256": "57417855409e46d0c9fdbfecdbd64d3160e88c6da8a662dc852168f91c6c255e"
+      },
+      {
+        "path": "qc/DM-C017-JANNAWAY-V02/DM-C017-JANNAWAY-planar-track.json",
+        "bytes": 106673,
+        "sha256": "9cc2bdb2c692af9df43da7c05b630218ca2f37c684d41a43e085faab43735dcd"
+      },
+      {
+        "path": "qc/DM-C017-JANNAWAY-V02/DM-C017-JANNAWAY-qc-report.json",
+        "bytes": 5044,
+        "sha256": "dd9ac18637f73cdac5bb105b53e8b8c4c7366ee9f6fb8fb777a581db02e0de99"
+      }
+    ]
+  },
+  "cost": {
+    "higgsfield_total_credits": 186,
+    "validated_method_incremental_credits": 90,
+    "validated_video_credits": 72,
+    "latest_native_still_batch_credits": 6,
+    "verified_account_balance_after_latest_batch": 1398,
+    "monetary_conversion": null,
+    "unknown_monetary_reason": "No stable GBP conversion was surfaced.",
+    "publishing_cost": 0
+  },
+  "collaboration": {
+    "real_fable_cli_consulted_earlier": true,
+    "earlier_result_summary": "Flagged edge-on homography, non-rigid plane and non-monotonic rotation risks.",
+    "fresh_review_attempt": {
+      "date": "2026-07-23",
+      "success": false,
+      "failure": "No output before 244-second CLI timeout."
+    }
+  },
+  "automation": {
+    "entrypoint": "tools/scaffold_wedding_sign_reel.py",
+    "asset_builder": "tools/build_next_reel.py",
+    "finish_script": "working/batches/video/v03-native-approved-pair/finish_native_reel.py",
+    "finish_script_status": "validated-no-product-overlay",
+    "entrypoint_scope": "white-wedding-sign-exact-assets-prompts-reference-slots-and-human-gates",
+    "dry_run_verified": true,
+    "dry_run_verified_date": "2026-07-23",
+    "retired_overlay_entrypoints_runtime_blocked": true,
+    "can_reuse_proven_track": false,
+    "can_track_new_seedance_raw": false,
+    "reads_shopify": false,
+    "submits_paid_generation": false,
+    "publishes": false,
+    "shopify_mutations": false
+  },
+  "prompt_library_case": "../../prompts/wedding-signs/cases/DM-C017-JANNAWAY/VALIDATED_CASE.md",
+  "prompt_library_case_status": "validated-human-approved-recipe",
+  "creative_structure_v03": {
+    "status": "implemented-and-verified",
+    "path": "CREATIVE_STRUCTURE_V03.md",
+    "hook": [
+      "THEIR NEW SURNAME",
+      "DESERVES A STREET SIGN"
+    ],
+    "cta": "PERSONALISE THEIRS →",
+    "suggested_caption": "Two names. One date. Their own street sign. Personalise yours.",
+    "native_reveal_target_seconds": [
+      0.35,
+      4.8
+    ],
+    "readable_final_hold_seconds": 2.7
+  },
+  "future_video_gate": {
+    "human_approved_coherent_exact_sign_image_required": true,
+    "human_approved_locked_product_image_required": true,
+    "human_approved_synthetic_max_hero_image_required": true,
+    "composited_source_image_forbidden": true,
+    "required_real_product_views": [
+      "printed-front",
+      "back-to-edge-or-rear-three-quarter",
+      "front-to-edge-or-front-three-quarter",
+      "white-back"
+    ],
+    "real_product_construction_pack_complete": true,
+    "matched_white_back_start_approved": true,
+    "untouched_native_video_approved": true,
+    "remaining_blocker": null,
+    "post_generation_product_surface_overlay_forbidden": true,
+    "native_failure_action": "reject-and-regenerate"
+  },
+  "validated_native_video": {
+    "job_id": "bf94cfac-e34f-4da7-8922-6cfc8322b1fc",
+    "path": "working/batches/video/v03-native-approved-pair/seedance-raw.mp4",
+    "sha256": "8239be73824ac44d5b89704e0fedc7b5ffc2744d62a0fb2f55f62125ce901c6e",
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "decoded_frames": 193,
+    "duration_seconds": 8.041666666666666,
+    "first_readable_frame": 112,
+    "last_readable_frame": 192,
+    "readable_frame_count": 81,
+    "readable_hold_seconds": 3.375,
+    "product_surface_compositing": false,
+    "human_score_out_of_10": 8.5,
+    "human_approved_by": "Max Ellison",
+    "human_approved_date": "2026-07-23"
+  },
+  "final_delivery": {
+    "master": {
+      "path": "working/batches/video/v03-native-approved-pair/delivery/DM-C017-JANNAWAY-master-1080x1920-24fps.mp4",
+      "sha256": "7cfb52c26fa5727817e718e282a59bb5aa80377ee1730533629ad602d25a2a0b",
+      "bytes": 4469358,
+      "width": 1080,
+      "height": 1920,
+      "fps": 24,
+      "frames": 192,
+      "duration_seconds": 8.0,
+      "audio_present": true
+    },
+    "phone_preview": {
+      "path": "working/batches/video/v03-native-approved-pair/delivery/DM-C017-JANNAWAY-phone-preview-720x1280.mp4",
+      "sha256": "4730e21852a05367f4ac36a321e546ee3a9c3baea863befcb8432dd3fa82522f",
+      "bytes": 1121401,
+      "width": 720,
+      "height": 1280,
+      "fps": 24,
+      "frames": 192,
+      "duration_seconds": 8.0,
+      "audio_present": true
+    },
+    "exact_svg_sha256": "e180b9e0a4a11825541d7c545fe01b534cf40bacc87c47383bc56fc2ea6b6184",
+    "exact_pdf_sha256": "1628f8a149312edca56216c0390cb7bdb52c5072804a48d5029407b57ce5456a",
+    "product_surface_compositing": false,
+    "published": false
+  }
+}

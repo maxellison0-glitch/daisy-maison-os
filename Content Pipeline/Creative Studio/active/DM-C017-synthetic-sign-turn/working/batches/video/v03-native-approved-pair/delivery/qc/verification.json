@@ -1,0 +1,66 @@
+{
+  "master": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24.0,
+    "declared_frames": 192,
+    "decoded_frames": 192,
+    "duration_seconds": 8.0,
+    "bytes": 4469358,
+    "sha256": "7cfb52c26fa5727817e718e282a59bb5aa80377ee1730533629ad602d25a2a0b",
+    "audio_present": true,
+    "h264_yuv420p_faststart_requested": true
+  },
+  "preview": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24.0,
+    "declared_frames": 192,
+    "decoded_frames": 192,
+    "duration_seconds": 8.0,
+    "bytes": 1121401,
+    "sha256": "4730e21852a05367f4ac36a321e546ee3a9c3baea863befcb8432dd3fa82522f",
+    "audio_present": true
+  },
+  "raw_source": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24.0,
+    "declared_frames": 193,
+    "decoded_frames": 193,
+    "duration_seconds": 8.041666666666666
+  },
+  "protected_product_region": {
+    "bounds": [
+      0,
+      500,
+      1080,
+      1320
+    ],
+    "overlay_intersects_region": false,
+    "mean_reencode_mae": 1.2456450331068705,
+    "max_frame_reencode_mae": 1.4488380758807589,
+    "note": "Differences are H.264 re-encoding only; no product pixels were composited or retouched."
+  },
+  "hook": {
+    "copy": [
+      "THEIR NEW SURNAME",
+      "DESERVES A STREET SIGN"
+    ],
+    "time_seconds": [
+      0.0,
+      2.8
+    ],
+    "position": "top safe area"
+  },
+  "cta": {
+    "copy": "PERSONALISE THEIRS \u2192",
+    "time_seconds": [
+      5.15,
+      8.0
+    ],
+    "position": "bottom safe area"
+  },
+  "product_surface_compositing": false,
+  "verified": true
+}

@@ -1,0 +1,19 @@
+{
+  "master": "C:\\Users\\Max Ellison\\AA Daisy Maison OS\\Content Pipeline\\Creative Studio\\active\\DM-C017-synthetic-sign-turn\\working\\batches\\video\\v03-native-approved-pair\\delivery\\DM-C017-JANNAWAY-master-1080x1920-24fps.mp4",
+  "master_bytes": 4469358,
+  "preview": "C:\\Users\\Max Ellison\\AA Daisy Maison OS\\Content Pipeline\\Creative Studio\\active\\DM-C017-synthetic-sign-turn\\working\\batches\\video\\v03-native-approved-pair\\delivery\\DM-C017-JANNAWAY-phone-preview-720x1280.mp4",
+  "preview_bytes": 1121401,
+  "soundtrack": "C:\\Users\\Max Ellison\\AA Daisy Maison OS\\Content Pipeline\\Creative Studio\\active\\DM-C017-synthetic-sign-turn\\working\\batches\\video\\v03-native-approved-pair\\delivery\\DM-C017-JANNAWAY-original-soundtrack.wav",
+  "soundtrack_bytes": 1536044,
+  "frame_count": 192,
+  "fps": 24,
+  "duration_seconds": 8.0,
+  "product_surface_compositing": false,
+  "allowed_finishing_only": [
+    "top hook typography",
+    "bottom CTA typography",
+    "original synthetic room/whoosh/reveal sound",
+    "H.264/AAC encoding",
+    "delivery scaling"
+  ]
+}

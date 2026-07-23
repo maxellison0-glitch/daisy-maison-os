@@ -1,0 +1,1 @@
+throw "RETIRED: DM-C017 product-surface compositing is forbidden. Build exact assets, obtain a human-approved coherent sign image and generate a native video; do not overlay or reuse the rejected motion."

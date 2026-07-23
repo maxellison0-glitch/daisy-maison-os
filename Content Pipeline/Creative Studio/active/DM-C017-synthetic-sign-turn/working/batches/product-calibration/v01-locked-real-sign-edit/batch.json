@@ -1,0 +1,104 @@
+{
+  "concept_id": "DM-C017",
+  "batch": "product-calibration-v01-locked-real-sign-edit",
+  "status": "human-approved-validated-product-checkpoint",
+  "model": "nano_banana_flash",
+  "display_name": "Nano Banana 2",
+  "aspect_ratio": "16:9",
+  "resolution": "1k",
+  "take_count": 4,
+  "take_numbers": ["01", "02", "03", "04"],
+  "prompt_variation": false,
+  "purpose": "Test literal repeatability when a real approved Daisy sign is locked and only its printed content may change.",
+  "references": [
+    {
+      "role": "locked_real_sign_master",
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/01-front-product-only.jpg"
+    },
+    {
+      "role": "replacement_printing_only",
+      "path": "assets/DM-C017-JANNAWAY-V02-sign-face.png"
+    }
+  ],
+  "product_surface_compositing_allowed": false,
+  "human_approval_required": true,
+  "paid_video_allowed": false,
+  "job_ids": [
+    "6b50a1b2-ac90-4621-a763-bb0ea72a1902",
+    "91c3e535-fe6f-400b-9abe-a5c263ffd681",
+    "4c0831d8-b5b2-4beb-960a-9848a5b76823",
+    "8962bdd9-8bb4-4cc4-880a-2f1850d7d080"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "6b50a1b2-ac90-4621-a763-bb0ea72a1902",
+      "path": "outputs/take-01.jpg",
+      "width": 1376,
+      "height": 768,
+      "bytes": 519988,
+      "sha256": "e29d79e4c0c2ce53c2b0beb02d30364df68fdc31030cd44a65c1e4653b32e962",
+      "agent_qc": "reject-exact-art",
+      "note": "Realism, sign construction and broad black border pass; the heart was simplified to a solid icon."
+    },
+    {
+      "take": "02",
+      "job_id": "91c3e535-fe6f-400b-9abe-a5c263ffd681",
+      "path": "outputs/take-02.jpg",
+      "width": 1376,
+      "height": 768,
+      "bytes": 543447,
+      "sha256": "1ae83cca1afb4dda263604ee7bb09a7883acc5a8a0ba9fb4070ea00e3572a40e",
+      "agent_qc": "candidate-not-strict-pass",
+      "note": "Coherent real surface and correct wording; heart linework and mounting-hole rendering are not proven identical."
+    },
+    {
+      "take": "03",
+      "job_id": "4c0831d8-b5b2-4beb-960a-9848a5b76823",
+      "path": "outputs/take-03.jpg",
+      "width": 1376,
+      "height": 768,
+      "bytes": 555055,
+      "sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+      "agent_qc": "recommended-for-human-product-approval",
+      "note": "Best combined border, holes, wording, material and hand-contact result. The heart remains natively re-rendered rather than demonstrably pixel-identical."
+    },
+    {
+      "take": "04",
+      "job_id": "8962bdd9-8bb4-4cc4-880a-2f1850d7d080",
+      "path": "outputs/take-04.jpg",
+      "width": 1376,
+      "height": 768,
+      "bytes": 577800,
+      "sha256": "62039aaf5b53fb11c4625ddfa3ab82419712f4a9f679d0a7421e7f8638fe7d6b",
+      "agent_qc": "candidate-not-strict-pass",
+      "note": "Strong realism and border weight; right mounting-hole treatment and heart linework vary from the flat source."
+    }
+  ],
+  "contact_sheet": {
+    "path": "contact-sheet-master-target-takes.jpg",
+    "bytes": 256475,
+    "sha256": "1adfd7e7d9c086f70a3c6c0fe841c2cbd8de0bcc9e3a5e117670581c72926cd6",
+    "layout": "top row: real master, exact target face, take 01; bottom row: takes 02, 03 and 04"
+  },
+  "cost": {
+    "quoted_credits_per_take": 1.5,
+    "quoted_total_credits": 6.0,
+    "actual_total_credits": 6.0
+  },
+  "quoted_date": "2026-07-23",
+  "generated_date": "2026-07-23",
+  "post_generation_product_surface_compositing": false,
+  "strict_automatic_pass": false,
+  "recommended_take": "03",
+  "human_approval": {
+    "status": "approved",
+    "approved_take": "03",
+    "approved_path": "outputs/take-03.jpg",
+    "approved_sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+    "approved_date": "2026-07-23",
+    "approved_by": "Max Ellison",
+    "approval_quote": "that is literally spot on. I can't even tell the difference. ... Yeah, that's solid. That's approved."
+  },
+  "account_balance_after_batch": 1482
+}
