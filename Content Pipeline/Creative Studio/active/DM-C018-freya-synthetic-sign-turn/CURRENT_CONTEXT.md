@@ -109,9 +109,77 @@ this concept: 6 credits (take-01 2, Stage A 2, Stage B 2). Per
 `../WEDDING_SIGN_VIDEO_RULES.md`, this validates nothing beyond the white
 street-sign family — other products need their own proofs.
 
+## Max approvals, 24 July 2026
+
+Max approved take-02 ("that's definitely more realistic") and asked for the
+method to be saved as the Freya engineering prompt — done:
+`Content Pipeline/Creative Studio/prompts/freya-street-sign-hero/`. He also
+explicitly likes the wood-workshop background — treat it as the preferred
+setting. Video spend still requires a separate explicit yes.
+
+## Border-colour test (Max's ask: "have we tried changing border colours?")
+
+The saved colours were found on the live Shopify store, not in the repo:
+the "My Valentine" and "Retirement" street-sign listings offer **5
+colours**, and the official swatch chart (`Mow-It-Swatch-Final-copy-1`,
+saved to `working/colour-test/colour-swatch.jpg`) names them:
+**Grass, Sage, Blue, Grey, Black** — border and lettering in the colour on
+a cream field. Note the coloured range's real border is a thinner outline
+than the wedding sign's broad band.
+
+**Stage A2 — recolour the locked real photo to swatch Blue (one change):**
+- First submission (job `28df9e22-c102-4256-b556-c76a87bbeda9`, 2 cr) went
+  out WITHOUT the swatch attached — prompt referenced "reference image 2"
+  but only one media was passed. Logged as a process error; output kept
+  only as stray evidence.
+- Corrected run: swatch uploaded (media
+  `47c10ac9-aec5-4746-b46f-cdf49c275b17`), job
+  `7d1f061c-809b-4ead-b4a0-4419c8dae28f`, 2 cr. **PASS with one flag:**
+  colour matches the swatch steel-blue, wording/letterforms/scene exact;
+  border band reads slightly slimmer than the black original — drifted
+  toward the swatch's thin-border geometry despite instruction. Output:
+  `working/colour-test/stageA2-blue-sign.png`.
+
+**Stage B2 — Freya holds the blue sign (first attempt): FAIL.**
+Job `4053b659-af5a-40ee-ae76-ee6e46191660`, 2 cr. Scale passed (~2.4) and
+wording characters correct, but: typeface substituted (bold rounded
+sans-serif replaced the locked serif), colour saturated toward royal blue,
+and identity drifted (reads adjacent-to-Freya, not Freya). Diagnosis:
+chaining a generated sign into a second generation compounded drift in a
+way the cake chain didn't — plus single-take variance. Output kept as
+failure evidence: `working/colour-test/stageB2-freya-blue-FAIL.png`.
+
+**Stage B2 retry — PASS.** Job `69661359-0bbf-41ea-836e-9b4b00feaecb`,
+2 cr, with explicit typeface/colour/identity locks added ("MUTED
+STEEL-BLUE... NOT royal blue", "ELEGANT SERIF CAPITALS... do not
+substitute any bold, rounded, sans-serif font", "must read as the same
+individual person"). Serif letterforms held, muted blue held, identity is
+genuinely Freya, scale ≈ 2.28, workshop setting. Output:
+`working/colour-test/stageB2-freya-blue-take02-PASS.png`. The explicit
+negative-space language is what fixed it — saved as prompt case
+`prompts/freya-street-sign-hero/cases/DM-C018-FREYA-CAKE/03-validated-freya-hero-coloured-sign.txt`.
+
+**Standing model quirk:** the signature gold ring has now landed on her
+LEFT hand in three consecutive Stage B generations despite explicit
+right-hand instructions. Treat as a known nano_banana_2 tendency; if the
+ring hand matters for a production still, plan to fix it at selection
+time (choose takes where hands are occluded) rather than fighting the
+model.
+
+## Honest scope statement (Max asked: "then we have the full workflow?")
+
+After this test, the demonstrated STILLS capability for the Large street
+sign is: arbitrary display-safe wording ✓, correct physical scale ✓,
+fronted by Alan ✓ (DM-C017) or Freya ✓ (this concept), coloured printing
+at the product stage ✓ (Stage A2, one flag). Carrying a coloured sign
+through the character stage is NOT yet clean — first attempt failed.
+VIDEO remains validated only for the white wedding-sign family (DM-C017);
+coloured-sign video and other product families still need their own
+proofs per `../WEDDING_SIGN_VIDEO_RULES.md`.
+
 ## Next action
 
-Max reviews take-02 (and the Stage A product image). On his explicit yes:
-assemble the DM-C017 four-view reference pack and run the one native video
-generation (~72 credits). No video spend without that yes. The left/right
-ring nit can be fixed in the same pass if he wants it fixed.
+QC the Stage B2 retry. Then Max's call on: (a) which wording/colour combo
+to take to the four-view pack and the one ~72-credit native video, and
+(b) whether the blue-chain result is worth further engineering now or
+parks behind the white-sign video test.
