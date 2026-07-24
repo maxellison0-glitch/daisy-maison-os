@@ -45,13 +45,73 @@ This is a genuinely strong single take. Still agent-pass, not
 max-approved — the same discipline as every other product image in this
 repo.
 
-## Decision
+## Take-01 verdict: EDIT — scale failure, caught by Max
 
-**Pending.** Awaiting Max's look before any video-generation spend.
+Max compared take-01 against Alan's Mr & Mrs Bond hero (Higgsfield job
+`9d473e5d-314a-4f9a-a99d-ea4f044d10bc`, 23 July — copy in
+`working/qc/alan-bond-hero-9d473e5d.jpeg`) and called the sign undersized.
+Measurement confirmed it (`working/qc/shoulder-normalised-comparison.png`):
+
+- Alan Bond hero: sign 1293px / shoulders 791px = ratio **1.63**
+- Freya take-01: sign 805px / shoulders 480px = ratio **1.68**
+- Shoulder-normalised, the signs render almost identical — but female
+  shoulders are ~18% narrower, so equal ratio = a ~13-15% physically
+  smaller sign. Same real object on Freya needs ratio ≈ **1.93+**.
+
+This is exactly the failure mode `Creative Studio/MEMORY.md` warns about:
+lettering QC passed while whole-object scale was wrong. Agent QC checked
+letterforms pixel-by-pixel and skimmed scale; Max's eye caught it in
+seconds. Scale check is now a mandatory first step before lettering on any
+person-plus-product generation.
+
+## True test (Max's request): new wording + Freya + scale fix
+
+Run as two stages per the validated DM-C017 discipline, not one compound
+generation. Wording chosen: **"GO AWAY (UNLESS YOU'VE BROUGHT CAKE)"** —
+same novelty family as the real snacks sign (Max's voice note was garbled;
+wording is trivially swappable). Not production artwork — engineering
+probe only, no audited SVG behind it.
+
+**Stage A — printing replacement on the locked real product.** Reused the
+proven Bond printing-replacement prompt structure. Model `nano_banana_2`
+(requested as catalog name `nano_banana_pro` — note: Higgsfield executes
+that catalog entry as nano_banana_2, so "are we on Nano Banana 2" = yes).
+Job `c0644e05-c041-45e7-8da3-ceaa743b1fe9`, 16:9, 2 credits. Output
+`working/stage-A-printing/stageA-cake-sign.png`. **PASS**: every character
+correct, same letterforms, border/holes/hands/background all survive
+untouched.
+
+**Stage B — Freya holding the Stage A sign, scale-corrected.** Three
+references: Stage A job (product authority), Freya locked hero (identity),
+plus the real human-scale frame
+(`instagram-DPjdseCDbDR/selected/01-front-frame-240-t08.000.jpg`, uploaded
+as media `9f0cf355-f2e7-4c67-99e3-3bd8309df556`) as SCALE AUTHORITY ONLY —
+explicit prompt language that the sign must extend well past her shoulders
+and read proportionally larger on her than on a man. Job
+`84696b99-06fc-4d05-9ead-c1b36dbc4b04`, 4:5, 2 credits. Output
+`working/hero-still/freya-holding-sign-take02-cake.png`, measured QC in
+`working/qc/stageB-annotated.png`.
+
+**Take-02 result: scale ratio 2.32** (sign 845px / shoulders 365px) —
+past the 1.93 target; reads correct-to-slightly-generous, within
+pose/foreshortening noise (sign held toward camera, same as Alan's shot).
+Lettering exact through both stages. Identity holds (warm brown eyes, no
+hair-highlight drift, genuine smile). Setting landed in a genuine
+workshop, closer to brand than take-01's. One continuity nit: the gold
+ring appears on her left hand; the spec says right hand.
+
+## Engineering-test verdict (agent-pass, not max-approved)
+
+The full workflow chain now demonstrated end-to-end for a second
+character: novel wording → printed onto the locked real product (exact) →
+held by a consistent synthetic character at corrected scale. Total spend
+this concept: 6 credits (take-01 2, Stage A 2, Stage B 2). Per
+`../WEDDING_SIGN_VIDEO_RULES.md`, this validates nothing beyond the white
+street-sign family — other products need their own proofs.
 
 ## Next action
 
-If approved: assemble the same reference-view requirements DM-C017 used
-(front, both edges, back) and run native video generation. If not
-approved: treat as a specific, nameable EDIT per `PUBLISH_READINESS.md`,
-not a reason to abandon the approach — this take is close.
+Max reviews take-02 (and the Stage A product image). On his explicit yes:
+assemble the DM-C017 four-view reference pack and run the one native video
+generation (~72 credits). No video spend without that yes. The left/right
+ring nit can be fixed in the same pass if he wants it fixed.
