@@ -11,6 +11,9 @@ Living context and provenance log: `CURRENT_CONTEXT.md` in this folder.
 
 ## Current stage
 
-**Stage 0 complete, Stage 1 (human approval of hero) pending.** Four hero
-portrait candidates generated from the `FREYA.md` appearance spec. Awaiting
-Max's pick of one as the locked hero before any reference-expansion spend.
+**Stage 0 and 1 complete (hero locked: candidate-03). Stage 2 attempted
+twice and failed full QC — 1 of 10 reference-expansion images passed.**
+The batch-generation-against-a-single-reference method itself is the
+problem, not the concept — see `CURRENT_CONTEXT.md` for the full per-image
+verdict and the recommended next approach. Do not proceed to Stage 4 (Soul
+training) until Stage 2 is retried with a different method.

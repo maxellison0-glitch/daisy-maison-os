@@ -109,31 +109,45 @@ detail):
 - `s2-09-close-crop.png` (close front-facing crop, candid smile) — same
   neckline issue as above; expression itself is fine.
 
-The remaining 7 retry images were generated with the same improved prompt
-but have **not yet been individually eyeballed** — only their auto-generated
-text descriptions were read, which this whole exercise already proved is an
-unreliable proxy for the actual pixels. Also worth noting: on this same
-path, my requested "wider waist-up framing" shot (`s2-10-waistup-attempt.png`)
-came back as another tight face crop — the enhancer overrides framing
-instructions, not just style ones.
+**Full QC pass completed (all 10 individually eyeballed, not just described)
+— verdict is worse than the initial partial-pass read:**
 
-**Verdict: do not proceed to Stage 4 Soul training on this set as-is.**
-Either Max reviews the full retry set and picks the images that actually
-hold the brand's look, or a follow-up session completes the individual QC
-pass before any are used to train a persistent identity. Training a Soul on
-a mixed-quality reference set would bake the drift in permanently.
+| Image | Requested | Verdict | Why |
+|---|---|---|---|
+| `s2-01-retry` | 3/4 left, neutral | **PASS** | Matte skin, hair/eye colour match the hero, closest thing to a real second angle |
+| `s2-02-retry` | 3/4 right, smile | FAIL | Hair lightened toward caramel highlights not in the hero |
+| `s2-03-retry` | profile, considering | FAIL | Eye colour drifted hazel/green (spec is warm brown); hair significantly lighter; deep tan; low neckline |
+| `s2-04-retry` | genuine mid-laugh | FAIL | Reads sultry, not a laugh; neckline too low |
+| `s2-05-retry` | elevated angle, warm smile | Borderline | Genuinely warm expression, but hair highlighting drift |
+| `s2-06-retry` | looking down at object in hands | FAIL | Requested scenario not delivered at all — no object, wrong pose |
+| `s2-07-retry` | mid-sentence | Borderline | Expression intent landed, but hair/tan/neckline drift into fashion-editorial territory |
+| `s2-08-retry` | hand near jaw | FAIL | Eye colour drift (hazel/green again), heavy tan, low neckline |
+| `s2-09-close-crop` | candid smile | Borderline | Expression fine, neckline runs low |
+| `s2-10-waistup-attempt` | wider waist-up framing | FAIL | Model didn't deliver the requested framing at all — still a tight face crop |
 
-**Standing finding for future batches:** the `soul_2` + image-reference
-generation path has a structural bias toward glossy/editorial styling that
-prompt wording alone cannot fully suppress. Options for next time, not yet
-tried: generate the expansion set with `nano_banana_pro` instead (different
-provider/pipeline, may not carry the same forced enhancement), or wait until
-Stage 4 training exists and generate directly from the trained identity
-rather than through ad hoc image-reference conditioning.
+**1 clean pass out of 10.** This is a harder finding than "brand tone
+drift" — two separate shots show genuine identity drift (eye colour), not
+just styling. That's a different, more serious category of failure per
+`Content Pipeline/PUBLISH_READINESS.md` dimension 3.
+
+**Verdict: this generation pathway — one hero image as an image-reference,
+batch-generated — is not reliable enough to build a persistent Soul
+identity from.** Not "needs a look before training," but "the method
+itself needs to change before more credits go into it," per the KILL
+criteria in `PUBLISH_READINESS.md`: the concept survives (candidate-03 and
+`s2-01-retry` prove Freya *can* look right), the batch-generation method
+against a single reference doesn't.
+
+**Recommended next attempt, not yet tried:** either (a) generate one shot
+at a time with immediate QC before the next, rather than an 8-10 batch on
+trust, (b) try `nano_banana_pro` instead of `soul_2` for the expansion set
+— different pipeline, may not carry the same drift — or (c) skip ad hoc
+reference-conditioning entirely and wait until enough individually-approved
+shots exist to train a Soul directly, generating all future images from
+that trained identity instead of a single reference image each time.
 
 ## Next action
 
-Human review of `working/stage-2-reference-expansion/retry-set/` — confirm
-which images hold the locked look, then either regenerate the rejects with
-the `nano_banana_pro` alternative or proceed to Stage 3/4 with only the
-confirmed-good subset.
+Do not spend further credits training Stage 4 on this reference set. Next
+session should retry Stage 2 with method (a) or (b) above before
+attempting Stage 4 again.
