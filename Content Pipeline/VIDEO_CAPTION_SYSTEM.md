@@ -302,6 +302,14 @@ matter as a **backup** and as a reference for the look.
 
 ## 4. Do / Don't — tuned to Daisy Maison
 
+> **Two registers — pick per piece.** §1–3's white-pill / TikTok-Sans system is
+> the **native-creator register**: punchy process/UGC clips where reading fast
+> matters more than mood. It is *not* the default for warm, editorial, candlelit
+> pieces — for those, use the **warm-editorial register** (cream serif, top-third,
+> no box) proven out in *First reel — DS gift reveal hook* below. The burgundy
+> keyword pill is **retired for the warm-editorial register**; burgundy lives on
+> the physical product and website, not as a caption chip on mood footage.
+
 **Do**
 - White pill + `--ink` black text as the default; dark frosted pill only when
   footage is too light/busy for white.
@@ -361,77 +369,199 @@ vendor's live pricing page. No competitor post metrics were used or invented.
 gift-reveal, ~6s, three matched beats — (1) closed white blush-ribbon box +
 handwritten tag, (2) box open, wood-wool straw + diffuser nestled, (3) diffuser
 standing, candle + fairy-light glow throughout. Warm, cosy, premium, real.
-This is the **first scheduled post**, so the hook has to be right, not clever.
 
-### Freya's take (the scroll-stopper for frame 1)
+> **v2 — hard reset.** Max's verdict on v1: "still shit." He's right, and we own
+> the deeper failure: we *passed* our own captions instead of critiquing them.
+> This section is rebuilt from scratch against the new **Taste gate**
+> (`Personas/VOICE_AND_CAPTION_GUIDE.md`). The copy (*one → theirs → only*)
+> survived — it wasn't the problem. The **look** did not.
 
-Frame 1 is a closed box and a handwritten tag — that's an *emotional*, curiosity
-frame, not a spec frame. So the hook should trade on a true feeling, land in
-under ~1.7s, and quietly set up the payoff. Candidates:
+### Honest critique of v1 (we agree with Max, with reasons)
 
-1. **"The one that doesn't end up in a drawer."** — dry, British, a universal
-   truth (everyone owns the drawer of forgotten gifts), and "the one" secretly
-   seeds the product's own label, *The One and Only*.
-2. **"Not another candle."** — punchy, sets a contrast the reveal pays off (it's
-   a diffuser, and a personalised one), but it undersells the warmth.
-3. **"Handwritten tag. So you know it wasn't a last-minute one."** — leans into
-   the literal frame-1 detail and our "show the working" rule, but it's a beat
-   too long for a 6s opener.
+- **The burgundy `#6E1B2D` keyword pill "looks a bit shit" — agreed.** A saturated
+  wine-coloured pill sitting on warm candlelit footage is two different worlds
+  colliding: the footage is soft, tonal, low-contrast; the pill is a hard,
+  high-saturation UI chip. It reads like a sticker slapped on a mood photo. On a
+  reveal whose whole job is atmosphere, a solid coloured box is the single most
+  atmosphere-killing thing you can add. **Retired for this aesthetic** (see below).
+- **White pill + black text is "basic and doesn't match the aesthetic" —
+  agreed.** It's the TikTok-default look. It's legible, which is why it's
+  everywhere, and "everywhere" is exactly the problem for a premium boutique. A
+  bright white box also punches a cold rectangle into a warm cream/amber frame —
+  it fights the palette instead of belonging to it.
+- **The fonts don't suit the video — agreed.** TikTok Sans / Poppins are correct
+  for a *native-creator* register, which is the opposite brief to a *warm,
+  editorial, premium* one. They're clean and modern; this world wants elegant and
+  intentional. Right fonts, wrong film.
+- **Placement is lazy — agreed, and this is the real lesson.** Dead-centre-bottom,
+  slapped over the product, is the default you reach for when you *haven't decided*
+  where text should go. In an aesthetic reveal the text should live in the frame's
+  negative space and never cover the hero object. "Just learn where to place them"
+  is the correct note.
 
-**Freya's pick → #1, "The one that doesn't end up in a drawer."** It's on-voice
-(understatement over hype), it's a genuine shared truth so it earns the stop
-honestly, and the word "one" rhymes forward into the payoff label. (Note: I've
-deliberately avoided "regift" — it smuggles in gift-as-a-verb, which our own
-cheat sheet bans.)
+Nothing here is "sure, it does the job." It doesn't. Rebuilt.
 
-### Alan's take (retention, and what actually earns the save)
+### What the research actually says (placement + type)
 
-Two things bank on this reel: it needs a curiosity gap the *last* frame closes
-(retention/completion), and it needs to be save- and send-worthy, because that's
-IG Reels' top non-follower lever (DM sends) and a gift idea is inherently
-sendable. My candidates, from the numbers angle:
+**Placement — premium/editorial, not generic-viral.**
+- Aesthetic and luxury/lifestyle creators put text in the **top third or in
+  deliberate negative space**, not centred over the subject — clearing the centre
+  and upper area for type is the standard editorial move (MindStudio; CreatorFlow;
+  DigitalZoomStudio, 2026).
+- **Both-platform safe band (verified, 2026):** IG Reels safe area is ~1010×1280,
+  inset **220px top / 420px bottom**; TikTok reserves **~130px top, ~484px bottom,
+  ~140px right, ~44px left** (Kreatli; TryMyPost; ignitesocialmedia). The
+  intersection that survives both, plus the right-hand action rail, is roughly
+  **x: 96–940, y: 260–1420**. The old "centre-bottom y≈1180 over the product" sat
+  technically inside that band but visually *on* the hero — safe ≠ good.
+- Practical rule this gives us: **place text over the darkest, emptiest quadrant
+  of each specific frame**, footage-aware, never over the bottle, the flame or a
+  fairy light. Placement is a per-beat decision, not a fixed anchor.
 
-1. **"For the couple who has everything."** — the classic high-save gift-solve
-   frame (it's already hook #7 in the playbook); a direct "tag the person buying
-   for them" trigger.
-2. **"Closed box → this, in six seconds."** — pure retention, promises a payoff
-   by the end. Risk: "wait for it" framing reads a bit dated/gimmicky, which is
-   exactly the register Max is trying to leave behind.
-3. **"This is what 'personalised' should actually look like."** — sets a
-   standard the last frame (their name on the label) delivers.
+**Type — what reads "expensive and intentional" vs "TikTok default."**
+- Editorial/premium reels lean on either a **high-contrast display serif** or a
+  **very refined, wide-tracked sans in small sizes**; minimal or no box; tonal
+  rather than stark colour (Kimp; JustCreative; ym-graphix, 2026). Real
+  Google-Fonts options, judged for *this* candlelit world:
+  - **Fraunces** (OFL) — a "soft" high-contrast serif with an optical-size axis
+    and a little warmth/wonk. **Fits best:** elegant and characterful without
+    being cold, and the opsz axis keeps it crisp at display size on mobile. Our
+    primary recommendation.
+  - **Cormorant Garamond** (OFL) — gorgeous, delicate, genuinely luxurious.
+    **Risk:** very fine strokes disappear over bright candlelight on a small
+    phone; usable only large, with a scrim, and even then it's the legibility
+    gamble of the set.
+  - **Playfair Display** (OFL) — classic fashion-masthead high contrast.
+    **Fits**, but it's become a slightly default "elegant" choice; fine as a hero
+    word, less as a whole system.
+  - **Jost** (OFL) — geometric, Futura-lineage sans. In light weight, ALL-CAPS,
+    widely tracked and *small*, it's the "quiet fragrance-ad" look. **Fits** the
+    minimal-luxury register and is the safest for legibility.
+  - **DM Sans / EB Garamond** — good supporting players (a tracked sans subline
+    under a serif hero), not leads.
+  - **Not this world:** Didot/Bodoni (too cold/fashion-hard for cosy), Bebas
+    (shouty), and anything rounded or novelty.
+- **Colour:** stark `#FFFFFF` is part of what makes v1 basic. Go **tonal warm
+  off-white / cream** so the text belongs to the candlelight instead of punching
+  through it. **No box**; if a bright frame threatens legibility, use a
+  *whisper* gradient/radial scrim, never a solid chip.
 
-**Alan's pick → #1**, but I'll concede the *on-screen* slot. Freya's line is the
-stronger scroll-stop for an emotional frame-1; the "couple who has everything"
-utility does more work in the **caption**, where saves are actually banked. So
-my pick moves to the caption, not the overlay. That's the honest split, not a
-fake consensus.
+### Three distinct directions for THIS reel (render these as visual comparisons)
 
-**Match Law — satisfied, and unusually tightly.** Opening hook "the **one** that
-doesn't end up in a drawer" ↔ closing frame: the diffuser standing, lit, on
-display — literally the opposite of a drawer — under its own label, *The **One**
-and Only*. The hook word and the payoff word are the same word. That's the
-tightest match we can get; the closing frame doesn't just pay the hook off, it
-completes its sentence. Green light from me.
+Copy is identical across all three — *one → theirs → only* — so the comparison is
+purely about **look and placement**. Colours are new warm-palette tokens:
+`--cream: #F5EFE6`, `--ivory: #FAF6EF`, `--warm-shadow: rgba(20,12,8,0.28)`.
+**The burgundy pill is retired for this aesthetic** (burgundy stays where it
+belongs — the physical product: label, ribbon, packaging — and on the website).
 
-### Joint conclusion — postable-tomorrow spec
+---
 
-**On-screen text (pop-on friendly, one burgundy `#6E1B2D` word each):**
+**Direction A — "Editorial Cream" (refined serif, top-third, no box).** *The
+magazine-cover option.*
+- **Font:** Fraunces, weight **500** (opsz ~72 if the axis is available), the
+  final line in **italic 500** as a signature. `letter-spacing: +0.01em`.
+- **Size:** 58px body; the beat-3 line 66px.
+- **Colour:** `--cream #F5EFE6`. No fill.
+- **Placement:** **top third, centred**, block top at **y≈300**, within x:
+  120–960. Product lives in the lower two-thirds, untouched.
+- **Box/scrim:** none by default; if candle blowout hurts a frame, add a top
+  scrim `linear-gradient(180deg, var(--warm-shadow) 0%, transparent 44%)` only.
+- **Animation:** slow **fade-up** — opacity 0→1 + translateY 14px→0 over
+  **500ms** ease-out; fade-out 300ms. No scale, no pop.
 
-| Beat | Frame | On-screen line | Burgundy word | Timing (6s) |
+**Direction B — "Fragrance Minimal" (light sans, small caps, lower-side).** *The
+quiet-luxury option.*
+- **Font:** Jost, weight **300**, **ALL CAPS**, `letter-spacing: +0.22em`.
+- **Size:** small — **34px**. Understatement is the whole point.
+- **Colour:** `--ivory #FAF6EF`. Optional 1px cream hairline rule above the line
+  for editorial structure.
+- **Placement:** **lower-left negative space, left-aligned**, x=**110**, baseline
+  **y≈1360** (single line; clears TikTok's 484px bottom reserve and the right
+  rail). Sits *beside/below* the product's empty space, never over it.
+- **Box/scrim:** none. Relies on placement over a dark area for contrast.
+- **Animation:** pure **fade**, 600ms. Zero movement — stillness is the flex.
+
+**Direction C — "Cinematic Serif Pair" (serif hero + tracked sans subline).**
+*The perfume-film option, most designed / highest risk.*
+- **Font:** hero word in **Cormorant Garamond 600** at **104px**; subline in **DM
+  Sans 400**, small caps, `+0.18em`, **30px**.
+- **Colour:** both `--cream #F5EFE6`.
+- **Placement:** **upper-centre**, hero baseline **y≈420**, subline **y≈520**.
+- **Box/scrim:** soft **radial** scrim behind the hero
+  (`radial-gradient(closest-side, var(--warm-shadow), transparent)`) — Cormorant
+  is too fine to survive candlelight without it.
+- **Animation:** hero **letter-spacing settle** (+0.06em → +0.02em) + fade over
+  **700ms**; subline fades in at +150ms. Slow, filmic.
+- **Flag:** two typefaces + a very fine serif = the highest legibility and
+  "trying too hard" risk of the three. Include it in the comparison, but it has
+  to earn its place.
+
+### The argument, and the pick (real, not fake-agreed)
+
+**Freya (taste):** Direction A. It's the one I'd actually be proud to post.
+Fraunces in cream, up in the top third, no box — it reads like a real boutique
+brand shot a little film, not like a creator ran auto-captions. It gets out of
+the product's way and lets the reveal breathe, and the italic final line lands
+*The one and only* like a signature under the glowing monogram. B is beautiful
+but so quiet it risks saying nothing on the first post, when we still need to
+*land* a hook. C is lovely and I don't trust it — two fonts is one more thing to
+get wrong on day one.
+
+**Alan (performance/realism):** I'll push back on A before I agree to it. My
+worry isn't taste, it's **legibility at the conditions people actually watch in**
+— small, sound-off, mid-scroll, over *flickering* candlelight. A high-contrast
+serif in low-contrast cream is the exact combination that vanishes over a bright
+flame, and if the hook can't be read in ~1.5s the completion curve dies and the
+whole reveal is wasted. On pure numbers I'd take **B** (Jost is the most legible
+and the most obviously premium-minimal) — but I accept B may under-hook a *first*
+post. And one point that lands on *my* side of the table too: IG down-ranks
+majority-text reels, so the minimal, get-out-of-the-way direction is also the
+*algorithmically* correct one. Less text, placed well, is the performance call as
+well as the taste call.
+
+**Resolution — we pick Direction A, with Alan's guardrails baked in (not a
+fake-agree):** Freya's direction wins because a *first* post has to have taste and
+has to hook, and A does both. Alan's legibility objection is real and is fixed by
+spec, not ignored: (1) Fraunces at **500, not a light weight**; (2) cream held at
+full opacity, and the **top scrim is mandatory, not optional, on the candlelit
+beats** (2 and 3) — a whisper of `--warm-shadow`, enough to guarantee contrast
+over a flame without becoming a box; (3) text placed over each frame's **darkest
+quadrant**, checked per beat; (4) hard legibility test before ship — **read it at
+30% size, sound-off, on a phone**; if you can't, it fails. Alan genuinely wanted
+B; he's conceding the direction *on the condition these hold*. If the 30% test
+fails on beat 3, we fall back to B for the whole set rather than ship something
+unreadable.
+
+### Chosen spec — Direction A, per beat
+
+| Beat | Frame | On-screen line (Fraunces 500 cream, top-third) | Placement | Timing |
 |---|---|---|---|---|
-| 1 | Closed box + tag | **The one that doesn't end up in a drawer** | **one** | 0.0 – 2.0s (line fully on by ~1.5s, hold on tag) |
-| 2 | Open, nestled in wood-wool | **Handmade, and actually theirs** | **theirs** | 2.0 – 3.9s (rides the open/nestle motion) |
-| 3 | Diffuser standing, glow | **The one and only 🤍** | **only** | 3.9 – 6.0s (text resolves *into* the product label over the DS monogram; hold last ~0.5s for the save) |
+| 1 | Closed box + tag | **The one that doesn't end up in a drawer** | top-third centred, y≈300; place over the darker upper area, clear of the tag | 0.0 – 2.0s, fade-up |
+| 2 | Open, nestled | **Handmade, and actually theirs** | top-third centred, y≈300; **top scrim on** | 2.0 – 3.9s, fade-up |
+| 3 | Standing, glow | ***The one and only*** (italic) | top-third centred, y≈300, sitting *above* the standing bottle so the eye runs text → glowing DS monogram; **top scrim on** | 3.9 – 6.0s, fade-up, hold last ~0.6s |
 
-Throughline: **one → theirs → only.** By beat 3 the on-screen caption has become
-the product's actual name, sitting over the glowing DS monogram — the overlay and
-the object say the same thing at the payoff.
+No burgundy on-screen anywhere. Throughline still **one → theirs → only**, and
+beat 3's italic line *is* the product's own name — overlay and object say the
+same thing at the payoff. Match Law: opening "the **one** that doesn't end up in a
+drawer" ↔ closing "*The **one** and only*" over the lit, displayed bottle — the
+hook word and the payoff word are the same word.
 
-Render notes: white pill + `--ink` text on all three (warm footage, so white
-pill reads premium; if the candle glow blows out the pill on beat 3, switch that
-one to `.pill.dark`). Beat 1 and 2 bottom-anchored (`caption-layer bottom`,
-y≈1180); beat 3 can sit slightly higher (y≈1000) so it frames the standing
-bottle, not the base. Understated `wordPop` only — no bounce.
+### Motion — must pass the AI-slop gate (this is why v1 was called slop)
+
+The captions were only half of Max's verdict; the other half was "still images
+turned into video and they weren't still, they were vibrating." Non-negotiable
+for this reel, per the Taste gate motion checklist:
+- **No ffmpeg `zoompan` / Ken-Burns on the stills.** A fake slow pan over a flat
+  photo is exactly the tell. Either hold the frame genuinely still, or use *real*
+  image-to-video motion.
+- **Motion belongs only to what should move:** candle flicker, fairy-light
+  shimmer, a faint drift of scent-haze. The **bottle, box, reeds and personalised
+  label stay pixel-stable** — any warp/morph of the label is an instant reject on
+  a personalisation brand.
+- Standard: **"could this pass as filmed?"** If a beat wobbles, cut it or reshoot
+  the motion; a clean static hero beats a vibrating "animated" one every time.
+
+### Caption + first comment (unchanged — copy wasn't the problem)
 
 **Caption (Freya):**
 > Some gifts get opened once and forgotten in a drawer. This one gets a spot on
@@ -441,30 +571,39 @@ bottle, not the base. Understated `wordPop` only — no bounce.
 > If you're buying for the couple who "have everything", this is the one that
 > lands. Which name would you put on it? 👇
 
-**First comment (hashtags kept out of the caption, Alan):**
+**First comment (hashtags, Alan):**
 > #personalisedgifts #reeddiffuser #homefragrance #giftreveal #weddinggift
 > #anniversarygift #thoughtfulgift #giftideas #uksmallbusiness #giftinspo
 > #homedecor #newhomegift
-
-*(10–12, niche + reach mix; drop into the first comment so the caption stays
-clean. Re-wrap per platform — TikTok leans the caption toward search intent
-("personalised reed diffuser gift idea"), Instagram toward the DM-share prompt.)*
 
 ### Caveats before this renders (propose-only)
 
 - **PII — the tag.** The DS gift shots carry a handwritten kraft tag
   *"With love, Shelby & Sean x"* — flagged in `projects/diffuser/README.md` as
   possibly a **real order**. If beat 1 shows that tag legibly, do **not** publish
-  as-is: re-shoot / re-label with a neutral or clearly-sample tag first (and we
-  never AI-edit a name onto a real bottle). Safest render: keep the tag soft /
-  partly out of focus so it reads "handwritten and personal" without publishing a
-  real customer's name.
-- **AI disclosure.** The DS images are AI-restaged (Nano Banana Pro, surroundings
-  only). If any beat is AI-generated, apply each platform's AI-content disclosure
-  before publishing, per `PLATFORM_STRATEGY.md` — compliance step, not optional.
-- **Audio.** Pick warm/cosy licensed audio *per platform* — TikTok-original
-  commercial tracks are frequently unlicensed on Meta and can get the Reel muted.
-- **Not sponsored / no fabricated claims.** No invented review, no "back in
-  stock", no delivery promise in the caption.
+  as-is: re-shoot / re-label with a neutral or clearly-sample tag first (we never
+  AI-edit a name onto a real bottle). Safest: keep the tag soft / partly out of
+  focus so it reads "handwritten and personal" without publishing a real name.
+- **AI disclosure.** DS images are AI-restaged; apply each platform's AI-content
+  disclosure before publishing, per `PLATFORM_STRATEGY.md`.
+- **Audio.** Warm/cosy licensed audio, re-selected *per platform*.
+- **No fabricated claims** — no invented review, stock or delivery promise.
+
+### Research sources (this section)
+
+- Kreatli — *Instagram Reels Safe Zone (2026)* & *TikTok Safe Zone (2026)*
+  (kreatli.com/guides) — the 220/420 and 130/484/140/44 inset figures.
+- TryMyPost — *IG Reels Safe Zones & Text Placement 2026*; ignitesocialmedia —
+  *Safe Zones for TikToks and Instagram Reels*.
+- MindStudio (*AI image gen for social* — clearing centre/top-third for text);
+  CreatorFlow (*Instagram Aesthetic playbook*); DigitalZoomStudio (*Text overlays,
+  2026*) — editorial/negative-space placement.
+- Kimp, JustCreative, ym-graphix (2026) — luxury/aesthetic serif vs refined-sans
+  type direction. Font *choices and rationale for this candlelit world are our
+  own call*, not lifted from any single article.
+
+*Couldn't independently verify:* on-screen behaviour of these exact fonts over
+this exact footage at phone size — that's what the 30%/sound-off render test and
+the visual A/B/C comparison are for. No competitor posts or metrics invented.
 
 — Freya · Alan
