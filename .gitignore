@@ -2,6 +2,8 @@
 *
 !.gitignore
 !README.md
+!scripts/
+!scripts/**
 !operating systems/
 !operating systems/**
 !digests/
