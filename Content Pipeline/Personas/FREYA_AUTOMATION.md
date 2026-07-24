@@ -1,42 +1,34 @@
-# Freya — Daily Automation
+# Freya & Alan — Daily Automation (how it actually runs)
 
-A Claude **Routine** fires Freya once every morning to run her daily session
-(`FREYA_OS.md` §4) and deliver the Daily Brief. Because it's a Claude Routine,
-Max can read/manage it from any device signed into Claude (work laptop, work
-PC, phone) — not just this session.
+The daily social session is a Claude **Routine** — `Freya & Alan — Daily
+Social @daisymaison` (trigger `trig_01WMGTPaX565eJAi62y8uVPC`) — visible and
+manageable at claude.ai → Routines from any device (work laptop, work PC,
+phone).
 
-## Schedule
-- **Daily, 07:30 UK** (`30 6 * * *` UTC in summer/BST; adjust to `30 7 * * *`
-  when the UK is on GMT).
-- **Fresh session per fire** — each run is clean and self-contained, so the
-  brief is reproducible and readable anywhere.
-- **Notifications on** — the finished brief is pushed to Max's phone and
-  emailed, so it's in his inbox each morning.
+## The architecture that works
+- **Fires into the persistent Jarvis session** (self-bind), not a fresh
+  session. Lesson learned 24 Jul: a fresh-session routine created from inside
+  a coding session gets **no repo access and no connectors** — the first run
+  failed exactly that way. The bound session already holds the cloned repo,
+  git, Higgsfield and Shopify, so the team wakes up with all tools live.
+- **Schedule:** daily 07:30 UK (`30 6 * * *` UTC in BST; shift to `30 7` on GMT).
+- **Trade-off accepted:** self-bind routines don't send completion push/email
+  — the brief lands in the Jarvis conversation itself, with full continuity.
 
-## What it does each run
-Runs `FREYA_OS.md` §4 end-to-end: boot → **external research first** →
-yesterday's numbers (honest, gaps named) → what's working → 3 matched-pair
-ideas → the pivot → append take-home adaptations to
-`FREYA_ADAPTATIONS_LOG.md` → commit/push → present the brief.
+## What each run does
+Per `SOCIAL_TEAM.md`: pull the branch → both personas boot → **parallel
+subagents** (Alan: numbers + reference sweep + `REFERENCE_TRACKER.md` entry;
+Freya: 3 matched-pair ideas) → blend + surface real disagreements → Daily
+Social Brief in both voices → take-home entry appended to
+`FREYA_ADAPTATIONS_LOG.md` → commit + push.
 
-## Guardrails (baked into the routine prompt)
-- **Proposes, never disposes.** No publishing and no paid credit spend without
-  Max's explicit go — ever.
-- **Honest.** Never invents a metric, a result, or what an account posted. If
-  a data source (e.g. Shopify) isn't reachable in an automated run, it says so.
-- **Brand-safe + disclosed.** Captions pass `VOICE_AND_CAPTION_GUIDE.md` and
-  `PUBLISH_READINESS.md`; any AI content follows the disclosure rule in
-  `PLATFORM_STRATEGY.md`.
-- **No customer PII** in ideas or logs.
+## Guardrails
+Propose only — no publishing, no paid credit spend without Max's explicit go.
+No invented metrics or competitor posts; gaps are named. Captions pass the
+voice guide + `PUBLISH_READINESS.md`; AI content follows
+`PLATFORM_STRATEGY.md` disclosure. No customer PII.
 
 ## Managing it
-- Change time / pause / resume / edit the prompt: from Claude on any device,
-  or ask in-session ("Freya, move the brief to 8am", "pause Freya").
-- Trigger id is recorded on creation; use it to update or delete the routine.
-
-## Reliability note (branch)
-The routine reads Freya's files from the repo. Until this branch is merged to
-`main`, the routine ensures it's on the branch that contains
-`Content Pipeline/Personas/FREYA_OS.md` before running. **Merging the open PR
-to `main` makes this bulletproof** — recommended once the first few briefs look
-right.
+Pause/resume/retime/edit from claude.ai → Routines, or just ask in-session.
+If this session is ever retired, recreate the routine bound to its successor
+(or from the Routines UI with repo + connectors attached).
