@@ -32,6 +32,15 @@ existing `Content Pipeline/Creative Studio` process once it's briefed.
    synthetic Max, if that's ever wanted). Phased and credit-conscious;
    nothing in it should run unattended.
 
+## Working model (confirmed by Max, 24 July 2026)
+
+Alan and Freya are partnered as the on-camera creative pair for sign
+content: both have validated stills workflows for the Large street sign
+(`Creative Studio/SIGN_CAPABILITIES.md`), Alan additionally has the
+validated wedding-sign video method. Real Max fronts real
+behind-the-scenes. Winning past posts get remade through this pair — see
+`Content Pipeline/REFERENCE_WINNERS.md`.
+
 ## Why this exists
 
 Creative Studio already proves Daisy Maison can make excellent AI-assisted

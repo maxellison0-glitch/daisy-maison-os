@@ -177,9 +177,20 @@ VIDEO remains validated only for the white wedding-sign family (DM-C017);
 coloured-sign video and other product families still need their own
 proofs per `../WEDDING_SIGN_VIDEO_RULES.md`.
 
+## Max verdict on the colour test, 24 July 2026
+
+Accepted: "I can't tell on the colour if it's blue or grey, but
+regardless, it's a colour, and it looks real, which is good enough for
+me." (Fair read — the official Blue is a dusty steel-blue close to grey;
+that is the swatch, not drift.) Sizing engineering explicitly approved
+("the male benchmark and then the female benchmarks... it's genius").
+Full workflow for Alan and Freya confirmed correct by Max for stills.
+Capability reference saved at `../../SIGN_CAPABILITIES.md` per his
+request.
+
 ## Next action
 
-QC the Stage B2 retry. Then Max's call on: (a) which wording/colour combo
-to take to the four-view pack and the one ~72-credit native video, and
-(b) whether the blue-chain result is worth further engineering now or
-parks behind the white-sign video test.
+Max's call on: (a) which wording/colour combo goes to the four-view pack
+and the one ~72-credit native Freya video, and (b) which of last year's
+winning videos to archive first as remake targets
+(`Content Pipeline/REFERENCE_WINNERS.md` is ready to receive them).

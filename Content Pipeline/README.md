@@ -9,8 +9,8 @@ posts each week, with a fifth only when the idea is worth making.
 
 1. Open `PRODUCTION_QUEUE.md` and continue the first item with a clear next
    action.
-2. If the queue is empty, choose four ideas from `IDEAS.md` using the weekly
-   mix below.
+2. If the queue is empty, choose four ideas from `IDEAS.md` (and remake
+   candidates from `REFERENCE_WINNERS.md`) using the weekly mix below.
 3. Create one brief per chosen idea from `templates/POST_TEMPLATE.md`.
 4. Gather real footage or photographs before generating substitutes.
 5. Produce one master concept, then adapt the hook, edit, caption, and CTA for

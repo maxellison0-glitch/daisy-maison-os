@@ -7,10 +7,12 @@ Open this folder in Claude or Codex whenever you want to resume creative work.
 
 1. Read `CURRENT.md` for the one active job and next action.
 2. Read `MEMORY.md` for what worked, what is parked and what we learned.
-3. Read `WEDDING_SIGN_VIDEO_RULES.md` before any white wedding-sign work.
-4. Read `recipes/README.md` before any generative production.
-5. Read `prompts/README.md` when reusing a proven prompt-engineering case.
-6. Work only inside the active concept folder named in `CURRENT.md`.
+3. Read `SIGN_CAPABILITIES.md` for what signs we can synthetically make
+   (colours, wording, characters, validated vs declared).
+4. Read `WEDDING_SIGN_VIDEO_RULES.md` before any white wedding-sign work.
+5. Read `recipes/README.md` before any generative production.
+6. Read `prompts/README.md` when reusing a proven prompt-engineering case.
+7. Work only inside the active concept folder named in `CURRENT.md`.
 
 ## Organisation rule
 
