@@ -10,6 +10,17 @@ turn-around videos and street signs. **She verifies/updates the handles and
 adds/removes accounts as she learns** (that's part of adapting). Handles
 marked `?` are to be confirmed on first visit.
 
+## ⭐ North Star — the pipeline we're heading toward
+**TreatBox — `@treatbox`** (treatboxuk.com). A UK letterbox-gifting brand,
+~266K followers, founded by Zoe, strong and *consistent* reel engagement. Max
+follows them and this is the content pipeline he wants Daisy Maison to grow
+into. Study every day: their reel formats and pacing, the gift-reveal /
+build-your-own mechanic, the warm-but-not-twee gifting tone, how they turn a
+product into an occasion, and their seasonal/corporate angles. **The
+translation for us:** their "open the box / reveal the treat" is our "turn the
+sign / reveal the name" — same dopamine, our product. Borrow the *rhythm and
+warmth*, express it as a sign reveal.
+
 ## Tier 1 — direct format rivals (personalised signs)
 Watch these for exactly how the sign-reveal niche is being shot right now.
 
