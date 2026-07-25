@@ -11,12 +11,19 @@ The cat clip (`PUSSY PALACE` sign on a wall above a cat house) was made on
 **`minimax_hailuo`**, not Seedance. Compare the real preflight costs for one
 9:16 clip:
 
-| Route | Model | Credits |
-|---|---|---|
-| Sign in situ | **minimax_hailuo / veo3_1_lite / seedance1_5** | **4 – 4.8** |
-| Synthetic turnaround (identity-locked) | seedance_2_0 | 22.5 |
+| Route | Model | Spec | Credits |
+|---|---|---|---|
+| Sign in situ | **minimax_hailuo** | 6s **1080** (cat quality) | **10** |
+| Sign in situ, budget tier | minimax-2.3-fast / veo3_1_lite / seedance1_5 | 4–6s, 768/720p | 4 – 4.8 |
+| In-situ still (nano_banana_pro) | — | 1k, 9:16 | 2 |
+| Synthetic turnaround (identity-locked) | seedance_2_0 | 5s 720p | 22.5 |
 
-**~5× cheaper, and arguably better content.** A sign living in a real room —
+**A finished in-situ ad = still (2) + clip (10) = ~12 credits at cat quality**, or
+~6–7 on the budget tier. That is roughly **half** a Seedance turnaround, not a
+fifth — an earlier draft of this doc quoted 4 credits from a 768/fast preflight
+and understated it. Corrected here.
+
+**Still the better default, and arguably better content.** A sign living in a real room —
 above a cat house, on a fence, by a front door — is more relatable and more
 shareable than a man rotating a plaque in a workshop. It also needs no
 presenter, which matters because **Max does not film** (see
