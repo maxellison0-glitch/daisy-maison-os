@@ -40,6 +40,42 @@ Options: `SIGN_COLOR`, `SIGN_PANEL`, `SIGN_HEART=0` for non-wedding wording.
 
 ---
 
+## 1b. Variant → SVG + reference map (Max-approved 25 Jul 2026)
+
+**This is the lookup Alan and Freya use.** Pick the row, use that SVG command
+with that reference master. Every row is proven — no new prompts needed.
+
+| Want | build.py command | Reference 1 (the object) | Proof |
+|---|---|---|---|
+| **Wedding**, heart, 2 lines, black/white | `build.py <id> "MR & MRS HALE" "WHEN TWO NAMES BECOME ONE · 15TH AUGUST 2026" 486` | `reference-masters/street-sign-BLACK-on-white-MASTER.jpg` | `DM-HALE-print-edit/` ✅ |
+| **No heart**, 2 lines, black/white | `SIGN_HEART=0 build.py …` | same black master | same chain |
+| **No heart, 1 line** | `SIGN_HEART=0 build.py <id> "THE DOG LIVES HERE" "" 486` | same black master | single-line placement approved as-is |
+| **Any colourway** (± heart) | `SIGN_COLOR=#… SIGN_PANEL=#… [SIGN_HEART=0] build.py …` | same black master — it recolours | `DM-HARPERS-colour-green/` ✅ |
+| Brown colourway, alternative angle | as above | `street-sign-BROWN-on-cream-MASTER.jpg` or `…-held-MASTER.jpg` | live listing photos |
+
+**Confirmed capability: any colour, any wording, any personalisation style, one
+line or two, heart or no heart.** The green Harpers render proves recolouring
+works from the *black* master, so a colourway does not need its own photograph.
+
+Prompts: use `01-validated-product-print-edit.txt`. For a **colourway** change,
+one clause is adapted — the printed border and lettering both take their colour
+from reference 2, while border *geometry* stays locked to reference 1. That
+adapted version is in `DM-HARPERS-colour-green/`.
+
+**Accepted tolerance (Max's call, 25 Jul 2026):** in the colour edit the printed
+border renders slightly narrower than the black master. Raised and reviewed;
+Max confirmed it is good enough and correct for use. Not a defect — do not
+"fix" it or re-litigate it. He will say if something is wrong.
+
+## Real customer photos — do not use as generation input
+
+`Wedding_Street_Sign_Collection.png` on the live listing is a grid of real
+customer wedding photographs (real faces, real surnames). Excellent social proof,
+already public, and fine as *construction* evidence for what a real sign looks
+like. **Never pass real customers' faces to a generator** as reference material.
+
+---
+
 ## 2. The rule that keeps being broken
 
 From the validated case's own fault-line table:
