@@ -33,8 +33,27 @@ OUT    = sys.argv[5] if len(sys.argv) > 5 else os.path.join(HERE, "mr-mrs-large-
 # ---- constants from the PSD ----
 BORDER=12.4; VSCALE=1.4
 # Colourway is a product option: override per render without touching geometry.
-COLOR=os.environ.get("SIGN_COLOR","#010101")   # frame + lettering
-PANEL=os.environ.get("SIGN_PANEL","#FFFFFF")   # inset panel
+# ---- REAL colourways, sampled from the live listing swatch (Mow-It-Swatch-Final).
+# These are the ONLY colours the product is sold in. Do not invent others.
+# Panel is the same warm cream across all five.
+COLOURWAYS = {
+    "BLACK": ("#000000", "#F2EEE3"),
+    "GREY":  ("#7C7C7E", "#F2EEE3"),
+    "SAGE":  ("#BEC0AA", "#F2EEE3"),
+    "GRASS": ("#6E8F40", "#F2EEE3"),
+    "BLUE":  ("#7A9EAA", "#F2EEE3"),
+}
+_cw = os.environ.get("SIGN_COLOURWAY")
+if _cw:
+    key = _cw.strip().upper()
+    if key not in COLOURWAYS:
+        raise SystemExit("Unknown colourway %r. Real options: %s"
+                         % (_cw, ", ".join(COLOURWAYS)))
+    COLOR, PANEL = COLOURWAYS[key]
+else:
+    # raw overrides kept for the legacy black-on-pure-white master
+    COLOR=os.environ.get("SIGN_COLOR","#010101")   # frame + lettering
+    PANEL=os.environ.get("SIGN_PANEL","#FFFFFF")   # inset panel
 # The heart is the Mr & Mrs signature unit. It is applied automatically to any
 # ampersand in line 1; set SIGN_HEART=0 for non-wedding wording such as BAR & GRILL.
 HEART_ENABLED=os.environ.get("SIGN_HEART","1")!="0"
