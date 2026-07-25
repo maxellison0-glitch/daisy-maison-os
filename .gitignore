@@ -37,5 +37,10 @@ projects/daisy-street-sign/**/*.pyc
 !projects/sign-in-situ/
 !projects/sign-in-situ/**
 
+# sign carousels: unlimited free wording variants on an approved plate
+!projects/sign-carousels/
+!projects/sign-carousels/**
+
 !Content Pipeline/
 !Content Pipeline/**
+__pycache__/

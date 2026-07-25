@@ -1,0 +1,42 @@
+{
+  "cat": {
+    "image": "plate-cat-approved.png",
+    "box": [
+      329,
+      755,
+      1209,
+      966
+    ],
+    "colourway": "BLACK",
+    "wall_band": 90,
+    "damp": 0.55,
+    "note": "Approved cat-house plate. Sign measured by dark-pixel extents: 880x211px = 4.17:1 on screen vs canonical 4.56:1 \u2014 the difference is genuine horizontal foreshortening, do not 'correct' it.",
+    "crop45": [
+      73,
+      630,
+      1465,
+      2370
+    ],
+    "wordmark_y": 0.3
+  },
+  "dog": {
+    "image": "plate-dog-approved.png",
+    "box": [
+      387,
+      790,
+      1155,
+      978
+    ],
+    "colourway": "SAGE",
+    "wall_band": 90,
+    "damp": 0.45,
+    "crop45": [
+      96,
+      660,
+      1488,
+      2400
+    ],
+    "wordmark_y": 0.3,
+    "note": "Boot-room plate, sage sign. Measured 768x188 = 4.09:1 on screen (canonical 4.56:1) - horizontal foreshortening. Top edge tilt -0.38 deg, ignored as within tolerance for an axis-aligned paste. damp lower than the cat plate because this room is evenly lit, so the wall gradient is weaker evidence."
+  }
+}

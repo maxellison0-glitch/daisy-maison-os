@@ -86,6 +86,24 @@ Always state explicitly what NOT to take from each — "do not copy reference 1'
 room", "there is no person in this image". Without that the model borrows the
 wrong attribute from the right reference.
 
+## Reprinting an APPROVED plate — free, unlimited wordings
+
+Once a scene's plate is approved, **do not pay to change the wording.**
+`../templates/sign-reprint/reprint.py` swaps the printing locally at zero
+credits, unlimited times, and never touches the photographed border, shaped
+ends, mounting holes, edge highlights or wall shadow. Full method, gates and
+recorded failure modes: `../SIGN_CAROUSEL_ENGINE.md`.
+
+This is the same rule as §2, applied rather than bent — the photograph stays the
+authority for the object, the SVG stays the printing only. It also fixes the
+"almost too perfect" tell Max called on the cat still: a generated panel comes
+back optically flat (measured: cream held 239/231/222 across all 880px while the
+wall behind it swung warm), and the engine relights the new ink from the plate's
+own light plus the wall's gradient.
+
+**Paid generation is now for new SCENES, not new wordings.** Budget per plate,
+not per design.
+
 ## Caption stroke — house standard
 
 On-screen captions carry a **black stroke behind the white fill**
