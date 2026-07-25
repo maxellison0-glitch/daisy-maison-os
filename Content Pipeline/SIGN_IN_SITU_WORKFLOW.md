@@ -1,120 +1,148 @@
-# Engineering workflow — "Sign in situ" & "Type it → make it real"
+# Engineering workflow — "Sign in situ" (v2, rebuilt after a fidelity failure)
 
-**Status: APPROVED by Max, 25 Jul 2026.** This is now the default way we make
-video. Changes to it need his sign-off.
+**Status: v2 PROPOSED — awaiting Max's approval. v1 is WITHDRAWN.**
+v1 was approved on 25 Jul 2026 and produced four unusable stills within the
+hour. Do not follow v1. The post-mortem is §1 because the failure is the reason
+every rule below exists.
 
 ---
 
-## 1. The discovery (why this replaces turnaround videos as the default)
+## 1. Post-mortem — why v1 failed
 
-The cat clip (`PUSSY PALACE` sign on a wall above a cat house) was made on
-**`minimax_hailuo`**, not Seedance. Compare the real preflight costs for one
-9:16 clip:
+Four in-situ stills were generated (`DAD'S BAR & GRILL` ×2, `THE DOG LIVES
+HERE`, `THE HARPERS`). All four were rejected on sight by Max. The signs in them
+are not the Daisy Maison product — they are a generic "vintage plaque" the image
+model invented from a text description.
 
-| Route | Model | Spec | Credits |
-|---|---|---|---|
-| Sign in situ | **minimax_hailuo** | 6s **1080** (cat quality) | **10** |
-| Sign in situ, budget tier | minimax-2.3-fast / veo3_1_lite / seedance1_5 | 4–6s, 768/720p | 4 – 4.8 |
-| In-situ still (nano_banana_pro) | — | 1k, 9:16 | 2 |
-| Synthetic turnaround (identity-locked) | seedance_2_0 | 5s 720p | 22.5 |
+Measured against `projects/daisy-street-sign/artwork/build.py`, the canonical
+renderer whose ground truth is the audited production PSD:
 
-**A finished in-situ ad = still (2) + clip (10) = ~12 credits at cat quality**, or
-~6–7 on the budget tier. That is roughly **half** a Seedance turnaround, not a
-fifth — an earlier draft of this doc quoted 4 credits from a 768/fast preflight
-and understated it. Corrected here.
+| Attribute | Canonical product | What was generated |
+|---|---|---|
+| Proportion | **4.56:1** (570 × 125 mm) | ~3:1, squat |
+| Border | `#010101`, uniform 12.4 mm inset | grey/charcoal-brown, arbitrary |
+| Corner profile | the real **409-vertex LightBurn cut contour** | invented scalloped/ogee |
+| Mounting holes | two, at real coordinates | none; decorative dots instead |
+| Typography | Times New Roman regular, vertical scale 1.4, tracking 0, line 1 fitted to 486 mm | unidentified serif, wrong weight and fit |
+| Heart | real PSD raster, tip inset 3 px into the ampersand upstroke | absent |
 
-**Still the better default, and arguably better content.** A sign living in a real room —
-above a cat house, on a fence, by a front door — is more relatable and more
-shareable than a man rotating a plaque in a workshop. It also needs no
-presenter, which matters because **Max does not film** (see
-`CONTENT_BRIEF_GATE.md`).
+**Root causes**
 
-The second half of the saving: the **configurator and CTA cards cost nothing.**
-They are HTML/Playwright renders, not generations — so the whole story wrapper
-is free, and only the one in-situ clip is ever paid for.
+1. **A generative model was allowed to draw the product.** Every generation
+   redraws it, so every generation is a different product. Fidelity was never
+   possible by this route.
+2. **The house method that already works was ignored.** The diffuser stills that
+   succeeded used *"EDIT THIS PHOTOGRAPH… keep the product 100 % unchanged and
+   pixel-faithful… change ONLY the background."* v1 switched to text-to-image.
+3. **No fidelity gate existed.** v1 checked motion for AI-slop tells and never
+   checked that the product was ours. Four generations were fired before
+   anything was inspected.
+4. **Wording was invented for unvalidated templates.** `scripts/README.md` states
+   only the **Large Mr & Mrs template (SKU 36961)** is supported and that other
+   templates "should be added only after their physical production templates are
+   validated." `DAD'S BAR & GRILL` and `THE DOG LIVES HERE` may not be real
+   products. The canonical render makes the error visible: it places the
+   **wedding heart at the ampersand of a bar sign**.
 
-## 2. The two formats
+---
 
-### Format A — Sign in situ (simplest, ~12 credits at cat quality)
-One continuous ambient shot. The sign is **razor-sharp and static**; the motion
-comes from something *else* in frame.
+## 2. The rule that replaces all of it
 
-- The sign never moves, never warps, never re-renders. State this explicitly in
-  the prompt — it is the single most important instruction.
-- Motion budget goes to one ambient element: a cat, a feather toy on a string,
-  BBQ smoke, a lawnmower crossing the lawn, a curtain, firelight.
-- Camera locked off or near-static. No fake Ken-Burns.
-- Our two-beat caption goes on in post (never model-burned).
+> **The sign is never generated. It is rendered by `build.py` and composited.**
 
-### Format B — Type it → make it real (same ~12 credits, higher perceived effort)
-Format A wrapped in a configurator story. This is the DM-C006 Potter structure,
-now rebuilt cross-platform in `templates/sign-in-situ/build-typereal.py`.
+A generative model may produce the *scene*. It may never produce the *product*.
+There is no prompt wording that makes this safe — the fix is architectural, not
+lexical.
 
-1. **Configurator (≈2.9s, 0 credits).** Cream screen: `DAISY MAISON` /
-   "Make it theirs." / "Personalise the sign as you order" / an input field that
-   **types the wording live** with a blinking caret, and a sign plate preview
-   that fills in as it types. Rendered locally with the real bundled Times.
-2. **Cut to the real thing (≈4.5s).** The in-situ clip, with a cream-pill
-   caption ("Made for them." / "Made for him.").
-3. **CTA card (≈1.6s, 0 credits).** `ADD THEIR NAMES →` + `daisymaison.co.uk`.
+## 3. The production line
 
-Total ≈9s. Reads as a proper ad, because the viewer watches the product get
-made for someone.
+**Step 0 — Product check (blocking).**
+Confirm the wording corresponds to a **validated template**. Today that is the
+Large Mr & Mrs only. Anything else requires Max to confirm the product exists
+and the template is validated. Do not proceed on an assumption.
 
-## 3. The build steps
+**Step 1 — Render the sign face (free, exact).**
+```
+python3 projects/daisy-street-sign/artwork/build.py <order> "<LINE 1>" "<LINE 2>" 486 out.svg
+```
+Rasterise the SVG to PNG with alpha. Deterministic, any wording, zero credits.
+*Known constraint:* the heart is bound to the ampersand as the Mr & Mrs
+signature unit. Non-wedding wording containing "&" will wrongly receive it —
+another reason Step 0 blocks.
 
-1. **Brief it** — fill `CONTENT_BRIEF_GATE.md`. Caption written before the visual.
-2. **Generate the in-situ clip** on a budget model, silent, 9:16, ~5–6s.
-   Preflight with `get_cost:true`. Never escalate to seedance_2_0 unless the
-   product must stay pixel-locked through a *motion* of the sign itself.
-3. **QC as video, not stills.** Sample frames across the whole clip. Reject on
-   any sign/lettering warp, vibration on static elements, or deforming hands or
-   paws — per the AI-slop checklist in `Personas/VOICE_AND_CAPTION_GUIDE.md`.
-4. **Caption in post** — `templates/hook-frames/caption-overlay.py`. Two locked
-   treatments; pick by engine:
-   - **LAUGH → house native bold white** (looks native, not like an ad)
-   - **FEEL / premium → cream pill** (Fraunces brown on `rgba(250,246,238,.94)`)
-   - Beat 1 **3–7 words**. Long captions have been rejected repeatedly as
-     unreadable at phone speed.
-   - Position `top:~300` on product shots, `top:~648` when a person is in frame
-     (drops it into the chest space, clear of chin and product).
-   - If the clip contains a reveal, the hook **must clear before the payoff is
-     legible**, or the loop is spoiled.
-5. **Wrap in Format B** if the idea benefits from the made-to-order story.
-6. **Deliver the file + the caption in chat.** Max posts manually from his
-   phone. Captions pasted into chat, not buried in a file.
-7. **Before publishing:** trending audio added in-app (files ship silent), and
-   the platform **AI-content label switched on** whenever a synthetic person or
-   synthetic product still appears.
+**Step 2 — Generate the scene, with NO sign in it.**
+Prompt the empty setting only — garden fence, hallway wall, brickwork beside a
+door — with a clear, flat, well-lit mounting surface and honest perspective. The
+model never sees a sign and is never asked to draw one. Explicitly negative-
+prompt signs, plaques and lettering.
 
-## 4. Distribution
+**Step 3 — Animate the empty scene (the paid step).**
+Locked-off camera, ambient motion only (smoke, a dog, a cat, leaves, firelight).
+~10 credits on `minimax_hailuo` at 1080. Still no sign present.
 
-One 9:16 silent master serves all of it. Instagram Reels cross-posts to
-Facebook automatically — two platforms for one upload. TikTok and YouTube
-Shorts to follow once logged in. **Four platforms, one file.**
+**Step 4 — Composite the canonical sign onto every frame (free, exact).**
+Because the shot is locked off, the sign is a static overlay: perspective-
+transform once, then apply to all frames. Match lighting with a multiply shadow
+and match grain/focus to the plate.
+**This is the step that makes drift impossible.** The sign cannot warp,
+shimmer or re-letter, because it is our PNG on every frame rather than something
+the model redraws 144 times.
 
-## 5. Idea bank (Format A unless noted)
+**Step 5 — Verify against canon (blocking, automated).**
+Before any caption work, assert on the composited frame:
+- aspect ratio of the plate within tolerance of **4.56:1**
+- border sampled as `#010101`
+- both mounting holes present
+- wording string matches the requested string **exactly**, character for character
+Fail any check → back to Step 4. Never "it's close enough".
 
-Priority order reflects the season read: summer gifting trough, weddings
-carrying, Results Day mid-August, Christmas ramp already started at TreatBox.
+**Step 6 — Caption in post** — `templates/hook-frames/caption-overlay.py`.
+LAUGH → house native bold white. FEEL/premium → cream pill. Beat 1 ≤ 7 words.
+If there is a reveal, the hook clears before the payoff is legible.
 
-| # | Engine | Sign wording | Scene + the ambient motion | Hook → payoff |
+**Step 7 — Deliver file + caption in chat.** Max posts manually. Trending audio
+added in-app; AI-content label on whenever synthetic imagery appears.
+
+## 4. Spend discipline
+
+- **One probe, then verify, then batch.** Never fire a batch before a single
+  result has been inspected. v1 spent 8 credits on four unusable stills.
+- Preflight every job with `get_cost:true`.
+- Costs: scene still ~2 credits; in-situ clip ~10 at 1080 (~4–4.8 on the budget
+  tier). Steps 1, 4 and 6 are free. A finished ad is **~12 credits**.
+
+## 5. What survives from v1
+
+These were not implicated in the failure and still stand:
+
+- **"Type it → make it real"** (`templates/sign-in-situ/build-typereal.py`) —
+  configurator → real scene → CTA. Its sign preview already renders locally, so
+  it is compatible with §2. It should be switched from its own plate drawing to
+  `build.py` output for exactness.
+- **Caption treatments and placement rules** (`templates/hook-frames/`).
+- **Distribution:** one 9:16 silent master serves Instagram, Facebook, TikTok
+  and YouTube.
+- **The cat clip is unaffected** — its sign came from an earlier pipeline, not
+  from v1, and Max has already judged it good.
+
+## 6. Idea bank — REVISED
+
+Every idea below is **blocked at Step 0** until Max confirms the template is a
+real, validated product. Only the Mr & Mrs line is currently validated.
+
+| # | Engine | Wording | Scene + ambient motion | Step-0 status |
 |---|---|---|---|---|
-| 1 | LAUGH | `DAD'S BAR & GRILL` | Garden fence, BBQ smoking beside it — **smoke** is the motion | "He doesn't own a restaurant." → "Try telling him that." |
-| 2 | LAUGH | `THE DOG LIVES HERE` *(we just pay the bills)* | Hallway, dog wanders past — **the dog** is the motion | "Whose house is it, really?" → let the sign answer |
-| 3 | FEEL | `THE [SURNAME]S · EST. 2026` | New front door, keys still in the lock, **leaves moving** | "First thing they hung up." → "Before the kettle." |
-| 4 | SOLVE · Format B | `MR & MRS [NAME]` | Stone pillar with flowers — the Potter setup, proven | "Type the name." → "Made for them." |
-| 5 | SOLVE | `[NAME]'S CLASSROOM` | Classroom door, **light shifting** | Hold for **September**, not now — the July teacher window is closed |
-| 6 | FEEL · seasonal | `THE [SURNAME]S` | Mantelpiece, stockings, **firelight flicker** | Build in **August** to land the Christmas ramp early |
-| 7 | LAUGH | `MUM'S KITCHEN` *(it's this or nothing)* | Kitchen shelf, **steam from a pan** | "You asked what's for dinner." → the sign |
+| 1 | FEEL | `MR & MRS [NAME]` | Stone pillar with flowers | **Validated** — buildable now |
+| 2 | FEEL | `MR & MRS [NAME]` | Front door, keys in the lock | **Validated** — buildable now |
+| 3 | LAUGH | `DAD'S BAR & GRILL` | Garden fence, BBQ smoke | **Blocked** — template unconfirmed; "&" triggers the heart |
+| 4 | LAUGH | `THE DOG LIVES HERE` | Hallway, dog | **Blocked** — template unconfirmed |
+| 5 | FEEL | `THE [SURNAME]S · EST. 2026` | New front door | **Blocked** — is this a real SKU? |
+| 6 | FEEL | seasonal, mantelpiece + firelight | Christmas ramp | **Blocked** pending template |
 
-Ideas 1 and 2 are the cheapest reach; 6 is the one with a deadline attached.
+## 7. Hard rules
 
-## 6. Hard rules
-
+- The sign is rendered, never generated. No exceptions.
 - No filming, no presenter (`CONTENT_BRIEF_GATE.md`).
-- No invented customer stories. Real surnames used as product wording are fine
-  — a name on a sign *is* the product — but never narrate a specific couple's
-  order, and never show invoices, addresses or contact details.
-- Preflight every generation; no paid spend without Max's explicit go.
-- Propose, never publish.
+- Step 0 and Step 5 are **blocking gates**, not advisory.
+- One probe before any batch.
+- Propose, never publish. No paid spend without Max's explicit go.
