@@ -67,6 +67,33 @@ border renders slightly narrower than the black master. Raised and reviewed;
 Max confirmed it is good enough and correct for use. Not a defect — do not
 "fix" it or re-litigate it. He will say if something is wrong.
 
+## Multi-reference role separation (Max's insight, 25 Jul 2026)
+
+> "Using a reference of an approved image of someone holding it would probably
+> help with the sizing every time."
+
+Correct, and it generalises. **Give one reference per question, and say in the
+prompt which reference answers which question.** Mixing them is what produced
+rejected output; separating them is what produces approved output.
+
+| Reference | Answers |
+|---|---|
+| **Wall-mounted master** (`street-sign-WALL-MOUNTED-MASTER.png`, a frame from the approved cat clip) | How a mounted sign *sits*: size relative to the room, mounting height, flush orientation, contact shadow on the wall |
+| **Held master** (`street-sign-BLACK-on-white-MASTER.jpg`) | What the *object* is: silhouette, 4.5:1 proportion, shaped ends, border width, mounting holes, material, sheen — **and scale, because a human hand gives the eye something to measure against** |
+| **`build.py` artwork** | The *printing* and the *colourway*, nothing else |
+
+Always state explicitly what NOT to take from each — "do not copy reference 1's
+room", "there is no person in this image". Without that the model borrows the
+wrong attribute from the right reference.
+
+## Caption stroke — house standard
+
+On-screen captions carry a **black stroke behind the white fill**
+(`-webkit-text-stroke` with `paint-order: stroke fill`, roughly 8.5% of the font
+size). Max's note: it is what he did by hand in CapCut, and it makes the work read
+as human-made rather than auto-generated. Stroke *behind* the fill, so the white
+stays crisp rather than being eaten into.
+
 ## House interior style — locked 25 Jul 2026
 
 Max rejected the first in-situ set on set dressing, not fidelity: terracotta

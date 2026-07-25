@@ -6,7 +6,7 @@ FF=imageio_ffmpeg.get_ffmpeg_exe()
 W,H,FPS=1080,1934,24
 TRIM=0.65                      # drop the frames where the feather crosses the sign
 CLIP="cat-toy.mp4"
-OUT="CAT-ADVERT-master.mp4"
+OUT="CAT-ADVERT-master-v2.mp4"
 
 # ---------- 1. extract trimmed frames ----------
 shutil.rmtree("fr",ignore_errors=True); os.makedirs("fr")
@@ -31,7 +31,10 @@ HEAD=("<!doctype html><html><head><meta charset=utf8><style>*{margin:0;padding:0
 def native(t,top,size=60):
     return (f"<div style=\"position:absolute;top:{top}px;left:64px;right:64px;text-align:center;"
             f"font-family:TT;font-weight:800;font-size:{size}px;line-height:1.16;color:#fff;"
-            f"letter-spacing:-.005em;text-shadow:0 2px 7px rgba(0,0,0,.62),0 0 30px rgba(0,0,0,.45)\">{t}</div>")
+            f"letter-spacing:-.005em;"
+            # CapCut-style outline: stroke painted BEHIND the fill so the white stays crisp
+            f"-webkit-text-stroke:{max(4,int(size*0.085))}px #0B0B0B;paint-order:stroke fill;"
+            f"text-shadow:0 3px 9px rgba(0,0,0,.55),0 0 26px rgba(0,0,0,.35)\">{t}</div>")
 CAPS={"c1":native("POV: you thought<br>it was your house",210,58),
       "c2":native("It isn&rsquo;t.",250,72)}
 with sync_playwright() as p:
