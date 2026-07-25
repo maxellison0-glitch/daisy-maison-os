@@ -103,11 +103,27 @@ shimmer or re-letter, because it is our PNG on every frame rather than something
 the model redraws 144 times.
 
 **Step 5 — Verify against canon (blocking, automated).**
-Before any caption work, assert on the composited frame:
-- aspect ratio of the plate within tolerance of **4.56:1**
-- border sampled as `#010101`
-- both mounting holes present
-- wording string matches the requested string **exactly**, character for character
+
+⚠️ **This gate was wrong as first written and would have failed our own approved
+asset.** Alan measured the sign in the approved cat clip at **515 × 138 px =
+3.73:1** against a canonical 4.56:1 — the difference is genuine foreshortening on
+a wall-mounted sign, not a defect. And at 138 px tall a real mounting hole is
+about 2 px, so "both holes present" is unassertable. Never assert canonical
+geometry on a raw in-situ frame.
+
+Corrected gate — **rectify the sign region back to a rectangle using the known
+wall quad first, then assert on the rectified plate:**
+- rectified aspect ratio within **±1.5%** of 4.56:1
+- ink within a ΔE tolerance of the chosen colourway **after white-balance
+  normalisation** (the plate carries the room's colour temperature)
+- wording an exact character-for-character string match
+- heart present **iff** `SIGN_HEART=1`
+- mounting holes checked **only** where the rectified plate is ≥400 px wide
+
+Plus a motion gate on the clip: **sign bounding-box drift ≤ 1 px across every
+frame.** The approved cat clip achieves 0 px (x 296–811, y 535–673, identical at
+t=1.0 and t=4.5). That is the bar and it is provably achievable.
+
 Fail any check → back to Step 4. Never "it's close enough".
 
 **Step 6 — Caption in post** — `templates/hook-frames/caption-overlay.py`.
@@ -144,14 +160,33 @@ These were not implicated in the failure and still stand:
 Every idea below is **blocked at Step 0** until Max confirms the template is a
 real, validated product. Only the Mr & Mrs line is currently validated.
 
-| # | Engine | Wording | Scene + ambient motion | Step-0 status |
+**Step-0 blocks RESOLVED 25 Jul 2026.** Freya checked the live catalogue rather
+than assuming, and arbitrary wording *is* a real product:
+
+- **SKU 36967 — "Create Your Own Custom Text"**, active, £18.95, up to two lines.
+- `DAD'S BAR & GRILL` is its own SKU (**88071**, £11.25, 1,139 sold).
+- `FAMILY` (36965, 2,072 sold), `HOUSE RULES` (36963), `HOME` (**38827, single
+  line** — so one-line signs are sellable), football create-your-own (89397).
+- Colourways are a listed product option — five of them, now locked in
+  `artwork/colourways/README.md`.
+- `I'M SEXY & I MOW IT` (36926) is live, so cheeky is already the house register.
+
+The `&`-triggers-the-heart problem is fixed separately by `SIGN_HEART=0`.
+
+| # | Engine | Wording | Scene + ambient motion | Status |
 |---|---|---|---|---|
-| 1 | FEEL | `MR & MRS [NAME]` | Stone pillar with flowers | **Validated** — buildable now |
-| 2 | FEEL | `MR & MRS [NAME]` | Front door, keys in the lock | **Validated** — buildable now |
-| 3 | LAUGH | `DAD'S BAR & GRILL` | Garden fence, BBQ smoke | **Blocked** — template unconfirmed; "&" triggers the heart |
-| 4 | LAUGH | `THE DOG LIVES HERE` | Hallway, dog | **Blocked** — template unconfirmed |
-| 5 | FEEL | `THE [SURNAME]S · EST. 2026` | New front door | **Blocked** — is this a real SKU? |
-| 6 | FEEL | seasonal, mantelpiece + firelight | Christmas ramp | **Blocked** pending template |
+| 1 | LAUGH | `MURPHY'S LAW` / *if it's on the floor, it's mine* | Boot room, **settled** dog lifts its head | **Approved** — Black |
+| 2 | LAUGH | `THE CAT'S HOUSE` / *you just pay the mortgage* | Cat house, slow blink | **Approved** — Black |
+| 3 | FEEL | `THE HARPERS` / `EST. 2026` | Hallway, traffic passing **beside** the sign | **Approved** — Sage |
+| 4 | LAUGH | `DAD'S BAR & GRILL` / *burnt to order* | Fence, BBQ smoke | Parked — Max returning to it |
+| 5 | FEEL | seasonal, mantelpiece + firelight | Christmas ramp | Build in August |
+
+**Occlusion rule (Alan, non-negotiable):** nothing may cross *in front of* the
+sign. The instant a walker occludes the plate it stops being a locked overlay and
+the model must redraw our product for those frames — the expensive tier plus
+reintroduced drift risk, to buy a moment nobody notices. Choreograph animals and
+people to pass **below or beside** the sign. Free, and it protects the only
+fidelity guarantee we have.
 
 ## 7. Hard rules
 

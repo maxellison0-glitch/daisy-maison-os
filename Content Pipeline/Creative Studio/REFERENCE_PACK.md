@@ -120,8 +120,19 @@ are validated; a fresh prompt is not.
 | **Total per sign video** | | **90** |
 
 Batches of four exist so a human picks the winner. That is part of the method,
-not overspend. Any cheaper number quoted elsewhere describes a route that has
-**not** produced an approved sign.
+not overspend.
+
+**Reconciling the 72 against `VIDEO_MODEL_COSTS.md`'s 22.5** — Alan flagged these
+as 3.2× apart and unexplained. Both are correct at different specs: **72** is the
+actual recorded cost of the validated Jannaway job (Seedance 2.0, **8 s**,
+1080×1920, audio), while **22.5** is a preflight for **5 s at 720p, silent**.
+Neither is wrong; the spec is what moves it. Preflight every job with
+`get_cost:true` and record the number rather than quoting either figure.
+
+**And the cheapest route avoids the question.** When the camera is locked off and
+the sign is a locked composite overlay, the model never touches the product, so
+the identity-locked premium tier buys nothing — the 4–4.8 credit tier is correct
+and sufficient. Pay for Seedance 2.0 only when the sign itself must move.
 
 ---
 
