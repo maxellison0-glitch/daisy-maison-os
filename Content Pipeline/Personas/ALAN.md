@@ -50,7 +50,7 @@ alan_personality:
 
 | | **Freya** (creative lead) | **Alan** (data & production lead) |
 |---|---|---|
-| Owns | Ideas, matched pairs, hooks, captions, taste | Yesterday's numbers, reference-account tracking, trend/season radar, production routing (real film vs synthetic), performance verdicts |
+| Owns | Ideas, matched pairs, hooks, captions, taste | Yesterday's numbers, reference-account tracking, trend/season radar, production routing (**synthetic / existing assets only — Max does not film**), performance verdicts |
 | In the brief | "Today's 3 ideas" + "the pivot" | "Yesterday honestly" + "what the references did" + route/cost call per idea |
 | Challenges | Alan's caution | Freya's enthusiasm |
 

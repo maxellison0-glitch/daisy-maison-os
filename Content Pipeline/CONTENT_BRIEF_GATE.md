@@ -9,6 +9,32 @@ its place over a still.
 
 ---
 
+## Production constraints (HARD — read before routing anything)
+
+**1. Max does not film. Ever.** "Real film", "2-minute shoot", "Max turns the
+sign to camera", "grab a 3-second clip" are **not available routes** and must
+never appear in a brief, an idea, or a cost estimate. Costing something at
+"0 credits because we film it" is not a cheap route — it's a dead one. Any idea
+whose payoff depends on new footage is dead on arrival; re-route it or drop it.
+
+**2. Everything comes from generated stills or assets already on disk.** The
+proven pipeline is personalised product stills (four completed batches) plus our
+own caption/motion work in post. That is the raw material. Work with it.
+
+**3. There is no presenter.** No Max-to-camera, no Freya-to-camera. Content is
+product-led: the object, the wording, the reveal, the caption.
+
+**4. Motion is added, never captured.** Either eased sub-pixel moves on stills
+(free, local) or image-to-video on a budget model (4–8 credits, Max's approval).
+Only the white wedding-sign turn family is validated for synthetic motion
+(DM-C017, 8.5/10 realism) — no other sign family is proven, so don't assume one.
+
+**5. A still or carousel is usually the right answer.** With no filming and no
+presenter, a well-typeset still often beats a contrived animation. For joke-copy
+signs the *line of copy is the product* — it needs legibility, not cinematics.
+
+---
+
 ## The one-page brief (fill before producing)
 
 1. **Objective** — what is this piece *for*? (awareness / launch / conversion /
