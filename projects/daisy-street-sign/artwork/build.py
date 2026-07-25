@@ -31,7 +31,13 @@ TARGET_W = float(sys.argv[4]) if len(sys.argv) > 4 else 486.0   # fit line-1 to 
 OUT    = sys.argv[5] if len(sys.argv) > 5 else os.path.join(HERE, "mr-mrs-large-preview.svg")
 
 # ---- constants from the PSD ----
-BORDER=12.4; VSCALE=1.4; COLOR="#010101"; PANEL="#FFFFFF"
+BORDER=12.4; VSCALE=1.4
+# Colourway is a product option: override per render without touching geometry.
+COLOR=os.environ.get("SIGN_COLOR","#010101")   # frame + lettering
+PANEL=os.environ.get("SIGN_PANEL","#FFFFFF")   # inset panel
+# The heart is the Mr & Mrs signature unit. It is applied automatically to any
+# ampersand in line 1; set SIGN_HEART=0 for non-wedding wording such as BAR & GRILL.
+HEART_ENABLED=os.environ.get("SIGN_HEART","1")!="0"
 MAX_FS=59.0                 # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule
 CAP_CENTER_Y=55.3           # vertical centre of the name caps (mm), from real NASH
@@ -73,7 +79,7 @@ def fit(s,target,maxfs,measure=natw):
     width=measure(s)
     return maxfs if width == 0 else min(maxfs, target/width)
 fs1=MAX_FS
-HAS_HEART="&" in LINE1
+HAS_HEART=("&" in LINE1) and HEART_ENABLED
 heartManualReview=False
 if HAS_HEART:
     prefix,suffix=LINE1.split("&",1)
