@@ -99,6 +99,71 @@ wrong, and three of them would have shipped unnoticed.
 **The lesson, again:** every one of these was found by *measuring* the output
 against the plate, not by looking at it. Three looked fine at thumbnail size.
 
+## 4b. The "I can tell it came from the SVG" tell — found and fixed
+
+Max: *"the actual sign, I can tell that it was used from the SVG."*
+
+He could see it and could not name it. It measures out unambiguously. Ink
+luminance and ink/panel contrast ratio, same product, same colourway:
+
+| | ink | ratio |
+|---|---|---|
+| **Real photograph** of a real sign, real room (letters) | **38.5** | **0.213** |
+| **Real photograph**, border sample | **27.3** | **0.140** |
+| The generated plate | 7.8 | 0.034 |
+| A reprint on that plate | 11.6 | 0.050 |
+
+**The generated sign is four to six times more contrasty than the real object
+ever photographs.** Vector black is `#000` and renders as `#000`. Real black ink
+in a real room never comes back below roughly 25–45, because ambient light
+scatters off the panel surface into the ink, the lens adds veiling glare, and the
+ink is a satin surface rather than a void.
+
+**Absolute blacks in a lit interior are a rendering signature.** The eye reads
+them as synthetic instantly, which is exactly why Max could see it without being
+able to point at it. It was never a resolution, sharpness or texture problem —
+measured edge rise was already 2.0px on both the plate and the reprint, matched.
+
+The fix is the physics in reverse. Glare *adds* a roughly constant amount of
+light and exposure then renormalises, so the correction is an affine map chosen
+so the panel level stays exactly put and the ink lands on the target ratio.
+Nothing moves; it is a grade, not a redraw. Applied across the whole sign
+silhouette, letters and printed border together — grading only the panel would
+leave reprinted letters lighter than the photographed border around them, which
+is a worse artefact than the one it fixes.
+
+Result on the cat plate: ink **11.6 → 47.0**, ratio **0.050 → 0.193**, against
+the real photograph's 0.213. Per-plate via `"ink_ratio"` in `plates.json`.
+
+## 4c. Scale — the fault Max called on the sage plate
+
+Max: *"the sizing isn't right for the sage sign. It just looks like a Chinese AI
+photo."*
+
+Correct. The real sign is 570mm wide. Read against three independent anchors in
+the dog plate's own room:
+
+| Anchor | implies sign should be | oversized by |
+|---|---|---|
+| panelling dado, floor→rail 680px @ ~1050mm | 369px | **2.08×** |
+| golden retriever lying, nose to rump 800px @ ~950mm | 480px | **1.60×** |
+| ceramic dog bowl 174px @ ~180mm | 551px | **1.39×** |
+
+It measures **768px** — roughly **1.6× too big**, a 90cm plaque instead of a 57cm
+one. That alone explains the reaction.
+
+**And the anchors disagree with each other by 1.5×**, which means the generated
+*room* is not internally consistent on scale. That is a second, deeper tell and
+**resizing the sign cannot fix it** — only a better plate can.
+
+`rescale_plate.py` corrects the sign size on an existing plate by shrinking the
+**photographed** sign rather than redrawing it, so material, border, holes and
+contact shadow all survive. It works in ratio space (`patch / wall_estimate`)
+rather than pixel space, because scaling pixels drags the old wall tone along and
+leaves a visible rectangle. Applied at 0.625× the dog sign is now 480px and
+correctly proportioned; a faint tonal trace remains where the old sign was
+erased. **Treat it as a repair tool, not a licence to accept mis-scaled plates.**
+
 ## 5. Gates — blocking, automated
 
 - **Raster fill.** The 409-vertex contour fills its 570×125 viewBox exactly, so
@@ -110,6 +175,18 @@ against the plate, not by looking at it. Three looked fine at thumbnail size.
 - **Round-trip.** Reprint the plate's *own* wording and compare. Cream and ink
   must match the plate within a few levels. Recorded: cat cream 242/235/226 vs
   242/234/228, ink 1/0/0 vs 1/1/1. Dog cream 239/236/224 vs 244/240/229.
+- **SCALE GATE — new, and it should have existed from the start.** Before a plate
+  is accepted, measure the sign against **at least two** independent objects of
+  known real size in the same frame (dado rail ~1050mm, interior door leaf
+  ~800–900mm, dog bowl ~180mm, a lying retriever ~950mm nose-to-rump, floorboard
+  width ~180–200mm). The sign is 570mm. Reject the plate if the implied width is
+  more than **±15%** off, and reject it if the anchors disagree with each other by
+  more than **±20%** — that means the room itself has no consistent scale and no
+  amount of correction will save it. This gate is what would have caught the sage
+  plate before it was ever reprinted onto.
+- **INK-RATIO GATE.** Ink/panel contrast ratio must land in **0.12–0.24**, the
+  range measured on real photographs of the real product. Below 0.08 is the
+  vector-black signature and reads as CGI.
 - **Never assert canonical 4.56:1 on an in-situ frame.** The cat plate's sign
   measures 4.17:1 and the dog plate's 4.09:1 on screen; that is real
   foreshortening on a wall-mounted sign, not a defect. Measure the box, do not

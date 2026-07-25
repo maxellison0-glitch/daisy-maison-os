@@ -17,7 +17,13 @@
       1465,
       2370
     ],
-    "wordmark_y": 0.3
+    "wordmark_y": 0.3,
+    "ink_ratio": 0.16,
+    "ink_tint": [
+      1.0,
+      0.92,
+      0.97
+    ]
   },
   "dog": {
     "image": "plate-dog-approved.png",
@@ -37,6 +43,28 @@
       2400
     ],
     "wordmark_y": 0.3,
-    "note": "Boot-room plate, sage sign. Measured 768x188 = 4.09:1 on screen (canonical 4.56:1) - horizontal foreshortening. Top edge tilt -0.38 deg, ignored as within tolerance for an axis-aligned paste. damp lower than the cat plate because this room is evenly lit, so the wall gradient is weaker evidence."
+    "note": "Boot-room plate, sage sign. Measured 768x188 = 4.09:1 on screen (canonical 4.56:1) - horizontal foreshortening. Top edge tilt -0.38 deg, ignored as within tolerance for an axis-aligned paste. damp lower than the cat plate because this room is evenly lit, so the wall gradient is weaker evidence.",
+    "ink_ratio": 0.42
+  },
+  "dog_v2": {
+    "image": "plate-dog-rescaled.png",
+    "box": [
+      531,
+      825,
+      1011,
+      943
+    ],
+    "colourway": "SAGE",
+    "wall_band": 90,
+    "damp": 0.45,
+    "crop45": [
+      300,
+      700,
+      1236,
+      1870
+    ],
+    "wordmark_y": 0.3,
+    "note": "Dog plate with the sign rescaled 0.625x to its true 570mm against three room anchors (was 1.6x oversized). Sign now 480px. A faint tonal trace remains where the old sign was erased.",
+    "ink_ratio": 0.42
   }
 }

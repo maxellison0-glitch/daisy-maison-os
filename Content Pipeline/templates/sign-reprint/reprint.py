@@ -306,6 +306,58 @@ def match_grain(out_np, plate_np, mask_np, seed=7):
     return out_np + n * mask_np[:, :, None]
 
 
+# --------------------------------------------------------------- ink realism
+def ink_grade(region, sign_mask, target_ratio, tint=(1.00, 0.92, 0.97)):
+    """Lift the sign's blacks to a real photograph's measured response.
+
+    THIS IS THE STEP THAT KILLS THE "I can tell it came from the SVG" TELL.
+
+    Max could see it and could not name it; it measures out unambiguously. Ink
+    luminance and ink/panel contrast ratio, same product, same colourway:
+
+        real photograph, real sign, real room ....  38.5   ratio 0.213
+        real photograph, border sample ..........  27.3   ratio 0.140
+        the generated plate .....................   7.8   ratio 0.034
+        a reprint on that plate .................  11.6   ratio 0.050
+
+    The generated sign is four to six times more contrasty than the real object
+    ever photographs. Vector black is #000 and renders as #000; real black ink in
+    a real room never comes back below roughly 25-45, because ambient light
+    scatters off the panel into the ink, the lens adds veiling glare, and the ink
+    is a satin surface rather than a void. Absolute blacks in a lit interior are
+    a rendering signature, and the eye reads them instantly as synthetic even
+    when it cannot say why.
+
+    The correction is the physics in reverse: glare ADDS a roughly constant
+    amount of light, then exposure renormalises. So this is an affine map chosen
+    so the panel level is left exactly where it is and the ink lands on the
+    target ratio — geometry, edges and texture all untouched.
+
+    Applied across the WHOLE sign silhouette, letters and printed border alike.
+    Grading only the panel would leave the reprinted letters lighter than the
+    photographed border around them, which is a worse artefact than the one it
+    fixes. This is a grade, not a redraw: no pixel moves.
+    """
+    a = region.astype(float)
+    lum = a.mean(2)
+    inside = sign_mask > 0.5
+    if not inside.any():
+        return a
+
+    panel = np.percentile(a[inside], 88, axis=0)
+    ink = np.percentile(a[inside], 4, axis=0)
+
+    target = panel * target_ratio * np.asarray(tint, dtype=float)
+    denom = np.maximum(panel - ink, 1.0)
+    alpha = panel * (1.0 - target / np.maximum(panel, 1.0)) / denom
+    alpha = np.clip(alpha, 0.55, 1.0)
+    beta = panel - alpha * panel
+
+    graded = a * alpha + beta
+    m = sign_mask[:, :, None]
+    return a * (1 - m) + graded * m
+
+
 # ------------------------------------------------------------------ the swap
 def reprint(plate_cfg, line1, line2, heart=False, fit=486, focus=0.45):
     plate = Image.open(os.path.join(HERE, plate_cfg["image"])).convert("RGB")
@@ -350,6 +402,17 @@ def reprint(plate_cfg, line1, line2, heart=False, fit=486, focus=0.45):
     if focus:                                   # match the plate's focus layer
         soft = patch.filter(ImageFilter.GaussianBlur(focus))
         patch = Image.composite(soft, patch, mask)
+
+    # Ink realism grade over the whole sign silhouette. Off unless the plate
+    # declares a target ratio, so existing behaviour is unchanged without opt-in.
+    ratio = plate_cfg.get("ink_ratio")
+    if ratio:
+        sign_alpha = np.asarray(
+            face.split()[3].point(lambda v: 255 if v > 128 else 0)
+            .filter(ImageFilter.GaussianBlur(0.8)), dtype=float) / 255.0
+        graded = ink_grade(np.asarray(patch, dtype=float), sign_alpha, ratio,
+                           tuple(plate_cfg.get("ink_tint", (1.00, 0.92, 0.97))))
+        patch = Image.fromarray(np.clip(graded, 0, 255).astype(np.uint8))
 
     final = plate.copy()
     final.paste(patch, (x0, y0))
