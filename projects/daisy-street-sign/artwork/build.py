@@ -22,6 +22,7 @@ from fontTools.subset import Subsetter, Options
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 A = os.path.join(HERE, "assets")
 REGULAR_FONT_PATH = os.path.join(A, "times.ttf")
+BOLD_FONT_PATH = os.path.join(A, "timesbd.ttf")
 
 # ---- args ----
 ORDER  = sys.argv[1] if len(sys.argv) > 1 else "TEST-001"
@@ -64,6 +65,16 @@ HEART_ENABLED=os.environ.get("SIGN_HEART","1")!="0"
 # laser printer... if we had no holes and just a flat surface with the same
 # borders, that's perfect." Set SIGN_HOLES=0 for any content render.
 HOLES_ENABLED=os.environ.get("SIGN_HOLES","1")!="0"
+# Short wordings render NARROWER than the plate because line1ScaleX was capped at
+# min(1.0, ...) — it could only ever compress, never expand. Max, 25 Jul 2026, on
+# MUM'S TAXI and THE SNUG: "the text, it doesn't stretch out very far. It's quite
+# condensed. Usually we'd stretch out a bit more." SIGN_STRETCH lifts that cap so a
+# short line expands to the target width. Off by default so production output is
+# unchanged; STRETCH_MAX stops it turning into a caricature.
+STRETCH=os.environ.get("SIGN_STRETCH","0")!="0"
+STRETCH_MAX=float(os.environ.get("SIGN_STRETCH_MAX","1.6"))
+# Line 2 in a real Times Bold, not a faux weight — timesbd.ttf is in assets.
+LINE2_BOLD=os.environ.get("SIGN_LINE2_BOLD","0")!="0"
 MAX_FS=59.0                 # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule
 CAP_CENTER_Y=55.3           # vertical centre of the name caps (mm), from real NASH
@@ -101,6 +112,20 @@ UNSUPPORTED_SUBTITLE=[c for c in dict.fromkeys(LINE2) if ord(c) not in cmap and 
 if UNSUPPORTED_SUBTITLE: print("WARNING: regular font has no glyph for", UNSUPPORTED_SUBTITLE, "- flag for manual review")
 CX=285.0
 
+fb=TTFont(BOLD_FONT_PATH) if os.environ.get("SIGN_LINE2_BOLD","0")!="0" else None
+if fb is not None:
+    _bupem=fb["head"].unitsPerEm; _bcmap=fb.getBestCmap(); _bhmtx=fb["hmtx"]
+    _bspace=_bhmtx["space"][0] if "space" in _bhmtx.metrics else _bupem//2
+    def natw_bold(t):
+        return sum((_bhmtx[_bcmap[ord(c)]][0] if ord(c) in _bcmap else _bspace) for c in t)/_bupem
+else:
+    natw_bold=None
+
+def xcap(v):
+    """Horizontal scale cap. Compression is always allowed; expansion only when
+    SIGN_STRETCH is on, and never past STRETCH_MAX."""
+    return min(v, STRETCH_MAX) if STRETCH else min(v, 1.0)
+
 def fit(s,target,maxfs,measure=natw):
     width=measure(s)
     return maxfs if width == 0 else min(maxfs, target/width)
@@ -110,11 +135,11 @@ heartManualReview=False
 if HAS_HEART:
     prefix,suffix=LINE1.split("&",1)
     goldenLine="MR & MRS NICHOLS"
-    signatureScaleX=min(1.0,TARGET_W/(natw(goldenLine)*fs1))
+    signatureScaleX=xcap(TARGET_W/(natw(goldenLine)*fs1))
     signatureAdvance=natw("&")*fs1*signatureScaleX
     surroundingNatural=(natw(prefix)+natw(suffix))*fs1
     available=max(1.0,TARGET_W-signatureAdvance)
-    line1ScaleX=1.0 if surroundingNatural == 0 else min(1.0,available/surroundingNatural)
+    line1ScaleX=1.0 if surroundingNatural == 0 else xcap(available/surroundingNatural)
     prefixW=natw(prefix)*fs1*line1ScaleX
     suffixW=natw(suffix)*fs1*line1ScaleX
     w1=prefixW+signatureAdvance+suffixW
@@ -124,9 +149,12 @@ if HAS_HEART:
 else:
     signatureScaleX=1.0
     naturalW1=natw(LINE1)*fs1
-    line1ScaleX=1.0 if naturalW1 == 0 else min(1.0,TARGET_W/naturalW1)
+    line1ScaleX=1.0 if naturalW1 == 0 else xcap(TARGET_W/naturalW1)
     w1=naturalW1*line1ScaleX
-fs2=fit(LINE2,DATE_TARGET_W,DATE_MAX_FS,natw); w2=natw(LINE2)*fs2
+_m2 = natw_bold if natw_bold is not None else natw
+fs2=fit(LINE2,DATE_TARGET_W,DATE_MAX_FS,_m2)
+line2ScaleX=1.0 if _m2(LINE2)*fs2 == 0 else xcap(DATE_TARGET_W/(_m2(LINE2)*fs2))
+w2=_m2(LINE2)*fs2*line2ScaleX
 cap1=capH*fs1*VSCALE; base1=round(CAP_CENTER_Y+cap1/2,3)
 
 # ---- locked NICHOLS signature unit + rendered red-tip/black-edge placement ----
@@ -177,6 +205,11 @@ def subset_woff(font_path, text):
     return base64.b64encode(buf.getvalue()).decode()
 
 regular_woff64=subset_woff(REGULAR_FONT_PATH,LINE1 + LINE2)
+# Real Times New Roman Bold for line 2 when SIGN_LINE2_BOLD=1. A genuine bold face,
+# not a stroke-widened fake — STROKE_FRAC stays at 0 and the rule against faux bold
+# is intact.
+bold_woff64=subset_woff(BOLD_FONT_PATH, LINE2) if LINE2_BOLD else None
+BOLD_FAM="DaisyTimesBold"
 heart64=base64.b64encode(open(os.path.join(A,"heart.png"),"rb").read()).decode()
 holes_el=("\n  ".join(
     '<circle id="mounting-hole-%s" cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="0.4"/>'
@@ -186,6 +219,10 @@ heart_el=(f'<image id="signature-heart" x="{heartX:.3f}" y="{heartY:.3f}" width=
           f'height="{hh:.3f}" xlink:href="data:image/png;base64,{heart64}" preserveAspectRatio="xMidYMid meet"/>') if HAS_HEART else ""
 
 REGULAR_FAM="DaisyTimesRegular"
+bold_face_css=("@font-face{font-family:'%s';font-weight:700;src:url(data:font/woff;base64,%s) format('woff');}"
+               % (BOLD_FAM, bold_woff64)) if LINE2_BOLD else ""
+LINE2_FAM = BOLD_FAM if LINE2_BOLD else "DaisyTimesRegular"
+LINE2_WEIGHT = 700 if LINE2_BOLD else 400
 def text_g(id_, s, x, y, fs, family, weight, scale_x=1.0, anchor="middle"):
     sw=fs*STROKE_FRAC
     return (f'<g transform="translate({x} {y}) scale({scale_x:.6f} {VSCALE})">'
@@ -211,7 +248,7 @@ svg=f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   <title id="ttl">{esc(LINE1)} - large street sign (preview)</title>
   <desc id="dsc">Faithful front-on reproduction from the production PSD.</desc>
   <defs><style>
-    @font-face{{font-family:'{REGULAR_FAM}';font-weight:400;src:url(data:font/woff;base64,{regular_woff64}) format('woff');}}
+    @font-face{{font-family:'{REGULAR_FAM}';font-weight:400;src:url(data:font/woff;base64,{regular_woff64}) format('woff');}}{bold_face_css}
   </style></defs>
   <metadata><daisy:production>
     <daisy:orderReference>{esc(ORDER)}</daisy:orderReference>
@@ -234,7 +271,7 @@ svg=f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   {holes_el}
   {line1_el}
   {heart_el}
-  {text_g("line-2", LINE2, CX, DATE_BASELINE, fs2, REGULAR_FAM, 400)}
+  {text_g("line-2", LINE2, CX, DATE_BASELINE, fs2, LINE2_FAM, LINE2_WEIGHT, line2ScaleX)}
 </svg>'''
 open(OUT,"w",encoding="utf-8").write(svg)
 print(f"{ORDER}: fs1={fs1:.2f} textScaleX={line1ScaleX:.4f} signatureScaleX={signatureScaleX:.4f} w1={w1:.1f}/{TARGET_W} cap1={cap1:.1f} base1={base1}")
