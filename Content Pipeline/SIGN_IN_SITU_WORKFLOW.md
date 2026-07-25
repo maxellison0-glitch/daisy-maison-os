@@ -1,7 +1,7 @@
 # Engineering workflow — "Sign in situ" & "Type it → make it real"
 
-**Status: PROPOSED — awaiting Max's approval.** Nothing here is canon until he
-signs it off. Once approved, this is the default way we make video.
+**Status: APPROVED by Max, 25 Jul 2026.** This is now the default way we make
+video. Changes to it need his sign-off.
 
 ---
 
@@ -30,12 +30,12 @@ presenter, which matters because **Max does not film** (see
 `CONTENT_BRIEF_GATE.md`).
 
 The second half of the saving: the **configurator and CTA cards cost nothing.**
-They are HTML/Playwright renders, not generations. So a complete, finished ad
-costs **~4 credits total.**
+They are HTML/Playwright renders, not generations — so the whole story wrapper
+is free, and only the one in-situ clip is ever paid for.
 
 ## 2. The two formats
 
-### Format A — Sign in situ (simplest, ~4 credits)
+### Format A — Sign in situ (simplest, ~12 credits at cat quality)
 One continuous ambient shot. The sign is **razor-sharp and static**; the motion
 comes from something *else* in frame.
 
@@ -46,7 +46,7 @@ comes from something *else* in frame.
 - Camera locked off or near-static. No fake Ken-Burns.
 - Our two-beat caption goes on in post (never model-burned).
 
-### Format B — Type it → make it real (~4 credits, higher perceived effort)
+### Format B — Type it → make it real (same ~12 credits, higher perceived effort)
 Format A wrapped in a configurator story. This is the DM-C006 Potter structure,
 now rebuilt cross-platform in `templates/sign-in-situ/build-typereal.py`.
 
