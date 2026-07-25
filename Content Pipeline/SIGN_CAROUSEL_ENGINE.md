@@ -184,9 +184,16 @@ erased. **Treat it as a repair tool, not a licence to accept mis-scaled plates.*
   more than **±20%** — that means the room itself has no consistent scale and no
   amount of correction will save it. This gate is what would have caught the sage
   plate before it was ever reprinted onto.
-- **INK-RATIO GATE.** Ink/panel contrast ratio must land in **0.12–0.24**, the
-  range measured on real photographs of the real product. Below 0.08 is the
-  vector-black signature and reads as CGI.
+- **INK-RATIO GATE — a floor, not a window.** Ink/panel contrast ratio must be
+  **≥ 0.11**; below 0.08 is the vector-black signature and reads as CGI. For BLACK
+  specifically expect **0.12–0.24**, the range measured on real photographs.
+  *Corrected 25 Jul 2026:* this was first written as a 0.12–0.24 window for all
+  colourways, which is wrong — the Freya blue master measures **0.440** and Max
+  passed it as the best image in the whole audit. Pale colourways legitimately sit
+  high, so an upper bound would fail good work.
+- **NO MOUNTING HOLES.** `SIGN_HOLES=0` on every content render. Max's call: they
+  read as a laser-cutter artefact. `reprint.py` sets it automatically and paints
+  over holes already baked into a plate.
 - **Never assert canonical 4.56:1 on an in-situ frame.** The cat plate's sign
   measures 4.17:1 and the dog plate's 4.09:1 on screen; that is real
   foreshortening on a wall-mounted sign, not a defect. Measure the box, do not

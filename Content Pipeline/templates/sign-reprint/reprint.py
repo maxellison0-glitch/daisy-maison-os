@@ -142,6 +142,10 @@ def render_face(line1, line2, w, h, colourway=None, heart=False, fit=486):
     if colourway:
         env["SIGN_COLOURWAY"] = colourway
     env["SIGN_HEART"] = "1" if heart else "0"
+    # Holes off for all content. Max, 25 Jul 2026: "that's literally for the laser
+    # printer... if we had no holes and just a flat surface with the same borders,
+    # that's perfect." Production geometry is untouched — build.py still defaults on.
+    env["SIGN_HOLES"] = "0"
     with tempfile.TemporaryDirectory() as td:
         svg = os.path.join(td, "face.svg")
         subprocess.run(
@@ -183,17 +187,14 @@ def panel_mask(face_rgba, w, h, safety=3.0):
 
     m = m.crop((pad, pad, pad + w, pad + h))
 
-    # Punch the mounting holes back OUT of the mask. The holes fall ~11mm inside
-    # the panel boundary, so they were being overwritten — and build.py draws them
-    # as a hairline ring (correct for a cut file) while the photograph has real
-    # drilled holes with real shadow in them. The holes are part of the
-    # manufactured object, not the printing, so the photograph keeps them.
-    d = ImageDraw.Draw(m)
-    for hx, hy, hr in HOLES_MM:
-        cx, cy = hx * w / SIGN_MM_W, hy * h / SIGN_MM_H
-        rx, ry = hr * w / SIGN_MM_W + 2.5, hr * h / SIGN_MM_H + 2.5
-        d.ellipse((cx - rx, cy - ry, cx + rx, cy + ry), fill=0)
-
+    # The mounting holes are deliberately NOT protected here any more. An earlier
+    # version punched them out of the mask so the photographed drilled holes would
+    # survive, on the reasoning that they belong to the manufactured object rather
+    # than to the printing. That reasoning was right and the outcome was still
+    # wrong: Max does not want them in content at all — they read as a laser-cutter
+    # artefact. Leaving them inside the mask means the reprint paints clean panel
+    # straight over the photographed holes, which removes them from plates that
+    # already have them baked in.
     return m.filter(ImageFilter.GaussianBlur(1.1))   # 1px feather, no seam
 
 

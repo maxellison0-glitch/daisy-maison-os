@@ -57,6 +57,13 @@ else:
 # The heart is the Mr & Mrs signature unit. It is applied automatically to any
 # ampersand in line 1; set SIGN_HEART=0 for non-wedding wording such as BAR & GRILL.
 HEART_ENABLED=os.environ.get("SIGN_HEART","1")!="0"
+# The two mounting holes are real production geometry from the LightBurn cut file,
+# so they stay ON by default and the cut path is unaffected either way. But they
+# are a manufacturing feature, not a design one, and Max's call on 25 Jul 2026 is
+# that they read as a laser-cutter artefact in content: "that's literally for the
+# laser printer... if we had no holes and just a flat surface with the same
+# borders, that's perfect." Set SIGN_HOLES=0 for any content render.
+HOLES_ENABLED=os.environ.get("SIGN_HOLES","1")!="0"
 MAX_FS=59.0                 # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule
 CAP_CENTER_Y=55.3           # vertical centre of the name caps (mm), from real NASH
@@ -171,6 +178,10 @@ def subset_woff(font_path, text):
 
 regular_woff64=subset_woff(REGULAR_FONT_PATH,LINE1 + LINE2)
 heart64=base64.b64encode(open(os.path.join(A,"heart.png"),"rb").read()).decode()
+holes_el=("\n  ".join(
+    '<circle id="mounting-hole-%s" cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="0.4"/>'
+    % (side, h["x"], h["y"], h["radius"], PANEL, COLOR)
+    for side, h in (("left", holes[0]), ("right", holes[1]))) if HOLES_ENABLED else "")
 heart_el=(f'<image id="signature-heart" x="{heartX:.3f}" y="{heartY:.3f}" width="{hw:.3f}" '
           f'height="{hh:.3f}" xlink:href="data:image/png;base64,{heart64}" preserveAspectRatio="xMidYMid meet"/>') if HAS_HEART else ""
 
@@ -220,8 +231,7 @@ svg=f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   </daisy:production></metadata>
   <path id="outer-plate" d="{path(pts)}" fill="{COLOR}"/>
   <path id="inset-panel" d="{path(list(inner.exterior.coords))}" fill="{PANEL}"/>
-  <circle id="mounting-hole-left"  cx="{holes[0]['x']}" cy="{holes[0]['y']}" r="{holes[0]['radius']}" fill="{PANEL}" stroke="{COLOR}" stroke-width="0.4"/>
-  <circle id="mounting-hole-right" cx="{holes[1]['x']}" cy="{holes[1]['y']}" r="{holes[1]['radius']}" fill="{PANEL}" stroke="{COLOR}" stroke-width="0.4"/>
+  {holes_el}
   {line1_el}
   {heart_el}
   {text_g("line-2", LINE2, CX, DATE_BASELINE, fs2, REGULAR_FAM, 400)}

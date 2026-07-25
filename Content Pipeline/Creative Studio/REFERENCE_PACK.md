@@ -86,6 +86,23 @@ Always state explicitly what NOT to take from each — "do not copy reference 1'
 room", "there is no person in this image". Without that the model borrows the
 wrong attribute from the right reference.
 
+## Audited verdicts and the locked masters — READ WITH THIS FILE
+
+`reference-masters/VERDICTS.md` holds Max's image-by-image verdicts from the
+25 Jul 2026 audit of all 117 generations, in his own words. Two decisions from it
+override anything older:
+
+1. **No mounting holes in content, ever.** `SIGN_HOLES=0`. They read as a
+   laser-cutter artefact. Production geometry is unchanged.
+2. **`FREYA-holding-sign-BLUE-MASTER.jpg` is the character + scale master.** Max:
+   "whenever we're using Freya as a character, she can hold signs, and that is her
+   reference photo… that is what we're trying to achieve."
+
+Also settled there: **held beats wall-mounted** (a person anchors the scale the
+model otherwise gets wrong), **black beats sage** when the sign must read as an
+object, and **sage is not a hero colourway** — rejected on both plates it appeared
+on, for contrast, independently of size.
+
 ## Reprinting an APPROVED plate — free, unlimited wordings
 
 Once a scene's plate is approved, **do not pay to change the wording.**
