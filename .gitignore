@@ -33,5 +33,9 @@ projects/daisy-street-sign/**/*.pyc
 !projects/diffuser/
 !projects/diffuser/**
 
+# sign-in-situ video format (cheap in-situ clips + type-it-real ads)
+!projects/sign-in-situ/
+!projects/sign-in-situ/**
+
 !Content Pipeline/
 !Content Pipeline/**
