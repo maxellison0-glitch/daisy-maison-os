@@ -1,4 +1,18 @@
-# Engineering workflow — "Sign in situ" (v2, rebuilt after a fidelity failure)
+# Engineering workflow — "Sign in situ"
+
+> ## ⛔ SUPERSEDED for anything involving the sign itself
+> The validated method already exists and produced the Bond and Jannaway
+> videos Max approved. **Use it, do not reinvent it:**
+> `Creative Studio/REFERENCE_PACK.md` → the validated prompt chain in
+> `Creative Studio/prompts/wedding-signs/cases/DM-C017-JANNAWAY/`.
+>
+> The approved product photograph is always reference 1. The SVG is the
+> printing, never the product. §3 Step 4 below ("composite the flat PNG onto
+> every frame") is **WRONG** and was written before that was understood — a
+> flat vector render pasted onto footage looks like a sticker.
+>
+> What is still useful here: the *scene and motion* thinking (locked-off shot,
+> ambient motion, one paid clip), the caption treatments, and distribution.
 
 **Status: v2 PROPOSED — awaiting Max's approval. v1 is WITHDRAWN.**
 v1 was approved on 25 Jul 2026 and produced four unusable stills within the

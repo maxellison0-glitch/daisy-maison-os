@@ -1,5 +1,14 @@
 # Claude entry instructions
 
+## READ FIRST, EVERY TIME: `REFERENCE_PACK.md`
+
+**Never generate a product image without the approved product photograph as
+reference 1, and without using a validated prompt from the case folder.** The
+flat SVG is the printing, not the product. Skipping this has produced rejected
+output every single time it has been skipped. `REFERENCE_PACK.md` holds the
+locked masters, the validated prompt chain and a pre-flight checklist that must
+be answered before any generation runs.
+
 Read `README.md`, `CURRENT.md` and `MEMORY.md` before proposing work.
 Then load the active concept's local context, brief, plan and master asset.
 Before generative production, read `recipes/README.md` and the relevant recipe
