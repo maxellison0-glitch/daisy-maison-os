@@ -44,3 +44,29 @@ Format:
   drives 43% of sessions before we've posted once on the new system; cautiously
   positive, which for me is effusive.
 - Signed: Freya · Alan
+
+## 2026-07-25 — ship day (Freya & Alan)
+- Learned: (F) the first post's job isn't orders, it's reach + the comment
+  language that becomes next week's hooks — so we launch with a *free, real,
+  filmed laugh*, not a render. We also already have a diffuser reveal reel on
+  disk, but it's only "shippable" once it clears the slop checklist re-grade
+  and the PII rule (the "Shelby & Sean" tag). (A) 24 Jul was soft and live-
+  confirmed on Shopify: £1,523.28 / 55 orders / AOV £22.20 (down from £24.76),
+  social 39.5% (down 2.5pp). Mr & Mrs was #1 by orders again (20) but on a
+  *smaller* basket with a discount present — volume up, basket down. The quiet
+  fact: Wedding Pebble was top by *revenue* (11 orders / £252) and is entirely
+  absent from our content ideas. All reference sites rate-limited (429/403)
+  this run — zero fresh competitor signal, named not faked.
+- Changing: we stop being a zero-asset account today — one real filmed asset
+  (Mum's Kitchen LAUGH) goes to TikTok drafts. When we push the Mr & Mrs
+  reveal, we foreground the pebble / size-upgrade / diffuser attach in the
+  same beat, because the money lane is currently buying volume at the cost of
+  AOV and that needs defending.
+- Testing tomorrow: (1) does the LAUGH post pull shares/comments worth
+  repeating weekly; (2) Alan's falsifiable call — if Mr & Mrs volume keeps
+  rising while AOV slides below ~£22, the reveal format is buying cheap single-
+  sign orders and we foreground cross-sell. Watching AOV, not order count.
+- Confidence: (F) high, and slightly smug about backing the laugh over the
+  render. (A) cautious — demand is fine, the basket is the watch item; a named
+  data gap on the references, so today's pivot rests on our own numbers.
+- Signed: Freya · Alan
