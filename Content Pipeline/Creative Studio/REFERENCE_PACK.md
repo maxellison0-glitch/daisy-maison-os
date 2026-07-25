@@ -67,6 +67,41 @@ border renders slightly narrower than the black master. Raised and reviewed;
 Max confirmed it is good enough and correct for use. Not a defect — do not
 "fix" it or re-litigate it. He will say if something is wrong.
 
+## House interior style — locked 25 Jul 2026
+
+Max rejected the first in-situ set on set dressing, not fidelity: terracotta
+quarry tiles and a tartan dog bed read "proper Northern poor person's house". The
+target is **modern UK upper-middle-class** — and it is a commercial call, not
+snobbery: the buyer for a £19 personalised gift skews modern middle-class, so the
+room has to look like theirs.
+
+**Specify:** wide-plank pale European oak flooring, matte; soft chalky stone-grey
+heritage paint above crisp white shaker panelling to dado height; brushed-brass
+hardware; steel-framed Crittall-style glazing onto a green garden; neutral
+oatmeal-linen soft furnishings; one good wax jacket, hung tidily; clean leather
+boots; a woven basket. Calm, uncluttered, expensively simple — *architect-
+renovated family home.*
+
+**Negative-prompt every time:** terracotta or quarry tiles, tartan or plaid,
+muddy or scruffy boots, exposed beams, clutter, patterned wallpaper, dated
+fittings, anything shabby or careworn.
+
+Saying "British hallway" alone defaults to country cottage every single time. The
+phrase that fixes it is **"NOT a rustic cottage."**
+
+## The 9:16 problem — pad, never crop
+
+The sign is **4.56:1** and the approved master holds it nearly full-width, so a
+9:16 crop *always* clips the shaped ends. Verified on three variants — asking for
+"clear margin either side" does not work, because the framing is locked to
+reference 1.
+
+**Therefore:** deliver the native 3:4 for feed (4:5), and for Reels/TikTok **pad
+the 3:4 into 1080×1920 on a wall-matched background** — sample the wall colour
+from the plate's upper band so the pad reads as the room continuing. This is the
+DM-C006 Potter format and it leaves genuine caption space above the image.
+Reference build: `DM-MURPHY-in-situ/mod-2-PADDED-916.jpg`.
+
 ## Real customer photos — do not use as generation input
 
 `Wedding_Street_Sign_Collection.png` on the live listing is a grid of real
