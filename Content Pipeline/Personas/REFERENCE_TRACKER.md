@@ -71,3 +71,40 @@ Entry format:
   All Occasions (site not located/checked); treatboxuk.com blog pages (rate-
   limited — homepage only). Nothing above is claimed as a "post"; all
   observations are from brand sites/marketplaces actually fetched.
+
+## 2026-07-25
+- TreatBox: NOT READ THIS RUN. treatboxuk.com returned HTTP 429 (Too Many
+  Requests) on every attempt via the fetch proxy — no homepage retrieved, so
+  no new observation. No change is claimed vs the 24 Jul entry; treat that
+  entry's read (Results Day hero + up-to-40%-off sale + Advent 2026 pre-order
+  + wedding/birthday advent countdowns) as last-known state, unverified today.
+- The Crafty Bonobo: NOT READ THIS RUN (thecraftybonobo.com HTTP 429). No new
+  read; joke-copy street-sign bestseller wall carried from 24 Jul, unverified.
+- Little Perfections: NOT READ THIS RUN (littleperfections.co.uk HTTP 429).
+  Named aesthetic wedding "worlds" + Christmas signage in nav carried from
+  24 Jul, unverified.
+- Beyond the Fridge (notonthehighstreet storefront): NOT READ THIS RUN — not
+  attempted after the proxy showed a store-wide 429 pattern; personalised
+  London-street-sign line status unchanged from 24 Jul note, unverified.
+- Etsy wedding-sign market: NOT READ THIS RUN — etsy.com returned HTTP 403
+  (Forbidden / bot-block), no market page retrieved. "Mr & Mrs EST [year]" +
+  neon marquee trend carried from 24 Jul, unverified.
+- Season read: no fresh reference signal today, so the standing read holds on
+  our own data rather than theirs — summer gifting trough, weddings the
+  evergreen carrying us (Mr & Mrs sign #1 by orders again, 20 on 24 Jul), and
+  the two dated turns still ahead are unchanged: Results Day mid-Aug and the
+  Christmas ramp the references had already started in July. Nothing new to
+  pivot to; nothing retracted.
+- Translate to us: (1) hold the Mr & Mrs EST/date reveal as the priority
+  format — our sales, not a reference, justify it (20 orders yesterday);
+  (2) keep the early-Aug Results Day name-sign reel queued — do not build
+  against it as "confirmed live" until TreatBox's hero is re-read; (3) LAUGH
+  joke-copy sign reveal stays greenlit on our own lines (format is durable,
+  needs no fresh reference read); (4) standalone diffuser gifting post is
+  reference-independent — proceed on its own merit.
+- Unreachable today: ALL reference sites — treatboxuk.com (429),
+  thecraftybonobo.com (429), littleperfections.co.uk (429), etsy.com (403),
+  Beyond the Fridge NOTHS storefront (not attempted after store-wide 429),
+  plus the standing login walls (Instagram, TikTok). Fetch proxy was
+  rate-limiting the brand hosts for the whole run; retry next session. No
+  observation above is presented as a live post or a same-day change.
