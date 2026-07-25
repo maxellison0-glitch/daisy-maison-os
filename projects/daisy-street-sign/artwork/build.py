@@ -73,7 +73,15 @@ HOLES_ENABLED=os.environ.get("SIGN_HOLES","1")!="0"
 # unchanged; STRETCH_MAX stops it turning into a caricature.
 STRETCH=os.environ.get("SIGN_STRETCH","0")!="0"
 STRETCH_MAX=float(os.environ.get("SIGN_STRETCH_MAX","1.6"))
-# Line 2 in a real Times Bold, not a faux weight — timesbd.ttf is in assets.
+# Line 2 weight. REGULAR IS THE ANSWER — do not turn this on.
+# Tested properly on 25 Jul 2026: same terrace, same light, same pose, only line 2's
+# weight changed. Max: "the bold makes the text way too big. I would definitely take
+# it back to the non-bold for everything on line two."
+# It also matches the real product: both live landing-page hero photos show line 2 in
+# regular weight, same face as line 1, just smaller. Shipping regular while
+# photographing bold would hand the customer something different from the picture.
+# The flag survives only so the test is repeatable, and because making line 2 bold on
+# the ACTUAL product would be a production change (new print files), not a content one.
 LINE2_BOLD=os.environ.get("SIGN_LINE2_BOLD","0")!="0"
 MAX_FS=59.0                 # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule

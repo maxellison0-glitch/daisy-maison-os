@@ -65,3 +65,12 @@ CAMERA") rather than folding it into the original generation, so the product
 cannot drift while the polish comes off.
 
 And still no mounting holes: SIGN_HOLES=0.
+
+LINE 2 IS ALWAYS REGULAR WEIGHT. Never bold.
+Tested and rejected 25 Jul 2026 — "the bold makes the text way too big. I would
+definitely take it back to the non-bold for everything on line two." It also matches
+the real product: both live landing-page heroes show line 2 in regular weight.
+
+SIGN_STRETCH is a judgement call, not a default. Use it where a short wording leaves
+an obviously empty plate (MUM'S TAXI sat at 71% of the plate width), but the live
+listing photos show line 1 at its natural width, so do not apply it blindly.
