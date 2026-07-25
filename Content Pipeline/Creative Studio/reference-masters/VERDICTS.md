@@ -9,6 +9,66 @@ wording is the spec.
 
 ---
 
+## Round 2 — four new held images, and the phone-snapshot rule
+
+Four images built off Freya, four colourways, four wordings, four rooms. 8 credits.
+Then an imperfection test on the winner. 4 credits.
+
+| | Sign | Colour | Room | Verdict |
+|---|---|---|---|---|
+| F1 | MUM'S GARDEN / everything here is overwatered | grass | potting room | **reject** — "the others I would not pass them" |
+| F2 | THE BEACH HUT / two hours from the sea | blue | kitchen | **PASS** — "the most realistic-looking one from all of those" |
+| A1 | DAD'S BAR & GRILL / burnt to order | black | workshop | **never publish** — printed border missing entirely. But: "the actual size of the sign to the person looks real. The background is real as well, so you can take that from it" |
+| A2 | THE HARPERS / EST. 2026 | grey | hallway | **reject** — "that looks massive. If you measure the shoulder width to the sign ratio, you can kind of see that's really off" |
+
+### The scale gate, finally calibrated — on Max's own eye
+
+Max's shoulder-width observation replaces the room-anchor method entirely. Room
+anchors failed because a generated room has no consistent scale of its own — on the
+sage plate three anchors disagreed with each other by 1.5x. **A person is always in
+frame in the held format, so the anchor is always available and always consistent.**
+
+A1 and A2 are a controlled pair: same presenter, one scale Max called right and one
+he called wrong. Measured:
+
+| | sign / shoulder width | Max |
+|---|---|---|
+| A1 | **1.33** | scale right |
+| A2 | **2.19** | "really off" |
+
+Ground truth: sign 570mm, adult male shoulders in a top ~470mm, so **1.21 flat-on**.
+A1 at 1.33 is 1.10x that — exactly the small inflation expected when the sign is
+held forward of the body. A2 at 2.19 is **1.8x** the true ratio.
+
+**GATE: sign/shoulder must fall in 1.20-1.45 for a man**, allowing for the forward
+hold. Above ~1.6 the sign is oversized and reads as a plaque. (Women's shoulders are
+~400mm, implying roughly 1.43 flat-on and ~1.55 held forward — derived, not yet
+calibrated against a Max verdict, so treat the male figure as the proven one.)
+
+Max's eye called a 1.8x error without measuring anything. Measure anyway, but trust
+the eye first.
+
+### The phone-snapshot rule — now house standard on everything
+
+F2 passed and Max still said: "it looks like AI still because it looks too good, so
+we have to almost tone down. That's true engineering refinement to get to that
+level."
+
+Three versions of the identical scene were tested, sign untouched, camera only:
+control / polish-removed / phone-snapshot. Verdict: **the phone snapshot won.**
+"Number three just has a slightly more real effect, which is interesting because you
+put 'phone snapshot', which I think definitely looks real, which is weird. It's cool.
+Definitely lock that in… I think you should do that for probably everything until I
+say otherwise."
+
+Locked plate: `PLATE-beach-hut-BLUE-freya-kitchen-PHONE-MASTER.png`.
+The reusable block: `../prompts/HOUSE-STANDARD-phone-snapshot.txt`.
+
+**Both faults Max has caught are ABSENCES, not errors** — absent ink contrast, and
+absent camera defect. A render is missing what goes wrong in reality. So the fix is
+always to add flaws, never to add quality. That is the general lesson and it should
+be the first thing tried on any future "looks AI" complaint.
+
 ## The two product decisions that came out of it
 
 ### 1. NO MOUNTING HOLES in content. Ever.

@@ -86,6 +86,34 @@ Always state explicitly what NOT to take from each — "do not copy reference 1'
 room", "there is no person in this image". Without that the model borrows the
 wrong attribute from the right reference.
 
+## BLOCKING: the phone-snapshot pass on every image with a person in it
+
+Max, 25 Jul 2026: *"I think you should do that for probably everything until I say
+otherwise. iPhone or whatever you use."*
+
+Paste `prompts/HOUSE-STANDARD-phone-snapshot.txt` into any prompt containing a
+person, and run it as an EDIT on an already-approved image ("MAKE EXACTLY ONE
+CHANGE — THE CAMERA") so the product cannot drift while the polish comes off.
+
+A polished studio render of Freya passed on fidelity and still read as AI: *"it
+looks too good, so we have to almost tone down."* Flawlessness is the tell. The
+single highest-value detail is **focus on the product, not the face** — a real
+person photographing a sign focuses on the sign.
+
+**Both faults Max has caught are absences, not errors** — absent ink contrast and
+absent camera defect. The fix is always to add flaws, never to add quality.
+
+## BLOCKING: the scale gate — measure the sign against SHOULDERS
+
+Not against room objects. A generated room has no consistent scale of its own (on
+the sage plate three room anchors disagreed by 1.5x). A person is always in frame in
+the held format, so the anchor is always there.
+
+**sign width / shoulder width must fall in 1.20–1.45 for a man.** Calibrated on a
+controlled pair Max judged by eye: the image he called correct measures 1.33, the one
+he called "really off" measures 2.19, against a true flat-on 1.21. Full working in
+`reference-masters/VERDICTS.md`.
+
 ## Audited verdicts and the locked masters — READ WITH THIS FILE
 
 `reference-masters/VERDICTS.md` holds Max's image-by-image verdicts from the
