@@ -224,6 +224,50 @@ exactly. There is no separate product called "Small".
 Mini historical 8-up positions: X ~10 and 315, Y ~10 / 108 / 206 / 303.
 Medium 3-up: X ~71.7, Y ~10.7 / 145.5 / 278.
 
+## Product Styling Rules (conditional logic - apply to ALL sizes)
+
+Confirmed by Max 2026-07-26. Applied by `production\recolour-sign.ps1`.
+
+| Product class | Border | Text | Red heart |
+|---|---|---|---|
+| Mr & Mrs family (see SKUs below) | black | black | **yes** |
+| Create Your Own - SKU **36967** (`kitchen-personalised-street-sign`) | customer choice | **always black** | no |
+| Every other street sign | customer choice | customer choice | no |
+
+**The heart is an EXACT SKU match, never a prefix.** Prefix matching is wrong
+because sibling SKUs are different products:
+
+```
+36961      Mr & Mrs Personalised Street Sign   -> HEART
+36965-1-1  Mr & Mrs First Christmas            -> HEART
+36965-3    My Valentine                        -> HEART
+36961-1    Engagement (Yes Day)                -> no heart, despite the 36961 base
+36961-2    Retirement                          -> no heart, despite the 36961 base
+36965      Family Street Sign                  -> no heart
+36965-3-1  My Galentine                        -> unconfirmed
+36965-3-2  Mother's Day Our Family             -> unconfirmed
+```
+
+**OPEN: Max described "three signs and then the Mr and Mrs" but named only two of
+the three (First Christmas, My Valentine). The third heart SKU is unconfirmed - ask
+before printing any coloured/heart variant not on the list above.** Galentine
+(36965-3-1) is the most likely candidate given it shares the 36965-3 base.
+
+Signs outside Mr & Mrs rarely contain an ampersand at all, but when they do they
+still get **no heart**. Note that with the heart removed the ampersand retains
+`signatureHorizontalScale` from build.py, which existed only to seat the heart -
+`recolour-sign.ps1` warns about this. Fixing it means touching build.py's approved
+layout, so it has been left alone.
+
+**Mounting holes are removed from every sign.** They are physical holes in the
+acrylic, so build.py's stroked circles print black rings around absent material.
+Removal is the default in `recolour-sign.ps1`; `-KeepMountingHoles` exists only to
+reproduce an old proof.
+
+All product classification must come from **SKU** and/or the `_Custom option flow`
+attribute - every street-sign product exposes only "Default Title" as a Shopify
+option, so Shopify variant options carry no useful information.
+
 ## Colourways (exact, validated against the known `#010101`)
 
 Black `#010101` · Grey `#7C7C7C` · Sage `#9AA192` · Grass `#68893C` ·
@@ -235,13 +279,32 @@ Three near-identical blues exist in the source files (`#799CAA` / `#799DAB` /
 Family street signs (SKU 36965) carry a `Colour border` attribute whose values map
 onto these names directly.
 
-## Bleed
+## Bleed - MANDATORY, 4 mm
 
-Production PSDs print a panel of ~572.94 x 127.76 against a 570 x 125 blank - about
-**1.4 mm bleed per edge**, already established practice. Max asked for 2 mm.
-Implement as an expanded canvas plus a `#010101` backing rectangle behind the
-untouched artwork, keeping the blank at the same jig coordinates. Do not alter the
-approved artwork to achieve it.
+**Every printed sign must be bled by 4 mm.** Printing at exactly the blank size
+leaves visible white acrylic on any edge where the blank sits a fraction out in the
+jig; Max confirmed real prints showing white edges on 2026-07-26 and specified 4 mm.
+
+```powershell
+python production\add-bleed.py <styled.svg> <bled.svg> 4.0
+```
+
+`add-bleed.py` buffers the real 409-vertex contour outward with shapely (409 verts
+in, 516 out) and inserts it *behind* the artwork in the border colour. It does not
+touch the approved elements. The canvas grows to 578 x 133 mm with a **negative
+viewBox origin of -4,-4**, and that origin is how `make-3up.ps1` knows to keep the
+BLANK - not the canvas - on its jig coordinate.
+
+Do NOT use a backing rectangle: the sign has four concave scalloped corners and a
+rectangle floods them with ink, wasting colour and inking up the paper jig.
+
+The script refuses to run twice on the same file, so bleed cannot be stacked.
+
+**Headroom check:** at 4 mm bleed with 10 mm row gaps, adjacent bleeds come within
+2 mm of each other. Anything above 5 mm would overlap - increase `-GapY` first.
+
+Historical note: the production PSDs already carried ~1.4 mm per edge, so bleeding
+is established practice; 4 mm simply makes it reliable.
 
 ## Still Unbuilt
 

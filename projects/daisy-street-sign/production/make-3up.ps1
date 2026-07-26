@@ -51,12 +51,25 @@ foreach ($path in $SignSvgs) {
   $idx++
   $raw = Get-Content -LiteralPath $path -Raw
 
-  # Confirm each sign really is the size this layout assumes. A Medium or Small
-  # SVG silently scaled into a Large slot would be an expensive mistake.
+  # Confirm each sign really is the size this layout assumes. A Medium or Mini SVG
+  # silently scaled into a Large slot would be an expensive mistake.
   if ($raw -notmatch 'width="([\d.]+)mm"\s+height="([\d.]+)mm"') { throw "Cannot read mm size from $path" }
-  $w = [double]$Matches[1]; $h = [double]$Matches[2]
-  if ([Math]::Abs($w - $SignW) -gt 0.01 -or [Math]::Abs($h - $SignH) -gt 0.01) {
-    throw ("$path is {0} x {1} mm but this layout expects {2} x {3} mm - refusing to scale approved artwork." -f $w,$h,$SignW,$SignH)
+  $canvasW = [double]$Matches[1]; $canvasH = [double]$Matches[2]
+
+  # A bled sign (production/add-bleed.py) has a negative viewBox origin: the canvas
+  # is larger than the blank by the bleed on every side. Read the bleed from that
+  # origin and place the BLANK on the jig coordinate, letting the extra ink hang
+  # outside it - otherwise every sign would sit shifted by the bleed amount.
+  if ($raw -notmatch 'viewBox="(-?[\d.]+)\s+(-?[\d.]+)\s+([\d.]+)\s+([\d.]+)"') { throw "Cannot read viewBox from $path" }
+  $vbX = [double]$Matches[1]; $vbY = [double]$Matches[2]
+  $bleed = -$vbX
+  if ([Math]::Abs($vbX - $vbY) -gt 0.001) { throw ("$path has an asymmetric viewBox origin ({0},{1}) - unexpected." -f $vbX,$vbY) }
+  if ($bleed -lt 0) { throw ("$path has a positive viewBox origin ({0}) - unexpected." -f $vbX) }
+
+  $blankW = $canvasW - 2 * $bleed
+  $blankH = $canvasH - 2 * $bleed
+  if ([Math]::Abs($blankW - $SignW) -gt 0.01 -or [Math]::Abs($blankH - $SignH) -gt 0.01) {
+    throw ("$path has a {0} x {1} mm blank but this layout expects {2} x {3} mm - refusing to scale approved artwork." -f $blankW,$blankH,$SignW,$SignH)
   }
 
   $order = if ($raw -match '<daisy:orderReference>([^<]+)</daisy:orderReference>') { $Matches[1] } else { 'unknown' }
@@ -69,9 +82,13 @@ foreach ($path in $SignSvgs) {
   $inner = $inner -replace '(?s)</svg>\s*$', ''
 
   $y = $MarginY + ($idx - 1) * ($SignH + $GapY)
-  Write-Host ("  POS {0}: {1,-10} at ({2:F1}, {3:F1}) mm" -f $idx, $order, $marginX, $y)
-  [void]$sb.AppendLine(('  <svg id="pos-{0}" data-order="{1}" x="{2:F3}" y="{3:F3}" width="{4}" height="{5}" viewBox="0 0 {4} {5}">' -f `
-    $idx, $order, $marginX, $y, $SignW, $SignH))
+  # offset by the bleed so the BLANK, not the canvas, lands on the jig coordinate
+  $placeX = $marginX - $bleed
+  $placeY = $y - $bleed
+  $bleedNote = if ($bleed -gt 0) { "  (+{0:F1}mm bleed)" -f $bleed } else { '' }
+  Write-Host ("  POS {0}: {1,-10} blank at ({2:F1}, {3:F1}) mm{4}" -f $idx, $order, $marginX, $y, $bleedNote)
+  [void]$sb.AppendLine(('  <svg id="pos-{0}" data-order="{1}" data-bleed-mm="{2:F2}" x="{3:F3}" y="{4:F3}" width="{5}" height="{6}" viewBox="{7:g} {8:g} {5} {6}">' -f `
+    $idx, $order, $bleed, $placeX, $placeY, $canvasW, $canvasH, $vbX, $vbY))
   [void]$sb.AppendLine($inner)
   [void]$sb.AppendLine('  </svg>')
 }
