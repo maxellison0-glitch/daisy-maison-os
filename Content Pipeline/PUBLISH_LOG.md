@@ -5,6 +5,7 @@ duplicate OneUp entries obvious.
 
 | Content ID | Platform | Account | Scheduled/published time | Status | Post URL or OneUp reference | 48h result | 7d result | Lesson |
 |---|---|---|---|---|---|---|---|---|
+| DM-C018-BOND | Instagram | @daisymaison | 25 Jul 2026, posted manually by Max | Published | URL not captured — Max posted from iPhone | **5 likes** (reported by Max, not pulled from API) | pending | First real post on the new system. The audience did not read it as AI. Small number, but it is the only genuine engagement datapoint we own — every other figure in this repo is Shopify or ad spend. |
 
 ## Result notes
 
