@@ -276,3 +276,23 @@ both sets and should be dropped or reworked.
 - Only the five real colourways. `build.py` hard-fails on anything else.
 - No customer PII, and never pass real customers' faces to a generator.
 - Propose, never publish. No paid credit spend without Max's explicit go.
+
+## 11. Price the paid option BEFORE building the free one
+
+26 Jul 2026. Max asked for the cat reel with a different wall colour. I built a
+free local wall-regrade pipeline instead of regenerating the background, and it
+took four rounds of debugging. His verdict: *"that's way too much effort, it cost
+2 credits to change the background bro... way over engineered."*
+
+He is right, and the mistake is a specific one worth naming: **"free" was
+optimised for the wrong resource.** Credits are cheap and abundant; Max's
+attention and the day's momentum are not. A 2-credit regeneration would have put
+three options in front of him in minutes.
+
+**The rule: before writing any code to avoid a generation, state the credit cost
+of just generating it.** If that cost is under ~10 credits, generate. Only build
+the free path when it is genuinely reused many times over (the wording reprint
+engine qualifies — it replaces an unlimited back catalogue of paid renders; a
+one-off wall colour does not).
+
+Free is not automatically the right answer. Cheap-and-now beats free-and-slow.
