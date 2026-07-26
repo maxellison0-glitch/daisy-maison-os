@@ -6,6 +6,7 @@ duplicate OneUp entries obvious.
 | Content ID | Platform | Account | Scheduled/published time | Status | Post URL or OneUp reference | 48h result | 7d result | Lesson |
 |---|---|---|---|---|---|---|---|---|
 | DM-C018-BOND | Instagram | @daisymaison | 25 Jul 2026, posted manually by Max | Published | URL not captured — Max posted from iPhone | **5 likes** (reported by Max, not pulled from API) | pending | First real post on the new system. The audience did not read it as AI. Small number, but it is the only genuine engagement datapoint we own — every other figure in this repo is Shopify or ad spend. |
+| DM-CAT-HOUSE | Instagram | @daisymaison | 26 Jul 2026, posted manually by Max | Published | URL not captured — Max posted from iPhone | pending | pending | The asset that shipped was `CAT-ADVERT-master-v2.mp4`, the ORIGINAL master. I offered a locally regraded wall + painted-out string first and Max rejected it outright: "that video looks ridiculous. The string is not consistent. It's like a literal video effects glitch... the rendering you did looks awful." Two lessons: a hand-built pixel pipeline on moving footage shows every seam, and it cost him his whole midday slot. The finished master was already in the repo the entire time. |
 
 ## Result notes
 

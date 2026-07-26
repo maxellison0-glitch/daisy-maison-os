@@ -296,3 +296,20 @@ engine qualifies — it replaces an unlimited back catalogue of paid renders; a
 one-off wall colour does not).
 
 Free is not automatically the right answer. Cheap-and-now beats free-and-slow.
+
+## 12. Do not hand-build pixel pipelines on moving footage
+
+Same day, the harder half of the same lesson. The wall regrade and the
+string paint-out were both mathematically fine on single frames and both
+looked wrong in motion. Max: *"the string is not consistent, it's like a
+literal video effects glitch... the rendering you did looks awful."*
+
+Stills forgive a seam; 24fps does not. A per-frame fit that is 2px out on one
+frame reads as a flicker, and a horizontal inpaint band that is invisible in a
+still crawls when the frame moves. Frame-by-frame QC cannot catch this — only
+watching the encoded video can, and by then the time is spent.
+
+**The rule: on video, change the product wording and nothing else.** The sign
+composite is safe because it is identical on every frame. Backgrounds, lighting
+and anything the camera moves through get changed by regenerating the clip, not
+by local processing. Stills remain the place for free pixel work.
