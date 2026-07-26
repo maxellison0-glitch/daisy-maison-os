@@ -2,7 +2,8 @@
 
 > Canonical Jarvis workflow for Daisy Maison street signs.
 > Copy and paste this entire file into Claude, Codex, or another capable AI chat.
-> Current production scope: Mr & Mrs, **Large**, black, printed on white acrylic.
+> Current production scope: Mr & Mrs on white acrylic, **Large and Medium**, any of
+> the eight border colourways.
 >
 > **Updated 2026-07-26.** Printing is now IMPLEMENTED and authorised. The previous
 > version of this file said never to send anything to a printer or hot folder; that
@@ -14,7 +15,7 @@ You are operating Daisy Maison's street-sign system. There are three modes:
 
 1. **PRODUCE SIGNS** - order numbers to printed signs.
 2. **IMPROVE AUTOMATION** - modify, debug, test, or extend the system.
-3. **NEW SIZE** - extend to Medium or Mini (not yet built; see Sizes).
+3. **NEW SIZE** - Large and Medium are built; Mini is blocked on a contour (see Sizes).
 
 Infer the mode from Max's request. Ask only if genuinely ambiguous.
 
@@ -88,9 +89,10 @@ query($id: ID!) {
 }
 ```
 
-Supported line: **SKU 36961** with `Size` starting `Large`. Read `Line 1` and
-`Line 2` exactly - never silently correct spelling, punctuation or spacing.
-Customers do type `MR&MRS CHAMBERLAIN` with no spaces, and that is legitimate.
+Supported line: **SKU 36961** with `Size` starting `Large` or `Medium`. Read
+`Line 1` and `Line 2` exactly - never silently correct spelling, punctuation or
+spacing. Customers do type `MR&MRS CHAMBERLAIN` with no spaces, and that is
+legitimate.
 
 Ignore upgrade/add-on lines (`ACC-*`, `Size Upgrade`) - no personalisation on them.
 
@@ -98,14 +100,21 @@ Ignore upgrade/add-on lines (`ACC-*`, `Size Upgrade`) - no personalisation on th
 
 ```powershell
 & 'C:\Users\Max Ellison\AppData\Local\Programs\Python\Python313\python.exe' `
-  artwork\build.py "<ORDER>" "<LINE1>" "<LINE2>" 486 "artwork\orders\<ORDER>.svg"
+  artwork\build.py --size large "<ORDER>" "<LINE1>" "<LINE2>" 486 "artwork\orders\<ORDER>.svg"
 ```
+
+`--size` takes `large` or `medium` and defaults to `large`. The fourth positional
+argument is the line-1 target width, which differs per size - **omit it and the
+size's own default is used**, which is what you want: 486 for Large, 383.7 for
+Medium. Passing Large's 486 to a Medium sign would overflow the frame.
 
 Python 3.13.9 is installed per-user with numpy, pillow, shapely, fonttools.
 
 Watch `line1HorizontalScale`. build.py only auto-flags below 0.55, but anything
 under ~0.70 is visibly condensed and worth showing Max (`MR&MRS CHAMBERLAIN` came
-out at 0.672; `MR & MRS YATES` at 0.990).
+out at 0.672 at Large; `MR & MRS YATES` at 0.990). **Medium compresses harder for
+the same name** - it fits the same text into 383.7 mm instead of 486 - so
+`MR & MRS CHAMBERLAIN` drops to 0.496 there and trips the flag.
 
 ### 3. Convert to a print-ready PDF
 
@@ -120,32 +129,51 @@ summing glyph advance widths ignores kerning and produced artwork ~2% too wide
 headless Chrome, which does real text shaping and loads the SVG's own embedded font
 - measured 0.86/255, i.e. antialiasing only.
 
-### 4. Impose up to three on a bed
+### 4. Impose onto a bed
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -Command `
-  "& 'production\make-3up.ps1' -SignSvgs 'a.svg','b.svg','c.svg' -OutSvg 'production\3up.svg'"
+  "& 'production\make-imposition.ps1' -Size large -SignSvgs 'a.svg','b.svg','c.svg' -OutSvg 'production\bed1.svg'"
 ```
 
 Use `-Command`, not `-File`: `-File` flattens the array into one comma-joined string.
-Then convert the 3-up SVG with the same `svg-to-print-pdf.ps1`.
+Then convert the imposed SVG with the same `svg-to-print-pdf.ps1`.
 
-**Three is the hard maximum.** Four signs need 285,000 mm2 against a 256,200 mm2
-bed, and 570 mm exceeds the 420 mm axis so rotation cannot help.
+Fewer signs than the layout holds is fine - they fill POS 1 upward and the spare
+slots stay empty. White is no ink on this machine, so an empty slot costs nothing.
 
-Jig positions (blank top-left, mm): **(20, 12.5) / (20, 147.5) / (20, 282.5)**.
-The 20 mm side margins are forced by 610-570. Independently corroborated by the old
-PC's production PSDs, which sat at Y 12.1 / 147.0 / 280.6.
+**Layouts live in `production\bed-layout.json`, and only there.** Both the jig and
+the imposition read it through `bed-layout.ps1`, which is what stops the printed
+outlines and the artwork placed on them from ever disagreeing. Change a layout in
+the JSON; never in one of the scripts.
 
-**POS 2 is exactly bed centre**, so a single sign there needs no assumption about
-which corner is the origin - use "Arrange in the Center".
+| Size | Blank | Grid | Blank top-left (mm) | Bed used |
+|---|---|---|---|---|
+| Large | 570 x 125 | 1 x 3 | (20, 12.5) / (20, 147.5) / (20, 282.5) | 83.4% |
+| Medium | 450 x 120 | 1 x 3 | (80, 20) / (80, 150) / (80, 280) | 63.2% |
 
-### 5. Print the jig (once per fresh bed)
+Both fill the 420 mm axis exactly. Side margins are derived, never configured, so a
+bad margin cannot push artwork off an edge. **Three is the hard maximum for both**:
+a second column needs 1140 mm (Large) or 900 mm (Medium) against a 610 mm bed, and
+neither blank fits the 420 mm axis rotated. Large's positions are corroborated by
+the old PC's production PSDs, which sat at Y 12.1 / 147.0 / 280.6.
+
+**POS 2 is exactly bed centre in both layouts**, so a single sign there needs no
+assumption about which corner is the origin - use "Arrange in the Center".
+
+Bleed is checked against the row gap: 4 mm bleed against a 10 mm gap leaves 2 mm
+clear between neighbours. A bleed wider than half the gap is refused, because
+adjacent signs would print into each other's edges.
+
+### 5. Print the jig (once per fresh bed, per size)
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File production\make-jig.ps1 `
-  -ContourSvg artwork\orders\<any>.svg -OutSvg production\jig-3up.svg
+  -Size large -ContourSvg artwork\orders\<any>.svg -OutSvg production\jig-large.svg
 ```
+
+Pass a contour SVG of the **matching size and without bleed** - the jig traces the
+blank. Both mistakes are refused rather than silently scaled.
 
 The jig is printed **by the Mimaki itself** onto paper taped to the bed. That is the
 point: positions become known by construction, the physical bed-origin corner never
@@ -212,17 +240,43 @@ name-dependent heart scaling, or per-order heart nudging.
 
 | Product | Cut size (mm) | Per bed | Built? |
 |---|---|---|---|
-| Large | **570.00 x 124.99** (409-vertex contour) | 3 | **yes** |
-| Medium | **450.00 x 120.00** | 3 | no |
-| Mini | **289.72 x 85.00**, 13 mm corner radius | 8 | no |
+| Large | **570.00 x 124.99** (409-vertex contour) | 3 | **yes** - printed on acrylic, passed |
+| Medium | **450.00 x 120.00** (200-vertex contour) | 3 | **yes** - not yet printed |
+| Mini | ~290 x 85, **contour unknown** | 8 | **no - blocked** |
 | Mini Football | 150.6 x 50.3 | 14 | no |
+
+Large and Medium both run the whole chain: `build.py --size`, recolour, bleed, jig,
+imposition, PDF.
+
+**Mini is blocked on a missing input, not on work.** Its type constants are derived
+and it rendered fine, but the contour used was the wrong product's - the
+`MINI TRADITIONAL ROAD SIGN SHAPE` file is a rounded rectangle, not the scalloped
+street sign. Proof, area over convex hull:
+
+| Size | Ratio | Shape |
+|---|---|---|
+| Large | 0.9934 | scalloped, concave corners |
+| Medium | 0.9927 | scalloped, concave corners |
+| that file | 1.0000 | perfectly convex - a rounded rectangle |
+
+The real Mini artwork (`E:\MINI-MEDIUM\MEDIUM ALL COLOUR 2023.psd`) is visibly
+scalloped. No Mini street-sign cut file exists on either USB. **To unblock: find the
+real cut file** (likely the laser PC), or construct the contour from Medium's
+parametric 8-vertex shape using the measured corner rule - vertical corner extent is
+near-constant (Large 25.28, Medium 25.31 mm) while horizontal scales with width
+(Large 25.54 = 0.0448 W, Medium 20.24 = 0.0450 W). A constructed contour is an
+invented silhouette and must be checked against a physical blank before sale. Blank
+dimensions also need confirming; 289.723 x 85 came from the wrong product's file.
+
+`build.py --size mini` deliberately refuses rather than producing a wrong shape.
 
 **Shopify's "Small 28 x 12cm" IS the Mini.** The listing's 12 cm height is wrong -
 the real blank is 85 mm. Shopify "Medium 45 x 12cm" matches the 450 x 120 cut
 exactly. There is no separate product called "Small".
 
-Mini historical 8-up positions: X ~10 and 315, Y ~10 / 108 / 206 / 303.
-Medium 3-up: X ~71.7, Y ~10.7 / 145.5 / 278.
+Mini historical 8-up positions: X ~10 and 315, Y ~10 / 108 / 206 / 303 - the
+starting point for a `mini` entry in `bed-layout.json` (cols 2, rows 4) once the
+contour exists.
 
 ## Product Styling Rules (conditional logic - apply to ALL sizes)
 
@@ -241,17 +295,15 @@ because sibling SKUs are different products:
 36961      Mr & Mrs Personalised Street Sign   -> HEART
 36965-1-1  Mr & Mrs First Christmas            -> HEART
 36965-3    My Valentine                        -> HEART
+36965-3-1  My Galentine                        -> HEART
 36961-1    Engagement (Yes Day)                -> no heart, despite the 36961 base
 36961-2    Retirement                          -> no heart, despite the 36961 base
 36965      Family Street Sign                  -> no heart
-36965-3-1  My Galentine                        -> unconfirmed
-36965-3-2  Mother's Day Our Family             -> unconfirmed
+36965-3-2  Mother's Day Our Family             -> no heart
 ```
 
-**OPEN: Max described "three signs and then the Mr and Mrs" but named only two of
-the three (First Christmas, My Valentine). The third heart SKU is unconfirmed - ask
-before printing any coloured/heart variant not on the list above.** Galentine
-(36965-3-1) is the most likely candidate given it shares the 36965-3 base.
+Four heart SKUs, confirmed complete by Max 2026-07-26. Anything not on that list
+gets no heart.
 
 Signs outside Mr & Mrs rarely contain an ampersand at all, but when they do they
 still get **no heart**. Note that with the heart removed the ampersand retains
@@ -289,11 +341,12 @@ jig; Max confirmed real prints showing white edges on 2026-07-26 and specified 4
 python production\add-bleed.py <styled.svg> <bled.svg> 4.0
 ```
 
-`add-bleed.py` buffers the real 409-vertex contour outward with shapely (409 verts
-in, 516 out) and inserts it *behind* the artwork in the border colour. It does not
-touch the approved elements. The canvas grows to 578 x 133 mm with a **negative
-viewBox origin of -4,-4**, and that origin is how `make-3up.ps1` knows to keep the
-BLANK - not the canvas - on its jig coordinate.
+`add-bleed.py` buffers the real contour outward with shapely and inserts it *behind*
+the artwork in the border colour. It does not touch the approved elements. The
+canvas grows by the bleed on every side - 578 x 133 mm at Large, 458 x 128 at
+Medium - with a **negative viewBox origin of -4,-4**, and that origin is how
+`make-imposition.ps1` knows to keep the BLANK, not the canvas, on its jig
+coordinate.
 
 Do NOT use a backing rectangle: the sign has four concave scalloped corners and a
 rectangle floods them with ink, wasting colour and inking up the paper jig.
@@ -301,14 +354,23 @@ rectangle floods them with ink, wasting colour and inking up the paper jig.
 The script refuses to run twice on the same file, so bleed cannot be stacked.
 
 **Headroom check:** at 4 mm bleed with 10 mm row gaps, adjacent bleeds come within
-2 mm of each other. Anything above 5 mm would overlap - increase `-GapY` first.
+2 mm of each other. Anything above 5 mm would overlap, and `make-imposition.ps1`
+now refuses it rather than letting one sign print into its neighbour - raise `gapY`
+in `bed-layout.json` first.
 
 Historical note: the production PSDs already carried ~1.4 mm per edge, so bleeding
 is established practice; 4 mm simply makes it reliable.
 
 ## Still Unbuilt
 
-- Medium and Mini generators, jigs and imposition.
+- **Mini** - blocked on a contour, see Sizes. Everything else for it is derived.
+- **Medium has never been physically printed.** The geometry is verified in
+  software (jig outlines overlaid on the imposed artwork register exactly, bleed
+  falls outside the blank on every edge), but no acrylic has come off the machine.
+  Print the Medium jig and dry-fit real blanks before running a customer order.
+- Two Medium decisions Max has not ruled on: the frame inset is 9.9 mm, 20% thinner
+  than Large's proportion; and line 2 uses em 11.5 as in build.py rather than the
+  PSD's 10.583, which affects Large equally.
 - Laser/cut handoff. Cut settings recovered from LightBurn: Large = power 75,
   speed 8, **2 passes**; Medium = 75 / 9 / 1; Mini = 75 / 10 / 1.
 - Shopify webhook trigger. Deliberately last - automating the front of a pipeline

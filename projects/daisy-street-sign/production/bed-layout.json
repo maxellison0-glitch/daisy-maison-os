@@ -1,0 +1,31 @@
+{
+ "_note": "Single source of truth for how each sign size nests on the Mimaki bed. make-jig.ps1 and make-imposition.ps1 both read this file, so the printed jig outlines and the artwork imposed onto them cannot disagree. Change a layout HERE, never in one script.",
+ "bed": {
+  "machine": "Mimaki UJF-6042MkII",
+  "widthMm": 610.0,
+  "heightMm": 420.0,
+  "_note": "Printable area, not the table. Confirmed against the machine, not the brochure."
+ },
+ "sizes": {
+  "large": {
+   "signWidthMm": 570.0,
+   "signHeightMm": 125.0,
+   "cols": 1,
+   "rows": 3,
+   "marginY": 12.5,
+   "gapX": 0.0,
+   "gapY": 10.0,
+   "_note": "Proven layout - three Large signs printed on acrylic and passed visual inspection. 3*125 + 2*12.5 + 2*10 = 420, an exact bed fit. Only 20 mm spare across the width, so X margin is forced."
+  },
+  "medium": {
+   "signWidthMm": 450.0,
+   "signHeightMm": 120.0,
+   "cols": 1,
+   "rows": 3,
+   "marginY": 20.0,
+   "gapX": 0.0,
+   "gapY": 10.0,
+   "_note": "3*120 + 2*20 + 2*10 = 420, also an exact fit, and POS 2 lands on the exact bed centre. Two across will not fit: 2*450 = 900 > 610."
+  }
+ }
+}

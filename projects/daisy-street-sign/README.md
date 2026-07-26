@@ -37,13 +37,23 @@ They remain recoverable from Git history.
 - Heart and ampersand: one locked signature unit copied from Max's approved
   NICHOLS result. The source heart remains exactly 236 x 229 px, its pointed tip
   meets the black upstroke, and its body never touches the ampersand.
-- Finished Large size: 570 x 125 mm
-- Status: **Large artwork complete and visually approved by Max on 14 July 2026**
+- Finished sizes: Large 570 x 125 mm, Medium 450 x 120 mm
+- Status: **Large artwork complete and visually approved by Max on 14 July 2026.**
+  Medium is built to the same rule and verified in software, but has not yet been
+  printed on acrylic or visually approved.
 
 Only the customer names around the locked signature may compress to fit. The
 heart size, heart height, ampersand scale, and tip contact do not vary by order.
-Office print/cut automation is a separate future phase and does not reopen the
-approved Large artwork rule.
+The heart is the same physical size at Medium as at Large - only the surrounding
+type is re-fitted. Print and cut automation does not reopen the approved artwork
+rule at any size.
+
+## Bed Layouts
+
+`production\bed-layout.json` is the single source of truth for how each size nests
+on the 610 x 420 mm bed. `make-jig.ps1` and `make-imposition.ps1` both read it
+through `bed-layout.ps1`, so the printed jig outlines and the artwork placed on
+them cannot drift apart. Change a layout there, never in one of the scripts.
 
 ## Rebuild And Test
 
@@ -72,5 +82,12 @@ are consistent with Max's explanation of intentional print overrun across the
 black border, not a second finished size.
 
 Max approved the final Large visual treatment on 14 July 2026 after a multi-order
-test. Printer/RIP/nesting/laser handoff remains intentionally blocked until a
-separate production integration is explicitly implemented.
+test.
+
+## Printing
+
+Printing is live. The full order-to-print pipeline - artwork, PDF conversion,
+3-up imposition, jig, and hot-folder handoff to RasterLink7 - is documented in
+`workflows/starred/daisy-street-sign-automation.md`, which is the operational
+source of truth. The only manual step is the ENTER press on the printer panel,
+forced by the faulty head heater.
