@@ -37,16 +37,27 @@ They remain recoverable from Git history.
 - Heart and ampersand: one locked signature unit copied from Max's approved
   NICHOLS result. The source heart remains exactly 236 x 229 px, its pointed tip
   meets the black upstroke, and its body never touches the ampersand.
-- Finished sizes: Large 570 x 125 mm, Medium 450 x 120 mm
+- Finished sizes: Large 570 x 125 mm, Medium 450 x 120 mm, Small 290 x 85 mm
 - Status: **Large artwork complete and visually approved by Max on 14 July 2026.**
-  Medium is built to the same rule and verified in software, but has not yet been
-  printed on acrylic or visually approved.
+  Medium and Small are built to the same rule and verified in software, but have not
+  yet been printed on acrylic or visually approved.
 
 Only the customer names around the locked signature may compress to fit. The
 heart size, heart height, ampersand scale, and tip contact do not vary by order.
 The heart is the same physical size at Medium as at Large - only the surrounding
-type is re-fitted. Print and cut automation does not reopen the approved artwork
-rule at any size.
+type is re-fitted. At Small it scales to 13.52 mm, the one agreed exception: the
+85 mm blank is shorter than Large's 100.2 mm interior, so no inset can preserve the
+interior and the whole signature unit must shrink together. Print and cut automation
+does not reopen the approved artwork rule at any size.
+
+## Contours
+
+`source/size-contours.json` holds all three blank contours and is the single source
+of truth. It is committed, so **no USB drive is needed to run the pipeline**.
+`source/extract-size-contours.py` regenerates it from the LightBurn cut files and is
+only needed if one of those changes; it verifies the extracted Large against the
+audited `source/source-data.js`, which is kept as the audit trail and is never read
+at runtime.
 
 ## Bed Layouts
 

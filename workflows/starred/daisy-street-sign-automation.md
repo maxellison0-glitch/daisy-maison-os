@@ -2,8 +2,8 @@
 
 > Canonical Jarvis workflow for Daisy Maison street signs.
 > Copy and paste this entire file into Claude, Codex, or another capable AI chat.
-> Current production scope: Mr & Mrs on white acrylic, **Large and Medium**, any of
-> the eight border colourways.
+> Current production scope: Mr & Mrs on white acrylic, **Small, Medium and Large**,
+> any of the eight border colourways.
 >
 > **Updated 2026-07-26.** Printing is now IMPLEMENTED and authorised. The previous
 > version of this file said never to send anything to a printer or hot folder; that
@@ -15,7 +15,7 @@ You are operating Daisy Maison's street-sign system. There are three modes:
 
 1. **PRODUCE SIGNS** - order numbers to printed signs.
 2. **IMPROVE AUTOMATION** - modify, debug, test, or extend the system.
-3. **NEW SIZE** - Large and Medium are built; Mini is blocked on a contour (see Sizes).
+3. **NEW SIZE** - all three sizes are built. See Sizes before adding a fourth.
 
 Infer the mode from Max's request. Ask only if genuinely ambiguous.
 
@@ -89,7 +89,7 @@ query($id: ID!) {
 }
 ```
 
-Supported line: **SKU 36961** with `Size` starting `Large` or `Medium`. Read
+Supported line: **SKU 36961** with `Size` starting `Small`, `Medium` or `Large`. Read
 `Line 1` and `Line 2` exactly - never silently correct spelling, punctuation or
 spacing. Customers do type `MR&MRS CHAMBERLAIN` with no spaces, and that is
 legitimate.
@@ -103,10 +103,10 @@ Ignore upgrade/add-on lines (`ACC-*`, `Size Upgrade`) - no personalisation on th
   artwork\build.py --size large "<ORDER>" "<LINE1>" "<LINE2>" 486 "artwork\orders\<ORDER>.svg"
 ```
 
-`--size` takes `large` or `medium` and defaults to `large`. The fourth positional
-argument is the line-1 target width, which differs per size - **omit it and the
-size's own default is used**, which is what you want: 486 for Large, 383.7 for
-Medium. Passing Large's 486 to a Medium sign would overflow the frame.
+`--size` takes `small`, `medium` or `large` and defaults to `large`. The fourth
+positional argument is the line-1 target width, which differs per size - **omit it
+and the size's own default is used**, which is what you want: 486 Large, 383.7
+Medium, 247.8 Small. Passing Large's 486 to a smaller sign overflows the frame.
 
 Python 3.13.9 is installed per-user with numpy, pillow, shapely, fonttools.
 
@@ -147,18 +147,21 @@ the imposition read it through `bed-layout.ps1`, which is what stops the printed
 outlines and the artwork placed on them from ever disagreeing. Change a layout in
 the JSON; never in one of the scripts.
 
-| Size | Blank | Grid | Blank top-left (mm) | Bed used |
-|---|---|---|---|---|
-| Large | 570 x 125 | 1 x 3 | (20, 12.5) / (20, 147.5) / (20, 282.5) | 83.4% |
-| Medium | 450 x 120 | 1 x 3 | (80, 20) / (80, 150) / (80, 280) | 63.2% |
+| Size | Blank | Grid | Per bed | Blank top-left (mm) | Bed used |
+|---|---|---|---|---|---|
+| Large | 570 x 125 | 1 x 3 | 3 | (20, 12.5 / 147.5 / 282.5) | 83.4% |
+| Medium | 450 x 120 | 1 x 3 | 3 | (80, 20 / 150 / 280) | 63.2% |
+| Small | 290 x 85 | 2 x 4 | 8 | X 7.5 / 312.5, Y 16 / 117 / 218 / 319 | 77.0% |
 
-Both fill the 420 mm axis exactly. Side margins are derived, never configured, so a
-bad margin cannot push artwork off an edge. **Three is the hard maximum for both**:
-a second column needs 1140 mm (Large) or 900 mm (Medium) against a 610 mm bed, and
-neither blank fits the 420 mm axis rotated. Large's positions are corroborated by
-the old PC's production PSDs, which sat at Y 12.1 / 147.0 / 280.6.
+All three are exact bed fits. Side margins are derived, never configured, so a bad
+margin cannot push artwork off an edge. Large and Medium cannot go two across (1140
+and 900 mm against a 610 mm bed) and neither fits the 420 mm axis rotated. Large's
+positions are corroborated by the old PC's production PSDs (Y 12.1 / 147.0 / 280.6);
+Small's by the 8-up production PSD (X 8.6 / 313.9, Y 11.3 / 107.6 / 206.3 / 303.3),
+which was hand-nested with an uneven row pitch - the regular grid here is within
+~2 mm of it and lets the jig and imposition share one rule.
 
-**POS 2 is exactly bed centre in both layouts**, so a single sign there needs no
+**POS 2 is exactly bed centre for Large and Medium**, so a single sign there needs no
 assumption about which corner is the origin - use "Arrange in the Center".
 
 Bleed is checked against the row gap: 4 mm bleed against a 10 mm gap leaves 2 mm
@@ -240,43 +243,61 @@ name-dependent heart scaling, or per-order heart nudging.
 
 | Product | Cut size (mm) | Per bed | Built? |
 |---|---|---|---|
-| Large | **570.00 x 124.99** (409-vertex contour) | 3 | **yes** - printed on acrylic, passed |
-| Medium | **450.00 x 120.00** (200-vertex contour) | 3 | **yes** - not yet printed |
-| Mini | ~290 x 85, **contour unknown** | 8 | **no - blocked** |
+| Large | **570.00 x 125.00**, 409-vtx contour | 3 | **yes** - printed on acrylic, passed |
+| Medium | **450.00 x 120.00**, 8 vtx + 4 cubics | 3 | **yes** - not yet printed |
+| Small | **290.00 x 85.00**, 8 vtx + 4 cubics | 8 | **yes** - not yet printed |
 | Mini Football | 150.6 x 50.3 | 14 | no |
 
-Large and Medium both run the whole chain: `build.py --size`, recolour, bleed, jig,
-imposition, PDF.
+All three run the whole chain and all three contours live in ONE committed file,
+`source/size-contours.json`. No USB is needed to run the pipeline.
 
-**Mini is blocked on a missing input, not on work.** Its type constants are derived
-and it rendered fine, but the contour used was the wrong product's - the
-`MINI TRADITIONAL ROAD SIGN SHAPE` file is a rounded rectangle, not the scalloped
-street sign. Proof, area over convex hull:
+**All three are the same scalloped design** - four CONCAVE corners, area over convex
+hull ~0.993. That ratio is the guard: `build.py` refuses a contour outside
+0.985-0.9985, because a **convex 1.0000** outline is the Personalised Traditional
+Road Sign, a different product with deliberately un-edged corners. Do not use
+`MINI TRADITIONAL ROAD SIGN SHAPE.lbrn2` for a street sign; it cost a day once.
 
-| Size | Ratio | Shape |
-|---|---|---|
-| Large | 0.9934 | scalloped, concave corners |
-| Medium | 0.9927 | scalloped, concave corners |
-| that file | 1.0000 | perfectly convex - a rounded rectangle |
+### Where Small comes from
 
-The real Mini artwork (`E:\MINI-MEDIUM\MEDIUM ALL COLOUR 2023.psd`) is visibly
-scalloped. No Mini street-sign cut file exists on either USB. **To unblock: find the
-real cut file** (likely the laser PC), or construct the contour from Medium's
-parametric 8-vertex shape using the measured corner rule - vertical corner extent is
-near-constant (Large 25.28, Medium 25.31 mm) while horizontal scales with width
-(Large 25.54 = 0.0448 W, Medium 20.24 = 0.0450 W). A constructed contour is an
-invented silhouette and must be checked against a physical blank before sale. Blank
-dimensions also need confirming; 289.723 x 85 came from the wrong product's file.
+There is no Small cut file and none is needed. The Medium cut file's XForm is a
+**non-uniform scale** (1.55172, 1.41176) over local geometry spanning exactly
+**290.000 x 85.000 mm** - and 290 x 1.55172 = 450.0, 85 x 1.41176 = 120.0. Medium
+was authored by scaling the Small shape up, so Small is that master at unit scale:
+read from a real Daisy file, not invented.
 
-`build.py --size mini` deliberately refuses rather than producing a wrong shape.
+Validated against the real 8-up production bed
+(`E:\Jigs\Street Sign Jigs\MINI\MEDIUM ALL COLOUR 2023.psd`, 300 dpi - note the
+folder naming trap below): buffering the 290x85 master out by 1.00 mm reproduces the
+printed silhouette to **mean 0.182 mm, all 2750 sampled edge points within 1.0 mm**.
+That 1.00 mm independently matches the 1.018 mm/edge bleed measured on the Medium
+production PSD.
 
-**Shopify's "Small 28 x 12cm" IS the Mini.** The listing's 12 cm height is wrong -
+Small's **type sizes are measured**, not scaled: two real signs both give a 40.13 mm
+line-1 cap height, where a 0.68 scale of Large would have given 37.2 mm - 8% small
+and visible on an 85 mm sign. `capCenterY` remains the scaled value; the two sample
+cells disagree by 3 mm on vertical position, so there is no sound basis to move it.
+**This is the open item for Max's visual approval.**
+
+**NAMING TRAP.** "MEDIUM" at Daisy historically meant the 290x85 blank - today's
+Small. The folder `Street Sign Jigs\MINI\` contains files called
+"MEDIUM ALL COLOUR 2023.psd", and those are SMALL signs. Today's Medium is the
+450x120 blank, new in June 2026, and lives in `Street Sign Jigs\MEDIUM\`.
+
+**Shopify's "Small 28 x 12cm" IS this Small.** The listing's 12 cm height is wrong -
 the real blank is 85 mm. Shopify "Medium 45 x 12cm" matches the 450 x 120 cut
-exactly. There is no separate product called "Small".
+exactly.
 
-Mini historical 8-up positions: X ~10 and 315, Y ~10 / 108 / 206 / 303 - the
-starting point for a `mini` entry in `bed-layout.json` (cols 2, rows 4) once the
-contour exists.
+### Re-extracting the contours
+
+Only needed if a cut file changes. Run once, on the PC with the USB attached:
+
+```powershell
+python source\extract-size-contours.py --cut-files "F:\sean\max\cutting files street signs"
+```
+
+It finds the drive itself if you omit the flag, refuses any outline that is not the
+scalloped family, and its output is committed. It also verifies the extracted Large
+against the audited `source/source-data.js` - they agree to 0.0006 mm.
 
 ## Product Styling Rules (conditional logic - apply to ALL sizes)
 
@@ -361,13 +382,39 @@ in `bed-layout.json` first.
 Historical note: the production PSDs already carried ~1.4 mm per edge, so bleeding
 is established practice; 4 mm simply makes it reliable.
 
+## Runs On Any PC
+
+Everything the pipeline needs is in the git checkout. Requirements:
+
+| Need | Why | If missing |
+|---|---|---|
+| Python 3.13 + numpy, pillow, shapely, fonttools | `build.py`, `add-bleed.py` | `pip install numpy pillow shapely fonttools` |
+| Google Chrome or Edge | the SVG->PDF renderer | `svg-to-print-pdf.ps1` searches both and names what it looked for |
+| PowerShell 5.1 | the production scripts | ships with Windows |
+
+Deliberately NOT needed:
+
+- **No USB drive.** All three contours are committed in `source/size-contours.json`.
+  Only `extract-size-contours.py` touches a USB, only if a cut file changes, and it
+  locates the drive itself rather than hard-coding a letter.
+- **No absolute paths.** Scripts resolve siblings via `$PSScriptRoot` and the repo
+  root, so the checkout works anywhere.
+- **No RasterLink** to produce the PDFs. Only the final hot-folder drop and the ENTER
+  press need the printer PC.
+
+Fonts are embedded in each generated SVG, so the PDF renders identically on a machine
+without Times New Roman installed. `svg-to-print-pdf.ps1` throws if no font program
+made it into the PDF rather than shipping fallback glyphs.
+
 ## Still Unbuilt
 
-- **Mini** - blocked on a contour, see Sizes. Everything else for it is derived.
-- **Medium has never been physically printed.** The geometry is verified in
-  software (jig outlines overlaid on the imposed artwork register exactly, bleed
-  falls outside the blank on every edge), but no acrylic has come off the machine.
-  Print the Medium jig and dry-fit real blanks before running a customer order.
+- **Only Large has been physically printed.** Medium and Small are verified in
+  software - jig outlines overlaid on the imposed artwork register exactly and the
+  bleed falls outside the blank on every edge - but no acrylic has come off the
+  machine at either size. Print the jig and dry-fit real blanks before a customer
+  order.
+- **Small's `capCenterY` is unverified** (see Sizes) and its type sizes, though
+  measured, want Max's eye against a real sign.
 - Two Medium decisions Max has not ruled on: the frame inset is 9.9 mm, 20% thinner
   than Large's proportion; and line 2 uses em 11.5 as in build.py rather than the
   PSD's 10.583, which affects Large equally.

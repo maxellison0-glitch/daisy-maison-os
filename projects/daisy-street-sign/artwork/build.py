@@ -24,9 +24,11 @@ A = os.path.join(HERE, "assets")
 REGULAR_FONT_PATH = os.path.join(A, "times.ttf")
 
 # ---- size profiles ----
+# All three read their blank contour from source/size-contours.json.
 # Large is the audited original and its numbers are unchanged. Medium is measured
-# from the June-2026 production PSDs and its own cut file. Mini is DERIVED, not
-# measured - see the note on its entry.
+# from the June-2026 production PSDs and its own cut file. Small is derived from
+# the master shape inside the Medium cut file and validated against the 8-up
+# production PSD - see the note on its entry.
 PSD_PX_PER_MM=11.8719
 LARGE_HEART_W=236/PSD_PX_PER_MM      # 19.879 mm, the source raster at PSD scale
 
@@ -37,7 +39,7 @@ SIZES={
    "dateBaseline":104.0,"dateTargetW":470.0,"dateMaxFs":11.5,
    "heartTopMm":39.76,"heartW":LARGE_HEART_W,
    "signatureScaleX":None,                 # None = compute, preserving today's behaviour
-   "contour":"source-data",                # the audited original file
+   "contour":"large",                      # source/size-contours.json
    "source":"lARGE STREET SIGN PSD.psd + LARGE SIGN.lbrn2 contour",
    "status":"VISUAL APPROVED BY MAX 2026-07-14 - office production check required",
  },
@@ -55,34 +57,53 @@ SIZES={
    "source":"MIDDLE size  halfbed JUN26.lbrn2 contour + JUN26 production PSDs",
    "status":"DERIVED FROM MEASURED PSD - awaiting Max visual approval",
  },
- # MINI IS DELIBERATELY ABSENT. The type constants below are worked out and were
- # rendered successfully, but the CONTOUR was wrong and has been withdrawn:
- #
- #   "MINI TRADITIONAL ROAD SIGN SHAPE - Copy.lbrn2" is the Personalised
- #   Traditional Road Sign - a SEPARATE product with deliberately un-edged
- #   corners and its own small/medium/large range (confirmed by Max 2026-07-26).
- #   Its outline is convex (area/hull ratio 1.0000) where Large and Medium are
- #   scalloped (0.9934 / 0.9927), and the Mini street sign artwork in
- #   E:\MINI-MEDIUM\MEDIUM ALL COLOUR 2023.psd is visibly scalloped.
- #
- # There is NO Mini street-sign cut file on either USB drive. Until one is found,
- # or the contour is derived and validated against a physical blank, Mini cannot
- # be generated - shipping a wrong-shaped blank is worse than shipping none.
- #
- # When it is added, the derived type constants were:
- #   blankW 289.723  blankH 85.0   (blank size itself still needs confirming)
- #   border 12.4*0.68  maxFs 59.0*0.68  capCenterY 55.3*0.68
- #   targetW 0.8914*interiorW   dateTargetW 0.8621*interiorW
- #   dateBaseline 104.0*0.68    dateMaxFs 11.5*0.68
- #   heartTopMm 39.76*0.68      heartW LARGE_HEART_W*0.68   (13.52mm, Max approved)
- #   signatureScaleX 0.8644 pinned
- # Unlike Medium, Mini's 85mm blank is smaller than Large's 100.2mm INTERIOR, so
- # no inset preserves the interior and the type genuinely must shrink - hence the
- # heart scaling, which is the agreed exception to the fixed-heart rule.
- #
- # Corner rule measured across the two known sizes, for whoever builds it:
- #   vertical corner extent is near-constant (Large 25.28, Medium 25.31 mm)
- #   horizontal extent scales with width at ~0.0449 of it (25.54 / 20.24 mm)
+ "small":{
+   # Blank 290x85. There is no Small cut file and none is needed: the Medium
+   # cut file's XForm is a NON-UNIFORM scale (1.55172, 1.41176) over local
+   # geometry spanning exactly 290.000 x 85.000 mm, and 290*1.55172 = 450.0,
+   # 85*1.41176 = 120.0. Medium was authored by scaling Small up, so the Small
+   # contour is that master at unit scale - read from a real Daisy file, not
+   # invented. See source/extract-size-contours.py.
+   #
+   # Confirmed against real production artwork (the 8-up Small bed PSD at 300
+   # dpi): buffering the 290x85 master out by 1.00 mm reproduces the printed
+   # silhouette to mean 0.182 mm, all 2750 sampled edge points within 1.0 mm.
+   #
+   # NOT the "MINI TRADITIONAL ROAD SIGN SHAPE" file - that is the Personalised
+   # Traditional Road Sign, a different product with deliberately un-edged
+   # corners (convex, area/hull 1.0000 against 0.9927 here). Max confirmed the
+   # distinction on 2026-07-26.
+   #
+   # Unlike Medium, Small's 85 mm blank is SHORTER than Large's 100.2 mm
+   # interior, so no inset can preserve the interior and the type genuinely must
+   # shrink. Everything vertical therefore scales by 85/125 = 0.68, including
+   # the heart - the agreed exception to the otherwise fixed-heart rule.
+   # Type sizes are MEASURED off two real Small signs on the 8-up production bed,
+   # not scaled. Both signs agreed to 0.1 mm, and the measurement is trustworthy
+   # because it cross-checks: the plate reads 86.87 mm against an 85 mm blank,
+   # i.e. 0.94 mm bleed per edge, matching the 1.00 mm found independently from
+   # the contour. A pure 0.68 scale of Large would have made the caps 37.2 mm
+   # when the real product is 40.13 - 8% small, and visibly so on a 85 mm sign.
+   #
+   # border and capCenterY are the 0.68-scaled values kept deliberately: the
+   # measurement corroborates border (~8.6 mm) and matches capCenterY on one sign
+   # but not the other (the ALL-COLOUR master stacks variants, and the two cells'
+   # black layers sit 3 mm apart), so there is no sound basis to move it.
+   "label":"Small","blankW":290.0,"blankH":85.0,
+   "border":12.4*0.68,                      # 8.432 - measured ~8.6, kept
+   "maxFs":43.29,                            # -> cap height 40.13 mm, measured
+   "capCenterY":55.3*0.68,                  # 37.604 - unverified, see note
+   "targetW":0.8914*(290.0-2*12.4*0.68),    # same fraction of the interior as Large
+   "dateBaseline":69.7,                      # measured 69.50 / 69.93
+   "dateTargetW":0.8621*(290.0-2*12.4*0.68),
+   "dateMaxFs":7.54,                         # -> line-2 cap 6.99 mm, measured
+   "heartTopMm":39.76*0.68,                 # 27.037
+   "heartW":LARGE_HEART_W*0.68,             # 13.52 mm - Max approved
+   "signatureScaleX":0.8644,                # pinned to Large's locked unit
+   "contour":"small",
+   "source":"MIDDLE size  halfbed JUN26.lbrn2 local master + 8-up Small production PSD",
+   "status":"DERIVED AND VALIDATED AGAINST PRODUCTION ARTWORK - awaiting Max visual approval",
+ },
 }
 
 # ---- args ----
@@ -125,19 +146,23 @@ HEART_TIP_EDGE_INSET_MM=HEART_TIP_EDGE_INSET_PX/PSD_PX_PER_MM*(HEART_W/LARGE_HEA
 def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace('"',"&quot;")
 
 # ---- source contour ----
-if P["contour"]=="source-data":
-    # the audited original, untouched
-    D = json.loads(open(os.path.join(ROOT,"source","source-data.js"),encoding="utf-8").read().split("=",1)[1].strip().rstrip(";"))
-    pts=[(p["x"],p["y"]) for p in D["lightBurn"]["contour"]["points"]]
-    holes=D["lightBurn"]["mountingHoles"]
-else:
-    SD = json.load(open(os.path.join(ROOT,"source","size-contours.json"),encoding="utf-8"))
-    entry=SD["sizes"][P["contour"]]
-    pts=[(p["x"],p["y"]) for p in entry["contour"]["points"]]
-    holes=entry["mountingHoles"]     # Medium's cut file has none; Mini has two
-    if abs(entry["blankWidthMm"]-P["blankW"])>0.05 or abs(entry["blankHeightMm"]-P["blankH"])>0.05:
-        raise SystemExit(f"{SIZE}: contour is {entry['blankWidthMm']}x{entry['blankHeightMm']}mm "
-                         f"but the profile says {P['blankW']}x{P['blankH']} - refusing to mismatch.")
+# ONE file holds all three blank contours. source/source-data.js is retained as
+# the audited original and is checked against by extract-size-contours.py, but it
+# is deliberately not a second runtime source - two files that must agree are a
+# bug waiting to happen.
+SD = json.load(open(os.path.join(ROOT,"source","size-contours.json"),encoding="utf-8"))
+if SIZE not in SD["sizes"]:
+    raise SystemExit(f"{SIZE}: no contour in source/size-contours.json (has: {', '.join(SD['sizes'])})")
+entry=SD["sizes"][SIZE]
+pts=[(p["x"],p["y"]) for p in entry["contour"]["points"]]
+if abs(entry["blankWidthMm"]-P["blankW"])>0.05 or abs(entry["blankHeightMm"]-P["blankH"])>0.05:
+    raise SystemExit(f"{SIZE}: contour is {entry['blankWidthMm']}x{entry['blankHeightMm']}mm "
+                     f"but the profile says {P['blankW']}x{P['blankH']} - refusing to mismatch.")
+# The scalloped street sign sits at ~0.993. A convex 1.0000 outline is the
+# Traditional Road Sign, a different product that must never be printed as this one.
+if not (0.985 < entry["areaOverHull"] < 0.9985):
+    raise SystemExit(f"{SIZE}: contour area/hull is {entry['areaOverHull']} - not the scalloped "
+                     f"street-sign family. Refusing to print a different product's shape.")
 poly=Polygon(pts); inner=poly.buffer(-BORDER, join_style="round", quad_segs=24)
 inner=max(inner.geoms,key=lambda g:g.area) if inner.geom_type=="MultiPolygon" else inner
 def path(seq): return "M "+" L ".join(f"{x:.3f},{y:.3f}" for x,y in seq)+" Z"
