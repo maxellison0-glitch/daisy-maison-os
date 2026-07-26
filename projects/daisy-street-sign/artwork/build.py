@@ -55,23 +55,34 @@ SIZES={
    "source":"MIDDLE size  halfbed JUN26.lbrn2 contour + JUN26 production PSDs",
    "status":"DERIVED FROM MEASURED PSD - awaiting Max visual approval",
  },
- "mini":{
-   # DERIVED, NOT MEASURED. Mini's 85mm blank is smaller than Large's 100.2mm
-   # INTERIOR, so unlike Medium there is no inset that preserves the interior and
-   # the type genuinely must shrink. Vertical constants scale by 85/125 = 0.68;
-   # horizontal targets keep Large's interior fill ratios (89.1% and 86.2%).
-   # The heart scales with them - approved by Max 2026-07-26 as the exception to
-   # the fixed-heart rule, because the interior does change at this size.
-   "label":"Mini","blankW":289.723,"blankH":85.0,
-   "border":12.4*0.68,"maxFs":59.0*0.68,"capCenterY":55.3*0.68,
-   "targetW":0.8914*(289.723-2*12.4*0.68),
-   "dateBaseline":104.0*0.68,"dateTargetW":0.8621*(289.723-2*12.4*0.68),"dateMaxFs":11.5*0.68,
-   "heartTopMm":39.76*0.68,"heartW":LARGE_HEART_W*0.68,
-   "signatureScaleX":0.8644,                # pinned, so the signature unit's proportions are size-invariant
-   "contour":"mini",
-   "source":"MINI TRADITIONAL ROAD SIGN SHAPE - Copy.lbrn2 contour; design constants derived from Large",
-   "status":"DERIVED - NOT YET APPROVED, visual sign-off required before sale",
- },
+ # MINI IS DELIBERATELY ABSENT. The type constants below are worked out and were
+ # rendered successfully, but the CONTOUR was wrong and has been withdrawn:
+ #
+ #   "MINI TRADITIONAL ROAD SIGN SHAPE - Copy.lbrn2" is the Personalised
+ #   Traditional Road Sign - a SEPARATE product with deliberately un-edged
+ #   corners and its own small/medium/large range (confirmed by Max 2026-07-26).
+ #   Its outline is convex (area/hull ratio 1.0000) where Large and Medium are
+ #   scalloped (0.9934 / 0.9927), and the Mini street sign artwork in
+ #   E:\MINI-MEDIUM\MEDIUM ALL COLOUR 2023.psd is visibly scalloped.
+ #
+ # There is NO Mini street-sign cut file on either USB drive. Until one is found,
+ # or the contour is derived and validated against a physical blank, Mini cannot
+ # be generated - shipping a wrong-shaped blank is worse than shipping none.
+ #
+ # When it is added, the derived type constants were:
+ #   blankW 289.723  blankH 85.0   (blank size itself still needs confirming)
+ #   border 12.4*0.68  maxFs 59.0*0.68  capCenterY 55.3*0.68
+ #   targetW 0.8914*interiorW   dateTargetW 0.8621*interiorW
+ #   dateBaseline 104.0*0.68    dateMaxFs 11.5*0.68
+ #   heartTopMm 39.76*0.68      heartW LARGE_HEART_W*0.68   (13.52mm, Max approved)
+ #   signatureScaleX 0.8644 pinned
+ # Unlike Medium, Mini's 85mm blank is smaller than Large's 100.2mm INTERIOR, so
+ # no inset preserves the interior and the type genuinely must shrink - hence the
+ # heart scaling, which is the agreed exception to the fixed-heart rule.
+ #
+ # Corner rule measured across the two known sizes, for whoever builds it:
+ #   vertical corner extent is near-constant (Large 25.28, Medium 25.31 mm)
+ #   horizontal extent scales with width at ~0.0449 of it (25.54 / 20.24 mm)
 }
 
 # ---- args ----

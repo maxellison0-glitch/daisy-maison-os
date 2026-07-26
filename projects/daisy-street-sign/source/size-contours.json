@@ -811,9 +811,14 @@
      }
     ]
    },
-   "mountingHoles": []
+   "mountingHoles": [],
+   "cornerStyle": "scalloped/concave - area/hull ratio 0.9927",
+   "cornerExtentMm": {
+    "horizontal": 20.242,
+    "vertical": 25.314
+   }
   },
-  "mini": {
+  "traditional-road-sign-small": {
    "blankWidthMm": 289.723,
    "blankHeightMm": 85.0,
    "sourceFile": "MINI TRADITIONAL ROAD SIGN SHAPE - Copy.lbrn2",
@@ -1634,7 +1639,11 @@
      "y": 44.0,
      "radius": 2.0
     }
-   ]
+   ],
+   "product": "Personalised Traditional Road Sign (SEPARATE PRODUCT, not the Mini street sign)",
+   "cornerStyle": "rounded/convex - area/hull ratio 1.0000",
+   "warning": "This is NOT the Mini street sign. Confirmed by Max 2026-07-26: the Traditional Road Sign is its own product with un-edged corners and its own small/medium/large. The Mini STREET sign is scalloped like Large/Medium and has no cut file on these drives."
   }
- }
+ },
+ "_cornerRule": "Scalloped corners: vertical extent is near-constant across sizes (Large 25.28, Medium 25.31, Mini artwork ~24.5 mm) while horizontal extent scales with blank width at ~0.0449 of it (Large 25.54, Medium 20.24)."
 }
