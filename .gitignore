@@ -32,5 +32,8 @@ projects/daisy-street-sign/**/*.pyc
 !projects/social-prompts/**
 !workflows/starred/daisy-social-content-prompts.md
 
+!projects/daisy-scroll-story/
+!projects/daisy-scroll-story/**
+
 !Content Pipeline/
 !Content Pipeline/**
