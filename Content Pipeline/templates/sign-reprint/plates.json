@@ -66,5 +66,31 @@
     "wordmark_y": 0.3,
     "note": "Dog plate with the sign rescaled 0.625x to its true 570mm against three room anchors (was 1.6x oversized). Sign now 480px. A faint tonal trace remains where the old sign was erased.",
     "ink_ratio": 0.42
+  },
+  "freya_hallway": {
+    "image": "../../Creative Studio/reference-masters/PLATE-mums-taxi-BLACK-freya-hallway-PHONE-MASTER.png",
+    "box": [
+      104,
+      563,
+      811,
+      718
+    ],
+    "colourway": "BLACK",
+    "wall_band": 46,
+    "damp": 0.3,
+    "crop45": [
+      0,
+      40,
+      896,
+      1160
+    ],
+    "wordmark_y": 0.3,
+    "ink_ratio": 0.155,
+    "ink_tint": [
+      1.05,
+      1.04,
+      0.9
+    ],
+    "note": "Freya holding the sign, hallway, BLACK. Max's passed realism format (phone-snapshot rule). Box derived from the top border's straight run (136->779 at y=568) against the SVG silhouette's own top-edge fraction (830/912 wide, inset 4.50% each side): width 707, and the independently measured top/bottom edges (563/718) give height 155. 707/155 = 4.56 = the canonical ratio exactly, so this sign is held flat-on with no foreshortening - that agreement is the check that the box is right. HANDS: the fingers overlap the shaped ends and the printed border only; the panel interior is clear, so the eroded panel mask never paints over skin. damp is low and the band short because the strip above the sign is her shirt and the doorway, not a wall - it is a weaker light witness than a real wall plane."
   }
 }
