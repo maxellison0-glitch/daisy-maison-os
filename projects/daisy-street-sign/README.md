@@ -50,6 +50,29 @@ type is re-fitted. At Small it scales to 13.52 mm, the one agreed exception: the
 interior and the whole signature unit must shrink together. Print and cut automation
 does not reopen the approved artwork rule at any size.
 
+## One Command
+
+```powershell
+python scripts\plan-batch.py orders.json --out-dir plan
+powershell -ExecutionPolicy Bypass -File production\run-batch.ps1 -OrdersJson plan\batch-plan.json -OutDir production\print\<date>
+```
+
+`run-batch.ps1` is the only orchestrator: it chains build -> recolour -> bleed ->
+impose -> jig -> PDF for every sign, groups them into beds by size + colourway, and
+halts on the first failure. It never contacts the printer. Individual stage scripts
+remain callable for debugging, but production runs go through the one command.
+
+## Product Rules
+
+`production\product-rules.json` is the single source of truth for the eight
+colourways and for which SKUs get the red heart. `recolour-sign.ps1 -Sku <sku>`
+applies it; `plan-batch.py` uses the same file to decide which order lines are
+street signs. An unclassified SKU is refused, not guessed.
+
+This matters because `build.py` draws the heart whenever line 1 contains an
+ampersand - it does not know the SKU. Without `-Sku`, a Family or Retirement sign
+whose text happens to contain `&` would print with the Mr & Mrs heart.
+
 ## Contours
 
 `source/size-contours.json` holds all three blank contours and is the single source
@@ -68,10 +91,19 @@ them cannot drift apart. Change a layout there, never in one of the scripts.
 
 ## Rebuild And Test
 
-Generator verification:
+Generator verification - 8 geometry checks over 6 name lengths plus a blank
+subtitle. It also asserts the mounting-hole IDs are **absent**, since they are
+physical holes and printing them puts ink where the acrylic is missing:
 
 ```powershell
 python artwork\verify-heart-placement.py
+```
+
+Full pipeline verification against the committed fixture - 8 signs, 3 sizes, 4
+colourways, 4 beds:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File production\run-batch.ps1 -OrdersJson scripts\fixtures\run-batch-orders.json -OutDir <scratch>
 ```
 
 To regenerate `source-data.js` from another copy of the source bundle:

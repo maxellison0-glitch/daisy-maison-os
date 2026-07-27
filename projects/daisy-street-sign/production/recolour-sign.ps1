@@ -18,12 +18,14 @@
 # signature; the red heart is the same on every colourway.
 #
 # USAGE
-#   powershell -NoProfile -ExecutionPolicy Bypass -File recolour-sign.ps1 `
-#       -SvgPath ..\artwork\orders\DM37805.svg -OutPath out\DM37805-grass.svg `
-#       -Colourway Grass
+#   Preferred - let the SKU decide the heart and the colour policy:
+#     powershell -NoProfile -ExecutionPolicy Bypass -File recolour-sign.ps1 `
+#         -SvgPath ..\artwork\orders\DM37805.svg -OutPath out\DM37805.svg `
+#         -Sku 36965 -Colourway Grass
 #
-#   ...or set colours independently:
-#       -BorderColour '#68893C' -TextColour '#010101'
+#   Manual - you own the decision:
+#     -Colourway Grass [-RemoveHeart]
+#     -BorderColour '#68893C' -TextColour '#010101'
 #
 # Shopify's Family street sign (SKU 36965) carries a `Colour border` attribute
 # whose values map onto -Colourway directly (black, grass, grey, ...).
@@ -32,6 +34,10 @@
 param(
   [Parameter(Mandatory=$true)][string]$SvgPath,
   [Parameter(Mandatory=$true)][string]$OutPath,
+  # Shopify SKU. When given, product-rules.json decides the heart and whether the
+  # customer's colour is honoured - so a Retirement sign cannot inherit Mr & Mrs
+  # styling just because its text contains an ampersand. Exact match, no prefix.
+  [string]$Sku,
   # Named colourway - sets border and text together, which is how the source
   # artwork does it. Explicit -BorderColour/-TextColour override it.
   [string]$Colourway,
@@ -44,27 +50,26 @@ param(
   # mock-up, so removal is the default. Pass -KeepMountingHoles only to reproduce
   # an old proof.
   [switch]$KeepMountingHoles,
-  # The red heart belongs to the Mr & Mrs Personalised Street Sign (SKU 36961)
-  # ONLY. Every other street sign product omits it, even when the customer's text
-  # happens to contain an ampersand.
+  # The red heart belongs to the four Mr & Mrs SKUs ONLY. Every other street sign
+  # omits it, even when the customer's text happens to contain an ampersand.
+  # Implied by -Sku for any product whose rule says heart:false.
   [switch]$RemoveHeart
 )
 
 $ErrorActionPreference = 'Stop'
 
-# Exact values recovered from the production PSD text-engine data and validated
-# against the known-good Large spec, which returns #010101.
-$PALETTE = @{
-  'black'     = '#010101'
-  'grey'      = '#7C7C7C'
-  'gray'      = '#7C7C7C'
-  'sage'      = '#9AA192'
-  'grass'     = '#68893C'
-  'blue'      = '#799CAA'
-  'lightsage' = '#BEC0A9'
-  'blush'     = '#EBC3C3'
-  'duskypink' = '#CB9CA5'
+# --- product rules: colourways and per-SKU styling --------------------------
+# Kept in JSON, not in this script, so the runner, the planner and this script
+# cannot drift apart on what "grass" means or which SKUs get a heart.
+$rulesPath = Join-Path $PSScriptRoot 'product-rules.json'
+if (-not (Test-Path -LiteralPath $rulesPath)) {
+  throw "Missing $rulesPath - it holds the colourways and the per-SKU heart rules."
 }
+$RULES = Get-Content -LiteralPath $rulesPath -Raw | ConvertFrom-Json
+
+$PALETTE = @{}
+foreach ($p in $RULES.colourways.PSObject.Properties) { $PALETTE[$p.Name] = $p.Value }
+foreach ($p in $RULES.colourwayAliases.PSObject.Properties) { $PALETTE[$p.Name] = $PALETTE[$p.Value] }
 
 function Resolve-Colour([string]$v, [string]$what) {
   if (-not $v) { return $null }
@@ -74,13 +79,30 @@ function Resolve-Colour([string]$v, [string]$what) {
   throw ("$what '$v' is neither a known colourway nor a #RRGGBB hex. Known: " + (($PALETTE.Keys | Sort-Object) -join ', '))
 }
 
+# --- apply the SKU's rule ---------------------------------------------------
+if ($Sku) {
+  $rule = $RULES.products.PSObject.Properties | Where-Object { $_.Name -eq $Sku }
+  if (-not $rule) {
+    throw ("SKU '$Sku' is not classified in product-rules.json, so its heart and " +
+           "colour policy are unknown. Add it there rather than guessing here. Known: " +
+           (($RULES.products.PSObject.Properties.Name | Sort-Object) -join ', '))
+  }
+  $r = $rule.Value
+  Write-Host ("sku {0} -> {1} | heart {2} | border {3} | text {4}" -f $Sku, $r.name, $r.heart, $r.border, $r.text)
+  if (-not $r.heart) { $RemoveHeart = [switch]$true }
+  # 'black' forces it regardless of what the customer chose; 'customer' honours
+  # -Colourway. A product with no customer colour choice falls back to black.
+  if ($r.border -eq 'black') { $BorderColour = $PALETTE['black'] }
+  if ($r.text   -eq 'black') { $TextColour   = $PALETTE['black'] }
+}
+
 if ($Colourway) {
   $c = Resolve-Colour $Colourway 'Colourway'
   if (-not $BorderColour) { $BorderColour = $c }
   if (-not $TextColour)   { $TextColour   = $c }
 }
-if (-not $BorderColour) { $BorderColour = '#010101' }
-if (-not $TextColour)   { $TextColour   = '#010101' }
+if (-not $BorderColour) { $BorderColour = $PALETTE['black'] }
+if (-not $TextColour)   { $TextColour   = $PALETTE['black'] }
 $BorderColour = Resolve-Colour $BorderColour 'BorderColour'
 $TextColour   = Resolve-Colour $TextColour   'TextColour'
 $PanelColour  = Resolve-Colour $PanelColour  'PanelColour'
