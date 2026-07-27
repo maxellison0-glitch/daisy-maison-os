@@ -74,3 +74,16 @@ the real product: both live landing-page heroes show line 2 in regular weight.
 SIGN_STRETCH is a judgement call, not a default. Use it where a short wording leaves
 an obviously empty plate (MUM'S TAXI sat at 71% of the plate width), but the live
 listing photos show line 1 at its natural width, so do not apply it blindly.
+
+LINE 2 IS ALSO ALWAYS SMALL, NOT JUST REGULAR WEIGHT.
+Added 27 Jul 2026 after Max: "line 2 is getting too big for our street signs."
+Saying "regular weight, never bold" is not enough - the model keeps growing line 2
+until it fills the panel width, which is not what the product looks like. Pin the
+SIZE explicitly, against the reference rather than in the abstract:
+
+  Line 2 must be SMALL and delicate: exactly the same cap height, stroke weight
+  and letter-spacing as the words NO TIPS, NO THANKS in the source photograph.
+  Roughly one third the cap height of line 1. It sits short and centred with
+  generous empty cream either side. Do not let it grow to fill the panel width.
+
+That wording produced the approved image on the first retry.
