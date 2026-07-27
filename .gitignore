@@ -45,3 +45,19 @@ projects/daisy-street-sign/plan/
 
 !Content Pipeline/
 !Content Pipeline/**
+
+# Content Pipeline renders: video, frames and stills. Git keeps every version of
+# a binary forever, and scripts/sync.ps1 runs `git add -A`, so without this one
+# sync would push ~1 GB - including a 60 MB mp4 that GitHub warns on. 1,184 jpg,
+# 178 png and 46 mp4 sit untracked there right now. The briefs, prompts,
+# personas, code and QC notes stay tracked; the pixels do not.
+# To keep one specific image as evidence, force it: git add -f <path>
+Content Pipeline/**/*.mp4
+Content Pipeline/**/*.mov
+Content Pipeline/**/*.jpg
+Content Pipeline/**/*.jpeg
+Content Pipeline/**/*.png
+Content Pipeline/**/*.wav
+Content Pipeline/**/tmp/
+Content Pipeline/**/__pycache__/
+Content Pipeline/**/*.pyc
