@@ -174,3 +174,51 @@ Entry format:
   not located. The fetch proxy rate-limits the three brand hosts persistently;
   notonthehighstreet.com is currently the only reference host answering.
   Nothing above is presented as a live social post or a same-day change.
+
+## 2026-07-27
+- TreatBox: NOT READ THIS RUN. treatboxuk.com returned HTTP 429 (Too Many
+  Requests, Retry-After: 60) on the one attempt made — tried first, as
+  instructed, given this is now its third consecutive dated entry with no
+  successful fetch (24 Jul read; both 25 Jul runs failed; today fails again).
+  No homepage retrieved, no observation. Last-known state remains the 24 Jul
+  read (Results Day hero + up-to-40%-off sale + Advent 2026 pre-order +
+  wedding/birthday advent countdowns) — carried forward, now THREE runs
+  UNVERIFIED. The Results Day and Christmas-ramp calendar below is stale by
+  the same margin and should not be treated as confirmed live.
+- The Crafty Bonobo: NOT READ THIS RUN (thecraftybonobo.com HTTP 429,
+  Retry-After: 60, one attempt). Joke-copy street-sign bestseller wall carried
+  from 24 Jul, UNVERIFIED for a third dated entry running.
+- Little Perfections: NOT READ THIS RUN (littleperfections.co.uk HTTP 429,
+  Retry-After: 60, one attempt). Named aesthetic wedding "worlds" (Old Money /
+  Santorini / Timeless White / Baby's Breath) plus Christmas signage in nav
+  carried from 24 Jul, UNVERIFIED for a third dated entry running.
+- Etsy, notonthehighstreet.com, Covering All Occasions, Instagram, TikTok: NOT
+  ATTEMPTED this run — the three named targets (TreatBox first, then Crafty
+  Bonobo, Little Perfections) all failed, and no other host was tried today.
+  Do not read that as a fresh NOTHS or Etsy signal; nothing was fetched from
+  them today.
+- Season read: no fresh reference signal today — three sites in a row, three
+  runs each. The standing read holds on our own data only: Mr & Mrs EST/date
+  has been the top seller by orders on every day it's been checked (16 on 23
+  Jul, 20 on 24 Jul, per earlier entries), and the two dated turns already
+  flagged —
+  Results Day mid-Aug and a Christmas ramp the references had already started
+  in July — are unchanged in substance but now meaningfully stale: it has
+  been three full days since any of the three brand sites was actually read.
+  If Results Day content is meant to queue for early August, the trigger
+  (TreatBox's hero) has not been re-verified in a week's worth of attempts.
+- Translate to us: (1) do not schedule or build the Results Day reel as
+  "confirmed live" — the only evidence for it is now nine days old (24 Jul)
+  and three fetch attempts since have failed; treat it as a hypothesis to
+  re-test, not a queued certainty; (2) hold Mr & Mrs EST/date as the priority
+  format — justified by our own sales, still not by a fresh reference read;
+  (3) LAUGH joke-copy sign reveal stays greenlit on our own lines — durable
+  format, no reference dependency; (4) if the proxy keeps blocking these three
+  hosts, the next session should try a materially different time-of-day or
+  fall back to notonthehighstreet.com and Etsy, which is where the last two
+  live reads actually came from (25 Jul).
+- Unreachable today: treatboxuk.com (429), thecraftybonobo.com (429),
+  littleperfections.co.uk (429) — all Retry-After: 60, one attempt each, not
+  retried after the wait. Etsy, notonthehighstreet.com, Covering All
+  Occasions, Instagram, TikTok not attempted this run. Nothing above is
+  presented as a live post or a same-day change.
