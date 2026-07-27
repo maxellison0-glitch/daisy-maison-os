@@ -30,6 +30,15 @@ CTA and original sound.
 The earlier overlaid result remains rejected diagnostic evidence. Nothing is
 published; publishing still requires Max's explicit approval.
 
+## Correction, 23 July 2026
+
+The "synthetic Max" identity referenced throughout the DM-C017 section
+below does not accurately resemble Max — he's confirmed this himself.
+Nothing in the production record is wrong or was regenerated; it's a label
+change, not a technical one. That identity is now Alan, a distinct
+character (`Content Pipeline/Personas/ALAN.md`), not a likeness of the real
+founder. Read "synthetic Max" below as "Alan" for identity purposes.
+
 ## Decisions carried forward
 
 ### DM-C017

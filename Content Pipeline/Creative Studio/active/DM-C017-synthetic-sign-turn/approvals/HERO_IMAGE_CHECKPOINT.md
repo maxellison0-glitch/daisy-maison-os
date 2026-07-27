@@ -45,3 +45,14 @@ may not alter the approved finished front or introduce a product-surface
 overlay.
 
 Publication remains blocked until Max explicitly approves the finished Reel.
+
+## Correction, 23 July 2026
+
+Max has since confirmed this image does not read as an accurate personal
+likeness, despite the approval recorded above. The generation, hash, job ID
+and downstream video lock all stand unchanged — nothing here was
+regenerated or altered. What changed is the label: this is no longer
+treated as "synthetic Max." It's recast as its own distinct character,
+**Alan** — see `Content Pipeline/Personas/ALAN.md`. Any future accurate
+synthetic-Max identity is a separate, not-yet-started build requiring real
+likeness confirmation, not a relabelling of this one.
