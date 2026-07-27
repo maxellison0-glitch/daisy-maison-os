@@ -16,7 +16,8 @@ Ads, Google Ads) where it saves real work.
 | Publish IG **Reel** | **no** | **yes** |
 | Publish IG **carousel** | **no** | **yes** |
 | TikTok organic metrics | yes | yes |
-| TikTok publish | no | draft, or public via Higgsfield |
+| TikTok publish | no | **yes — live via Higgsfield** |
+| Publish FB Page photo / Reel / text | no | yes |
 
 ---
 
@@ -75,9 +76,47 @@ are private.
 Meta's limits: JPEG for photos, 4:5 to 1.91:1 aspect, ≤8MB; Reels up to 15
 minutes; **50 API-published posts per 24 hours** (`python instagram.py limit`).
 
+### If the Facebook password stays lost — the Instagram Login route
+
+Meta has two auth paths, and only one of them needs a Facebook *account* at
+authorise time:
+
+- **Facebook Login for Business** (the steps above) — the IG account authorises
+  through its linked Page. Unlocks Instagram AND Facebook Page publishing with
+  one token.
+- **Instagram Login** — the Business/Creator account authorises directly on
+  instagram.com, no Page and no Facebook sign-in. Different host
+  (`graph.instagram.com`) and different scopes (`instagram_business_basic`,
+  `instagram_business_content_publish`, `instagram_business_manage_comments`).
+
+**The catch that decides it:** creating the Meta *app* in the first place needs
+a Meta developer account, which needs a Facebook login — either way. So the
+Facebook password is required **once**, to create the app. After that, if the
+Page link is the awkward part, Instagram can authorise itself through Instagram.
+
+And Facebook Page posting always needs the Facebook side. There is no route to
+publishing on a Page without it.
+
 ---
 
-## Part 2 — TikTok
+## Part 2 — Facebook Page
+
+No extra setup. `instagram.py bootstrap` already prints the Page id and the Page
+token, because a Page access token derived from a long-lived user token carries
+Instagram publishing and Page publishing together. Export them as `FB_PAGE_ID`
+and `FB_PAGE_TOKEN` and `facebook.py` works immediately.
+
+What the Page can do that Instagram cannot: post plain text with no media.
+What it shares with Instagram: Reels need a publicly reachable URL, because Meta
+fetches the file itself.
+
+Permissions to add alongside the Instagram ones in step 3:
+`pages_manage_posts`, `pages_read_engagement`, `pages_show_list`,
+`read_insights`.
+
+---
+
+## Part 3 — TikTok
 
 TikTok splits into a free half and a gated half.
 
@@ -91,9 +130,11 @@ posting from an app that has passed TikTok's audit; an unaudited app is forced
 to `SELF_ONLY`, or can push a **draft to your inbox** that you finish with one
 tap. So:
 
-- **Today:** use Higgsfield's `tiktok_connect` / `tiktok_publish`. It already
-  holds an audited app, so it posts publicly with zero dev work. Nothing is
-  connected there yet — `tiktok_accounts` returns empty.
+- **DONE, 27 Jul 2026.** Connected via Higgsfield's `tiktok_connect`; its app
+  is already audited, so it publishes publicly with no dev work. The diffuser
+  carousel went out this way. Caveat found in practice: Higgsfield exposes
+  connect and publish but **no read endpoint**, so the metrics half below is
+  still worth doing separately.
 - **Or:** `python tiktok.py post --url ... --draft`, then one tap on your phone.
 - **Later:** apply for TikTok's audit only if that tap becomes annoying.
 
