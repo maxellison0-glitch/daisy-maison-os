@@ -25,10 +25,10 @@
 #
 # USAGE
 #   powershell -NoProfile -ExecutionPolicy Bypass -File svg-to-print-pdf.ps1 `
-#       -SvgPath ..\artwork\orders\DM37201.svg `
-#       -PdfPath D:\out\DM37201.pdf
+#       -SvgPath ..\artwork\mr-mrs-large-preview.svg `
+#       -PdfPath D:\out\proof.pdf
 #
-#   Add -ReferencePng ..\artwork\orders\DM37201.png to also render a raster proof
+#   Add -ReferencePng ..\artwork\mr-mrs-large-preview.png to also render a raster proof
 #   and report the pixel difference against the approved reference.
 #
 # NOTE: this does not send anything to the printer. Writing the result into the

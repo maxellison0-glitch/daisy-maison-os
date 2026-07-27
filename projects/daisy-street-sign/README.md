@@ -103,13 +103,28 @@ printed outlines and the artwork placed on them cannot disagree.
 | Folder | Contents |
 |---|---|
 | `production/` | the runner, its stage scripts, and two of the three truth files |
-| `artwork/` | `build.py`, the locked heart and Times asset, the approved Large sample, and `orders/` - a record of what has shipped, not part of the workflow |
+| `artwork/` | `build.py`, the locked heart and Times asset, and the approved Large sample |
 | `scripts/` | the batch planner and its test fixtures |
 | `source/` | cut-file geometry. `size-contours.json` is live truth; `source-data.js` is the audit trail behind it and is never read at runtime |
 | `references/` | photograph of the real product |
 
 Stage scripts stay individually callable for debugging. Production runs go through
 the one command.
+
+### Generated output is not tracked
+
+`artwork/orders/`, `production/print/`, `production/jig-*` and `plan/` are working
+output and are git-ignored. Everything in them is reproducible from the order text
+plus these scripts, and the repository syncs to every PC with `git add -A` - so
+tracking them would grow it by roughly 130 KB per order forever and copy customer
+names onto every machine.
+
+Orders generated up to 2026-07-27 stay in Git history rather than the folder. To
+recover exactly what was sent to the printer for one of them:
+
+```powershell
+git show 8e1d0f8:projects/daisy-street-sign/artwork/orders/DM37201.svg > DM37201.svg
+```
 
 ## The Design Rule
 

@@ -214,11 +214,14 @@ adjacent signs would print into each other's edges.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File production\make-jig.ps1 `
-  -Size large -ContourSvg artwork\orders\<any>.svg -OutSvg production\jig-large.svg
+  -Size large -ContourSvg artwork\mr-mrs-large-preview.svg -OutSvg production\jig-large.svg
 ```
 
 Pass a contour SVG of the **matching size and without bleed** - the jig traces the
-blank. Both mistakes are refused rather than silently scaled.
+blank. Both mistakes are refused rather than silently scaled. The committed Large
+sample above is a valid contour; for Medium or Small, generate one with
+`build.py --size medium` or take the `*-styled.svg` that `run-batch.ps1
+-KeepIntermediates` leaves in `_work`. Do not pass a `*-bleed.svg`.
 
 The jig is printed **by the Mimaki itself** onto paper taped to the bed. That is the
 point: positions become known by construction, the physical bed-origin corner never

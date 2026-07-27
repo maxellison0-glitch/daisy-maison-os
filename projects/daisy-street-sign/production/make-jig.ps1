@@ -22,7 +22,7 @@
 # uses, so the jig and the artwork printed onto it cannot disagree.
 #
 #   powershell -NoProfile -ExecutionPolicy Bypass -File make-jig.ps1 `
-#       -Size large -ContourSvg ..\artwork\orders\DM37201.svg -OutSvg jig-large.svg
+#       -Size large -ContourSvg ..\artwork\mr-mrs-large-preview.svg -OutSvg jig-large.svg
 
 [CmdletBinding()]
 param(

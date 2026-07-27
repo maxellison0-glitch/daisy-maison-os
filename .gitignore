@@ -19,6 +19,14 @@
 !projects/daisy-street-sign/**
 projects/daisy-street-sign/**/__pycache__/
 projects/daisy-street-sign/**/*.pyc
+# Generated output: reproducible from the order text plus the scripts, and the
+# repo syncs with git add -A. Tracking it would grow main by ~130 KB per order
+# forever and copy customer names onto every PC.
+projects/daisy-street-sign/artwork/orders/
+projects/daisy-street-sign/production/print/
+projects/daisy-street-sign/production/jig-*
+projects/daisy-street-sign/production/*-3up.*
+projects/daisy-street-sign/plan/
 !workflows/
 !workflows/starred/
 !workflows/starred/daisy-street-sign-automation.md

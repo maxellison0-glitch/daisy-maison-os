@@ -20,7 +20,7 @@
 # USAGE
 #   Preferred - let the SKU decide the heart and the colour policy:
 #     powershell -NoProfile -ExecutionPolicy Bypass -File recolour-sign.ps1 `
-#         -SvgPath ..\artwork\orders\DM37805.svg -OutPath out\DM37805.svg `
+#         -SvgPath ..\artwork\mr-mrs-large-preview.svg -OutPath out\styled.svg `
 #         -Sku 36965 -Colourway Grass
 #
 #   Manual - you own the decision:
