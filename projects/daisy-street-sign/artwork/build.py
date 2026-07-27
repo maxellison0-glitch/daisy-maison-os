@@ -115,11 +115,29 @@ if SIZE not in SIZES:
     raise SystemExit(f"Unknown --size {SIZE!r}. Choose from: {', '.join(SIZES)}")
 P=SIZES[SIZE]
 
+# --out exists so a caller can name the file without also having to supply
+# TARGET_W, which is a per-size profile value no caller should have to know.
+OUT_FLAG=None
+if "--out" in argv:
+    i=argv.index("--out"); OUT_FLAG=argv[i+1]; del argv[i:i+2]
+
+# --no-line2 means "this product genuinely has no subtitle" - a garden or house
+# sign, not a wedding sign. It exists as a SWITCH, not an empty string argument,
+# because Windows PowerShell 5.1 silently DROPS empty arguments on their way to a
+# native command: passing "" made LINE2 fall through to the wedding default below
+# and printed "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024" on a potting-shed
+# sign. A default that plausible has to be impossible to inherit by accident.
+NO_LINE2 = "--no-line2" in argv
+if NO_LINE2:
+    argv.remove("--no-line2")
+
 ORDER  = argv[0] if len(argv) > 0 else "TEST-001"
 LINE1  = argv[1] if len(argv) > 1 else "MR & MRS WINDSOR"
-LINE2  = argv[2] if len(argv) > 2 else "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024"
+LINE2  = "" if NO_LINE2 else (argv[2] if len(argv) > 2 else "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024")
 TARGET_W = float(argv[3]) if len(argv) > 3 else P["targetW"]   # fit line-1 to this width
-OUT    = argv[4] if len(argv) > 4 else os.path.join(HERE, f"mr-mrs-{SIZE}-preview.svg")
+OUT    = OUT_FLAG or (argv[4] if len(argv) > 4 else os.path.join(HERE, f"mr-mrs-{SIZE}-preview.svg"))
+d=os.path.dirname(os.path.abspath(OUT))
+if d: os.makedirs(d, exist_ok=True)
 
 # ---- constants ----
 BORDER=P["border"]; VSCALE=1.4; COLOR="#010101"; PANEL="#FFFFFF"

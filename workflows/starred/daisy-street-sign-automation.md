@@ -71,7 +71,42 @@ wanted, Mimaki material code `0048` (acrylic) covers media codes 000000402,
 000000441, 000000445, 000000459, 000000460, 000000463, 000000464, 000000615,
 000000640.
 
-## Produce Signs
+## Produce Signs - The One Command
+
+Orders in, print-ready PDFs out. Everything after this section is the manual
+per-stage route, kept because it is what you need when something goes wrong.
+
+```powershell
+python scripts\plan-batch.py orders.json --out-dir plan
+```
+
+Read `plan\batch-plan.md`, check the personalisation, then:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File production\run-batch.ps1 `
+    -OrdersJson plan\batch-plan.json -OutDir production\print\2026-07-27
+```
+
+`run-batch.ps1` chains build -> recolour -> bleed -> impose -> jig -> PDF and
+**stops dead on the first failure**, because a half-finished bed that still emits a
+PDF is how the wrong thing gets printed. It groups signs into beds by size +
+colourway (one bed is one print run at one ink setup), validates every sign before
+generating anything, and writes `run-manifest.json` last - so the manifest existing
+means every stage succeeded.
+
+It does **not** touch the printer. The hot-folder copy stays a separate act.
+
+`-OrdersJson` also accepts a plain array if you are not going through Shopify:
+
+```json
+[ { "order":"DM37694", "sku":"36961", "size":"Large", "colour":"Black",
+    "line1":"MR & MRS NICHOLS", "line2":"FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024" } ]
+```
+
+Part beds are produced and reported as part beds. Whether to print one or wait for
+more orders is Max's call, not the script's.
+
+## Produce Signs - Manual Route
 
 ### 1. Pull the order from Shopify
 
@@ -89,10 +124,17 @@ query($id: ID!) {
 }
 ```
 
-Supported line: **SKU 36961** with `Size` starting `Small`, `Medium` or `Large`. Read
-`Line 1` and `Line 2` exactly - never silently correct spelling, punctuation or
-spacing. Customers do type `MR&MRS CHAMBERLAIN` with no spaces, and that is
-legitimate.
+Supported lines: any SKU listed in `production\product-rules.json`, with `Size`
+starting `Small`, `Medium` or `Large`. An unlisted SKU is refused rather than
+guessed - classify it in that file first. Read `Line 1` and `Line 2` exactly - never
+silently correct spelling, punctuation or spacing. Customers do type
+`MR&MRS CHAMBERLAIN` with no spaces, and that is legitimate.
+
+A sign with genuinely no subtitle (house and garden signs) needs `build.py
+--no-line2`. Do **not** pass an empty string: Windows PowerShell 5.1 drops empty
+arguments on the way to a native command, so `""` leaves build.py on its wedding
+default and prints `FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024` on a potting-shed
+sign. `run-batch.ps1` handles this for you.
 
 Ignore upgrade/add-on lines (`ACC-*`, `Size Upgrade`) - no personalisation on them.
 
@@ -301,13 +343,22 @@ against the audited `source/source-data.js` - they agree to 0.0006 mm.
 
 ## Product Styling Rules (conditional logic - apply to ALL sizes)
 
-Confirmed by Max 2026-07-26. Applied by `production\recolour-sign.ps1`.
+Confirmed by Max 2026-07-26. **`production\product-rules.json` is the source of
+truth** - it is read by `recolour-sign.ps1` and `plan-batch.py`, so change a rule
+there and never in a script.
 
 | Product class | Border | Text | Red heart |
 |---|---|---|---|
 | Mr & Mrs family (see SKUs below) | black | black | **yes** |
 | Create Your Own - SKU **36967** (`kitchen-personalised-street-sign`) | customer choice | **always black** | no |
 | Every other street sign | customer choice | customer choice | no |
+
+Pass `-Sku` and the rule is applied for you:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File production\recolour-sign.ps1 `
+  -SvgPath in.svg -OutPath out.svg -Sku 36965 -Colourway Grass
+```
 
 **The heart is an EXACT SKU match, never a prefix.** Prefix matching is wrong
 because sibling SKUs are different products:
@@ -325,6 +376,13 @@ because sibling SKUs are different products:
 
 Four heart SKUs, confirmed complete by Max 2026-07-26. Anything not on that list
 gets no heart.
+
+**build.py draws the heart whenever line 1 contains an ampersand**, because that is
+where the locked signature unit sits. It has no idea what SKU it is building. So the
+heart decision has to be made from the SKU afterwards, which is what `-Sku` does -
+without it, `THE SMITH & JONES FAMILY` on a Family sign comes out with a red heart.
+Verified: SKU 36965 with that exact text strips the heart; SKU 36961-2 Retirement
+does too, despite sharing the 36961 base.
 
 Signs outside Mr & Mrs rarely contain an ampersand at all, but when they do they
 still get **no heart**. Note that with the heart removed the ampersand retains
@@ -345,6 +403,9 @@ option, so Shopify variant options carry no useful information.
 
 Black `#010101` · Grey `#7C7C7C` · Sage `#9AA192` · Grass `#68893C` ·
 Blue `#799CAA` · light sage `#BEC0A9` · blush `#EBC3C3` · dusky pink `#CB9CA5`.
+
+These live in `production\product-rules.json` and nowhere else. Any `#RRGGBB` is
+also accepted; an unrecognised colour NAME is refused rather than guessed.
 
 Three near-identical blues exist in the source files (`#799CAA` / `#799DAB` /
 `#7A9EAC`) - eyedropper drift, not three products. Normalise to one.
@@ -421,7 +482,9 @@ made it into the PDF rather than shipping fallback glyphs.
 - Laser/cut handoff. Cut settings recovered from LightBurn: Large = power 75,
   speed 8, **2 passes**; Medium = 75 / 9 / 1; Mini = 75 / 10 / 1.
 - Shopify webhook trigger. Deliberately last - automating the front of a pipeline
-  whose back half needs a manual button press only queues work.
+  whose back half needs a manual button press only queues work. `plan-batch.py`
+  still takes an order JSON export rather than calling Shopify itself.
+- The hot-folder copy is still manual on purpose. `run-batch.ps1` stops at the PDF.
 - The RasterLink **favourite** still defaults new imports to 1200x1200 / 16 pass.
   Set it to 600x900 / 12 pass so hot-folder imports inherit the right condition.
 

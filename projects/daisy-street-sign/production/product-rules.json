@@ -1,0 +1,53 @@
+{
+  "_comment": [
+    "SINGLE SOURCE OF TRUTH for street-sign product styling. Confirmed by Max 2026-07-26.",
+    "recolour-sign.ps1 reads this file - do not duplicate these values in a script.",
+    "",
+    "The heart is an EXACT SKU match, never a prefix. Sibling SKUs are different",
+    "products: 36961-1 Engagement and 36961-2 Retirement share the 36961 base and get",
+    "NO heart. Prefix matching would put a red heart on a retirement sign.",
+    "",
+    "build.py draws the heart whenever line 1 contains an ampersand, because that is",
+    "where the locked signature unit sits. It has no idea what SKU it is building.",
+    "That is why heart removal has to happen here, from the SKU."
+  ],
+
+  "colourways": {
+    "black":     "#010101",
+    "grey":      "#7C7C7C",
+    "sage":      "#9AA192",
+    "grass":     "#68893C",
+    "blue":      "#799CAA",
+    "lightsage": "#BEC0A9",
+    "blush":     "#EBC3C3",
+    "duskypink": "#CB9CA5"
+  },
+  "colourwayAliases": { "gray": "grey" },
+  "defaultColourway": "black",
+
+  "_colourNote": [
+    "Eyedropped from the production PSDs. Validated because black comes back as the",
+    "known-good #010101 from the approved Large spec.",
+    "Three near-identical blues exist in the source files (#799CAA / #799DAB /",
+    "#7A9EAC). That is eyedropper drift, not three products - normalised to one."
+  ],
+
+  "products": {
+    "36961":     { "name": "Mr & Mrs Personalised Street Sign", "heart": true,  "border": "black",    "text": "black" },
+    "36965-1-1": { "name": "Mr & Mrs First Christmas",          "heart": true,  "border": "black",    "text": "black" },
+    "36965-3":   { "name": "My Valentine",                      "heart": true,  "border": "black",    "text": "black" },
+    "36965-3-1": { "name": "My Galentine",                      "heart": true,  "border": "black",    "text": "black" },
+
+    "36967":     { "name": "Create Your Own",                   "heart": false, "border": "customer", "text": "black" },
+
+    "36961-1":   { "name": "Engagement (Yes Day)",              "heart": false, "border": "customer", "text": "customer" },
+    "36961-2":   { "name": "Retirement",                        "heart": false, "border": "customer", "text": "customer" },
+    "36965":     { "name": "Family Street Sign",                "heart": false, "border": "customer", "text": "customer" },
+    "36965-3-2": { "name": "Mother's Day Our Family",           "heart": false, "border": "customer", "text": "customer" }
+  },
+
+  "unknownSku": {
+    "_comment": "An unlisted SKU is a product nobody has classified. Refuse rather than guess - a wrong heart or a wrong colour is a reprint.",
+    "action": "refuse"
+  }
+}
