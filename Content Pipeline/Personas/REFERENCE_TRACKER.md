@@ -222,3 +222,52 @@ Entry format:
   retried after the wait. Etsy, notonthehighstreet.com, Covering All
   Occasions, Instagram, TikTok not attempted this run. Nothing above is
   presented as a live post or a same-day change.
+
+## 2026-07-27 (second pass — the 429s were ours, not theirs)
+
+- **Method correction, and it matters.** The three brand hosts had been logged
+  as 429 for three consecutive runs, and the seasonal calendar was written off
+  as stale on that basis. Retested from this same container with an ordinary
+  request: **all three returned 200 first time.** The 429 came from WebFetch's
+  own rate limiter, not from the sites. Three runs of "the references are
+  blocking us" were three runs of blaming the wrong thing. Sweeps now run
+  through `Content Pipeline/tools/refsweep.py`, which fetches directly.
+- **TreatBox (treatboxuk.com) — READ, 200.** Results Day is **live**, not
+  pending: "Results Day Gifts" sits in the top-level Occasions nav *and* as a
+  homepage hero tile. Christmas is also already running in July — the homepage
+  promotes Birthday, Wedding **and Christmas Advent Calendars** together. Site
+  is on a **40–45% off sale** skewed to cosy/loungewear ("Comfort Collective"
+  pyjama sets £32.97 from £54.95, bear-and-bunny sets £47.44 from £85.95).
+  Standing offer: free next-day delivery over £25. Occasion nav in full:
+  Birthday, Results Day, Pregnancy & New Parent, Just Because, Treat Me,
+  Sympathy. **This retires the stale-calendar gap: mid-Aug Results Day and the
+  July Christmas ramp are now both confirmed from a live read.**
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Their own nav labels
+  **Street Signs "Our Bestseller"** — a direct competitor stating that this
+  exact product is their best-selling line. "Customisable 3D Street Sign –
+  Personalised Acrylic Plaque" **from £24.99**. Range around it: LED bar signs
+  from £34.99, business logo signs from £69.99, salon signs from £109.99.
+  Positioning: "Personalised · Illuminated · British-made", UK family workshop,
+  free UK delivery over £50, phone number in the header.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Luxury wedding
+  stationery and signage, bespoke-design-led with a named design specialist.
+  The useful part is their taxonomy, not their products: they merchandise by
+  **Colour** (White & Neutral, Black, Blue, Green, Pink…), **Style** (Minimal &
+  Modern, Elegant & Luxe, Rustic & Boho, Romantic & Floral, Playful &
+  Colourful, Destination & Mediterranean), **Season** and **Florals**. Wedding
+  buyers evidently shop by aesthetic, not by object.
+- Not attempted today: Etsy (403 on every previous attempt), NOTHS, Instagram,
+  TikTok. No claim either way on those.
+- Season read: **confirmed live for the first time in four runs.** Results Day
+  mid-Aug is being actively merchandised now; Christmas advent is already on a
+  homepage in July. Neither is speculative any more.
+- Translate to us: (1) Results Day is a real, live, dated occasion a comparable
+  gifting brand is selling into **right now** — and we have no Results Day sign
+  wording at all; (2) Crafty Bonobo calling street signs their bestseller at
+  **£24.99 from** against our £11.25 base is the third independent confirmation
+  that we are the cheapest in this market by a distance and that the Size
+  Upgrade, not the base price, is the margin; (3) Little Perfections proves
+  wedding buyers browse by **colour and style**, which is an argument for
+  running our five colourways as an explicit lineup rather than defaulting to
+  BLACK every time; (4) TreatBox is discounting 40-45% into a cosy/autumn
+  story in July — the seasonal turn is happening earlier than instinct says.

@@ -170,6 +170,38 @@ def cmd_media(a):
         print("    %s  id=%s" % (m.get("permalink", ""), m["id"]))
 
 
+def cmd_discover(a):
+    """Read a PUBLIC competitor's Instagram posts, officially and for free.
+
+    This is the answer to "do we need a scraper or a paid MCP to track other
+    accounts?" — no. Business Discovery is part of the Graph API: our own token
+    reads any public Business or Creator account's recent posts and their like
+    and comment counts. No login to their account, nothing paid, nothing that
+    breaks when Instagram changes its HTML.
+
+    What it does NOT give: reach, impressions or saves on someone else's post.
+    Those are private to the account owner. Likes and comments are the public
+    surface, and they are enough to rank what is working for them.
+    """
+    uid = need("IG_USER_ID")
+    fields = ("business_discovery.username(%s){followers_count,media_count,"
+              "media.limit(%d){caption,like_count,comments_count,timestamp,"
+              "permalink,media_type,media_product_type}}" % (a.username, a.limit))
+    bd = call(uid, {"fields": fields}).get("business_discovery", {})
+    print("@%s — %s followers, %s posts"
+          % (a.username, bd.get("followers_count"), bd.get("media_count")))
+    posts = (bd.get("media") or {}).get("data", [])
+    if a.json:
+        print(json.dumps(posts, indent=2)); return
+    for m in sorted(posts, key=lambda x: x.get("like_count", 0), reverse=True):
+        cap = (m.get("caption") or "").replace("\n", " ")[:58]
+        print("  %-16s %6s likes %5s comm  %-8s %s"
+              % (m.get("timestamp", "")[:16].replace("T", " "),
+                 m.get("like_count", "-"), m.get("comments_count", "-"),
+                 m.get("media_product_type") or m.get("media_type", ""), cap))
+        print("      %s" % m.get("permalink", ""))
+
+
 def cmd_insights(a):
     sets = [a.metrics.split(",")] if a.metrics else MEDIA_METRIC_SETS
     res, used = try_metric_sets(a.media_id + "/insights", sets, {}, "media " + a.media_id)
@@ -297,6 +329,12 @@ def main():
     m.add_argument("--limit", type=int, default=12)
     m.add_argument("--json", action="store_true")
     m.set_defaults(fn=cmd_media)
+
+    d = sub.add_parser("discover", help="read a public competitor's posts, free")
+    d.add_argument("--username", required=True, help="their handle, no @")
+    d.add_argument("--limit", type=int, default=12)
+    d.add_argument("--json", action="store_true")
+    d.set_defaults(fn=cmd_discover)
 
     i = sub.add_parser("insights", help="per-post metrics")
     i.add_argument("--media-id", required=True)
