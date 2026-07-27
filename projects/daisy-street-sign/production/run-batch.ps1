@@ -138,7 +138,10 @@ foreach ($key in ($groups.Keys | Sort-Object)) {
     $bled = @()
     $plain = @()
     foreach ($s in $slice) {
-      $id  = if ($s.PSObject.Properties.Name -contains 'order' -and $s.order) { $s.order -replace '[^\w.-]', '_' } else { "sign$($bled.Count+1)" }
+      # Shopify order names arrive as "#DM37869". Strip the leading hash rather
+      # than substituting it, or every file and every stamped order id reads
+      # "_DM37869" and stops matching what the order actually says.
+      $id  = if ($s.PSObject.Properties.Name -contains 'order' -and $s.order) { ($s.order -replace '^#', '') -replace '[^\w.-]', '_' } else { "sign$($bled.Count+1)" }
       $stem = "{0}-{1}" -f $bedName, $id
       $raw  = Join-Path $work "$stem-raw.svg"
       $sty  = Join-Path $work "$stem-styled.svg"

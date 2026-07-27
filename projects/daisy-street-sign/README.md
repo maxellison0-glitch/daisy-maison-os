@@ -10,7 +10,12 @@ Run `git pull --ff-only` from `%USERPROFILE%\AA Daisy Maison OS` before editing.
 
 Run everything from this folder.
 
-**1. Plan the batch** - read-only. Never touches Shopify or the printer.
+**1. Plan the batch** - read-only. Never changes Shopify or touches the printer.
+
+Pull the unfulfilled orders with the Shopify connector and save the reply
+verbatim as `orders.json` - the raw `{data:{orders:{nodes:[...]}}}` is read as-is,
+so nothing has to be reshaped by hand. The exact query, and why it carries a date
+bound, are in the workflow doc linked at the bottom of this file.
 
 ```powershell
 python scripts\plan-batch.py orders.json --out-dir plan

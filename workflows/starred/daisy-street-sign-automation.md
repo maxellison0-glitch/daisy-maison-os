@@ -76,6 +76,41 @@ wanted, Mimaki material code `0048` (acrylic) covers media codes 000000402,
 Orders in, print-ready PDFs out. Everything after this section is the manual
 per-stage route, kept because it is what you need when something goes wrong.
 
+**Pull the orders yourself** with the Shopify connector and save the reply
+verbatim as `orders.json`. Do not reshape it - `plan-batch.py` reads the raw
+`{data:{orders:{nodes:[...]}}}` reply, and a hand-reshape is a place for signs to
+go missing. Run this exact query:
+
+```graphql
+query UnfulfilledStreetSigns {
+  orders(first: 50, query: "fulfillment_status:unfulfilled AND financial_status:paid AND created_at:>2026-01-01",
+         sortKey: CREATED_AT, reverse: true) {
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      name createdAt
+      customer { displayName }
+      lineItems(first: 25) {
+        nodes {
+          id sku title quantity unfulfilledQuantity
+          product { handle }
+          customAttributes { key value }
+        }
+      }
+    }
+  }
+}
+```
+
+The `created_at` bound is not cosmetic. The store still holds September-2024
+orders marked unfulfilled that carry SKU 36961 with no personalisation at all;
+without the bound they appear in every plan forever. They are flagged rather than
+printed, but they are noise. Move the date on as needed.
+
+Do not filter by SKU in the query. `plan-batch.py` decides what is a sign, from
+`product-rules.json` - a second filter here is a second thing to keep in sync.
+
+Then:
+
 ```powershell
 python scripts\plan-batch.py orders.json --out-dir plan
 ```

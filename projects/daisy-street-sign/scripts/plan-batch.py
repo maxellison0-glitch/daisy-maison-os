@@ -26,6 +26,7 @@ PROD = Path(__file__).resolve().parent.parent / "production"
 with (PROD / "product-rules.json").open(encoding="utf-8") as fh:
     PRODUCT_RULES = json.load(fh)
 KNOWN_SKUS = set(PRODUCT_RULES["products"])
+DEFAULT_COLOURWAY = PRODUCT_RULES.get("defaultColourway", "black")
 
 with (PROD / "bed-layout.json").open(encoding="utf-8") as fh:
     BED_LAYOUT = json.load(fh)
@@ -83,8 +84,15 @@ def size_for(item: dict, attrs: dict[str, str]) -> str:
 
 
 def colour_for(item: dict, attrs: dict[str, str]) -> str:
+    """The customer's chosen border colour, or "" if the order carries none.
+
+    Mr & Mrs orders carry no colour attribute at all - that product is always
+    black - so this used to return the literal "Unspecified", which recolour-sign
+    correctly refuses as an unknown colourway. A real Mr & Mrs order therefore
+    halted the whole run. The caller substitutes the default instead.
+    """
     value = attr_value(attrs, "colour", "color", "sign colour", "sign color")
-    return value or text(get(item, "colour", "color")) or "Unspecified"
+    return value or text(get(item, "colour", "color"))
 
 
 def line_value(attrs: dict[str, str], line: int) -> str:
@@ -93,16 +101,39 @@ def line_value(attrs: dict[str, str], line: int) -> str:
     return attr_value(attrs, "line 2", "line2", "subtitle", "date", "text 2")
 
 
+def nodes(value):
+    """Accept a plain list, or GraphQL's {"nodes": [...]} / {"edges": [{"node": ...}]}.
+
+    The Shopify connector returns connection objects, not arrays. Iterating one of
+    those yields its dict KEYS, so every line item quietly became the string
+    "nodes", every sku came back empty, and a pull containing four real orders
+    produced a plan with zero signs on it and no error at all.
+    """
+    if isinstance(value, list):
+        return value
+    if isinstance(value, dict):
+        if isinstance(value.get("nodes"), list):
+            return value["nodes"]
+        if isinstance(value.get("edges"), list):
+            return [e.get("node", {}) for e in value["edges"] if isinstance(e, dict)]
+    return []
+
+
 def order_items(order: dict):
-    return get(order, "lineItems", "line_items", default=[])
+    return nodes(get(order, "lineItems", "line_items", default=[]))
 
 
 def order_number(order: dict) -> str:
     return text(get(order, "name", "orderNumber", "order_number", "id"))
 
 
-def eligible_records(payload: dict) -> tuple[list[dict], list[dict]]:
-    orders = payload.get("orders", payload if isinstance(payload, list) else [])
+def eligible_records(payload) -> tuple[list[dict], list[dict]]:
+    # A raw connector response is {"data": {"orders": {"nodes": [...]}}}. Accept it
+    # verbatim, so whoever pulls the orders saves the reply as-is and never has to
+    # reshape it by hand - a reshape step is a place for signs to go missing.
+    if isinstance(payload, dict) and "data" in payload:
+        payload = payload["data"]
+    orders = nodes(payload.get("orders", payload)) if isinstance(payload, dict) else nodes(payload)
     eligible, excluded = [], []
     for order in orders:
         for item in order_items(order):
@@ -114,13 +145,14 @@ def eligible_records(payload: dict) -> tuple[list[dict], list[dict]]:
             is_sign = sku in KNOWN_SKUS or handle == SUPPORTED_HANDLE
             if not is_sign:
                 continue
+            colour = colour_for(item, attrs)
             record = {
                 "order": order_number(order),
                 "customer": text(get(order.get("customer", {}) or {}, "displayName", "name", "email")),
                 "lineItemId": text(get(item, "id")),
                 "sku": sku,
                 "size": size_for(item, attrs),
-                "colour": colour_for(item, attrs),
+                "colour": colour or DEFAULT_COLOURWAY.title(),
                 "line1": line_value(attrs, 1),
                 "line2": line_value(attrs, 2),
                 "quantity": quantity,
@@ -136,6 +168,12 @@ def eligible_records(payload: dict) -> tuple[list[dict], list[dict]]:
                     notes.append("Size not recognised - needs Small, Medium or Large")
                 if sku and sku not in KNOWN_SKUS:
                     notes.append(f"SKU {sku} is not classified in product-rules.json")
+                # Only worth flagging where the customer actually picks a colour.
+                # Mr & Mrs is always black, so a missing colour there is normal.
+                if not colour and PRODUCT_RULES["products"].get(sku, {}).get("border") == "customer":
+                    notes.append(
+                        f"No colour on the order line; defaulted to {DEFAULT_COLOURWAY}"
+                    )
                 record["review"] = "; ".join(notes)
                 eligible.append(record)
             else:
