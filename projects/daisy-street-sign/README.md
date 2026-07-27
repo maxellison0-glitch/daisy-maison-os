@@ -1,136 +1,160 @@
-# Daisy Mr & Mrs Street-Sign Artwork
+# Daisy Maison Street Signs
 
-This is the single canonical engineering project for the Daisy Maison Mr & Mrs
-street-sign artwork. Do not create another copy in MaxOS, Gym, or an
-agent-specific folder.
+Shopify orders to printed acrylic. Small, Medium and Large; eight border
+colourways; the nine SKUs listed in `production/product-rules.json`.
 
-## Canonical Location
+This is the only copy. Do not create another in MaxOS, Gym, or an agent folder.
+Run `git pull --ff-only` from `%USERPROFILE%\AA Daisy Maison OS` before editing.
 
-`%USERPROFILE%\AA Daisy Maison OS\projects\daisy-street-sign`
+## The Workflow
 
-The single copy-pasteable Jarvis entry is:
+Run everything from this folder.
 
-`%USERPROFILE%\AA Daisy Maison OS\workflows\starred\daisy-street-sign-automation.md`
-
-Jarvis indexes that workflow, not every engineering file in this folder.
-
-The active generator and its only live outputs are in `artwork/`:
-
-- `build.py` - order/text to standalone SVG generator
-- `mr-mrs-large-preview.svg/.png/.pdf` - current approved visual sample
-- `orders/` - generated order previews
-- `assets/` - the real heart and source Times font assets
-- `verify-heart-placement.py` - geometry and font-separation fixtures
-
-`source/` is a required evidence component, not a second artwork copy. It
-contains the audited LightBurn/PSD geometry consumed by `artwork/build.py` and
-the script that can rebuild that data. `references/` contains the original
-visual evidence.
-
-Obsolete prototypes, experiments, and agent handoffs are intentionally absent.
-They remain recoverable from Git history.
-
-## Approved Visual Rule
-
-- Top name: Times New Roman regular, weight 400
-- Bottom subtitle: Times New Roman regular, weight 400; smaller than line one but not bold
-- Heart and ampersand: one locked signature unit copied from Max's approved
-  NICHOLS result. The source heart remains exactly 236 x 229 px, its pointed tip
-  meets the black upstroke, and its body never touches the ampersand.
-- Finished sizes: Large 570 x 125 mm, Medium 450 x 120 mm, Small 290 x 85 mm
-- Status: **Large artwork complete and visually approved by Max on 14 July 2026.**
-  Medium and Small are built to the same rule and verified in software, but have not
-  yet been printed on acrylic or visually approved.
-
-Only the customer names around the locked signature may compress to fit. The
-heart size, heart height, ampersand scale, and tip contact do not vary by order.
-The heart is the same physical size at Medium as at Large - only the surrounding
-type is re-fitted. At Small it scales to 13.52 mm, the one agreed exception: the
-85 mm blank is shorter than Large's 100.2 mm interior, so no inset can preserve the
-interior and the whole signature unit must shrink together. Print and cut automation
-does not reopen the approved artwork rule at any size.
-
-## One Command
+**1. Plan the batch** - read-only. Never touches Shopify or the printer.
 
 ```powershell
 python scripts\plan-batch.py orders.json --out-dir plan
-powershell -ExecutionPolicy Bypass -File production\run-batch.ps1 -OrdersJson plan\batch-plan.json -OutDir production\print\<date>
 ```
 
-`run-batch.ps1` is the only orchestrator: it chains build -> recolour -> bleed ->
-impose -> jig -> PDF for every sign, groups them into beds by size + colourway, and
-halts on the first failure. It never contacts the printer. Individual stage scripts
-remain callable for debugging, but production runs go through the one command.
+In: a JSON export of Shopify orders. Out: `plan\batch-plan.json` plus
+`plan\batch-plan.md`. **Read the Markdown sheet before going further** - it lists
+every personalisation exactly as it will be printed, flags anything unclear, and
+marks which beds are full. A typo caught here costs nothing; caught later it costs
+a blank.
 
-## Product Rules
+**2. Produce the beds** - one command, the whole artwork chain.
 
-`production\product-rules.json` is the single source of truth for the eight
-colourways and for which SKUs get the red heart. `recolour-sign.ps1 -Sku <sku>`
-applies it; `plan-batch.py` uses the same file to decide which order lines are
-street signs. An unclassified SKU is refused, not guessed.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File production\run-batch.ps1 `
+    -OrdersJson plan\batch-plan.json -OutDir production\print\2026-07-27
+```
 
-This matters because `build.py` draws the heart whenever line 1 contains an
-ampersand - it does not know the SKU. Without `-Sku`, a Family or Retirement sign
-whose text happens to contain `&` would print with the Mr & Mrs heart.
+Out, per bed: `bed01-large-black.pdf` (the artwork) and
+`bed01-large-black-jig.pdf` (its matching jig), plus `run-manifest.json`.
 
-## Contours
+Inside, per sign: build the SVG, apply the SKU's colour and heart rules, add
+bleed, then impose the bed and cut its jig from the same layout. It validates
+every sign before generating anything, **stops dead on the first failure**, and
+writes the manifest last - so the manifest existing means every stage succeeded.
+It never contacts the printer.
 
-`source/size-contours.json` holds all three blank contours and is the single source
-of truth. It is committed, so **no USB drive is needed to run the pipeline**.
-`source/extract-size-contours.py` regenerates it from the LightBurn cut files and is
-only needed if one of those changes; it verifies the extracted Large against the
-audited `source/source-data.js`, which is kept as the audit trail and is never read
-at runtime.
+`-OrdersJson` also takes a plain array when you are not going through Shopify:
 
-## Bed Layouts
+```json
+[ { "order":"DM37694", "sku":"36961", "size":"Large", "colour":"Black",
+    "line1":"MR & MRS NICHOLS", "line2":"FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024" } ]
+```
 
-`production\bed-layout.json` is the single source of truth for how each size nests
-on the 610 x 420 mm bed. `make-jig.ps1` and `make-imposition.ps1` both read it
-through `bed-layout.ps1`, so the printed jig outlines and the artwork placed on
-them cannot drift apart. Change a layout there, never in one of the scripts.
+**3. Print the jig and load the blanks.** Print `*-jig.pdf` from the Mimaki onto
+paper taped to the bed - once per fresh bed, per size. Then set the laser-cut
+blanks into the printed outlines. Printing the jig on the machine itself is the
+point: the positions become correct by construction, so the bed-origin corner
+never has to be identified and jig and artwork cannot drift apart.
 
-## Rebuild And Test
+**4. Send the artwork.** Copy the bed PDF into the RasterLink7 hot folder:
 
-Generator verification - 8 geometry checks over 6 name lengths plus a blank
-subtitle. It also asserts the mounting-hole IDs are **absent**, since they are
-physical holes and printing them puts ink where the acrylic is missing:
+```
+C:\MijCtrl\Hot\UJF6042MkII
+```
+
+It imports in about five seconds. Select the job, `Alt+X`, `RIP and Print`,
+`Start`, page at position 0,0. Use **600 x 900 VD / 12 pass** - not the defaults.
+
+**5. Press ENTER on the printer.** The head heater is faulty and the panel never
+clears itself, so a human releases every job by hand. There is no software
+equivalent. The pipeline is not unattended, and it never will be until the heater
+is repaired.
+
+### Where the laser fits
+
+The blanks are cut in LightBurn from the existing `.lbrn2` cut files, before any
+of the above. This project does not drive the laser - it *reads* those contours
+(`source/size-contours.json`) so the printed artwork matches the cut shape and the
+bed layout matches the real blank. Change a cut file and the contours must be
+re-extracted; see `source/extract-size-contours.py`.
+
+## Two Rules That Never Bend
+
+- **Mounting holes are never printed.** They are physical holes in the acrylic;
+  ink drawn there lands on nothing. `artwork/verify-heart-placement.py` asserts
+  their IDs are absent from generated artwork.
+- **4 mm bleed on every border.** The border must overrun the cut edge or
+  alignment error shows as a white sliver. A bleed wider than half the row gap is
+  refused, because neighbouring signs would print into each other.
+
+## Change These, Never A Script
+
+| File | Governs |
+|---|---|
+| `production/product-rules.json` | the eight colourways, and which SKUs get the red heart |
+| `production/bed-layout.json` | how each size nests on the 610 x 420 mm bed |
+| `source/size-contours.json` | the three blank contours |
+
+`product-rules.json` matters more than it looks: `build.py` draws the heart
+whenever line 1 contains an ampersand, and it does not know the SKU. Without
+`-Sku`, a Family or Retirement sign whose text happens to contain `&` would print
+with the Mr & Mrs heart. An unclassified SKU is refused, not guessed.
+
+`bed-layout.json` is read by both `make-jig.ps1` and `make-imposition.ps1`, so the
+printed outlines and the artwork placed on them cannot disagree.
+
+## Folder Map
+
+| Folder | Contents |
+|---|---|
+| `production/` | the runner, its stage scripts, and two of the three truth files |
+| `artwork/` | `build.py`, the locked heart and Times asset, the approved Large sample, and `orders/` - a record of what has shipped, not part of the workflow |
+| `scripts/` | the batch planner and its test fixtures |
+| `source/` | cut-file geometry. `size-contours.json` is live truth; `source-data.js` is the audit trail behind it and is never read at runtime |
+| `references/` | photograph of the real product |
+
+Stage scripts stay individually callable for debugging. Production runs go through
+the one command.
+
+## The Design Rule
+
+- Both lines Times New Roman **regular 400**, vertical scale 1.4, never bold.
+- Heart and ampersand are one locked signature unit from Max's approved NICHOLS
+  result: heart exactly 236 x 229 px, pointed tip meeting the black upstroke, body
+  never touching the ampersand. Only the surrounding names compress to fit.
+- The heart is the same physical size at Medium as at Large. At Small it scales to
+  13.52 mm - the one agreed exception, because the 85 mm blank is shorter than
+  Large's 100.2 mm interior, so the whole unit must shrink together.
+- Finished sizes are the cut sizes: Large **570 x 125**, Medium **450 x 120**,
+  Small **290 x 85** mm. The storefront's 570 x 120 is stale copy, not a second
+  size; Max confirmed 125 on 2026-07-14.
+
+Print and cut automation does not reopen this rule at any size.
+
+## Status
+
+**Large is printed, physically checked and visually approved by Max on
+2026-07-14.** Medium and Small are built to the same rule and verified in
+software, but have never come off the machine - print a jig and dry-fit a real
+blank before running customer orders at those sizes.
+
+## Tests
+
+Generator geometry - 8 checks across six name lengths plus a blank subtitle:
 
 ```powershell
 python artwork\verify-heart-placement.py
 ```
 
-Full pipeline verification against the committed fixture - 8 signs, 3 sizes, 4
-colourways, 4 beds:
+Full pipeline against the committed fixture - 8 signs, 3 sizes, 4 colourways,
+4 beds:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File production\run-batch.ps1 -OrdersJson scripts\fixtures\run-batch-orders.json -OutDir <scratch>
+powershell -NoProfile -ExecutionPolicy Bypass -File production\run-batch.ps1 -OrdersJson scripts\fixtures\run-batch-orders.json -OutDir <scratch>
 ```
 
-To regenerate `source-data.js` from another copy of the source bundle:
+Neither needs the printer, and no USB drive is required - every contour the
+pipeline uses is committed.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File source\build-source-data.ps1 -SourceRoot 'E:\sean\max'
-```
+## Deeper Reference
 
-The source build expects the supplied LightBurn project, PSD, and four Times
-font files. It records hashes and extracts the LightBurn XML with a structured
-parser.
-
-## Confirmed Geometry
-
-Max accepted 570 x 125 mm as the finished cut size on 2026-07-14, matching the
-supplied LightBurn contour. The storefront's 570 x 120 mm value is retained as
-reference history only. The PSD's approximately 570 x 127.1 mm visible bounds
-are consistent with Max's explanation of intentional print overrun across the
-black border, not a second finished size.
-
-Max approved the final Large visual treatment on 14 July 2026 after a multi-order
-test.
-
-## Printing
-
-Printing is live. The full order-to-print pipeline - artwork, PDF conversion,
-3-up imposition, jig, and hot-folder handoff to RasterLink7 - is documented in
-`workflows/starred/daisy-street-sign-automation.md`, which is the operational
-source of truth. The only manual step is the ENTER press on the printer panel,
-forced by the faulty head heater.
+`workflows/starred/daisy-street-sign-automation.md` is the operational manual:
+printer and ink detail, the full print condition and why it is not the default,
+driving RasterLink7 from PowerShell, the per-stage manual route for when something
+breaks, and the reasoning behind each refusal guard. Read this file to run the
+workflow; read that one to understand or repair it.
