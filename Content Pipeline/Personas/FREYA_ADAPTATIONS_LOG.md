@@ -116,3 +116,45 @@ Format:
   what a signal is for. (A) low on the trend, high on the measurement. Three
   points is a line, not a law, but it's the same direction three times.
 - Signed: Freya · Alan
+
+## 2026-07-27 — Freya & Alan
+
+- Learned: (A) 26 Jul closed at **2.46 blended ROAS** — £1,806.69 on 58 orders,
+  1,182 sessions, 4.06% CVR, against £734.18 spend (Meta £302.78 + Google
+  £431.40). First uptick in the run: 2.66 → 2.21 → 2.17 → **2.46**. Dark social
+  held: 13 of 58 orders arrived with no referrer at all, £391.09, 21.6% of
+  revenue. (F) Two reveal reels in three days means a third reads as a rerun,
+  not a series — the format isn't tired, the *repetition* is.
+- Corrected: (A) yesterday's spend was **£734, not the ~£685 the call was
+  calibrated on** — Google ran £431 against the £417 assumed. The ratio is real
+  but the test wasn't clean, and saying so is cheaper than pretending it was.
+  (F) I said two dormant plates. It is **three** — kitchen/beach-hut BLUE,
+  hallway/MUM'S TAXI BLACK, terrace/WINDSOR BLACK. The beach hut is the one Max
+  rated the most realistic image we have ever made, and it has been sitting
+  unregistered doing nothing.
+- Retired: (A) yesterday's falsifiable call **FAILED**. Trigger was "below 2.10
+  = the ad accounts are decaying, cut Google first." It closed at 2.46, clear of
+  the 2.30 noise ceiling. **Decay hypothesis rejected. No cut to Google.** Three
+  points was a line, not a law — exactly as flagged.
+- Changing: register **all three** dormant plates in `plates.json`. It is JSON
+  config against photography already paid for: zero credits, and every future
+  wording in those three rooms is free forever instead of ~2 credits each. This
+  is the "stop paying for wordings" pivot, finally actioned.
+- Testing tomorrow: (A) falsifiable — if 27 Jul closes **at or above 2.30** it
+  is two-from-two clear of the noise floor and the decay hypothesis is retired
+  outright; **below 2.30** and one bounce was not a trend, so Google's £431 is
+  the first cut with no further delay. (F) falsifiable — the 2-slide carousel
+  has **zero** prior data on this account against the reel's one measured post
+  (~1,000 views). If the carousel does not clear **500 views in 48h**, the swipe
+  is not the reveal and I go back to reels without arguing about it.
+- Gaps, named: TreatBox 429 for the **third consecutive run**, as did Crafty
+  Bonobo and Little Perfections. No reference host has been read since 24 Jul,
+  so the Results Day and Christmas-ramp calendar is three runs stale and is not
+  confirmed live. Etsy, NOTHS, Instagram and TikTok were not attempted today —
+  no claim either way on them. Still no Wedding Pebble image in the repo. Still
+  no API access to our own Instagram: the only organic figures this business
+  owns are ~1,000 views and 5 likes, both reported verbally by Max.
+- Confidence: (A) high on the measurement, low on the trend — one bounce on
+  dirty spend. (F) high on the pivot, honest that the carousel is an experiment
+  and not an optimisation.
+- Signed: Freya · Alan
