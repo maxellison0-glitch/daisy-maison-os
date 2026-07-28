@@ -44,3 +44,7 @@ projects/daisy-street-sign/**/*.pyc
 !Content Pipeline/
 !Content Pipeline/**
 __pycache__/
+
+# Agent skills: vendored marketing skills (MIT) + our own social analytics.
+!.claude/
+!.claude/**
