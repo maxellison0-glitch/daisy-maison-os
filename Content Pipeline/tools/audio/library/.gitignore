@@ -1,0 +1,6 @@
+# Downloaded previews are LICENSED AUDIO. They are pulled to be measured, not
+# to be redistributed - and a git repo is redistribution. Keep the metadata,
+# never the bytes. Re-fetch with `trend_audio.py fetch`.
+*.mp3
+*.wav
+*.m4a
