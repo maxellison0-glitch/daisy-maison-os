@@ -42,8 +42,27 @@ export PATH="$DM_VIDEO_HOME/bin:$PATH"
 # Confirm we got a real build and not a stripped one. A silent VP8-only ffmpeg
 # is the exact failure this script is written to prevent, so check the encoder
 # rather than the version string.
-if ! ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264; then
-  echo "FFmpeg on PATH has no libx264 - it cannot produce an MP4. Aborting." >&2
+#
+# Retried, and stderr kept: ffmpeg-static downloads its binary in a postinstall,
+# and on 28 Jul 2026 `npm i` returned before the file was fully written. The
+# encoder probe then failed on a half-written binary and, because stderr was
+# being discarded, reported "no libx264" for a build that has libx264 compiled
+# in. A missing codec and a truncated download need different fixes, so the
+# script must not print the first message for the second cause.
+enc_err=""
+for attempt in 1 2 3; do
+  if enc_err=$(ffmpeg -hide_banner -encoders 2>&1) && \
+     printf '%s' "$enc_err" | grep -q libx264; then
+    enc_err=""
+    break
+  fi
+  [ "$attempt" -lt 3 ] && sleep 2
+done
+if [ -n "$enc_err" ]; then
+  echo "FFmpeg on PATH cannot encode H.264. Its own output was:" >&2
+  printf '%s\n' "$enc_err" | tail -5 >&2
+  echo "If that lists no libx264, the build is stripped - refetch, do not use" >&2
+  echo "Playwright's ffmpeg. Aborting." >&2
   return 1 2>/dev/null || exit 1
 fi
 
