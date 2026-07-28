@@ -1,0 +1,104 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "spec": "../../OFFICE_SPEC.md",
+  "human_approval_required": true,
+  "generated_date": "2026-07-28",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "batch": "cast-B-alan-packing-bay",
+  "status": "max-reviewed",
+  "purpose": "Alan in the remodelled packing bay (plate H). Same method, the open plate Max liked for turnaround videos.",
+  "references": [
+    {
+      "role": "image",
+      "slot": "IMAGE 1 - THE ROOM",
+      "path": "working/plate-H-packing-bay/outputs/take-04.png",
+      "media_id": "9da5c83b-552e-4a12-bcea-43f3228cb236",
+      "answers": "background, camera position, lens, the whole remodelled packing bay",
+      "not_taken_from_it": "any person - the plate is empty"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 2 - THE MAN",
+      "path": "../../reference-masters/ALAN-LOCK-black-tee-workshop-APPROVED.jpg",
+      "media_id": "952b786c-7cc4-4cc2-921d-67d335837195",
+      "answers": "Alan's identity and wardrobe, and the sign's printed wording",
+      "not_taken_from_it": "its workshop, lighting, framing or camera position"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 3 / 4 - POSE AND SCALE",
+      "path": "source/pose-scale-reference/POSE-SCALE-real-sign-hold-HEADLESS.jpg",
+      "media_id": "4553ae3e-142d-405f-82ab-ae23d4c4594a",
+      "answers": "how a real person actually holds this product in this building, and how big it reads against a body",
+      "not_taken_from_it": "any face, hair, clothing, age or body type - the head is cropped off for exactly this reason"
+    }
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "path": "outputs/take-01.png",
+      "sha256": "a80bbb200fa0a9d7e081b08b1d3f023d9e9dd4d20e4a34bd1ea5699a64ffc2e6",
+      "agent_qc": "candidate",
+      "note": "Clean, natural, sign well proportioned. Slightly low in frame. Holes present.",
+      "max_verdict": "not-picked",
+      "max_note": "Agent candidate; Max did not pick it."
+    },
+    {
+      "take": "02",
+      "path": "outputs/take-02.png",
+      "sha256": "3b8f6cb14b6658ecd33ed2dd019d26d6ac1593bcdaf04745ea67a6cca9224d91",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "The strongest single image of the whole cast run. Identity, room, wording, hold and expression all correct, and the sign sits at close to the measured real-world scale. Two mounting holes are the only fault.",
+      "max_verdict": "approved",
+      "max_note": "Max took the recommendation.",
+      "usable_as": "Alan hero, packing bay. The clean straight-to-camera plate - the base for wording swaps, and the matched partner to Freya's cast-C take-02 in the same room."
+    },
+    {
+      "take": "03",
+      "path": "outputs/take-03.png",
+      "sha256": "399b05f90ab4b9c44c4aaf0c395cca9197a5932cd7ff274a12c5f65264f3e3d7",
+      "agent_qc": "candidate",
+      "note": "Good, but he is turned very slightly off-square and the mouth reads mid-speech rather than deadpan.",
+      "max_verdict": "not-picked",
+      "max_note": "Reads mid-speech rather than deadpan."
+    },
+    {
+      "take": "04",
+      "path": "outputs/take-04.png",
+      "sha256": "8cc554e88074e93a0e90a87489859de06a38cb76f2f4e1719fca797a34859700",
+      "agent_qc": "candidate",
+      "note": "Correct and usable, but the flattest of the four - the sign sits high and the stance is stiff.",
+      "max_verdict": "not-picked",
+      "max_note": "Flattest of the four."
+    }
+  ],
+  "recommended_take": "02",
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "takes 01-04, left to right"
+  },
+  "agent_findings": [
+    "PASS - the best plate-plus-lock combination so far. Plate H's open floor gives room for a turnaround.",
+    "PASS - wording exact on all four: MR & MRS JANNAWAY / WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026.",
+    "FAIL - mounting holes on every take."
+  ],
+  "human_approval": {
+    "status": "reviewed",
+    "date": "2026-07-28",
+    "approved_takes": [
+      "02"
+    ],
+    "note": "Max reviewed the contact sheet and named these. Takes not named are kept for provenance and are not for use."
+  }
+}

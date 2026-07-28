@@ -215,8 +215,16 @@ Plate A 8 credits + 31 further takes = **70 credits total**, from a balance of
 | Source photos | held, nine views |
 | Spec | this file |
 | Plates A–J | **generated, agent-passed, awaiting Max** |
-| Freya/Alan in-office locks | not started — downstream of an approved plate set |
+| Freya/Alan in the office | **done — 16 takes, see `CAST_NOTES.md`** |
+| Freya/Alan in-office locks | blocked on Max approving a cast still |
 
-Next, once a plate set is approved: put Alan against plate C or D at his black-tee
-lock, one cheap test, and see whether he survives the move out of the workshop.
-Then the two-hander.
+The cast run is finished and written up in `CAST_NOTES.md`. Alan and Freya both
+survive the move into the office, the two-hander works, and the recommended takes
+are cast-B/02, cast-C/02 and cast-D/02.
+
+One decision is blocking the next step: **Alan's lock has mounting holes and they
+are inherited into every output regardless of what the prompt says.** Freya's lock
+has none and her batch came back clean, which proves the mechanism. Fixing the
+lock once is the cheap answer; it needs Max because it changes a lock.
+
+After that: the turnaround video, off an approved cast still.

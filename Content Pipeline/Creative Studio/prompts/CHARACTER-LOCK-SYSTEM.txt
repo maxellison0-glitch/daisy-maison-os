@@ -79,10 +79,52 @@ THE THREE BLOCKS EVERY PROMPT NEEDS
    holes, no drilled holes, unbroken panel" into the product block of every
    prompt that leans on those references**, and check the output for them
    before anything else - they are small, and they survive a thumbnail.
+
+   PROVEN 28 Jul 2026, AND THE SENTENCE IS NOT ENOUGH. Sixteen takes were
+   generated across four batches (DM-C020 cast run), every single prompt
+   carrying "NO MOUNTING HOLES ANYWHERE - the panel is unbroken":
+
+     batch    lock used                    holes in output
+     cast-A   Alan   (lock HAS holes)      YES
+     cast-B   Alan   (lock HAS holes)      YES
+     cast-C   Freya  (lock has NONE)       NO
+     cast-D   Alan + Freya                 YES, on Alan's sign only
+
+   That is a clean natural experiment with one variable. A NEGATIVE INSTRUCTION
+   DOES NOT BEAT A REFERENCE IMAGE. The model is copying the holes out of the
+   photograph, and no amount of rewording the prompt will stop it.
+
+   The fix is to change the reference, not the sentence: produce a hole-free
+   Alan lock once - the approved black-tee lock with the two holes patched -
+   and re-approve it. Every future generation then inherits a clean panel.
+   Changing a lock needs Max, which is why this is written down and not done.
+   Until then, plan on removing them in post on any Alan output.
+
+   The general rule this establishes, worth more than the holes themselves:
+   when a prompt instruction and a reference image disagree, THE REFERENCE
+   WINS. Fix the reference.
 3. THE SCALE - held horizontally in both hands at chest height, hands wrapping
    the shaped ends, about 1.4x the holder's shoulder width. This is the gate
    from VERDICTS.md and it is the single thing that decides whether the sign
    reads as a real object or a plaque.
+
+   GROUND TRUTH, measured 28 Jul 2026 off real footage of Max holding a real
+   sign in the real unit (instagram-DPjdseCDbDR, the 11,889-view post): sign
+   ~975px, shoulders at the SLEEVE SEAM ~720px, ratio ~1.35. The 1.20-1.45
+   window is right.
+
+   MEASURE IT AT THE SLEEVE SEAM. "Shoulder width" is four different numbers
+   depending on where you measure - sleeve seam, upper arm, or elbow, and when
+   the arms are out holding a sign the elbow span is far wider than the
+   shoulders. Four automatic detectors written against the same sixteen images
+   returned four different verdicts for exactly this reason. Until a detector
+   anchored to the sleeve seam exists, this gate is a by-eye judgement and
+   should be called one.
+
+   AND WRITING THE NUMBER IN THE PROMPT DOES NOT ENFORCE IT. "The sign is 1.30
+   times the width of the man's shoulders" was in every DM-C020 cast prompt and
+   the scale still varied from about 1.1 to well over 1.5 across takes. Generate
+   several and pick; do not expect the sentence to do the work.
 
 Then the phone-snapshot block from HOUSE-STANDARD-phone-snapshot.txt, and the
 line-2 size clamp from the same file.

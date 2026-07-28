@@ -1,0 +1,106 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "spec": "../../OFFICE_SPEC.md",
+  "human_approval_required": true,
+  "generated_date": "2026-07-28",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "batch": "cast-C-freya-packing-bay",
+  "status": "max-reviewed",
+  "purpose": "Freya in the same plate H, so the two characters share a building.",
+  "references": [
+    {
+      "role": "image",
+      "slot": "IMAGE 1 - THE ROOM",
+      "path": "working/plate-H-packing-bay/outputs/take-04.png",
+      "media_id": "9da5c83b-552e-4a12-bcea-43f3228cb236",
+      "answers": "background, camera position, lens, the whole remodelled packing bay",
+      "not_taken_from_it": "any person - the plate is empty"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 2 / 3 - THE WOMAN",
+      "path": "../../reference-masters/PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png",
+      "media_id": "86819b16-97b4-4805-a650-e6f6a7c821d7",
+      "answers": "Freya's identity and wardrobe",
+      "not_taken_from_it": "its hallway, coat hooks, lighting, framing or camera position"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 3 / 4 - POSE AND SCALE",
+      "path": "source/pose-scale-reference/POSE-SCALE-real-sign-hold-HEADLESS.jpg",
+      "media_id": "4553ae3e-142d-405f-82ab-ae23d4c4594a",
+      "answers": "how a real person actually holds this product in this building, and how big it reads against a body",
+      "not_taken_from_it": "any face, hair, clothing, age or body type - the head is cropped off for exactly this reason"
+    }
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "path": "outputs/take-01.png",
+      "sha256": "2dc699125a78d36952d83480116e964b09f1f7b4d10d9d5bad9bc246f62aeeab",
+      "agent_qc": "reject",
+      "note": "Legs and lower body render badly and the shirt loses its shape.",
+      "max_verdict": "rejected",
+      "max_note": "Lower body and shirt break down."
+    },
+    {
+      "take": "02",
+      "path": "outputs/take-02.png",
+      "sha256": "cdbaf100c7f73ea87634a3a3d525f3c2ffb33e2d6401940bda42eb3028f4221d",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "Correct Freya, correct room, sign held cleanly at chest with a real wrap on the ends. NO MOUNTING HOLES - the only batch that came back clean.",
+      "max_verdict": "approved",
+      "max_note": "Max: 'Freya, I would say number two, take two, perfect.'",
+      "usable_as": "Freya hero, packing bay. Same room and same camera as Alan's cast-B take-02 - the two of them read as colleagues. Also the only clean-panel output in the run (no mounting holes)."
+    },
+    {
+      "take": "03",
+      "path": "outputs/take-03.png",
+      "sha256": "652ea68758720eba91605ce7610bee8535b4a142ca476f4e887ee23c5569a2e8",
+      "agent_qc": "reject",
+      "note": "The sign floats: the body is missing between the hands and the frame reads as two disembodied arms.",
+      "max_verdict": "approved-as-reference",
+      "max_note": "Max: 'Take three could be interesting because the size is a really good size, so implementing characters into that, I would take that with us as well... Take three can be used for anyone. We could implement me in there.' The body is broken - the sign floats between two hands - but the SIGN is at the right size, which is the part that is hard to get.",
+      "usable_as": "SCALE AND COMPOSITION REFERENCE, not a publishable image. The sign sits at the correct size and height in the frame, so it can be used as the composition target for any character dropped into this room - Alan, Freya, or an eventual synthetic Max."
+    },
+    {
+      "take": "04",
+      "path": "outputs/take-04.png",
+      "sha256": "918b18d8c3322f60cc037a04bd52b65036bbed1f7970681e4398849f2f2a7e28",
+      "agent_qc": "reject",
+      "note": "Sign drops to waist and the arm geometry breaks - the forearms do not connect to the shoulders.",
+      "max_verdict": "rejected",
+      "max_note": "Arm geometry breaks - forearms do not connect to the shoulders."
+    }
+  ],
+  "recommended_take": "02",
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "takes 01-04, left to right"
+  },
+  "agent_findings": [
+    "PASS - Freya moves out of her hallway into the office intact, on the same plate as Alan.",
+    "PASS - NO MOUNTING HOLES on any take in this batch. This is the finding of the run: her lock has no holes, Alan's lock does, and the output follows the lock rather than the prompt.",
+    "FAIL - two of four takes break anatomy. Her lock is a chest-height hold; asking for a waist-height hold against it is where it fails."
+  ],
+  "human_approval": {
+    "status": "reviewed",
+    "date": "2026-07-28",
+    "approved_takes": [
+      "02",
+      "03"
+    ],
+    "note": "Max reviewed the contact sheet and named these. Takes not named are kept for provenance and are not for use."
+  }
+}

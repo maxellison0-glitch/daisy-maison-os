@@ -1,0 +1,107 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "spec": "../../OFFICE_SPEC.md",
+  "human_approval_required": true,
+  "generated_date": "2026-07-28",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "batch": "cast-A-alan-shutter-bay",
+  "status": "max-reviewed",
+  "purpose": "Alan in the remodelled shutter bay (plate F). First test of the four-reference method.",
+  "references": [
+    {
+      "role": "image",
+      "slot": "IMAGE 1 - THE ROOM",
+      "path": "working/plate-F-shutter-bay/outputs/take-01.png",
+      "media_id": "15d31d25-bb7c-4832-8e8a-0fadca1979f7",
+      "answers": "background, camera position, lens, the whole remodelled shutter bay",
+      "not_taken_from_it": "any person - the plate is empty"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 2 - THE MAN",
+      "path": "../../reference-masters/ALAN-LOCK-black-tee-workshop-APPROVED.jpg",
+      "media_id": "952b786c-7cc4-4cc2-921d-67d335837195",
+      "answers": "Alan's identity and wardrobe, and the sign's printed wording",
+      "not_taken_from_it": "its workshop, lighting, framing or camera position"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 3 / 4 - POSE AND SCALE",
+      "path": "source/pose-scale-reference/POSE-SCALE-real-sign-hold-HEADLESS.jpg",
+      "media_id": "4553ae3e-142d-405f-82ab-ae23d4c4594a",
+      "answers": "how a real person actually holds this product in this building, and how big it reads against a body",
+      "not_taken_from_it": "any face, hair, clothing, age or body type - the head is cropped off for exactly this reason"
+    }
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "path": "outputs/take-01.png",
+      "sha256": "72bc1d40ef6719236f834ab5970ed155e29d361a6a55153015c0fa3f540db749",
+      "agent_qc": "reject",
+      "note": "Sign reads too large across the frame and the hold is stiff. Two mounting holes visible.",
+      "max_verdict": "rejected",
+      "max_note": "Sign too large. Max, 28 Jul: the others are 'slightly too big'."
+    },
+    {
+      "take": "02",
+      "path": "outputs/take-02.png",
+      "sha256": "7ac569a16686510c3ff47b513770c18798306d3fd70c40f4d36d39fb732960b6",
+      "agent_qc": "reject",
+      "note": "The largest sign of the four - it dominates the frame and the product stops reading as a 570mm object. Holes present.",
+      "max_verdict": "approved",
+      "max_note": "Kept as the second angle. Max: 'Maybe take two, we can project. Do take two to take four. That's two images of the same sort of thing. Really help with angles.'",
+      "usable_as": "Angle B of the shutter-bay pair. Use WITH take-04 in a single reference video so the same setup is covered from two viewpoints."
+    },
+    {
+      "take": "03",
+      "path": "outputs/take-03.png",
+      "sha256": "684a2b7b614ce7b8d73629b1b162e2abdd1716909047ea275cdd41a2510ab98c",
+      "agent_qc": "reject",
+      "note": "Sign wider still, and the hands lose their wrap on the shaped ends.",
+      "max_verdict": "rejected",
+      "max_note": "Sign too large."
+    },
+    {
+      "take": "04",
+      "path": "outputs/take-04.png",
+      "sha256": "22b23d22764d76c1a237740459e0a1ba97bd1b8b873224011ef981bebfeece70",
+      "agent_qc": "candidate",
+      "note": "The most restrained scale of the four and the most natural stance, but the frame is tighter than the plate and the bay loses its depth.",
+      "max_verdict": "approved",
+      "max_note": "Max: 'take four is pretty good. It's a weird angle, but it actually looks more realistic than the other ones.' The odd viewpoint is the reason it works, not a fault.",
+      "usable_as": "Angle A of the shutter-bay pair, and the most realistic Alan in the run. Lead frame for a shutter-bay reference video."
+    }
+  ],
+  "recommended_take": null,
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "takes 01-04, left to right"
+  },
+  "agent_findings": [
+    "PASS - identity held. Recognisably the same man as the lock, in the right room, with the wording spelled correctly.",
+    "PASS - the room survived. Plate F's shutter bay, ceiling ribs, sage band and floor all came through.",
+    "FAIL - scale. Every take renders the sign larger relative to Alan than the real footage does. The written instruction 'the sign is 1.30 times the width of the man's shoulders' did not bind.",
+    "FAIL - mounting holes present, despite NO MOUNTING HOLES ANYWHERE in the prompt."
+  ],
+  "human_approval": {
+    "status": "reviewed",
+    "date": "2026-07-28",
+    "approved_takes": [
+      "02",
+      "04"
+    ],
+    "note": "Max reviewed the contact sheet and named these. Takes not named are kept for provenance and are not for use."
+  }
+}
