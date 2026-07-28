@@ -58,8 +58,11 @@ def fetch(username):
                               "Accept": "application/json"},
                      timeout=30)
     if r.status_code == 429:
-        sys.exit("Instagram rate-limited us (429). This is a cooldown, not a "
-                 "ban - wait about ten minutes. Do not retry in a loop.")
+        sys.exit("Instagram rate-limited us (429). A cooldown, not a ban - but "
+                 "MEASURED, NOT GUESSED: on 28 Jul one instaloader burst cost us "
+                 "the whole day's competitor reads. Still 429 after three "
+                 "attempts across ~50 minutes. Assume HOURS, not minutes, and "
+                 "come back tomorrow rather than retrying.")
     if r.status_code != 200:
         sys.exit("Instagram returned HTTP %d. If this is 401 or 403 the "
                  "unauthenticated route may have closed; fall back to the Meta "
