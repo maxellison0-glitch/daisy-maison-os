@@ -90,7 +90,27 @@ build is newer than the browser on this image and its default path is wrong.
 
 ---
 
+## Picked
+
+**Max, 28 Jul: Style A, bottom pills.** *"I like A, with probably the bottom
+pills… I think that looks good. It doesn't cover their faces."*
+
+Final cut and post copy: `APPROVED/` and `POST.md`.
+
+## The rule this run bought
+
+**Never generate the same video prompt twice in one batch.** Two identical
+18-credit takes were run here for framing insurance. Max: *"Don't ever make two
+videos of the exact same thing. That is such a waste of credits. We could have
+had two different styles… we could by contrast oppose it to Instagram and
+TikTok."*
+
+He is right, and the reason is that the stills habit does not transfer. A still
+take is 2 credits and variance is the point; a video take is 18–54 and the same
+prompt returns the same idea. The 18 credits spent on take-02 should have bought
+a second *concept* — a different hook beat, a different length, a 16:9 cut.
+Written into `.claude/skills/daisy-video-generation/SKILL.md`.
+
 ## Not done
 
-- Max has not picked a style, hook or placement.
-- Nothing is posted. No caption copy written for the post body itself.
+- Nothing is posted. Publishing is Max's call.
