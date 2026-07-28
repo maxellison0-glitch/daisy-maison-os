@@ -10,6 +10,18 @@ cover their faces."*
 | Cover | `APPROVED/cover.jpg` |
 | Spec | 1080×1920, 4.04s, 24fps, h264, silent |
 | On-screen hook | *same order.* (white pill) / *both signs.* (burgundy pill), y≈1180 |
+| Brand tag | Daisy Maison wordmark on a cream tag, top-right, rotated -7°, pops in at **2.20s** and holds |
+
+**Why the tag pops at 2.20s and not at the top.** The bottom of the frame is
+taken by the two pills, so the tag goes top-right where it covers neither face
+and clears both platforms' UI. It arrives *after* Freya's sign has been read —
+a brand mark landing before the joke competes with it; landing after it signs
+it. It overshoots to ~1.10 and settles, rotating from -15° to -7° as it lands,
+so the angle reads as deliberate rather than as a crooked paste.
+
+The cream `#F5F1E8` is the sign panel's own colour, which is why it sits on the
+footage instead of on top of it. Built in `logo_tag.py` from
+`reference-masters/daisy-maison-WORDMARK-v2.png` — PIL only, no generation.
 
 Silent by design. Both platforms autoplay muted and the joke is entirely
 visual — there is nothing for audio to carry. Add a trending sound at upload if
