@@ -54,6 +54,8 @@ import argparse, base64, json, math, os, subprocess, sys, tempfile
 import numpy as np
 from PIL import Image, ImageFilter, ImageDraw
 
+import colourways
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 BUILD = os.path.join(REPO, "projects", "daisy-street-sign", "artwork", "build.py")
@@ -64,6 +66,14 @@ CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 # canonical product geometry, from build.py / the audited PSD
 SIGN_MM_W, SIGN_MM_H = 570.0, 125.0
 BORDER_MM = 12.4
+
+# The panel is the one colour NOT taken from product-rules.json, because the
+# rules file has no panel entry - recolour-sign.ps1 defaults it to #FFFFFF.
+# Content has always used a warm cream, and the approved photographs of the real
+# product read cream rather than white. Which one is true is a print question,
+# not a content one, so this stays a named constant rather than being quietly
+# reconciled in either direction. Flagged for Max.
+PANEL_COLOUR = "#F2EEE3"
 # mounting holes, from the same LightBurn source build.py reads
 HOLES_MM = ((23.31, 63.735, 2.0), (546.0, 61.5, 2.0))
 
@@ -137,21 +147,28 @@ def rasterise_svg(svg_path, w, h):
     return img.resize((w, h), Image.LANCZOS)
 
 
-def render_face(line1, line2, w, h, colourway=None, heart=False, fit=486):
-    env = dict(os.environ)
-    if colourway:
-        env["SIGN_COLOURWAY"] = colourway
-    env["SIGN_HEART"] = "1" if heart else "0"
-    # Holes off for all content. Max, 25 Jul 2026: "that's literally for the laser
-    # printer... if we had no holes and just a flat surface with the same borders,
-    # that's perfect." Production geometry is untouched — build.py still defaults on.
-    env["SIGN_HOLES"] = "0"
+def render_face(line1, line2, w, h, colourway=None, heart=False, fit=486,
+                panel=PANEL_COLOUR):
+    """Geometry from build.py, then colour — the same order the laser uses.
+
+    This used to pass SIGN_COLOURWAY, SIGN_HEART and SIGN_HOLES as environment
+    variables. build.py no longer reads any of them: colour, heart and holes are
+    applied downstream, per SKU, by production/recolour-sign.ps1. The env vars
+    were still being set and silently ignored, which would have rendered every
+    content sign black, hearted and holed without raising anything. Content now
+    runs the same two stages in the same order, off the same rules file.
+    """
     with tempfile.TemporaryDirectory() as td:
         svg = os.path.join(td, "face.svg")
         subprocess.run(
             [sys.executable, BUILD, "REPRINT", line1, line2, str(fit), svg],
-            check=True, capture_output=True, env=env,
+            check=True, capture_output=True,
         )
+        # Holes off for all content. Max, 25 Jul 2026: "that's literally for the
+        # laser printer... if we had no holes and just a flat surface with the
+        # same borders, that's perfect." Production strips them by default too.
+        colourways.recolour_svg(svg, colourway=colourway, panel=panel,
+                                keep_heart=heart, keep_holes=False)
         return rasterise_svg(svg, w, h)
 
 
