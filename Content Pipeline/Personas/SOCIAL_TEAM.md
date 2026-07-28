@@ -68,8 +68,9 @@ the brief; the feed stays brand-restrained.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
-Ten skills live in `.claude/skills/`. Nine are vendored from
-`coreyhaines31/marketingskills` (MIT); `daisy-social-analytics` is ours. They
+Thirty-five skills live in `.claude/skills/`. Ten are vendored from
+`coreyhaines31/marketingskills` (MIT), twenty-four from `heygen-com/hyperframes`
+(Apache 2.0, the video lane); `daisy-social-analytics` is ours. They
 exist to be *used* — a skill nobody invokes is worse than no skill, because it
 looks like capability while changing nothing. Max, on installing them: "we need
 to make sure that the Digest adapts with these skills so we actually don't
@@ -86,6 +87,7 @@ So the daily session now runs them at fixed points:
 | Freya, choosing an angle | **`marketing-psychology`** | Name the mechanism the hook is using, not just the vibe. |
 | Blend, when Alan and Freya disagree | **`marketing-council`** | Only for a genuinely hard call. It keeps the disagreement instead of averaging it, which is the same reason this team has two people. |
 | Anything that needs generating | **`image`** / **`video`** | Both name our actual stack (Nano Banana, Seedance, Hailuo, Kling), so use their prompting references rather than improvising. |
+| Any moving deliverable | **`hyperframes`** (+ `captions-overlay`, `motion-doctrine`) | Written as HTML, rendered locally, **zero credits**. This is the default for anything that moves. Reserve paid generation for footage that genuinely could not be a still with motion applied to it. See `../Creative Studio/video/README.md`. |
 | Every falsifiable call | **`ab-testing`** | And the house rule that outranks it: a call only counts if `daisy-social-analytics` can already pull the number that settles it. |
 | When the CVR slides | **`cro`** | Site-side, not content-side. Worth remembering that not every bad day is a content problem. |
 

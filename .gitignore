@@ -48,3 +48,15 @@ __pycache__/
 # Agent skills: vendored marketing skills (MIT) + our own social analytics.
 !.claude/
 !.claude/**
+
+# HyperFrames video skills (Apache 2.0, heygen-com/hyperframes). Vendored on
+# purpose rather than reinstalled per container: `npx skills add` is not version
+# pinned, so a silent upstream change would break the render pipeline on a day
+# we need it. 19 MB once is cheaper than that.
+!.agents/
+!.agents/**
+
+# Never sync installed packages or render binaries - see
+# Content Pipeline/tools/video/setup-render-env.sh for rebuilding those.
+node_modules/
+.hyperframes-cache/
