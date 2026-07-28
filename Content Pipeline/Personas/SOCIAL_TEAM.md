@@ -65,3 +65,43 @@ invented metrics or competitor posts — gaps get named. Captions pass
 `VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`. AI content follows
 `../PLATFORM_STRATEGY.md` disclosure. No customer PII. Personalities are for
 the brief; the feed stays brand-restrained.
+
+## Skills the daily session must use (added 28 Jul 2026)
+
+Ten skills live in `.claude/skills/`. Nine are vendored from
+`coreyhaines31/marketingskills` (MIT); `daisy-social-analytics` is ours. They
+exist to be *used* — a skill nobody invokes is worse than no skill, because it
+looks like capability while changing nothing. Max, on installing them: "we need
+to make sure that the Digest adapts with these skills so we actually don't
+create something that isn't utilised later on."
+
+So the daily session now runs them at fixed points:
+
+| Step | Skill | What it must change about the output |
+|---|---|---|
+| Alan, before any performance claim | **`daisy-social-analytics`** | Every number in the brief comes from a pull. No remembered figures, ever. It also states what could not be measured. |
+| Alan, reference sweep | **`competitor-profiling`** | Reference notes become structured dossiers rather than prose, so week-on-week change is visible at a glance. |
+| Freya, generating the three | **`social`** | Use its short-form structures and, in particular, `references/reverse-engineering.md` when a reference post has clearly worked. |
+| Freya, writing hooks | **`ad-creative`** → `references/hook-system.md` | **A hook is three components — visual action, spoken line, caption text — and they must never duplicate.** A caption that merely describes the image wastes a third of the hook. Write all three columns; a hook spec with one column filled is a third of a hook. |
+| Freya, choosing an angle | **`marketing-psychology`** | Name the mechanism the hook is using, not just the vibe. |
+| Blend, when Alan and Freya disagree | **`marketing-council`** | Only for a genuinely hard call. It keeps the disagreement instead of averaging it, which is the same reason this team has two people. |
+| Anything that needs generating | **`image`** / **`video`** | Both name our actual stack (Nano Banana, Seedance, Hailuo, Kling), so use their prompting references rather than improvising. |
+| Every falsifiable call | **`ab-testing`** | And the house rule that outranks it: a call only counts if `daisy-social-analytics` can already pull the number that settles it. |
+| When the CVR slides | **`cro`** | Site-side, not content-side. Worth remembering that not every bad day is a content problem. |
+
+### The one that has already changed our work
+
+`ad-creative`'s no-duplication rule is the sharpest thing in the set and it
+diagnoses a real fault: on 28 Jul the graduation carousel shipped with **no
+on-screen hook at all**, on the reasoning that the photographs were strong. A
+caption is collapsed behind a tap; the burnt-in text is the only hook a
+scrolling viewer sees. See the hard gate in `../PUBLISH_READINESS.md`.
+
+### Honest limits
+
+The vendored hook libraries are written for SaaS and creator accounts — "the
+secret to X", "I tried X for 30 days". They do not fit a £19 personalised gift
+where the product *is* the punchline. Take their **structure** (hook types
+sorted by objective: engagement, saves, watch time, comments) and keep our own
+**voice** from `../CONTENT_STRATEGY.md` §2, the Match Law. Do not let a generic
+hook library flatten the brand.

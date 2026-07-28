@@ -128,8 +128,16 @@ def cmd_profile(a):
 
     if a.save:
         os.makedirs(SNAPSHOT_DIR, exist_ok=True)
-        p = os.path.join(SNAPSHOT_DIR, "%s-%s.json" % (
+        # Intra-day pulls used to overwrite each other, so a second run
+        # silently destroyed the morning reading it was being compared
+        # against. Found by testing on 28 Jul. Keep every pull; the
+        # first of a day keeps the plain date so the series stays
+        # readable, later ones get a time suffix.
+        base = os.path.join(SNAPSHOT_DIR, "%s-%s" % (
             a.user, datetime.date.today().isoformat()))
+        p = base + ".json"
+        if os.path.exists(p):
+            p = "%s-%s.json" % (base, datetime.datetime.utcnow().strftime("%H%M"))
         json.dump(snap, open(p, "w"), indent=2)
         print("saved %s" % p, file=sys.stderr)
 
