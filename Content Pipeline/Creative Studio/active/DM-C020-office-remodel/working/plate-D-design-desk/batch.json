@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-D-design-desk",
+  "title": "Design desk and shelf - the natural holding-a-sign frame",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/06-design-desk-and-shelf.jpg",
+      "media_id": "0198231b-544e-47f3-80f4-bab3e5905888",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "b7356638-fb80-4fd6-9562-e9da073618d9",
+      "path": "outputs/take-01.png",
+      "sha256": "fb5ea01e02416b30f48c7c67562b426084ceb14da142c696d03513474ae3ab4f",
+      "agent_qc": "candidate",
+      "note": "candidate - clean but the bench front reads as bare ply and the shelf is sparse"
+    },
+    {
+      "take": "02",
+      "job_id": "9d868ac0-1ffb-42e8-8ba4-90979601dc0a",
+      "path": "outputs/take-02.png",
+      "sha256": "35749a8634cecf58a0bdaef45370de145c81134e3941411e9c445039e7c05311",
+      "agent_qc": "candidate",
+      "note": "candidate - good, monitors correct, slightly tight"
+    },
+    {
+      "take": "03",
+      "job_id": "d9fca954-9bab-4dd4-99a7-8f34ba32fa84",
+      "path": "outputs/take-03.png",
+      "sha256": "ae30432beddeb8a69423cb896aa828a55f84ec3f1d9a30040c7edc7050a69c20",
+      "agent_qc": "candidate",
+      "note": "candidate - good, but the under-bench void is open and reads unfinished"
+    },
+    {
+      "take": "04",
+      "job_id": "77e09649-ac53-47fe-90c0-03a846767c4a",
+      "path": "outputs/take-04.png",
+      "sha256": "b01e68331423ca4e9a7a157b3477c153de919c34bcd08542a91386616a4ca2fe",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - widest, keeps the shutter track, both plants, the kraft boxes, the easel and a squared stack of blanks. The customer sign leaning on the bench is gone"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "04",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

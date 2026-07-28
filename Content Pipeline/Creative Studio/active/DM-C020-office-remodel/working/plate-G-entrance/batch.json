@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-G-entrance",
+  "title": "Entrance and understairs - sage carried through",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/08-entrance-door-and-understairs.jpg",
+      "media_id": "e5aaa9fb-5f13-4379-9c77-9db9354e9042",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "1039bacc-3487-44b9-bce8-42e6aa6dc39e",
+      "path": "outputs/take-01.png",
+      "sha256": "09f8587bca19d3fa08d14ffcfa24b52e07830293a9715288e9270ecb21aea3e2",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - open door to the yard, exit pictogram, shutter gear, sage stringer and closed understairs, stool placed, floor clean"
+    },
+    {
+      "take": "02",
+      "job_id": "6249cf1b-0b9a-47a4-9fa2-1ff762fa0d94",
+      "path": "outputs/take-02.png",
+      "sha256": "220a23ea1205e4643f93e50cf5ae7a7db67953a9aca5ce97274f951410d69677",
+      "agent_qc": "candidate",
+      "note": "candidate - good but the stair mass crowds the left half"
+    },
+    {
+      "take": "03",
+      "job_id": "ad34089a-ce1a-4079-acc5-d35cc7cd7c95",
+      "path": "outputs/take-03.png",
+      "sha256": "c46600b30296b982e8eb0564afdd0045a016bb6845081a9bba95bea313f44c4c",
+      "agent_qc": "candidate",
+      "note": "candidate - door closed, reads flatter"
+    },
+    {
+      "take": "04",
+      "job_id": "d5782753-4edd-49c5-96d8-cc481262842e",
+      "path": "outputs/take-04.png",
+      "sha256": "5e573476d36a050bd3401b7f314e5bb5723eefaae8a6f03959f37c086170d32b",
+      "agent_qc": "candidate",
+      "note": "candidate - the understairs is panelled into three bays, which looks designed rather than tidied"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "01",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

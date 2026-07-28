@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-B-two-lasers",
+  "title": "Two lasers, back wall - the made-in-house proof shot",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/05-two-lasers-back-wall.jpg",
+      "media_id": "8aeca329-3c26-4e88-af9f-f13a75d6491f",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "208bef69-747f-4ccf-af80-5f7274f25119",
+      "path": "outputs/take-01.png",
+      "sha256": "2f43effd4a8031e7e0d7a8d0bb347e5ce92fae57ce8013999c04c0116286e14c",
+      "agent_qc": "reject",
+      "note": "reject - a wall sign with lettering survived on the back wall; the no-text rule failed here"
+    },
+    {
+      "take": "02",
+      "job_id": "33405e4c-de85-4721-abfb-62aead9f164c",
+      "path": "outputs/take-02.png",
+      "sha256": "49d418cec5fd9a20a49a47e3d313484293a138c258332b445d2e078e0d3e4cfa",
+      "agent_qc": "candidate",
+      "note": "candidate - clean, but cropped in and the ceiling ribs are lost at the top edge"
+    },
+    {
+      "take": "03",
+      "job_id": "2040aace-412b-417f-9ca2-c441ce1b4db9",
+      "path": "outputs/take-03.png",
+      "sha256": "7a019454472111ee079d94180a354bb2a40203bad0d1006577092f6e745a1aa2",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - both lasers complete and correct, trolley and monitor kept, stool kept, no text anywhere, ceiling held"
+    },
+    {
+      "take": "04",
+      "job_id": "a679635f-7f7a-47fa-bc9c-906d851f5729",
+      "path": "outputs/take-04.png",
+      "sha256": "ce54e066f027f382aeffc73fa35babd26bc995932295c3802da2f3361abe4a14",
+      "agent_qc": "candidate",
+      "note": "candidate - correct machines but tighter than the source and the left laser is clipped"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "03",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

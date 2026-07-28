@@ -1,0 +1,65 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-E-packing-bench",
+  "title": "Long packing bench - a sign travelling through frame",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/03-packing-bench-long-wall.jpg",
+      "media_id": "da20ba61-56cd-422f-9f31-4974076ad15a",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 3,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "b34a3d56-723f-4d3a-be21-3153010e2fc2",
+      "path": "outputs/take-01.png",
+      "sha256": "cb3596be54c76d558be901646f0e40c972aea12d6ab0f99f2a4414c84bc09470",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - ceiling, cable trays and extraction all held, shelf and ribbon reels kept, boxes squared under the bench, stool placed, floor clean"
+    },
+    {
+      "take": "02",
+      "job_id": "964d6d82-e0fa-46a7-8142-971fb6db225e",
+      "path": "outputs/take-02.png",
+      "sha256": "6a66818a9bc1239db83cfc826516ac155e2d6a7b5237bbd72dfb8ffd413ad4a9",
+      "agent_qc": "candidate",
+      "note": "candidate - good but tighter and the shelf run is shortened"
+    },
+    {
+      "take": "03",
+      "job_id": "736822a3-2aa3-4bb8-85c1-02f8fc457a5f",
+      "path": "outputs/take-03.png",
+      "sha256": "99ffd42096bd91df78a368dfbb81cbf977776858e822089df92e9ff97289da28",
+      "agent_qc": "candidate",
+      "note": "candidate - good, boxes read as ottomans rather than storage"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "01",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 6,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}
