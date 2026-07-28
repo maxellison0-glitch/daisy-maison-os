@@ -17,12 +17,37 @@ FREYA   PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png
         Max-approved 27 Jul. Cream linen shirt, mid-length wavy auburn hair,
         freckles, relaxed half-smile, head-on, sign held in both hands at chest.
 
-ALAN    PAIR-alan-and-freya-office-CANDIDATE.png  (awaiting Max)
-        British, mid-thirties, short dark-brown hair, few days of stubble,
-        plain dark navy crew-neck with sleeves pushed up, calm and deadpan.
-        Born inside a two-hander WITH Freya rather than alone, so his face
-        arrived already lit by the same room. Both takes of that prompt returned
-        the same man, which is what makes him usable as a character at all.
+ALAN    ALAN-LOCK-bond-tux-workshop-APPROVED.jpg
+        LOCKED 28 Jul 2026. sha256 bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98
+        Byte-identical copy of the Max-approved take, kept in place too so the
+        provenance chain is not broken:
+          active/DM-C017-synthetic-sign-turn/working/batches/hero-still/
+          DM-C018-BOND-v01-tux/outputs/take-03.jpg
+
+        British, mid-forties. Short mid-brown hair flecked with grey, swept up
+        and back off the forehead. Blue eyes, deep-set. Close grey-flecked
+        stubble beard, heaviest along the jaw. Strong straight nose, level brow,
+        closed-mouth deadpan - not smiling, not stern. Head-on, square to camera,
+        eyes to lens. Workshop behind him: painted white blockwork, a timber
+        shelf of stacked blanks, plain equipment. Soft even daylight, no
+        modelling.
+
+        WHAT IS IDENTITY AND WHAT IS COSTUME. The face, hair, beard, build and
+        the workshop are ALAN. The black tuxedo, white shirt and bow tie are
+        DM-C018 wedding wardrobe, not part of him - name them out of the prompt
+        and put him in the navy/charcoal knitwear palette when the concept is
+        not black-tie. Do not let the tux migrate into every future Alan.
+
+        WHY THIS ONE AND NOT THE OTHER. Max, 28 Jul, on a generated pair shot:
+        "that is not fucking Alan. Literally, go back to the video of the James
+        Bond. Do not use anything else." The rejected candidate is now
+        PAIR-alan-and-freya-office-REJECTED-not-alan.png - a visibly younger,
+        clean-jawed, dark-haired man in a navy crew-neck. It is a different
+        person, kept only as evidence of the miss. Never prompt against it.
+
+        Everything downstream came off this single node: it produced the
+        white-back start keyframe, which produced the 6s turnaround Max scored
+        8.5/10. That is the strongest evidence any lock in this file has.
 
 THE THREE BLOCKS EVERY PROMPT NEEDS
 -----------------------------------
@@ -30,6 +55,13 @@ THE THREE BLOCKS EVERY PROMPT NEEDS
    clothing, expression, pose). Naming them beats saying "same person".
 2. THE PRODUCT - 570mm x 125mm, shaped notched ends, cream panel, coloured
    printed border, real edge thickness, NO mounting holes.
+
+   UNRESOLVED, flagged 28 Jul: Alan's lock DOES show two mounting holes,
+   because it was built from the real product photographs and the real signs
+   have them. The Freya plates have none. So "NO mounting holes" and the
+   locked reference disagree, and whichever a prompt inherits will be
+   whichever reference it leans on hardest. Ask Max which is the product
+   before treating either as the rule. Do not quietly pick one.
 3. THE SCALE - held horizontally in both hands at chest height, hands wrapping
    the shaped ends, about 1.4x the holder's shoulder width. This is the gate
    from VERDICTS.md and it is the single thing that decides whether the sign
