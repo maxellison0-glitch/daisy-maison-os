@@ -1,0 +1,46 @@
+{
+  "batch": "DM-C019-summer-holidays-lift",
+  "date": "2026-07-28",
+  "task": "#9 - make a real video, not a still with motion on it",
+  "model": "seedance_2_0",
+  "job_id": "6cd6930b-069c-4c7e-8dbf-eaba718a635c",
+  "params": {
+    "duration": 6,
+    "resolution": "1080p",
+    "mode": "std",
+    "aspect_ratio": "9:16",
+    "generate_audio": false,
+    "count": 1
+  },
+  "cost": {
+    "quoted_credits": 54,
+    "charged_credits": 54,
+    "balance_before": 993.12,
+    "image_generations": 0
+  },
+  "inputs": [
+    {
+      "role": "start_image",
+      "media_id": "f0f94f0a-5ac4-44d2-98c3-8880bdb1729a",
+      "file": "Content Pipeline/Creative Studio/reference-masters/PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png",
+      "sha256": "4659fa3dc31cecdf265cfc5b75a0944aca6a76aeac5a3f467f3c8aaa6237b796",
+      "answers": "identity, room, wardrobe, light, framing, sign wording",
+      "approval": "filename-recorded APPROVED; used unmodified as frame 1"
+    },
+    {
+      "role": "image",
+      "media_id": "03e963ea-15c3-407c-b37a-30c12b304670",
+      "file": "Content Pipeline/Creative Studio/reference-masters/street-sign-BLACK-on-white-MASTER.jpg",
+      "sha256": "588121fe08ebd7db366119f057e4c50d31e5151c3e587657ebbe2333740c8b4c",
+      "answers": "the physical object - thin rigid sheet, shaped ends, border weight, mounting holes, sheen, finger contact",
+      "do_not_take": "its wording, its workshop, its person, its framing"
+    }
+  ],
+  "gates": {
+    "gate_1_human_approved_source": "PASS - frame 1 is the already-approved plate, unmodified",
+    "gate_2_four_physical_views": "NOT APPLICABLE BY DESIGN - the four real edge/back reference frames are absent from the repo (only their REFERENCE_PACK.md survives), so the shot was designed with the sign front-on for every frame. Its edge and reverse are never in shot, so the invented-slab/black-back failure Gate 2 guards against cannot occur. Recover those frames and the turn becomes available again.",
+    "gate_3_no_product_surface_overlay": "PASS - no overlay, tracking, corner-pin or panel replacement used or planned"
+  },
+  "published": false,
+  "max_approved": false
+}

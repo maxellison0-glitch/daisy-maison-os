@@ -80,5 +80,35 @@ it. A caption reading "The summer holidays" would have thrown the slot away.
 - Propose, never publish. Nothing here goes live without Max saying so.
 - No customer PII. A surname as sign wording is product; a date, an address or
   an order number is not.
-- Only the five real colourways: BLACK, GREY, SAGE, GRASS, BLUE.
+- Never invent a colourway, and never hard-code a list of them here. The laser
+  reads `projects/daisy-street-sign/production/product-rules.json` and so do we,
+  through `../../templates/sign-reprint/colourways.py`. There are **eight**, not
+  the five this file used to claim — that stale list was wrong on the names and
+  wrong on the hexes, which is exactly what a second copy of a list does.
 - Never state a price, a delivery time or a result that has not been verified.
+
+## The framing gate — the sign must stay inside the frame
+
+`DM-C019` take 01 was thrown away because of this and nothing but an eye on a
+filmstrip caught it. The sign was fully in frame for the first 2.0 seconds and
+then ran edge to edge for the remaining 4.0, so the hold — the part a viewer
+actually reads — had letters cut off both sides. Motion was excellent. The
+product was unreadable. It was worthless.
+
+Two rules came out of it:
+
+**Lock both ends of the motion, not just the start.** DM-C017 scored 8.5/10 with
+a `start_image` *and* an `end_image`. Take 01 supplied only a start, so
+"the sign comes toward the camera" had nothing to stop it and it kept coming.
+An `end_image` is not a nicety; it is the only hard limit the model respects.
+
+**Run the gate before you look at anything else.**
+
+```bash
+python3 qc_framing.py delivery/<take>.mp4
+```
+
+It decodes every frame, finds the sign by the longest contiguous dark run in the
+densest dark row — not by dark-pixel extent, which returns the full frame width
+on every frame because a coat and a doorway are also dark — and fails if the
+sign comes within 24px of either side. Copy it alongside any new sign video.
