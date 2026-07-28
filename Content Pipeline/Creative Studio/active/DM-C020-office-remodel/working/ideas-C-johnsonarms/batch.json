@@ -1,0 +1,67 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "ideas-C-johnsonarms",
+  "concept": "C - LAUGH",
+  "engine": "LAUGH",
+  "status": "agent-pass-awaiting-max",
+  "room_plate": "plate H (packing bay) take-04",
+  "sign_wording": "THE JOHNSON ARMS / LANDLORD DAD - LAST ORDERS NEVER",
+  "on_screen_hook": "POV: your dad has converted the shed",
+  "brief": "../../IN_OFFICE_CONTENT.md",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "take_count": 4,
+  "references": [
+    "9da5c83b-552e-4a12-bcea-43f3228cb236 (room)",
+    "952b786c-7cc4-4cc2-921d-67d335837195 (Alan lock)",
+    "86819b16-97b4-4805-a650-e6f6a7c821d7 (Freya lock)",
+    "4553ae3e-142d-405f-82ab-ae23d4c4594a (pose/scale)"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "d26820c7-3d56-46e0-9cc4-a7de788fba4e",
+      "agent_qc": "candidate",
+      "note": "Works, but Freya is close enough to read as level with him rather than behind.",
+      "path": "outputs/take-01.png",
+      "sha256": "3fb087a4b16021a23db24ec621d90327d28d503e8279ea6766b1110b98e038e0"
+    },
+    {
+      "take": "02",
+      "job_id": "5e9511ec-4db5-43c2-a0a4-d35aa3884cc7",
+      "agent_qc": "recommended",
+      "note": "The strongest image of the whole run. Freya clearly further back and mid-stride, clear floor between them, Alan completely deadpan, sign square and fully legible.",
+      "path": "outputs/take-02.png",
+      "sha256": "b9bd6f028646e9b6befd1c93247dfacf83aea8f6bd57a6344762453d64b4388f"
+    },
+    {
+      "take": "03",
+      "job_id": "ceb93254-fa36-400f-83a9-e50459432475",
+      "agent_qc": "candidate",
+      "note": "She crosses on the right instead, which is a usable alternate for a different edit.",
+      "path": "outputs/take-03.png",
+      "sha256": "e0d97fc27d9d902db3e32a6e0452bf86ea6a5bf43ae6d2ea750bb962e36d1b92"
+    },
+    {
+      "take": "04",
+      "job_id": "104eec6e-b922-4f31-b266-5125229b0c89",
+      "agent_qc": "candidate",
+      "note": "Good, but she is largest here and the sign sits slightly high.",
+      "path": "outputs/take-04.png",
+      "sha256": "79d0fda18805920ea7ba8314a355022d867e6cd6bec6ffc0a60dfea0ff09c9a1"
+    }
+  ],
+  "recommended_take": "02",
+  "contact_sheet": "CONTACT-SHEET.jpg",
+  "cost": {
+    "credits_per_take": 2,
+    "total_credits": 8
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

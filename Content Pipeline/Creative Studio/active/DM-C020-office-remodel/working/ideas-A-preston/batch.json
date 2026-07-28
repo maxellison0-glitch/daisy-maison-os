@@ -1,0 +1,64 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "ideas-A-preston",
+  "concept": "A - FEEL",
+  "engine": "FEEL",
+  "status": "agent-pass-awaiting-max",
+  "room_plate": "plate H (packing bay) take-04",
+  "sign_wording": "MR & MRS PRESTON / SHE SAID YES 12TH JULY 2026",
+  "on_screen_hook": "the only note on this order was \"don't send it to the house\"",
+  "brief": "../../IN_OFFICE_CONTENT.md",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "take_count": 4,
+  "references": [
+    "9da5c83b-552e-4a12-bcea-43f3228cb236 (room)",
+    "952b786c-7cc4-4cc2-921d-67d335837195 (Alan lock)",
+    "4553ae3e-142d-405f-82ab-ae23d4c4594a (pose/scale)"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "55145d7c-c301-4578-80df-c42a54b90ac0",
+      "agent_qc": "candidate",
+      "note": "Correct and clean, but the sign sits low and reads slightly small against him.",
+      "path": "outputs/take-01.png",
+      "sha256": "ea39b5447246b50904c9643f36fedb0a1ff410894205679331210c539a885382"
+    },
+    {
+      "take": "02",
+      "job_id": "0cc39a4e-768e-47ab-9ca3-f787c8580966",
+      "agent_qc": "missing",
+      "note": "Job never returned a result. Not a quality reject - it is absent."
+    },
+    {
+      "take": "03",
+      "job_id": "48ee39ce-6e43-4f81-98e0-60b17e241f6a",
+      "agent_qc": "recommended",
+      "note": "Best of the batch. Sign at the right size and height, deadpan hold, wording exact, clean panel.",
+      "path": "outputs/take-03.png",
+      "sha256": "6129caf8961ffc43c7dd6cd7a95396c6e0084eea457962fec116811c59dc90c5"
+    },
+    {
+      "take": "04",
+      "job_id": "fc954881-9b7e-403f-9071-68200f4aec6c",
+      "agent_qc": "candidate",
+      "note": "Good, but the sign is the widest of the three and starts to dominate the frame.",
+      "path": "outputs/take-04.png",
+      "sha256": "ca100b3aeac52ca1c775ccd0f25d4fe829746971d6a487ce775793252582d914"
+    }
+  ],
+  "recommended_take": "03",
+  "contact_sheet": "CONTACT-SHEET.jpg",
+  "cost": {
+    "credits_per_take": 2,
+    "total_credits": 8
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}
