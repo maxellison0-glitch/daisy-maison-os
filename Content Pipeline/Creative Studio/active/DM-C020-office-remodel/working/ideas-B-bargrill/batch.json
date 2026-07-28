@@ -1,0 +1,66 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "ideas-B-bargrill",
+  "concept": "B - SOLVE",
+  "engine": "SOLVE",
+  "status": "agent-pass-awaiting-max",
+  "room_plate": "plate F (shutter bay) take-01",
+  "sign_wording": "DAVE'S BAR & GRILL / BURGERS BEER AND BAD JOKES",
+  "on_screen_hook": "he said he didn't want anything this year",
+  "brief": "../../IN_OFFICE_CONTENT.md",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "take_count": 4,
+  "references": [
+    "15d31d25-bb7c-4832-8e8a-0fadca1979f7 (room)",
+    "952b786c-7cc4-4cc2-921d-67d335837195 (Alan lock)",
+    "4553ae3e-142d-405f-82ab-ae23d4c4594a (pose/scale)"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "81920c95-8984-46d1-8982-1d9c736180ca",
+      "agent_qc": "reject",
+      "note": "Sign rotated hardest of the four and the left end runs out of frame.",
+      "path": "outputs/take-01.png",
+      "sha256": "bd1009b2b550ffbb75739e1f534f946b9e583f8a5e1230e84227abed1997ed4d"
+    },
+    {
+      "take": "02",
+      "job_id": "48a097ac-f26e-46fe-9fa7-5f5b34d700c2",
+      "agent_qc": "candidate",
+      "note": "Tilted, but the tilt reads as a casual hold rather than an error.",
+      "path": "outputs/take-02.png",
+      "sha256": "6b0b0c48aa1a5a49d3a3f09366d907d02b04fc12712cccf519262db7c1ed24d7"
+    },
+    {
+      "take": "03",
+      "job_id": "f4bcfb55-09eb-44c0-a0ef-0244149214cb",
+      "agent_qc": "recommended",
+      "note": "Most balanced of the four. Wording fully legible, both hands correct, shutter open, yard visible.",
+      "path": "outputs/take-03.png",
+      "sha256": "9d12adef8ccf4788ca0986524e1575c04cde8f94a5aa90321839b215cef30746"
+    },
+    {
+      "take": "04",
+      "job_id": "9f231aa6-822e-4a58-b9b1-91747e32431b",
+      "agent_qc": "candidate",
+      "note": "Strong depth, but the right hand is small and poorly formed against the sign end.",
+      "path": "outputs/take-04.png",
+      "sha256": "c467438cc5a57e10685d3daf4dc7a117ec85e51dfb866dc4d939195a601bb890"
+    }
+  ],
+  "recommended_take": "03",
+  "contact_sheet": "CONTACT-SHEET.jpg",
+  "cost": {
+    "credits_per_take": 2,
+    "total_credits": 8
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}
