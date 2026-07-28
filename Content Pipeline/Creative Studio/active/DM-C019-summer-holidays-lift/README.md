@@ -107,7 +107,84 @@ Balance 993.12 → 885.12. A future take of this kind should use
 `seedance_2_0_mini` at 720p/fast: **15 credits**, measured, and TikTok
 re-encodes to roughly 720p anyway.
 
+## v2 — the cut that actually went out
+
+Max, 28 July, after seeing v1: *"try and get a bit smarter with the captions,
+and also I want to use our circular profile picture off Instagram for the outros
+instead of the square Daisy maison... let's just do some exciting, higher-level
+video effects."* Same 6 seconds of paid footage, everything above it rebuilt.
+**Zero additional credits.**
+
+### The three components, finally doing three different jobs
+
+`ad-creative/hook-system` says the visual, the on-screen line and the caption
+must never restate each other. v1 spent its caption slot describing the picture.
+
+| Slot | v2 |
+|---|---|
+| Visual | she lifts the sign until it fills the frame |
+| On-screen | "She says she's fine." → "She is **not** fine." |
+| Caption | "Drop your wording in the comments and we'll make it 🤍" |
+
+The hook never names the season and never counts days — the sign does both. It
+makes a claim and the product contradicts it, so the punchline is the product.
+The caption then does the one job neither of the others can: it asks for a
+comment. That is `DISTRIBUTION_PLAN.md` §3e wired into the post itself rather
+than left as a plan, because every reply is a sign we can make for free.
+
+### The mark
+
+The rectangular wordmark is gone. The outro now carries the **circular brand
+roundel — the account's own profile picture**, cropped to the exact bounding box
+of the drawn circle so a 50% radius lands on the edge instead of shaving it or
+leaving a white rim.
+
+Sourced from **TikTok, not Instagram**: Instagram's public endpoint answered 429
+and the cooldown runs in hours. Same mark, different door.
+
+### The motion
+
+From `hyperframes-animation`. One tempo grid (`PULSE = 0.4s`) drives every
+entrance, so the piece locks to a pulse instead of drifting on hand-tuned
+offsets, and each line gets a **different** entrance rather than one reused
+helper:
+
+- line one — scale-and-focus slam, `power4.out`, out of a 14px blur
+- line two — side snap from `x: -300`, `expo.out`
+- the underline under "not" wipes in a beat later, in GRASS `#68893C`, a real
+  production colourway
+- the roundel lands as a **stamp press** — oversized and soft, snapping to size
+  on `expo.out`, releasing one ring on impact
+
+**No `back.out` anywhere.** The skill is blunt that bouncy overshoot is the
+clearest tell of a machine-made video, and the words stay ink `#4A3A2C` with the
+colour doing only decorative work, so all five text checks pass WCAG AA.
+
+**Still no tween on the footage.** A synthetic push-in over real generated
+motion would walk straight back into the thing this whole piece exists to stop
+doing.
+
+### Gates
+
+`check` 0 errors, 5/5 WCAG AA. Framing gate PASS on all 180 frames. Hook pills
+measured centred to within 1.5px. Render 47s, zero credits.
+
 ## Status
 
-Not published. Not approved for publishing. That needs Max's explicit go,
-separately, every time.
+**Published to TikTok, 28 July 2026.** `PUBLISH_COMPLETE`, post id
+`7667548310357544224` (publish id `v_pub_url~v2.7667548146414897185`). Public,
+comments/duet/stitch open, AIGC declared, "Idea 15" by Gibran Alcocer attached at
+volume 60 with the video's own audio muted.
+
+This is the first Daisy Maison post to go out of this pipeline. There is no
+per-video TikTok analytics endpoint we can read without a signed request, so
+whether it worked will show up as a `heartCount` delta between daily snapshots
+from `tools/social_api/tiktok_public.py` — a proxy, not a measurement, and it
+must be quoted as one.
+
+Max's calls, recorded because they are his to make: **no commercial-content
+disclosure** (his own account, his own product, connection self-evident from the
+profile) and that track over the two alternatives.
+
+Instagram remains unpublished. Publishing needs Max's explicit go, separately,
+every time.

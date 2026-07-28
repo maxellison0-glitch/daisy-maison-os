@@ -19,21 +19,26 @@
       }
 
       /* The footage is natively 1080x1920, so it fills the frame edge to edge.
-         No cream bands, no letterbox, no push-in on a still. That difference is
-         the whole point of this piece - Max, 28 Jul 2026: "an image with video
-         formats around it is just a useless concept. If we're doing a video, it
-         needs to be a video." */
+         No cream bands, no letterbox, and deliberately NO tween of any kind on
+         this layer. The motion here was generated and is real; a synthetic
+         push-in laid on top would put us straight back to faking movement on a
+         picture, which is the thing this whole piece exists to stop doing. */
       #footage {
         position: absolute; left: 0; top: 0;
         width: 1080px; height: 1920px; display: block; object-fit: cover;
       }
 
-      /* Hooks sit in the TOP third. TikTok's own UI - caption, handle, music
-         ticker, the action rail - lives along the bottom and the right, so
-         anything placed there gets covered on the platform that matters most. */
-      .hook {
-        position: absolute; left: 0; top: 104px; width: 1080px;
-        display: flex; justify-content: center;
+      /* Everything overlaid lives in the TOP third. TikTok's own UI - caption,
+         handle, music ticker, action rail - occupies the bottom and the right.
+         It is also the only band the product never enters: measured on the
+         render, the sign occupies y 820-1030 and her face y 430-800, so nothing
+         above y ~430 can cover either. */
+      .band {
+        position: absolute; left: 0; top: 96px; width: 1080px;
+        display: flex; flex-direction: column; align-items: center;
+      }
+      #hook-inner {
+        display: flex; flex-direction: column; align-items: center; gap: 18px;
       }
       .pill {
         font-weight: 600; color: #4A3A2C;
@@ -42,14 +47,45 @@
         box-shadow: 0 6px 22px rgba(30, 25, 20, 0.28);
         font-size: 56px; padding: 30px 52px 36px;
       }
-      /* The sign-off is quieter than the hook on purpose: by then the product
-         has already done the talking and this only needs to say who made it. */
-      .pill.quiet { font-size: 44px; padding: 24px 44px 28px; }
-      /* 1400x480 wordmark. At 40px tall the strapline under DAISY MAISON was
-         a grey smudge on a phone - present, unreadable, worse than absent. */
-      .pill.quiet img {
-        height: 84px; display: block; margin: 0 auto 16px;
+      /* transform-origin matters: both hook lines scale and slide, and an
+         off-centre origin makes a centred pill drift sideways as it lands. */
+      #p1, #p2 { transform-origin: 50% 50%; will-change: transform, filter; }
+
+      /* The accent is an underline, not a coloured word. GRASS #68893C is a
+         real production colourway read from product-rules.json, but as type on
+         cream it sits near the AA floor, so the words stay ink #4A3A2C and the
+         colour does purely decorative work where contrast rules do not bite. */
+      .mark { position: relative; display: inline-block; }
+      .mark-bar {
+        position: absolute; left: 0; right: 0; bottom: -2px; height: 7px;
+        background: #68893C; border-radius: 4px; display: block;
+        transform: scaleX(0); transform-origin: left center;
       }
+
+      /* The outro mark is the circular brand roundel - the account's own
+         profile picture, cropped to the exact bounding box of the circle so a
+         50% radius lands on the drawn edge rather than shaving it or leaving a
+         white rim. It replaces the rectangular wordmark, which read as a slab
+         of cream dropped on the footage. */
+      #stamp-wrap {
+        position: relative; width: 232px; height: 232px; margin-bottom: 18px;
+      }
+      #roundel {
+        position: absolute; inset: 0;
+        width: 232px; height: 232px; border-radius: 50%;
+        display: block; object-fit: cover;
+        box-shadow: 0 10px 30px rgba(30, 25, 20, 0.30);
+        transform-origin: 50% 50%; will-change: transform, filter;
+      }
+      /* The impact ring: one expanding pulse released as the stamp lands, so
+         the arrival reads as a press rather than a fade. Decorative only. */
+      #ring {
+        position: absolute; left: -14px; top: -14px;
+        width: 260px; height: 260px; border-radius: 50%;
+        border: 5px solid #9AA192; opacity: 0;
+        transform-origin: 50% 50%; pointer-events: none;
+      }
+      .pill.quiet { font-size: 46px; padding: 26px 46px 32px; }
     </style>
   </head>
   <body>
@@ -75,29 +111,30 @@
 
       <!-- Three-component hook (ad-creative/hook-system): the VISUAL is her
            lifting the sign, the CAPTION is the post copy, and this on-screen
-           line is the third component. It must not restate either. So it does
-           not say "summer holidays" and it does not count days - the sign
-           already does both. It sets up the sign as the thing she could not
-           say out loud, and the reveal is the punchline. -->
-      <div id="hook-1" class="hook clip" data-start="0.2" data-duration="3.4" data-track-index="1">
+           line is the third component. None may restate another. So it never
+           says "summer holidays" and never counts days - the sign does both.
+           It sets up a claim; the product contradicts it. -->
+      <div id="hook" class="band clip" data-start="0.3" data-duration="3.3" data-track-index="1">
         <!-- Inner wrapper: the clip element's own visibility belongs to the
-             framework, so the exit tween and its hard kill live in here. Without
-             this split the lint gate fails with gsap_exit_missing_hard_kill and
-             a non-linear seek past 3.4s finds stale visibility. -->
-        <div id="hook-1-inner"><div class="pill">It felt rude to say it out loud.</div></div>
+             framework, so the exit tween and its hard kill live in here.
+             Without this split the lint gate fails with
+             gsap_exit_missing_hard_kill and a non-linear seek past 3.6s finds
+             stale visibility. -->
+        <div id="hook-inner">
+          <div id="p1" class="pill">She says she&rsquo;s fine.</div>
+          <div id="p2" class="pill">She is <span class="mark">not<i class="mark-bar"></i></span> fine.</div>
+        </div>
       </div>
 
-      <!-- 3.6s to 4.9s is deliberately empty. The sign is fully readable by
-           then and covering the payoff with more type is how the last one went
-           wrong. -->
+      <!-- 3.6s to 4.3s is deliberately empty. The sign is fully readable by
+           then and the payoff gets a beat to itself. -->
 
-      <div id="signoff" class="hook clip" data-start="4.9" data-duration="1.1" data-track-index="1">
-        <div id="signoff-inner">
-          <div class="pill quiet">
-            <img src="assets/wordmark.png" alt="Daisy Maison" />
-            Any wording you like.
-          </div>
+      <div id="outro" class="band clip" data-start="4.3" data-duration="1.7" data-track-index="1">
+        <div id="stamp-wrap">
+          <img id="roundel" src="assets/roundel.png" alt="Daisy Maison" />
+          <div id="ring"></div>
         </div>
+        <div class="pill quiet">What would yours say?</div>
       </div>
     </div>
 
@@ -105,15 +142,53 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // No tween on the footage. The motion is real motion that was generated;
-      // adding a synthetic push-in on top would put us straight back to faking
-      // movement on a picture.
+      // ONE tempo grid drives every entrance, so the piece locks to a pulse
+      // instead of drifting on hand-tuned offsets (hyperframes-animation
+      // rules/kinetic-beat-slam).
+      const PULSE = 0.4;
+      const BEATS = [PULSE * 1, PULSE * 4]; // 0.4 and 1.6 - 1.2s apart
 
-      tl.from("#hook-1-inner", { opacity: 0, y: -40, duration: 0.45, ease: "power3.out" }, 0.2);
-      tl.to("#hook-1-inner", { opacity: 0, y: -24, duration: 0.35, ease: "power2.in" }, 3.25);
-      tl.set("#hook-1-inner", { opacity: 0 }, 3.6);   // hard kill on the exit boundary
+      // Distinct entrance per line, not one reused helper. Line one lands as a
+      // scale-and-focus slam; line two snaps in from the side. Different axis,
+      // same ease family. No back.out anywhere: overshoot bounce is the single
+      // clearest tell of a machine-made video and it is never used here.
+      tl.fromTo("#p1",
+        { scale: 1.35, filter: "blur(14px)", opacity: 0 },
+        { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "power4.out" },
+        BEATS[0]);
 
-      tl.from("#signoff-inner", { opacity: 0, y: -28, duration: 0.45, ease: "power3.out" }, 4.9);
+      tl.fromTo("#p2",
+        { x: -300, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" },
+        BEATS[1]);
+
+      // The underline arrives a beat after the word it marks, so the eye reads
+      // the sentence first and the emphasis second.
+      tl.fromTo(".mark-bar",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.34, ease: "power2.out" },
+        BEATS[1] + PULSE);
+
+      tl.to("#hook-inner", { opacity: 0, y: -26, duration: 0.35, ease: "power2.in" }, 3.25);
+      tl.set("#hook-inner", { opacity: 0 }, 3.6);   // hard kill on the exit boundary
+
+      // The outro is a stamp press, which is what a circular seal wants to do:
+      // it arrives oversized and soft, snaps to size, and releases one ring on
+      // impact. Smooth settle (expo.out), no overshoot.
+      tl.fromTo("#roundel",
+        { scale: 1.5, filter: "blur(18px)", opacity: 0 },
+        { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.5, ease: "expo.out" },
+        4.35);
+
+      tl.fromTo("#ring",
+        { scale: 0.86, opacity: 0.85 },
+        { scale: 1.45, opacity: 0, duration: 0.6, ease: "power2.out" },
+        4.62);
+
+      tl.fromTo(".pill.quiet",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        4.95);
 
       window.__timelines["main"] = tl;
     </script>
