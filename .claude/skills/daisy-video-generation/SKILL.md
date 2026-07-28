@@ -30,8 +30,33 @@ generator*, and *propose, never publish*.
 Prices differ by duration, resolution, audio and model tier, and a guess has
 already been wrong.
 
+*And `get_cost` does not always preflight.* On 28 Jul 2026 `get_cost: true`
+passed at the **top level** of `generate_video` was silently ignored and the
+job ran — 18 credits for a prompt that said "test". On this tool the flag goes
+**inside `params`**, and the safest quote is a completed job's own price. If a
+preflight comes back with a job `id` and `status: "pending"`, it is not a
+preflight; it is a generation.
+
 **No paid generation without Max's explicit go in the conversation.** Not
 implied by a previous approval, not implied by "carry on".
+
+**NEVER GENERATE THE SAME PROMPT TWICE IN ONE BATCH.** Added 28 Jul 2026 by
+Max, after two identical 18-credit video takes: *"Don't ever make two videos of
+the exact same thing. That is such a waste of credits. We could have had two
+different styles… we could by contrast oppose it to Instagram and TikTok. Such
+a waste."*
+
+The still-image habit of "generate four, pick one" **does not transfer to
+video.** On stills a take costs 2 credits and the variance is the point. On
+video a take costs 18–54 and the same prompt returns the same idea twice, so
+the second take buys nothing but a coin flip on framing. If two video takes are
+worth paying for, the second one must differ in something a viewer would
+notice: a different hook beat, a different length, a different aspect for the
+other platform, a different bit of business. **Same footage twice is the one
+outcome that is never worth the credits.**
+
+The corollary: the way to de-risk video framing is not more takes, it is the
+`end_image` law below and a `start_image` that is already correct.
 
 Measured 24–28 Jul 2026 — see `Content Pipeline/VIDEO_MODEL_COSTS.md` for the
 full table:
