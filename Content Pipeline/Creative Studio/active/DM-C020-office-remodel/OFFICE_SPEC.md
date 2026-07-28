@@ -159,29 +159,52 @@ single fastest way to make this read as an advert instead of a workplace.
 
 ## The plates
 
-Six camera positions, each from a real photograph. Numbered by usefulness for
-video, not by how they were shot.
+Nine camera positions, each from a real photograph. Named by usefulness for
+video, not by the order they were shot.
 
-| Plate | Source | Why it matters |
-|---|---|---|
-| **A — machine bay, printer + laser** | `04-machine-room-printer-and-laser.jpg` | The hardest test. Two frozen machines in one frame. If this holds, the rest will. |
-| **B — two lasers, back wall** | `05-two-lasers-back-wall.jpg` | The "made in-house" proof shot. Symmetrical, deep, reads instantly. |
-| **C — stairs and main floor** | `02-stairs-and-main-floor.jpg` | Carries the sage stairs. The natural two-hander frame: one person on the stairs, one on the floor. |
-| **D — design desk and shelf** | `06-design-desk-and-shelf.jpg` | Chest-height bench, head-on. The natural *holding a sign* frame. |
-| **E — packing bench, long wall** | `03-packing-bench-long-wall.jpg` | Long clean run of bench. Good for a sign travelling through frame. |
-| **F — shutter bay and sign display** | `07-shutter-bay-and-sign-display.jpg` | Daylight, depth, and the row of signs on the beam. The establishing shot. |
+| Plate | Source | Why it matters | Agent pick |
+|---|---|---|---|
+| **A — machine bay** | `04-machine-room…` | The hardest test. Two frozen machines in one frame. | take-03 |
+| **B — two lasers, back wall** | `05-two-lasers…` | The "made in-house" proof shot. Symmetrical, deep, reads instantly. | take-03 |
+| **C — stairs and main floor** | `02-stairs…` | Carries the sage. The natural two-hander frame: one on the stairs, one on the floor. | take-01 |
+| **D — design desk and shelf** | `06-design-desk…` | Chest-height bench, head-on. The natural *holding a sign* frame. | take-04 |
+| **E — packing bench, long wall** | `03-packing-bench…` | Long clean run of bench. A sign travelling through frame. | take-01 |
+| **F — shutter bay** | `07-shutter-bay…` | Daylight, depth, the yard beyond. The establishing shot. | take-01 |
+| **G — entrance and understairs** | `08-entrance-door…` | Sage carried through at the other end of the building. | take-01 |
+| **H — packing bay** | `01-packing-bay…` | The biggest single change: box towers out, storage in. | take-04 |
+| **J — Max's own corner** | `09-max-personal-desk…` | Sit-stand desk, PC preserved. Not a video plate — a plan for a real refit. | take-04 |
 
-Plate A runs first as a **cheap proof pass**. Nothing else is generated until
-Max has looked at it, per `CLAUDE.md`: cheap proof pass before expensive
-renders, human look before any batch.
+---
+
+## What was learned running them
+
+**The framing fix worked.** Plate A lost its viewpoint on all four takes despite
+being told three ways not to move the camera. Plates B–J instead named **what
+must remain visible at each edge** — *"the ceiling ribs across the whole top
+edge"*, *"both laser cabinets complete, neither cropped"*, *"the floor unbroken
+down to the bottom edge"* — and the framing held on most takes.
+
+**Constraints on content survive. Constraints on the camera do not.** That is
+now the rule for any editing prompt in this repo, not just office plates.
+
+**Excluding signage beats requesting it.** Not one gibberish word appeared in
+any plate where the wall signs were removed from the brief. The one failure —
+plate B take-01 — is a wall sign the model *kept* from the source rather than
+one it invented.
+
+**Two real failures worth naming:**
+- Plate F take-03 rendered the roller shutter **closed**. That is a change to
+  the building, not to the clutter, and it is an automatic reject.
+- Plate E returned three takes, not four; the fourth was still generating when
+  the batch was collected. It was not dropped for quality.
 
 ---
 
 ## Cost
 
-`nano_banana_pro` at 2k: **2 credits per take**, preflighted with `get_cost` on
-28 Jul 2026. Four takes per plate = 8 credits. Six plates = 48 credits if every
-one runs, against a balance of 885.
+`nano_banana_pro` at 2k: **2 credits per take**, preflighted with `get_cost`.
+Plate A 8 credits + 31 further takes = **70 credits total**, from a balance of
+885 before the run.
 
 ---
 
@@ -189,8 +212,11 @@ one runs, against a balance of 885.
 
 | | |
 |---|---|
-| Source photos | held, one masked for PII |
+| Source photos | held, nine views |
 | Spec | this file |
-| Plate A | proof pass |
-| Plates B–F | **not started — gated on Max's verdict on A** |
-| Freya/Alan in-office locks | not started, downstream of approved plates |
+| Plates A–J | **generated, agent-passed, awaiting Max** |
+| Freya/Alan in-office locks | not started — downstream of an approved plate set |
+
+Next, once a plate set is approved: put Alan against plate C or D at his black-tee
+lock, one cheap test, and see whether he survives the move out of the workshop.
+Then the two-hander.

@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-H-packing-bay",
+  "title": "Packing bay - the biggest single change in the building",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/01-packing-bay-boxes-and-desk.jpg",
+      "media_id": "3c9e8b18-6ccf-4487-8eca-4b3d524d1731",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "dfeedf4f-ae45-47f5-bff4-3db2665c4ddd",
+      "path": "outputs/take-01.png",
+      "sha256": "70c84c3c7bd82f065732cfd54cbc62c7617efed22dd503cf0b4561ae039842b2",
+      "agent_qc": "candidate",
+      "note": "candidate - box towers gone, shelving reads well, but the shutter guide rail is softened"
+    },
+    {
+      "take": "02",
+      "job_id": "8c762299-5de0-4221-a22e-7e2af65b6712",
+      "path": "outputs/take-02.png",
+      "sha256": "f57af73c653db8166e1463fc74b65704bf98fbeccc35e6e390fe54e9352d7af1",
+      "agent_qc": "candidate",
+      "note": "candidate - good, slightly tighter"
+    },
+    {
+      "take": "03",
+      "job_id": "b9e043cf-9451-4961-b960-5fbb6743dc00",
+      "path": "outputs/take-03.png",
+      "sha256": "5feac43d0560af110f48c576fc1e32cc6d4786cf92e248355af4650f82736366",
+      "agent_qc": "candidate",
+      "note": "candidate - strong, but the worktop run is shortened at the left"
+    },
+    {
+      "take": "04",
+      "job_id": "7d2584bf-b77c-44d5-8fe4-12619974a58c",
+      "path": "outputs/take-04.png",
+      "sha256": "0deb3c8ab0c6c80a4ddd852f08432cf9e730107e02569cfbeddb1154dffa18ab",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - widest, keeps the sage wall band, the shutter rail, the monitor, both plants and the full worktop run. The four kraft boxes sit in the timber unit as briefed"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "04",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

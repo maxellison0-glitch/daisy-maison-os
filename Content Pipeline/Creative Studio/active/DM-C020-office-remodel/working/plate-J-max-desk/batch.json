@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-J-max-desk",
+  "title": "Max's own corner - sit-stand desk, PC preserved",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/09-max-personal-desk.jpg",
+      "media_id": "60a1f508-e035-494a-a49c-61f5add50ca7",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "a91c1fe3-8cf4-45e3-9a82-f0d0d6de357c",
+      "path": "outputs/take-01.png",
+      "sha256": "2fb3ebb321e85cb5e928e4369d670f936a6d2459504639c046a00507fb9ff449",
+      "agent_qc": "candidate",
+      "note": "candidate - clean sit-stand desk and correct PC, but the plant and ribbon reels are gone from the shelf"
+    },
+    {
+      "take": "02",
+      "job_id": "404ef296-77e0-4350-b1d1-2dc0f7a38096",
+      "path": "outputs/take-02.png",
+      "sha256": "69962b04f554aceb743fdbfae71a196507aa2573e7472a36c19ec705bf6df85e",
+      "agent_qc": "candidate",
+      "note": "candidate - good, the monitor is pushed left of centre and the desk reads short"
+    },
+    {
+      "take": "03",
+      "job_id": "d291ab79-1aea-4b91-892f-d83c89a69891",
+      "path": "outputs/take-03.png",
+      "sha256": "dfacc2ab875a7471b5e3b306dbaff52c2841bb114d130ea4ca0692e52864df23",
+      "agent_qc": "reject",
+      "note": "reject - the task chair is dragged into the middle of the frame and blocks the desk"
+    },
+    {
+      "take": "04",
+      "job_id": "ce48451a-271f-48fe-bdce-f77e498c46b0",
+      "path": "outputs/take-04.png",
+      "sha256": "6f8e04e294e8765e72216ece75d1de92cf7077cd97856549b062d8597fef9873",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - the fullest: sit-stand frame with control panel, terracotta mat, PC with its purple glow and aerial, label printer, mint keyboard, timber riser, both plants, ribbon reels, kraft boxes, lamp, chair, and the sage wall band kept"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "04",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

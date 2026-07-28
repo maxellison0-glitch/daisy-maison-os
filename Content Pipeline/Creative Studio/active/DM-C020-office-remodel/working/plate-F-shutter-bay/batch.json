@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-F-shutter-bay",
+  "title": "Shutter bay - the establishing shot",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/07-shutter-bay-and-sign-display.jpg",
+      "media_id": "90b79896-b1b6-4e50-a2e3-d5fb006fcff6",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "13fd1b33-8723-4282-b348-bdc48e51ab26",
+      "path": "outputs/take-01.png",
+      "sha256": "828e802459b9bb4c79919b7116cfed218122a9b69beefe109353af4e008e84f6",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - open personnel door with the yard and a vehicle beyond, both windows kept, exit pictogram kept, shutter gear correct, benches clear, stool placed"
+    },
+    {
+      "take": "02",
+      "job_id": "d9548eac-14ba-42e2-bb96-a4b26d4d5b38",
+      "path": "outputs/take-02.png",
+      "sha256": "bc423a5865d0e827a163e1b813df91d368c258511a5b2d9b7c7f1eecd7a83a8e",
+      "agent_qc": "candidate",
+      "note": "candidate - the yard blows out to white and the windows are lost"
+    },
+    {
+      "take": "03",
+      "job_id": "4ac7ba5f-3c49-4d1f-8608-1b082b5b38c9",
+      "path": "outputs/take-03.png",
+      "sha256": "60a48d36df277dd2058a8c6424ba220bdca7ac2623f7c50a4c0027f63aca8e2e",
+      "agent_qc": "reject",
+      "note": "reject - the roller shutter is rendered CLOSED. That changes the building, not the clutter"
+    },
+    {
+      "take": "04",
+      "job_id": "cfd6f51f-f43a-4cd9-bffd-5ff3990a89ae",
+      "path": "outputs/take-04.png",
+      "sha256": "97d12b37dbbf35df5420c648966f8608f0898982caf95eb365647e1b4fe928e4",
+      "agent_qc": "candidate",
+      "note": "candidate - correct but the ceiling reads dark and heavy against the rest of the set"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "01",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}

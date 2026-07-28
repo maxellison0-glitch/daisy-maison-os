@@ -1,0 +1,73 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-C-stairs-sage",
+  "title": "The staircase in Daisy Maison sage - the two-hander frame",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "spec": "../../OFFICE_SPEC.md",
+  "prompt": "prompt.txt",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/02-stairs-and-main-floor.jpg",
+      "media_id": "21e1130c-7f28-4795-a858-8c66a457a3ad",
+      "answers": "the building, the camera position, and the identity of everything kept",
+      "not_taken_from_it": "the clutter, the floor marking, the wall signage"
+    }
+  ],
+  "human_approval_required": true,
+  "take_count": 4,
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "718c757a-af4a-4541-92f3-a1119cb41042",
+      "path": "outputs/take-01.png",
+      "sha256": "742a6405b0554aed524f7ca8f7d0f2ea35e3df825ecddb27e8a929c081eb0a0f",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "recommended - holds the source framing best: whole flight, benches receding left, ceiling across the top, clay band on the soffit edge. Sage reads correctly against #9AA192"
+    },
+    {
+      "take": "02",
+      "job_id": "adce636c-feec-4ca7-a343-5f753f1aa9e0",
+      "path": "outputs/take-02.png",
+      "sha256": "1687a3212c2b37ca359fa2da27e2a4df4a1da0a6becd89ea36864d82917b0b24",
+      "agent_qc": "reject",
+      "note": "reject - zoomed hard into the staircase, lost the workshop on the left entirely"
+    },
+    {
+      "take": "03",
+      "job_id": "92658bde-ed76-4ac8-8eae-ab622b089537",
+      "path": "outputs/take-03.png",
+      "sha256": "a7532b177f1afe531a62e8431fb3f7675ff44a482afe326740874cb5c5bab5be",
+      "agent_qc": "candidate",
+      "note": "candidate - good sage, good floor, but the flight is pushed to the right and the soffit band is lost"
+    },
+    {
+      "take": "04",
+      "job_id": "266ea70b-9214-4b43-9933-a936b39d22d0",
+      "path": "outputs/take-04.png",
+      "sha256": "e4eb6c1ad5940b4f93b10520b5480fe3e925c2f5c88c0cbb5f6e51bb6db63551",
+      "agent_qc": "candidate",
+      "note": "candidate - strong and clean, slightly tighter than the source"
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then each take"
+  },
+  "recommended_take": "01",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready."
+  }
+}
