@@ -1,0 +1,30 @@
+EDIT THE REFERENCE PHOTOGRAPH. Same room, same building, same camera position, same lens, same viewpoint and same framing. This is a refurbishment of a real UK light-industrial unit, not a redesign. Return a plain phone photograph of the same corner after a tidy-up and repaint.
+
+COPY EXACTLY, DO NOT REINTERPRET - these four machines are the product and must be reproduced identically in the same positions, same sizes, same colours, same wear:
+1. The long low black-and-cream UV flatbed printer along the left wall, with its lettering on the black front skirt, its control head at the left end and the dark ink-bottle unit on top.
+2. The smaller cream-and-black machine standing on a heavy black welded steel frame in front of it, with its GREEN-TINTED hinged glass lid, black control panel and RED emergency stop button. Keep the stacked timber blanks and white sheet stock on the shelf under its frame.
+3. The large RED AND WHITE laser cutter cabinet on castors to the right, red upper band, glass-topped lid with a red frame, cream lower body.
+4. Keep the small white desk fan and the wall socket.
+
+KEEP THE BUILDING: exposed galvanised steel profile-deck ceiling with deep trapezoidal ribs, painted white blockwork walls with the mortar courses still clearly visible, pale sealed concrete floor, the same daylight.
+
+CHANGES TO MAKE:
+- Remove all clutter: the white and printed foam-board panels leaning against the machines, the white lattice panel, the grey wheelie bin in the lower left, the loose scraps and dust on the floor, the cloth draped on the machine lid, the small bottle on top of the printer.
+- Resurface the floor: the same pale sealed concrete, now even, matte and clean, with no stains, scuffs or debris. Matte, not polished, not glossy epoxy.
+- Repaint the blockwork walls fresh clean white but KEEP the mortar course lines visible.
+- Add one clay-terracotta powder-coated metal step stool, muted brick-orange, standing on the floor to the right.
+- Add two kraft-brown storage boxes with muted clay-terracotta lids, squared off neatly on the small timber shelf area.
+- Add one small green pothos plant in a plain white ceramic pot.
+
+STRICT: no people anywhere. No readable writing, no legible words, no signage, no posters, no labels, no notices on the walls. Any small decorative street-sign shapes must be turned face-away or edge-on so no lettering is visible. Keep the machines' own moulded branding as it appears in the reference. No new machines. No new doors or windows. Do not move anything. Do not change the ceiling.
+
+LIGHTING: flat, even, cool-neutral daylight exactly as in the reference. No golden hour, no warm sunset light, no rim lighting, no haze, no lens flare, no dramatic shadows. It must look like an ordinary phone snapshot of a real working unit, slightly imperfect, not an architectural render and not a commercial photograph.
+
+---
+
+LESSON, 28 Jul 2026: this prompt says "same camera position ... same framing" three
+different ways and the model tightened the crop anyway on all four takes. Saying it
+again will not fix it. If the next plate must hold its framing, try naming what has to
+remain VISIBLE at each edge ("the floor must stay visible to the bottom edge, the wall
+corner must stay in frame at the right") rather than asking for the camera not to move.
+Constraints on content survive; constraints on the camera did not.

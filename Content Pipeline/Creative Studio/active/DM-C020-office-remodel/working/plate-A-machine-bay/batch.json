@@ -1,0 +1,88 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "plate-A-machine-bay",
+  "status": "agent-pass-awaiting-max",
+  "purpose": "Proof pass. Remodel the real machine bay while reproducing the printer and lasers exactly. Hardest plate first: two frozen machines in one frame. Nothing else is generated until Max has looked at this.",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "prompt_variation": false,
+  "spec": "../../OFFICE_SPEC.md",
+  "references": [
+    {
+      "role": "image",
+      "path": "source/real-office-photos/04-machine-room-printer-and-laser.jpg",
+      "media_id": "4b570d3b-ebfd-4aa9-8069-ddb2b881e329",
+      "answers": "the building, the camera position, and the exact identity of every machine",
+      "not_taken_from_it": "the clutter, the floor marking, the leaning panels"
+    }
+  ],
+  "human_approval_required": true,
+  "job_ids": [
+    "956eaacb-2560-4991-b54c-81ae28009473",
+    "5224ca11-c7e7-427c-a708-668872f5475e",
+    "ce1cf459-6964-4b78-a3ac-02c57a5eed62",
+    "2f1e2b76-7a74-43c8-8ee6-d8b1277d31a6"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "956eaacb-2560-4991-b54c-81ae28009473",
+      "path": "outputs/take-01.png",
+      "sha256": "b62adb068ee0a5cccaaafcf3c0be289599aeda25af5ed74656b90f84021d3b59",
+      "agent_qc": "reject",
+      "note": "Printer lettering correct. But the laser cabinet loses its glass lid and reads as a plain red box, and a stray white panel edge appears bottom-left. Machine fidelity failure."
+    },
+    {
+      "take": "02",
+      "job_id": "5224ca11-c7e7-427c-a708-668872f5475e",
+      "path": "outputs/take-02.png",
+      "sha256": "779f9401d50cefaa36f3ea3d13aea1f191f1248b816fc89e7c64c17050130976",
+      "agent_qc": "candidate",
+      "note": "Cleanest floor and the most natural placement of the clay accents. But the printer's moulded model lettering is gone, and the laser gains an extra lower red band it does not have."
+    },
+    {
+      "take": "03",
+      "job_id": "ce1cf459-6964-4b78-a3ac-02c57a5eed62",
+      "path": "outputs/take-03.png",
+      "sha256": "1df267856ed2178abb15f8c8d12ef6f83a7308ee173db07464a56622c49118e8",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "Holds the source framing best of the four, and the only take where the printer's model lettering reads correctly AND the laser keeps its glass lid, red frame and castors. Kraft boxes sit on the machine stand rather than the floor, which is tidier and more plausible."
+    },
+    {
+      "take": "04",
+      "job_id": "2f1e2b76-7a74-43c8-8ee6-d8b1277d31a6",
+      "path": "outputs/take-04.png",
+      "sha256": "6d4f2cac712dc4f1c99a15ee57a867fbdd88d29b92ed9c33a0e31f44e38fbc94",
+      "agent_qc": "candidate",
+      "note": "Very clean, machines correct, but the tightest crop of the four so the printer lettering is cut off at the frame edge and the corner of the room is lost."
+    }
+  ],
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "left to right: real source photograph, then takes 01-04"
+  },
+  "agent_findings": [
+    "PASS - the frozen machines survived. All four takes reproduce the black-and-cream UV flatbed printer, the green-lidded machine with its red emergency stop on the black welded steel stand, the timber blanks and white sheet stock beneath it, and the red-and-white laser cabinet on castors.",
+    "PASS - the building survived. Galvanised profile-deck ceiling, white blockwork with mortar courses still visible, pale sealed concrete, flat cool daylight. It does not read as an architectural render.",
+    "PASS - the declutter worked. Foam-board panels, lattice panel, wheelie bin, draped cloth and floor debris are gone in every take.",
+    "PASS - no readable gibberish text appeared anywhere. Excluding signage from the brief was the right call.",
+    "FAIL, all four - the camera moved. Every take is tighter than the source photograph. Rule 4 of the spec says the viewpoint must not move, and it did. Acceptable for a background plate; not acceptable if these plates are to be used as a dimensional map or matched to each other."
+  ],
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "credits_before": 885.12,
+    "get_cost_preflighted": true
+  },
+  "quoted_date": "2026-07-28",
+  "generated_date": "2026-07-28",
+  "human_approval": {
+    "status": "pending",
+    "note": "Agent may reject an obvious failure but may not mark a take production-ready. Plates B-F are blocked on Max's verdict here."
+  }
+}
