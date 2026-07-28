@@ -6,10 +6,45 @@ effects… On competitors, again, let's go to GitHub… Let's do some proper
 research. Let's get this right and then implement them directly into this
 project so we don't just waste time."*
 
-**Headline: almost nothing needed installing. Two of the five gaps were already
-solved by skills sitting in this repo unused, and two are hardware or platform
-limits that no skill can fix.** What follows is the evidence, so this survey
-does not get repeated in three weeks.
+**First pass of this file concluded "almost nothing needs installing." Max:
+*"disappointing, no external skills added."* He was right and the survey was
+too thin — it searched for *Claude skills* and stopped, when the useful thing
+was ordinary open-source tooling. Second pass added four packages and one of
+them broke a limit this repo had written down as permanent.** Section 0 is the
+result; the rest is the original survey, still accurate on its own terms.
+
+---
+
+## 0. INSTALLED, and what each one bought
+
+| Package | What it unlocked | Verified |
+|---|---|---|
+| **`yt-dlp`** | **per-post TikTok views, likes, captions, dates — with no login** | 9 posts off @daisymaison, views 3–796 |
+| **`yt-dlp`** | **downloading any public post so its frames can be LOOKED at** | pulled the Bond turnaround, 5-frame sheet |
+| `gallery-dl` | Instagram/TikTok media fetch, second route if yt-dlp's breaks | installed, 1.32.8 |
+| `pedalboard` | real audio effects (Spotify's lib) for sound design beyond raw SFX | installed, 0.9.24 |
+
+**The headline: `daisy-social-analytics` stated flatly that TikTok has no
+per-post data and that a per-post TikTok figure must never be quoted. That is
+now false, and the skill has been corrected.** `yt-dlp`'s extractor reads the
+same metadata the web player uses. New tool:
+`Content Pipeline/tools/social_api/tiktok_posts.py`.
+
+**It also closes the gap section 4 called unclosable.** `look` downloads a post
+and renders a contact sheet, so a competitor's content can be judged on how it
+*looks*, not only on what it *earned*.
+
+**Two failures worth keeping:**
+- **Do not install `curl_cffi` / yt-dlp's impersonation extra.** It does its own
+  TLS handshake and this container's agent proxy resets it — every request died
+  with `curl: (35) Recv failure`. Installed, broke everything, removed.
+- **`rembg` did not install cleanly** (needs an onnxruntime extra). Not pursued,
+  because nothing currently needs background removal.
+
+**A `0` like count means "not returned", not "no likes"** — missing on 3 of 9
+posts, present on the rest. Views were present on every post.
+
+---
 
 ---
 

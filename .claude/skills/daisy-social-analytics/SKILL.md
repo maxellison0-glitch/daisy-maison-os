@@ -42,13 +42,37 @@ series is the *only* way to get a daily number at all.
 | Reach, saves, shares, profile visits | no — needs the Meta token | no |
 | Cumulative lifetime likes | no | **yes** — this is the useful one |
 
-**TikTok has no per-post data.** The grid loads from a signed endpoint that
-returns an empty body without TikTok's own obfuscated signature, and the browser
-cannot reach tiktok.com through this container's proxy. Do not quote a per-post
-TikTok figure. What you *can* do is diff `hearts_total` between two daily
-snapshots — that difference is the likes earned in between. If more than one
-post went live in that window, the number cannot be attributed to either, and
-you must say so.
+**TikTok per-post data: SOLVED 28 Jul 2026. The paragraph below used to say it
+was impossible. It was wrong.**
+
+```bash
+python3 tiktok_posts.py posts --user daisymaison --limit 12 --save
+python3 tiktok_posts.py look  --url <tiktok video url>      # SEE the post
+```
+
+`yt-dlp`'s TikTok extractor reads the same metadata the web player uses and
+returns **per-post view counts, like counts, captions and dates with no login**.
+Measured the day it was added, on @daisymaison: nine posts, views 3–796.
+
+`look` goes further and closes the gap this skill could not: it **downloads a
+post and lays its frames out as a contact sheet**, so a competitor's content can
+be judged on how it looks, not only on what it earned. `ig_public.py` returns
+numbers and captions and never images; this does images.
+
+Two things that will bite:
+
+- **Never install `curl_cffi` / yt-dlp's impersonation extra.** It performs its
+  own TLS handshake and this container's agent proxy resets it — every request
+  dies with `curl: (35) Recv failure`. It was installed once, broke every pull,
+  and was removed. yt-dlp's native networking works.
+- **A `0` like count means "not returned", not "no likes."** It came back
+  missing on 3 of 9 posts and real on the rest. View counts were present on
+  every post. Quote views; call a missing like count missing.
+
+*What the old approach could do, kept because it still works as a cross-check:*
+diff `hearts_total` between two daily `tiktok_public.py` snapshots for total
+likes earned in between. If more than one post went live in that window the
+number cannot be attributed to either, and you must say so.
 
 ## The numbers that actually decide something
 
