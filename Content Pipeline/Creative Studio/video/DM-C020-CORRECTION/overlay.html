@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"TikTok Sans";src:url("fonts/TikTokSans-ExtraBold.woff2") format("woff2");font-weight:800}
+@font-face{font-family:"TikTok Sans";src:url("fonts/TikTokSans-Black.woff2") format("woff2");font-weight:900}
+@font-face{font-family:"Poppins";src:url("fonts/Poppins-SemiBold.woff2") format("woff2");font-weight:600}
+
+:root{
+  --ink:#0E0E0E; --paper:#FFFFFF;
+  --pill-white:rgba(255,255,255,0.94);
+  --pill-dark:rgba(14,14,14,0.80);
+  --burgundy:#6E1B2D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
+
+/* ---- shared placement rails. Safe inset 80px; never below y=1500. ---- */
+.rail{position:absolute;left:80px;width:920px;display:flex;flex-direction:column;
+      align-items:center;gap:14px;text-align:center}
+.rail.top{top:270px}      /* clears the notch, sits in the top third        */
+.rail.upper{top:430px}    /* just above the heads                           */
+.rail.low{top:1180px}     /* above TikTok's ~420px bottom UI band           */
+
+/* =======================  STYLE A — TIKTOK NATIVE  ====================== */
+/* White pill, ink text, one burgundy keyword pill. TikTok Sans 800.       */
+.a .line{display:inline-block;font-family:"TikTok Sans";font-weight:800;
+  font-size:78px;line-height:1.12;letter-spacing:-0.01em;color:var(--ink);
+  background:var(--pill-white);border-radius:999px;padding:0.24em 0.60em;
+  box-shadow:0 4px 14px rgba(0,0,0,0.16);white-space:nowrap}
+.a .line.two{border-radius:22px;white-space:normal;max-width:920px}
+.a .key{display:inline-block;font-family:"TikTok Sans";font-weight:800;
+  font-size:78px;line-height:1.12;letter-spacing:-0.01em;color:var(--paper);
+  background:var(--burgundy);border-radius:999px;padding:0.24em 0.60em;
+  box-shadow:0 4px 14px rgba(0,0,0,0.16);white-space:nowrap}
+
+/* =======================  STYLE B — DOCUMENTARY  ======================== */
+/* No pill. Poppins 600, paper text, crisp stroke via paint-order.         */
+/* Warmer, quieter, reads like a note rather than a caption.               */
+.b .line{font-family:"Poppins";font-weight:600;font-size:66px;line-height:1.20;
+  letter-spacing:-0.005em;color:var(--paper);
+  -webkit-text-stroke:6px rgba(14,14,14,0.55);paint-order:stroke fill}
+.b .line.small{font-size:52px;opacity:0.92}
+.b .rule{width:120px;height:5px;background:var(--paper);border-radius:3px;
+  opacity:0.9;margin:6px 0}
+</style>
+<body></body>
