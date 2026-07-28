@@ -141,27 +141,13 @@ if d: os.makedirs(d, exist_ok=True)
 
 # ---- constants ----
 BORDER=P["border"]; VSCALE=1.4; COLOR="#010101"; PANEL="#FFFFFF"
-# ---- REAL colourways, sampled from the live listing swatch (Mow-It-Swatch-Final).
-# These are the ONLY five colours the product is sold in, and the panel is the
-# same warm cream across all of them. The guard is a hard fail rather than a
-# fallback on purpose: a typo that silently renders a plausible-looking colour
-# the shop does not sell reaches a customer as a printed sign.
-COLOURWAYS = {
-    "BLACK": ("#000000", "#F2EEE3"),
-    "GREY":  ("#7C7C7E", "#F2EEE3"),
-    "SAGE":  ("#BEC0AA", "#F2EEE3"),
-    "GRASS": ("#6E8F40", "#F2EEE3"),
-    "BLUE":  ("#7A9EAA", "#F2EEE3"),
-}
-_cw = os.environ.get("SIGN_COLOURWAY")
-if _cw:
-    _key = _cw.strip().upper()
-    if _key not in COLOURWAYS:
-        raise SystemExit("Unknown colourway %r. Real options: %s"
-                         % (_cw, ", ".join(COLOURWAYS)))
-    COLOR, PANEL = COLOURWAYS[_key]
-# Unset leaves the legacy black-on-pure-white master untouched, which is what
-# every existing print path already expects.
+# Colour is deliberately NOT a build.py concern. It is applied downstream by
+# production/recolour-sign.ps1, which resolves it per SKU from
+# production/product-rules.json and throws on anything unknown. That split is
+# the file's own stated rule - "colour is orthogonal, so it is safer to
+# transform the finished SVG than to add colour branching inside the generator
+# and risk the approved geometry" - and a SIGN_COLOURWAY override was briefly
+# added here on 28 Jul 2026 in ignorance of it, then removed. Do not re-add it.
 MAX_FS=P["maxFs"]           # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule
 CAP_CENTER_Y=P["capCenterY"]   # vertical centre of the name caps (mm), from real NASH at Large
