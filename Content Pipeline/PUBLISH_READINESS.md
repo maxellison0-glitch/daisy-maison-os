@@ -161,3 +161,31 @@ about before the next batch, not a one-time fluke to shrug off.
   method.
 - Let "fully automated" mean "unreviewed." See `AUTOMATION.md` for exactly
   where the human checkpoint stays and why.
+
+## Hard gate: every published still carries an on-screen hook
+
+Added 28 Jul 2026. Max: *"zero on screen hooks can't expect them to perform
+well."* He was right and it cost a live post.
+
+**No still, carousel slide or photo post ships without burnt-in hook text.** Not
+"usually". Not "unless the photograph is nice". The caption is not the hook — on
+TikTok and Reels the caption is collapsed behind a tap, so a product photograph
+with no text on it is a scroll-past no matter how good the photograph is.
+
+How it happened, so it doesn't again: the hooks for the graduation carousel were
+written in the morning and then dropped at export, because the generated
+photographs looked strong enough on their own. They weren't. The DM-HOUSE-QUIZ
+and diffuser carousels both carried pills and both were built by the same
+process — the difference was a silent decision made at the last step with no
+gate to catch it.
+
+The check, before any upload:
+
+1. Open every frame. Is there hook text on it? If any frame has none, stop.
+2. On a carousel, does slide 1 set up a loop that a later slide closes? Two
+   pretty photographs side by side is not a carousel, it is two photographs.
+3. Is the pill clear of the platform's UI - top ~120px, and on 9:16 the bottom
+   ~450px where the caption and buttons sit?
+
+Treat a missing hook exactly like a missing colourway check: it is not a taste
+call, it is a fault, and the post does not go.
