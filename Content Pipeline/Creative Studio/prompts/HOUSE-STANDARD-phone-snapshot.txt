@@ -1,0 +1,89 @@
+HOUSE STANDARD — THE PHONE-SNAPSHOT PASS
+Applies to EVERY image with a person in it, from 25 Jul 2026, until Max says otherwise.
+
+Max's instruction: "I think you should do that for probably everything until I say
+otherwise. iPhone or whatever you use."
+
+WHY THIS EXISTS
+---------------
+Max passed a polished studio-quality image of Freya holding a sign and then said:
+"it looks like AI still because it looks too good, so we have to almost tone down."
+
+He was right, and the cause is specific. A rendered image is missing the things
+that GO WRONG in a real photograph. Flawlessness is the tell. Both faults he has
+caught are absences, not errors:
+
+  - absent ink contrast   -> vector black stays #000, real ink never does
+  - absent camera defect  -> no vignette, no noise, no missed focus, no blemish
+
+So the fix is always to ADD FLAWS, never to add quality.
+
+Tested side by side on the same scene, same sign, same person, only the camera
+changed. Max's verdict: the phone snapshot won. "Number three just has a slightly
+more real effect, which is interesting because you put 'phone snapshot'."
+
+THE SINGLE MOST EFFECTIVE DETAIL
+--------------------------------
+Put the focus on the SIGN, not the face. A real person photographing a sign
+focuses on the sign; an advertising photographer focuses on the model. That one
+choice shifts believability more than the grain and the vignette combined.
+
+THE BLOCK — paste into any prompt with a person in it
+----------------------------------------------------
+
+Photograph this as an ordinary snapshot taken on a modern mobile phone by a family
+member, NOT as a commercial photograph.
+
+- Unretouched skin. Visible pores, some unevenness, faint shine on the forehead
+  and nose, ordinary under-eye tone, small blemishes or irregular freckling. Do
+  NOT smooth, slim or beautify the face.
+- Hair slightly imperfect: a few loose strands out of place, one strand across the
+  shoulder, not styled.
+- Ordinary mixed indoor light, slightly cooler and flatter than studio light. Mild
+  colour cast from the window. Nothing dramatic or sculpted. No rim light.
+- Real phone-lens character: gentle corner vignette, very slight chromatic
+  fringing on high-contrast edges, mild barrel distortion, corners marginally
+  softer than the centre.
+- Visible luminance noise in the shadows and darker parts of the room, as a phone
+  sensor produces indoors.
+- A trace of hand-held motion blur. FOCUS SHARPEST ON THE PRODUCT, marginally
+  soft on the face.
+- Framing casually imperfect: horizon a fraction off level, subject not exactly
+  centred, uneven headroom.
+- Expression relaxed and ordinary rather than posed. Small natural half-smile,
+  eyes not perfectly symmetrical.
+
+AVOID: beauty retouching, skin smoothing, studio lighting, rim light, catalogue
+polish, HDR look, oversaturation, perfect symmetry.
+
+WHAT THIS BLOCK MUST NEVER TOUCH
+--------------------------------
+The product. Wording, colourway, border geometry, silhouette, size and position in
+frame all stay exactly as locked. This pass changes the CAMERA, not the sign. Run
+it as an edit on an already-approved image ("MAKE EXACTLY ONE CHANGE — THE
+CAMERA") rather than folding it into the original generation, so the product
+cannot drift while the polish comes off.
+
+And still no mounting holes: SIGN_HOLES=0.
+
+LINE 2 IS ALWAYS REGULAR WEIGHT. Never bold.
+Tested and rejected 25 Jul 2026 — "the bold makes the text way too big. I would
+definitely take it back to the non-bold for everything on line two." It also matches
+the real product: both live landing-page heroes show line 2 in regular weight.
+
+SIGN_STRETCH is a judgement call, not a default. Use it where a short wording leaves
+an obviously empty plate (MUM'S TAXI sat at 71% of the plate width), but the live
+listing photos show line 1 at its natural width, so do not apply it blindly.
+
+LINE 2 IS ALSO ALWAYS SMALL, NOT JUST REGULAR WEIGHT.
+Added 27 Jul 2026 after Max: "line 2 is getting too big for our street signs."
+Saying "regular weight, never bold" is not enough - the model keeps growing line 2
+until it fills the panel width, which is not what the product looks like. Pin the
+SIZE explicitly, against the reference rather than in the abstract:
+
+  Line 2 must be SMALL and delicate: exactly the same cap height, stroke weight
+  and letter-spacing as the words NO TIPS, NO THANKS in the source photograph.
+  Roughly one third the cap height of line 1. It sits short and centred with
+  generous empty cream either side. Do not let it grow to fill the panel width.
+
+That wording produced the approved image on the first retry.

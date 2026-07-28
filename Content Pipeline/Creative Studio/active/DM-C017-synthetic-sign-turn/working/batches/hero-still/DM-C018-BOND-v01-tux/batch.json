@@ -1,0 +1,45 @@
+{
+  "concept_id": "DM-C018-BOND",
+  "batch": "hero-still-DM-C018-BOND-v01-tux",
+  "stage": "Stage 4 — synthetic-Max hero (reveal end frame)",
+  "status": "human-approved-hero-checkpoint",
+  "theme_note": "Wardrobe nod: black tuxedo (007-flavoured). Theme is wardrobe only; the exact sign and workshop are unchanged. No James Bond/007 IP marks.",
+  "model": "nano_banana_flash",
+  "model_requested": "nano_banana_2",
+  "display_name": "Nano Banana 2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "prompt_variation": false,
+  "prompt_source": "../../../runs/DM-C018-BOND/prompts/02-synthetic-max-hero-TUX-final.txt",
+  "prompt_hardening": "Synthesized by a 3-draft adversarial judge-panel workflow before spend (wf_138952f8-666).",
+  "references": [
+    {
+      "role": "max_approved_locked_bond_sign",
+      "path": "working/batches/product-calibration/DM-C018-BOND-v01-locked-real-sign-edit/outputs/take-03.jpg",
+      "media_id": "6fd12cfa-96be-470a-8bfd-bf20b586d036"
+    },
+    {
+      "role": "consented_synthetic_max_identity_workshop_pose",
+      "path": "working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg",
+      "media_id": "da846431-5dcf-46d7-b496-5ebd7e13087c",
+      "note": "Max-approved prior (Jannaway) hero. Used for identity/workshop/pose only; its sign and black T-shirt were replaced."
+    }
+  ],
+  "product_surface_compositing_allowed": false,
+  "human_approval_required_before_next_stage": true,
+  "paid_video_allowed": false,
+  "outputs": [
+    {"take": "01", "job_id": "9d473e5d-314a-4f9a-a99d-ea4f044d10bc", "path": "outputs/take-01.jpg", "sha256": "aee73a08de044aa9fe87477f68081493e3758fa6df6c1fb2fc95e61282890427", "agent_qc": "candidate", "note": "Clean tux, identity held, exact sign, direct gaze. Minor: white shirt-cuff distortion at the wrists."},
+    {"take": "02", "job_id": "d47dc430-4f1a-441b-8351-a1f00e9a0935", "path": "outputs/take-02.jpg", "sha256": "70b7db5f7d5fdfc1375610e62e1c91d49c335989d90760914f6a4acb3ed206c7", "agent_qc": "candidate", "note": "Direct gaze; sign sits slightly large/close. Same minor cuff artifact."},
+    {"take": "03", "job_id": "e5e7637f-fae0-48b2-b030-26e24c287e3f", "path": "outputs/take-03.jpg", "sha256": "bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98", "agent_qc": "recommended-for-human-hero-approval", "note": "Cleanest composition, confident direct gaze, level sign, good hook headroom. Same minor cuff artifact."},
+    {"take": "04", "job_id": "ab3f9053-ac8f-4c6f-8d58-15633c59c294", "path": "outputs/take-04.jpg", "sha256": "a8664d81a8d6d2ff9a116a22082640b8bca1994046f22d282c07402fc8ee8b47", "agent_qc": "candidate", "note": "Downward gaze (maker admiring). Warm but less of a reveal look. Same minor cuff artifact."}
+  ],
+  "known_minor_flaw": "White dress-shirt cuffs render slightly distorted at both wrists where the hands grip the sign ends; consistent across all four takes. Optional cleanup pass available (~8 credits).",
+  "cost": {"quoted_credits_per_take": 2, "quoted_total_credits": 8, "actual_total_credits": 8, "credits_before": 1390},
+  "quoted_date": "2026-07-23",
+  "generated_date": "2026-07-23",
+  "recommended_take": "03",
+  "human_approval": {"status": "approved", "approved_take": "03", "approved_path": "outputs/take-03.jpg", "approved_sha256": "bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98", "approved_by": "Max Ellison", "approved_date": "2026-07-23", "approval_quote": "3", "note": "Gate 2 passed. Take 03 is the approved reveal end-frame (tux hero) and the edit target for the white-back start (Stage 5)."}
+}

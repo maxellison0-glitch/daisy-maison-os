@@ -1,0 +1,99 @@
+{
+  "concept_id": "DM-C018-BOND",
+  "parent_method": "DM-C017-JANNAWAY-v03 validated wedding-sign engineering workflow",
+  "batch": "product-calibration-DM-C018-BOND-v01-locked-real-sign-edit",
+  "status": "human-approved-product-checkpoint",
+  "model": "nano_banana_flash",
+  "model_requested": "nano_banana_2",
+  "display_name": "Nano Banana 2",
+  "model_note": "Requested nano_banana_2; server resolved to nano_banana_flash, the same model validated in DM-C017-JANNAWAY.",
+  "aspect_ratio": "16:9",
+  "resolution": "2k",
+  "resolution_note": "Max requested 2k for this run. Validated JANNAWAY baseline was 1k. 2k = 2 credits/take.",
+  "output_dimensions": "2752 x 1536",
+  "take_count": 4,
+  "take_numbers": ["01", "02", "03", "04"],
+  "prompt_variation": false,
+  "purpose": "Replicate the validated locked-real-sign product-calibration: keep the real approved Daisy sign and photograph unchanged and change only its printed front content to the exact MR & MRS BOND face.",
+  "references": [
+    {
+      "role": "locked_real_sign_master",
+      "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/01-front-product-only.jpg",
+      "media_id": "d2ca5de7-079a-496c-8fdf-397935a7ceb6"
+    },
+    {
+      "role": "replacement_printing_only",
+      "path": "assets/DM-C018-BOND-sign-face.png",
+      "media_id": "f44e01f5-40d4-481a-9131-ad001640bf95"
+    }
+  ],
+  "product_surface_compositing_allowed": false,
+  "human_approval_required": true,
+  "paid_video_allowed": false,
+  "job_ids": [
+    "9814e415-3bb9-4271-8bc6-9e039d6b21ab",
+    "894bcbd2-00fa-4c91-94b5-dbd0c56f116c",
+    "48d69e1f-cd07-4856-80c1-1012a0095221",
+    "683c9675-f02d-4358-ae55-750c2d7a2079"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "job_id": "9814e415-3bb9-4271-8bc6-9e039d6b21ab",
+      "path": "outputs/take-01.jpg",
+      "sha256": "ca69d59737f42fa0689804865a3036b682418f430e2c83b0852c6baf7f50ac92",
+      "agent_qc": "candidate",
+      "note": "Exact wording and border, coherent real surface and hands. Heart rendered as an open/outline red form rather than the flat solid source heart."
+    },
+    {
+      "take": "02",
+      "job_id": "894bcbd2-00fa-4c91-94b5-dbd0c56f116c",
+      "path": "outputs/take-02.jpg",
+      "sha256": "f259afcd315340fe10924093d916b3c3bfc03b3b85ede523556c8a32e68b0e35",
+      "agent_qc": "candidate",
+      "note": "Large, close, exact wording. Heart is a sketchy double-outline; least faithful to the solid source heart."
+    },
+    {
+      "take": "03",
+      "job_id": "48d69e1f-cd07-4856-80c1-1012a0095221",
+      "path": "outputs/take-03.jpg",
+      "sha256": "54dec1e0c15bc203a138d37ab24f367749795d29fd138c96b6a4098364d09927",
+      "agent_qc": "recommended-for-human-product-approval",
+      "note": "Cleanest combined result: level composition, broad black border, both holes, exact wording and the closest solid red heart to the flat source. Mirrors the JANNAWAY take-03 outcome."
+    },
+    {
+      "take": "04",
+      "job_id": "683c9675-f02d-4358-ae55-750c2d7a2079",
+      "path": "outputs/take-04.jpg",
+      "sha256": "0a696c7fe0db60ab56c533b61f8c79425dfff21073c748b2c07f97ae641b5792",
+      "agent_qc": "candidate",
+      "note": "Strong realism and border weight; filled red heart with a small outline flourish; slight natural downward tilt at the right end."
+    }
+  ],
+  "contact_sheet": {
+    "path": "contact-sheet-master-target-takes.jpg",
+    "layout": "top row: real master, exact target face, take 01; bottom row: takes 02, 03 and 04"
+  },
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "credits_before": 1398,
+    "credits_after": 1390
+  },
+  "quoted_date": "2026-07-23",
+  "generated_date": "2026-07-23",
+  "post_generation_product_surface_compositing": false,
+  "strict_automatic_pass": false,
+  "recommended_take": "03",
+  "human_approval": {
+    "status": "approved",
+    "approved_take": "03",
+    "approved_path": "outputs/take-03.jpg",
+    "approved_sha256": "54dec1e0c15bc203a138d37ab24f367749795d29fd138c96b6a4098364d09927",
+    "approved_by": "Max Ellison",
+    "approved_date": "2026-07-23",
+    "approval_quote": "that's perfect again ... [selected] Take 03 as the locked product",
+    "note": "Gate 1 (product image) passed. Take 03 is the locked sign authority; the video's exact reveal face must match it. Hero (Stage 4) may now proceed."
+  }
+}

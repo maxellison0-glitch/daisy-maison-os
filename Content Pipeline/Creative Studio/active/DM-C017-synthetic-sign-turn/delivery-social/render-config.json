@@ -1,0 +1,74 @@
+[
+ {
+  "src": "/home/user/daisy-maison-os/Content Pipeline/Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/video/DM-C018-BOND-v01-6s-tux/delivery/DM-C018-BOND-native-6s-raw.mp4",
+  "out": "BOND-pill-v2.mp4",
+  "dur": 6.04,
+  "style": "pill",
+  "top": 648,
+  "size": 50,
+  "hook": {
+   "text": "Overdressed for a Tuesday.",
+   "in": 0.35,
+   "out": 2.5
+  },
+  "payoff": {
+   "text": "The name&rsquo;s Bond.",
+   "in": 4.8,
+   "out": 5.85
+  }
+ },
+ {
+  "src": "/home/user/daisy-maison-os/Content Pipeline/Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/video/DM-C018-BOND-v01-6s-tux/delivery/DM-C018-BOND-native-6s-raw.mp4",
+  "out": "BOND-bold-v2.mp4",
+  "dur": 6.04,
+  "style": "bold",
+  "top": 648,
+  "size": 58,
+  "hook": {
+   "text": "Overdressed for a Tuesday.",
+   "in": 0.35,
+   "out": 2.5
+  },
+  "payoff": {
+   "text": "The name&rsquo;s Bond.",
+   "in": 4.8,
+   "out": 5.85
+  }
+ },
+ {
+  "src": "/home/user/daisy-maison-os/Content Pipeline/Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/video/v03-native-approved-pair/seedance-raw.mp4",
+  "out": "JANNAWAY-pill-v2.mp4",
+  "dur": 8.04,
+  "style": "pill",
+  "top": 648,
+  "size": 50,
+  "hook": {
+   "text": "Guess the surname. Go on.",
+   "in": 0.4,
+   "out": 3.8
+  },
+  "payoff": {
+   "text": "Nobody ever guesses.",
+   "in": 6.0,
+   "out": 7.8
+  }
+ },
+ {
+  "src": "/home/user/daisy-maison-os/Content Pipeline/Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/video/v03-native-approved-pair/seedance-raw.mp4",
+  "out": "JANNAWAY-bold-v2.mp4",
+  "dur": 8.04,
+  "style": "bold",
+  "top": 648,
+  "size": 58,
+  "hook": {
+   "text": "Guess the surname. Go on.",
+   "in": 0.4,
+   "out": 3.8
+  },
+  "payoff": {
+   "text": "Nobody ever guesses.",
+   "in": 6.0,
+   "out": 7.8
+  }
+ }
+]

@@ -40,11 +40,23 @@ projects/daisy-street-sign/plan/
 !projects/social-prompts/**
 !workflows/starred/daisy-social-content-prompts.md
 
+!projects/diffuser/
+!projects/diffuser/**
+
+# sign-in-situ video format (cheap in-situ clips + type-it-real ads)
+!projects/sign-in-situ/
+!projects/sign-in-situ/**
+
+# sign carousels: unlimited free wording variants on an approved plate
+!projects/sign-carousels/
+!projects/sign-carousels/**
+
 !projects/daisy-scroll-story/
 !projects/daisy-scroll-story/**
 
 !Content Pipeline/
 !Content Pipeline/**
+__pycache__/
 
 # Content Pipeline renders: video, frames and stills. Git keeps every version of
 # a binary forever, and scripts/sync.ps1 runs `git add -A`, so without this one
@@ -61,3 +73,26 @@ Content Pipeline/**/*.wav
 Content Pipeline/**/tmp/
 Content Pipeline/**/__pycache__/
 Content Pipeline/**/*.pyc
+
+# The exception the rule above anticipates. A character lock is not a render -
+# it is the prompting authority every future image is generated against, so
+# losing one costs a re-approval cycle with Max, not a re-render. These were
+# force-added and stay tracked; new output still does not.
+!Content Pipeline/Creative Studio/reference-masters/**
+!Content Pipeline/Creative Studio/video/**/assets/**
+
+# Agent skills: vendored marketing skills (MIT) + our own social analytics.
+!.claude/
+!.claude/**
+
+# HyperFrames video skills (Apache 2.0, heygen-com/hyperframes). Vendored on
+# purpose rather than reinstalled per container: `npx skills add` is not version
+# pinned, so a silent upstream change would break the render pipeline on a day
+# we need it. 19 MB once is cheaper than that.
+!.agents/
+!.agents/**
+
+# Never sync installed packages or render binaries - see
+# Content Pipeline/tools/video/setup-render-env.sh for rebuilding those.
+node_modules/
+.hyperframes-cache/

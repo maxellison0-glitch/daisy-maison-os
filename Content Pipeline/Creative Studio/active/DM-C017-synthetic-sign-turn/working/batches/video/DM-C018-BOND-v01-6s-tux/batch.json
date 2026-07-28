@@ -1,0 +1,105 @@
+{
+  "concept_id": "DM-C018-BOND",
+  "batch": "video-DM-C018-BOND-v01-6s-tux",
+  "stage": "Stage 7 \u2014 one native 6-second turn (Seedance 2.0)",
+  "status": "finished-master-built-awaiting-publish-approval",
+  "model": "seedance_2_0",
+  "display_name": "Seedance 2.0",
+  "settings": {
+    "duration_seconds": 6,
+    "resolution": "1080p",
+    "mode": "std",
+    "bitrate_mode": "high",
+    "generate_audio": false,
+    "aspect_ratio": "9:16",
+    "count": 1
+  },
+  "prompt_source": "../../runs/DM-C018-BOND/prompts/04-native-video-6s-TUX-final.txt",
+  "prompt_hardening": "Synthesized by a 3-draft adversarial judge-panel workflow before spend (wf_c51087e3-fbf). Checklist all-true.",
+  "reference_contract": {
+    "start_image": {
+      "role": "first frame \u2014 tux Max, plain white reverse",
+      "path": "working/batches/start-keyframe/DM-C018-BOND-v01-white-back/outputs/take-03.png",
+      "media_id": "f3fd392e-46af-4c16-90e8-423e4f7baddf"
+    },
+    "end_image": {
+      "role": "final frame \u2014 tux Max, exact BOND face",
+      "path": "working/batches/hero-still/DM-C018-BOND-v01-tux/outputs/take-03.jpg",
+      "media_id": "f9c56328-4e81-479d-926a-b58300f29793"
+    },
+    "image_reference_1": {
+      "role": "approved BOND product (front/material/border truth)",
+      "media_id": "6fd12cfa-96be-470a-8bfd-bf20b586d036"
+    },
+    "image_reference_2": {
+      "role": "real front-to-edge",
+      "media_id": "93e3ca31-273f-49f2-bbfc-2ea1d3dc0fd5"
+    },
+    "image_reference_3": {
+      "role": "real back-to-edge",
+      "media_id": "78f3f04c-7fbf-4152-8e55-355f84d0930d"
+    },
+    "image_reference_4": {
+      "role": "real white-back",
+      "media_id": "d2fb519e-0936-43bc-91c5-022f4b6ae8b7"
+    },
+    "video_reference": {
+      "role": "privacy-cropped real turn \u2014 motion only, no identity",
+      "path": "working/batches/video/v03-native-approved-pair/inputs/real-turn-face-excluded.mp4",
+      "media_id": "95f50abc-7a2c-4f0b-af4f-fb7543638b0a"
+    }
+  },
+  "product_surface_overlay_allowed": false,
+  "job_id": "87638c11-5c2a-464d-a98e-65b42467aa68",
+  "preset_declined": "24bae836-2c4a-48e0-89b6-49fcc0b21612 (IN THE DARK) \u2014 declined to keep literal reference-driven generation",
+  "cost": {
+    "quoted_credits": 54,
+    "authorized_ceiling_credits": 72,
+    "credits_before": 1374,
+    "actual_credits": 54,
+    "credits_after": 1320
+  },
+  "quoted_date": "2026-07-23",
+  "render": {
+    "raw_path": "delivery/DM-C018-BOND-native-6s-raw.mp4",
+    "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260723_190337_87638c11-5c2a-464d-a98e-65b42467aa68.mp4",
+    "duration_seconds": 6.042,
+    "fps": 24,
+    "frame_count": 145,
+    "dimensions": "1080x1920",
+    "generated_audio": false
+  },
+  "agent_qc": {
+    "verdict": "pass (agent-level; not max-approved)",
+    "one_continuous_monotonic_180_turn": true,
+    "plain_white_back_at_start": true,
+    "thin_pale_edge_at_90deg_no_black_slab": true,
+    "exact_bond_reveal_readable": true,
+    "tuxedo_held_throughout": true,
+    "identity_consistent": true,
+    "no_overlay_or_composite": true,
+    "no_007_ip_marks": true,
+    "no_burned_captions": true,
+    "notes": "Clean native turn: white back (0-0.6s) -> thin edge ~90deg (1.5-3.3s) -> progressive front reveal (3.6-4.8s, no cut/pop) -> ~1.2s readable hold. Reveal lettering exact. Minor: edge-on phase lingers ~1.8s (reads as a slow natural pass, monotonic). Still-frame cuff artifact is far less visible in motion.",
+    "qc_frames": [
+      "delivery/qc-filmstrip.jpg",
+      "delivery/qc-reveal-strip.jpg",
+      "delivery/qc-reveal-sign-crop.jpg"
+    ]
+  },
+  "human_approval": {
+    "status": "approved",
+    "approved_by": "Max Ellison",
+    "approved_date": "2026-07-23",
+    "realism_score": "8.5/10",
+    "approval_quote": "Yeah, it does look real again. I'd give it like an 8.5 again, I think.",
+    "note": "Gate 4 passed. Untouched native turn approved for realism. Finish (hook/CTA/sound/grade, all outside the sign) may proceed; publishing still requires a separate explicit go (gate 5)."
+  },
+  "finish": {
+    "manifest": "delivery/finish-manifest.json",
+    "master": "delivery/DM-C018-BOND-master-1080x1920-24fps.mp4",
+    "phone_preview": "delivery/DM-C018-BOND-phone-preview-720x1280.mp4",
+    "caption_method": "browser-rendered (Chromium/Playwright) Raleway captions in safe zones + original sting + subtle grade",
+    "publish_status": "NOT PUBLISHED \u2014 gate 5 pending"
+  }
+}

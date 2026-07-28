@@ -1,0 +1,35 @@
+{
+  "concept_id": "DM-C018-BOND",
+  "batch": "start-keyframe-DM-C018-BOND-v01-white-back",
+  "stage": "Stage 5 — plain-white-back START frame (opening of the turn)",
+  "status": "human-approved-start-checkpoint",
+  "model": "nano_banana_flash",
+  "display_name": "Nano Banana 2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "prompt_variation": false,
+  "prompt_source": "../../../runs/DM-C018-BOND/prompts/03-white-back-start-TUX-final.txt",
+  "prompt_hardening": "Synthesized by a 3-draft adversarial judge-panel workflow before spend (wf_401b03fd-b7a).",
+  "references": [
+    {"role": "approved_tux_hero_edit_target", "path": "working/batches/hero-still/DM-C018-BOND-v01-tux/outputs/take-03.jpg", "media_id": "f9c56328-4e81-479d-926a-b58300f29793"},
+    {"role": "real_white_back_authority", "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/04-white-back-product-only.jpg", "media_id": "d2fb519e-0936-43bc-91c5-022f4b6ae8b7"},
+    {"role": "real_back_to_edge_authority", "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/03-back-to-edge-product-only.jpg", "media_id": "78f3f04c-7fbf-4152-8e55-355f84d0930d"},
+    {"role": "real_front_to_edge_authority", "path": "source/real-product-reference-pack/instagram-DPjdseCDbDR/product-only-crops/02-front-to-edge-product-only.jpg", "media_id": "93e3ca31-273f-49f2-bbfc-2ea1d3dc0fd5"}
+  ],
+  "product_surface_compositing_allowed": false,
+  "human_approval_required_before_video": true,
+  "paid_video_allowed": false,
+  "outputs": [
+    {"take": "01", "job_id": "639d70f7-0702-46ab-a170-1c3bfd16c301", "path": "outputs/take-01.png", "sha256": "0226811b929bcc0e7077ed9ac9c4d6d137d8f67db57a39f5cafb8f31049b242c", "agent_qc": "candidate", "note": "Plain white reverse, both holes, thin pale edge, tux preserved, direct gaze. Framing matches hero Take 03 closely."},
+    {"take": "02", "job_id": "ac6efae9-0e36-4b9a-b90b-ab7ac8175ff9", "path": "outputs/take-02.png", "sha256": "21f43a6be13338a10c6148953409e337867029a0de2d14517a9e46a65dcab036", "agent_qc": "candidate", "note": "Clean plain reverse; sign a touch larger in frame."},
+    {"take": "03", "job_id": "1a994c3f-bfaa-42df-9d83-8039c65df0f4", "path": "outputs/take-03.png", "sha256": "f52d6fff903500483e6f5a40a882fe872936ae8e281178fede859450c127c5d9", "agent_qc": "recommended-for-human-start-approval", "note": "Cleanest match to hero Take 03: same sign size/level/placement, direct gaze — best continuity for the turn."},
+    {"take": "04", "job_id": "4941dece-0879-4d70-8279-2b8da5644f09", "path": "outputs/take-04.png", "sha256": "03739156526f437dbe094c50efa2d5c4fbd44a4f428b27263d2ccd821392a4ba", "agent_qc": "candidate", "note": "Sign sits a touch lower/larger than the hero."}
+  ],
+  "qc_summary": "All four: plain matte white reverse, no wording/heart/logo, no black border or side wall, thin pale edge, two holes, tux + identity + workshop preserved. Same minor white-cuff artifact as the hero (consistent, aids continuity).",
+  "cost": {"quoted_credits_per_take": 2, "quoted_total_credits": 8, "actual_total_credits": 8, "credits_before": 1382},
+  "generated_date": "2026-07-23",
+  "recommended_take": "03",
+  "human_approval": {"status": "approved", "approved_take": "03", "approved_path": "outputs/take-03.png", "approved_sha256": "f52d6fff903500483e6f5a40a882fe872936ae8e281178fede859450c127c5d9", "approved_by": "Max Ellison", "approved_date": "2026-07-23", "approval_quote": "yes, sir.", "note": "Gate 3 passed. Take 03 is the START frame; pairs with tux hero Take 03 as END. Max also gave explicit go for the 72-credit video spend."}
+}

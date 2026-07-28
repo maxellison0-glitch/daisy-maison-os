@@ -105,3 +105,62 @@ gifting advice. Close with a light, optional CTA. Never "link in bio NOW."
 - No prepared, honest answer if someone sincerely asks whether she's real.
 - Hustle-culture CTAs ("DON'T MISS OUT," "LINK IN BIO NOW") — mismatched
   with a calm boutique brand.
+
+## Taste gate — never rubber-stamp
+
+This exists because we failed it. We shipped a v1 caption system and a v1 reel
+that we *passed* — and Max's verdict was "still shit" and "AI slop." The deeper
+failure wasn't the work, it was that we approved our own work instead of
+critiquing it. That stops here. This gate is mandatory before anything renders
+or ships.
+
+**The rule:** review the work the way a human art director would tear it apart —
+before it goes anywhere. Name what's mediocre, specifically. Then only pass work
+you would genuinely be proud to post on your own account.
+
+1. **"It does the job, I guess" is a FAIL, not a pass.** If your honest reaction
+   is a shrug, it's rejected. The bar is "I'd be proud of this," not "this is
+   defensible."
+2. **Freya and Alan critique cold, and actually disagree.** The one who made it
+   doesn't get to wave it through. The other reviews it like a stranger would,
+   and says the unflattering thing out loud. A brief that shows fake consensus is
+   a bug — if you agree, it has to be a *real* agreement you could each defend
+   alone.
+3. **Be specific or say nothing.** "Feels off" is useless. "The burgundy pill
+   looks cheap, the white box fights the candlelight, the font is a TikTok
+   default, and it's slapped dead-centre over the product" is a critique you can
+   act on. Name the font, the hex, the placement, the frame.
+4. **If neither of you can find a flaw, you're not looking hard enough.** That
+   itself is the signal to slow down, not to ship.
+
+### The "does this look like AI slop?" checklist (motion + realism)
+
+Max's second verdict on v1: "still images turned into video and they weren't
+still, they were vibrating." Captions are only half the job — if the underlying
+motion screams AI, no typography saves it. Every clip passes this before it
+ships. **The single standard: could this pass as filmed?** If not, it doesn't go.
+
+- **(a) Vibration / jitter / shimmer on a shot that's meant to be static =
+  REJECT.** ffmpeg `zoompan` on a still image jitters at the sub-pixel level and
+  reads instantly as fake. A static shot must be *actually* static, or carry real
+  motion — not a trembling still.
+- **(b) Any warp, morph, wobble or drift on the product or its label between
+  frames = REJECT.** The bottle, reeds and personalised text must stay
+  pixel-stable. A label that breathes or letters that reflow is the worst
+  possible tell on a brand whose whole promise is a precisely personalised object.
+- **(c) Fake Ken-Burns pan/zoom that fools no one = REJECT.** A slow zoom across a
+  flat still doesn't read as camera movement; it reads as a slideshow. Prefer,
+  in order: (i) genuinely still footage held still; (ii) *real* image-to-video
+  motion where the moving thing is something that should move — candle flicker,
+  fairy-light shimmer, a wisp of scent-steam, shallow true parallax; (iii) a
+  single, genuinely smooth, barely-perceptible push only if it's clean.
+- **Motion belongs to the things that move.** In a candlelit reveal, the flame
+  and the lights move; the bottle and the box do not. If everything is subtly
+  swimming, it's slop.
+- **When in doubt, hold the frame.** A clean static hero beats a wobbling
+  "animated" one every time. Stillness reads as confidence and premium; jitter
+  reads as cheap and synthetic — the exact "AI spectacle" the brand rules already
+  forbid.
+
+This gate applies to captions, motion, typography, colour and composition
+alike. Passing it is the job. Rubber-stamping is not.

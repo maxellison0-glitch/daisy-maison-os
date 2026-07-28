@@ -1,0 +1,50 @@
+CHARACTER LOCKS — how Freya and Alan stay the same people
+Established 27 Jul 2026. Read this before generating anyone holding a sign.
+
+THE IDEA
+--------
+One approved photograph is the LOCK. Everything else - wording, colourway, room -
+is prompted against it. Max, 27 Jul: "this is freyas new image sign lock for
+prompting... built off daisy-maison literally making them real characters."
+
+Tested that day and it holds. Off one Freya lock, in single takes with no
+retries: three colourways, three wordings and a completely new room, with her
+face and the sign-to-shoulder scale intact every time.
+
+THE LOCKS
+---------
+FREYA   PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png
+        Max-approved 27 Jul. Cream linen shirt, mid-length wavy auburn hair,
+        freckles, relaxed half-smile, head-on, sign held in both hands at chest.
+
+ALAN    PAIR-alan-and-freya-office-CANDIDATE.png  (awaiting Max)
+        British, mid-thirties, short dark-brown hair, few days of stubble,
+        plain dark navy crew-neck with sleeves pushed up, calm and deadpan.
+        Born inside a two-hander WITH Freya rather than alone, so his face
+        arrived already lit by the same room. Both takes of that prompt returned
+        the same man, which is what makes him usable as a character at all.
+
+THE THREE BLOCKS EVERY PROMPT NEEDS
+-----------------------------------
+1. KEEP AS REFERENCE - name the person's fixed features explicitly (face, hair,
+   clothing, expression, pose). Naming them beats saying "same person".
+2. THE PRODUCT - 570mm x 125mm, shaped notched ends, cream panel, coloured
+   printed border, real edge thickness, NO mounting holes.
+3. THE SCALE - held horizontally in both hands at chest height, hands wrapping
+   the shaped ends, about 1.4x the holder's shoulder width. This is the gate
+   from VERDICTS.md and it is the single thing that decides whether the sign
+   reads as a real object or a plaque.
+
+Then the phone-snapshot block from HOUSE-STANDARD-phone-snapshot.txt, and the
+line-2 size clamp from the same file.
+
+TWO FAULTS FOUND ON DAY ONE
+---------------------------
+BOOKS. Ask for a shelf of books and the spines come back as gibberish lettering.
+It survives a thumbnail and it does not survive a screenshot. Write NO BOOKS AND
+NO PRINTED TEXT ANYWHERE IN THE ROOM into the room brief.
+
+TWO SIGNS IN ONE FRAME. The first two-hander take pushed both signs off the
+frame edges and squashed Alan's line 2 up against line 1. The second take was
+clean with no prompt change, so generate two takes whenever there are two signs
+and pick - the failure mode is layout, and layout is where the variance lives.

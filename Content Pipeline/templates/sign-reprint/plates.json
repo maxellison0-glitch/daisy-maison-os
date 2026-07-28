@@ -1,0 +1,96 @@
+{
+  "cat": {
+    "image": "plate-cat-approved.png",
+    "box": [
+      329,
+      755,
+      1209,
+      966
+    ],
+    "colourway": "BLACK",
+    "wall_band": 90,
+    "damp": 0.55,
+    "note": "Approved cat-house plate. Sign measured by dark-pixel extents: 880x211px = 4.17:1 on screen vs canonical 4.56:1 \u2014 the difference is genuine horizontal foreshortening, do not 'correct' it.",
+    "crop45": [
+      73,
+      630,
+      1465,
+      2370
+    ],
+    "wordmark_y": 0.3,
+    "ink_ratio": 0.16,
+    "ink_tint": [
+      1.0,
+      0.92,
+      0.97
+    ]
+  },
+  "dog": {
+    "image": "plate-dog-approved.png",
+    "box": [
+      387,
+      790,
+      1155,
+      978
+    ],
+    "colourway": "SAGE",
+    "wall_band": 90,
+    "damp": 0.45,
+    "crop45": [
+      96,
+      660,
+      1488,
+      2400
+    ],
+    "wordmark_y": 0.3,
+    "note": "Boot-room plate, sage sign. Measured 768x188 = 4.09:1 on screen (canonical 4.56:1) - horizontal foreshortening. Top edge tilt -0.38 deg, ignored as within tolerance for an axis-aligned paste. damp lower than the cat plate because this room is evenly lit, so the wall gradient is weaker evidence.",
+    "ink_ratio": 0.42
+  },
+  "dog_v2": {
+    "image": "plate-dog-rescaled.png",
+    "box": [
+      531,
+      825,
+      1011,
+      943
+    ],
+    "colourway": "SAGE",
+    "wall_band": 90,
+    "damp": 0.45,
+    "crop45": [
+      300,
+      700,
+      1236,
+      1870
+    ],
+    "wordmark_y": 0.3,
+    "note": "Dog plate with the sign rescaled 0.625x to its true 570mm against three room anchors (was 1.6x oversized). Sign now 480px. A faint tonal trace remains where the old sign was erased.",
+    "ink_ratio": 0.42
+  },
+  "freya_hallway": {
+    "image": "../../Creative Studio/reference-masters/PLATE-mums-taxi-BLACK-freya-hallway-PHONE-MASTER.png",
+    "box": [
+      104,
+      563,
+      811,
+      718
+    ],
+    "colourway": "BLACK",
+    "wall_band": 46,
+    "damp": 0.3,
+    "crop45": [
+      0,
+      40,
+      896,
+      1160
+    ],
+    "wordmark_y": 0.3,
+    "ink_ratio": 0.155,
+    "ink_tint": [
+      1.05,
+      1.04,
+      0.9
+    ],
+    "note": "Freya holding the sign, hallway, BLACK. Max's passed realism format (phone-snapshot rule). Box derived from the top border's straight run (136->779 at y=568) against the SVG silhouette's own top-edge fraction (830/912 wide, inset 4.50% each side): width 707, and the independently measured top/bottom edges (563/718) give height 155. 707/155 = 4.56 = the canonical ratio exactly, so this sign is held flat-on with no foreshortening - that agreement is the check that the box is right. HANDS: the fingers overlap the shaped ends and the printed border only; the panel interior is clear, so the eroded panel mask never paints over skin. damp is low and the band short because the strip above the sign is her shirt and the doorway, not a wall - it is a weaker light witness than a real wall plane."
+  }
+}

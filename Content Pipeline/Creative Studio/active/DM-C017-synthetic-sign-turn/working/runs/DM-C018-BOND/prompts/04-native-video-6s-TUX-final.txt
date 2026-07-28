@@ -1,0 +1,46 @@
+Create one native photorealistic 6.0-second vertical (9:16, 1080p) workshop video with no generated audio. It is ONE continuous real-time take of a single real man turning a single real printed sign by hand: no edit, no cut, no transition, no time jump, no hidden splice, no speed ramp, no slow or fast motion, no camera move, and no product-surface replacement, overlay, patch, corner-pin or track. The sign is a real physical plaque for the entire take — never composited, tracked, corner-pinned, overlaid, patched or replaced. Total duration is exactly 6.0 seconds.
+
+REFERENCE ROLES — KEEP THESE ROLES SEPARATE:
+- START_IMAGE is the authoritative first frame. It shows the consented synthetic Max in a black tuxedo, holding the completely plain white reverse of the sign towards camera.
+- END_IMAGE is the authoritative final frame. It shows the same synthetic Max in the same black tuxedo, same workshop, same hands and same camera, showing the exact approved MR & MRS BOND sign face. Match this frame exactly at the reveal and throughout the final hold.
+- IMAGE_REFERENCE_1 is the separately approved Bond product photograph — exact front-face, colour, material, border, lettering, red heart and proportion truth.
+- IMAGE_REFERENCE_2 is a real Daisy Maison front-to-edge construction view. Use it ONLY for the thin pale edge, rigidity and physical transition. Ignore its different wording.
+- IMAGE_REFERENCE_3 is a real Daisy Maison back-to-edge construction view. Use it ONLY for the thin pale edge, rigidity and physical transition. Ignore its different wording.
+- IMAGE_REFERENCE_4 is a real Daisy Maison plain-white-back construction view. Use it ONLY for the completely plain white reverse.
+- VIDEO_REFERENCE is a face-excluded crop of a real Daisy Maison sign turn. Use it ONLY for physical hand choreography, one-direction rotation, changing perspective and realistic edge transition. Do NOT copy any person, clothing, room, caption, lettering or identity from it.
+
+MOTION — ONE STRICTLY MONOTONIC 180° TURN, RETIMED TO EXACTLY 6.0 SECONDS (four phases, one unbroken take):
+- 0.00–0.50s: the completely plain white reverse faces the camera. Max makes only a small, natural preparatory hand and body movement; the sign does not yet rotate.
+- 0.50–3.90s: Max turns the same rigid plaque through exactly 180 degrees in ONE smooth, strictly monotonic back-to-front yaw around the sign's single vertical axis. The rotation is continuous and one-directional: it never pauses, never reverses, never re-accelerates from a stop, never changes axis and never hides a cut or speed change. It stays a horizontal plaque; its projected width narrows naturally to the real thin pale edge as it passes 90 degrees, then expands naturally as the printed front swings into view. Only the projected width changes — the real edge stays shallow and pale and never thickens into a slab, black side wall, bevel, foam board or wooden depth.
+- 3.90–4.40s: the rotation completes and the exact approved Bond front settles level and large towards camera, matching END_IMAGE, coming to rest flat-on with no overshoot, bounce or re-rotation.
+- 4.40–6.00s: hold the exact approved front continuously readable for about 1.6 seconds. Keep natural breathing, small hand pressure and a subtle satisfied expression — do NOT freeze the person or the sign into a still, and do not begin any new rotation.
+- Do not extend, pad, loop, slow or speed-ramp to reach a different length. The four phases sum to exactly 6.0 seconds.
+
+IDENTITY, WARDROBE, HAND AND CAMERA LOCK:
+- Preserve the same synthetic Max from START_IMAGE and END_IMAGE continuously: same face, age, hair, skin, jewellery and proportions. His gaze follows the sign naturally, then resolves towards the finished product.
+- WARDROBE IS FIXED: he wears a black tuxedo the entire take — black dinner jacket with satin peak lapels, crisp white dress shirt and black bow tie. At the wrists, white dress-shirt cuffs and dark jacket sleeves read naturally where the hands grip. The tuxedo, bow tie, collar, lapels and cuffs must look identical at 0.00s, at 3.00s mid-turn, and at 6.00s. Never revert him to a T-shirt or hoodie, never open or loosen the collar, never remove, loosen or untie the bow tie, never open the jacket into casual wear, and never restyle, recolour or swap the outfit at any point.
+- Both five-finger hands remain attached to the real extreme ends of the same sign throughout. Hands, thumbs, wrists, forearms, elbows and shoulders bear the turn naturally. No hand teleporting, extra or merged fingers, broken wrists, duplicate arms, floating grip or occlusion pop.
+- Preserve the same workshop and the locked chest-height tripod composition. One person only. No zoom, push-in, crop change, pan, tilt, roll, camera shake, focus jump, background morph or lighting discontinuity.
+
+PRODUCT LOCK:
+- One thin, rigid, perfectly flat Daisy Maison plaque, ~570 × 125 mm, 4.56:1 outer proportion, with the approved shaped ends and two holes.
+- The edge matches the supplied real edge views: shallow and pale/white. Never a thick slab, black side wall, bevel, foam board or wooden depth.
+- The reverse is completely plain white — no black border, coloured points, words, symbols, artwork or dark backing. The black border exists on the printed FRONT face only and ends cleanly at the front surface.
+- The plaque never bends, bows, twists, stretches, shrinks, thickens, melts, changes silhouette or changes material.
+- At the reveal, reproduce END_IMAGE and IMAGE_REFERENCE_1 as the NATIVE sign face. It must read exactly:
+  MR & MRS BOND
+  WHEN TWO NAMES BECOME ONE 27TH JUNE 2026
+  Preserve the exact red heart on the ampersand, and the exact fonts, spacing, colour, holes, border and proportions.
+
+FORBIDDEN FAILURE MODES — DO NOT PRODUCE ANY OF THESE:
+- Do NOT put Max back in a T-shirt, hoodie or open collar; do NOT remove or restyle the bow tie, open the jacket into casual wear, or change the tuxedo, cuffs or lapels at any point in the take.
+- Do NOT composite, overlay, paste, patch, matte, corner-pin, track or replace the sign face. The sign is a real native object turning in real space — not a graphic dropped onto a blank card.
+- Do NOT invent a black or dark back, a thick side wall, a slab, a bevel or added depth as the sign turns; the reverse stays plain white and the edge stays thin and pale.
+- Do NOT retype, redraw, paraphrase, substitute, misspell, reflow or animate any letter, word, digit or the red heart; no letters fading, sliding, assembling or morphing in.
+- Do NOT insert a hidden cut, jump cut, cross-fade, morph, dissolve, speed ramp, slow motion, fast motion, freeze frame or looped repeat; rotation is one continuous, strictly monotonic, constant-direction move.
+- Do NOT add, duplicate, merge or teleport a hand, finger, thumb, wrist, arm or person; no extra person, no second pair of hands, no floating grip, no occlusion pop.
+- Do NOT zoom, push in, crop, pan, tilt, roll, shake, rack focus, morph the background or shift the lighting.
+- Do NOT add any James Bond / 007 IP: no 007 logo, gun, gun-barrel motif, gadget, spy gimmick, sunglasses bit or spy set — just a man in a plain black tuxedo in his real workshop.
+- Do NOT burn in captions, hook text, CTA, logo, subtitles, social UI or watermark.
+
+The final result must look like a genuine continuous human performance with a real printed sign turned once by hand. It must not look like a still image, a pasted graphic, a tracked overlay or a post-production replacement.

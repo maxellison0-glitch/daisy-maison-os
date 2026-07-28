@@ -1,0 +1,33 @@
+EDIT REFERENCE IMAGE 1 AS ONE LOCKED, SINGLE-EXPOSURE PHOTOGRAPH.
+
+Make exactly ONE physical change: rotate the same rigid Daisy Maison street sign 180 degrees around its vertical axis so its real plain-white REVERSE faces the camera instead of the printed front. Everything else in the frame — the man, his tuxedo, the room, the light, the camera and the crop — stays identical to reference image 1. This is the opening frame of one continuous back-to-front turn.
+
+REFERENCE ROLES:
+- Reference image 1 = the Max-approved synthetic-Max TUXEDO hero and the edit target. It is the sole authority for the man's identity, his outfit, the compact workshop, the soft daylight, the waist-up crop, the chest-height camera, the 9:16 framing and the two-handed grip. In the hero he shows the printed FRONT; here the SAME sign is turned so its BACK faces the camera.
+- Reference image 2 = the real Daisy Maison plain-white REVERSE authority (what the back actually looks like: plain unprinted white, two holes, thin pale sheet).
+- Reference image 3 = the real BACK-TO-EDGE authority (the thin pale physical edge seen from the back).
+- Reference image 4 = the real FRONT-TO-EDGE authority (the thin pale physical edge seen from the front; the black border is FRONT-face artwork only and does NOT wrap onto the edge or the back).
+
+PART A — MAN AND OUTFIT ARE FROZEN (separate from and independent of the sign rotation):
+Preserve, faithful to reference image 1, the exact same synthetic Max: same face, same head shape, same skin, same hair, same expression, same gaze and gaze direction, same neck, same posture, same waist-up crop and body position.
+Preserve his exact BLACK TUXEDO from reference image 1, unchanged: the black dinner jacket with satin peak lapels, the crisp white dress shirt, and the black bow tie. Keep the jacket, lapels, shirt front and bow tie fully done up in exactly the same position, shape and drape as the hero.
+FORBIDDEN outfit changes — do NOT do any of these: do NOT turn the tuxedo back into a T-shirt or any casual top; do NOT remove, shrink, hide, untie, loosen or recolour the bow tie; do NOT open, unbutton or spread the collar; do NOT swap the white dress shirt for bare skin or a crew neck; do NOT restyle, re-cut, re-colour or re-light the jacket or lapels; do NOT add jewellery, pins, pocket squares or any James Bond / 007 marks.
+At both hands the wrists must read as a TUXEDO: dark jacket sleeve with a clean band of white dress-shirt cuff emerging beneath it. Render those white shirt cuffs cleanly and naturally where the fingers grip. Do NOT render bracelets, watches, bare wrists, rolled sleeves or bunched fabric.
+
+PART B — THE SIGN NOW SHOWS ITS REAL PLAIN-WHITE REVERSE (build this from references 2, 3 and 4):
+The face toward the camera is the true back of the sign: plain, flat, unprinted, matte white, edge to edge, matching reference image 2. It is featureless white.
+FORBIDDEN back content — the reverse must contain NONE of the following: no "MR & MRS BOND" or any other wording, names or letters; no heart; no logo, monogram or Daisy Maison mark; no decorative border of any colour; no black frame, black band, black outline or black trim of any kind; no sticker, label, print, pattern, texture graphic, artwork, or faint ghost of front text. If any printed detail from the front tries to appear, remove it — the front artwork does not exist on this side.
+FORBIDDEN edge/side content: the sign's exposed perimeter is a single thin, shallow, pale/white physical rim, matching references 3 and 4. Do NOT render a black side wall, a black-painted edge, a thick dark band, or any wrap of the front's black border onto the edge or the back. The black border belongs to the FRONT face only.
+FORBIDDEN thickness: the sheet stays shallow, thin and pale — the same slim sheet as reference image 1. Do NOT thicken, darken or bevel it into a slab, plaque, block or deep-sided box.
+Preserve the same long shaped-end silhouette and the same two mounting holes (one near each end).
+The sign is rigid and dead flat: no bend, no bow, no swell, no cupping, no dome, no twist, no warp.
+Keep the sign at exactly the same apparent width, height, tilt/level and lower-chest placement as reference image 1 — same size, same position in frame, held level.
+
+PART C — HANDS:
+Keep the same two anatomically correct hands, five fingers each, one at each extreme end of the sign. Allow ONLY the minimal, physically necessary finger repositioning needed to grip the now-reversed sheet. Preserve believable grip pressure, soft finger contact shadows on the white surface, and the tuxedo cuffs at both wrists. No extra hand, no missing hand, no third hand, no sixth or fused finger, no floating or detached fingers, no duplicate arm.
+
+PART D — ONE REAL PHOTOGRAPH, NOT A COMPOSITE:
+The plain-white reverse, the thin pale edge, the two holes, the fingers, the white shirt cuffs, the reflections, the contact shadows, the lens softness and the film grain must all belong to the SAME single exposure, sharing reference image 1's soft daylight, white balance, focus falloff and noise. It must read as one real photograph of one real object rotated in-hand. FORBIDDEN composite look: no pasted white panel, no different-white or brighter/whiter or differently-toned insert, no rectangular overlay seam, no floating layer, no cut-out halo or outline, no mock-up screen or device frame, no flat vector-sharp patch, no sticker or decal look. The white must be a photographed physical surface with real light on it, not a graphic placed on top.
+
+OUTPUT:
+One photorealistic vertical 9:16 single-exposure image, single sign only, in the same compact workshop with the same soft daylight and chest-height camera. No caption, no text, no logo, no watermark, no UI, no legible background wording, no extra person, no extra or missing hand, no duplicate sign. No James Bond or 007 references of any kind — no 007 logo, no gun, no gun-barrel motif, no gadget, no spy-themed props or set dressing.

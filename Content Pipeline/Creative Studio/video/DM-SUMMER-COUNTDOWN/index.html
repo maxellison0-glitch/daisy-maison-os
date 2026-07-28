@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        src: url("assets/Fraunces-600.woff2") format("woff2");
+        font-weight: 600;
+        font-display: block;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1920px; overflow: hidden;
+        /* Brand cream. The bands are not letterbox - they are the account's colour. */
+        background: #FAF6EE;
+        font-family: "Fraunces", "EB Garamond", serif;
+      }
+
+      /* The photograph sits full-width. 896x1200 -> 1080x1446. */
+      #photo-frame {
+        position: absolute; left: 0; top: 300px;
+        width: 1080px; height: 1446px; overflow: hidden;
+      }
+      #photo { width: 1080px; height: 1446px; display: block; transform-origin: 50% 42%; }
+
+      /* Hook band. Top of frame, where TikTok puts the least of its own UI. */
+      .hook {
+        position: absolute; left: 0; top: 96px; width: 1080px;
+        display: flex; justify-content: center;
+      }
+      .pill {
+        font-weight: 600; color: #4A3A2C;
+        background: rgba(250, 246, 238, 0.96);
+        border-radius: 999px; white-space: nowrap; line-height: 1;
+        box-shadow: 0 6px 22px rgba(30, 25, 20, 0.28);
+        font-size: 58px; padding: 30px 52px 36px;
+      }
+
+      /* End card. Covers the photo on the last beat. */
+      #endcard {
+        position: absolute; inset: 0; background: #FAF6EE;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 54px;
+      }
+      #endcard img { width: 620px; }
+      #endcard .line { font-size: 52px; color: #4A3A2C; letter-spacing: 0.02em; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="7"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="photo-frame" class="clip" data-start="0" data-duration="6" data-track-index="0">
+        <!-- The push-in deliberately overscans the frame; that is the effect. -->
+        <img id="photo" src="assets/plate.png" alt="" data-layout-allow-overflow />
+      </div>
+
+      <div id="hook-1" class="hook clip" data-start="0.2" data-duration="2.4" data-track-index="1">
+        <!-- Inner wrapper: the clip element's visibility is the framework's to
+             own, so the exit tween and its hard kill live in here instead. -->
+        <div id="hook-1-inner"><div class="pill">Six weeks off school.</div></div>
+      </div>
+
+      <div id="hook-2" class="hook clip" data-start="2.6" data-duration="3.4" data-track-index="1">
+        <div class="pill">We&rsquo;re counting.</div>
+      </div>
+
+      <div id="endcard" class="clip" data-start="6" data-duration="1" data-track-index="2">
+        <img src="assets/wordmark.png" alt="Daisy Maison" />
+        <div class="line">Any wording you like.</div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Slow push-in across the whole photo beat. Motion without a camera move
+      // to film - the still is the shot, the drift is the life.
+      tl.fromTo("#photo", { scale: 1.0 }, { scale: 1.07, duration: 6, ease: "none" }, 0);
+
+      tl.from("#hook-1-inner", { opacity: 0, y: -40, duration: 0.45, ease: "power3.out" }, 0.2);
+      tl.to("#hook-1-inner", { opacity: 0, y: -24, duration: 0.3, ease: "power2.in" }, 2.3);
+      // Hard kill on the exit boundary: a seek that lands past the fade must
+      // not find stale visibility state.
+      tl.set("#hook-1-inner", { opacity: 0 }, 2.6);
+
+      tl.from("#hook-2", { opacity: 0, y: -40, duration: 0.45, ease: "power3.out" }, 2.6);
+
+      tl.from("#endcard", { opacity: 0, duration: 0.35, ease: "power2.out" }, 6);
+      tl.from("#endcard img", { opacity: 0, y: 26, duration: 0.5, ease: "power3.out" }, 6.15);
+      tl.from("#endcard .line", { opacity: 0, y: 20, duration: 0.5, ease: "power3.out" }, 6.3);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
