@@ -130,6 +130,37 @@ Tag the landlord.*
 
 ---
 
+## 3a. Max's review, 28 Jul — and the mistake that caused it
+
+**The scale reference was approved and then not used.** Max approved
+`cast-C-freya-packing-bay/take-03` specifically as the scale reference — *"the
+size is a really good size… can be used for anyone"*. These three batches were
+generated against the empty room plates and the character locks instead, so
+scale went back to being a lottery. His question — *"Have you used the one that
+I said to use? It doesn't look like you have"* — is correct, and it is the whole
+reason the signs came back oversized.
+
+**The gate was also wrong.** See `prompts/CHARACTER-LOCK-SYSTEM.txt`: the rule is
+now *the sign's ends must not extend past the outer edge of his arms*, not a
+width ratio. `ideas-B-bargrill/take-02` is the reference for correct scale.
+
+| Image | Verdict against the arm line |
+|---|---|
+| **B/02** | ends land at his arms, hands not stretched — **the standard** |
+| C/04, C/01 | ends just outside — usable |
+| A/01, A/03, A/04 | ends far outside the body on both sides — too big |
+| B/01, B/03, B/04 | ends past the right arm — too big |
+| C/02 | widest of the eleven — *"a fucking massive image"* |
+
+**And the filtering is the agent's job, not Max's.** Four takes come from one
+prompt; the variance is the model's. Showing all four and asking which look real
+pushes a QC pass onto him that should have happened first. From here: measure
+against the arm line, drop the failures, show what survives.
+
+**On the concepts themselves — too basic.** Max: *"It all sounds a bit boring…
+genuinely too basic."* The positioning and the characters he rated well; the
+ideas he did not. That critique is addressed in section 6.
+
 ## 4. What the run proved technically
 
 **Wording swaps off the lock work cleanly.** Three completely new wordings, all
@@ -169,6 +200,58 @@ Each follows the same rule: a person, an occasion, and a name someone would
 actually hand over.
 
 ---
+
+## 6. Why the first three were basic, and what replaces them
+
+Max, 28 Jul: *"It all sounds a bit boring… genuinely too basic."*
+
+**The diagnosis: all three were adverts.** Earnest setup, product answer,
+brand voice. *"He said he didn't want anything this year"* is a line every
+personalised-gift account in the country has already posted.
+
+The account's own best-performing post is not an advert. It is
+**documentary**: *"Customer of the year, probably"* → `YOU'RE NOT WELCOME
+(UNLESS YOU'VE BROUGHT SNACKS)` — 11,889 views against 4–7 likes on recent
+posts. The joke was not written by the brand. It was **ordered by a customer**,
+and the brand just held it up.
+
+That reframes what Alan and Freya are for. They are not models holding stock.
+**They are the staff who have to make whatever gets ordered** — and the comedy
+is what does or doesn't cross their faces. A deadpan man holding something
+ridiculous needs no hook line at all.
+
+It also unlocks the one thing no competitor can copy: **two characters in a
+real workshop having a relationship**, told entirely in signs.
+
+### The four replacements
+
+**1. THE CORRECTION — two signs, one house, no caption.**
+Alan holds `DAD'S BAR` / *EST. 2019 · NO ENTRY WITHOUT SNACKS*. Freya walks
+through behind him holding the second sign from the same order:
+`DAD'S BAR` / *IT'S A SHED, DAVE*. She is not passing by accident. She is
+correcting him. Sells two signs in one frame, needs no on-screen hook, and is
+impossible without the set and both characters. **The least basic thing we can
+make.**
+
+**2. WE DON'T ASK — documentary register, the proven formula.**
+No POV, no setup. Alan deadpan, caption only: *we don't ask what it's for.*
+Sign: `KEITH'S SECOND FRIDGE` / *GARAGE · BEER ONLY*. Oddly specific, entirely
+plausible as a real order, and the specificity is the joke. This is the closest
+thing to the 11,889-view post's actual mechanic.
+
+**3. DAD'S TAXI — the commercial one.**
+Hook is a memory, not a sales line: *you're 15, it's raining, and he's outside
+beeping.* Sign: `DAD'S TAXI` / *NO FARES PAID SINCE 2009*. Nostalgia then
+laugh, aimed straight at the 817-order dad category. The most likely to convert
+of the four.
+
+**4. READ IT BACK — needs two frames or video.**
+Every sign gets checked before it's packed. Freya reads one out; Alan doesn't
+react. Her face is frame one, his non-reaction is frame two. Holds for a
+carousel or a 6-second turnaround.
+
+All four keep the rule that killed *"day 4 of 42"*: a person, an occasion, and
+a name someone would actually hand over.
 
 ## Status
 
