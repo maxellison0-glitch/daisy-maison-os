@@ -51,13 +51,24 @@ second candidate image is not a spare — it is a way to lose the character.
 
 **The lock, resolved 28 Jul 2026:**
 
-`Creative Studio/reference-masters/ALAN-LOCK-bond-tux-workshop-APPROVED.jpg`
-sha256 `bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98`
+`Creative Studio/reference-masters/ALAN-LOCK-black-tee-workshop-APPROVED.jpg`
+sha256 `0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8`
 
 A byte-identical copy of the Max-approved take, which stays where it was
 generated so the provenance chain is intact:
-`.../working/batches/hero-still/DM-C018-BOND-v01-tux/outputs/take-03.jpg`
-— approved by Max on 23 Jul, take 03 of four.
+`.../working/batches/hero-still/v05-approved-product-lock/outputs/take-01.jpg`
+
+Black crew-neck tee, workshop, holding MR & MRS JANNAWAY, eyes down on the
+sign. Max, 28 Jul: *"the video that I like the most was Alan, not in a tuxedo,
+just in the black T-shirt... that would possibly be a good lock for the Mr and
+Mrs Jannaway as well, in the same background."*
+
+**The tux is the alternate, not the lock.**
+`ALAN-ALT-bond-tux-workshop-BLACKTIE-ONLY.jpg`
+sha256 `bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98`
+Same man, same workshop, Max-approved 23 Jul, and the source of the 8.5/10
+turnaround — but it is black-tie wardrobe. Use it only when the concept
+actually is black-tie.
 
 This file previously pointed at
 `product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg`. That
@@ -67,14 +78,17 @@ the frame at all.** It could never have locked a character. Anyone
 following the instruction literally would have generated a stranger and
 then wondered why.
 
-**Why this take and not another.** Everything downstream came off this one
-node: it produced the white-back start keyframe, which produced the 6s
-turnaround Max scored 8.5/10. No other Alan image has that lineage.
-
 **Identity vs costume.** The face, hair, beard, build and workshop are
-Alan. The black tuxedo and bow tie are DM-C018 wedding wardrobe — prompt
-them out when the concept isn't black-tie, or he becomes a man who owns
-one outfit.
+Alan. Wardrobe is not. Default is the black tee. Never let a costume from
+one concept migrate into every future Alan.
+
+**Mounting holes: none, from 28 Jul 2026.** Max: *"We're not doing holes,
+ideally. That is going forward: don't do that."* But this lock and the
+real product-reference pack both show two, because the real photographed
+signs have them — so the holes arrive **by inheritance** unless a prompt
+says otherwise. Write *no mounting holes, no drilled holes, unbroken
+panel* into the product block, and check for them first in any output.
+They are small and they survive a thumbnail.
 
 If more of him is generated later (more angles, expressions, eventual
 video), it follows the same staged, approval-gated process as
@@ -137,18 +151,21 @@ one"). Max only sees a fake consensus if it's a real one.
 ## Appearance spec — settled, read off the lock
 
 Not a direction any more. This is a description of
-`ALAN-LOCK-bond-tux-workshop-APPROVED.jpg`, and where it disagrees with an
+`ALAN-LOCK-black-tee-workshop-APPROVED.jpg`, and where it disagrees with an
 older note in this repo, the image wins.
 
 British, mid-forties. Short mid-brown hair flecked with grey, swept up and back
 off the forehead. Deep-set blue eyes. Close grey-flecked stubble beard, heaviest
 along the jaw. Strong straight nose, level brow, closed-mouth deadpan — not
-smiling, not stern. Head-on, square to camera, eyes to lens. Workshop behind
-him: painted white blockwork, a timber shelf of stacked blanks, plain equipment,
-soft even daylight.
+smiling, not stern. In the lock he is looking **down at the sign**, not to
+camera, which is a large part of why it reads as a working photograph rather
+than a portrait. Workshop behind him: painted white blockwork, a timber shelf of
+stacked blanks, plain equipment, soft even daylight.
 
-Wardrobe outside DM-C018 stays navy/charcoal knitwear and workwear against
-Freya's cream and putty. The tux does not follow him out of the wedding concept.
+Wardrobe: **plain black crew-neck tee, light grey trousers.** That is the
+default. Navy and charcoal knitwear extend the same palette against Freya's
+cream and putty. The tux belongs to black-tie concepts and does not follow him
+out of them.
 
 **He reads older than the "mid-thirties" written elsewhere in this file and in
 the character-lock system.** That was a spec for a man who was never built; this
