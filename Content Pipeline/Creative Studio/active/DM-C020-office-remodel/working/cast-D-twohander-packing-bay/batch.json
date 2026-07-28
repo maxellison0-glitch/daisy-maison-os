@@ -1,0 +1,121 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "take_count": 4,
+  "spec": "../../OFFICE_SPEC.md",
+  "human_approval_required": true,
+  "generated_date": "2026-07-28",
+  "cost": {
+    "quoted_credits_per_take": 2,
+    "quoted_total_credits": 8,
+    "actual_total_credits": 8,
+    "get_cost_preflighted": true
+  },
+  "batch": "cast-D-twohander-packing-bay",
+  "status": "max-reviewed",
+  "purpose": "The two-hander Max asked for: Alan deadpan to camera, Freya crossing behind mid-stride.",
+  "references": [
+    {
+      "role": "image",
+      "slot": "IMAGE 1 - THE ROOM",
+      "path": "working/plate-H-packing-bay/outputs/take-04.png",
+      "media_id": "9da5c83b-552e-4a12-bcea-43f3228cb236",
+      "answers": "background, camera position, lens, the whole remodelled packing bay",
+      "not_taken_from_it": "any person - the plate is empty"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 2 - THE MAN",
+      "path": "../../reference-masters/ALAN-LOCK-black-tee-workshop-APPROVED.jpg",
+      "media_id": "952b786c-7cc4-4cc2-921d-67d335837195",
+      "answers": "Alan's identity and wardrobe, and the sign's printed wording",
+      "not_taken_from_it": "its workshop, lighting, framing or camera position"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 2 / 3 - THE WOMAN",
+      "path": "../../reference-masters/PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png",
+      "media_id": "86819b16-97b4-4805-a650-e6f6a7c821d7",
+      "answers": "Freya's identity and wardrobe",
+      "not_taken_from_it": "its hallway, coat hooks, lighting, framing or camera position"
+    },
+    {
+      "role": "image",
+      "slot": "IMAGE 3 / 4 - POSE AND SCALE",
+      "path": "source/pose-scale-reference/POSE-SCALE-real-sign-hold-HEADLESS.jpg",
+      "media_id": "4553ae3e-142d-405f-82ab-ae23d4c4594a",
+      "answers": "how a real person actually holds this product in this building, and how big it reads against a body",
+      "not_taken_from_it": "any face, hair, clothing, age or body type - the head is cropped off for exactly this reason"
+    }
+  ],
+  "job_ids": [
+    "540e7c5d-f716-4192-b084-c6fadf4b25d5",
+    "43f3163a-c995-4ae8-b07c-5674d1630036",
+    "226b7009-472e-4133-8e4b-3db6bd4491e2",
+    "8b3b425e-f66a-4f59-9d2e-50411124c39d"
+  ],
+  "outputs": [
+    {
+      "take": "01",
+      "path": "outputs/take-01.png",
+      "sha256": "593f8123bf9c85137504a880d2bfc6b2aeca38b8da072cea9b963d424d338811",
+      "agent_qc": "candidate",
+      "note": "Freya well placed behind and clearly separate, but Alan's sign tilts and his hands slip off the ends.",
+      "max_verdict": "not-picked",
+      "max_note": "Max: the set is good, but he picked 04 and 03. Sign tilts and the hands slip off the ends."
+    },
+    {
+      "take": "02",
+      "path": "outputs/take-02.png",
+      "sha256": "6a4e6ef12b08b007beb3a3a63d789e11dd7f809c91a1a929607e2a7503bec4b1",
+      "agent_qc": "recommended-for-human-approval",
+      "note": "The joke lands. Alan completely straight to camera, Freya caught mid-stride behind with a stack of blank panels, clear floor between them, correct scale difference for the distance.",
+      "max_verdict": "not-picked",
+      "max_note": "Agent recommendation; Max preferred 04."
+    },
+    {
+      "take": "03",
+      "path": "outputs/take-03.png",
+      "sha256": "61c9923c41ac176d53d88a29253cc51f26112182ff0d1d398d8514e8072c2fcd",
+      "agent_qc": "candidate",
+      "note": "Good staging but Freya is rendered too large for her depth in the frame - she reads as level with him rather than behind him.",
+      "max_verdict": "approved-with-note",
+      "max_note": "Max: 'Take three is nearly' - Alan wants to be slightly taller in frame. Close, and worth keeping.",
+      "usable_as": "Second two-hander angle. Regenerate or crop with Alan slightly taller before it is used as the lead."
+    },
+    {
+      "take": "04",
+      "path": "outputs/take-04.png",
+      "sha256": "5897e0b22cd28bf86401e1991a93a97efea13bb4cd6c0584e8206b2dbcd3dc57",
+      "agent_qc": "reject",
+      "note": "Tightest crop of the four; the sign is pushed low and half out of frame, and Freya is cut at the frame edge.",
+      "max_verdict": "approved",
+      "max_note": "Max: 'take four is perfect size and engaging. I like that one.' Best sign scale in the whole run.",
+      "usable_as": "LEAD TWO-HANDER. The gag plays: Alan deadpan to camera, Freya crossing behind mid-stride. This is the frame to build the turnaround video on."
+    }
+  ],
+  "recommended_take": "02",
+  "contact_sheet": {
+    "path": "CONTACT-SHEET.jpg",
+    "layout": "takes 01-04, left to right"
+  },
+  "agent_findings": [
+    "PASS - the concept works on the first attempt. Two characters, one room, one gag, no compositing.",
+    "PASS - depth held: she is smaller because she is further away, not because she was drawn smaller.",
+    "NOTE - job ids captured for this batch only (see job_ids). A/B/C job ids were not recorded before the session compacted; they are recoverable from Higgsfield generation history by prompt and timestamp.",
+    "FAIL - holes present on Alan's sign again."
+  ],
+  "human_approval": {
+    "status": "reviewed",
+    "date": "2026-07-28",
+    "approved_takes": [
+      "03",
+      "04"
+    ],
+    "note": "Max reviewed the contact sheet and named these. Takes not named are kept for provenance and are not for use."
+  }
+}

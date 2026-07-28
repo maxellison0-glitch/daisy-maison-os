@@ -1,0 +1,41 @@
+Composite a single realistic vertical phone photograph containing TWO people. Four reference images, each answering a DIFFERENT question. Never assume which image is for what - use them exactly as assigned below.
+
+IMAGE 1 is the ROOM. Take from it: the whole background, the open packing bay, the roller-shutter guide rail, the exposed galvanised steel profile-deck ceiling, the white blockwork with visible mortar courses and the sage-green painted band along the bottom of the wall, the pale sealed concrete floor, the long worktop, the pale timber storage unit with kraft boxes, the wall-mounted monitor, the plants, the terracotta stool, and the exact camera position and lens. DO NOT take any person from image 1 - it is empty.
+
+IMAGE 2 is THE MAN, who stands in FRONT. Take from it ONLY his identity and wardrobe: British male in his mid-forties, short mid-brown hair flecked with grey swept up off the forehead, deep-set blue eyes, close grey-flecked stubble beard heaviest along the jaw, strong straight nose, closed-mouth deadpan expression, plain black crew-neck t-shirt, light grey trousers, dark watch on the left wrist. DO NOT take image 2's room, lighting, framing or camera position.
+
+IMAGE 3 is THE WOMAN, who walks BEHIND him. Take from it ONLY her identity and wardrobe: British woman in her early thirties, mid-length wavy auburn-brown hair past her shoulders, light freckles, blue-green eyes, loose cream linen shirt. DO NOT take image 3's hallway, coat hooks, lighting, framing or camera position.
+
+IMAGE 4 is THE POSE AND THE SCALE for the man only. It is a real photograph of a real person holding this exact product in this exact building. Take from it: standing square to camera, feet planted shoulder-width, both arms down and forward, elbows softly bent, the sign held horizontally across the body at WAIST height with each hand wrapping the shaped end from underneath, fingers visible over the front face. DO NOT take any face, hair, clothing, age or body type from image 4.
+
+THE SCENE, and this is the whole joke - play it completely straight:
+- The MAN stands centred in the foreground, holding the sign, looking directly at the camera, entirely deadpan, as though this is a normal product photograph.
+- The WOMAN is crossing the frame BEHIND him, several steps back, caught mid-stride walking left to right, carrying a squared stack of blank cream sign panels under one arm. She is looking sideways at the camera with a small amused expression, as if she has just realised she has walked into the shot. She is NOT posing. She is smaller in the frame than him because she is further away.
+- Neither person is touching the other. There is clear floor between them.
+
+MEASURED SCALE for the sign - obey this, it decides whether the product reads as real:
+- The sign is 1.30 times the width of the MAN's shoulders. Not equal to them, not double.
+- The sign is 570mm x 125mm: long, low and thin. A thin rigid sheet, not a thick slab.
+
+THE PRODUCT: a Daisy Maison personalised street sign. Off-white cream front panel, broad black printed perimeter border, shaped notched ends, real visible edge thickness, plain white reverse. NO MOUNTING HOLES ANYWHERE - the panel is unbroken. Printed on the front: MR & MRS JANNAWAY on the main line with a small red heart touching the ampersand, and beneath it in much smaller capitals WHEN TWO NAMES BECOME ONE 15TH AUGUST 2026. Reproduce that wording exactly as it appears in image 2. The blank panels she carries have NO printing at all.
+
+FRAMING: vertical 9:16. The man framed from the top of his head to mid-thigh. The woman fully visible behind him from head to knee. Ceiling ribs visible across the top of the frame, floor visible at the bottom edge.
+
+LIGHTING: flat, even, cool-neutral daylight exactly as in image 1, falling identically on both people. No golden hour, no rim lighting, no studio light, no haze, no lens flare.
+
+HOUSE STANDARD: an ordinary phone snapshot in a working unit - slightly imperfect, real depth of field with the woman a touch softer than the man, real skin texture, natural hands. Add flaws, never polish. Not an advert, not a render, not a stock photograph.
+
+STRICT: exactly two people, one man in front and one woman behind - no third person. No readable writing anywhere except the sign's own printing. No posters, no notices, no wall signage. Do not change the room.
+
+---
+
+WHAT THIS PROMPT GOT RIGHT, 28 Jul 2026
+The role-labelling is why it worked. Four references with no labels is a lottery;
+"IMAGE 1 is the ROOM ... DO NOT take any person from image 1" resolved every one
+of them on the first attempt, including the depth relationship between the two
+people.
+
+WHAT IT DID NOT GET
+"NO MOUNTING HOLES ANYWHERE" did not bind. Alan's lock has holes and the output
+inherited them. Freya's lock has none and her batch came back clean. The lock
+outranks the sentence - see CHARACTER-LOCK-SYSTEM.txt.
