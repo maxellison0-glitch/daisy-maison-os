@@ -14,7 +14,37 @@ every animation cue was a number somebody typed because it looked about right.
 On a feed watched with sound on, a cue 80ms off the beat reads as cheap and the
 viewer cannot say why.
 
-## The licence line — this is the part to get right
+## YouTube audio: BLOCKED from this container. Do not re-run the search.
+
+Measured 28 Jul 2026. Search and metadata work fine. The **media stream** is
+refused by every player client:
+
+| client | result |
+|---|---|
+| default, `web_embedded` | `HTTP 403 Forbidden` |
+| `web`, `ios` | "Sign in to confirm you're not a bot" |
+| `tv`, `mweb` | requested format not available |
+
+This is YouTube blocking a datacenter IP, **not a missing flag**. A JS runtime
+is present and wired up — `--js-runtimes node:/opt/node22/bin/node` clears the
+deprecation warning — and changes nothing. The only fix is real YouTube
+cookies, which are a credential and do not belong in this repo or container.
+
+**TikTok downloads work.** That is the route that is open, and it is also the
+better one — see below.
+
+## The point that matters more than the licence
+
+On TikTok, **a muxed audio file is not attached to a sound.** Discovery comes
+from appearing in that sound's feed, and you only get that by attaching the
+platform's sound object at publish. Downloading a track and baking it into the
+mp4 gives up the entire reason for using a trending sound in the first place.
+
+So for reach, `sounds` (find what's working) → attach at publish beats any
+download route regardless of what the law says. Say this before the licence
+argument; it is the one that decides the action.
+
+## The licence line
 
 TikTok's Commercial Music Library is licensed for use **on TikTok, through
 TikTok**. That gives one clean route and one trap.
@@ -37,6 +67,13 @@ either a track we are licensed for, or the sound design we already have —
 
 ```bash
 cd "Content Pipeline/tools/audio"
+
+# START HERE - what sound is on posts that actually performed
+python3 trend_audio.py sounds --users daisymaison competitor1 --limit 12
+
+# pull audio off a TikTok/IG post (works); search YouTube (download does not)
+python3 trend_audio.py grab --url "https://www.tiktok.com/@x/video/123"
+python3 trend_audio.py grab --query "upbeat indie instrumental"
 
 # 1. call the tiktok_music_trending MCP tool, pipe its JSON in
 python3 trend_audio.py chart --save
@@ -69,7 +106,25 @@ answerable and they change the edit:
 against the max — a single snare crack — so tracks never reached their own loud
 section and `lift` came back empty on 15 of 20. If it regresses, that's why.
 
-## Measured 28 Jul 2026
+## What our own account is already using — measured 28 Jul 2026
+
+`sounds --users daisymaison` over 9 posts:
+
+| views | sound | artist |
+|---:|---|---|
+| 796 | Mission Possible | Zé Maré |
+| 478 | Golden Hour | Tarwensi |
+| 403 | original sound | DaisyMaison |
+| 243 | Ok I Like It | Milky Chance |
+| 241 / 236 / 229 | Luxury, Elegance, Refined | Ted D'souza, Dani |
+
+We have leaned on *Luxury, Elegance, Refined* three times for a mean of 235,
+while the single best post used a sound we have never gone back to. **Nine
+posts is far too small to call that**, and two posts on one sound is not a
+finding — but it is the first time this question has been answerable at all,
+and it is now cheap to re-ask weekly.
+
+## TikTok chart tracks — measured 28 Jul 2026
 
 Off a 20-track slice of the TikTok trending chart, three cut cleanly to 4.0s:
 

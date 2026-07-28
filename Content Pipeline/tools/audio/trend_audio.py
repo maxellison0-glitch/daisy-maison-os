@@ -277,6 +277,138 @@ def analyse(which, all_):
     return 0
 
 
+# ---------------------------------------------------------------- sounds
+
+def sounds(users, limit):
+    """What sound is each post using, and did that post do numbers?
+
+    This is the one that answers "find popular audio" with evidence instead of
+    a chart. A chart tells you what is popular in general. This tells you what
+    is on posts in OUR niche that actually performed - which is a different and
+    much more useful list.
+
+    YouTube is not the source for this and cannot be from here (see the note in
+    `grab`). TikTok is, and it works.
+    """
+    rows = []
+    for user in users:
+        u = user.lstrip("@")
+        url = f"https://www.tiktok.com/@{u}"
+        r = subprocess.run(
+            [sys.executable, "-m", "yt_dlp", "--skip-download", "--ignore-errors",
+             "--print", "%(view_count)s|%(track)s|%(artist)s|%(title)s|%(webpage_url)s",
+             url, "--playlist-end", str(limit)],
+            capture_output=True, text=True)
+        for line in r.stdout.splitlines():
+            if line.count("|") < 4:
+                continue
+            v, track, artist, title, link = line.split("|", 4)
+            rows.append({"user": u,
+                         "views": int(v) if v.isdigit() else None,
+                         "track": None if track in ("NA", "None", "") else track,
+                         "artist": None if artist in ("NA", "None", "") else artist,
+                         "title": title, "url": link})
+        if not r.stdout.strip():
+            print(f"  @{u}: nothing returned", file=sys.stderr)
+
+    if not rows:
+        print("No posts returned.", file=sys.stderr)
+        return 1
+
+    rows.sort(key=lambda d: d["views"] or -1, reverse=True)
+    print(f"{'views':>8}  {'account':<16} {'sound':<34} {'artist':<20} post")
+    print("-" * 104)
+    for d in rows:
+        print(f"{d['views'] if d['views'] is not None else '-':>8}  "
+              f"@{d['user']:<15} {(d['track'] or '(original / not returned)')[:32]:<34} "
+              f"{(d['artist'] or '-')[:18]:<20} {d['title'][:30]}")
+
+    # which sounds recur, and what they averaged
+    agg = {}
+    for d in rows:
+        if not d["track"]:
+            continue
+        a = agg.setdefault((d["track"], d["artist"]), [])
+        if d["views"] is not None:
+            a.append(d["views"])
+    ranked = sorted(((k, v) for k, v in agg.items() if v),
+                    key=lambda kv: sum(kv[1]) / len(kv[1]), reverse=True)
+    if ranked:
+        print(f"\n{'sound':<36} {'uses':>5} {'mean views':>11}")
+        for (t, ar), vs in ranked[:15]:
+            print(f"{(t or '?')[:34]:<36} {len(vs):>5} {sum(vs)//len(vs):>11}")
+
+    print("\nA sound name here is what TikTok reports for that post. To USE one,")
+    print("attach it at publish - searching TikTok for the sound name gives you")
+    print("the sound page and its id. Do NOT rip the audio and mux it: a muxed")
+    print("file is not attached to the sound, so it does not appear in that")
+    print("sound's feed, which is where the discovery actually comes from.")
+    print("Small samples move a lot. Two posts on one sound is not a finding.")
+    return 0
+
+
+# ---------------------------------------------------------------- grab
+
+def grab(url, query, out):
+    """Pull audio from a URL (TikTok/IG/direct) or search YouTube.
+
+    YOUTUBE MEDIA DOWNLOAD DOES NOT WORK FROM THIS CONTAINER. Measured
+    28 Jul 2026: search and metadata come through fine, but every player client
+    is refused on the actual stream -
+
+        default / web_embedded  HTTP 403 Forbidden
+        web / ios               "Sign in to confirm you're not a bot"
+        tv / mweb               requested format not available
+
+    That is YouTube blocking a datacenter IP, not a missing flag. A JS runtime
+    IS present and wired up (`--js-runtimes node:/opt/node22/bin/node`, which
+    clears the deprecation warning) and it changes nothing. The only fix is
+    real YouTube cookies, which are a credential and do not belong in this repo
+    or this container.
+
+    TikTok downloads work. That is the route that is actually open.
+    """
+    out = pathlib.Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+
+    if query:
+        r = subprocess.run(
+            [sys.executable, "-m", "yt_dlp", "--skip-download", "--flat-playlist",
+             "--print", "%(title)s | %(duration)s s | %(view_count)s views | %(webpage_url)s",
+             f"ytsearch10:{query}"], capture_output=True, text=True)
+        print(r.stdout or r.stderr[-500:])
+        print("\nSearch works; DOWNLOAD from YouTube does not from here - see the")
+        print("note in this function. Use these results to identify a track, then")
+        print("obtain it somewhere you hold rights to.")
+        return 0
+
+    tmp = out.with_suffix(".src")
+    r = subprocess.run([sys.executable, "-m", "yt_dlp",
+                        "--js-runtimes", "node:/opt/node22/bin/node",
+                        "-o", str(tmp), "--force-overwrites", "--no-playlist", url],
+                       capture_output=True, text=True)
+    got = next(iter(sorted(out.parent.glob(tmp.stem + ".*"))), None)
+    if r.returncode != 0 or not got:
+        print(r.stderr[-800:], file=sys.stderr)
+        if "not a bot" in r.stderr or "403" in r.stderr:
+            print("\nThat host refused the download from this IP. YouTube does this "
+                  "to datacenter addresses; TikTok does not.", file=sys.stderr)
+        return 1
+
+    dst = out.with_suffix(".mp3")
+    subprocess.run([_ffmpeg(), "-y", "-v", "error", "-i", str(got),
+                    "-vn", "-acodec", "libmp3lame", "-q:a", "2", str(dst)], check=False)
+    got.unlink(missing_ok=True)
+    if not dst.exists():
+        print("Downloaded, but no audio stream to extract.", file=sys.stderr)
+        return 1
+    print(f"wrote {dst}  ({_dur(dst):.1f}s)")
+    print("This is someone else's recording. Fine to MEASURE (analyse/cues).")
+    print("Embedding it in a post we publish is a rights decision, not a "
+          "technical one - that call is Max's, not this tool's.")
+    return 0
+
+
 # ---------------------------------------------------------------- cues
 
 def cues(track, dur, events, start):
@@ -396,6 +528,14 @@ u.add_argument("--dur", type=float, required=True)
 u.add_argument("--events", type=int, default=3)
 u.add_argument("--start", type=float, default=None)
 
+s = sub.add_parser("sounds", help="what sound is on posts that actually performed")
+s.add_argument("--users", nargs="+", required=True)
+s.add_argument("--limit", type=int, default=12)
+
+g = sub.add_parser("grab", help="pull audio from a URL, or search YouTube")
+g.add_argument("--url"); g.add_argument("--query")
+g.add_argument("--out", default="library/grabbed")
+
 b = sub.add_parser("bed", help="mux a bed under a cut (rights required)")
 b.add_argument("--track", required=True); b.add_argument("--video", required=True)
 b.add_argument("--out", required=True); b.add_argument("--at", type=float, default=0.0)
@@ -407,6 +547,8 @@ sys.exit({
     "chart":   lambda: chart(n.save),
     "fetch":   lambda: fetch(n.top),
     "analyse": lambda: analyse(n.track, n.all),
+    "sounds":  lambda: sounds(n.users, n.limit),
+    "grab":    lambda: grab(n.url, n.query, n.out),
     "cues":    lambda: cues(n.track, n.dur, n.events, n.start),
     "bed":     lambda: bed(n.track, n.video, n.out, n.at, n.vol, n.duck),
 }[n.cmd]())
