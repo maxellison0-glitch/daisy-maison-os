@@ -39,7 +39,13 @@ param(
   [double]$BleedMm = 4.0,
   # Emit the per-sign intermediates too. Off by default so OutDir holds only what
   # goes to the printer.
-  [switch]$KeepIntermediates
+  [switch]$KeepIntermediates,
+  # Copy each finished bed PDF into the RasterLink7 hot folder. OFF BY DEFAULT
+  # and deliberately a separate act: everything before this point is reversible,
+  # and this is the step that puts ink on acrylic. Only pass it once the PDFs
+  # have been checked and real blanks are sitting on a printed jig.
+  [switch]$SendToPrinter,
+  [string]$HotFolder = 'C:\MijCtrl\Hot\UJF6042MkII'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -223,6 +229,27 @@ $manifest = [pscustomobject]@{
 $manifestPath = Join-Path $OutDir 'run-manifest.json'
 $manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $manifestPath -Encoding UTF8
 
+# --- optional handoff to RasterLink7 ----------------------------------------
+# Only the ARTWORK goes to the hot folder, never the jig. The jig is printed
+# once per fresh bed as its own deliberate job; sweeping it in here would queue
+# outlines to print straight onto acrylic blanks, which has nearly happened
+# before. RasterLink imports within ~5 seconds and the file disappears from the
+# folder - that disappearance is the confirmation, not a dialog.
+if ($SendToPrinter) {
+  if (-not (Test-Path -LiteralPath $HotFolder)) {
+    throw "Hot folder '$HotFolder' does not exist. Is RasterLink7 installed and running on this machine? Nothing was sent; the PDFs in $OutDir are unaffected."
+  }
+  Write-Host "`nCopying artwork to $HotFolder"
+  foreach ($b in $beds) {
+    if (-not (Test-Path -LiteralPath $b.artwork)) { throw "Missing artwork PDF for $($b.bed) - refusing to send a partial batch." }
+    Copy-Item -LiteralPath $b.artwork -Destination $HotFolder -Force
+    Write-Host ("  sent {0}" -f (Split-Path -Leaf $b.artwork))
+  }
+  Write-Host "`nIn RasterLink7: select the job, Alt+X, RIP and Print, Start, page at 0,0."
+  Write-Host 'Use 600x900 VD / 12 pass - NOT the default a fresh profile assigns.'
+  Write-Host 'Then press ENTER on the printer panel. The head heater is faulty, so it never clears itself.'
+}
+
 Write-Host "`n---------------------------------------------------------------"
 Write-Host ("{0} sign(s) on {1} bed(s):" -f $signs.Count, $beds.Count)
 foreach ($b in $beds) {
@@ -234,4 +261,8 @@ if ($part.Count) {
   Write-Host ("`n{0} bed(s) are not full. Printing a part bed wastes acrylic; holding it delays those orders. Your call." -f $part.Count)
 }
 Write-Host "`nManifest: $manifestPath"
-Write-Host 'Nothing has been sent to the printer.'
+if ($SendToPrinter) {
+  Write-Host ("{0} artwork PDF(s) are in the hot folder. The ENTER press on the panel is still yours." -f $beds.Count)
+} else {
+  Write-Host 'Nothing has been sent to the printer. Re-run with -SendToPrinter once the PDFs are checked.'
+}
