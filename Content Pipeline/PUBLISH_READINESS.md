@@ -48,10 +48,22 @@ any other product line? Border, proportions, material, construction,
 wording — pixel-exact where it matters.
 
 - **Fail mode:** any product-surface drift (overlay seam, wrong thickness,
-  invented material, changed wording).
+  invented material, changed wording) — **and wrong whole-object scale**,
+  which passes every lettering check while still depicting a different
+  product. Proven live on DM-C018: Freya's first sign take had pixel-exact
+  wording but rendered the sign ~13-15% undersized against her body; Max
+  caught it by eye, measurement confirmed it.
+- **Check scale first, and check it numerically when a person holds the
+  product:** measure sign-width-to-shoulder-width in pixels and compare
+  against a known-good reference (Alan's Bond hero ratio is 1.63; the same
+  physical sign on narrower female shoulders needs ~1.9+). Two minutes in
+  a script, catches what lettering QC structurally cannot — see
+  `Creative Studio/active/DM-C018-freya-synthetic-sign-turn/working/qc/`.
 - **Fix:** per the wedding-sign rules — reject and regenerate from an
   approved source image. Do not patch a drifted product shot; a human
-  perception failure isn't fixable by editing around it.
+  perception failure isn't fixable by editing around it. For scale
+  specifically, a real photo of a person holding the product, supplied as
+  an explicit scale-authority reference, fixed it in one take on DM-C018.
 
 ### 3. Identity & character consistency
 

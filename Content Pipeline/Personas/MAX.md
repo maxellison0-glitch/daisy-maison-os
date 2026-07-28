@@ -17,6 +17,29 @@ it ships, quietly pleased when something comes out right.
 Not polished-corporate, not a performed "founder story." Someone who is good
 at his trade and mildly obsessed with getting the details right.
 
+## Visual identity — correction, 23 July 2026
+
+An earlier version of this file pointed to the DM-C017 synthetic hero image
+as Max's locked visual identity. That was wrong: Max has since confirmed
+the resemblance doesn't actually hold up, despite that image being
+generated and approved as a synthetic-Max likeness at the time. The image
+itself wasn't deleted or reworked — it's genuinely a good character, so
+it's been recast as its own distinct persona, **Alan** (`ALAN.md`), rather
+than kept in circulation under Max's real name and face.
+
+There is currently no accurate synthetic likeness of Max. If one is built
+later, it needs a real reference-photo pass and genuine likeness
+confirmation from Max — not a quick approval mid-production — before it's
+trusted as "him" in any content. Until then, Max's own visual presence in
+content is real Max, real photos or real footage, full stop.
+
+The product, not the person, is still the actual creative centre either
+way. The finished, approved DM-C017 video already embodies this without
+anyone having to say so: its opening frame is hands, forearms, and the sign
+— face mostly out of shot. Max (and any character fronting the account)
+exist to give it a consistent, recognisable thread and voice, not to become
+the visual subject of every post. The sign does that job.
+
 ## Personality (grounded in what's already true of him)
 
 - Decisive, wants the plain answer. This is already his stated preference
@@ -57,16 +80,19 @@ Max fronts:
   weekly mix (`Content Pipeline/README.md`).
 - Founder-reaction content: seeing a finished order, catching an error,
   workshop Q&A.
-- Both lanes of the existing sign-video work: real Max for raw
-  behind-the-scenes, synthetic Max for the polished, repeatable product-reveal
-  format already proved in DM-C017 (8.5/10 realism, native turn, no overlay).
+- Real Max for raw behind-the-scenes and workshop content. The polished,
+  repeatable product-reveal format proved in DM-C017 (8.5/10 realism,
+  native turn, no overlay) is a real, working technique — it's just fronted
+  by Alan (`ALAN.md`) for now, not an accurate synthetic Max.
 
 ## What must never happen
 
-- Synthetic Max must never say something the real Max wouldn't stand behind —
-  no invented claims, no fabricated numbers, no unverified delivery or stock
-  promises. This is already the site-wide content rule; it applies doubly
-  when it's his own face and voice.
-- Any synthetic-Max clip needs his explicit sign-off before publishing, same
-  as every product video already requires under Creative Studio's approval
-  gate.
+- Real Max, on camera or in captions, must never say something he wouldn't
+  actually stand behind — no invented claims, no fabricated numbers, no
+  unverified delivery or stock promises. This is already the site-wide
+  content rule.
+- Nothing gets published as "Max" — synthetic or otherwise — without his
+  explicit sign-off, same as every product video already requires under
+  Creative Studio's approval gate. If a future synthetic-Max build happens,
+  likeness accuracy is part of that approval, not assumed from the prompt
+  working technically.

@@ -2,6 +2,14 @@
 
 Updated: 23 July 2026 (DM-C017 native workflow validated; not published)
 
+## Correction, 23 July 2026
+
+"Synthetic Max" below does not accurately resemble Max — confirmed by Max
+himself. The production record and technique are unaffected; only the
+identity label changes. That character is now Alan, distinct from the
+founder — see `Personas/ALAN.md` and `Personas/MAX.md`. Read "synthetic
+Max" throughout this file as "Alan."
+
 ## Active
 
 **DM-C017 - fully synthetic white wedding-sign turn**

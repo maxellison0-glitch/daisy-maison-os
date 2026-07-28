@@ -1,0 +1,20 @@
+Reference 1 is a real photograph of a Daisy Maison street sign — the locked, unchanged manufactured-object authority. Its printing is in a MUTED STEEL-BLUE (dusty, greyish blue — NOT royal blue, NOT cobalt, NOT saturated) and its letterforms are ELEGANT SERIF CAPITALS in the classic London street-sign style (Times-like, with fine serifs). Reproducing this exact typeface and this exact muted blue is MANDATORY: do not substitute any bold, rounded, sans-serif or condensed font; do not saturate or brighten the blue; do not change the wording "YOU'RE NOT WELCOME (UNLESS YOU'VE BROUGHT SNACKS)", the letter spacing, the two-line layout with the small second line, the border colour or width, the silhouette, the two mounting holes, the material or the proportions.
+
+Reference 2 is the woman's identity reference — match her face EXACTLY: same soft oval face shape, same warm brown eyes, same light freckles, same mid-brown shoulder-length wavy hair, same age (late twenties), thin gold ring on her RIGHT hand. She must read as the same individual person as reference 2, not a similar-looking woman.
+
+Reference 3 is a SCALE AUTHORITY ONLY — a real photograph of a man holding this same physical sign: use it solely for the true physical size relationship between sign and body; do not depict him.
+
+SCALE: the sign is roughly 57 cm wide — clearly wider than her shoulders; it must extend well past both shoulders, hands gripping the shaped end areas, arms spread wider than shoulder width.
+
+Generate: this exact woman holding the reference-1 sign at chest height with both hands, warm softly-lit wood workshop, natural daylight, matte cream and putty tones, boutique product photography. Genuine warm smile. Soft cream linen. Real skin texture, no airbrushing, no glossy sheen, no fake tan. Photorealistic, no illustration.
+
+--- CASE NOTES (not part of the prompt) ---
+Validated 24 July 2026, job 69661359-0bbf-41ea-836e-9b4b00feaecb, after the
+first coloured-chain attempt failed on typeface substitution + colour
+saturation + identity drift. The fix was the explicit negative-space
+locks in paragraph 1 ("NOT royal blue", "do not substitute any bold,
+rounded, sans-serif font") and the identity line "must read as the same
+individual person". When chaining a GENERATED sign into a character
+generation, these locks are mandatory; with a real photograph as the sign
+reference (the cake case), the shorter 02 prompt was sufficient.
+Known quirk: the ring lands on her left hand regardless of instruction.

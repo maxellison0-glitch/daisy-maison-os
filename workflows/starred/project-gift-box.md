@@ -10,9 +10,9 @@ Canonical context orb for designing and developing Daisy Maison's personalised g
   existing `Thank you for being amazing` anchor.
 - Canonical concepts: `projects/gift-box/artwork/concepts/`.
 - Canonical production handoff: `projects/gift-box/README.md`.
-- Current files are 1254 x 1254 px at 96 dpi concepts, not laser-ready masters.
+- Current files are 1254 x 1254 px at 96 dpi concepts, not print-ready masters.
 - Tomorrow's next step is a controlled 1181 x 1181 px / 300 dpi conversion and
-  one physical laser test before jig assembly.
+  one physical print test before jig assembly.
 - The upsell is not yet confirmed live. Product scope, price, placement, and
   attach-rate measurement remain open.
 
@@ -61,12 +61,27 @@ for production and do not silently revert to a candidate phrase above.
 - Each illustration uniquely reinforces its sentiment while remaining part of
   the same Daisy Maison family.
 - Preserve the approved exact wording recorded in `projects/gift-box/README.md`.
-- Do not claim laser-ready output until the 1181 x 1181 px / 300 dpi masters and
-  physical laser test are complete.
+- Do not claim print-ready output until the 1181 x 1181 px / 300 dpi masters and
+  physical print test are complete.
+
+## Production Method (Confirmed)
+
+- **Method:** UV printed on the Mimaki flatbed printer, in-house - the same
+  machine as the street signs. Not laser engraved.
+- **Colour:** full colour is technically possible, but the current design
+  direction is monochrome / greyscale line art to match the East of India
+  aesthetic.
+- **Style reference:** East of India - fine-line hand-drawn botanical
+  illustration, simple serif / script text, sparse composition. See the
+  existing `Thank you for being amazing` mock-up: branch + watering can + pot
+  plant, bottom-right corner, `Daisy Maison` on the watering can as subtle
+  branding.
+- **Design workflow:** artwork in Claude Design, export PDF/SVG, into
+  Photoshop, then set up the print file for the Mimaki.
 
 ## Questions To Resolve Before Launch
 
-- Final safe area and laser placement after the physical test
+- Final safe area and print placement after the physical test
 - Whether heavy jig borders are registration/cut marks or excluded artwork
 - Required design quantities in the 5 x 3 jig
 - Whether the product needs Shopify option/metafield changes

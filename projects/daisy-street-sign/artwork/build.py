@@ -22,21 +22,130 @@ from fontTools.subset import Subsetter, Options
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 A = os.path.join(HERE, "assets")
 REGULAR_FONT_PATH = os.path.join(A, "times.ttf")
-BOLD_FONT_PATH = os.path.join(A, "timesbd.ttf")
+
+# ---- size profiles ----
+# All three read their blank contour from source/size-contours.json.
+# Large is the audited original and its numbers are unchanged. Medium is measured
+# from the June-2026 production PSDs and its own cut file. Small is derived from
+# the master shape inside the Medium cut file and validated against the 8-up
+# production PSD - see the note on its entry.
+PSD_PX_PER_MM=11.8719
+LARGE_HEART_W=236/PSD_PX_PER_MM      # 19.879 mm, the source raster at PSD scale
+
+SIZES={
+ "large":{
+   "label":"Large","blankW":570.0,"blankH":125.0,
+   "border":12.4,"maxFs":59.0,"capCenterY":55.3,"targetW":486.0,
+   "dateBaseline":104.0,"dateTargetW":470.0,"dateMaxFs":11.5,
+   "heartTopMm":39.76,"heartW":LARGE_HEART_W,
+   "signatureScaleX":None,                 # None = compute, preserving today's behaviour
+   "contour":"large",                      # source/size-contours.json
+   "source":"lARGE STREET SIGN PSD.psd + LARGE SIGN.lbrn2 contour",
+   "status":"VISUAL APPROVED BY MAX 2026-07-14 - office production check required",
+ },
+ "medium":{
+   # Blank 450x120 confirmed two ways: the cut file's XForm scales are exactly
+   # 450/290 and 120/85, and solving the plate for a uniform frame inset gives
+   # 120.05mm. The interior height is UNCHANGED from Large (100.2mm), so type
+   # does not shrink - vertical constants shift by -2.5mm, they do not scale.
+   "label":"Medium","blankW":450.0,"blankH":120.0,
+   "border":9.9,"maxFs":59.0,"capCenterY":52.80,"targetW":383.7,
+   "dateBaseline":103.4,"dateTargetW":371.1,"dateMaxFs":11.5,
+   "heartTopMm":37.26,"heartW":LARGE_HEART_W,   # heart unchanged: interior height is unchanged
+   "signatureScaleX":0.8644,                # pinned to Large's locked unit - see note below
+   "contour":"medium",
+   "source":"MIDDLE size  halfbed JUN26.lbrn2 contour + JUN26 production PSDs",
+   "status":"DERIVED FROM MEASURED PSD - awaiting Max visual approval",
+ },
+ "small":{
+   # Blank 290x85. There is no Small cut file and none is needed: the Medium
+   # cut file's XForm is a NON-UNIFORM scale (1.55172, 1.41176) over local
+   # geometry spanning exactly 290.000 x 85.000 mm, and 290*1.55172 = 450.0,
+   # 85*1.41176 = 120.0. Medium was authored by scaling Small up, so the Small
+   # contour is that master at unit scale - read from a real Daisy file, not
+   # invented. See source/extract-size-contours.py.
+   #
+   # Confirmed against real production artwork (the 8-up Small bed PSD at 300
+   # dpi): buffering the 290x85 master out by 1.00 mm reproduces the printed
+   # silhouette to mean 0.182 mm, all 2750 sampled edge points within 1.0 mm.
+   #
+   # NOT the "MINI TRADITIONAL ROAD SIGN SHAPE" file - that is the Personalised
+   # Traditional Road Sign, a different product with deliberately un-edged
+   # corners (convex, area/hull 1.0000 against 0.9927 here). Max confirmed the
+   # distinction on 2026-07-26.
+   #
+   # Unlike Medium, Small's 85 mm blank is SHORTER than Large's 100.2 mm
+   # interior, so no inset can preserve the interior and the type genuinely must
+   # shrink. Everything vertical therefore scales by 85/125 = 0.68, including
+   # the heart - the agreed exception to the otherwise fixed-heart rule.
+   # Type sizes are MEASURED off two real Small signs on the 8-up production bed,
+   # not scaled. Both signs agreed to 0.1 mm, and the measurement is trustworthy
+   # because it cross-checks: the plate reads 86.87 mm against an 85 mm blank,
+   # i.e. 0.94 mm bleed per edge, matching the 1.00 mm found independently from
+   # the contour. A pure 0.68 scale of Large would have made the caps 37.2 mm
+   # when the real product is 40.13 - 8% small, and visibly so on a 85 mm sign.
+   #
+   # border and capCenterY are the 0.68-scaled values kept deliberately: the
+   # measurement corroborates border (~8.6 mm) and matches capCenterY on one sign
+   # but not the other (the ALL-COLOUR master stacks variants, and the two cells'
+   # black layers sit 3 mm apart), so there is no sound basis to move it.
+   "label":"Small","blankW":290.0,"blankH":85.0,
+   "border":12.4*0.68,                      # 8.432 - measured ~8.6, kept
+   "maxFs":43.29,                            # -> cap height 40.13 mm, measured
+   "capCenterY":55.3*0.68,                  # 37.604 - unverified, see note
+   "targetW":0.8914*(290.0-2*12.4*0.68),    # same fraction of the interior as Large
+   "dateBaseline":69.7,                      # measured 69.50 / 69.93
+   "dateTargetW":0.8621*(290.0-2*12.4*0.68),
+   "dateMaxFs":7.54,                         # -> line-2 cap 6.99 mm, measured
+   "heartTopMm":39.76*0.68,                 # 27.037
+   "heartW":LARGE_HEART_W*0.68,             # 13.52 mm - Max approved
+   "signatureScaleX":0.8644,                # pinned to Large's locked unit
+   "contour":"small",
+   "source":"MIDDLE size  halfbed JUN26.lbrn2 local master + 8-up Small production PSD",
+   "status":"DERIVED AND VALIDATED AGAINST PRODUCTION ARTWORK - awaiting Max visual approval",
+ },
+}
 
 # ---- args ----
-ORDER  = sys.argv[1] if len(sys.argv) > 1 else "TEST-001"
-LINE1  = sys.argv[2] if len(sys.argv) > 2 else "MR & MRS WINDSOR"
-LINE2  = sys.argv[3] if len(sys.argv) > 3 else "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024"
-TARGET_W = float(sys.argv[4]) if len(sys.argv) > 4 else 486.0   # fit line-1 to this width
-OUT    = sys.argv[5] if len(sys.argv) > 5 else os.path.join(HERE, "mr-mrs-large-preview.svg")
+argv=sys.argv[1:]
+SIZE="large"
+if "--size" in argv:
+    i=argv.index("--size"); SIZE=argv[i+1].lower(); del argv[i:i+2]
+if SIZE not in SIZES:
+    raise SystemExit(f"Unknown --size {SIZE!r}. Choose from: {', '.join(SIZES)}")
+P=SIZES[SIZE]
 
-# ---- constants from the PSD ----
-BORDER=12.4; VSCALE=1.4
-# Colourway is a product option: override per render without touching geometry.
+# --out exists so a caller can name the file without also having to supply
+# TARGET_W, which is a per-size profile value no caller should have to know.
+OUT_FLAG=None
+if "--out" in argv:
+    i=argv.index("--out"); OUT_FLAG=argv[i+1]; del argv[i:i+2]
+
+# --no-line2 means "this product genuinely has no subtitle" - a garden or house
+# sign, not a wedding sign. It exists as a SWITCH, not an empty string argument,
+# because Windows PowerShell 5.1 silently DROPS empty arguments on their way to a
+# native command: passing "" made LINE2 fall through to the wedding default below
+# and printed "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024" on a potting-shed
+# sign. A default that plausible has to be impossible to inherit by accident.
+NO_LINE2 = "--no-line2" in argv
+if NO_LINE2:
+    argv.remove("--no-line2")
+
+ORDER  = argv[0] if len(argv) > 0 else "TEST-001"
+LINE1  = argv[1] if len(argv) > 1 else "MR & MRS WINDSOR"
+LINE2  = "" if NO_LINE2 else (argv[2] if len(argv) > 2 else "FROM THIS DAY FORWARD... 14TH SEPTEMBER 2024")
+TARGET_W = float(argv[3]) if len(argv) > 3 else P["targetW"]   # fit line-1 to this width
+OUT    = OUT_FLAG or (argv[4] if len(argv) > 4 else os.path.join(HERE, f"mr-mrs-{SIZE}-preview.svg"))
+d=os.path.dirname(os.path.abspath(OUT))
+if d: os.makedirs(d, exist_ok=True)
+
+# ---- constants ----
+BORDER=P["border"]; VSCALE=1.4; COLOR="#010101"; PANEL="#FFFFFF"
 # ---- REAL colourways, sampled from the live listing swatch (Mow-It-Swatch-Final).
-# These are the ONLY colours the product is sold in. Do not invent others.
-# Panel is the same warm cream across all five.
+# These are the ONLY five colours the product is sold in, and the panel is the
+# same warm cream across all of them. The guard is a hard fail rather than a
+# fallback on purpose: a typo that silently renders a plausible-looking colour
+# the shop does not sell reaches a customer as a printed sign.
 COLOURWAYS = {
     "BLACK": ("#000000", "#F2EEE3"),
     "GREY":  ("#7C7C7E", "#F2EEE3"),
@@ -46,64 +155,53 @@ COLOURWAYS = {
 }
 _cw = os.environ.get("SIGN_COLOURWAY")
 if _cw:
-    key = _cw.strip().upper()
-    if key not in COLOURWAYS:
+    _key = _cw.strip().upper()
+    if _key not in COLOURWAYS:
         raise SystemExit("Unknown colourway %r. Real options: %s"
                          % (_cw, ", ".join(COLOURWAYS)))
-    COLOR, PANEL = COLOURWAYS[key]
-else:
-    # raw overrides kept for the legacy black-on-pure-white master
-    COLOR=os.environ.get("SIGN_COLOR","#010101")   # frame + lettering
-    PANEL=os.environ.get("SIGN_PANEL","#FFFFFF")   # inset panel
-# The heart is the Mr & Mrs signature unit. It is applied automatically to any
-# ampersand in line 1; set SIGN_HEART=0 for non-wedding wording such as BAR & GRILL.
-HEART_ENABLED=os.environ.get("SIGN_HEART","1")!="0"
-# The two mounting holes are real production geometry from the LightBurn cut file,
-# so they stay ON by default and the cut path is unaffected either way. But they
-# are a manufacturing feature, not a design one, and Max's call on 25 Jul 2026 is
-# that they read as a laser-cutter artefact in content: "that's literally for the
-# laser printer... if we had no holes and just a flat surface with the same
-# borders, that's perfect." Set SIGN_HOLES=0 for any content render.
-HOLES_ENABLED=os.environ.get("SIGN_HOLES","1")!="0"
-# Short wordings render NARROWER than the plate because line1ScaleX was capped at
-# min(1.0, ...) — it could only ever compress, never expand. Max, 25 Jul 2026, on
-# MUM'S TAXI and THE SNUG: "the text, it doesn't stretch out very far. It's quite
-# condensed. Usually we'd stretch out a bit more." SIGN_STRETCH lifts that cap so a
-# short line expands to the target width. Off by default so production output is
-# unchanged; STRETCH_MAX stops it turning into a caricature.
-STRETCH=os.environ.get("SIGN_STRETCH","0")!="0"
-STRETCH_MAX=float(os.environ.get("SIGN_STRETCH_MAX","1.6"))
-# Line 2 weight. REGULAR IS THE ANSWER — do not turn this on.
-# Tested properly on 25 Jul 2026: same terrace, same light, same pose, only line 2's
-# weight changed. Max: "the bold makes the text way too big. I would definitely take
-# it back to the non-bold for everything on line two."
-# It also matches the real product: both live landing-page hero photos show line 2 in
-# regular weight, same face as line 1, just smaller. Shipping regular while
-# photographing bold would hand the customer something different from the picture.
-# The flag survives only so the test is repeatable, and because making line 2 bold on
-# the ACTUAL product would be a production change (new print files), not a content one.
-LINE2_BOLD=os.environ.get("SIGN_LINE2_BOLD","0")!="0"
-MAX_FS=59.0                 # production height; long names compress horizontally to TARGET_W
+    COLOR, PANEL = COLOURWAYS[_key]
+# Unset leaves the legacy black-on-pure-white master untouched, which is what
+# every existing print path already expects.
+MAX_FS=P["maxFs"]           # production height; long names compress horizontally to TARGET_W
 STROKE_FRAC=float(os.environ.get("STROKE_FRAC","0"))  # regular weight (no faux-bold) is the rule
-CAP_CENTER_Y=55.3           # vertical centre of the name caps (mm), from real NASH
-DATE_BASELINE=104.0; DATE_TARGET_W=470.0; DATE_MAX_FS=11.5   # real subtitle ~10.4mm caps
-PSD_PX_PER_MM=11.8719
-HEART_W=float(os.environ.get("HW",str(236/PSD_PX_PER_MM)))
+CAP_CENTER_Y=P["capCenterY"]   # vertical centre of the name caps (mm), from real NASH at Large
+DATE_BASELINE=P["dateBaseline"]; DATE_TARGET_W=P["dateTargetW"]; DATE_MAX_FS=P["dateMaxFs"]
+HEART_W=float(os.environ.get("HW",str(P["heartW"])))
 HEART_H=HEART_W*229/236.0
+# The heart raster is 236px wide however large it is drawn, so its own pixel
+# scale must be derived from the drawn width - using PSD_PX_PER_MM here would
+# misplace a scaled heart by the scale ratio.
+HEART_PX_PER_MM=236.0/HEART_W
 
 # NICHOLS is Max's approved golden example. The ampersand and heart form one
-# immutable signature unit: the heart stays at source size and its pointed red
-# tip sits 3 source pixels inside the black upstroke's outer edge. Only the
-# surrounding customer names compress to fit.
-HEART_TOP_MM=39.76
+# immutable signature unit: its proportions never change, and the heart's pointed
+# red tip sits 3 source pixels inside the black upstroke's outer edge. Only the
+# surrounding customer names compress to fit. At Mini the whole unit scales
+# together, so the relationship is preserved even though the heart is smaller.
+HEART_TOP_MM=P["heartTopMm"]
 HEART_TIP_EDGE_INSET_PX=3
+HEART_TIP_EDGE_INSET_MM=HEART_TIP_EDGE_INSET_PX/PSD_PX_PER_MM*(HEART_W/LARGE_HEART_W)
 
 def esc(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace('"',"&quot;")
 
 # ---- source contour ----
-D = json.loads(open(os.path.join(ROOT,"source","source-data.js"),encoding="utf-8").read().split("=",1)[1].strip().rstrip(";"))
-pts=[(p["x"],p["y"]) for p in D["lightBurn"]["contour"]["points"]]
-holes=D["lightBurn"]["mountingHoles"]
+# ONE file holds all three blank contours. source/source-data.js is retained as
+# the audited original and is checked against by extract-size-contours.py, but it
+# is deliberately not a second runtime source - two files that must agree are a
+# bug waiting to happen.
+SD = json.load(open(os.path.join(ROOT,"source","size-contours.json"),encoding="utf-8"))
+if SIZE not in SD["sizes"]:
+    raise SystemExit(f"{SIZE}: no contour in source/size-contours.json (has: {', '.join(SD['sizes'])})")
+entry=SD["sizes"][SIZE]
+pts=[(p["x"],p["y"]) for p in entry["contour"]["points"]]
+if abs(entry["blankWidthMm"]-P["blankW"])>0.05 or abs(entry["blankHeightMm"]-P["blankH"])>0.05:
+    raise SystemExit(f"{SIZE}: contour is {entry['blankWidthMm']}x{entry['blankHeightMm']}mm "
+                     f"but the profile says {P['blankW']}x{P['blankH']} - refusing to mismatch.")
+# The scalloped street sign sits at ~0.993. A convex 1.0000 outline is the
+# Traditional Road Sign, a different product that must never be printed as this one.
+if not (0.985 < entry["areaOverHull"] < 0.9985):
+    raise SystemExit(f"{SIZE}: contour area/hull is {entry['areaOverHull']} - not the scalloped "
+                     f"street-sign family. Refusing to print a different product's shape.")
 poly=Polygon(pts); inner=poly.buffer(-BORDER, join_style="round", quad_segs=24)
 inner=max(inner.geoms,key=lambda g:g.area) if inner.geom_type=="MultiPolygon" else inner
 def path(seq): return "M "+" L ".join(f"{x:.3f},{y:.3f}" for x,y in seq)+" Z"
@@ -118,36 +216,27 @@ UNSUPPORTED=[c for c in dict.fromkeys(LINE1) if ord(c) not in cmap and not c.iss
 if UNSUPPORTED: print("WARNING: font has no glyph for", UNSUPPORTED, "- flag for manual review")
 UNSUPPORTED_SUBTITLE=[c for c in dict.fromkeys(LINE2) if ord(c) not in cmap and not c.isspace()]
 if UNSUPPORTED_SUBTITLE: print("WARNING: regular font has no glyph for", UNSUPPORTED_SUBTITLE, "- flag for manual review")
-CX=285.0
-
-fb=TTFont(BOLD_FONT_PATH) if os.environ.get("SIGN_LINE2_BOLD","0")!="0" else None
-if fb is not None:
-    _bupem=fb["head"].unitsPerEm; _bcmap=fb.getBestCmap(); _bhmtx=fb["hmtx"]
-    _bspace=_bhmtx["space"][0] if "space" in _bhmtx.metrics else _bupem//2
-    def natw_bold(t):
-        return sum((_bhmtx[_bcmap[ord(c)]][0] if ord(c) in _bcmap else _bspace) for c in t)/_bupem
-else:
-    natw_bold=None
-
-def xcap(v):
-    """Horizontal scale cap. Compression is always allowed; expansion only when
-    SIGN_STRETCH is on, and never past STRETCH_MAX."""
-    return min(v, STRETCH_MAX) if STRETCH else min(v, 1.0)
+CX=P["blankW"]/2.0
 
 def fit(s,target,maxfs,measure=natw):
     width=measure(s)
     return maxfs if width == 0 else min(maxfs, target/width)
 fs1=MAX_FS
-HAS_HEART=("&" in LINE1) and HEART_ENABLED
+HAS_HEART="&" in LINE1
 heartManualReview=False
 if HAS_HEART:
     prefix,suffix=LINE1.split("&",1)
     goldenLine="MR & MRS NICHOLS"
-    signatureScaleX=xcap(TARGET_W/(natw(goldenLine)*fs1))
+    # Pinned on the smaller sizes. Left to compute, a smaller TARGET_W silently
+    # condenses the ampersand (0.8644 -> 0.6824 at Medium) while the heart keeps
+    # its proportion - i.e. the signature unit would drift with size, which the
+    # spec forbids. Pinning keeps the unit identical at every size.
+    signatureScaleX=(P["signatureScaleX"] if P["signatureScaleX"] is not None
+                     else min(1.0,TARGET_W/(natw(goldenLine)*fs1)))
     signatureAdvance=natw("&")*fs1*signatureScaleX
     surroundingNatural=(natw(prefix)+natw(suffix))*fs1
     available=max(1.0,TARGET_W-signatureAdvance)
-    line1ScaleX=1.0 if surroundingNatural == 0 else xcap(available/surroundingNatural)
+    line1ScaleX=1.0 if surroundingNatural == 0 else min(1.0,available/surroundingNatural)
     prefixW=natw(prefix)*fs1*line1ScaleX
     suffixW=natw(suffix)*fs1*line1ScaleX
     w1=prefixW+signatureAdvance+suffixW
@@ -157,12 +246,9 @@ if HAS_HEART:
 else:
     signatureScaleX=1.0
     naturalW1=natw(LINE1)*fs1
-    line1ScaleX=1.0 if naturalW1 == 0 else xcap(TARGET_W/naturalW1)
+    line1ScaleX=1.0 if naturalW1 == 0 else min(1.0,TARGET_W/naturalW1)
     w1=naturalW1*line1ScaleX
-_m2 = natw_bold if natw_bold is not None else natw
-fs2=fit(LINE2,DATE_TARGET_W,DATE_MAX_FS,_m2)
-line2ScaleX=1.0 if _m2(LINE2)*fs2 == 0 else xcap(DATE_TARGET_W/(_m2(LINE2)*fs2))
-w2=_m2(LINE2)*fs2*line2ScaleX
+fs2=fit(LINE2,DATE_TARGET_W,DATE_MAX_FS,natw); w2=natw(LINE2)*fs2
 cap1=capH*fs1*VSCALE; base1=round(CAP_CENTER_Y+cap1/2,3)
 
 # ---- locked NICHOLS signature unit + rendered red-tip/black-edge placement ----
@@ -194,14 +280,17 @@ if HAS_HEART:
     heartTipY=int(heart_rows.max())
     heartTipX=int(round(np.flatnonzero(heart_alpha[heartTipY]).mean()))
     heartY=HEART_TOP_MM
-    ampTipRow=round((heartY+heartTipY/PSD_PX_PER_MM-ampTopY)*PSD_PX_PER_MM)
+    # heartTipY is in HEART-image pixels, so it converts with the heart's own
+    # scale; the ampersand mask is rendered at PSD_PX_PER_MM and converts with
+    # that. Using one scale for both only works while the heart is unscaled.
+    ampTipRow=round((heartY+heartTipY/HEART_PX_PER_MM-ampTopY)*PSD_PX_PER_MM)
     if not 0<=ampTipRow<amp_mask.shape[0]:
         raise RuntimeError("Unable to place heart: red-tip height misses the ampersand")
     stroke_pixels=np.flatnonzero(amp_mask[ampTipRow])
     if not len(stroke_pixels):
         raise RuntimeError("Unable to place heart: no black stroke exists at red-tip height")
     blackEdgeX=int(stroke_pixels.max())
-    heartX=ampL+(blackEdgeX-heartTipX-HEART_TIP_EDGE_INSET_PX)/PSD_PX_PER_MM
+    heartX=ampL+blackEdgeX/PSD_PX_PER_MM-heartTipX/HEART_PX_PER_MM-HEART_TIP_EDGE_INSET_MM
     heartManualReview=line1ScaleX<0.55
 
 # ---- embed the real regular font subset for both lines + real heart raster ----
@@ -213,24 +302,11 @@ def subset_woff(font_path, text):
     return base64.b64encode(buf.getvalue()).decode()
 
 regular_woff64=subset_woff(REGULAR_FONT_PATH,LINE1 + LINE2)
-# Real Times New Roman Bold for line 2 when SIGN_LINE2_BOLD=1. A genuine bold face,
-# not a stroke-widened fake — STROKE_FRAC stays at 0 and the rule against faux bold
-# is intact.
-bold_woff64=subset_woff(BOLD_FONT_PATH, LINE2) if LINE2_BOLD else None
-BOLD_FAM="DaisyTimesBold"
 heart64=base64.b64encode(open(os.path.join(A,"heart.png"),"rb").read()).decode()
-holes_el=("\n  ".join(
-    '<circle id="mounting-hole-%s" cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="0.4"/>'
-    % (side, h["x"], h["y"], h["radius"], PANEL, COLOR)
-    for side, h in (("left", holes[0]), ("right", holes[1]))) if HOLES_ENABLED else "")
 heart_el=(f'<image id="signature-heart" x="{heartX:.3f}" y="{heartY:.3f}" width="{hw:.3f}" '
           f'height="{hh:.3f}" xlink:href="data:image/png;base64,{heart64}" preserveAspectRatio="xMidYMid meet"/>') if HAS_HEART else ""
 
 REGULAR_FAM="DaisyTimesRegular"
-bold_face_css=("@font-face{font-family:'%s';font-weight:700;src:url(data:font/woff;base64,%s) format('woff');}"
-               % (BOLD_FAM, bold_woff64)) if LINE2_BOLD else ""
-LINE2_FAM = BOLD_FAM if LINE2_BOLD else "DaisyTimesRegular"
-LINE2_WEIGHT = 700 if LINE2_BOLD else 400
 def text_g(id_, s, x, y, fs, family, weight, scale_x=1.0, anchor="middle"):
     sw=fs*STROKE_FRAC
     return (f'<g transform="translate({x} {y}) scale({scale_x:.6f} {VSCALE})">'
@@ -249,19 +325,22 @@ else:
 
 ts=datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 svg=f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Daisy Maison - Mr & Mrs Street Sign LARGE 570x125mm. VISUAL APPROVED, not print-ready. -->
-<!-- Faithful reproduction from lARGE STREET SIGN PSD.psd: regular Times on both lines, 1.4 vertical scale, real cut contour and heart raster. -->
+<!-- Daisy Maison - Mr & Mrs Street Sign {P["label"].upper()} {P["blankW"]:g}x{P["blankH"]:g}mm. -->
+<!-- Regular Times on both lines, 1.4 vertical scale, real cut contour and heart raster. -->
+<!-- Mounting holes are deliberately NOT drawn: they are physical holes cut in the acrylic, so printing rings around them puts ink on absent material. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:daisy="https://daisymaison.co.uk/ns/production"
-     width="570mm" height="125mm" viewBox="0 0 570 125" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ttl dsc">
-  <title id="ttl">{esc(LINE1)} - large street sign (preview)</title>
+     width="{P["blankW"]:g}mm" height="{P["blankH"]:g}mm" viewBox="0 0 {P["blankW"]:g} {P["blankH"]:g}" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">{esc(LINE1)} - {P["label"].lower()} street sign (preview)</title>
   <desc id="dsc">Faithful front-on reproduction from the production PSD.</desc>
   <defs><style>
-    @font-face{{font-family:'{REGULAR_FAM}';font-weight:400;src:url(data:font/woff;base64,{regular_woff64}) format('woff');}}{bold_face_css}
+    @font-face{{font-family:'{REGULAR_FAM}';font-weight:400;src:url(data:font/woff;base64,{regular_woff64}) format('woff');}}
   </style></defs>
   <metadata><daisy:production>
     <daisy:orderReference>{esc(ORDER)}</daisy:orderReference>
     <daisy:productHandle>mr-mrs-personalised-street-sign-gift</daisy:productHandle>
-    <daisy:sku>36961</daisy:sku><daisy:size>Large</daisy:size><daisy:physicalSize>570 x 125 mm</daisy:physicalSize>
+    <daisy:sku>36961</daisy:sku><daisy:size>{P["label"]}</daisy:size><daisy:physicalSize>{P["blankW"]:g} x {P["blankH"]:g} mm</daisy:physicalSize>
+    <daisy:frameInsetMm>{BORDER:.3f}</daisy:frameInsetMm>
+    <daisy:heartWidthMm>{HEART_W:.3f}</daisy:heartWidthMm>
     <daisy:font>Times New Roman regular on both lines (vertical scale 1.4)</daisy:font>
     <daisy:line1>{esc(LINE1)}</daisy:line1><daisy:line2>{esc(LINE2)}</daisy:line2>
     <daisy:line1FontSizeMm>{fs1:.2f}</daisy:line1FontSizeMm>
@@ -270,16 +349,15 @@ svg=f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
     <daisy:heartPlacementMethod>locked-nichols-signature-v1</daisy:heartPlacementMethod>
     <daisy:heartTipEdgeInsetPx>{HEART_TIP_EDGE_INSET_PX}</daisy:heartTipEdgeInsetPx>
     <daisy:heartManualReviewRequired>{str(heartManualReview).lower()}</daisy:heartManualReviewRequired>
-    <daisy:source>lARGE STREET SIGN PSD.psd + LARGE SIGN.lbrn2 contour</daisy:source>
-    <daisy:status>VISUAL APPROVED BY MAX 2026-07-14 - office production check required</daisy:status>
+    <daisy:source>{esc(P["source"])}</daisy:source>
+    <daisy:status>{esc(P["status"])}</daisy:status>
     <daisy:generatedAt>{ts}</daisy:generatedAt>
   </daisy:production></metadata>
   <path id="outer-plate" d="{path(pts)}" fill="{COLOR}"/>
   <path id="inset-panel" d="{path(list(inner.exterior.coords))}" fill="{PANEL}"/>
-  {holes_el}
   {line1_el}
   {heart_el}
-  {text_g("line-2", LINE2, CX, DATE_BASELINE, fs2, LINE2_FAM, LINE2_WEIGHT, line2ScaleX)}
+  {text_g("line-2", LINE2, CX, DATE_BASELINE, fs2, REGULAR_FAM, 400)}
 </svg>'''
 open(OUT,"w",encoding="utf-8").write(svg)
 print(f"{ORDER}: fs1={fs1:.2f} textScaleX={line1ScaleX:.4f} signatureScaleX={signatureScaleX:.4f} w1={w1:.1f}/{TARGET_W} cap1={cap1:.1f} base1={base1}")

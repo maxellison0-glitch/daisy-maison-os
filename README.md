@@ -18,6 +18,31 @@ username. This makes the same prompt work for `C:\Users\maxel` at home and
 
 ## Sync contract
 
+This repository is the single source of truth for Daisy Maison's operating
+context. It does not depend on MaxOS or any other repository — clone it
+directly to its own top-level folder on every computer you use, and use it
+from there.
+
+### One-command sync (recommended)
+
+On each computer, run this any time you start or finish working:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\sync.ps1
+```
+
+This pulls the latest from GitHub first (fast-forward only — it will stop and
+tell you if there's a conflict rather than guess), then commits and pushes
+anything you changed locally, so the next computer that runs it gets your
+update. To only pull (e.g. at the start of a session, before you've made any
+changes yet):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\sync.ps1 -PullOnly
+```
+
+### Manual sync (what the script does)
+
 Before a run:
 
 ```powershell
@@ -28,7 +53,7 @@ git pull --ff-only
 After an automation changes durable context:
 
 ```powershell
-git add -- "operating systems/context.md" "title_optimisation_baseline.json"
+git add -A
 git commit -m "Update Daisy operating context"
 git push
 ```

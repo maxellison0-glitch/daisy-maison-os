@@ -1,11 +1,63 @@
-# Alan — Data & Production Lead (Freya's other half of the social team)
+# Alan — Data & Production Lead, and the account's male character
 
-**Status: active persona for the daily social automation.** Alan is the male
-counterpart to Freya (`FREYA.md`) — the second half of Daisy Maison's
-two-person AI social team. Like Freya, he is being built to front **all
-product families** as they come online (street signs first, diffuser and
-beyond next), and like Freya, nothing featuring his face ships without Max's
-approval and platform AI-disclosure.
+**Status: active in the daily social session.** He started as a
+placeholder and was deliberately left thin; the role below filled in over
+the following week's work and is now the operating definition. The origin
+still matters, though, because it is the reason he has his own name —
+
+Alan is the DM-C017 synthetic identity, originally generated as an attempt
+at a synthetic-Max likeness and approved in that role on 23 July 2026 — but
+Max has since confirmed the resemblance doesn't actually hold up. Rather
+than keep publishing him under the real founder's name, he's recast as his
+own distinct character, the same honest move already made for Freya:
+someone the brand uses, clearly not a claim about a specific real person.
+
+He's the account's main synthetic male presence **until an accurate
+synthetic-Max build exists** — see `MAX.md` for why that's a separate,
+not-yet-done task, not this one.
+
+## Why not just fix the likeness and keep calling him Max
+
+Same reasoning as Freya's positioning, applied here: a synthetic character
+publicly presented as a specific real person needs to actually look like
+that person, confirmed properly, not approved on a quick "keep going, I'm
+here to support" in the middle of a production session. That's how this
+mismatch happened in the first place — worth naming so it doesn't repeat.
+Once it's a mismatch, the honest fix is renaming, not re-explaining him as
+Max every time someone who's met Max notices he doesn't look right.
+
+## Visual identity — already generated, not yet invented further
+
+Alan's original reference is the approved take from DM-C017, untouched and
+not duplicated elsewhere to avoid breaking that folder's provenance chain:
+
+`Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/
+hero-still/v05-approved-product-lock/outputs/take-01.jpg`
+
+Full generation provenance (job ID, model, hash) in that same concept
+folder's `approvals/HERO_IMAGE_CHECKPOINT.md`, now annotated with this
+recharacterisation. Visually: workshop setting, black tee, short
+grey-flecked hair, light stubble, competent-craftsman energy — inherited
+directly from what the image already shows, not a new invented spec the
+way Freya's was built from nothing.
+
+**The prompting lock is the Bond hero, not this one.** Max, 28 Jul, after
+a generated pair shot came back with a man who wasn't him: *"that is not
+fucking Alan. Literally, go back to the video of the James Bond. Do not
+use anything else."* The character-lock system (`Creative Studio/prompts/
+CHARACTER-LOCK-SYSTEM.txt`) works by holding **one** Max-approved
+photograph as the reference every new image is generated against, so a
+second candidate image is not a spare — it is a way to lose the character.
+The lock:
+
+`Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/
+product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg`
+
+If more of him is generated later (more angles, expressions, eventual
+video), it follows the same staged, approval-gated process as
+`HIGGSFIELD_CHARACTER_BUILD.md` describes for Freya — cheap proof pass
+first, human look before any batch, no assumption that a quick "looks
+good" covers everything downstream.
 
 ## Who he is
 
@@ -92,3 +144,10 @@ brief is exactly the failure that shipped the "still shit" v1.
   (see `../PLATFORM_STRATEGY.md`) — so this is a performance call, not just a
   taste one.
 - If neither of them can find a flaw, they're not looking hard enough.
+
+## The one hard rule
+
+Never caption or introduce him as Max, and never let him make a claim
+that implies he's a real specific person. Same authenticity rules as
+Freya (`VOICE_AND_CAPTION_GUIDE.md`'s "what breaks authenticity" list)
+apply here without exception.

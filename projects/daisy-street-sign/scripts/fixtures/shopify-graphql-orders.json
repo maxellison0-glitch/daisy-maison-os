@@ -1,0 +1,130 @@
+{
+  "_comment": [
+    "A RAW Shopify connector reply, saved verbatim - {data:{orders:{nodes:[...]}}} with",
+    "lineItems as connection objects, not arrays. Invented names and dates: a fixture",
+    "is committed forever, so it must never carry a real customer.",
+    "",
+    "It reproduces the shape of a real pull on 2026-07-27, and every part of it is here",
+    "because that pull broke something:",
+    "  1. lineItems.nodes - iterating the connection yielded the string 'nodes', so a",
+    "     pull with four real signs planned ZERO and reported no error.",
+    "  2. A Mr & Mrs line carries no colour attribute at all. That became the literal",
+    "     'Unspecified', which recolour-sign rightly refuses, halting the whole run.",
+    "  3. Order names arrive as '#DM...'. The hash was substituted, not stripped, so",
+    "     every file read '_DM37868' and stopped matching the order.",
+    "  4. Size Upgrade and add-on lines sit beside the sign line and must be ignored.",
+    "  5. Legacy orders still marked unfulfilled carry a sign SKU but no personalisation",
+    "     at all. They must be flagged for review, never silently printed."
+  ],
+  "data": {
+    "orders": {
+      "nodes": [
+        {
+          "name": "#DM90101",
+          "createdAt": "2026-07-27T13:17:31Z",
+          "customer": { "displayName": "Fixture Customer A" },
+          "lineItems": {
+            "nodes": [
+              {
+                "id": "gid://shopify/LineItem/1",
+                "sku": null,
+                "title": "Size Upgrade - Large",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": { "handle": "9-large-street-sign" },
+                "customAttributes": [{ "key": "Upgrade", "value": "Large 57 x 12cm" }]
+              },
+              {
+                "id": "gid://shopify/LineItem/2",
+                "sku": "36961",
+                "title": "Personalised Mr & Mrs Street Sign Gift",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+                "customAttributes": [
+                  { "key": "Line 1", "value": "MR & MRS FIXTURE" },
+                  { "key": "Line 2", "value": "FROM THIS DAY FORWARD 01-01-27" },
+                  { "key": "Size", "value": "Large 57 x 12cm (+£8.99)" }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "#DM90102",
+          "createdAt": "2026-07-27T14:11:59Z",
+          "customer": { "displayName": "Fixture Customer B" },
+          "lineItems": {
+            "nodes": [
+              {
+                "id": "gid://shopify/LineItem/3",
+                "sku": "ACC-MOUNT-SINGLE",
+                "title": "(£1.99) Mounting Strips",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": { "handle": "1-95-mounting-strips" },
+                "customAttributes": [{ "key": "Add-on", "value": "Mounting Strips" }]
+              },
+              {
+                "id": "gid://shopify/LineItem/4",
+                "sku": "36965",
+                "title": "Personalised Family Street Sign Gift",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": { "handle": "family-personalised-street-sign" },
+                "customAttributes": [
+                  { "key": "Line 1", "value": "THE FIXTURE & SONS FAMILY" },
+                  { "key": "Line 2", "value": "" },
+                  { "key": "Colour border", "value": "gray" },
+                  { "key": "Size", "value": "Large 57 x 12cm (+£8.99)" }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "#DM90103",
+          "createdAt": "2026-07-27T09:09:41Z",
+          "customer": { "displayName": "Fixture Customer C" },
+          "lineItems": {
+            "nodes": [
+              {
+                "id": "gid://shopify/LineItem/5",
+                "sku": "36961-2",
+                "title": "Personalised Retirement Street Sign Gift",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": { "handle": "personalised-retirement-street-sign-gift" },
+                "customAttributes": [
+                  { "key": "Colour", "value": "Black" },
+                  { "key": "Line 1", "value": "HAPPY RETIREMENT" },
+                  { "key": "Line 2", "value": "Not my problem anymore!" },
+                  { "key": "Size", "value": "Small (29x8.5cm)" },
+                  { "key": "Mounting Strips?", "value": "No Thank You" }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "#1801",
+          "createdAt": "2024-09-02T02:29:20Z",
+          "customer": null,
+          "lineItems": {
+            "nodes": [
+              {
+                "id": "gid://shopify/LineItem/6",
+                "sku": "36961",
+                "title": "\"Mr & Mrs\" Personalised Street Sign Gift",
+                "quantity": 1,
+                "unfulfilledQuantity": 1,
+                "product": null,
+                "customAttributes": []
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -22,12 +22,17 @@ DAISY_NS = "https://daisymaison.co.uk/ns/production"
 REQUIRED_IDS = {
     "outer-plate",
     "inset-panel",
-    "mounting-hole-left",
-    "mounting-hole-right",
     "line-1",
     "signature-heart",
     "line-2",
 }
+
+# The mounting holes were REMOVED from this set on 2026-07-27, not forgotten.
+# They are physical holes drilled in the acrylic, so drawing them printed black
+# rings around absent material; e1146fa dropped them from build.py. This fixture
+# kept requiring the IDs, which meant it asserted on its first sample and every
+# geometry check below it silently stopped running. Do not add them back.
+FORBIDDEN_IDS = {"mounting-hole-left", "mounting-hole-right"}
 
 TARGET_W = 486.0
 FONT_SIZE = 59.0
@@ -114,6 +119,10 @@ def build_and_read(temp_dir, text, subtitle="EST 2026"):
     assert root.attrib["viewBox"] == "0 0 570 125"
     ids = {node.attrib["id"] for node in root.iter() if "id" in node.attrib}
     assert not (REQUIRED_IDS - ids), f"Missing IDs for {text}: {sorted(REQUIRED_IDS - ids)}"
+    assert not (FORBIDDEN_IDS & ids), (
+        f"{text}: build.py drew {sorted(FORBIDDEN_IDS & ids)} - mounting holes are "
+        "physical holes in the acrylic and must never be printed."
+    )
     line_one = root.find(".//*[@id='line-1']")
     assert line_one is not None and line_one.attrib["data-text"] == text
     line_one_parts = list(line_one.iterfind(f".//{{{SVG_NS}}}text"))

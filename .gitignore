@@ -2,6 +2,8 @@
 *
 !.gitignore
 !README.md
+!scripts/
+!scripts/**
 !operating systems/
 !operating systems/**
 !digests/
@@ -17,6 +19,14 @@
 !projects/daisy-street-sign/**
 projects/daisy-street-sign/**/__pycache__/
 projects/daisy-street-sign/**/*.pyc
+# Generated output: reproducible from the order text plus the scripts, and the
+# repo syncs with git add -A. Tracking it would grow main by ~130 KB per order
+# forever and copy customer names onto every PC.
+projects/daisy-street-sign/artwork/orders/
+projects/daisy-street-sign/production/print/
+projects/daisy-street-sign/production/jig-*
+projects/daisy-street-sign/production/*-3up.*
+projects/daisy-street-sign/plan/
 !workflows/
 !workflows/starred/
 !workflows/starred/daisy-street-sign-automation.md
@@ -41,9 +51,35 @@ projects/daisy-street-sign/**/*.pyc
 !projects/sign-carousels/
 !projects/sign-carousels/**
 
+!projects/daisy-scroll-story/
+!projects/daisy-scroll-story/**
+
 !Content Pipeline/
 !Content Pipeline/**
 __pycache__/
+
+# Content Pipeline renders: video, frames and stills. Git keeps every version of
+# a binary forever, and scripts/sync.ps1 runs `git add -A`, so without this one
+# sync would push ~1 GB - including a 60 MB mp4 that GitHub warns on. 1,184 jpg,
+# 178 png and 46 mp4 sit untracked there right now. The briefs, prompts,
+# personas, code and QC notes stay tracked; the pixels do not.
+# To keep one specific image as evidence, force it: git add -f <path>
+Content Pipeline/**/*.mp4
+Content Pipeline/**/*.mov
+Content Pipeline/**/*.jpg
+Content Pipeline/**/*.jpeg
+Content Pipeline/**/*.png
+Content Pipeline/**/*.wav
+Content Pipeline/**/tmp/
+Content Pipeline/**/__pycache__/
+Content Pipeline/**/*.pyc
+
+# The exception the rule above anticipates. A character lock is not a render -
+# it is the prompting authority every future image is generated against, so
+# losing one costs a re-approval cycle with Max, not a re-render. These were
+# force-added and stay tracked; new output still does not.
+!Content Pipeline/Creative Studio/reference-masters/**
+!Content Pipeline/Creative Studio/video/**/assets/**
 
 # Agent skills: vendored marketing skills (MIT) + our own social analytics.
 !.claude/
