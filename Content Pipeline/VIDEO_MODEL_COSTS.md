@@ -16,6 +16,32 @@ audio — these are the low-spec baseline we should default to.
 Higher tiers (Veo 3.1 ultra, Kling 3.0 pro/4k, Cinema Studio 3.0) exist but are
 overkill for organic social. Don't reach for them without a reason.
 
+## Seedance 2.0 in full — re-quoted 2026-07-28
+
+Model tier and resolution are **separate axes**, and treating them as one thing
+is why "Seedance 2.0" got remembered as a flat 54 credits. It isn't. Every row
+below is a live `get_cost` quote, 9:16:
+
+| Model | duration / resolution / mode | Credits |
+|---|---|---:|
+| Seedance 2.0 Mini | 6s / 480p / fast | **6** |
+| Seedance 2.0 Mini | 6s / 720p / fast | **15** |
+| Seedance 2.0 | 4s / 720p / std | **18** |
+| Seedance 2.0 | 6s / 720p / fast | **21** |
+| Seedance 2.0 | 6s / 720p / std | **27** |
+| Seedance 2.0 | 6s / 1080p / std | **54** |
+
+The 54 is **resolution, not the model** — and per rule 5 below, 720p is what
+TikTok delivers anyway. Full Seedance at 720p/4s is 18 credits, three more than
+Mini. Escalating for a pixel-locked label costs a few credits, not a fortune.
+
+**`bitrate_mode: "high"` is free** — 27 either way at 720p/std, 54 either way at
+1080p. Higher bitrate means less compression on fine printed detail. Default it
+on; there is no reason not to.
+
+**`generate_audio: false` saves nothing** (15 vs 15). Rule 6 stands on
+unpredictability, not cost.
+
 ## Selection logic
 
 1. **Does this even need video?** → run the Brief Gate first.

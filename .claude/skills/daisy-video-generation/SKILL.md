@@ -41,17 +41,54 @@ full table:
 | Veo 3.1 Lite | 4s silent | 4 |
 | Hailuo 2.3 Fast | 6s 768 | 4 |
 | Seedance 1.5 Pro | 4s silent | 4.8 |
+| Seedance 2.0 Mini | 480p/fast 6s | **6** |
 | **Seedance 2.0 Mini** | **720p/fast 6s** | **15** |
-| **Seedance 2.0** | **1080p/std 6s** | **54** |
+| **Seedance 2.0 (full)** | **720p/std 4s** | **18** |
+| Seedance 2.0 (full) | 720p/fast 6s | 21 |
+| **Seedance 2.0 (full)** | **720p/std 6s** | **27** |
+| **Seedance 2.0 (full)** | **1080p/std 6s** | **54** |
 
-**Default to `seedance_2_0_mini` at 720p.** TikTok re-encodes to roughly 720p
-regardless, so 1080p/std is usually 39 credits thrown away by the platform we
-most want to win on. Escalate to full Seedance 2.0 only when the printed
-wording or the product must stay pixel-locked across the clip.
+### Model tier and resolution are separate axes — this was being conflated
 
-Daily posting at 54 credits is ~1,620/month. At 15 it is ~450. **Cadence is the
-cure for a dormant account and cost is what stops cadence**, so the cheap tier
-is a strategy decision, not a saving.
+Every full-Seedance row above was re-quoted with `get_cost` on 28 Jul 2026.
+
+The choice had been read as **15 or 54**, and it never was. **The full model at
+720p costs 18 credits at 4s and 27 at 6s.** Resolution is what carries the 54,
+not the model — and TikTok re-encodes to roughly 720p regardless, so 1080p is
+27 credits handed to a platform that discards them.
+
+So the real ladder is: `mini` at 15 for anything where the wording is not the
+point, **full at 720p for 18–27 when it is**, and 1080p only when the asset has
+a life outside TikTok. The old rule sent us from 15 straight to 54 whenever
+lettering mattered; three-quarters of that jump bought resolution nobody sees.
+
+Daily posting at 54 is ~1,620 credits/month. At 27 it is ~810, at 15 ~450.
+**Cadence is the cure for a dormant account and cost is what stops cadence**,
+so the tier is a strategy decision, not a saving.
+
+*Not yet tested:* whether full-at-720p actually holds lettering better than
+mini-at-720p. It is 12 extra credits to find out, and until someone does, do
+not write it down as fact.
+
+### Free levers, verified
+
+- **`bitrate_mode: "high"` costs nothing.** 720p/std 6s quotes 27 either way;
+  1080p/std 6s quotes 54 either way. A higher output bitrate means less
+  compression on high-frequency detail, which is exactly what printed lettering
+  is made of. There is no argument for leaving it on `standard`. **Default it
+  on.**
+- **`aspect_ratio` accepts `3:4` explicitly** (also `4:3`, `1:1`, `21:9`,
+  `auto`). See the Gate 1 caveat below — the invented ceiling and floor is
+  likely an unset parameter, not a fact about the model.
+- **`generate_audio: false` saves nothing** (15 vs 15 on mini). Turn it off for
+  silence if you want silence, not to save money.
+- `genre` defaults to `auto` and takes `action`/`horror`/`comedy`/`noir`/
+  `drama`/`epic`. Untouched here so far; `auto` is the honest default for a
+  product clip.
+- `mode: "fast"` exists on the **full** model too (21 at 6s/720p) — a rung
+  between mini and full-std that had not been noticed.
+- `duration` runs 4–15s. 4s is a real cost lever: it is 9 credits cheaper than
+  6s on full/720p, and a turnaround does not need six seconds.
 
 ---
 
@@ -69,6 +106,12 @@ the plate. Seedance extended a 3:4 plate to 9:16 by generating ~474px of ceiling
 and floor. Horizontal framing carried over (sign width 72.0% → 71.8% of frame),
 the vertical margin did not. So Gate 1 protects the product, not the whole
 frame — claim exactly that and no more.
+
+*And probably self-inflicted:* the model's schema lists `3:4` as a supported
+`aspect_ratio`. The extension looks like an **unset parameter defaulting to
+9:16**, not a property of the model. Next 3:4 plate, pass `aspect_ratio: "3:4"`
+and see whether the ceiling stops appearing. Until that runs, treat the
+paragraph above as the observed behaviour and this as the likely cause.
 
 **Gate 2 — four real physical views in every request:** front, front-to-edge,
 back-to-edge, plain white back. They live in
@@ -173,6 +216,57 @@ Compositions live in `Content Pipeline/Creative Studio/video/`; see that
 README plus `hyperframes-core`, `hyperframes-animation` and `motion-doctrine`
 for the motion craft. Overlays sit in the **top third** — TikTok's own UI owns
 the bottom and the right.
+
+---
+
+## Leads from outside — not bought yet, so not doctrine
+
+Surveyed 28 Jul 2026. Of six public Higgsfield "skill" repos, one is
+MIT-licensed and substantive, one is unlicensed and avatar-led, one is a thin
+wrapper, the rest are template filler or SEO. **Nothing was worth installing.**
+Nobody has written the thing we actually want — a documented craft for keeping
+printed wording legible on a rotating product.
+
+There is a reason for that, and it is worth knowing: arXiv 2511.05573 (Nov
+2025) states plainly that **no prior work has targeted preserving text across
+frames during video synthesis**, and its own remedy is a training-data
+intervention. **There is no prompt that fixes this.** Every remaining lever is
+indirect — bitrate, resolution, shorter motion, fewer degrees of rotation,
+supplying the wording as its own reference. That retroactively justifies
+rendering overlays locally instead of generating them.
+
+What did survive the filter, all **unverified against this account**:
+
+| Lead | Source | Cost to settle |
+|---|---|---|
+| A **logo/text reference image** is Bytedance's own nominated route for "stricter text appearance requirements" — supply the wording as a reference rather than describing it. Closest thing to a documented answer to our #1 failure mode. | Seedance 2.0 vendor docs | ~18 credits |
+| Seedance 2.0 supports **video-edit Replace** across SKUs. One earned motion take could in principle be re-skinned to new wording. **But it re-generates the printed surface**, which is the exact thing Gate 3 exists to stop — so this is a test, not a plan, and a failure here is expected rather than surprising. | heymarmot | ~21 credits |
+| **Negative prompts may not exist** — the claim is that every token reads as positive instruction, so "no blur" summons blur. **Our own evidence argues against it** (see below), so treat the claim as doubtful rather than pending. | OSideMedia (MIT) | already checked |
+| **Label reference roles in the prompt text**, not only in the API role field: "use image 1 as the character reference, image 2 as the product". A text-layer echo of the discipline already enforced at the API layer. | heymarmot | free |
+
+**One of those leads is already contradicted here, which is why they are not
+rules.** The "never use negatives" claim does not survive contact with this
+account: the Bond product-calibration prompt carries four *do not* / *must not*
+clauses and the approved hero prompt carries five, and both produced
+Max-approved output — one of them the chain that ended in the 8.5/10
+turnaround. Negations have been load-bearing in every prompt that has ever
+worked here. **Do not strip them out on a stranger's say-so.**
+
+**A real one for turnarounds:** Higgsfield's own Kling start/end guide warns to
+*avoid extreme perspective differences between the two frames*, and says the
+model handles micro-movement far better than long travel. **A 180° sign turn is
+an extreme perspective difference by definition.** That is a documented reason
+turns fight the interpolator, and an argument for splitting a turn into two
+shorter arcs rather than pushing one clip harder. Kling also takes its aspect
+ratio from the start frame, unlike Seedance — a model-choice fact for
+plate-shaped sources.
+
+Asset ceiling, per vendor docs: **9 images, 3 video clips, 3 audio clips, 12
+total** per generation. The four-view Gate 2 pack is well under budget, so
+adding views costs nothing but upload time.
+
+**Do not promote any row above into a rule until it has been run.** This file's
+whole claim is that its rules were bought.
 
 ---
 
