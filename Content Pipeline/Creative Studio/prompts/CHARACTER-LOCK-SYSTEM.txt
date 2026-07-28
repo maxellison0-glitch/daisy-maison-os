@@ -17,12 +17,26 @@ FREYA   PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png
         Max-approved 27 Jul. Cream linen shirt, mid-length wavy auburn hair,
         freckles, relaxed half-smile, head-on, sign held in both hands at chest.
 
-ALAN    ALAN-LOCK-bond-tux-workshop-APPROVED.jpg
-        LOCKED 28 Jul 2026. sha256 bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98
+ALAN    ALAN-LOCK-black-tee-workshop-APPROVED.jpg
+        LOCKED 28 Jul 2026. sha256 0af3797d7fad5145a1b4a2a50ebe73f7596e51509b522202f0a77f301589d6f8
         Byte-identical copy of the Max-approved take, kept in place too so the
         provenance chain is not broken:
           active/DM-C017-synthetic-sign-turn/working/batches/hero-still/
-          DM-C018-BOND-v01-tux/outputs/take-03.jpg
+          v05-approved-product-lock/outputs/take-01.jpg
+
+        Black crew-neck tee, light grey trousers, workshop, holding MR & MRS
+        JANNAWAY, eyes down on the sign rather than to camera. Max, 28 Jul:
+        "the video that I like the most was Alan, not in a tuxedo, just in the
+        black T-shirt... that would possibly be a good lock for the Mr and Mrs
+        Jannaway as well, in the same background."
+
+        THE TUX IS THE ALTERNATE, NOT THE LOCK.
+        ALAN-ALT-bond-tux-workshop-BLACKTIE-ONLY.jpg
+        sha256 bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98
+        Same man, same workshop, Max-approved 23 Jul, and the source of the
+        8.5/10 turnaround - but black-tie wardrobe. Use it ONLY when the
+        concept is actually black-tie. It is not the default Alan, and it was
+        the default for about an hour on 28 Jul before Max said otherwise.
 
         British, mid-forties. Short mid-brown hair flecked with grey, swept up
         and back off the forehead. Blue eyes, deep-set. Close grey-flecked
@@ -33,10 +47,9 @@ ALAN    ALAN-LOCK-bond-tux-workshop-APPROVED.jpg
         modelling.
 
         WHAT IS IDENTITY AND WHAT IS COSTUME. The face, hair, beard, build and
-        the workshop are ALAN. The black tuxedo, white shirt and bow tie are
-        DM-C018 wedding wardrobe, not part of him - name them out of the prompt
-        and put him in the navy/charcoal knitwear palette when the concept is
-        not black-tie. Do not let the tux migrate into every future Alan.
+        the workshop are ALAN. Wardrobe is not. The default is the black tee;
+        the tux is for black-tie concepts only. Never let a costume from one
+        concept migrate into every future Alan.
 
         WHY THIS ONE AND NOT THE OTHER. Max, 28 Jul, on a generated pair shot:
         "that is not fucking Alan. Literally, go back to the video of the James
@@ -56,12 +69,16 @@ THE THREE BLOCKS EVERY PROMPT NEEDS
 2. THE PRODUCT - 570mm x 125mm, shaped notched ends, cream panel, coloured
    printed border, real edge thickness, NO mounting holes.
 
-   UNRESOLVED, flagged 28 Jul: Alan's lock DOES show two mounting holes,
-   because it was built from the real product photographs and the real signs
-   have them. The Freya plates have none. So "NO mounting holes" and the
-   locked reference disagree, and whichever a prompt inherits will be
-   whichever reference it leans on hardest. Ask Max which is the product
-   before treating either as the rule. Do not quietly pick one.
+   RESOLVED 28 Jul 2026, by Max: "We're not doing holes, ideally. That is
+   going forward: don't do that." NO MOUNTING HOLES is the rule, and it is
+   not a stylistic preference to be traded away when a reference disagrees.
+
+   The catch: Alan's lock and the real product-reference pack BOTH show two
+   holes, because the real photographed signs have them. So the holes will
+   arrive by inheritance unless a prompt says otherwise. **Write "no mounting
+   holes, no drilled holes, unbroken panel" into the product block of every
+   prompt that leans on those references**, and check the output for them
+   before anything else - they are small, and they survive a thumbnail.
 3. THE SCALE - held horizontally in both hands at chest height, hands wrapping
    the shaped ends, about 1.4x the holder's shoulder width. This is the gate
    from VERDICTS.md and it is the single thing that decides whether the sign
