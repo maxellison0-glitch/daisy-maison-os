@@ -253,12 +253,27 @@ carousel or a 6-second turnaround.
 All four keep the rule that killed *"day 4 of 42"*: a person, an occasion, and
 a name someone would actually hand over.
 
+## 7. THE CORRECTION — built, one frame approved
+
+Max picked concept 1 to shoot first. Four takes, 8 credits, with
+`ideas-B-bargrill/take-02` attached as an explicit SIZE AUTHORITY reference.
+
+**Approved: take 2.** Max: *"They all looked very large. I'd say the most valid
+was probably 2. It looks more like a medium street sign, which is fine, so
+that's valid… the rest came out weird."*
+
+`working/correction-01-daves-bar/outputs/take-02.png`
+
+**What that proves about scale.** A correctly sized reference plus the size rule
+written twice into the prompt got one of four. Better than the lottery, not a
+fix. Generate four, keep one, and expect that ratio.
+
 ## Status
 
 | | |
 |---|---|
-| Concepts | three, written as matched pairs |
-| Images | 11 of 12 generated, 24 credits, **awaiting Max** |
-| Missing | batch A take-02 never returned a result |
-| Not done | on-screen hook text is specified but not yet rendered onto frames |
-| Next | Max picks; then the turnaround video off the picked frame |
+| Concepts | three original (rejected as basic) + four replacements |
+| Images | 11 idea takes + 4 Correction takes |
+| Approved | **`correction-01-daves-bar/take-02`** — the lead Correction frame |
+| Not done | on-screen hook text rendered onto frames; the turnaround video |
+| Still unbuilt | "We Don't Ask", "Dad's Taxi", "Read It Back" |
