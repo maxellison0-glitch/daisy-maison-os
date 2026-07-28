@@ -271,3 +271,78 @@ Entry format:
   running our five colourways as an explicit lineup rather than defaulting to
   BLACK every time; (4) TreatBox is discounting 40-45% into a cosy/autumn
   story in July — the seasonal turn is happening earlier than instinct says.
+
+## 2026-07-28
+- **TreatBox (treatboxuk.com) — READ, 200** via `tools/refsweep.py`. Second
+  consecutive successful read; the method correction from 27 Jul holds.
+  **Results Day is still first in the queue, literally** — first tile in the
+  homepage hero strip ("Results Day Gifts · Congrats · Birthday Gifts · Advent
+  Calendars · Monthly TreatBox · Letterbox TreatBoxes") and first tile in the
+  Shop By Occasion rail, as well as sitting in the Occasions nav. A brand this
+  size does not put an occasion in slot one of two separate homepage rails on a
+  whim. Two things are new since yesterday's entry: (1) an **autumn/Halloween
+  pre-order is live in July** — "Comfort Collective Autumn Bear & Pumpkin
+  Pyjama Set", £54.95, marked AVAILABLE FOR PRE ORDER; (2) the advent line is
+  now merchandised as its own occasion tile, **"Advent Calendar 2026"**, not
+  just a nav entry. Sale still running, headline "Up To 40% Off" with body copy
+  saying up to 45% on selected styles, skewed to pyjamas and cosy. Also worth
+  logging as a mechanic, not a season: they run a **"Find My Perfect Gift"
+  quiz, badged "TAKES 1 MIN"**, promoted twice on the homepage. Standing offer
+  unchanged: free next-day delivery over £25, 10% off first order.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Nav still labels
+  Street Signs **"Our Bestseller"**; 3D acrylic street sign still **from
+  £24.99**. New detail on this read, and it is the useful one: their street
+  sign catalogue is **joke-copy led**, not occasion led — e.g. "The Dog Lives
+  Here – We Just Pay the Bills" 3D acrylic street sign from £24.99, alongside
+  "Off My Tits on M&S Picky Bits" board at £19.99. They also sell a
+  **"Personalised Wedding Pebble Art Frame – On Your Wedding Day" from
+  £29.99** — the same object as our Wedding Pebble Picture, which did 4 orders
+  and £91.80 gross yesterday at roughly £22.95. Zero Results Day, zero
+  back-to-school, zero Christmas anywhere on their homepage.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Taxonomy
+  unchanged from yesterday and still the point: Colour, Style, Season, Florals.
+  Two things I did not log yesterday — the **Season facet already carries
+  Autumn and Winter**, and the featured collections include **"Toasted
+  Amber"**, which is an autumn palette by any other name. Christmas sits in
+  Other Occasions. No Results Day, no back-to-school.
+- **Instagram: NOT READ for any reference account.** One request to
+  `ig_public.py profile --user treatbox` returned **HTTP 429** (cooldown, not a
+  ban). Not retried in a loop, per the tool's own instruction. No claim is made
+  here about what any reference account posted on Instagram. Our own account
+  was read at 05:20 UTC and is snapshotted at
+  `tools/social_api/ig-snapshots/daisymaison-2026-07-28.json`.
+- Not attempted today: Etsy (403 on every attempt to date), NOTHS, TikTok,
+  Covering All Occasions.
+- **Season read: the references have split, and the split is the signal.**
+  Late July, summer holidays week two. The gifting brand (TreatBox) is
+  merchandising **three seasons at once** — Results Day for mid-August, autumn
+  on pre-order, and Christmas advent — while both sign brands (Crafty Bonobo,
+  Little Perfections) are merchandising **no dated occasion at all**. The
+  occasion-led operator is six weeks ahead of the object-led operators. Nobody
+  is doing back-to-school yet, which is either an opportunity or a sign the
+  window opens later than instinct says; I would not bet on it before the
+  references do. UK results days are mid-to-late August, so TreatBox is running
+  a roughly three-week lead-in and it started before we noticed.
+- **Translate to us:** (1) Results Day is now confirmed live on a second
+  consecutive read, promoted to first position in two homepage rails — and we
+  still have **no Results Day sign wording in the catalogue**. That is a
+  wording problem, not a production problem, and it costs nothing to fix.
+  (2) TreatBox's gifting quiz validates the mechanic we already shipped in
+  DM-HOUSE-QUIZ on 27 Jul — a one-minute, low-effort answer is the cheapest
+  interaction there is, and our north star runs it as permanent homepage
+  furniture. Keep the quiz format; it is not a novelty. (3) Crafty Bonobo's
+  street signs are joke-copy led at £24.99 while ours are occasion-led at
+  £11.25 — we are competing on a different axis and undercutting by half.
+  Keep the LAUGH lane, but the pricing gap says the Size Upgrade is where the
+  margin is, and the market's own ladder makes £20+ look normal.
+  (4) Little Perfections' Autumn/Winter season facet plus TreatBox's July
+  pumpkin pre-order is the second and third independent signal that the
+  autumn turn is happening now, not in September. (5) Their pebble art at
+  £29.99 against our £22.95 is a live, verified price comparator on a product
+  that sold yesterday — that is a real datapoint, not a hunch.
+- Unreachable today: instagram.com via `ig_public.py` (429, one attempt, not
+  retried); etsy.com, notonthehighstreet.com, TikTok and Covering All
+  Occasions not attempted. Nothing above is presented as a live social post —
+  all three reads are homepages, retrieved today, HTTP 200.
+
+— Alan

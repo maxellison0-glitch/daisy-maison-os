@@ -158,3 +158,58 @@ Format:
   dirty spend. (F) high on the pivot, honest that the carousel is an experiment
   and not an optimisation.
 - Signed: Freya · Alan
+
+## 2026-07-28
+
+- Learned: (A) 27 Jul closed **49 orders, £1,169.82 gross, AOV £23.87, 1,065
+  sessions, CVR 3.85%**, pulled live from Shopify rather than a digest. CVR has
+  slid three consecutive days — 4.54% Sat, 4.06% Sun, 3.85% Mon — against 5.4%
+  on 21 Jul at comparable traffic. Sessions are healthy; conversion is not.
+  (F) **We can read our own Instagram, and it took one unauthenticated HTTP
+  request.** 23,535 followers, last three posts 7 / 6 / 4 likes: about 0.03%
+  against a 1-3% healthy band. May and June sit at 0-2, so the decay predates
+  every creative decision we have made. The pinned October reel holds 11,889
+  views, so distribution exists and simply is not being granted now.
+- Corrected: (F) **Bond was not our best post.** It was logged yesterday as our
+  best-engaging post on Max's recollection, and a whole strategy argument was
+  built on it — back the video lane, one video a day on Instagram. Measured: 7
+  likes, 0 comments, against 6 for the cat reel and 4 plus 1 comment for the
+  diffuser carousel. A three-like spread is noise. The row was corrected in
+  `PUBLISH_LOG.md` rather than quietly edited. (A) Higgsfield balance is
+  **1,005.12**, not the ~1,049 quoted this morning; the ~44 credit gap is today's
+  character-lock and carousel production, roughly 20 generations, and it was
+  unlogged until asked about.
+- Retired: **both of yesterday's falsifiable calls die unsettled, and that is
+  the finding.** (A) The ROAS-at-2.30 test cannot be resolved: the Shopify
+  connection carries no ad spend, so no ROAS exists to compare. (F) The
+  carousel-clears-500-views test cannot be resolved either: it went to TikTok,
+  which exposes no read endpoint, and to Instagram, which does not return view
+  counts on recent posts. Neither call failed. Both were unmeasurable from the
+  moment they were written.
+- Changing: **a falsifiable call only counts if the number that settles it is
+  one we can already pull today.** Two consecutive days of unresolvable tests is
+  a process fault, not bad luck. Also changing: reach for the free read before
+  building or buying the paid one — the Meta app blocked reading for weeks and
+  Windsor wanted $118, while the number that decides whether a post worked was
+  one request away the whole time.
+- Testing tomorrow: (A) falsifiable — **if the next Instagram post does not
+  clear 21 likes in 48h**, three times the 7-like ceiling our last three posts
+  share, creative is not the constraint and production moves to TikTok. Settled
+  by `ig_public.py`, which we can pull. (F) falsifiable — the live-commission
+  post on TikTok must return **15 or more surnames in 24h**; under that and the
+  commission desk is not the answer on this account and it gets dropped without
+  argument. Counted by hand off the post, which we can also do.
+- Gaps, named: no ad spend in the Shopify connection, so **no ROAS for 27 Jul**
+  in either direction. Newest digest is 22 Jul, six days stale. Instagram
+  returns likes but not reach on recent posts, so throttling cannot be
+  distinguished from seen-and-ignored. Reference accounts were **not** read on
+  Instagram — one request to `ig_public.py --user treatbox` returned 429, was not
+  retried, and no claim is made about their social posting. Etsy still 403.
+  TikTok still has no read endpoint of any kind. And the summer-holidays day
+  count is still unverified: DAY 14 today versus DAY 4 yesterday, both guesses,
+  neither confirmed by Max.
+- Confidence: (A) high on the Shopify figures and the Instagram likes, low on
+  any causal read of why reach collapsed. (F) high that the constraint is
+  distribution rather than hooks, honest that the live-commission mechanic is
+  untested on a follower graph this quiet and could return four comments.
+- Signed: Freya · Alan
