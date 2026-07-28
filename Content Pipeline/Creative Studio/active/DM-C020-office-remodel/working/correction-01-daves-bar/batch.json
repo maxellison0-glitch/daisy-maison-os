@@ -1,0 +1,29 @@
+{
+  "batch": "correction-01-daves-bar",
+  "concept": "THE CORRECTION",
+  "date": "2026-07-28",
+  "model": "nano_banana_pro",
+  "resolution": "2k",
+  "aspect_ratio": "9:16",
+  "takes_generated": 4,
+  "credits": 8,
+  "references": {
+    "image_1_room": "9da5c83b-552e-4a12-bcea-43f3228cb236 (plate H take-04, packing bay)",
+    "image_2_man_and_size_authority": "a64fdcbd-9a42-4702-9c3f-b4eae8a4c7a2 (ideas-B-bargrill/take-02)",
+    "image_3_woman": "86819b16-97b4-4805-a650-e6f6a7c821d7 (Freya lock)"
+  },
+  "jobs": [
+    {"take": 1, "id": "e7e1fd71-cb2e-41f0-97d6-d84d0b9b8c9d", "max_verdict": "reject", "max_note": "too large"},
+    {"take": 2, "id": "2d3a2134-3089-443f-88da-78a1bbe0ef96", "max_verdict": "APPROVED", "max_note": "most valid - looks like a medium street sign", "kept": "outputs/take-02.png"},
+    {"take": 3, "id": "a18cb7be-399d-4c97-ba7b-fb3037c71a72", "max_verdict": "reject", "max_note": "came out weird"},
+    {"take": 4, "id": "2ab2eedf-aa82-4da9-8710-3761c5ddb977", "max_verdict": "reject", "max_note": "came out weird"}
+  ],
+  "human_approval": {
+    "reviewer": "Max",
+    "date": "2026-07-28",
+    "approved_takes": [2],
+    "verbatim": "They all looked very large. I'd say the most valid was probably 2. It looks more like a medium street sign, which is fine, so that's valid."
+  },
+  "usable_as": "The approved Correction frame. Two signs from one order in one shot - Alan front deadpan with DAVE'S BAR / EST. 2019 - NO ENTRY WITHOUT SNACKS, Freya behind holding DAVE'S BAR / IT'S A SHED, DAVE. No on-screen hook needed; the second sign is the hook.",
+  "only_take_2_downloaded": "The other three were rejected on sight and were not pulled from Higgsfield. Job ids above are enough to retrieve them if that ever changes."
+}
