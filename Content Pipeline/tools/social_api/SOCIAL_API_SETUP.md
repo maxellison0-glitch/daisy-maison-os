@@ -156,3 +156,48 @@ platforms instead of from memory, and Alan's daily read stops having to say
 Publishing is still **propose, never publish** — every `post-*` command stops
 and asks before it sends, and `--yes` is for when Max has said go in the
 conversation. No customer PII in any caption.
+
+---
+
+## Part 0 — Reading Instagram with no login at all (28 Jul 2026)
+
+**`ig_public.py` replaces the Meta app for the one thing we actually needed.**
+
+Max, 28 Jul: *"you should be able to just go on Instagram and look
+autonomously."* He was right. Instagram's own web client renders a public
+profile by calling `api/v1/users/web_profile_info`, and that endpoint answers
+without a session provided you send the `x-ig-app-id` the web client sends. One
+unauthenticated GET returns followers, post count, and the last twelve posts
+with like and comment counts, for our account or any public one.
+
+    python ig_public.py profile
+    python ig_public.py profile --save            # dated snapshot, builds a series
+    python ig_public.py profile --user competitor
+
+**This should have been done on day one.** The Meta app has been the blocker for
+weeks, Windsor wanted $118, and the number that decides whether a post worked
+was one HTTP request away the whole time. Reach for the free read before
+building or buying the paid one.
+
+### What it cannot do
+
+Owner-only metrics still need the Meta token: impressions, reach, saves, shares,
+profile visits, follower demographics, stories. And publishing needs it. So
+Parts 1-3 below still stand — this only removes the block on *reading* likes,
+comments and follower counts.
+
+### Rate limits
+
+One request per run, by design. Instaloader was tried first and tripped a 429
+inside a minute because it pages through history with several calls. A 429 is a
+cooldown of roughly ten minutes, not a ban. Twelve posts is the ceiling for a
+single request; run it daily and keep the snapshots rather than paging deeper.
+
+### The first read, 28 Jul 2026
+
+23,535 followers, 1,779 posts, and **4-7 likes on recent posts**. That is about
+0.03% engagement against a 1-3% healthy band, and it is not new — May and June
+posts sit at 0-2 likes. Pinned posts show 11,889 and 2,483 views, so the account
+can reach when something lands. Recorded here because it reframes the work:
+until this read, every creative decision was being made without knowing the
+account had a distribution problem rather than a content problem.
