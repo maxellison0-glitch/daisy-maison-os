@@ -40,14 +40,25 @@ in shot, and the gate's failure mode cannot occur.
 This is a genuine constraint, not a preference. **If those four reference frames
 are recovered, the turn becomes available again and is the stronger shot.**
 
-## Why the first frame is safe
+## Why the first frame is safe — and where that claim stops
 
-Gate 1 requires a human-approved source image. Rather than generate a new hero
-and ask for approval, the start frame *is*
-`reference-masters/PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png` —
-already approved, already carrying the phone-snapshot look and a passing
-sign-to-shoulder scale. Frame 1 is human-approved by construction, and no new
-image generation was needed or paid for.
+Gate 1 requires a human-approved source image, so the start frame is
+`reference-masters/PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png`,
+already approved and already carrying the phone-snapshot look. No new image
+generation was needed or paid for.
+
+**But frame 1 is not pixel-identical to that plate, and it would be wrong to
+claim it is.** The plate is 896x1200 (3:4); the output is 1080x1920 (9:16).
+Seedance closed that gap by extending the canvas **vertically** — roughly 474px
+of ceiling and floor that no human ever approved.
+
+Measured, rather than assumed: the sign occupies **72.0%** of the frame width in
+the approved plate and **71.8%** in take 02 frame 1. The horizontal framing —
+and with it the sign-to-body scale Max signed off — carried over intact. It is
+the vertical margin that is new.
+
+So Gate 1 is satisfied on the thing it exists to protect, the product, and the
+generated part is empty hallway.
 
 ## References and roles
 
@@ -59,17 +70,37 @@ from `REFERENCE_PACK.md` that separates approved output from rejected output.
 | `start_image` | `PLATE-summer-holidays-BLACK-freya-hallway-APPROVED.png` | identity, room, wardrobe, light, framing, wording | — |
 | `image` | `street-sign-BLACK-on-white-MASTER.jpg` | the physical object: thin rigid sheet, shaped ends, border weight, holes, sheen, finger contact | its wording, its workshop, its person, its framing |
 
+## Verdict
+
+**Take 01 rejected. Take 02 agent-pass, and Max has seen it.**
+
+His read, 28 July: it renders well, the size looks real, it works — *"but it's
+just a tiny bit boring. Literally, we're just pushing a sign forward."*
+
+That is correct and it is worth recording why rather than filing it as taste.
+A 180° turn is the format the numbers actually like — the account's best post
+ever is a real sign turning, at 11,889 views — and it was unavailable here only
+because the four physical reference frames it needs are missing from the repo.
+The lift was what was left, not what was best. See `../../../DISTRIBUTION_PLAN.md`
+§3a: those frames are recoverable from Daisy Maison's own reel, for free.
+
 ## Spend
 
-| Item | Credits |
+| | Credits |
 |---|---|
-| Cost quoted before submission (`get_cost`) | 54 |
-| Seedance 2.0, 6s, 1080p, std, 9:16, audio off | 54 |
-| New image generations | 0 |
+| Take 01 (rejected) | 54 |
+| Take 02 | 54 |
+| Image generations | 0 |
+| **Total** | **108** |
 
-Balance before: 993.12. Audio is off deliberately — native audio is an
-uncontrolled variable and sound is a decision to make on purpose, later.
+Audio is off deliberately — native audio is an uncontrolled variable and sound
+is a decision to make on purpose, later.
+
+Balance 993.12 → 885.12. A future take of this kind should use
+`seedance_2_0_mini` at 720p/fast: **15 credits**, measured, and TikTok
+re-encodes to roughly 720p anyway.
 
 ## Status
 
-Not published. Not approved. Publishing needs Max's explicit go, separately.
+Not published. Not approved for publishing. That needs Max's explicit go,
+separately, every time.

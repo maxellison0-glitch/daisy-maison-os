@@ -14,9 +14,10 @@
   },
   "cost": {
     "quoted_credits": 54,
-    "charged_credits": 54,
+    "charged_credits": 108,
     "balance_before": 993.12,
-    "image_generations": 0
+    "image_generations": 0,
+    "balance_after": 885.12
   },
   "inputs": [
     {
@@ -42,5 +43,37 @@
     "gate_3_no_product_surface_overlay": "PASS - no overlay, tracking, corner-pin or panel replacement used or planned"
   },
   "published": false,
-  "max_approved": false
+  "max_approved": false,
+  "takes": [
+    {
+      "take": "01",
+      "job_id": "6cd6930b-069c-4c7e-8dbf-eaba718a635c",
+      "credits": 54,
+      "verdict": "REJECTED",
+      "reason": "Sign fully inside frame only to 2.0s, then ran edge to edge for the remaining 4.0s. The readable hold had letters cut off both sides. Cause: no end_image, so the approach toward camera had no limit.",
+      "file": "delivery/DM-C019-native-raw.mp4 (untracked)"
+    },
+    {
+      "take": "02",
+      "job_id": "05d32bdd-49d2-47b3-9cc7-07ac997fcd99",
+      "credits": 54,
+      "verdict": "AGENT-PASS, NOT max-approved",
+      "reason": "qc_framing.py: all 145 frames keep the whole sign inside the frame. Lettering, border weight, shaped ends and hands all hold. Motion is real but small.",
+      "file": "delivery/DM-C019-take02-native-raw.mp4 (untracked)",
+      "extra_inputs": [
+        {
+          "role": "end_image",
+          "media_id": "e70b80ec-01c6-4ef8-90e3-043eb60115e4",
+          "derived_from": "take 01 frame 052, native and uncomposited",
+          "sha256": "f608609e19ccedbeb5b6cf48e585e812208f41302ae54807d925a72d255336e9",
+          "note": "Scaffolding, not a master. Untracked because it is a video frame, and its take is rejected."
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "Seedance outpainted the 3:4 start image to 9:16 VERTICALLY, not horizontally. Sign occupies 72.0% of frame width in the approved plate and 71.8% in take 02 frame 1, so the horizontal scale Max approved carried over intact; roughly 474px of ceiling and floor are generated. Frame 1 is therefore NOT pixel-identical to the approved plate - the product and framing are faithful, the extra canvas is new.",
+    "Max's verdict on take 02, 28 Jul: renders well, size looks real, works - but boring. 'Literally we're just pushing a sign forward.' Agreed. The lift is small because a 180 turn was unavailable, not because a lift was the better idea.",
+    "seedance_2_0 1080p/std = 54 credits. seedance_2_0_mini 720p/fast = 15 credits, measured via get_cost. TikTok re-encodes to ~720p regardless."
+  ]
 }
