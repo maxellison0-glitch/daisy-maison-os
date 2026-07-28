@@ -183,11 +183,13 @@ def eligible_records(payload) -> tuple[list[dict], list[dict]]:
 
 
 def manifest(eligible: list[dict], excluded: list[dict]) -> dict:
-    # One bed is one size at one colour: a bed is a single print run at one ink
-    # setup, so mixing either would mean re-jigging mid-run.
+    # One bed is one SIZE. Colour does not split a bed: border colour is artwork,
+    # not a machine setting, so the Mimaki prints a grass sign and a blush sign in
+    # the same run with no re-setup. Only the physical blank size changes the
+    # layout. Grouping by colour as well used to strand a part bed per colourway.
     groups = defaultdict(list)
     for record in eligible:
-        key = f"{record['size']} / {record['colour']}"
+        key = record["size"]
         # A line item ordered x3 occupies three bed slots, not one.
         for _ in range(max(1, int(record.get("quantity") or 1))):
             groups[key].append(record)
@@ -242,10 +244,16 @@ def markdown(data: dict) -> str:
         lines += ["## No production batches", "", "No sign line currently has `unfulfilledQuantity > 0`.", ""]
     for batch in data["batches"]:
         fill = "FULL BED" if batch["full"] else f"PART BED - {batch['slotsUsed']} of {batch['perBed']} slots"
+        # Colour is a per-position column now, not a property of the bed: one bed
+        # carries whatever colourways the orders in it happen to use.
         lines += [f"## {batch['batch']} - {batch['template']} ({fill})", "",
-                  "| Position | Order | SKU | Line 1 | Line 2 | Review |", "|---:|---|---|---|---|---|"]
+                  "| Position | Order | SKU | Colour | Line 1 | Line 2 | Review |",
+                  "|---:|---|---|---|---|---|---|"]
         for item in batch["positions"]:
-            lines.append(f"| {item['position']} | {item['order']} | {item['sku']} | {item['line1']} | {item['line2']} | {item['review'] or 'OK'} |")
+            lines.append(
+                f"| {item['position']} | {item['order']} | {item['sku']} | {item['colour']} "
+                f"| {item['line1']} | {item['line2']} | {item['review'] or 'OK'} |"
+            )
         lines += ["", "Status: **REVIEW REQUIRED**", ""]
     part = [b for b in data["batches"] if not b["full"]]
     if part:

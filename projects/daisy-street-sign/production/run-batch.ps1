@@ -109,36 +109,39 @@ New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 $work = Join-Path $OutDir '_work'
 New-Item -ItemType Directory -Force -Path $work | Out-Null
 
-# --- group into beds: one bed = one size + one colourway --------------------
+# --- group into beds: one bed = one SIZE. Colour does not split a bed. -------
+# Border colour is artwork, not a machine setting: the Mimaki lays CMYK onto
+# white acrylic, so a grass sign and a blush sign on the same bed are simply two
+# different images in one print run with no re-setup between them. Splitting by
+# colourway used to force a part bed per colour - eight colourways could mean
+# eight half-empty beds and eight print runs to place a dozen signs. Only the
+# physical blank size changes the layout, so only size groups a bed.
 $groups = @{}
 foreach ($s in $signs) {
-  $size = $s.size.ToString().ToLower()
-  $col  = 'black'
-  if ($s.PSObject.Properties.Name -contains 'colour' -and $s.colour) { $col = $s.colour.ToString() }
-  $key  = "$size|" + ($col -replace '[\s_-]', '').ToLower()
+  $key = $s.size.ToString().ToLower()
   if (-not $groups.ContainsKey($key)) { $groups[$key] = @() }
   $groups[$key] += $s
 }
 
-Write-Host ("`n{0} sign(s) -> {1} size/colour group(s)" -f $signs.Count, $groups.Count)
+Write-Host ("`n{0} sign(s) -> {1} size group(s)" -f $signs.Count, $groups.Count)
 
 $beds = @()
-foreach ($key in ($groups.Keys | Sort-Object)) {
-  $size, $colKey = $key.Split('|')
+foreach ($size in ($groups.Keys | Sort-Object)) {
   $layout  = Get-DaisyBedLayout -Size $size
   $perBed  = $layout.Count
-  $members = $groups[$key]
-  # No ternary here: this has to run on Windows PowerShell 5.1, where ?: does not parse.
-  $colName = 'Black'
-  if (($members[0].PSObject.Properties.Name -contains 'colour') -and $members[0].colour) { $colName = $members[0].colour }
+  $members = $groups[$size]
 
-  Write-Host ("`n=== {0} / {1} : {2} sign(s), {3} per bed ===" -f $size, $colName, $members.Count, $perBed)
+  Write-Host ("`n=== {0} : {1} sign(s), {2} per bed ===" -f $size, $members.Count, $perBed)
 
   for ($start = 0; $start -lt $members.Count; $start += $perBed) {
     $slice   = @($members[$start..([Math]::Min($start + $perBed, $members.Count) - 1)])
     $bedNo   = $beds.Count + 1
-    $bedName = "bed{0:D2}-{1}-{2}" -f $bedNo, $size, $colKey
-    Write-Host ("  {0}: {1} of {2} slots" -f $bedName, $slice.Count, $perBed)
+    $bedName = "bed{0:D2}-{1}" -f $bedNo, $size
+    # Report the colours actually on this bed, since one bed can now carry several.
+    $colours = @($slice | ForEach-Object {
+      if (($_.PSObject.Properties.Name -contains 'colour') -and $_.colour) { $_.colour.ToString() } else { 'Black' }
+    } | Sort-Object -Unique)
+    Write-Host ("  {0}: {1} of {2} slots  [{3}]" -f $bedName, $slice.Count, $perBed, ($colours -join ', '))
 
     # --- per sign: generate, style, bleed ---
     $bled = @()
@@ -164,8 +167,15 @@ foreach ($key in ($groups.Keys | Sort-Object)) {
         else     { python (Join-Path $PROJ 'artwork\build.py') --size $size --out $raw --no-line2 $id $s.line1 | Out-Null }
       }
 
+      # Colour is read PER SIGN, not per bed. When a bed was one colourway the
+      # group's colour was the same for every member, so taking it from the group
+      # was correct by accident. A mixed bed makes that wrong: it would paint the
+      # whole bed in whichever colour the first order happened to use.
+      $signCol = ''
+      if (($s.PSObject.Properties.Name -contains 'colour') -and $s.colour) { $signCol = $s.colour.ToString() }
+
       $rcArgs = @('-SvgPath', $raw, '-OutPath', $sty, '-Sku', $s.sku.ToString())
-      if ($colName) { $rcArgs += @('-Colourway', $colName) }
+      if ($signCol) { $rcArgs += @('-Colourway', $signCol) }
       Invoke-Stage "recolour-sign ($id)" { powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $HERE 'recolour-sign.ps1') @rcArgs | Out-Null }
 
       Invoke-Stage "add-bleed ($id)" { python (Join-Path $HERE 'add-bleed.py') $sty $ble $BleedMm | Out-Null }
@@ -202,7 +212,7 @@ foreach ($key in ($groups.Keys | Sort-Object)) {
     $beds += [pscustomobject]@{
       bed      = $bedName
       size     = $size
-      colour   = $colName
+      colours  = $colours
       signs    = $slice.Count
       capacity = $perBed
       full     = ($slice.Count -eq $perBed)
@@ -254,7 +264,7 @@ Write-Host "`n---------------------------------------------------------------"
 Write-Host ("{0} sign(s) on {1} bed(s):" -f $signs.Count, $beds.Count)
 foreach ($b in $beds) {
   $flag = if ($b.full) { 'FULL' } else { "PART ($($b.signs)/$($b.capacity))" }
-  Write-Host ("  {0,-28} {1,-6} {2}" -f $b.bed, $flag, $b.colour)
+  Write-Host ("  {0,-20} {1,-12} {2}" -f $b.bed, $flag, ($b.colours -join ', '))
 }
 $part = @($beds | Where-Object { -not $_.full })
 if ($part.Count) {
