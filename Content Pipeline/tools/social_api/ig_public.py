@@ -28,7 +28,18 @@ Rate limits, honestly
 Instagram will 429 an IP that asks repeatedly. Instaloader tripped it inside a
 minute by making several calls to page through history. This makes exactly ONE
 request per run and caches the result, so a normal day's use is a handful of
-calls. If you do get a 429 it is a cooldown, not a ban - wait ten minutes.
+calls. A 429 is a cooldown, not a ban.
+
+How long that cooldown actually lasts, measured on 28 Jul rather than guessed:
+our own profile read succeeded on a single request at 05:20. Instaloader was
+then tried for deeper history, burst several requests, and tripped a 429 inside
+a minute. That block was still in force across three further attempts spanning
+roughly fifty minutes, and it cost every competitor read for the rest of the
+day. Budget in HOURS, not minutes.
+
+The operational rule that falls out: one account per day, one request each, and
+never a library that pages on your behalf. Instaloader is convenient, and that
+convenience is exactly what spent the budget.
 
 Twelve posts is the ceiling for a single request. Deeper history needs cursor
 pagination, which means more requests, which is what got us limited. Run this

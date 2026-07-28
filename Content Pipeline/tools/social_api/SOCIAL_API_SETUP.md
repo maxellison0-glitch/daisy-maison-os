@@ -189,9 +189,16 @@ comments and follower counts.
 ### Rate limits
 
 One request per run, by design. Instaloader was tried first and tripped a 429
-inside a minute because it pages through history with several calls. A 429 is a
-cooldown of roughly ten minutes, not a ban. Twelve posts is the ceiling for a
-single request; run it daily and keep the snapshots rather than paging deeper.
+inside a minute because it pages through history with several calls.
+
+**A 429 lasts hours, not minutes — measured, not guessed.** The initial estimate
+here said ten minutes, on no evidence. In practice the block from that one
+instaloader burst was still in force three attempts later across ~50 minutes,
+and it cost every competitor read for the rest of 28 Jul. One account per day,
+one request each, and never a library that pages on your behalf.
+
+Twelve posts is the ceiling for a single request; run it daily and keep the
+snapshots rather than paging deeper.
 
 ### The first read, 28 Jul 2026
 
