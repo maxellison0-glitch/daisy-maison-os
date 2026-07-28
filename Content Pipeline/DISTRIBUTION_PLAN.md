@@ -56,17 +56,25 @@ pattern. It is still the strongest signal on the account.
 
 ## 3. What to actually do, in leverage order
 
-### a. Recover the turnaround references — free, and it unblocks the winner
+### a. Recover the turnaround references — DONE, 28 Jul 2026
 
 The four physical views the video rules demand (front, front-to-edge,
-back-to-edge, white back) are **missing from the repo** — only the markdown
-describing them survives. That is why DM-C019 had to be a lift rather than a
+back-to-edge, white back) were **missing from the repo** — only the markdown
+describing them survived. That is why DM-C019 had to be a lift rather than a
 turn, and why DM-C019 is boring.
 
-They are recoverable: they were cut from Daisy Maison's own public reel, and
-`REFERENCE_PACK.md` records the source URL, the video's SHA-256 and a SHA-256 for
-each of the four frames. Re-download, re-extract at the recorded frame numbers,
-check the hashes match. Costs nothing and restores the format the data likes.
+**They are back.** Not off Instagram — the public endpoint was rate-limited (429)
+when this was attempted, and the cooldown is measured in hours. They came out of
+**git history**, where the blobs were still reachable from an older commit even
+though the files had left the working tree. Restored with `git cat-file`, and all
+five recorded SHA-256 hashes re-verified byte for byte: the source video and each
+of the four frames match exactly.
+
+They are now force-added past `.gitignore` (2.4 MB) so they survive the next
+merge. `REFERENCE_PACK.md` records how they were lost and why nothing flagged it.
+
+**Gate 2 is satisfiable again, so the next sign video can turn** — and the turn
+is the format the only view count we have actually likes.
 
 ### b. Stop paying 54 credits a video
 

@@ -10,6 +10,29 @@ The Reel is Daisy Maison's own published footage dated 8 October 2025. It shows
 one real sign turning continuously from its white back, through the thin edge,
 to its printed front.
 
+## These files went missing once. Here is how, so it does not happen again.
+
+On 28 July 2026 this folder held nothing but the markdown you are reading. Every
+frame it describes was gone, and the loss was silent — `git status` never said a
+word, because `.gitignore` lines 67-71 hide `Content Pipeline/**/*.jpg` and
+`*.mp4`. An ignored file cannot show up as deleted.
+
+They were committed in `21f8fa6` and were absent by `48d61da`, the merge that
+reconciled a diverged week. The merge resolved that path in favour of the side
+that did not have them, and nothing complained.
+
+**Recovered 28 July 2026 from git history**, not re-downloaded — the blobs were
+still reachable, so the four selected frames and the source video were restored
+by `git cat-file` and every SHA-256 below was re-verified byte for byte. All
+five matched.
+
+They are now **force-added** (`git add -f`), which is the escape hatch
+`.gitignore` documents for exactly this: evidence that must survive. 2.4 MB, and
+it buys the only physical construction truth this brand has.
+
+If they vanish again, check history before the network. Instagram rate-limits in
+hours; `git cat-file` is instant and byte-exact.
+
 ## Downloaded source
 
 - File: `daisymaison-reel-DPjdseCDbDR-video.mp4`

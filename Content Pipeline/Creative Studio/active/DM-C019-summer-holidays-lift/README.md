@@ -25,10 +25,15 @@ rediscovering.
 
 `WEDDING_SIGN_VIDEO_RULES.md` Gate 2 requires four real physical views —
 front, front-to-edge, back-to-edge and plain white back — in every video
-request. Those frames are described in
+request. When this video was made those frames existed only as a description:
 `active/DM-C017-synthetic-sign-turn/source/real-product-reference-pack/instagram-DPjdseCDbDR/REFERENCE_PACK.md`
-but **the image files themselves are not in the repository**; only the markdown
-describing them survives. Checked 28 Jul 2026.
+survived, the images did not.
+
+**They were recovered later the same day** — out of git history rather than off
+Instagram, with all five SHA-256 hashes re-verified. So the constraint below was
+real when this take was shot and is **no longer in force**. The next sign video
+can turn. See that `REFERENCE_PACK.md` for how they were lost and why the loss
+was silent.
 
 Gate 2 exists because of exactly one failure: with no edge or reverse truth,
 Seedance invented a thick slab and a black back, and real Daisy Maison signs are
@@ -37,8 +42,9 @@ rather than run a turn on missing references and hope, the motion was designed
 so the sign stays front-on for every frame — its edge and its reverse are never
 in shot, and the gate's failure mode cannot occur.
 
-This is a genuine constraint, not a preference. **If those four reference frames
-are recovered, the turn becomes available again and is the stronger shot.**
+This was a genuine constraint, not a preference — and it has since been lifted.
+**The four reference frames are back, so the turn is available again and it is
+the stronger shot.**
 
 ## Why the first frame is safe — and where that claim stops
 
@@ -80,9 +86,10 @@ just a tiny bit boring. Literally, we're just pushing a sign forward."*
 That is correct and it is worth recording why rather than filing it as taste.
 A 180° turn is the format the numbers actually like — the account's best post
 ever is a real sign turning, at 11,889 views — and it was unavailable here only
-because the four physical reference frames it needs are missing from the repo.
-The lift was what was left, not what was best. See `../../../DISTRIBUTION_PLAN.md`
-§3a: those frames are recoverable from Daisy Maison's own reel, for free.
+because the four physical reference frames it needs were missing from the repo
+on the day. The lift was what was left, not what was best. Those frames have
+since been recovered, so that excuse is spent — see `../../../DISTRIBUTION_PLAN.md`
+§3a.
 
 ## Spend
 
