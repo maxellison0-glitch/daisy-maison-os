@@ -103,10 +103,39 @@ THE THREE BLOCKS EVERY PROMPT NEEDS
    The general rule this establishes, worth more than the holes themselves:
    when a prompt instruction and a reference image disagree, THE REFERENCE
    WINS. Fix the reference.
-3. THE SCALE - held horizontally in both hands at chest height, hands wrapping
-   the shaped ends, about 1.4x the holder's shoulder width. This is the gate
-   from VERDICTS.md and it is the single thing that decides whether the sign
-   reads as a real object or a plaque.
+3. THE SCALE.
+
+   *** THE GATE, REPLACED 28 Jul 2026 BY MAX. READ THIS ONE, NOT THE RATIO. ***
+
+   THE SIGN'S ENDS MUST NOT EXTEND PAST THE OUTER EDGE OF HIS ARMS.
+
+   Max, 28 Jul, reviewing eleven in-office images: "On Dave's Bar and Grill
+   image 1, 3, and 4, all extend past his shoulder line on the right or near
+   his shoulder line. On image 2, its hand is in the same placement, if
+   anything closer, and the sign does not reach past him. On image 2, that
+   looks way more realistic."
+
+   The reference image for correct scale is
+     active/DM-C020-office-remodel/working/ideas-B-bargrill/outputs/take-02.png
+   Its ends land AT his arms and his hands are not stretched out wide. That is
+   the standard. Check every output against it before anything else.
+
+   HOW TO CHECK IT: draw a vertical line down the frame at each end of the sign.
+   If either line falls outside his arm, the sign is too big. It takes seconds
+   and it does not need a detector.
+
+   WHAT THE OLD GATE SAID, AND WHY IT IS NOT THE GATE ANY MORE. The previous
+   rule was "about 1.4x the holder's shoulder width", later measured at ~1.35
+   off real footage. The approved image above FAILS that ratio and is the most
+   realistic of the set; three images that PASS it were rejected on sight as
+   too big. The ratio is kept below as background only. Perspective is why:
+   how far the sign is in front of the body changes its apparent width far
+   more than its real width does, so a body-relative ratio measures the wrong
+   thing. The arm line is a silhouette test and perspective cannot cheat it.
+
+   Background, no longer the gate: held horizontally in both hands at chest
+   height, hands wrapping the shaped ends, roughly 1.3-1.4x shoulder width
+   measured at the sleeve seam in real footage.
 
    GROUND TRUTH, measured 28 Jul 2026 off real footage of Max holding a real
    sign in the real unit (instagram-DPjdseCDbDR, the 11,889-view post): sign
