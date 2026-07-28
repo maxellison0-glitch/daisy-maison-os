@@ -48,10 +48,33 @@ use anything else."* The character-lock system (`Creative Studio/prompts/
 CHARACTER-LOCK-SYSTEM.txt`) works by holding **one** Max-approved
 photograph as the reference every new image is generated against, so a
 second candidate image is not a spare — it is a way to lose the character.
-The lock:
 
-`Creative Studio/active/DM-C017-synthetic-sign-turn/working/batches/
-product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg`
+**The lock, resolved 28 Jul 2026:**
+
+`Creative Studio/reference-masters/ALAN-LOCK-bond-tux-workshop-APPROVED.jpg`
+sha256 `bef93fa2ea7f2e307c38d6f3cbde1304793bf7154218106eace1e4db5c9c2e98`
+
+A byte-identical copy of the Max-approved take, which stays where it was
+generated so the provenance chain is intact:
+`.../working/batches/hero-still/DM-C018-BOND-v01-tux/outputs/take-03.jpg`
+— approved by Max on 23 Jul, take 03 of four.
+
+This file previously pointed at
+`product-calibration/v01-locked-real-sign-edit/outputs/take-03.jpg`. That
+path exists, which is why the error survived, but it is the **DM-C017
+JANNAWAY sign calibration crop — a pair of hands and a sign, no face in
+the frame at all.** It could never have locked a character. Anyone
+following the instruction literally would have generated a stranger and
+then wondered why.
+
+**Why this take and not another.** Everything downstream came off this one
+node: it produced the white-back start keyframe, which produced the 6s
+turnaround Max scored 8.5/10. No other Alan image has that lineage.
+
+**Identity vs costume.** The face, hair, beard, build and workshop are
+Alan. The black tuxedo and bow tie are DM-C018 wedding wardrobe — prompt
+them out when the concept isn't black-tie, or he becomes a man who owns
+one outfit.
 
 If more of him is generated later (more angles, expressions, eventual
 video), it follows the same staged, approval-gated process as
@@ -61,7 +84,8 @@ good" covers everything downstream.
 
 ## Who he is
 
-- British, mid-thirties. Calm, dry, deadpan. The straight man to Freya's
+- British, mid-forties (see the appearance spec — the lock, not the old
+  spec, decides this). Calm, dry, deadpan. The straight man to Freya's
   energy — and completely unbothered that she thinks her IQ of 110 makes her
   the clever one. ("It's a lovely number, Freya.")
 - **The numbers-and-logistics half.** Where Freya is taste, hooks and
@@ -110,15 +134,30 @@ Disagreement is a feature: when they split, the brief shows both takes and a
 one-line resolution ("we're going with Freya's, because X" / "Alan wins this
 one"). Max only sees a fake consensus if it's a real one.
 
-## Appearance spec (for the character build, when we get there)
+## Appearance spec — settled, read off the lock
 
-Same discipline as Freya's build (`HIGGSFIELD_CHARACTER_BUILD.md`): staged,
-cheap-first, hero → Max approval → reference expansion. Direction: mid-30s
-British male, approachable-but-plain (workshop-plausible, not catalogue),
-short dark hair, light stubble, navy/charcoal knitwear and workwear palette to
-Freya's cream/putty, one signature tell to lock (e.g. a plain steel watch).
-**No credits spent on Alan's face until Max approves the direction — the
-persona works in text from day one.**
+Not a direction any more. This is a description of
+`ALAN-LOCK-bond-tux-workshop-APPROVED.jpg`, and where it disagrees with an
+older note in this repo, the image wins.
+
+British, mid-forties. Short mid-brown hair flecked with grey, swept up and back
+off the forehead. Deep-set blue eyes. Close grey-flecked stubble beard, heaviest
+along the jaw. Strong straight nose, level brow, closed-mouth deadpan — not
+smiling, not stern. Head-on, square to camera, eyes to lens. Workshop behind
+him: painted white blockwork, a timber shelf of stacked blanks, plain equipment,
+soft even daylight.
+
+Wardrobe outside DM-C018 stays navy/charcoal knitwear and workwear against
+Freya's cream and putty. The tux does not follow him out of the wedding concept.
+
+**He reads older than the "mid-thirties" written elsewhere in this file and in
+the character-lock system.** That was a spec for a man who was never built; this
+is the man who exists and whose video Max approved. Trust the photograph.
+
+Further angles and expressions follow the staged, approval-gated process in
+`HIGGSFIELD_CHARACTER_BUILD.md`: cheap proof pass first, human look before any
+batch, and every one of them generated **against this lock**, never against
+each other.
 
 ## Guardrails
 
