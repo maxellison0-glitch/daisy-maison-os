@@ -68,13 +68,17 @@ the brief; the feed stays brand-restrained.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
-Thirty-five skills live in `.claude/skills/`. Ten are vendored from
-`coreyhaines31/marketingskills` (MIT), twenty-four from `heygen-com/hyperframes`
+Thirty-six skills live in `.claude/skills/`. Ten are vendored from
+`coreyhaines31/marketingskills` (MIT), twenty-five from `heygen-com/hyperframes`
 (Apache 2.0, the video lane); `daisy-social-analytics` is ours. They
 exist to be *used* — a skill nobody invokes is worse than no skill, because it
 looks like capability while changing nothing. Max, on installing them: "we need
 to make sure that the Digest adapts with these skills so we actually don't
 create something that isn't utilised later on."
+
+Every one of the thirty-six is accounted for below: either it has a step in the
+session, or it is named in "Installed but NOT for us" with the reason. Nothing
+sits in the folder unexplained.
 
 So the daily session now runs them at fixed points:
 
@@ -86,10 +90,46 @@ So the daily session now runs them at fixed points:
 | Freya, writing hooks | **`ad-creative`** → `references/hook-system.md` | **A hook is three components — visual action, spoken line, caption text — and they must never duplicate.** A caption that merely describes the image wastes a third of the hook. Write all three columns; a hook spec with one column filled is a third of a hook. |
 | Freya, choosing an angle | **`marketing-psychology`** | Name the mechanism the hook is using, not just the vibe. |
 | Blend, when Alan and Freya disagree | **`marketing-council`** | Only for a genuinely hard call. It keeps the disagreement instead of averaging it, which is the same reason this team has two people. |
+| Freya, deciding what to make at all | **`content-strategy`** | Pillars and topic clusters, so the week is a plan rather than five separate good ideas. Use it when the question is "what next", not "how do I write this". |
 | Anything that needs generating | **`image`** / **`video`** | Both name our actual stack (Nano Banana, Seedance, Hailuo, Kling), so use their prompting references rather than improvising. |
-| Any moving deliverable | **`hyperframes`** (+ `captions-overlay`, `motion-doctrine`) | Written as HTML, rendered locally, **zero credits**. This is the default for anything that moves. Reserve paid generation for footage that genuinely could not be a still with motion applied to it. See `../Creative Studio/video/README.md`. |
+| Any moving deliverable | **`hyperframes`** | Written as HTML, rendered locally, **zero credits**. Always enter through `hyperframes` — it is the router and it loads whichever sub-skill the job needs. Do not hand-pick them. See `../Creative Studio/video/README.md`. |
+| Text, hooks and overlays on a video | **`captions-overlay`** + **`motion-doctrine`** | Where hyperframes genuinely beats a generator. Max, 28 Jul: **"an image with video formats around it is just a useless concept. If we're doing a video, it needs to be a video."** So this lane renders *type and graphics*; the moving picture underneath comes from real video generation. |
 | Every falsifiable call | **`ab-testing`** | And the house rule that outranks it: a call only counts if `daisy-social-analytics` can already pull the number that settles it. |
 | When the CVR slides | **`cro`** | Site-side, not content-side. Worth remembering that not every bad day is a content problem. |
+
+### Loaded by the router, never called directly
+
+`hyperframes` pulls these in itself, so they need no step of their own:
+`hyperframes-core` (the composition contract), `hyperframes-cli`,
+`hyperframes-animation`, `hyperframes-keyframes`, `hyperframes-creative`,
+`hyperframes-registry`, `general-video`, `motion-graphics`, `slideshow`,
+`music-to-video`, `media-use`, `cut-the-curve` and `seam-craft`. Read
+`hyperframes-core` before writing composition HTML and let the router do the
+rest.
+
+Written out in full deliberately: this list is checkable with a grep, and a
+shorthand like `-cli` would silently pass as unaccounted for.
+
+### Installed but NOT for us
+
+Named so nobody spends a session discovering it the hard way. `figma`,
+`pr-to-video`, `changelog-video`, `remotion-to-hyperframes`, `oversized-cursor`,
+`product-launch-video` and `faceless-explainer` are built for software products —
+screen recordings, cursors, code diffs, SaaS launches. We sell a £19 sign.
+`talking-head-recut` and `embedded-captions` need a person speaking to camera,
+and **Max does not film**, so they have no input. They stay installed because
+the router expects them; they are not part of the routine.
+
+### The colour path — one source of truth
+
+Any content render that puts wording on a sign goes through
+`../templates/sign-reprint/`, which resolves every colourway from
+`projects/daisy-street-sign/production/product-rules.json` — the same file the
+laser reads. Content does not keep its own colour list. If a colourway changes
+for the product, content follows on the next run without anyone editing
+anything. The plate's label in `plates.json` is the template and is
+authoritative; do not re-measure a photograph and relabel it, because lighting
+shifts colour further than two adjacent shades differ.
 
 ### The one that has already changed our work
 

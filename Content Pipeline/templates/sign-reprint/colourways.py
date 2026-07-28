@@ -77,6 +77,15 @@ def resolve(name):
     A fallback would be worse than a crash: a typo that quietly renders a
     plausible colour we do not sell reaches Max as an approved-looking image,
     and from there a customer.
+
+    How exact to be about this, settled by Max on 28 Jul 2026: "for content,
+    obviously colour is gonna differ based on lighting and stuff like that, so
+    we don't need to be too strict. Just pick a template, and then we'll stick
+    with it." So the name in plates.json is the template and it is authoritative
+    - do not re-measure a photograph and relabel a plate because a sampled
+    pixel landed nearer a neighbouring shade. Lighting moves colour further
+    than two adjacent sages differ, so that measurement can never settle it and
+    chasing it just makes old content stop matching new content.
     """
     if not name:
         return None

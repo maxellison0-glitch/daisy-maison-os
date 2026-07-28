@@ -67,12 +67,13 @@ CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 SIGN_MM_W, SIGN_MM_H = 570.0, 125.0
 BORDER_MM = 12.4
 
-# The panel is the one colour NOT taken from product-rules.json, because the
-# rules file has no panel entry - recolour-sign.ps1 defaults it to #FFFFFF.
-# Content has always used a warm cream, and the approved photographs of the real
-# product read cream rather than white. Which one is true is a print question,
-# not a content one, so this stays a named constant rather than being quietly
-# reconciled in either direction. Flagged for Max.
+# The panel is the one colour NOT taken from product-rules.json: the rules file
+# has no panel entry, because print defaults it to white and that is all the
+# laser needs. Content keeps a warm cream, which is what the approved
+# photographs of the real product read as. Settled by Max, 28 Jul 2026 - "I
+# don't think that makes much of a difference, just have something neat" - so
+# this is the template now. One value, used everywhere, not re-litigated per
+# plate. Change it here or nowhere.
 PANEL_COLOUR = "#F2EEE3"
 # mounting holes, from the same LightBurn source build.py reads
 HOLES_MM = ((23.31, 63.735, 2.0), (546.0, 61.5, 2.0))
