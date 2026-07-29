@@ -68,13 +68,14 @@ the brief; the feed stays brand-restrained.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
-Thirty-six skills live in `.claude/skills/`. Ten are vendored from
+Forty-nine skills live in `.claude/skills/`. Ten are vendored from
 `coreyhaines31/marketingskills` (MIT), twenty-five from `heygen-com/hyperframes`
-(Apache 2.0, the video lane); `daisy-social-analytics` is ours. They
-exist to be *used* — a skill nobody invokes is worse than no skill, because it
-looks like capability while changing nothing. Max, on installing them: "we need
-to make sure that the Digest adapts with these skills so we actually don't
-create something that isn't utilised later on."
+(Apache 2.0, the video lane), **eight from `greensock/gsap-skills` (MIT, added
+29 Jul 2026 — the official GSAP set, written by GreenSock)**; the three
+`daisy-*` skills are ours. They exist to be *used* — a skill nobody invokes is
+worse than no skill, because it looks like capability while changing nothing.
+Max, on installing them: "we need to make sure that the Digest adapts with these
+skills so we actually don't create something that isn't utilised later on."
 
 Every one of the thirty-six is accounted for below: either it has a step in the
 session, or it is named in "Installed but NOT for us" with the reason. Nothing
@@ -93,6 +94,7 @@ So the daily session now runs them at fixed points:
 | Freya, deciding what to make at all | **`content-strategy`** | Pillars and topic clusters, so the week is a plan rather than five separate good ideas. Use it when the question is "what next", not "how do I write this". |
 | Anything that needs generating | **`image`** / **`video`** | Both name our actual stack (Nano Banana, Seedance, Hailuo, Kling), so use their prompting references rather than improvising. |
 | Any moving deliverable | **`hyperframes`** | Written as HTML, rendered locally, **zero credits**. Always enter through `hyperframes` — it is the router and it loads whichever sub-skill the job needs. Do not hand-pick them. See `../Creative Studio/video/README.md`. |
+| Writing or debugging the actual animation code inside a composition | **`gsap-timeline`** → **`gsap-core`** → **`gsap-utils`** / **`gsap-performance`** | The official GreenSock reference for the runtime our whole zero-credit video lane already runs on. Reach for these when a cue won't land, an ease looks wrong, a stagger is uneven, or a render comes out static — not for deciding *what* to animate, which is `motion-doctrine`'s job. **Hard gate: everything here is checked against `hyperframes-core → references/determinism-rules.md` first, and where they disagree our render contract wins.** |
 | Text, hooks and overlays on a video | **`captions-overlay`** + **`motion-doctrine`** | Where hyperframes genuinely beats a generator. Max, 28 Jul: **"an image with video formats around it is just a useless concept. If we're doing a video, it needs to be a video."** So this lane renders *type and graphics*; the moving picture underneath comes from real video generation. |
 | Every falsifiable call | **`ab-testing`** | And the house rule that outranks it: a call only counts if `daisy-social-analytics` can already pull the number that settles it. |
 | When the CVR slides | **`cro`** | Site-side, not content-side. Worth remembering that not every bad day is a content problem. |
@@ -109,6 +111,35 @@ rest.
 
 Written out in full deliberately: this list is checkable with a grep, and a
 shorthand like `-cli` would silently pass as unaccounted for.
+
+### GSAP — half of it is banned in our render lane, and it fails silently
+
+A HyperFrames render is a **deterministic frame seek**, not a browser session.
+`hyperframes-core` bans render-time clocks, unseeded `Math.random`, network,
+`repeat: -1` and **input state** — and that last one disqualifies a large part
+of GSAP. Written down here because the failure is quiet: the preview looks
+right and the render comes out static.
+
+- **In lane:** `gsap-core`, `gsap-timeline`, `gsap-utils`, `gsap-performance`.
+- **One trap inside `gsap-utils`, checked in the source:** `gsap.utils.random()`
+  is **not seedable** and is therefore **banned in a composition**, exactly like
+  `Math.random`. Its optional `true` argument is `returnFunction` — a reusable
+  generator that returns a *new* value on every call — not a seed. The
+  `"random(-100, 100)"` string form inside tween vars is the same hazard and is
+  banned for the same reason: GSAP re-evaluates it per target, so two renders of
+  the same composition are not identical. If a scatter or jitter is wanted, hard-code
+  the values or derive them from the element index.
+- **`gsap-plugins` is half in lane.** Seek-safe: CustomEase, EasePack,
+  CustomWiggle, CustomBounce, SplitText, DrawSVG, MorphSVG, MotionPath, Flip.
+  Banned: Draggable, Observer, Inertia, ScrollSmoother, ScrollToPlugin — all
+  pointer- or scroll-driven, and neither exists during a render.
+- **`gsap-scrolltrigger` is banned in the render lane.** Scroll position *is*
+  input state. This is why ScrollTrigger appears nowhere in any `hyperframes-*`
+  skill — checked, not assumed. Only ever correct on the Shopify storefront.
+- **`gsap-react` and `gsap-frameworks` are not our stack** — compositions are
+  plain HTML, the store is Shopify/Liquid. No React, Vue, Nuxt or Svelte
+  anywhere. They ship as part of the official set and are named here so nobody
+  spends a session discovering it.
 
 ### Installed but NOT for us
 
