@@ -201,3 +201,31 @@ The check, before any upload:
 
 Treat a missing hook exactly like a missing colourway check: it is not a taste
 call, it is a fault, and the post does not go.
+
+## Hard gate: the frame under the hook must change too
+
+Added 29 Jul 2026, by Freya, and it is the direct sibling of the gate above.
+The 28 Jul gate checks the **text**. Nothing in this rubric asked whether the
+**image beneath the text** differed from the last thing we shipped — and it
+didn't. Nine frames, seven concepts, one composition: person centred, front-on,
+camera at chest height, sign held at chest height, neutral interior, soft
+daylight, faint closed-mouth smile, no camera movement. Change the wording on
+the sign and you have described everything this account published in a week.
+
+Why it is a gate and not a style note: ranking systems diversify a user's feed
+on visual similarity, so serving near-identical frames from one account is an
+efficient way to be deprioritised — and it looks exactly like what we are
+seeing, distribution demonstrably existing (the pinned October reel holds
+11,889 views) and simply not being granted now. On the human side, mere
+exposure has tipped into habituation; a returning follower's eye stops
+registering the ninth instance of a frame it has already parsed eight times.
+
+**No two consecutive posts may share all three of: subject count, camera
+height, and room.** Break at least one. A second person, a background figure,
+a low or high angle, a workshop instead of a hallway, a close crop instead of
+a mid — any one of them clears it.
+
+This is a checklist item, not a production cost. The failure it catches is that
+we industrialised the pipeline — one pose reference, one lighting brief, one
+framing — and efficiency at the frame level became homogeneity at the feed
+level in about six days.

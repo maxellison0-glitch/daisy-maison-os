@@ -346,3 +346,120 @@ Entry format:
   all three reads are homepages, retrieved today, HTTP 200.
 
 — Alan
+
+## 2026-07-29
+- **TreatBox (treatboxuk.com) — READ, 200** via `tools/refsweep.py`, cross-read
+  with WebFetch (also 200). **Third consecutive read with Results Day in first
+  position** — first tile in the homepage hero strip ("Results Day Gifts ·
+  Congrats · Birthday Gifts · Advent Calendars · Monthly TreatBox · Letterbox
+  TreatBoxes") and first tile in the Shop By Occasion rail, which today reads:
+  Results Day Gifts, Birthday Gifts, Advent Calendar 2026, Just Because, Luxury
+  Gift Boxes, Pyjamas | Comfort Collective, Letterbox TreatBoxes, Self-Care &
+  Wellness Gifts. Occasions nav unchanged from yesterday: Birthday, Results Day,
+  Pregnancy & New Parent, Just Because, Treat Me, Sympathy. Sale headline
+  unchanged: "Sale | Up To 40% Off", body copy "up to 45% off selected styles".
+  Autumn/Halloween pre-order still live: "Comfort Collective Autumn Bear &
+  Pumpkin Pyjama Set", £54.95, AVAILABLE FOR PRE ORDER. Gifting quiz still
+  promoted twice, still badged "TAKES 1 MIN". Free next-day delivery over £25 and
+  10% off first order both unchanged.
+  **Three things that are new since yesterday's entry, and they are all price:**
+  (1) the Christmas advent line now carries **visible pricing on the homepage** —
+  "24 Day TreatBox Christmas Advent Calendar PAY FULL" **£165.00**, alongside an
+  "Auto Pay Monthly Instalment Option | 24 Day Christmas Advent Calendar" **from
+  £41.25**. Yesterday the advent tile was merchandised without a number. A brand
+  that puts a £165 Christmas price on a July homepage has finished testing
+  whether the season is open. (2) An exam-occasion SKU is on the homepage grid:
+  **"Exam Essentials Good Luck | Ready to Go TreatBox" £34.95** — the Results Day
+  nav entry now has an actual product visible behind it, not just a link.
+  (3) Build-Your-Own ladder priced in full on the homepage: 5 products £29.95,
+  7 products £34.95, 10 products £41.95.
+  Logged without comment as their housekeeping, not our signal: a **"Father's Day
+  Biscuit Set" £7.50** is still on the homepage on 29 July.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Nav still labels Street
+  Signs **"Our Bestseller"**; "Customisable 3D Street Sign – Personalised Acrylic
+  Plaque for Home, Bar & Business" still **from £24.99**. What is new is the
+  visible depth of the joke-copy street-sign line, which yesterday I logged from a
+  single example. Today's homepage grid carries at least six at the same £24.99
+  entry point: "The Dog Lives Here – We Just Pay the Bills", **"Dad's Bar and
+  Grill"**, "If Mum's in Charge of Dinner – Eat Before You Come", "Nanny's
+  Garden", "Grandad's Shed – Tools, Tea & Tinkering", and "Family Name Sign".
+  That is a *catalogue*, not a novelty — one wording pattern (place + household
+  joke) run as a product family. Rest of the ladder unchanged: LED bar sign from
+  £34.99, home bar sign from £59.99, business logo from £69.99, salon from
+  £109.99, architectural clinic sign from £79.99, round LED salon sign from
+  £299.99. Wedding Pebble Art Frame still **from £29.99**. Still **zero** Results
+  Day, zero back-to-school, zero autumn, zero Christmas anywhere on the homepage —
+  and, like TreatBox, still running a **Father's Day** SKU in late July
+  ("Personalised Father's Day Spirit Level Bottle Opener" from £19.99).
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Taxonomy
+  unchanged for the third read: Colour, Style, Season (Spring/Summer/**Autumn**/
+  **Winter**), Florals. Featured Collections unchanged — Sienna, **Toasted
+  Amber**, Santorini, Limoncello. Other Occasions unchanged and still includes
+  Christmas. New detail this read, and it is a proof point rather than a season
+  signal: the homepage now leads on service and volume — "Over 2,000 five-star
+  reviews", TrustPilot-verified quotes named on the page, "Designed in Wales,
+  Crafted in the UK", "fast proofs", and a stated **24-hour draft turnaround** in
+  a customer quote. No Results Day, no back-to-school.
+- **Beyond the Fridge (beyondthefridge.co.uk) — READ, 200.** First successful read
+  of this account in the tracker; `.com` refused the connection (ConnectionReset),
+  `.co.uk` answered. They are **not a street-sign brand** — they are magnetic
+  metal wall art and fridge magnets, British-made, with **"London Street Signs"**
+  as one line inside a Fridge Magnet Shop ("Personalise a replica size London
+  Street Sign"). Merchandised by *design collection* — Travel, Animal Kingdom,
+  Architecture, Food & Drink, Plants & Flowers, Sport & Leisure, The Natural
+  World — plus Create Your Own from an uploaded photograph, Planners, and Dry
+  Wipe. No prices surfaced on the homepage read, so none are quoted here. No
+  dated occasion of any kind on the homepage. **Recommend re-tiering them:** they
+  are an aesthetic and taxonomy reference, not a direct format rival, and the
+  Tier 1 line in `FREYA_REFERENCE_ACCOUNTS.md` overstates the overlap.
+- **Instagram: NOT READ, for us or for any reference account.** One request to
+  `ig_public.py profile` returned **HTTP 429**. One attempt, not retried, per the
+  tool's own instruction. Second consecutive day of 429 on our own account. No
+  claim is made here about what anyone posted on Instagram today.
+- **TikTok: READ, ours only.** `tiktok_public.py` and `tiktok_posts.py` both
+  returned. Recorded here because it changes what the sweep is for: we now have
+  per-post view counts on our own account, so a reference's *format* can be read
+  off their site and our *result* off ours in the same session.
+- Not attempted today: Etsy (403 on every attempt to date), NOTHS, Covering All
+  Occasions, and any reference account's social.
+- **Season read: the split held for a second day, and TreatBox put a price on
+  it.** Yesterday the finding was that the occasion-led operator is six weeks
+  ahead of the object-led operators. Today that is unchanged in structure and
+  sharper in evidence: TreatBox has moved Christmas from a tile to a **£165
+  price** and Results Day from a nav entry to a **£34.95 product**, while both
+  sign brands still merchandise no dated occasion whatsoever. Nobody has touched
+  back-to-school. Results Day is now three consecutive reads in first position,
+  which is no longer a placement, it is a strategy. UK results days are
+  mid-to-late August; TreatBox is roughly three weeks into a lead-in that we have
+  not started.
+- **Translate to us:**
+  1. **Results Day wording, today, at zero cost.** Third consecutive read in
+     first position, now with a product behind it. We still have no Results Day
+     sign wording in the catalogue. This is a text field, not a production job.
+  2. **Crafty Bonobo's joke-copy street signs are a product family, not a gag.**
+     Six of them at £24.99 from one wording pattern. Our LAUGH lane has been
+     making one-off jokes; theirs is a merchandised range. The pattern is
+     transferable and the pricing gap (£24.99 vs our £11.25 base) says again
+     that the Size Upgrade is the margin, not the base price.
+  3. **"Dad's Bar and Grill" at £24.99 is a live comparator for
+     `DM-C020-CORRECTION`.** Our finished, approved, unposted DAVE'S BAR /
+     IT'S A SHED, DAVE cut sits directly on top of a product a direct competitor
+     sells at more than twice our price and lists on their homepage. That is the
+     strongest argument in this entry for what ships today.
+  4. **Little Perfections is selling proof, not product** — 2,000 reviews, named
+     TrustPilot quotes, a 24-hour proof turnaround. Against our 23,535 followers
+     and 4–7 likes, social proof is the thing we most conspicuously cannot show.
+     Worth noting we have never tried; it costs nothing to test.
+  5. **The autumn turn now has four independent signals** — TreatBox's July
+     pumpkin pre-order, TreatBox's priced Christmas advent, Little Perfections'
+     Autumn/Winter season facet, and their Toasted Amber collection. It is
+     happening now. Nobody is doing back-to-school, and I still would not lead it
+     before the references do.
+- Unreachable today: instagram.com via `ig_public.py` (HTTP 429, one attempt, not
+  retried — second consecutive day); beyondthefridge**.com** (connection reset,
+  the .co.uk domain answered and is the live one); etsy.com,
+  notonthehighstreet.com and Covering All Occasions not attempted. Nothing above
+  is presented as a live social post — all four site reads are homepages,
+  retrieved today, HTTP 200.
+
+— Alan

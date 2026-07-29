@@ -213,3 +213,78 @@ Format:
   distribution rather than hooks, honest that the live-commission mechanic is
   untested on a follower graph this quiet and could return four comments.
 - Signed: Freya · Alan
+
+## 2026-07-29
+
+- Learned: (A) 28 Jul closed **50 orders, £1,140.41 gross, £1,429.91 total,
+  988 sessions, CVR 4.15%**, pulled live from Shopify. **The three-day CVR slide
+  stopped** — 4.54 Sat, 4.06 Sun, 3.85 Mon, 4.15 Tue. Underneath it the funnel
+  moved the other way from the digest's headline: cart-adds **up** (8.92% →
+  10.53%) and checkout abandonment **up** (36.9% → 39.7%), with completed
+  checkouts identical both days at 41. Per this account's own diagnostic that is
+  a site-or-till problem, not traffic quality, so the "extra £115 into PMAX
+  bought worse customers" reading does not survive the funnel test. (A) TikTok
+  read clean: 184 followers, 5,482 lifetime hearts, 167 videos; **median 262
+  views** across the last 11 posts, best 798. (F) Every asset on the shelf was
+  opened at full resolution rather than judged by filename.
+- Corrected: **four things, three of them mine from this morning.** (1) The
+  Summer Holidays concept was **already killed by Max on 28 Jul** on merit —
+  *"It can't just be some bullshit that people wouldn't actually have in their
+  house, like 'day four of summer holidays.' No one's buying that."* It was
+  recommended to him again this morning as the lead post. That is a memory
+  failure with a written record sitting in the repo. (2) **Bond is not unposted**
+  — it ran on Instagram 25 Jul with the exact POST-COPY caption and did 7 likes.
+  It is genuinely fresh on TikTok only. (3) **The diffuser carousel is not
+  TikTok-only** — it is on Instagram, 27 Jul, 4 likes and 1 comment. (4) The
+  day-count assumption is traceable to one line in
+  `active/DM-C019-summer-holidays-lift/README.md` claiming UK schools break up
+  "in the last week of July". They break up in the third or fourth.
+- Retired: **the summer-holidays lane, both cuts.** Verified today: England and
+  Wales start 20–23 July, Scotland 29 June, Northern Ireland 1 July. On 29 July
+  the honest count is **day 7–10** in England and Wales. "DAY 4" would need a
+  start of Sunday 26 July, which no UK nation has. It was wrong on the day it
+  was rendered, too. The number is burnt into the generated sign face, so it
+  cannot be fixed without the regeneration Max forbade — and the concept was
+  dead on merit anyway. Killed, not parked.
+- Retired: (A) the 21-likes-in-48h call — **unsettled, and the reason is the
+  finding.** No Instagram post has gone out since it was written, so the clock
+  never started, while **four posts went to TikTok on 28 Jul.** Production
+  already moved to TikTok without anyone testing the "if". Third consecutive day
+  a call has died for a process reason. (F) the live-commission call —
+  effectively dead: the post carrying it has **6 views**, and 15 surnames do not
+  come off 6 views.
+- Changing: **a new hard gate in `PUBLISH_READINESS.md` — the frame under the
+  hook must change too.** No two consecutive posts may share all three of
+  subject count, camera height and room. The 28 Jul gate checks the text;
+  nothing checked whether the picture beneath it differed from last time, and it
+  didn't — nine frames, seven concepts, one composition. We industrialised the
+  pipeline into one pose, one lighting brief, one framing, and efficiency at the
+  frame level became homogeneity at the feed level in six days. Costs nothing;
+  it is a checklist line.
+- Changing: **check the kill list before pitching.** Two of this morning's four
+  errors were re-proposing something already decided. Read `PUBLISH_LOG.md` and
+  the log tail for the asset's own name before it goes in a brief.
+- Testing tomorrow: (F) falsifiable — **the Correction must clear 21 likes on
+  Instagram in 48h**, inheriting Alan's unstarted bar so the call finally gets a
+  clock. Settled by `ig_public.py`, subject to the 429 clearing. (A) falsifiable
+  — posted to TikTok it must **beat the 262-view median**; under that, on an
+  asset this well-formed, the ceiling is distribution and no further creative
+  work is justified this week.
+- Gaps, named: **Instagram unreadable for a second day** — `ig_public.py` returned
+  HTTP 429, one attempt, not retried, so nothing about today's IG is measurable.
+  No ad spend in the Shopify connection, so **ROAS 2.00x is digest-only**. AOV is
+  ambiguous and both figures are correct — £22.81 gross ÷ orders, £28.60 total ÷
+  orders; say which. **50 orders vs 41 completed checkouts** is unreconciled.
+  Like counts came back missing on 3 of 11 TikTok posts. **There is no diffuser
+  SKU in the Shopify catalogue**, so the 27 Jul "live this week" promise has
+  nothing behind it. Reference accounts still not read on Instagram; Etsy, NOTHS
+  and Covering All Occasions not attempted. `beyondthefridge.com` reset the
+  connection, `.co.uk` answered 200 and turns out to be magnetic wall art — not a
+  format rival, re-tier it.
+- Confidence: (A) high on the Shopify and TikTok figures, high on the day-count
+  verdict, low on any causal read of the abandonment rise. (F) high that the
+  Correction is the right post — it is the only asset we own with two people, a
+  background figure and real depth, so it is the only one that clears the new
+  gate on its first day. Honest that it does not fix a dead room and nothing in
+  today's three does.
+- Signed: Freya · Alan
