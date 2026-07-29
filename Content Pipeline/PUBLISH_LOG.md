@@ -1,13 +1,88 @@
 # Publish and Learning Log
 
-Create one row per platform, not one row per concept. This makes missing or
-duplicate OneUp entries obvious.
+**One row per platform per post.** A post that went to both Instagram and
+TikTok gets two rows. This makes a missing or duplicate publish obvious at a
+glance, which is the entire job of this file.
 
-| Content ID | Platform | Account | Scheduled/published time | Status | Post URL or OneUp reference | 48h result | 7d result | Lesson |
-|---|---|---|---|---|---|---|---|---|
-| DM-C018-BOND | Instagram | @daisymaison | 25 Jul 2026, posted manually by Max | Published | URL not captured — Max posted from iPhone | **~1,000 views, 5 likes** (both reported by Max verbally, not pulled from API) | pending | First real post on the new system. The audience did not read it as AI. Small number, but it is the only genuine engagement datapoint we own — every other figure in this repo is Shopify or ad spend. **26 Jul: Max reports ~1,000 views on it.** Attribution note: he said "that street sign video" yesterday, which is this post; if he meant the cat reel posted 26 Jul, this figure moves down a row. |
-| DM-CAT-HOUSE | Instagram | @daisymaison | 26 Jul 2026, posted manually by Max | Published | URL not captured — Max posted from iPhone | pending | pending | The asset that shipped was `CAT-ADVERT-master-v2.mp4`, the ORIGINAL master. I offered a locally regraded wall + painted-out string first and Max rejected it outright: "that video looks ridiculous. The string is not consistent. It's like a literal video effects glitch... the rendering you did looks awful." Two lessons: a hand-built pixel pipeline on moving footage shows every seam, and it cost him his whole midday slot. The finished master was already in the repo the entire time. |
-| DM-DIFFUSER-TEASE | TikTok | @daisymaison | 27 Jul 2026, published via API | Published | publish_id p_pub_url~v2.7667232536992565280 — status PUBLISH_COMPLETE | pending | pending | **First post this system published itself.** 3-slide 4:5 photo carousel, hooks on option A after Max rejected the first set as AI slop. Product is NOT launched, so the copy teases "live this week" and makes no price, scent or delivery claim. Choices were Max's: music on (Luxury, Elegance, Refined, UK chart #18), commercial-content disclosure OFF, comments ON. AIGC disclosure ON — the stills are synthetic. Route: local build (0 credits) -> Higgsfield media host -> TikTok Content Posting API. || DM-HOUSE-QUIZ | TikTok | @daisymaison | 27 Jul 2026, published via API | Published | publish_id p_pub_url~v2.7667253910801041440 — status PUBLISH_COMPLETE | pending | pending | **First post built on the Freya character lock.** 5-slide photo carousel, one archetype per slide, all five real colourways. The mechanic is the point: a number is the cheapest comment there is, and comments are TikTok's strongest reach lever, so every slide carries its number and slide 1 carries the ask. Music: Ok I Like It, Milky Chance (UK trending #5), Max's pick. AIGC disclosure ON. Commercial disclosure OFF. Comments ON. Two production notes: 'THE ZOO' was refused by the generator's safety filter on the wording alone, swapped to THE MADHOUSE; and slide 4 carries small gibberish printing on envelopes despite the no-printed-text room rule, so that rule needs enforcing per-object, not per-room. || DM-C017-JANNAWAY | TikTok | @daisymaison | 28 Jul 2026, published via API | Published | publish_id v_pub_url~v2.7667440991363762208 - status PUBLISH_COMPLETE | pending | pending | **The PII gate closed, by Max's explicit decision.** This reel had been held since 23 Jul because the sign carries a real customer's surname AND their wedding date, 15 Aug 2026 - three weeks after posting. Surname alone is product wording and has always been fine; surname plus an exact future date identifies a specific couple and publishes their date before it happens, which is a different thing. Offered four routes including posting Bond instead at zero cost and zero question; Max chose to post Jannaway as is, confirming the couple are content. Recorded here because the reasoning matters more than the outcome: the gate was real, it was raised, and it was cleared by the person entitled to clear it. PILL hook style, 8.0s, silent master with Luxury/Elegance/Refined at 70% and the clip's own audio muted. AIGC disclosure ON - the presenter is synthetic, which is the strongest disclosure case there is. || DM-C018-BOND | Instagram + TikTok | @daisymaison | Posted manually by Max, date not captured | Published | URL not captured | **7 likes, 0 comments** (measured 28 Jul via ig_public.py) | pending | **Added retrospectively 28 Jul, then immediately corrected by measurement.** Max remembered this as our best-engaging post and I built a whole strategy argument on it - back the video lane, one video a day on Instagram. Then we read the account: **7 likes, 0 comments.** Against 23,535 followers. The cat reel got 6 and the diffuser carousel got 4 with 1 comment, so the 'win' was a 3-like spread, which is noise. The lesson is not about video. It is that we spent three weeks reasoning from a remembered number, and one unauthenticated HTTP request would have settled it on day one. |
+**Rebuilt 29 Jul 2026.** The previous version had five separate entries mashed
+onto a single line with `||` separators, and logged Bond twice with two
+different result figures. Nothing was lost in the rebuild — the content of
+every old row is preserved below, in `LESSONS.md` where it was a lesson rather
+than a record.
+
+## How to fill it in
+
+- **Source** is not optional. `measured` (pulled from an API), `reported`
+  (Max said so — no URL or number captured), or `not captured`.
+- Never write a number from memory. On 28 Jul three weeks of strategy rested
+  on a remembered figure that turned out to be 7 likes.
+- A row goes in **when the post goes out**, not when we get round to it.
+
+---
+
+## TikTok — @daisymaison
+
+Views measured 29 Jul 2026 via `tools/social_api/tiktok_public.py`, snapshot at
+`tools/social_api/tiktok-post-snapshots/daisymaison-2026-07-29.json`.
+Account at that read: **184 followers, 5,482 lifetime hearts, 167 videos.**
+**Median of the 11 posts below: 262 views.**
+
+| Date | Content ID | Post | Views | Source |
+|---|---|---|---|---|
+| 28 Jul | — | "Drop your wording in the comments and we'll make it 🤍" (live commission) | **6** | measured |
+| 28 Jul | — | "The gown goes back. This doesn't. 🎓" (graduation) | 229 | measured |
+| 28 Jul | DM-C017-JANNAWAY | "Nobody ever guesses 👀" (PILL cut) | 243 | measured |
+| 27 Jul | DM-HOUSE-QUIZ | "Which one's your house? Comment your number 👇" | 244 | measured |
+| 27 Jul | DM-DIFFUSER-TEASE | "Not on the site yet — this one goes live this week" | 237 | measured |
+| — | — | "Cat owner can relate to this 🥹😭" | 262 | measured |
+| — | — | "We didn't realise these surnames actually existed…" | 798 | measured |
+| — | — | "The calm before the Christmas chaos 🎄🎁" | 478 | measured |
+| — | — | "Do you guys think this was intentional or not…" | 403 | measured |
+| — | — | "You know it's nearly Christmas when these start flying out 😍🎄" | **3,422** | measured |
+| — | — | "real customer order btw 😭 (can't even be mad tho)" | 897 | measured |
+
+**The two that matter:** the 3,422 Christmas post is the account's best and is
+seasonal, not clever. The 6-view live-commission post is the worst thing we
+have published and it went out 28 Jul.
+
+Post dates are blank where the reader did not return a timestamp. Not guessed.
+
+---
+
+## Instagram — @daisymaison
+
+Likes measured 28 Jul 2026 via `tools/social_api/ig_public.py`, snapshot at
+`tools/social_api/ig-snapshots/daisymaison-2026-07-28.json`.
+Account at that read: **23,535 followers.** Instagram does not return view
+counts on recent posts, so reach cannot be separated from seen-and-ignored.
+
+| Date | Content ID | Post | Result | Source |
+|---|---|---|---|---|
+| 29 Jul | DM-C020-CORRECTION | "Dave's Bar" / "It's a shed, Dave" | pending | **reported** — Max posted from his phone, no URL captured |
+| 29 Jul | DM-HOUSE-QUIZ | 5-slide house carousel | pending | **reported** — Max |
+| 27 Jul | DM-DIFFUSER-TEASE | 3-slide diffuser carousel | **4 likes, 1 comment** | measured |
+| 26 Jul | DM-CAT-HOUSE | Cat reel | **6 likes** | measured |
+| 25 Jul | DM-C018-BOND | Mr & Mrs Bond reel | **7 likes, 0 comments** | measured |
+| Oct 2025 | — | Pinned reel | **11,889 views** | measured |
+
+**The shape of the problem, in one place:** 7 / 6 / 4 likes against 23,535
+followers is about **0.03%**, against a healthy band of 1–3%. May and June sit
+at 0–2, so the decay predates every creative decision we have made. The pinned
+October reel holds 11,889 views — distribution exists and is simply not being
+granted now.
+
+---
+
+## Not posted, and why
+
+| Content ID | Status |
+|---|---|
+| DM-C019-SUMMER-HOLIDAYS | **KILLED 29 Jul.** Max killed the concept on merit 28 Jul. The burnt-in "DAY 4 OF 42" is also wrong — England/Wales broke up 20–23 Jul, so 29 Jul is day 7–10; "DAY 4" needs a Sunday 26 Jul start no UK nation has. Number is inside the generated sign face, so uncorrectable without regeneration. |
+| DM-SUMMER-COUNTDOWN | **KILLED 29 Jul.** Weaker letterboxed cut of the same dead concept. |
+| DM-JANNAWAY-reel-BOLD | Held. Same footage as the PILL cut already on TikTok — a re-treatment, not new inventory. |
+| DM-BOND-reel-BOLD / -PILL | Held. Bond ran on Instagram 25 Jul. Never run on TikTok — that slot is still open and free. |
+
+---
 
 ## Result notes
 
