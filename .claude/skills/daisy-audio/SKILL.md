@@ -33,35 +33,48 @@ cookies, which are a credential and do not belong in this repo or container.
 **TikTok downloads work.** That is the route that is open, and it is also the
 better one — see below.
 
-## The point that matters more than the licence
+## What Max actually wants: real songs people recognise
 
-On TikTok, **a muxed audio file is not attached to a sound.** Discovery comes
-from appearing in that sound's feed, and you only get that by attaching the
-platform's sound object at publish. Downloading a track and baking it into the
-mp4 gives up the entire reason for using a trending sound in the first place.
+Stated 28 Jul, twice, after the first version of this skill got it wrong:
+*"The right audios make the difference between a good video and a bad video.
+Using real songs that people recognise actually helps so much."* The TikTok
+Commercial Music Library is **not** that. He has never heard of those tracks and
+has rejected them outright. Do not offer them as the answer again.
 
-So for reach, `sounds` (find what's working) → attach at publish beats any
-download route regardless of what the law says. Say this before the licence
-argument; it is the one that decides the action.
+**Do not argue TikTok sound-attachment at him.** The "a muxed file isn't
+attached to a sound so you lose discovery" point is technically true and he does
+not care: *"you think I care about TikTok commercial sounds? I don't care if
+TikTok thinks we have a sound or not."* It is not the question being asked.
 
-## The licence line
+### Why it isn't already solved
 
-TikTok's Commercial Music Library is licensed for use **on TikTok, through
-TikTok**. That gives one clean route and one trap.
+Two separate blockers, and conflating them is what made the first answer bad:
+
+1. **YouTube download is blocked from this container** (table above). Technical.
+2. **Baking a commercial recording into Daisy Maison's marketing is a rights
+   problem** — that's the business exposed, so no rip-the-charts pipeline gets
+   built here. Say this once, plainly, and move to the fix. No sermon.
+
+Note these pull against each other: the in-app picker is licensed *because it
+goes through the platform*, which needs a human in the app — the exact thing
+autonomy removes. Baking the file in is what removes the human, and that's the
+uncovered use. That tension is the real problem, not the 403.
+
+### The routes that actually get him it
 
 | | |
 |---|---|
-| **Route A — clean** | Attach the track at publish with `music_sound_id` (the `song_clip_id` from the chart). Nothing is downloaded, TikTok mixes it, and the platform boosts its own audio — which is the entire reason to use a trending sound. |
-| **Route B — NOT covered** | Download a preview, mux it into an mp4, post that file to Instagram / the site / an ad. Different use, not granted by that licence. |
+| **Account category** | Business accounts get a restricted music catalogue on both IG and TikTok — label deals don't extend to commercial use, so you get library filler. Creator accounts typically get the full recognisable library. Most likely single cause of *"these sounds are shit"*. Untested — `ig_public.py` does not surface account type, so this needs checking in-app. |
+| **A licence we hold** | Lickd licenses real chart music for creator/commercial use. That's the only route that is both recognisable **and** autonomous, because we'd own the right to embed the file. Epidemic / Artlist are cheaper but are library music — i.e. the thing he's rejecting. |
 
-So `fetch` downloads previews **to measure them**. `cues` uses the measurement
-and touches no audio at all — its output is timing numbers, which are ours and
-carry no licence. Both are safe for either platform. `bed` genuinely embeds
-audio and needs a track we hold rights to.
+**Everything in this tool works on any audio file and does not care where it
+came from.** `cues` emits timing numbers, not audio — it carries no licence and
+survives this argument entirely. The missing piece is the right to use a track,
+not the ability to handle one.
 
-**For an Instagram-first cut, the answer is not "mux a trending sound."** It is
-either a track we are licensed for, or the sound design we already have —
-`media-use` ships 19 SFX and `build_v2.py` already places them frame-accurately.
+`fetch` downloads previews **to measure them**, never to redistribute — hence
+the `.gitignore` on `library/`. `bed` genuinely embeds audio and needs a track
+we hold rights to.
 
 ## Use it
 
@@ -118,11 +131,16 @@ section and `lift` came back empty on 15 of 20. If it regresses, that's why.
 | 243 | Ok I Like It | Milky Chance |
 | 241 / 236 / 229 | Luxury, Elegance, Refined | Ted D'souza, Dani |
 
-We have leaned on *Luxury, Elegance, Refined* three times for a mean of 235,
-while the single best post used a sound we have never gone back to. **Nine
-posts is far too small to call that**, and two posts on one sound is not a
-finding — but it is the first time this question has been answerable at all,
-and it is now cheap to re-ask weekly.
+**Do not read a sound→views causal line off this table.** The first version of
+this skill put *Mission Possible* next to 796 views in a way that implied the
+sound did it. Max, correctly: *"That's the Mr. and Mrs. Bond video. Of course we
+know that did better because it was a better video. It wasn't an audio."* The
+sound is fully confounded with video quality, and the best post here is our best
+video. Nine posts cannot separate the two and neither can ninety.
+
+What the table **is** good for: knowing what we've already used, so we stop
+reaching for *Luxury, Elegance, Refined* a fourth time by default. That's a
+repetition check, not a performance finding.
 
 ## TikTok chart tracks — measured 28 Jul 2026
 
