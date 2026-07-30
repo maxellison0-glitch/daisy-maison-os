@@ -56,14 +56,21 @@ Likes measured 28 Jul 2026 via `tools/social_api/ig_public.py`, snapshot at
 Account at that read: **23,535 followers.** Instagram does not return view
 counts on recent posts, so reach cannot be separated from seen-and-ignored.
 
-| Date | Content ID | Post | Result | Source |
-|---|---|---|---|---|
-| 29 Jul | DM-C020-CORRECTION | "Dave's Bar" / "It's a shed, Dave" | pending | **reported** — Max posted from his phone, no URL captured |
-| 29 Jul | DM-HOUSE-QUIZ | 5-slide house carousel | pending | **reported** — Max |
-| 27 Jul | DM-DIFFUSER-TEASE | 3-slide diffuser carousel | **4 likes, 1 comment** | measured |
-| 26 Jul | DM-CAT-HOUSE | Cat reel | **6 likes** | measured |
-| 25 Jul | DM-C018-BOND | Mr & Mrs Bond reel | **7 likes, 0 comments** | measured |
-| Oct 2025 | — | Pinned reel | **11,889 views** | measured |
+| Date | Content ID | Post | Result | Source | URL |
+|---|---|---|---|---|---|
+| 29 Jul | DM-C020-CORRECTION | "Dave's Bar" / "It's a shed, Dave" | pending | **reported** — Max posted from his phone | not captured |
+| 29 Jul | DM-HOUSE-QUIZ | 5-slide house carousel | pending | **reported** — Max | not captured |
+| 27 Jul | DM-DIFFUSER-TEASE | "Not launched yet — this one goes live later this week" | **4 likes, 1 comment** | measured | [DbSiVvdDV4r](https://www.instagram.com/p/DbSiVvdDV4r/) |
+| 26 Jul | DM-CAT-HOUSE | "POV: you thought it was your house" | **6 likes** | measured | [DbQPrf7Nyv9](https://www.instagram.com/p/DbQPrf7Nyv9/) |
+| 25 Jul | DM-C018-BOND | "Some jobs call for a tuxedo" | **7 likes, 0 comments** | measured | [DbNj6tzt2Ff](https://www.instagram.com/p/DbNj6tzt2Ff/) |
+| Oct 2025 | — | Pinned reel | **11,889 views** | measured | [DPjdseCDbDR](https://www.instagram.com/p/DPjdseCDbDR/) |
+
+**The URL column is what makes this self-maintaining.** `reconcile_log.py`
+joins on the Instagram shortcode, so a row without a URL is a row the
+reconciler cannot match and will keep re-reporting as missing. The three URLs
+above were recovered by the reconciler itself on 30 Jul — they were never
+captured at post time because Max posts from his phone, and that is exactly the
+problem the tool exists to solve.
 
 **The shape of the problem, in one place:** 7 / 6 / 4 likes against 23,535
 followers is about **0.03%**, against a healthy band of 1–3%. May and June sit

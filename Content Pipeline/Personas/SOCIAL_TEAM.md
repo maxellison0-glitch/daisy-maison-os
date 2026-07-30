@@ -20,6 +20,10 @@ street signs today, diffuser next, whatever follows.
 
 Fires into the Jarvis session (repo + Higgsfield + Shopify all present).
 
+0. **Reconcile the log before anything else.** `reconcile_log.py` reads both
+   accounts, diffs them against `../PUBLISH_LOG.md`, and prints the rows to add.
+   Apply them. This step exists so that nobody ever asks Max which posts went
+   out — the accounts are the source of truth and he is not a data-entry clerk.
 1. **Delegate in parallel:**
    - **Agent "Alan"**: read the latest digests/`operating systems` numbers;
      run the reference-account sweep (`FREYA_REFERENCE_ACCOUNTS.md`, TreatBox
@@ -85,6 +89,7 @@ So the daily session now runs them at fixed points:
 
 | Step | Skill | What it must change about the output |
 |---|---|---|
+| **Alan, FIRST — before anything else** | **`reconcile_log.py`** (not a skill, a tool: `../tools/social_api/reconcile_log.py`) | **Never ask Max what he posted.** Run it, apply what it finds to `../PUBLISH_LOG.md`, and the log is current without him typing a word. Max, 29 Jul, after being asked: *"I don't have time to sit here and tell you which fucking post I've done."* He was right — the account already knows. Rows still marked `reported` are unverified claims, and the tool counts them for you. |
 | Alan, before any performance claim | **`daisy-social-analytics`** | Every number in the brief comes from a pull. No remembered figures, ever. It also states what could not be measured. |
 | Alan, reference sweep | **`competitor-profiling`** | Reference notes become structured dossiers rather than prose, so week-on-week change is visible at a glance. |
 | Freya, generating the three | **`social`** | Use its short-form structures and, in particular, `references/reverse-engineering.md` when a reference post has clearly worked. |
