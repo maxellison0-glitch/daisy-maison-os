@@ -32,6 +32,17 @@ came off a 12-post window and was an artefact of the truncation - every
 falsifiable call written against "beat 262" was calibrated on a sample that cut
 off above 3,422. Corrected here rather than quietly.
 
+**Posted 30 Jul 2026, awaiting first measurement:** DM-C020-POST-1 — a 3-image
+photo carousel (THE SUTTONS / THE MERCERS / THE WILSONS), each Alan holding a
+sign at a diagonal in a different office room, staggered burgundy/sage/blue hook
+pills. **First post this system published with music attached** — "Ok I Like It"
+by Milky Chance, a Commercial Music Library track (song_clip_id
+7363314838511175697), attached at publish. This is the switch every prior post
+missed. publish_id `p_pub_url~v2.7668253255012714528`, `PUBLISH_COMPLETE`,
+public, comments on. The finding it tests: music on a photo carousel does attach
+through the API — the fine trim does not, but the track does, so a carousel is
+not a silent-only format. Views land in the next daily pull.
+
 | Views | Content ID | Post |
 |---:|---|---|
 | **9,400** | - | "When a customer order lines up too perfectly with Sabrina's..." |
@@ -114,8 +125,10 @@ it goes out, then it moves up into a platform section with a real number.
 
 | Content ID | Shape | Planned route | Built |
 |---|---|---|---|
-| DM-C020-POST-1 | 3-slide 4:5 carousel — THE SUTTONS / THE MERCERS / THE WILSONS | Instagram carousel + TikTok photo carousel | 30 Jul, 0 credits |
 | DM-C020-POST-2 | 2-slide 4:5 carousel — THE GARDEN TAVERN / DAD'S BAR, plus a silent 5.2s 9:16 cut | Instagram **trial reel** (needs the video, a carousel cannot be a trial reel) + TikTok | 30 Jul, 4 credits of generation, 0 to build |
+
+**DM-C020-POST-1 went out** — see the TikTok section. Instagram carousel still to
+run, Max's side.
 
 Both are photo posts of Alan holding a sign at a diagonal in the office, one room
 per slide, five different rooms across the two posts. That satisfies the frame
