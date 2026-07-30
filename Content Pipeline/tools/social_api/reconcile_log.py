@@ -169,6 +169,18 @@ def main():
     # ---- TikTok -------------------------------------------------------
     print("TikTok")
     tt, tt_src = _load("tiktok_public.py", "tiktok-snapshots/*.json", args.offline)
+
+    # BUG FIXED 30 Jul 2026, found by Alan on the tool's first real outing.
+    # This used to read only _newest("tiktok-post-snapshots/*.json") — the
+    # newest file already on disk — while the header printed "(live pull)".
+    # So it diffed the log against YESTERDAY's account, found them agreeing,
+    # and reported "the log is current" while a post from 29 Jul was missing.
+    # A reconciler that reads a stale cache and calls it live is worse than no
+    # reconciler, because it manufactures false confidence.
+    if not args.offline:
+        subprocess.run([sys.executable, os.path.join(HERE, "tiktok_posts.py"),
+                        "posts", "--user", args.user, "--limit", "20", "--save"],
+                       capture_output=True, text=True, timeout=180)
     posts_file = _newest("tiktok-post-snapshots/*.json")
     tt_posts = []
     if posts_file:
@@ -179,6 +191,13 @@ def main():
         print("  GAP: no TikTok post data. No claim made about TikTok.\n")
     else:
         print(f"  source: {os.path.basename(posts_file)} · {len(tt_posts)} posts")
+        # The cheapest tripwire we have, and it costs one integer. TikTok
+        # reports a video count; the log has a row count. When they disagree,
+        # something published without being logged — regardless of whether
+        # caption matching happens to catch it.
+        if tt and tt.get("video_count"):
+            print(f"  TRIPWIRE: account reports {tt['video_count']} videos. "
+                  f"If that integer moved since the last run, something shipped.")
         for p in tt_posts:
             desc = (p.get("desc") or p.get("title") or "").strip()
             if not desc:

@@ -288,3 +288,85 @@ Format:
   gate on its first day. Honest that it does not fix a dead room and nothing in
   today's three does.
 - Signed: Freya · Alan
+
+## 2026-07-30
+
+- Learned: (A) 29 Jul closed **56 orders, £1,367.29 gross, £1,683.59 total, 949
+  sessions, CVR 4.43%** — live Shopify, no digest exists for the 29th.
+  **ROAS unavailable**: Shopify carries no ad spend and there is no digest to
+  supply it, so none is quoted in either direction. Top line up ~20% on orders
+  and revenue. **The leak moved one step down the funnel.** Cart-adds were flat
+  (10.53% → 10.43%), so yesterday's "cart-adds rising" read was wrong. But
+  reached-checkout rose **25%** (68 → 85) while completed checkout rose by
+  **one** (41 → 42), and abandonment hit **50.6%** — fifth consecutive rise
+  (29.4 → 36.9 → 39.7 → 50.6). People are reaching the till in the largest
+  numbers of the week and not finishing. That is now the clearest signal in the
+  account and it is a `cro` problem, not a content one. Sessions fell to the
+  window's low and **search did all of the falling** (−44); social rose in both
+  absolute and share terms.
+- Learned: (F) **our three best TikToks are not adverts and none of them is
+  ours.** 9,400 "when a customer order lines up too perfectly with Sabrina's…",
+  6,500 "autumn in a matchbox", 4,574 "parenting tip #1: lower your standards".
+  All three are third-party proof or found humour. The brand held the object up;
+  it did not write the joke.
+- Corrected: **the median was never 262 — it is 478.** Yesterday's figure came
+  off a 12-post window and the truncation cut the sample off above 3,422. Pulled
+  at `--limit 20` today: 19 posts, median 478, ceiling **9,400** — nearly 3x
+  what we believed our ceiling was. Every falsifiable call written against "beat
+  262" was calibrated on a truncated sample. `PUBLISH_LOG.md` now carries the
+  full ladder.
+- Corrected: **`reconcile_log.py` had a defect on its first real outing, found
+  by Alan, and it was the worst kind.** It printed "(live pull)" while reading
+  TikTok per-post data from the newest file already on disk — yesterday's. So it
+  diffed the log against yesterday's account, found them agreeing, and reported
+  "the log is current" while the Correction was missing from it. A reconciler
+  that reads a stale cache and calls it live manufactures false confidence,
+  which is worse than no reconciler. Fixed: it re-pulls posts unless
+  `--offline`, and prints the video-count tripwire — Alan's point that one
+  integer (167 → 168) would have caught it for free.
+- Retired: **the beat-the-median call — SETTLED, FAILED, badly.** The Correction
+  went to TikTok on 29 Jul and did **5 views.** Not under the median — a
+  different order of magnitude, and the worst post on the account, below the
+  7-view live commission. Both leads had independently picked it as the best
+  asset we owned.
+- Retired: the 21-likes-on-Instagram call — **unmeasurable, fourth consecutive
+  day of 429.** And the honest indictment: the house rule already says a call
+  only counts if the analytics skill can pull what settles it, and a call was
+  written against Instagram three days after Instagram stopped answering.
+- Changing: **frequency, not creative.** The 27–28 Jul posts landed 229/237/
+  244/244 within a day. The two most recent both came in under ten. Four posts
+  went out on the 28th; the account served the first three and starved the
+  fourth, then starved the next. That reads as a throttle on the best-formed
+  asset we own, not a hook failure. **One post today. Nothing else.**
+- Changing: **stop manufacturing the proof.** Every customer in the live
+  pipeline — Dave, Preston, Johnson, Keith, Harrison, Bailey, Whittaker — is our
+  invention. We copied the documentary register's surface and threw away its
+  source. Proposed gate, costs nothing: no LAUGH or documentary post ships
+  unless its wording traces to a real order or a real comment. Anonymise the
+  name, protect the date, but the origin must be real and the brief must cite
+  it, the same way Alan must cite a data source.
+- Testing tomorrow: (A) falsifiable — **one post today, Bond to TikTok. Under 30
+  views by 1 Aug and the account is throttled; we stop making things until it
+  clears. Over 200 and the 28 Jul four-post burst caused this, and one-a-day
+  becomes a hard rule.** Settled by `tiktok_posts.py` either way, which is the
+  first call in five days written against a number we can actually fetch.
+- Gaps, named: **Instagram 429 for a fourth day**, so both `reported` rows stay
+  unverified — though the Correction demonstrably shipped to TikTok on the 29th,
+  which corroborates that Max posted that day without verifying either IG row.
+  No ad spend in Shopify, so no ROAS. **Orders 56 vs completed checkouts 42 — a
+  14-order gap that widened from 9, unreconciled**, and until it does the
+  abandonment read carries that caveat. 28 Jul total sales **restated down
+  £19.90** by post-hoc settling. 29 Jul shows returns of **+£6.95**, a credit
+  not a deduction — small, odd, noted. 4 of 13 like counts missing, not zero.
+  **The diffuser SKU still does not exist** — `search_products` returns zero
+  across every status including DRAFT and ARCHIVED — and the 27 Jul "live this
+  week" promise is now four days old with the week running out Sunday. That is
+  the only item here that costs credibility rather than reach.
+  **Higgsfield 691.62 against an expected 699.12 — 7.5 credits unaccounted**,
+  with nothing generated in this session.
+- Confidence: (A) high on the Shopify figures and the view ladder, high that the
+  till is the bottleneck, low on the throttle hypothesis until the one-post test
+  runs. (F) high that third-party proof is the mechanic, and honest that the
+  Correction failing at 5 views means we cannot currently tell a good post from
+  a bad one on this account, because distribution is drowning the signal.
+- Signed: Freya · Alan

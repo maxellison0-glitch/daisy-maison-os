@@ -463,3 +463,119 @@ Entry format:
   retrieved today, HTTP 200.
 
 — Alan
+
+## 2026-07-30
+- **TreatBox (treatboxuk.com) — READ, 200** via WebFetch. **Fourth consecutive
+  read with Results Day in first-position merchandising** — first entry in the
+  "Most picked treats" carousel and first in the Shop By Occasion rail, with
+  "Exam Essentials Good Luck | Ready to Go TreatBox" **£34.95** still visible
+  behind it. Every price from yesterday is unchanged: exam box £34.95, "24 Day
+  TreatBox Christmas Advent Calendar PAY FULL" **£165.00**, "Auto Pay Monthly
+  Instalment Option" **from £41.25**, "Comfort Collective Autumn Bear & Pumpkin
+  Pyjama Set" **£54.95 AVAILABLE FOR PRE ORDER**. Gifting quiz still promoted
+  twice, still badged **"TAKES 1 MIN"**.
+  **Two changes, and both are trading rather than season:**
+  (1) the sale has been promoted from headline copy to a **top-level nav item,
+  "40% OFF SALE"** — yesterday it was a homepage headline ("Sale | Up To 40%
+  Off"). A discount in the primary nav is a clearance posture, not a promotion.
+  (2) the delivery promise changed register: yesterday it was a spend threshold
+  (free next-day over £25), today it is a **time** threshold — "Free Next Day
+  Delivery order before 4pm", carried with a live **countdown timer**. Second
+  announcement bar unchanged: "Get 10% Off Your First Order".
+  **Gone from this read:** the "Father's Day Biscuit Set" **£7.50** logged
+  yesterday is no longer surfaced on the homepage. Their housekeeping caught up.
+  Not surfaced this read, so carried forward as last-known rather than called
+  changed: the Occasions nav list, the Build-Your-Own ladder (£29.95 / £34.95 /
+  £41.95), and the "up to 45% off selected styles" body copy.
+  Still **zero back-to-school**, fourth consecutive read.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200. No change.** Same six
+  joke-copy street signs, same titles, all **from £24.99**: "The Dog Lives Here –
+  We Just Pay the Bills", "If Mum's in Charge of Dinner – Eat Before You Come",
+  "Family Name Sign", **"Dad's Bar and Grill"**, "Nanny's Garden", "Grandad's
+  Shed – Tools, Tea & Tinkering". Street Signs still nav-labelled **"Our
+  Bestseller"**. Customisable 3D Street Sign still **from £24.99**. Still running
+  a **Father's Day** SKU on 30 July (Spirit Level Bottle Opener, £19.99). Still
+  **zero** Results Day, back-to-school, autumn, Halloween or Christmas — a fourth
+  consecutive read of a catalogue with no dated occasion in it at all. Unchanged
+  for a second read upgrades that line from a range to a *stable* range: they are
+  not testing the joke-sign family, they are running it.
+  First surfaced in this tracker (a detail of today's read, not necessarily new
+  on the site): their announcement bar sells proof and provenance rather than
+  product — **"Rated 4.9 / 5 by over 250,000 happy customers"**, "Hand-made in
+  our UK family workshop", "Free UK delivery over £50", plus a phone number.
+  Ladder read in bands today (street/acrylic £24.99–£34.99, LED £34.99–£39.99,
+  business/salon £59.99–£299.99), consistent with yesterday's itemised list.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Taxonomy
+  unchanged for a **fourth** read: Colour, Style, Season (Spring/Summer/**Autumn**/
+  **Winter**), Florals. Featured Collections unchanged — Sienna, **Toasted
+  Amber**, Santorini, Limoncello. Other Occasions enumerated in full today and
+  still contains **Christmas**: Anniversary, Baby Shower, Birthday, Bridal
+  Shower, Christening, Christmas, Corporate Events, Engagement Party, Hen Party,
+  Valentine's Day. "Over 2,000 five-star reviews" unchanged.
+  **One real change, and it is the one worth having: the 24-hour proof went from
+  a customer quote to a site promise.** Today it reads "**Receive Proof Within 24
+  Hours**" as a stated service line; yesterday the same claim only existed inside
+  a testimonial. Newly surfaced alongside it: standard delivery 3–5 business
+  days, "Orders can be delivered in just 2 working days with Express Delivery",
+  and "Free standard shipping on orders over £100".
+  Also newly surfaced, and it is a category move rather than a season one: their
+  Gifts section is **not signage** — Satin Robes, Pearl Embellished Sunglasses,
+  Embroidered Bucket Hats, Embroidered Sports Caps, Gold Wifey Necklace. A
+  wedding-signage brand extending sideways into bridal apparel and accessories.
+  Not surfaced this read, carried forward as last-known: the TrustPilot-verified
+  quotes and "Designed in Wales, Crafted in the UK". No Results Day, no
+  back-to-school, no new autumn collection notice.
+- **Beyond the Fridge — not read today, deliberately.** Yesterday's 200
+  established what they are: magnetic metal wall art and fridge magnets, with
+  "London Street Signs" as one line inside a Fridge Magnet Shop. I concur with
+  yesterday's finding and **recommend the re-tier now** — move them out of
+  Tier 1 "direct format rivals" and into Tier 3 aesthetic/taxonomy references in
+  `FREYA_REFERENCE_ACCOUNTS.md`. Re-reading a homepage to re-confirm they sell
+  fridge magnets is not a use of a sweep slot.
+- **Instagram: NOT READ — fourth consecutive day.** `ig_public.py` returned
+  **HTTP 429** on the day's single attempt, spent before this pass; not retried,
+  per the tool's own instruction and the 28 Jul lesson that a retry burst costs
+  the whole day. No claim is made here about anyone's Instagram — ours or a
+  reference account's.
+- **TikTok: READ, ours only.** `tiktok_public.py` 06:40 UTC — **184 followers,
+  168 videos, 5,482 lifetime hearts**. Followers and hearts both flat against
+  29 Jul; the video count moved **167 → 168**, which is how the sweep found a
+  post nobody had logged. `tiktok_posts.py` returned 13 posts: **median 262
+  views, best 3,422, worst 5**.
+- **Season read: the split held for a third day, and TreatBox added a second
+  gear.** The structure is unchanged — the occasion-led operator is roughly six
+  weeks ahead of the two object-led operators, Results Day is four consecutive
+  reads in first position with a £34.95 product behind it, and nobody has touched
+  back-to-school. What is new is that TreatBox is now trading **two speeds at
+  once**: pre-selling Christmas at £165 with one hand while putting a 40%-off
+  clearance in the top nav and a delivery countdown in the announcement bar with
+  the other. That is a business emptying summer and banking Q4 in the same week.
+  Neither sign brand is doing either. Little Perfections, meanwhile, hardened its
+  proof from testimonial to promise and started selling clothes. Three
+  references, three different plays, and not one of them is "post more content".
+- **Translate to us:**
+  1. **Results Day wording, still not done.** Four reads, four namings, still no
+     Results Day sign in our catalogue. It is a text field, not a production
+     job, and UK results days are mid-to-late August.
+  2. **The two-speed trade is the transferable structure.** A dated pre-sell and
+     a dated clearance can run in the same week; we run neither. Our best-ever
+     TikTok post is the Christmas one at 3,422 views and it is nine months old.
+     The reference has just shown us what to do with that fact in July.
+  3. **"Receive Proof Within 24 Hours" is a promise a competitor made publicly
+     and we have not.** Ours would cost nothing to make. Second day of saying so,
+     still untested.
+  4. **"Dad's Bar and Grill" at £24.99 is still the live comparator for
+     `DM-C020-CORRECTION`** — and the Correction went to TikTok on 29 Jul and did
+     **5 views**. The comparator argument survives; the distribution did not.
+     Read that as an account problem, not a rebuttal of the asset.
+  5. **Two of three references are widening, not deepening.** Little Perfections
+     into apparel, TreatBox into subscriptions and corporate. Not our move today,
+     but worth noting the direction while we are still arguing about one reel.
+- **Unreachable today:** instagram.com via `ig_public.py` (HTTP 429, single
+  attempt, not retried — fourth consecutive day). Not attempted: etsy.com (403
+  on every attempt to date), notonthehighstreet.com, Covering All Occasions,
+  beyondthefridge.co.uk (deliberately, see the re-tier above), and any reference
+  account's social. All three site reads above are **homepages, retrieved today,
+  HTTP 200**. Nothing in this entry is presented as a live social post.
+
+— Alan

@@ -22,30 +22,56 @@ than a record.
 
 ## TikTok — @daisymaison
 
-Views measured 29 Jul 2026 via `tools/social_api/tiktok_public.py`, snapshot at
-`tools/social_api/tiktok-post-snapshots/daisymaison-2026-07-29.json`.
-Account at that read: **184 followers, 5,482 lifetime hearts, 167 videos.**
-**Median of the 11 posts below: 262 views.**
+Views measured **30 Jul 2026** at `--limit 20` via
+`tools/social_api/tiktok_posts.py`, snapshot at
+`tools/social_api/tiktok-post-snapshots/daisymaison-2026-07-30.json`.
+Account: **184 followers, 168 videos.**
 
-| Date | Content ID | Post | Views | Source |
-|---|---|---|---|---|
-| 28 Jul | — | "Drop your wording in the comments and we'll make it 🤍" (live commission) | **6** | measured |
-| 28 Jul | — | "The gown goes back. This doesn't. 🎓" (graduation) | 229 | measured |
-| 28 Jul | DM-C017-JANNAWAY | "Nobody ever guesses 👀" (PILL cut) | 243 | measured |
-| 27 Jul | DM-HOUSE-QUIZ | "Which one's your house? Comment your number 👇" | 244 | measured |
-| 27 Jul | DM-DIFFUSER-TEASE | "Not on the site yet — this one goes live this week" | 237 | measured |
-| — | — | "Cat owner can relate to this 🥹😭" | 262 | measured |
-| — | — | "We didn't realise these surnames actually existed…" | 798 | measured |
-| — | — | "The calm before the Christmas chaos 🎄🎁" | 478 | measured |
-| — | — | "Do you guys think this was intentional or not…" | 403 | measured |
-| — | — | "You know it's nearly Christmas when these start flying out 😍🎄" | **3,422** | measured |
-| — | — | "real customer order btw 😭 (can't even be mad tho)" | 897 | measured |
+**MEDIAN OF ALL 19 POSTS: 478 VIEWS.** Not 262. The 262 figure quoted on 29 Jul
+came off a 12-post window and was an artefact of the truncation - every
+falsifiable call written against "beat 262" was calibrated on a sample that cut
+off above 3,422. Corrected here rather than quietly.
 
-**The two that matter:** the 3,422 Christmas post is the account's best and is
-seasonal, not clever. The 6-view live-commission post is the worst thing we
-have published and it went out 28 Jul.
+| Views | Content ID | Post |
+|---:|---|---|
+| **9,400** | - | "When a customer order lines up too perfectly with Sabrina's..." |
+| **6,500** | - | "Autumn in a matchbox the sweetest little surprise..." |
+| **4,574** | - | "Parenting tip #1: Lower your standards" |
+| 3,422 | - | "You know it's nearly Christmas when these start flying out" |
+| 1,507 | - | "Okay fine... maybe I'm not a wizard. But my house is" |
+| 1,115 | - | "Tell me this doesn't feel like autumn in a box" |
+| 897 | - | "real customer order btw (can't even be mad tho)" |
+| 799 | - | "We didn't realise these surnames actually existed..." |
+| 532 | - | "POV: Planning feels easier when you start with the board." |
+| 478 | - | "The calm before the Christmas chaos" |
+| 455 | - | "Experience 5 years, skill level Day 1" |
+| 403 | - | "Do you guys think this was intentional or not..." |
+| 262 | DM-CAT-HOUSE | "Cat owner can relate to this" |
+| 244 | DM-HOUSE-QUIZ | "Which one's your house? Comment your number" - 27 Jul |
+| 244 | DM-C017-JANNAWAY | "Nobody ever guesses" (PILL cut) - 28 Jul |
+| 237 | DM-DIFFUSER-TEASE | "Not on the site yet - this one goes live this week" - 27 Jul |
+| 229 | - | "The gown goes back. This doesn't." - 28 Jul |
+| **7** | - | "Drop your wording in the comments and we'll make it" - 28 Jul |
+| **5** | DM-C020-CORRECTION | "Dave ordered the sign. Someone else ordered the correction." - 29 Jul |
 
-Post dates are blank where the reader did not return a timestamp. Not guessed.
+**What the full ladder says that the truncated one hid.** The top three are
+9,400 / 6,500 / 4,574 - nearly 3x the figure we thought was our ceiling. All
+three are third-party: a real customer order colliding with a trending song, an
+autumn seasonal, and a parenting joke. **Not one of the top three is an advert
+for a sign.** Two of the top six are autumn/seasonal, which partly rehabilitates
+the seasonal lane that looked like a one-post fluke at 3,422.
+
+**And every single thing this system has published sits in the bottom seven:**
+229, 237, 244, 244, 262, 7, 5. The best pre-system post did 9,400. That is the
+finding, and it is not a hook problem - it is the same account.
+
+**The Correction did 5 views**, the worst post on the account, below the 7-view
+live commission. It went out 29 Jul and was missing from this log until the
+reconciler was fixed to actually re-pull instead of reading yesterday's cache.
+
+Post dates are blank where the reader returns no timestamp. Not guessed - and
+the `--days` window therefore cannot filter TikTok, which is why older inventory
+appears here rather than being excluded.
 
 ---
 
