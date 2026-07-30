@@ -106,6 +106,23 @@ granted now.
 
 ---
 
+## Built and queued — not out yet
+
+Added 30 Jul 2026. A post that is built but unposted was previously invisible in
+this file, which is how the Correction went missing for a day. It sits here until
+it goes out, then it moves up into a platform section with a real number.
+
+| Content ID | Shape | Planned route | Built |
+|---|---|---|---|
+| DM-C020-POST-1 | 3-slide 4:5 carousel — THE SUTTONS / THE MERCERS / THE WILSONS | Instagram carousel + TikTok photo carousel | 30 Jul, 0 credits |
+| DM-C020-POST-2 | 2-slide 4:5 carousel — THE GARDEN TAVERN / DAD'S BAR, plus a silent 5.2s 9:16 cut | Instagram **trial reel** (needs the video, a carousel cannot be a trial reel) + TikTok | 30 Jul, 4 credits of generation, 0 to build |
+
+Both are photo posts of Alan holding a sign at a diagonal in the office, one room
+per slide, five different rooms across the two posts. That satisfies the frame
+diversity gate in `PUBLISH_READINESS.md` **between the slides** but not between
+the two posts — they share subject count, camera height and format. Post 2 should
+not follow post 1 on the same platform on the same day.
+
 ## Not posted, and why
 
 | Content ID | Status |

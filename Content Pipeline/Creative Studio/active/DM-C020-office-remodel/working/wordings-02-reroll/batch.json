@@ -1,0 +1,78 @@
+{
+  "concept_id": "DM-C020-OFFICE",
+  "batch": "wordings-02-reroll",
+  "title": "The two funniest lines, re-rolled after both were binned on scale",
+  "why": "Of the twelve images in wordings-01, six came back with the sign past the arm line. The two that lost were THE GARDEN TAVERN and DAD'S BAR - the best-reading wordings of the six. Max approved a 4-credit re-roll on 30 Jul.",
+  "status": "agent-pass-awaiting-max",
+  "model": "nano_banana_pro",
+  "model_resolved": "nano_banana_2",
+  "aspect_ratio": "9:16",
+  "resolution": "2k",
+  "output_dimensions": "1536 x 2752",
+  "credits": 4,
+  "balance_before": 667.62,
+  "what_changed_from_wordings_01": [
+    "A second, concrete size comparator was added next to the arm-line rule: 'the sign's full length is about the same as the distance from his chin down to his waistband'. The arm line is a relationship between two things the model renders; the chin-to-waist line is a measurement against a body it has already placed.",
+    "THE HOLD was moved into image 2's role list explicitly, so the diagonal comes off the reference rather than off a sentence about the camera.",
+    "Room plate F was switched from take-03 (a reject - shutter rendered closed) to take-01."
+  ],
+  "result": "4 of 4 held the size rule. wordings-01 was 6 of 12. One batch is not proof, but the chin-to-waist comparator is the only variable that changed for the garden concept, and it is cheap to keep.",
+  "references": [
+    {
+      "role": "image_1_room",
+      "note": "different per concept - see outputs"
+    },
+    {
+      "role": "image_2_man_and_hold_and_size_authority",
+      "value": "a64fdcbd-9a42-4702-9c3f-b4eae8a4c7a2",
+      "from": "ideas-B-bargrill/take-02"
+    }
+  ],
+  "human_approval_required": true,
+  "outputs": [
+    {
+      "take": "garden-t1",
+      "job_id": "e61cf8b7-4416-4d1e-a778-a4c29e056a33",
+      "room": "E packing bench",
+      "room_job_id": "b34a3d56-723f-4d3a-be21-3153010e2fc2",
+      "line_1": "THE GARDEN TAVERN",
+      "line_2": "OPEN WHEN IT'S NOT RAINING",
+      "agent_qc": "PICK - both ends fall inside his arms, diagonal reads as a casual hold, wording fully legible"
+    },
+    {
+      "take": "garden-t2",
+      "job_id": "e086f5e0-d081-4c2e-8453-fc6a7d92a8d6",
+      "room": "E packing bench",
+      "line_1": "THE GARDEN TAVERN",
+      "line_2": "OPEN WHEN IT'S NOT RAINING",
+      "agent_qc": "candidate - usable, but the sign is a touch longer and the left end sits on the arm line rather than inside it"
+    },
+    {
+      "take": "homebar-t1",
+      "job_id": "56ec95f7-db4b-44f4-9b6e-afadbaf94f5a",
+      "room": "F shutter bay",
+      "room_job_id": "13fd1b33-8723-4282-b348-bdc48e51ab26",
+      "line_1": "DAD'S BAR",
+      "line_2": "SPIRITS HIGH - STANDARDS LOW",
+      "agent_qc": "candidate - the hold came back nearly level, so the angle Max approved is lost and the left end runs past his arm"
+    },
+    {
+      "take": "homebar-t2",
+      "job_id": "fe136e41-0558-4bd9-a67c-fae919eff208",
+      "room": "F shutter bay",
+      "line_1": "DAD'S BAR",
+      "line_2": "SPIRITS HIGH - STANDARDS LOW",
+      "agent_qc": "PICK - steepest diagonal of the four and the closest to the approved hold, both hands correctly formed, shutter open with the yard visible"
+    }
+  ],
+  "post": {
+    "id": "DM-C020-POST-2",
+    "shape": "2-slide 4:5 photo carousel, plus a silent 5.2s 9:16 cut for Instagram trial reels",
+    "slides": [
+      { "take": "garden-t1", "on_screen": "so, closed" },
+      { "take": "homebar-t2", "on_screen": "he wrote that himself" }
+    ],
+    "credits_to_build": 0,
+    "route": "local render (Pillow + ffmpeg) over the generated frames"
+  }
+}
