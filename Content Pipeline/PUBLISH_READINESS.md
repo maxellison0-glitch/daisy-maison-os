@@ -229,3 +229,26 @@ This is a checklist item, not a production cost. The failure it catches is that
 we industrialised the pipeline — one pose reference, one lighting brief, one
 framing — and efficiency at the frame level became homogeneity at the feed
 level in about six days.
+
+### Where the pill goes, and why it is never centred
+
+Added 30 Jul 2026, from Max asking the obvious question: should the hook sit near
+the face and the sign instead of up in the ceiling?
+
+**No, and the middle band is the one place it cannot go.** The face and the sign's
+printed wording are the two things the viewer needs, and between them they occupy
+roughly 25-85% of a 4:5 frame. A pill there covers the joke.
+
+So the pill lives in one of two bands - `y 0.075` (top) or `y 0.855` (below the
+sign). Tested across all five office rooms: the top band wins on readability every
+time, because the galvanised ceiling is a consistent neutral in every plate.
+
+**But slide 1 is top and the rest alternate.** Not for readability - for the
+template problem. Five frames with the pill stamped at the same height read as one
+asset repeated, which is the same failure the frame-diversity gate above exists to
+catch. Slide 1 stays top because it is the frame a scrolling viewer actually sees.
+
+Colour: burgundy pill, white type - already `VIDEO_CAPTION_SYSTEM.md` 1.2's
+keyword-highlight fill, so this is in spec rather than a new colour. Burgundy
+*type* on a white pill was tried and binned: at caption weight the colour is too
+thin to read as a decision and looks like a mistake.
