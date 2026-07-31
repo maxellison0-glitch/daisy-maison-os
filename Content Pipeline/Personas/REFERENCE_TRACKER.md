@@ -579,3 +579,71 @@ Entry format:
   HTTP 200**. Nothing in this entry is presented as a live social post.
 
 — Alan
+
+## 2026-07-31
+- **TreatBox (treatboxuk.com) — READ, 200.** The two-speed trade held for a
+  fourth day and is now plainly a standing posture, not a week's tactic.
+  Christmas Advent still pre-selling at **£165** (or **£41.25** on instalments);
+  **40% OFF SALE** still sitting in the top nav; the delivery **countdown** still
+  live in the announcement bar ("Free Next Day Delivery, order before 4pm", over
+  £25). **Results Day Gifts still promoted as a current category — a fifth
+  consecutive read in an occasion slot.** One genuine move: a **"New arrival"
+  apparel push — Comfort Collective pyjamas, up to 41% off (£29.47 single /
+  £47.44 bundle)**. That is the same sideways widening Little Perfections made
+  last week — an occasion/gifting brand extending into loungewear/apparel. Hero
+  reframed to "Thoughtful Gifts, Delivered Next Day" (build-a-box + gift quiz).
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** "**Receive
+  Proof Within 24 Hours**" holds as a stated site promise (second read as promise,
+  not testimonial). Apparel still in Gifts (Satin Robes, Pearl Sunglasses,
+  Embroidered caps/hats, Gold Wifey Necklace) — the sideways move holds. "Over
+  2,000 five-star reviews" unchanged. New nuance surfaced this read: the taxonomy
+  now merchandises by **wedding-day stage** — Planning/Pre-Wedding, Ceremony,
+  Wedding Breakfast, Reception, Finishing Touches — i.e. selling the whole day as
+  a journey, alongside the existing Style/Colour/Floral/Occasion cuts. Christmas
+  still sits in Occasions. No dated seasonal collection flagged as new.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged for a
+  **fifth** read. Same seven joke-copy street signs, all **from £24.99**
+  (incl. **"Dad's Bar and Grill"**, "The Dog Lives Here", "If Mum's in Charge of
+  Dinner", "Nanny's Garden", "Grandad's Shed", Family Name Sign, Customisable 3D).
+  Still running the **Father's Day** Spirit Level Bottle Opener (£19.99) on
+  31 July — a six-weeks-stale dated SKU nobody has pulled. Proof bar unchanged
+  ("Rated 4.9/5 by 250,000+ · Google", "Hand-made in UK family workshop", free UK
+  delivery over £50). Still **zero** Results Day / back-to-school / autumn /
+  Halloween / Christmas. A stable joke-sign catalogue being run, not tested.
+- **Season read: the split holds a fourth day, and the widening is now the
+  story.** One occasion-led operator (~6 weeks ahead: Results Day fifth read, Q4
+  pre-sold, summer cleared) versus two object-led sign brands running stable
+  catalogues with no dated occasion in them at all. What moved is that **both
+  TreatBox and Little Perfections are now widening into apparel** — pyjamas and
+  bridal loungewear respectively — while Crafty Bonobo deepens a fixed joke-sign
+  line. The references are telling us two different growth answers, and neither
+  is "post more". For us the transferable turn remains dated structure, not SKU
+  sprawl.
+- **Translate to us:**
+  1. **Results Day wording, STILL not done.** Fifth naming, fifth day of no
+     Results Day sign in our catalogue. Text field, not a production job; UK
+     results days are mid-to-late August. This is now overdue, not queued.
+  2. **The two-speed dated pre-sell + clearance is still the structure to steal.**
+     Our best-ever TikTok is the nine-month-old Christmas post (3,422). TreatBox
+     has shown four days running what to do with that in July.
+  3. **"Receive Proof Within 24 Hours" — a competitor's public promise we still
+     haven't matched.** Third read, costs nothing, still untested by us.
+  4. **DM-C020-POST-1 (first post published WITH music, 3-image carousel, Milky
+     Chance CML track) went out 30 Jul and is UNMEASURED today** — no TikTok
+     public read available in this session (the scrape tool isn't wired here;
+     the MCP TikTok tool only confirms the account is active). Its stablemate
+     DM-C020-POST-2 (Garden Tavern + Dad's Bar) is built and unposted; "Dad's Bar
+     and Grill" at £24.99 remains the live comparator on Crafty Bonobo's wall.
+  5. **The apparel widening is worth logging, not chasing.** Two of three
+     references adding clothing is a direction signal; our move stays sign-reveal
+     depth + dated occasion, not a new product category.
+- **Unreachable today:** instagram.com (HTTP 429, fifth consecutive day — not
+  retried, per the 28 Jul lesson that a retry burst costs the day). Not attempted:
+  etsy.com (403 on every attempt to date), notonthehighstreet.com, Covering All
+  Occasions, beyondthefridge.co.uk (re-tier to Tier 3 still recommended). TikTok
+  public metrics not pullable in this session — followers/hearts/video-count
+  carry from the 30 Jul read (184 / 5,482 / 168), UNVERIFIED today. All three
+  site reads above are homepages, retrieved today, HTTP 200. Nothing here is
+  presented as a live social post.
+
+— Alan
