@@ -647,3 +647,87 @@ Entry format:
   presented as a live social post.
 
 — Alan
+
+## 2026-08-01
+- **TreatBox (treatboxuk.com) — READ, 200.** The two-speed trade holds into
+  August — fifth consecutive read, now unambiguously the house posture. **40%
+  OFF SALE** still in the top nav; **Free Next Day Delivery over £25** with the
+  live **countdown** still in the announcement bar (order before 4pm); hero
+  unchanged from the 31 Jul reframe ("Thoughtful Gifts, Delivered Next Day",
+  build-a-box + gift quiz). **Results Day Gifts still a featured collection — a
+  SIXTH consecutive read in an occasion slot.** Advent Calendars 2026 still
+  pre-selling (Wedding + Christmas Advent both in nav); the explicit £165 /
+  £41.25 instalment price did not surface in today's fetch — carried, not
+  reconfirmed, so read as UNVERIFIED today, not "removed". One genuine move: the
+  **Comfort Collective pyjama discount deepened from "up to 41%" to "up to 45%
+  off"** (£29.47 single / £47.44 bundle unchanged) — the apparel widening isn't
+  just holding, it's being pushed harder. Monthly TreatBox subscription "From
+  £18.00", quarterly option and a dedicated Corporate Gifting portal all still
+  live — the subscription/corporate widening holds alongside the apparel one.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** "**Receive Proof
+  Within 24 Hours**" holds as a stated site promise (third read as promise). New
+  this read: the **hero line has shifted to "Personalised designs, fast proofs,
+  and a seamless process from start to finish"** — they've promoted the proof
+  speed into the headline itself, not just a badge. Turnaround spelled out:
+  digital proof to email, unlimited edits, 3-5 day standard / 2-day express. "Over
+  2,000 five-star reviews" holds, now attributed TrustPilot-verified. Apparel
+  still in Gifts (Satin Robes, Pearl Sunglasses, Embroidered caps/hats, Gold Wifey
+  Necklace) — sideways move holds; prices not displayed this read. The
+  **wedding-day-stage taxonomy holds in full** (Planning/Pre-Wedding, Ceremony,
+  Wedding Breakfast, Reception, Finishing Touches). Season nuance: Spring / Summer
+  / Autumn / Winter collections all referenced (named cuts: Sienna, Toasted Amber,
+  Santorini, Limoncello) — Autumn is now on the page, but no dated autumn
+  collection flagged as new.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged for a
+  **SIXTH** read. Same seven joke-copy street signs, all **from £24.99** (incl.
+  **"Dad's Bar and Grill" at £24.99**, "The Dog Lives Here", "If Mum's in Charge
+  of Dinner", "Nanny's Garden", "Grandad's Shed", Family Name Sign, Customisable
+  3D). Still running the **Father's Day** Spirit Level Bottle Opener (£19.99) on
+  1 August — now roughly SEVEN weeks stale, a dated SKU nobody has pulled. Proof
+  bar reads consistent ("Rated 4.9/5 on Google · 250,000+ orders shipped"); the
+  workshop / free-delivery lines didn't surface in today's fetch summary but
+  aren't claimed as removed. Still **zero** Results Day / back-to-school / autumn
+  / Halloween / Christmas. A stable joke-sign catalogue being run, not tested.
+- **Season read: the split holds a fifth day, now with a divergence inside the
+  widening.** One occasion-led operator (~6 weeks ahead: Results Day sixth read,
+  Q4 Advent pre-sold, summer cleared, apparel discount being pushed harder)
+  versus two object-led sign brands running stable catalogues with no dated
+  occasion in them. The new information is that the apparel bet is not symmetric:
+  **TreatBox is deepening it (discount 41%→45%) while Little Perfections is
+  promoting proof-speed into its hero** — one competes on price of the new line,
+  the other on service. Crafty Bonobo does neither and just holds the joke signs.
+  Three references, three different growth answers, and none of them is "post
+  more". For us the transferable turn is still dated structure, not SKU sprawl —
+  and the dated occasion in front of everyone is Results Day, mid-to-late August,
+  which we still don't sell.
+- **Translate to us:**
+  1. **Results Day wording, STILL not done.** Sixth naming, sixth day of no
+     Results Day sign in our catalogue. Text field, not a production job; UK
+     results days are mid-to-late August — this is now the imminent live occasion,
+     not a queued one. Overdue.
+  2. **The two-speed dated pre-sell + clearance remains the structure to steal.**
+     Our best-ever TikTok is the nine-month-old Christmas post (3,422 views).
+     TreatBox has shown five days running what to do with that in July/August.
+  3. **"Receive Proof Within 24 Hours" — a competitor's public promise we still
+     haven't matched, and they've just promoted it into their hero.** Fourth read,
+     costs nothing, still untested by us. The bar went up today: it's no longer a
+     badge for them, it's the headline.
+  4. **"Dad's Bar and Grill" at £24.99 stays the live comparator for
+     `DM-C020`.** The pebble-heart carousel (3 real products, premium AI
+     backgrounds, 8 credits, ready to post) is a different revenue line — Wedding
+     Pebble Picture at £22.95 out-earns Mr&Mrs per unit — and the till says orders
+     convert. The comparator argument survives; distribution is the constraint.
+  5. **The apparel widening is a direction signal to LOG, not chase.** Two of
+     three references now pushing clothing (TreatBox harder today), but our move
+     stays sign-reveal depth + dated occasion, not a new product category.
+- **Unreachable today:** instagram.com public metrics (HTTP 429 lineage —
+  **sixth** consecutive day; the `ig_public.py` scrape tool is not wired into
+  this session, so not attempted rather than retry-burst). Not attempted:
+  etsy.com (403 on every attempt to date), notonthehighstreet.com, Covering All
+  Occasions, beyondthefridge.co.uk (Tier 3 re-tier still recommended). TikTok
+  public metrics not pullable in this session — followers/hearts/video-count
+  carry from the 30 Jul read (184 / 5,482 / 168), UNVERIFIED today. All three
+  site reads above are homepages, retrieved today, HTTP 200. Nothing here is
+  presented as a live social post.
+
+— Alan

@@ -370,3 +370,57 @@ Format:
   Correction failing at 5 views means we cannot currently tell a good post from
   a bad one on this account, because distribution is drowning the signal.
 - Signed: Freya · Alan
+
+## 2026-08-01
+
+- Learned: (A) three days pulled live from Shopify (`daisymaisonuk`, ShopifyQL
+  `total_sales`), because the newest digest on disk (28 Jul) is now three days
+  stale: **29 Jul — 56 orders / £1,647.74 / AOV £24.42; 30 Jul — 46 / £1,406.58 /
+  £24.78; 31 Jul — 43 / £1,437.05 / £28.21.** Volume drifted down (56 → 46 → 43)
+  while **AOV climbed to £28.21, the run-high** — fewer baskets, bigger baskets,
+  near-flat revenue. Fewer-bigger-baskets is a gifting/higher-ticket signal, and
+  it points straight at the pebble line.
+- Learned: (F) the account's only proven mechanic is found humour that was
+  genuinely *found* (9,400 / 6,500 / 4,574 — none our own advert). Today's
+  creative correction is idea ①: stop authoring the advert, hold up a **real
+  customer's** joke pulled from the live order queue (origin-gated, name
+  anonymised, date protected).
+- Changing: **distribution is the bottleneck, not creative — so don't answer it
+  with a fourth new asset.** With AOV at a run-high and the pebble-heart gift
+  carousel already built (8 credits, nothing pending), the single throttled daily
+  post should be **the carousel we already own**, on the higher-AOV gifting line
+  the numbers now favour. Today's effort goes on distribution (the Bond one-post
+  settlement read + the IG 429), not on making more.
+- Where we split (real): Freya wanted to lead with ① (manufacture found humour,
+  her backed favourite). Alan's push-back: ① is unproven, needs a real order line
+  + a 2-min film, and can wait — while a zero-cost, data-backed, *already-built*
+  pebble carousel is sitting ready on exactly the line the AOV drift favours.
+  **Resolution:** post the built pebble carousel today; film ① next as the
+  strategic test. Alan wins the "what ships today"; Freya's ① is the next asset,
+  not a dropped one.
+- Retired/carried: the Bond one-post TikTok test (written 29 Jul) settles today —
+  its read decides the throttle theory (under 30 = dead pipe, fix distribution
+  before making anything; over 200 = one-a-day becomes a hard rule). Carry the
+  verdict into tomorrow's brief.
+- Blocked: idea ③ (Results-Day SOLVE) cannot ship — **there is still no Results
+  Day / results SKU in the catalogue** (Alan's sixth consecutive naming). It is
+  an overdue text-field job, not a production one; make the wording first, then ③
+  becomes a dated deadline post. Teacher-*gifting* demand reads closed, so ③ must
+  ride the parent/student results angle + a hard order-by date, not teacher gifts.
+- Testing tomorrow (falsifiable): idea ① must clear the **478 TikTok median**.
+  Under it, on a real-order sign this well-formed, the verdict is that found
+  humour only works when genuinely found and the constraint is distribution, full
+  stop. Settled by `tiktok_posts.py`.
+- Gaps, named: **ROAS/spend for 30–31 Jul not pulled** (Shopify holds no ad cost;
+  that's a Windsor/ad-platform job) — the digest's 28 Jul 2.00x is stale and is
+  NOT restated as current. **28 Jul ShopifyQL `total_sales` = £1,410.01 vs the
+  digest's £1,429.91** — a metric-definition mismatch, not a correction; flagged
+  so nobody chases a £20 ghost. **IG public 429, sixth day.** TikTok public
+  metrics not pullable this session (184 / 5,482 / 168 carried from 30 Jul,
+  unverified). `£[x]` price fields for ① and ③ pending catalogue. TreatBox Advent
+  price didn't surface in today's fetch — carried, unverified, not "removed".
+- Confidence: (A) high on the Shopify order/AOV figures, ROAS an open gap; (F)
+  high that found-humour-genuinely-found is the mechanic, and honest that while
+  distribution is drowning the signal we still cannot reliably tell a good post
+  from a bad one on this account.
+- Signed: Freya · Alan
