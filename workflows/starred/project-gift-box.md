@@ -46,13 +46,18 @@ Create a tasteful Daisy Maison gift-box personalisation concept based on the act
 - anniversary or couple / two birds and hearts;
 - general appreciation, new home, and seasonal variants.
 
-The result should be suitable for a physical white kraft gift box: simple, legible, production-aware artwork with a restrained Daisy Maison feel. Keep copy readable at gift-box scale. Separate confirmed text, proposed text, and questions for Max. Do not claim printer-ready output until the actual box dimensions, print/laser method, colour limitations, and safe artwork area are confirmed.
+The result should be suitable for a physical white kraft gift box: simple, legible, production-aware artwork with a restrained Daisy Maison feel. Keep copy readable at gift-box scale. Separate confirmed text, proposed text, and questions for Max.
+
+## Production Method (Confirmed)
+
+- **Method:** UV printed on a Mimaki flatbed printer (in-house)
+- **Colour:** Full colour is technically possible, but current design direction is monochrome/greyscale line art to match the East of India aesthetic.
+- **Style reference:** East of India — fine-line hand-drawn botanical illustration, simple serif/script text, sparse composition. See the existing "Thank you for being amazing" mock-up: branch + watering can + pot plant, bottom-right corner, "Daisy Maison" text on the watering can as subtle branding.
+- **Design workflow:** Create artwork in Claude Design → export PDF/SVG → bring into Photoshop → set up print file for Mimaki.
 
 ## Questions To Resolve Before Production
 
 - Exact box dimensions and printable/safe area
-- Whether the artwork is printed, engraved, cut, or applied as a label/sticker
-- Available production colours and substrate limitations
 - Whether personalisation is one line, multiple lines, or a fixed design plus optional message
 - Final approved copy and spelling for each variant
 - Whether the product needs Shopify option/metafield changes

@@ -1,0 +1,640 @@
+{% liquid
+  assign story_product = section.settings.product
+  if story_product == blank and product != blank
+    assign story_product = product
+  endif
+  assign story_image = section.settings.wedding_image
+  if story_image == blank and story_product != blank
+    assign story_image = story_product.featured_image
+  endif
+  assign story_url = '#DaisyStoryPersonalise-' | append: section.id
+  if story_product != blank
+    assign story_url = story_product.url
+  endif
+%}
+
+<daisy-scroll-story
+  id="DaisyStory-{{ section.id }}"
+  class="daisy-story"
+  data-section-id="{{ section.id }}"
+  data-scene="0"
+>
+  <div class="daisy-story__experience">
+    <div class="daisy-story__visual" aria-live="polite">
+      <div class="daisy-story__atmosphere">
+        {% if story_image != blank %}
+          {{ story_image | image_url: width: 1800 | image_tag: class: 'daisy-story__image', widths: '480, 750, 1100, 1500, 1800', sizes: '(min-width: 990px) 62vw, 100vw', loading: 'eager', fetchpriority: 'high' }}
+        {% endif %}
+        <span class="daisy-story__veil"></span>
+        <span class="daisy-story__light daisy-story__light--one"></span>
+        <span class="daisy-story__light daisy-story__light--two"></span>
+      </div>
+
+      <figure class="daisy-story__sign-wrap">
+        {% render 'daisy-mr-mrs-sign' %}
+        <figcaption class="visually-hidden">{{ section.settings.preview_caption }}</figcaption>
+      </figure>
+
+      <div class="daisy-story__scene-marker" aria-hidden="true">
+        <span data-daisy-scene-current>01</span>
+        <span class="daisy-story__scene-rule"></span>
+        <span>04</span>
+      </div>
+    </div>
+
+    <div class="daisy-story__steps">
+      <article class="daisy-story__step" data-daisy-step="0">
+        <div class="daisy-story__card daisy-story__card--hero">
+          <p class="daisy-story__eyebrow">{{ section.settings.scene_1_eyebrow }}</p>
+          <h1 class="daisy-story__title">{{ section.settings.scene_1_heading }}</h1>
+
+          <div class="daisy-story__personaliser" id="DaisyStoryPersonalise-{{ section.id }}">
+            <div class="daisy-story__field">
+              <label for="DaisyStorySurname-{{ section.id }}">{{ section.settings.surname_label }}</label>
+              <input
+                id="DaisyStorySurname-{{ section.id }}"
+                type="text"
+                value="{{ section.settings.default_surname | escape }}"
+                maxlength="24"
+                autocomplete="off"
+                inputmode="text"
+                data-daisy-surname
+              >
+            </div>
+            <div class="daisy-story__field">
+              <label for="DaisyStoryDate-{{ section.id }}">{{ section.settings.date_label }}</label>
+              <input
+                id="DaisyStoryDate-{{ section.id }}"
+                type="text"
+                value="{{ section.settings.default_date | escape }}"
+                maxlength="38"
+                autocomplete="off"
+                inputmode="text"
+                data-daisy-date
+              >
+            </div>
+          </div>
+
+          <p class="daisy-story__body">{{ section.settings.scene_1_body }}</p>
+          <p class="daisy-story__microcopy">{{ section.settings.scene_1_microcopy }}</p>
+        </div>
+      </article>
+
+      <article class="daisy-story__step" data-daisy-step="1">
+        <div class="daisy-story__card">
+          <p class="daisy-story__eyebrow">{{ section.settings.scene_2_eyebrow }}</p>
+          <h2 class="daisy-story__heading">{{ section.settings.scene_2_heading }}</h2>
+          <p class="daisy-story__body">{{ section.settings.scene_2_body }}</p>
+          <p class="daisy-story__microcopy">{{ section.settings.scene_2_microcopy }}</p>
+        </div>
+      </article>
+
+      <article class="daisy-story__step" data-daisy-step="2">
+        <div class="daisy-story__card">
+          <p class="daisy-story__eyebrow">{{ section.settings.scene_3_eyebrow }}</p>
+          <h2 class="daisy-story__heading">{{ section.settings.scene_3_heading }}</h2>
+          <p class="daisy-story__body">{{ section.settings.scene_3_body }}</p>
+          <div class="daisy-story__proof" role="list">
+            <span role="listitem">{{ section.settings.proof_1 }}</span>
+            <span role="listitem">{{ section.settings.proof_2 }}</span>
+            <span role="listitem">{{ section.settings.proof_3 }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="daisy-story__step" data-daisy-step="3">
+        <div class="daisy-story__card">
+          <p class="daisy-story__eyebrow">{{ section.settings.scene_4_eyebrow }}</p>
+          <h2 class="daisy-story__heading">{{ section.settings.scene_4_heading }}</h2>
+          <p class="daisy-story__body">{{ section.settings.scene_4_body }}</p>
+          <a class="daisy-story__button" href="{{ story_url }}">{{ section.settings.primary_cta }}</a>
+          <p class="daisy-story__microcopy">{{ section.settings.scene_4_microcopy }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <a class="daisy-story__sticky-cta" href="{{ story_url }}" data-daisy-sticky-cta>
+    <span>{{ section.settings.primary_cta }}</span>
+    {% if story_product != blank %}
+      <span>{{ story_product.price | money }}</span>
+    {% endif %}
+  </a>
+</daisy-scroll-story>
+
+{% stylesheet %}
+  .daisy-story {
+    --daisy-ink: #241c19;
+    --daisy-paper: #f4eee7;
+    --daisy-blush: #d9b6aa;
+    --daisy-wine: #6a2637;
+    --daisy-line: rgba(36, 28, 25, 0.2);
+    display: block;
+    background: var(--daisy-paper);
+    color: var(--daisy-ink);
+    font-family: Arial, sans-serif;
+  }
+
+  .daisy-story * {
+    box-sizing: border-box;
+  }
+
+  .daisy-story__experience {
+    position: relative;
+  }
+
+  .daisy-story__visual {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 46svh;
+    min-height: 300px;
+    overflow: hidden;
+    background: #d9cec5;
+  }
+
+  .daisy-story__atmosphere,
+  .daisy-story__veil,
+  .daisy-story__image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .daisy-story__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.78) contrast(0.92) brightness(0.88);
+    transform: scale(1.04);
+    transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), filter 1.4s ease;
+  }
+
+  .daisy-story__veil {
+    background:
+      linear-gradient(180deg, rgba(31, 21, 18, 0.08), rgba(31, 21, 18, 0.32)),
+      radial-gradient(circle at 58% 36%, rgba(255, 244, 224, 0.34), transparent 46%);
+    backdrop-filter: blur(1px);
+  }
+
+  .daisy-story__light {
+    position: absolute;
+    width: 28vw;
+    min-width: 140px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(255, 232, 198, 0.24);
+    filter: blur(28px);
+    opacity: 0.8;
+    transition: transform 1.2s ease, opacity 1.2s ease;
+  }
+
+  .daisy-story__light--one {
+    top: -8%;
+    right: -5%;
+  }
+
+  .daisy-story__light--two {
+    bottom: -18%;
+    left: -8%;
+  }
+
+  .daisy-story__sign-wrap {
+    position: relative;
+    z-index: 2;
+    width: min(92vw, 720px);
+    margin: 0;
+    filter: drop-shadow(0 18px 28px rgba(31, 22, 18, 0.28));
+    transform: translateY(2%) rotate(-1deg) scale(0.9);
+    transform-origin: center;
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), filter 1.1s ease;
+  }
+
+  .daisy-story-sign {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .daisy-story__scene-marker {
+    position: absolute;
+    z-index: 3;
+    right: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+
+  .daisy-story__scene-rule {
+    width: 30px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .daisy-story__steps {
+    position: relative;
+    z-index: 2;
+    margin-top: -46svh;
+  }
+
+  .daisy-story__step {
+    display: flex;
+    align-items: flex-end;
+    min-height: 82svh;
+    padding: 0 16px 14svh;
+  }
+
+  .daisy-story__step:first-child {
+    align-items: flex-start;
+    min-height: 100svh;
+    padding-top: 47svh;
+    padding-bottom: 7svh;
+  }
+
+  .daisy-story__card {
+    width: 100%;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 2px;
+    background: rgba(248, 243, 237, 0.92);
+    box-shadow: 0 24px 70px rgba(48, 35, 30, 0.14);
+    backdrop-filter: blur(18px);
+  }
+
+  .daisy-story__eyebrow {
+    margin: 0 0 12px;
+    color: var(--daisy-wine);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+  }
+
+  .daisy-story__title,
+  .daisy-story__heading {
+    max-width: 14ch;
+    margin: 0;
+    color: var(--daisy-ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+  }
+
+  .daisy-story__title {
+    font-size: clamp(38px, 11vw, 58px);
+  }
+
+  .daisy-story__heading {
+    font-size: clamp(34px, 9.5vw, 52px);
+  }
+
+  .daisy-story__body {
+    max-width: 42ch;
+    margin: 18px 0 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .daisy-story__microcopy {
+    margin: 16px 0 0;
+    color: rgba(36, 28, 25, 0.62);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .daisy-story__personaliser {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .daisy-story__field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .daisy-story__field input {
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 13px;
+    border: 1px solid var(--daisy-line);
+    border-radius: 0;
+    outline: none;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--daisy-ink);
+    font: 16px/1.2 Arial, sans-serif;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .daisy-story__field input:focus-visible {
+    border-color: var(--daisy-wine);
+    box-shadow: 0 0 0 3px rgba(106, 38, 55, 0.12);
+  }
+
+  .daisy-story__proof {
+    display: grid;
+    gap: 0;
+    margin-top: 24px;
+    border-top: 1px solid var(--daisy-line);
+  }
+
+  .daisy-story__proof span {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--daisy-line);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .daisy-story__button,
+  .daisy-story__sticky-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 20px;
+    background: var(--daisy-wine);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .daisy-story__button {
+    margin-top: 24px;
+  }
+
+  .daisy-story__sticky-cta {
+    position: fixed;
+    z-index: 20;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: 12px;
+    justify-content: space-between;
+    box-shadow: 0 12px 34px rgba(63, 24, 34, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(18px);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .daisy-story[data-scene='1'] .daisy-story__sticky-cta,
+  .daisy-story[data-scene='2'] .daisy-story__sticky-cta,
+  .daisy-story[data-scene='3'] .daisy-story__sticky-cta {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .daisy-story[data-scene='1'] .daisy-story__sign-wrap {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+
+  .daisy-story[data-scene='2'] .daisy-story__sign-wrap {
+    transform: translateY(-1%) rotate(0.35deg) scale(1.08);
+    filter: drop-shadow(0 22px 34px rgba(31, 22, 18, 0.34));
+  }
+
+  .daisy-story[data-scene='3'] .daisy-story__sign-wrap {
+    transform: translateY(1%) rotate(0) scale(0.94);
+  }
+
+  .daisy-story[data-scene='2'] .daisy-story__image,
+  .daisy-story[data-scene='3'] .daisy-story__image {
+    filter: saturate(0.86) contrast(0.95) brightness(0.8);
+    transform: scale(1.09);
+  }
+
+  @media screen and (min-width: 750px) {
+    .daisy-story__personaliser {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .daisy-story__experience {
+      min-height: 400vh;
+    }
+
+    .daisy-story__visual {
+      position: sticky;
+      width: 62%;
+      height: 100vh;
+      min-height: 620px;
+    }
+
+    .daisy-story__sign-wrap {
+      width: min(56vw, 920px);
+      transform: translateX(4%) rotate(-1deg) scale(0.9);
+    }
+
+    .daisy-story__steps {
+      width: 38%;
+      margin-top: -100vh;
+      margin-left: 62%;
+    }
+
+    .daisy-story__step,
+    .daisy-story__step:first-child {
+      align-items: center;
+      min-height: 100vh;
+      padding: 10vh clamp(32px, 4vw, 76px);
+    }
+
+    .daisy-story__card {
+      padding: clamp(30px, 3.2vw, 52px);
+      border: 0;
+      background: rgba(248, 243, 237, 0.94);
+      box-shadow: -24px 30px 90px rgba(48, 35, 30, 0.12);
+    }
+
+    .daisy-story__title {
+      font-size: clamp(48px, 4.5vw, 76px);
+    }
+
+    .daisy-story__heading {
+      font-size: clamp(42px, 3.7vw, 64px);
+    }
+
+    .daisy-story__personaliser {
+      grid-template-columns: 1fr;
+    }
+
+    .daisy-story__sticky-cta {
+      right: 28px;
+      bottom: 28px;
+      left: auto;
+      width: min(360px, 32vw);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .daisy-story *,
+    .daisy-story *::before,
+    .daisy-story *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('daisy-scroll-story')) {
+    customElements.define('daisy-scroll-story', class DaisyScrollStory extends HTMLElement {
+      connectedCallback() {
+        this.surnameInput = this.querySelector('[data-daisy-surname]');
+        this.dateInput = this.querySelector('[data-daisy-date]');
+        this.sign = this.querySelector('[data-daisy-story-sign]');
+        this.currentScene = this.querySelector('[data-daisy-scene-current]');
+        this.steps = [...this.querySelectorAll('[data-daisy-step]')];
+        this.updateSign = this.updateSign.bind(this);
+        this.surnameInput?.addEventListener('input', this.updateSign);
+        this.dateInput?.addEventListener('input', this.updateSign);
+        this.observeSteps();
+        if (document.fonts?.ready) {
+          document.fonts.ready.then(this.updateSign);
+        } else {
+          this.updateSign();
+        }
+      }
+
+      disconnectedCallback() {
+        this.observer?.disconnect();
+        this.surnameInput?.removeEventListener('input', this.updateSign);
+        this.dateInput?.removeEventListener('input', this.updateSign);
+      }
+
+      clean(value, fallback) {
+        const cleaned = value.toUpperCase().replace(/[^A-Z0-9 '&.-]/g, '').replace(/\s+/g, ' ').trim();
+        return cleaned || fallback;
+      }
+
+      updateSign() {
+        if (!this.sign) return;
+        const surname = this.clean(this.surnameInput?.value || '', 'WINDSOR');
+        const date = this.clean(this.dateInput?.value || '', '14TH SEPTEMBER 2026');
+        const prefix = this.sign.querySelector('#line-1-prefix');
+        const ampersand = this.sign.querySelector('#line-1-ampersand');
+        const suffix = this.sign.querySelector('#line-1-suffix');
+        const subtitle = this.sign.querySelector('#line-2');
+        const heart = this.sign.querySelector('#signature-heart');
+        const title = this.sign.querySelector('title');
+        if (!prefix || !ampersand || !suffix || !subtitle || !heart) return;
+
+        const prefixGroup = prefix.parentElement;
+        const ampersandGroup = ampersand.parentElement;
+        const suffixGroup = suffix.parentElement;
+        const subtitleGroup = subtitle.parentElement;
+        if (!prefixGroup || !ampersandGroup || !suffixGroup || !subtitleGroup) return;
+
+        prefix.textContent = 'MR ';
+        ampersand.textContent = '&';
+        suffix.textContent = ` MRS ${surname}`;
+        subtitle.textContent = `FROM THIS DAY FORWARD... ${date}`;
+        if (title) title.textContent = `MR & MRS ${surname} personalised street sign preview`;
+
+        const baseline = 82.645;
+        const signatureScale = 0.864373;
+        const targetWidth = 486;
+        prefixGroup.setAttribute('transform', `translate(0 ${baseline}) scale(1 1.4)`);
+        ampersandGroup.setAttribute('transform', `translate(0 ${baseline}) scale(1 1.4)`);
+        suffixGroup.setAttribute('transform', `translate(0 ${baseline}) scale(1 1.4)`);
+
+        requestAnimationFrame(() => {
+          const prefixNatural = prefix.getComputedTextLength();
+          const ampNatural = ampersand.getComputedTextLength();
+          const suffixNatural = suffix.getComputedTextLength();
+          const signatureAdvance = ampNatural * signatureScale;
+          const available = Math.max(1, targetWidth - signatureAdvance);
+          const surroundingNatural = prefixNatural + suffixNatural;
+          const textScale = surroundingNatural > 0 ? Math.min(1, available / surroundingNatural) : 1;
+          const prefixWidth = prefixNatural * textScale;
+          const suffixWidth = suffixNatural * textScale;
+          const totalWidth = prefixWidth + signatureAdvance + suffixWidth;
+          const lineStart = 285 - totalWidth / 2;
+          const ampOrigin = lineStart + prefixWidth;
+          const suffixOrigin = ampOrigin + signatureAdvance;
+
+          prefixGroup.setAttribute('transform', `translate(${lineStart} ${baseline}) scale(${textScale} 1.4)`);
+          ampersandGroup.setAttribute('transform', `translate(${ampOrigin} ${baseline}) scale(${signatureScale} 1.4)`);
+          suffixGroup.setAttribute('transform', `translate(${suffixOrigin} ${baseline}) scale(${textScale} 1.4)`);
+          heart.setAttribute('x', String(ampOrigin + 24.779));
+
+          subtitleGroup.setAttribute('transform', 'translate(285 104) scale(1 1.4)');
+          const subtitleNatural = subtitle.getComputedTextLength();
+          const subtitleScale = subtitleNatural > 0 ? Math.min(1, 470 / subtitleNatural) : 1;
+          subtitleGroup.setAttribute('transform', `translate(285 104) scale(${subtitleScale} 1.4)`);
+        });
+      }
+
+      observeSteps() {
+        this.observer = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!visible) return;
+          const scene = visible.target.dataset.daisyStep || '0';
+          this.dataset.scene = scene;
+          if (this.currentScene) this.currentScene.textContent = String(Number(scene) + 1).padStart(2, '0');
+        }, { rootMargin: '-20% 0px -35% 0px', threshold: [0.15, 0.35, 0.65] });
+        this.steps.forEach((step) => this.observer.observe(step));
+      }
+    });
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Daisy scroll story",
+  "tag": "section",
+  "class": "section-daisy-scroll-story",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "image_picker", "id": "wedding_image", "label": "Wedding atmosphere image" },
+    { "type": "text", "id": "preview_caption", "label": "Preview caption", "default": "Personalised Mr and Mrs street-sign preview" },
+    { "type": "text", "id": "surname_label", "label": "Surname field label", "default": "Their surname" },
+    { "type": "text", "id": "date_label", "label": "Date field label", "default": "Wedding date" },
+    { "type": "text", "id": "default_surname", "label": "Default surname", "default": "Windsor" },
+    { "type": "text", "id": "default_date", "label": "Default date", "default": "14th September 2026" },
+    { "type": "header", "content": "Scene 1 — Hook" },
+    { "type": "text", "id": "scene_1_eyebrow", "label": "Eyebrow", "default": "The wedding gift they'll hang" },
+    { "type": "text", "id": "scene_1_heading", "label": "Heading", "default": "Every love story deserves its own street." },
+    { "type": "textarea", "id": "scene_1_body", "label": "Body", "default": "A personalised Mr & Mrs street sign, made to order for the day two names became one." },
+    { "type": "text", "id": "scene_1_microcopy", "label": "Microcopy", "default": "Enter their details to preview the wording instantly." },
+    { "type": "header", "content": "Scene 2 — Personalise" },
+    { "type": "text", "id": "scene_2_eyebrow", "label": "Eyebrow", "default": "Make it theirs" },
+    { "type": "text", "id": "scene_2_heading", "label": "Heading", "default": "Type their name. Watch it appear." },
+    { "type": "textarea", "id": "scene_2_body", "label": "Body", "default": "Their surname and wedding date appear live in the approved Large sign artwork — signature heart, ampersand and all." },
+    { "type": "text", "id": "scene_2_microcopy", "label": "Microcopy", "default": "A faithful visual preview of the Large design." },
+    { "type": "header", "content": "Scene 3 — Believe" },
+    { "type": "text", "id": "scene_3_eyebrow", "label": "Eyebrow", "default": "Made to order" },
+    { "type": "text", "id": "scene_3_heading", "label": "Heading", "default": "The details are the point." },
+    { "type": "textarea", "id": "scene_3_body", "label": "Body", "default": "Times-set lettering, a signature heart and a sign prepared with their chosen wording." },
+    { "type": "text", "id": "proof_1", "label": "Proof point 1", "default": "Personalised for the couple" },
+    { "type": "text", "id": "proof_2", "label": "Proof point 2", "default": "Three size options" },
+    { "type": "text", "id": "proof_3", "label": "Proof point 3", "default": "Made to order in the UK" },
+    { "type": "header", "content": "Scene 4 — Buy" },
+    { "type": "text", "id": "scene_4_eyebrow", "label": "Eyebrow", "default": "Yours to give" },
+    { "type": "text", "id": "scene_4_heading", "label": "Heading", "default": "One sign. Theirs for good." },
+    { "type": "textarea", "id": "scene_4_body", "label": "Body", "default": "Choose a size, enter the final wording and create a gift made especially for their day." },
+    { "type": "text", "id": "primary_cta", "label": "Primary button", "default": "Make their sign" },
+    { "type": "text", "id": "scene_4_microcopy", "label": "Microcopy", "default": "Continue to product options and secure checkout." }
+  ],
+  "presets": [
+    { "name": "Daisy scroll story" }
+  ]
+}
+{% endschema %}

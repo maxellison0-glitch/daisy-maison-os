@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "daisy-shop-window",
+      "settings": {
+        "eyebrow": "Handmade in Lancashire",
+        "heading": "Made from your story.",
+        "body": "A name. A date. A place. Small details that turn a gift into something they keep.",
+        "shop_label": "Shop all gifts",
+        "shop_url": "shopify://collections/all",
+        "display_label": "Shop our personalised gift collections",
+        "picture_product": "wedding-flower-arch-personalised-pebble-picture",
+        "picture_collection": "pebble-sketch-pictures",
+        "picture_label": "Pebble pictures",
+        "picture_relationship": "For the people",
+        "sign_product": "mr-mrs-personalised-street-sign-gift",
+        "sign_collection": "personalised-signs",
+        "sign_label": "Street signs",
+        "sign_relationship": "For the place",
+        "heart_product": "personalised-family-pebble-hanging-heart",
+        "heart_collection": "pebble-hanging-hearts",
+        "heart_label": "Hanging hearts",
+        "heart_relationship": "For the moment",
+        "reveal_first": "a name",
+        "reveal_second": "a place",
+        "reveal_third": "a moment",
+        "closing": "Three ways to make it theirs.",
+        "scroll_hint": "Scroll to explore"
+      }
+    }
+  },
+  "order": ["main"]
+}

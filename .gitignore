@@ -17,6 +17,14 @@
 !projects/daisy-street-sign/**
 projects/daisy-street-sign/**/__pycache__/
 projects/daisy-street-sign/**/*.pyc
+# Full live-theme pulls are working copies/backups, not repo content.
+# The edited personaliser assets are tracked separately in projects/daisy-street-sign/personaliser/.
+projects/daisy-street-sign/theme-live-backup-*/
+projects/daisy-street-sign/theme-staging-*/
+# Personaliser rollback backups keep only the two assets we actually replace.
+# The theme files pulled alongside them for reference are unmodified and bulky.
+projects/daisy-street-sign/personaliser/backup-*/assets/custom.css
+projects/daisy-street-sign/personaliser/backup-*/assets/daisy-street-sign-preview-data.js
 !workflows/
 !workflows/starred/
 !workflows/starred/daisy-street-sign-automation.md
@@ -29,3 +37,14 @@ projects/daisy-street-sign/**/*.pyc
 !projects/social-prompts/
 !projects/social-prompts/**
 !workflows/starred/daisy-social-content-prompts.md
+
+!projects/daisy-scroll-story/
+!projects/daisy-scroll-story/**
+
+# Content Pipeline: track the briefs and context CLAUDE.md reads, not the media.
+# The exports (mp4/jpg/png masters) are ~370MB of build output and would bloat
+# the repo permanently — git cannot diff them and every clone would carry them.
+!Content Pipeline/
+!Content Pipeline/**/
+!Content Pipeline/**/*.md
+!Content Pipeline/**/*.json

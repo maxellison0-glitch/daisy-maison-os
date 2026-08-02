@@ -53,3 +53,17 @@ only when an agent is producing signs or improving the automation.
 
 Do not recreate `production-lab`, experiment briefs, handoff copies, or
 agent-specific artwork folders.
+
+## Organic Content Routing
+
+The canonical planning and production entry point for Daisy Maison organic
+Instagram, Facebook, and TikTok content is:
+
+```text
+%USERPROFILE%\AA Daisy Maison OS\Content Pipeline\README.md
+```
+
+Use that pipeline for ideas, briefs, approvals, scheduling, and performance
+learning. The existing `projects/social-prompts/PROMPT.md` remains the specialist
+prompt for turning a real product photo into a polished social image; it is not
+a separate content workflow.

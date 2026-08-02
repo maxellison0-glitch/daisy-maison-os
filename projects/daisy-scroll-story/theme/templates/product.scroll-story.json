@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "daisy-scroll-story",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

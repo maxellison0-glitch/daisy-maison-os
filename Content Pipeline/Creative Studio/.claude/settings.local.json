@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \".\\active\\DM-C014-from-this-day-forward\\.collaboration\\invoke-codex.ps1\" *)",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\active\\DM-C014-from-this-day-forward\\.collaboration\\invoke-codex.ps1 *)"
+    ]
+  }
+}
