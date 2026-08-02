@@ -731,3 +731,79 @@ Entry format:
   presented as a live social post.
 
 — Alan
+
+## 2026-08-02
+- **TreatBox (treatboxuk.com) — READ, 200.** The two-speed trade holds into
+  August — now the settled house posture. **40% OFF SALE** still in the top nav;
+  **Free Next Day Delivery over £25, order before 4pm** with the live countdown
+  still in the announcement bar; hero unchanged ("Thoughtful Gifts, Delivered
+  Next Day", build-a-box + gift quiz). **Results Day Gifts still a featured
+  collection — a SEVENTH consecutive read in an occasion slot.** Advent Calendars
+  2026 (Christmas 24-day) still pre-selling. Comfort Collective pyjamas hold at
+  **"up to 45% off"** (£29.47 single, regular £49.95) — the apparel push from
+  1 Aug is steady, not deepened further. One soft new signal: an **autumn print
+  entering the apparel line ("Autumn Bear & Pumpkin" pyjama)** — autumn is
+  arriving as a print, not yet as a dated collection. Monthly/quarterly
+  subscription and the corporate gifting portal both still live.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Hero has
+  **reverted to "Luxury Wedding Stationery & Signage"** — the "fast proofs,
+  seamless process" headline promoted on 1 Aug is not showing today (read as a
+  rotation, not a retreat). **"Receive Proof Within 24 Hours" holds** (fourth
+  read as promise), now paired with "delivered in just 2 working days with
+  Express Delivery". "Over 2,000 five-star reviews" holds. Wedding-stage taxonomy
+  full (Planning/Pre-Wedding, Ceremony, Wedding Breakfast, Reception, Finishing
+  Touches). Apparel sideways move holds (Satin Robes, Pearl Sunglasses,
+  Embroidered caps/hats, Gold Wifey Necklace). Spring/Summer/Autumn/Winter all
+  referenced; **no dated autumn collection flagged as new.** Dated occasions on
+  the page: Christmas, Valentine's, Anniversary, Christening.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged for a
+  **SEVENTH** read. Same seven joke-copy street signs, all **from £24.99** (incl.
+  **"Dad's Bar and Grill" at £24.99**, "The Dog Lives Here", "If Mum's in Charge
+  of Dinner", "Nanny's Garden", "Grandad's Shed", Family Name, Customisable 3D).
+  Still running the **Father's Day** Spirit Level Bottle Opener (£19.99) — now
+  into August, roughly SEVEN-EIGHT weeks stale, a dated SKU nobody has pulled.
+  Proof bar consistent ("Rated 4.9/5 on Google · 250,000+ orders shipped", "UK
+  Made in Wales"); delivery lines "Free UK delivery over £50", "Next-day UK
+  Delivery Available". Still **zero** Results Day / back-to-school / autumn /
+  Halloween / Christmas. A stable joke-sign catalogue being run, not tested.
+- **Season read: the split holds a sixth day, and the August window is now
+  open.** One occasion-led operator (Results Day seventh read, Q4 Advent
+  pre-sold, apparel discount steady, autumn arriving as a print) versus two
+  object-led sign brands with no dated occasion in them — Crafty Bonobo still
+  flogging a Father's Day SKU seven weeks late. We are entering the live
+  occasion window (UK results days mid-to-late August; back-to-school
+  immediately after), and it is the exact window TreatBox owns and our two sign
+  rivals leave wide open. For us the transferable turn is still dated structure,
+  not SKU sprawl — and the dated occasion is Results Day, which we still don't
+  sell.
+- **Translate to us:**
+  1. **Results Day wording, STILL not done.** Seventh naming, seventh day of no
+     Results Day sign in our catalogue. Text field, not a production job; UK
+     results days are ~13 & 21 August — this is now the imminent live occasion.
+     Overdue, and it is the one dated slot both sign rivals leave open.
+  2. **The two-speed dated pre-sell + clearance remains the structure to steal.**
+     Our best-ever TikTok is the nine-month-old Christmas post (3,425 views).
+     TreatBox has shown seven days running what to do with that in July/August.
+  3. **"Receive Proof Within 24 Hours" — a competitor's public promise we still
+     haven't matched.** Fourth read, costs nothing, still untested by us.
+  4. **We shipped the pebble line into distribution TODAY.** A wedding
+     pebble-heart photo carousel (3 real product slides — Mr&Mrs Owens / Robert
+     & Anna engagement / Mr&Mrs Jones) published to @daisymaison TikTok this
+     session (PUBLISH_COMPLETE). First real move putting the higher-AOV pebble
+     line in front of an audience — in-flight, no view count yet, logged as an
+     active test not a result.
+  5. **The apparel widening stays a direction signal to LOG, not chase.** Two of
+     three references still pushing clothing; our move stays sign-reveal depth +
+     dated occasion, not a new product category.
+- **Unreachable today:** instagram.com public metrics (HTTP 429 lineage —
+  **seventh** consecutive day; not retried, per the 28 Jul lesson). Not
+  attempted: etsy.com (403 to date), notonthehighstreet.com, Covering All
+  Occasions, beyondthefridge.co.uk (Tier 3 re-tier still recommended).
+  **Change today: TikTok public metrics WERE readable** — the yt-dlp snapshot
+  tool ran and returned 18 video posts (`daisymaison-2026-08-02.json`), so
+  followers/views are freshly measured rather than carried; photo carousels
+  (DM-C020-POST-1, today's pebble post) still do not appear via yt-dlp. All
+  three site reads above are homepages, retrieved today, HTTP 200. Nothing here
+  is presented as a live social post.
+
+— Alan
