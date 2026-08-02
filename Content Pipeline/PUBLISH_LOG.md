@@ -53,11 +53,13 @@ not a silent-only format. Views land in the next daily pull.
 | 1,115 | - | "Tell me this doesn't feel like autumn in a box" |
 | 897 | - | "real customer order btw (can't even be mad tho)" |
 | 799 | - | "We didn't realise these surnames actually existed..." |
+| **704** | - | "Three that came through this week. We just keep a straight f..." *(measured 2 Aug 2026)* |
 | 532 | - | "POV: Planning feels easier when you start with the board." |
 | 478 | - | "The calm before the Christmas chaos" |
 | 455 | - | "Experience 5 years, skill level Day 1" |
 | 403 | - | "Do you guys think this was intentional or not..." |
 | 262 | DM-CAT-HOUSE | "Cat owner can relate to this" |
+| **247** | - | "Nobody ever guesses 👀" *(measured 2 Aug 2026)* |
 | 244 | DM-HOUSE-QUIZ | "Which one's your house? Comment your number" - 27 Jul |
 | 244 | DM-C017-JANNAWAY | "Nobody ever guesses" (PILL cut) - 28 Jul |
 | 237 | DM-DIFFUSER-TEASE | "Not on the site yet - this one goes live this week" - 27 Jul |
