@@ -1,0 +1,519 @@
+body.daisy-street-sign-options-ready .gpo-container,
+body.daisy-street-sign-options-ready .gpo-app,
+body.daisy-street-sign-options-ready .gpo-options,
+body.daisy-street-sign-options-ready .globo-product-options,
+body.daisy-street-sign-options-ready .globo-options,
+body.daisy-street-sign-options-ready .globo-formbuilder,
+body.daisy-street-sign-options-ready [class*="globo-product"],
+body.daisy-street-sign-options-ready [id*="globo-product"],
+body.daisy-street-sign-options-ready [data-gpo],
+body.daisy-street-sign-options-ready [data-globo] {
+  display: none !important;
+}
+
+.daisy-street-options__second-sign-copy[hidden],
+.dm-addon-mode__double[hidden],
+.dm-sign-preview__sign[hidden],
+.dm-sticky-total__was[hidden] {
+  display: none;
+}
+
+.daisy-street-options,
+.dm-cyg {
+  display: grid;
+  gap: 12px;
+}
+
+.daisy-street-options__grid,
+.daisy-street-options__size-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.daisy-street-options__grid--text {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.daisy-street-options__size-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dm-sign-preview {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.dm-sign-preview--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dm-sign-preview__sign {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dm-cyg__top,
+.dm-cyg__subtotal-row,
+.dm-cyg__subtotal-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dm-addon-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dm-cyg__subtotal:not(.is-visible) {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .dm-sign-preview--two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* custom.css forces display:grid !important on this element; override it
+   so the JS-controlled inline display:none actually works */
+.daisy-street-options__second-sign-copy:not(.is-visible) {
+  display: none !important;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor {
+  position: relative;
+  width: calc(100% + 14px);
+  max-width: none;
+  margin: 0 0 12px -7px;
+  overflow: visible;
+  border-radius: 10px;
+  transition: box-shadow .18s ease;
+}
+
+/* Visible focus feedback the moment a customer taps into the sign — a soft
+   sage glow around the whole editor, so feedback never depends on the tiny
+   in-sign caret alone. */
+.daisy-mr-mrs-options .dm-direct-sign-editor:focus-within {
+  box-shadow: 0 0 0 3px rgba(176, 175, 155, 0.55), 0 2px 10px rgba(43, 43, 43, 0.08);
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor--offer {
+  width: calc(100% + 8px);
+  margin-left: -4px;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor .dm-sign-preview__sign {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.daisy-mr-mrs-options [data-dm-direct-sign-editor][hidden] {
+  display: none;
+}
+
+@keyframes dm-mr-mrs-caret-blink {
+  0%, 46% { opacity: 1; }
+  47%, 100% { opacity: 0; }
+}
+
+.daisy-mr-mrs-options .dm-sign-preview__caret {
+  display: none;
+  animation: dm-mr-mrs-caret-blink 1s steps(1, end) infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 1.4px rgba(155, 154, 131, 0.9));
+}
+
+/* Ghosted example wording — tinted sage instead of true engraving ink, so it
+   reads clearly as a fillable example rather than a finished product photo. */
+.dm-sign-preview__sign .dm-is-placeholder text {
+  fill: #9b9a83 !important;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor__fields {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor__field {
+  position: absolute;
+  left: 8%;
+  width: 84%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor__field--one {
+  top: 20%;
+  height: 49%;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor__field--two {
+  top: 69%;
+  left: 10%;
+  width: 80%;
+  height: 20%;
+}
+
+html body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-direct-sign-editor__field input[type='text'] {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 26px !important;
+  margin: 0 !important;
+  padding: 0 3px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  box-shadow: none !important;
+  font-family: 'DaisyStreetSignTimes', 'Times New Roman', serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-synthesis: none;
+  text-align: center !important;
+  text-transform: uppercase;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  outline: 0 !important;
+  caret-color: transparent;
+}
+
+html body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-direct-sign-editor__field input[type='text']::placeholder {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  opacity: 0;
+}
+
+html body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-direct-sign-editor__field input[type='text']:focus,
+html body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-direct-sign-editor__field input[type='text']:focus-visible {
+  border: 0 !important;
+  background: transparent !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor__sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.daisy-mr-mrs-options .daisy-street-options__ready {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-height: 0;
+  margin: -5px 0 0;
+  padding: 0 12px;
+  overflow: hidden;
+  border: 0 solid transparent;
+  border-radius: 8px;
+  background: #edf8ef;
+  color: #205d2b;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height .2s ease, margin .2s ease, padding .2s ease, opacity .16s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.daisy-mr-mrs-options .daisy-street-options__ready.is-visible {
+  max-height: 64px;
+  margin: 0 0 12px;
+  padding: 9px 12px;
+  border-width: 1px;
+  border-color: #9bcba3;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.daisy-mr-mrs-options .daisy-street-options__ready-tick {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  border-radius: 999px;
+  background: #2f8a42;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.daisy-mr-mrs-options .daisy-street-options__ready-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.daisy-mr-mrs-options .daisy-street-options__ready-copy strong {
+  color: #174d21;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-sign-preview--second::before {
+  content: "Your second sign" !important;
+}
+
+/* Real animated tap hint — replaces the old text-only ::before "arrow"
+   (a Unicode ↓ tacked onto the end of a sentence). This is a genuine,
+   centred, animated sage chevron sitting above the sign and pointing
+   straight down at it, so the "tap here" affordance is unmistakable
+   even for visitors who don't read the microcopy. */
+.daisy-mr-mrs-options .dm-sign-tap-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin: 0 0 4px;
+  overflow: visible;
+  color: #6f6e5c;
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* With the bespoke label replaced by the tap hint, the shared theme's own
+   preview label ("Review your wording once you're happy", custom.css) leaks
+   back in — suppress it so only the tap hint speaks. */
+body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-sign-preview--main::before {
+  content: none !important;
+}
+
+.daisy-mr-mrs-options .dm-sign-tap-hint__text {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Force the chevron to the small icon size it's built at (18x18). The theme's
+   global svg rules (width:100%/height:100%, from .dm-sign-preview svg in
+   custom.css) win over the raw HTML width/height attributes on the <svg>
+   because the hint sits inside .dm-sign-preview, so this must be pinned
+   explicitly with higher-specificity selectors and !important on every
+   box-model property, otherwise the icon balloons to fill its container
+   (confirmed root cause: custom.css '.dm-sign-preview svg{width:100%!important}'). */
+body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options svg.dm-sign-tap-hint__arrow,
+body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-sign-tap-hint .dm-sign-tap-hint__arrow,
+.daisy-mr-mrs-options svg.dm-sign-tap-hint__arrow,
+.daisy-mr-mrs-options .dm-sign-tap-hint__arrow {
+  display: inline-flex !important;
+  flex: 0 0 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  aspect-ratio: 1 / 1 !important;
+  color: #9b9a83;
+  animation: dm-tap-hint-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes dm-tap-hint-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daisy-mr-mrs-options .dm-sign-tap-hint__arrow {
+    animation: none;
+  }
+}
+
+.daisy-mr-mrs-options .dm-direct-sign-editor {
+  cursor: text;
+}
+
+@media (width < 768px) {
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .halo-productView-right {
+    margin-top: 0 !important;
+    padding: 10px 0 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .daisy-mr-mrs-options {
+    padding: 0 4px 12px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .daisy-mr-mrs-options .daisy-street-options__header {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin: 0 0 2px !important;
+  }
+
+  /* Tighten the header stack so the tappable sign appears sooner on short
+     mobile viewports (fold sits around 550-650px on most phones). */
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .daisy-mr-mrs-options .daisy-street-options__eyebrow {
+    margin: 0 0 2px !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .daisy-mr-mrs-options .daisy-street-options__title {
+    margin: 0 0 3px !important;
+    line-height: 1.15 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .daisy-mr-mrs-options .daisy-street-options__copy {
+    margin: 0 0 8px !important;
+    line-height: 1.3 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options > .daisy-street-options__ready + .daisy-street-options__group {
+    padding-top: 10px !important;
+  }
+
+  /* Full-bleed sign on phones: cancel the 10px page gutter + 4px panel
+     padding so the preview runs edge-to-edge and reads as large as possible. */
+  .daisy-mr-mrs-options .dm-direct-sign-editor {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+
+  .daisy-mr-mrs-options .dm-direct-sign-editor--offer {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+
+  /* Fold: on phones the personaliser is moved directly under the gallery
+     (see placePanel in daisy-street-sign-options.js). The breadcrumb row
+     spends 42px of the first viewport on navigation nobody uses mid-purchase
+     — hide it on this product only. */
+  body.daisy-mr-mrs-sign-ready .moreItem-breadcrumb {
+    display: none !important;
+  }
+
+  /* The thumbnail strip under the hero is white product shots on a white
+     page — it reads as ~140px of blank space on phones and pushes the
+     personaliser down. The gallery still swipes; hide the strip here. */
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .productView-thumbnail-wrapper {
+    display: none !important;
+  }
+
+  /* The theme's soft drop-shadow halo around the sign SVG reads as a grey
+     border on phone screens — the sign sits cleaner flat on the page. */
+  body.daisy-mr-mrs-sign-ready .daisy-mr-mrs-options .dm-direct-sign-editor .dm-sign-preview__sign {
+    filter: none !important;
+  }
+
+  /* Post-configurator zone, decluttered. The panel header already names the
+     product and the configurator's subtotal + sticky bar carry the real,
+     live price — so the theme's repeated title and its static price block
+     (which ignores chosen extras) add nothing here. The title is clipped
+     visually but kept in the document for search engines and screen
+     readers; the static price block is removed outright. */
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .productView-product > .productView-moreItem:has(.productView-title) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .halo-productView[data-product-handle="mr-mrs-personalised-street-sign-gift"] .productView-product > .productView-moreItem:has(.productView-price) {
+    display: none !important;
+  }
+
+  /* One trust card straight after the configurator: stars once, the customer
+     quote, and a single combined credibility line (meta + "chosen by 1,600+"
+     merged in groupProofWithQuote). Opens on the brand hairline. */
+  body.daisy-mr-mrs-sign-ready .dm-product-proof--quote {
+    margin: 8px 0 4px !important;
+    padding: 16px 4px 0 !important;
+    border-top: 1px solid #f1ede5 !important;
+    text-align: center !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .dm-product-proof--quote .dm-product-proof__stars {
+    font-size: 16px !important;
+    letter-spacing: 2px !important;
+    color: #d9a441 !important;
+  }
+
+  body.daisy-mr-mrs-sign-ready .dm-product-proof--quote .dm-product-proof__meta {
+    color: #8a8a7a !important;
+    font-size: 12px !important;
+  }
+
+  /* The second star bar's content now lives inside the trust card's meta
+     line — the standalone strip would just repeat it. */
+  body.daisy-mr-mrs-sign-ready .dm-product-quote--proof {
+    display: none !important;
+  }
+}
+
+/* The theme's hot-stock urgency widget renders raw negative inventory on this
+   made-to-order product ("Only -9214 left in stock") — nonsense that erodes
+   trust. Hide it here at every breakpoint; personalised signs never sell out. */
+body.daisy-mr-mrs-sign-ready .productView-hotStock {
+  display: none !important;
+}
+
+@media (width <= 520px) {
+  .daisy-mr-mrs-options .dm-direct-sign-editor {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+
+  .daisy-mr-mrs-options .dm-direct-sign-editor--offer {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+  }
+}
+
+/* Matching heart card — couple configuration, revealed once the heart is added. */
+.dm-cyg__heart-config{margin-top:.7rem;padding-top:.7rem;border-top:1px solid #ece2d6}
+.dm-cyg__heart-config[hidden]{display:none}
+.dm-cyg__heart-label{margin:0 0 .4rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#6b6055}
+.dm-cyg__heart-preview{margin:.5rem 0 0;padding:.45rem .6rem;background:#f2ece4;border-radius:6px;color:#5b5147;font-size:.82rem;line-height:1.35}
+.dm-cyg__heart-wording{margin-bottom:.2rem}
+.dm-cyg__heart-fields{display:grid;gap:.6rem;margin-top:.55rem}
+.dm-cyg__heart-fields[hidden]{display:none}
+.dm-cyg__heart-field{display:grid;gap:.25rem;font-size:.82rem}
+.dm-cyg__heart-field input{padding:.5rem .6rem;border:1px solid #cfc3b4;border-radius:6px;font:inherit;width:100%}
+.dm-cyg__heart-preview[hidden]{display:none}
+.dm-cyg__thumb--heart{width:120px;height:120px;object-fit:cover;border-radius:8px;cursor:zoom-in}
+@media (max-width:600px){.dm-cyg__thumb--heart{width:88px;height:88px}}
