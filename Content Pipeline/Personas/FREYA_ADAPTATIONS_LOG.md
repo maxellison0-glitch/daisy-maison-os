@@ -424,3 +424,57 @@ Format:
   distribution is drowning the signal we still cannot reliably tell a good post
   from a bad one on this account.
 - Signed: Freya · Alan
+
+## 2026-08-03
+
+- Learned: (A) two days pulled live from Shopify (`daisymaisonuk`, ShopifyQL
+  `total_sales`), because the newest digest on disk (29 Jul) is now five days
+  stale: **1 Aug — 52 orders / £1,370.06 / AOV £20.65; 2 Aug — 59 / £1,805.29 /
+  AOV £24.87.** A genuinely good Saturday: sales +32% day-over-day and **AOV up
+  £4.22 (+20%)** — more baskets *and* bigger ones. The AOV lift is the bit to
+  watch; it points at the higher-ticket pebble line, but the pebble carousel
+  that shipped 2 Aug still has no view count, so the causal claim stays unmade.
+- Learned: (F/references) TreatBox's autumn crossed from print to a **buyable
+  £54.95 pre-order** and it featured **Results Day Gifts for an eighth straight
+  day**; Little Perfections' **"Receive Proof Within 24 Hours"** is a fifth read,
+  now with "unlimited edits"; Crafty Bonobo unchanged an eighth day, still
+  running a Father's Day SKU two months late. Two object-led sign rivals, zero
+  dated occasion between them — the Results Day slot is an open goal.
+- Changing: **build the Results Day wording, today.** Eight consecutive days of
+  Alan naming it, ~10 days from the first UK results day (13 & 21 Aug), and it is
+  still not in the catalogue. It is a text field, not a shoot — the single
+  highest-leverage keyboard job on the board, and the one dated slot our north
+  star owns and both format rivals ignore. That is the pivot.
+- Where we split (real): Freya wanted to ship a new asset (① Results Day film);
+  Alan's push-back is his standing one — **distribution is the bottleneck, not
+  the hook, so a better film does not fix a same-account reach problem** (every
+  system post sits in the bottom seven of the TikTok ladder; the top three are
+  all pre-system and none is an advert). **Resolution:** ① is the exception that
+  earns the daily slot — it is a SOLVE/search-convert play tied to a hard
+  deadline (link in bio + order-by date), not a reach bet, and it fills an actual
+  catalogue gap rather than adding a fourth creative to a distribution problem.
+  It ships *as SOLVE mechanics*, not as a reach hope. Freya takes "what we make";
+  Alan's constraint decides "how it goes out".
+- Carried: the 2 Aug pebble carousel is still in-flight, unmeasured — its view
+  count carries into tomorrow and decides whether ② (the pebble FEEL single) is
+  the next asset. No new pebble creative ships before the first one reports;
+  answering distribution with a fourth asset is the trap the log keeps flagging.
+- Testing tomorrow (falsifiable): **the Results Day wording exists in the
+  catalogue within 48h.** If it doesn't, that is a process failure on a text
+  field, not a demand question — and the imminent-occasion window closes on us
+  the way it did on teacher gifts. Once live and posted, ① is judged on **link
+  clicks + saves** (SOLVE metrics), settled by `daisy-social-analytics`, not on
+  raw views — because per the split above it was never a reach bet.
+- Gaps, named: **ROAS/spend not pulled** (Shopify holds no ad cost; that's a
+  Windsor/ad-platform job not run this pass) — so a £1,805 day tells us revenue,
+  not whether it was bought profitably. **IG public 429, eighth consecutive day**
+  — the two `reported` rows (`DM-C020-CORRECTION`, `DM-HOUSE-QUIZ`, both 29 Jul,
+  both Max's phone) stay unverified claims, not records. **Pebble carousel
+  unmeasured.** **The Results Day SKU still does not exist.** TikTok read clean
+  (tripwire: 18 posts); reconcile found no new rows — one existing row re-matched
+  after an emoji/hashtag strip (6,500 → measured 6,501), not a phantom post.
+- Confidence: (A) high on the Shopify order/AOV figures, ROAS an open gap; (F)
+  high that Results Day is the correct pivot — dated, uncontested, zero-credit,
+  and it closes a real catalogue hole — and honest that distribution is still the
+  ceiling on everything the system posts.
+- Signed: Freya · Alan

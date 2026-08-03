@@ -46,7 +46,7 @@ not a silent-only format. Views land in the next daily pull.
 | Views | Content ID | Post |
 |---:|---|---|
 | **9,400** | - | "When a customer order lines up too perfectly with Sabrina's..." |
-| **6,500** | - | "Autumn in a matchbox the sweetest little surprise..." |
+| **6,501** | - | "Autumn in a matchbox 🎃🍁 the sweetest little surprise… #autum" *(measured 3 Aug 2026; reconciler re-matched — same post logged at 6,500, join failed only on stripped emoji/hashtags, not a new post)* |
 | **4,574** | - | "Parenting tip #1: Lower your standards" |
 | 3,422 | - | "You know it's nearly Christmas when these start flying out" |
 | 1,507 | - | "Okay fine... maybe I'm not a wizard. But my house is" |

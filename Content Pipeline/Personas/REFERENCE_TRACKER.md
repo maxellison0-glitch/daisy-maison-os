@@ -807,3 +807,81 @@ Entry format:
   is presented as a live social post.
 
 — Alan
+
+## 2026-08-03
+- **TreatBox (treatboxuk.com) — READ, 200.** The two-speed trade holds, and the
+  autumn signal from 2 Aug has hardened. **40% OFF SALE** still in the top nav;
+  **Free Next Day Delivery, order before 4pm** with the countdown still in the
+  announcement bar (timer reading 00s today — a reset, not a removal). Hero
+  unchanged ("Thoughtful Gifts, Delivered Next Day", build-a-box + gift finder).
+  **Results Day Gifts still a featured collection — an EIGHTH consecutive read
+  in an occasion slot**, and we are now ~10 days from the first UK results day.
+  Advent Calendars 2026 (24-day) still pre-selling. **The autumn print has moved
+  from signal to buyable SKU:** the "Comfort Collective Autumn Bear & Pumpkin
+  Pyjama Set" is now a live **pre-order at £54.95** — 2 Aug it was just a print
+  entering the line, today it is a dated pre-sell. The rest of the Comfort
+  Collective holds on discount (Heart Print £29.47 was £49.95 / ~41%, Ditsy
+  Flower £29.47, Beary Cosy £32.97) — the headline softened slightly from "up to
+  45%" (2 Aug) to **"Up To 40% Off"**. Monthly TreatBox subscription still live;
+  corporate gifting portal not surfaced in today's fetch (not confirmed removed —
+  a homepage read, not a sitemap crawl).
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Hero reads
+  **"Luxury Wedding Stationery & Signage"** with the **"personalised designs,
+  fast proofs, and a seamless process"** line now merged in as a subtagline —
+  the two headlines that were rotating on 1–2 Aug are showing together today.
+  **"Receive Proof Within 24 Hours" holds — a FIFTH read as promise**, now paired
+  with "Unlimited edits until it's perfect" and "delivered in just 2 working days
+  with Express Delivery"; standard 3–5 business days. "Over 2,000 five-star
+  reviews" holds (flagged TrustPilot). **Free standard shipping over £100.**
+  Wedding-stage taxonomy full (Planning/Pre-Wedding, Ceremony, Wedding Breakfast,
+  Reception, Finishing Touches). Apparel sideways move holds (satin robes, pearl
+  sunglasses, embroidered caps/hats, Gold Wifey Necklace). Occasions on the page
+  broadened today — Anniversary, Baby Shower, Birthday, Bridal Shower, Christening,
+  Christmas, Engagement Party, Hen Party, Valentine's — all four seasons
+  referenced but **no dated autumn collection, and still no Results Day /
+  back-to-school.**
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged for an
+  **EIGHTH** read. Same joke-copy street signs, all **from £24.99** ("Dad's Bar
+  and Grill", "The Dog Lives Here", "If Mum's in Charge of Dinner", "Nanny's
+  Garden", "Grandad's Shed", Family Name, Customisable 3D), plus the £19.99 Picky
+  Bits Board. Still running the **Father's Day Spirit Level Bottle Opener
+  (£19.99)** — now ~eight-nine weeks stale, a dated SKU nobody has pulled. Proof
+  bar consistent ("Rated 4.9/5 on Google · 250,000+ orders shipped", UK made in
+  Wales); "Free UK delivery over £50", "Next-day UK Delivery Available". Still
+  **zero** Results Day / back-to-school / autumn / Halloween / Christmas. A stable
+  joke-sign catalogue being run, not tested.
+- **Season read: the split holds, and the window is now open.** One occasion-led
+  operator (Results Day eighth read, Advent pre-sold, autumn now a buyable
+  pre-order, apparel discount steady) versus two object-led sign brands with no
+  dated occasion in them — Crafty Bonobo eight days static and still flogging a
+  Father's Day SKU two months late. UK results days are **~13 & 21 August**, with
+  back-to-school immediately after; we are ~10 days out, inside the exact window
+  TreatBox owns and both sign rivals leave wide open. TreatBox's tell today is
+  that autumn crossed from print to dated pre-sell — the dated structure move,
+  not SKU sprawl, is still the transferable one. And the dated occasion we still
+  don't sell is Results Day.
+- **Translate to us:**
+  1. **Results Day wording, STILL not built.** Eighth naming, eighth day of no
+     Results Day sign in our catalogue, and now ~10 days from the live date. Text
+     field, not a production job. The one dated slot both sign rivals leave open
+     and TreatBox has featured for eight straight days.
+  2. **The two-speed dated pre-sell + clearance is still the structure to steal.**
+     TreatBox just showed the move again — autumn going from print to £54.95
+     pre-order. Our best-ever TikTok is still the nine-month-old Christmas post.
+  3. **"Receive Proof Within 24 Hours" — a rival's public promise, fifth read,
+     still unmatched by us.** Costs nothing, still untested.
+  4. **Pebble line is in distribution but unmeasured.** The wedding pebble-heart
+     carousel published to @daisymaison TikTok on 2 Aug still has no view count in
+     today's yt-dlp pull (photo carousels don't surface). An active test, not a
+     result — the higher-AOV pebble read is the one to watch, and today's Shopify
+     AOV ticked to £24.87, worth noting against it.
+  5. **Apparel widening stays a direction to LOG, not chase.** Two of three
+     references still push clothing; our move stays sign-reveal depth + dated
+     occasion, not a new category.
+- **Unreachable today:** instagram.com public metrics (HTTP 429 lineage —
+  **eighth** consecutive day; not retried, per the 28 Jul lesson). Not attempted:
+  etsy.com (403 to date), notonthehighstreet.com, Covering All Occasions,
+  beyondthefridge.co.uk. All three site reads above are homepages, retrieved
+  today, HTTP 200. Nothing here is presented as a live social post.
+
+— Alan
