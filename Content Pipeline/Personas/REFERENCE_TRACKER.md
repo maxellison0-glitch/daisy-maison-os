@@ -885,3 +885,57 @@ Entry format:
   today, HTTP 200. Nothing here is presented as a live social post.
 
 — Alan
+
+## 2026-08-04
+
+- **TreatBox (treatboxuk.com) — NOT READ today. HTTP 429, twice.** The priority
+  site, and the one I didn't get. Cause was mine, not theirs: I fired six fetches
+  in one burst and the proxy rate-limited me — the exact 28 Jul lesson, paid
+  again. Named as a gap, not guessed. **No fresh read means no claim about their
+  Results Day feature today** — the eight-day run of it featured is continuity
+  from 3 Aug, not a ninth confirmed sighting. If it matters tomorrow, one fetch,
+  spaced, first.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Hero unchanged:
+  **"Luxury Wedding Stationery & Signage"** with the "personalised designs, fast
+  proofs, and a seamless process" line held as subtagline. **"Receive Proof
+  Within 24 Hours" holds — a SIXTH read as public promise**, still paired with
+  "Unlimited edits until it's perfect" and "2 working days with Express";
+  standard 3–5 business days. "Over 2,000 five-star reviews" holds (Trustpilot).
+  Free standard shipping over £100. Occasion taxonomy full and static (Baby
+  Shower, Engagement, Bridal Shower, Hen, Birthday, Christening, Anniversary,
+  Corporate, Valentine's, Christmas); colour/style collections themed (Santorini,
+  Old Money, White Roses / Elegant, Floral, Minimal). Season split four ways but
+  **no dated autumn collection, and still no Results Day / back-to-school** — a
+  wedding operator staying in its lane while the window opens.
+- **The Crafty Bonobo (thecraftybonobo.com) — NOT READ today. HTTP 429.** Same
+  burst, same cause. No fresh read; the eight-day static joke-sign catalogue and
+  the two-month-stale Father's Day SKU are continuity from 3 Aug, not confirmed
+  today. Named, not assumed.
+- **Season read: window is open and we still don't sell the day.** UK results
+  days **13 & 21 Aug** — ~9 days out — with back-to-school behind them. The one
+  reference I got today (Little Perfections) has no dated occasion in it, same as
+  every read this fortnight. The two I didn't get were the two that matter for
+  the seasonal call, so today's read is thin — honestly thin, not spun. What
+  isn't thin: our own catalogue check. There is **no Results Day sign** in it.
+- **Translate to us:**
+  1. **Results Day SIGN wording — STILL not built, and now confirmed against our
+     own catalogue, not just the rivals'.** `search_products` today (all statuses)
+     returns nothing for "results" and only two OLD graduation **pebble** gifts
+     (picture £24.95, hanging heart £14.95, both created 2024, both oversold to
+     negative stock) for "graduation". Those are pebbles, not the sign, and they
+     predate yesterday's pivot by two years. The 48h sign job proposed 3 Aug has
+     nothing behind it. Ninth day of naming it, ~9 days from the live date.
+  2. **"Receive Proof Within 24 Hours" — a rival's public promise, sixth read,
+     still unmatched by us.** Costs nothing, still untested.
+  3. **The higher-AOV pebble read has a live SKU sitting in it.** The £24.95
+     graduation pebble picture is ACTIVE and oversold — an existing, proven,
+     higher-ticket product aimed at exactly this window, and nobody is pushing it.
+     Worth a look before we build anything new.
+- **Unreachable today:** treatboxuk.com (429, my burst), thecraftybonobo.com
+  (429, same). instagram.com public metrics (429 lineage — **ninth** consecutive
+  day; not retried, per the 28 Jul lesson). Not attempted: etsy.com (403 to date),
+  notonthehighstreet.com, Covering All Occasions, beyondthefridge.co.uk. Only one
+  homepage (Little Perfections) returned this pass, HTTP 200. Nothing here is
+  presented as a live social post.
+
+— Alan

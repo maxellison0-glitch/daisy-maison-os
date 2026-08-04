@@ -478,3 +478,64 @@ Format:
   and it closes a real catalogue hole — and honest that distribution is still the
   ceiling on everything the system posts.
 - Signed: Freya · Alan
+
+## 2026-08-04
+
+- Learned: (A) three days live from Shopify (`daisymaisonuk`, ShopifyQL
+  `total_sales`); the 29 Jul digest on disk is now six days stale and was not
+  read for numbers: **1 Aug — 52 orders / £1,370.06 / AOV £20.65; 2 Aug — 59 /
+  £1,805.29 / £24.87; 3 Aug — 69 / £1,991.50 / £23.30.** 3 Aug is the best of the
+  run — up £186 on 2 Aug on ten more orders — and **2 Aug held to the penny**, no
+  post-hoc settling. AOV eased to £23.30 as volume rose: more baskets, slightly
+  smaller. Good three-day shape.
+- Learned: (references) thin today, and honestly thin. **TreatBox and Crafty
+  Bonobo were not read — HTTP 429, and the cause was ours:** Alan fired six
+  fetches in one burst and tripped the proxy, the exact 28 Jul lesson paid again.
+  Only Little Perfections returned (200) — "Receive Proof Within 24 Hours" a
+  sixth read, still no dated occasion. The two references that carry the seasonal
+  call were the two we missed; the read is not spun to cover it.
+- Learned (the load-bearing one): **the Results Day SIGN wording proposed 3 Aug
+  still does not exist** — `search_products` (all statuses) is empty for
+  "results"; "graduation" returns only two 2024 pebble SKUs. The 48h clock is
+  ~half gone on a text field. AND Alan surfaced a live one: **a Graduation Pebble
+  Picture (£24.95, ACTIVE) already aimed at this exact window sits unpushed** —
+  though flagged oversold to negative stock, so fulfilment must be confirmed
+  before any traffic.
+- Changing (the pivot): **stop naming the day, sell it — the cheapest on-window
+  way, today.** Two moves, not one: (1) this week's single post rides the
+  *existing* £24.95 graduation pebble — zero build, on-window, the higher-ticket
+  line the AOV trend favours — **gated on confirming it can actually fulfil**;
+  (2) the Results Day sign wording gets typed into the catalogue today so the
+  format we own on video is ready for the 13 & 21 Aug peak. The deadline stops
+  being an excuse for a keyboard job.
+- Where we split (real): Freya wanted to build **and** post a new Results Day
+  sign (① — dated SOLVE, our format). Alan's push-back: we have named that sign
+  for nine days and still don't sell it, while a live £24.95 graduation pebble on
+  exactly this window sits undistributed — **distribute what already sells at the
+  AOV we want before generating anything new.** **Resolution:** post the existing
+  pebble this week (if fulfillable); build the sign wording today for the peak
+  dates. Freya's Results Day strategy and Alan's "ship what exists" both win —
+  the sign is a keyboard job done in parallel, not this week's post.
+- Carried: the **2 Aug pebble carousel is still unmeasured** (photo carousels
+  don't surface via yt-dlp) — its number still gates the original wedding-pebble
+  idea and the pebble/AOV causal claim; no fourth pebble asset ships before it
+  reports. **TikTok tripwire held at 170 videos** across 3–4 Aug — nothing
+  shipped unlogged; the log is current, no rows applied.
+- Testing tomorrow (falsifiable): **(a)** the Results Day sign wording exists in
+  the catalogue within 24h — second day of an unbuilt text field; if not, it's a
+  process failure on a keyboard job, named as one, the way the teacher window
+  closed on us. **(b)** confirm the £24.95 graduation pebble's fulfilment status
+  *before* any traffic — is "negative stock" made-to-order accounting or a
+  genuine out-of-stock? Settled by an inventory read, not a guess.
+- Gaps, named: **ROAS/spend not pulled** (Shopify holds no ad cost — a Windsor
+  job) so a £1,991 day is revenue, not profit. **TreatBox + Crafty Bonobo unread
+  (429, our own burst).** **IG public 429, ninth day** — the two `reported` rows
+  (DM-C020-CORRECTION, DM-HOUSE-QUIZ) stay unverified. **Pebble carousel
+  unmeasured.** Reconcile's tripwire *line* silently didn't print — the script
+  reads `video_count` while the snapshot stores `videos`; a key mismatch, not a
+  missing post (integer 170 pulled directly). Worth a one-line fix next pass.
+- Confidence: (A) high on the Shopify figures, ROAS an open gap, seasonal read
+  thin and flagged as thin; (F) high that Results Day is the right window and
+  that the cheapest on-window move is the pebble that already exists, not a fresh
+  build — provided it can fulfil.
+- Signed: Freya · Alan
