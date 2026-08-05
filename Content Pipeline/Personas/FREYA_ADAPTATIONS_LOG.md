@@ -601,3 +601,61 @@ Format:
   right on-window post now the gate's cleared, and that the graduation-vs-results
   occasion-fit is real and handled by reframing the caption to the uni pipeline.
 - Signed: Freya · Alan
+
+## 2026-08-06
+
+- The reckoning, stated plainly because Max stated it plainer: **"not posted in a
+  while, too much friction for zero reward."** He's right and the log proves it —
+  **5 August daily briefs, 0 August posts; the last thing that actually shipped
+  was 30 July.** This was never a creative problem (the pre-system posts did
+  9,400 / 6,500 / 4,574). It is a shipping problem, and every friction point was
+  one we built: each session ended by handing Max homework — type the wording,
+  confirm the stock, give the go — and called the homework progress.
+- What changed today: **the brief stopped being a to-do list and became a finished
+  object.** One post, built not described, from assets that already exist —
+  `Content Pipeline/READY_TO_POST/2026-08-06-graduation-pebble.md`: the £24.95
+  graduation pebble (SKU 48641, ACTIVE, confirmed fulfils), its **three existing
+  CDN product photos** in order, and the **final caption written word-for-word**.
+  Zero film, zero credits, zero keyboard job. Max's action is one upload — or one
+  word and we push it. That is the only kind of brief worth writing until the
+  drought ends.
+- No split today, and that's the signal: **Freya and Alan converged.** Per Alan's
+  own rule, when he agrees with her the green light means something — he pressure-
+  tested the pebble against the data and found nothing to shoot at. Cheapest post
+  we can ship is one we already paid for; correct new-credit spend today is zero,
+  correct post count is not zero.
+- Learned: (A) live Shopify — **5 Aug: 24 orders / £652.75 / AOV £21.54**, a soft
+  day, roughly a third of 4 Aug (65 / £1,839.16 / £22.74, which verified to the
+  penny). Soft day is real but unexplained — no channel breakdown pulled, named
+  as a gap, not spun. ROAS uncomputable (no ad cost in Shopify).
+- Learned: (references) clean sweep, no 429 — **second day the spacing method
+  held.** TreatBox Results Day still the first featured card (~7 days to the live
+  date); Little Perfections "Receive Proof Within 24 Hours" an **eighth** read,
+  still unmatched; Crafty Bonobo static, Father's Day SKU ~ten weeks stale. The
+  one dated occasion both sign rivals leave open, we still don't sell.
+- The queue, so we are never dark again (all zero new cost): **(1)** Bond reel →
+  TikTok — finished video, ran IG 25 Jul, that TikTok slot is confirmed open and
+  free, and being video it's tool-measurable and Claude-publishable on a go;
+  **(2)** DM-C020-POST-2 (Garden Tavern / Dad's Bar) — built 30 Jul, 4 credits
+  already spent, 0 to build; **(3)** DM-C020-POST-1 IG carousel — TikTok half
+  shipped, IG half never ran.
+- Honest caveat carried: a **photo carousel is unmeasurable by our tooling** (yt-dlp
+  is video-only; IG public dark 11 days), so today's pebble numbers will be whatever
+  Max reads in-app — same as the still-unmeasured **2 Aug carousel**. The reward is
+  real; our automated read of it is not. A tool-measurable version is a video, i.e.
+  more friction — not today.
+- Testing tomorrow (falsifiable): **does a post actually ship today?** That is the
+  only test that matters this week. If yes, tomorrow's session judges it on saves +
+  link clicks read in-app and picks the next asset off the queue. If no, the
+  friction diagnosis is wrong or incomplete and we find what's really stopping it —
+  because it is no longer the absence of a ready post.
+- Gaps, named: 5 Aug soft day unexplained (no channel split); ROAS uncomputable
+  (no ad cost in Shopify); 2 Aug carousel still unmeasured; 2 IG `reported` rows
+  unverified (DM-C020-CORRECTION, DM-HOUSE-QUIZ); IG public dark 11 days; reconcile
+  tripwire still silently no-ops (`video_count` vs `videos`, lines 198–199) — named
+  four days running, a one-line fix nobody has made, 170 pulled by hand.
+- Confidence: (A) high on the Shopify figures; (F) high that the constraint is
+  shipping, not ideas, and that a finished post with the homework removed is the
+  only thing that tests it. The whole team's credibility this week rests on one
+  post going out, not on a better brief.
+- Signed: Freya · Alan

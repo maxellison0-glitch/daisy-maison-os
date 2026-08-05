@@ -1017,3 +1017,68 @@ Entry format:
   social post.
 
 — Alan
+
+## 2026-08-06
+
+- **TreatBox (treatboxuk.com) — READ, 200. Got it first, one fetch, spaced.**
+  Second clean day running, no 429. Nothing moved since 5 Aug. Hero rail order
+  unchanged: **Results Day Gifts first**, then Congratulations, Birthday Gifts,
+  Advent Calendars, Monthly TreatBox, Letterbox TreatBoxes. **Results Day still
+  the first featured card — now ~7 days from the first UK results day (13 Aug).**
+  Advent Calendars 2026 (24-day) still priced **£55 instalment / £165 full**.
+  Autumn crossover holds: **Comfort Collective Autumn Bear & Pumpkin Pyjama Set
+  "available for pre-order" £54.95**. **40% OFF SALE** still in the nav (pyjamas
+  regular £49.95 → £29.47, up to 45%); **Free Next Day Delivery, order before
+  4pm, over £25**. Still no back-to-school, still no graduation SKU of their own.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Unchanged from
+  5 Aug. Hero **"Luxury Wedding Stationery & Signage"**, subtagline "personalised
+  designs, fast proofs, and a seamless process from start to finish". **"Receive
+  Proof Within 24 Hours" holds — an EIGHTH read as public promise**, paired with
+  unlimited edits and 2-working-day Express; free standard shipping over £100;
+  standard 3–5 business days. "Over 2,000 five-star reviews" (Trustpilot).
+  Occasion taxonomy full and static (Anniversary, Baby Shower, Birthday, Bridal
+  Shower, Christening, Christmas, Corporate, Engagement, Hen, Valentine's);
+  four seasons referenced but **no dated autumn collection, and still no Results
+  Day / back-to-school / graduation** — the wedding operator stays in its lane
+  as the window opens.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged. Street
+  Signs still nav-labelled **"Our Bestseller", from £24.99**; same joke-copy
+  family on the grid ("The Dog Lives Here", "If Mum's in Charge of Dinner",
+  "Nanny's Garden", "Grandad's Shed", **"Dad's Bar and Grill"**). **Still running
+  the Father's Day Spirit Level Bottle Opener on 6 August — now ~ten weeks
+  stale**, a dated SKU nobody has pulled. Proof bar consistent ("Rated 4.9/5 on
+  Google · 250,000+ orders shipped"). Still **zero** Results Day / back-to-school
+  / autumn / Halloween / Christmas / graduation.
+- **Season read: window is open, ~7 days out, and we still don't sell the day.**
+  Clean sweep, all three sites 200, no 429 — second such day running, which
+  confirms the "space it, TreatBox first" method holds. The split is exactly
+  where it has sat all fortnight: one occasion-led operator with Results Day
+  featured and autumn/Advent pre-sold, two object-led sign brands with no dated
+  occasion in them at all. Nothing new to pivot to; nothing retracted. UK results
+  days **13 & 21 Aug**.
+- **Translate to us — today is a FRICTION day, not a season day:**
+  1. **We can ship without filming or spending a credit, and that is the whole
+     point today.** The **£24.95 Graduation Pebble Picture (SKU 48641, ACTIVE,
+     untracked so it fulfils)** carries **three usable product photos already on
+     the CDN** — a product-photo carousel needs no camera and no Higgsfield. It
+     is the exact occasion the references leave open and it is buyable now.
+  2. **The Bond reel's TikTok slot is still open and free** (`DM-BOND-reel`
+     ran Instagram 25 Jul, never TikTok). Already-produced video, zero new cost.
+  3. **Results Day SIGN wording — STILL not built. Eleventh naming, ~7 days out.**
+     The pebble is the buyable stopgap; the sign is the thing we keep naming and
+     not making. Text field, not a production job.
+  4. **"Receive Proof Within 24 Hours" — a rival's public promise, eighth read,
+     still unmatched.** Costs nothing, still untested.
+- **Unreachable today:** none of the three priority sites — all three returned
+  HTTP 200, TreatBox first and spaced, no 429 this pass. instagram.com public
+  metrics still not attempted (429 lineage — **eleventh** consecutive day; not
+  retried, per the 28 Jul lesson). Not attempted: etsy.com (403 to date),
+  notonthehighstreet.com, Covering All Occasions, beyondthefridge.co.uk. TikTok
+  account video count read by hand from `daisymaison-2026-08-05.json` profile
+  snapshot (**170 videos**, key `videos` — the reconcile tripwire reads
+  `video_count` and silently no-ops; bug named, not fixed here). The 2 Aug pebble
+  photo carousel (DM-C020-POST-1) still does not surface via yt-dlp — remains
+  view-count-less, a format gap, not a zero. All three site reads above are
+  homepages, HTTP 200. Nothing here is presented as a live social post.
+
+— Alan
