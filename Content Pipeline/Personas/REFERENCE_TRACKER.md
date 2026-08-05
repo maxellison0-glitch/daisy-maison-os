@@ -939,3 +939,81 @@ Entry format:
   presented as a live social post.
 
 — Alan
+
+## 2026-08-05
+
+- **TreatBox (treatboxuk.com) — READ, 200. Got it first, one fetch, spaced.**
+  After two days of losing this site to my own 429 bursts, it came back on the
+  first spaced fetch. Hero holds: **"Thoughtful Gifts, Delivered Next Day."**
+  **40% OFF SALE** still in the main nav; **Free Next Day Delivery, order before
+  4pm**, free-delivery countdown now framed around the **over-£25** threshold; 10%
+  first-order signup offer. **Results Day Gifts still a featured collection** — and
+  this is the first *confirmed* sighting since 3 Aug (4 Aug was a 429 gap, not a
+  read), so the "featured for N days" run is continuity, not an unbroken
+  eyewitness count. We are now **~8 days** from the first UK results day. Autumn
+  crossover holds: **Autumn Bear & Pumpkin Pyjama Set marked "AVAILABLE FOR PRE
+  ORDER"**, Comfort Collective pyjamas on sale (regular £49.95–£54.95, ~41–45%
+  off). **Advent Calendars 2026 (24-day) now carry explicit pricing** — from
+  **£55.00** on an instalment option / **£165.00** full — a firmer pre-sell than 3
+  Aug's "still pre-selling." Monthly subscription from £18. **Corporate gifting
+  portal surfaced again today** (it did not surface in the 3 Aug fetch — a
+  homepage read either way, not a sitemap crawl). New proof line caught:
+  **"over 1 Million Gifts since 2011."**
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Unchanged from 4
+  Aug. Hero **"Luxury Wedding Stationery & Signage"** with the "personalised
+  designs, fast proofs, and a seamless process" subtagline. **"Receive Proof
+  Within 24 Hours" holds — a SEVENTH read as public promise**, still paired with
+  "Unlimited edits until it's perfect" and 2-working-day Express; free standard
+  shipping over £100. "Over 2,000 five-star reviews" (Trustpilot). Occasion
+  taxonomy full and static (Anniversary, Baby Shower, Birthday, Bridal Shower,
+  Christening, Christmas, Corporate Events, Engagement, Hen, Valentine's); style
+  and colour collections themed (Minimal/Modern, Elegant/Luxe, Rustic/Boho,
+  Romantic/Floral, plus a full colour and floral matrix). Four seasons referenced
+  but **no dated autumn collection, and still no Results Day / back-to-school /
+  graduation** — a wedding operator staying in its lane as the window opens.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** First confirmed read
+  since 3 Aug (4 Aug was a 429 gap). Static joke-sign catalogue holds: 3D street
+  / family-name / Dad's Bar / Nanny's Garden / Grandad's Shed all **From £24.99**,
+  LED bar/mirror/username signs £34.99–£39.99, home-bar/gaming/darts £59.99,
+  business logo signs £69.99–£299.99. **Still running the Father's Day Spirit
+  Level Bottle Opener (From £19.99)** — now ~ten weeks stale, a dated SKU nobody
+  has pulled. Proof bar consistent ("Rated 4.9/5 by over 250,000 · 250k+ orders
+  shipped · UK Made in Wales"); "Free UK delivery over £50", next-day available.
+  Still **zero** Results Day / back-to-school / autumn / Halloween / Christmas — a
+  joke-sign catalogue being run, not tested.
+- **Season read: window is open, ~8 days out, and we still don't sell the day.**
+  Got all three sites today, first clean sweep since 3 Aug. The split is exactly
+  where it was: one occasion-led operator (TreatBox — Results Day featured, autumn
+  a live pre-order, Advent now priced) versus two object-led sign brands with no
+  dated occasion in them (Little Perfections static in its wedding lane, Crafty
+  Bonobo ten days static and still flogging a Father's Day SKU two-plus months
+  late). UK results days **13 & 21 Aug**, back-to-school behind them. The
+  transferable move remains the *dated pre-sell structure*, not SKU sprawl — and
+  the dated occasion we still don't sell is Results Day.
+- **Translate to us:**
+  1. **Results Day SIGN wording — STILL not built. Tenth naming, ~8 days out.**
+     `search_products` today (all statuses) for results-day / "class of 2026" /
+     graduation-sign wording returns **nothing** — yesterday's 24h falsifiable
+     settles unmoved. The only graduation SKUs remain the two 2024 **pebbles**,
+     not the sign. Text field, not a production job; the one dated slot both sign
+     rivals leave open and TreatBox has featured all fortnight.
+  2. **"Receive Proof Within 24 Hours" — a rival's public promise, seventh read,
+     still unmatched by us.** Costs nothing, still untested.
+  3. **The £24.95 graduation pebble is buyable, and now confirmed so.** Status
+     ACTIVE, quantity reads −11 but the variant is **untracked** (`tracksInventory
+     false`, `inventoryPolicy DENY` — moot when tracking is off), so the negative
+     is a frozen legacy counter, not a stop. It will sell and fulfil. An existing,
+     proven, higher-ticket SKU aimed at exactly this window that nobody is pushing
+     — safe to point traffic at while any new sign is built.
+- **Unreachable today:** none of the three priority sites — all three returned
+  HTTP 200, TreatBox first and spaced, no 429 this pass. instagram.com public
+  metrics still not attempted (429 lineage — **tenth** consecutive day; not
+  retried, per the 28 Jul lesson). Not attempted: etsy.com (403 to date),
+  notonthehighstreet.com, Covering All Occasions, beyondthefridge.co.uk. TikTok
+  video metrics were freshly measured (`daisymaison-2026-08-05.json`, 18 video
+  posts); the 2 Aug pebble photo carousel (DM-C020-POST-1) still does not surface
+  via yt-dlp, so it remains view-count-less — a format gap, not a zero. All three
+  site reads above are homepages, HTTP 200. Nothing here is presented as a live
+  social post.
+
+— Alan

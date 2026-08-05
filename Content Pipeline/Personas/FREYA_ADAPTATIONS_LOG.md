@@ -539,3 +539,65 @@ Format:
   that the cheapest on-window move is the pebble that already exists, not a fresh
   build — provided it can fulfil.
 - Signed: Freya · Alan
+
+## 2026-08-05
+
+- Learned: (A) live from Shopify (`daisymaisonuk`, `total_sales`); the 29 Jul
+  digest is seven days stale, not read for numbers: **4 Aug — 65 orders /
+  £1,839.16 / AOV £22.74** (complete); **3 Aug holds to the penny** (69 /
+  £1,991.50 / £23.30); 5 Aug partial (4 / £97.46, morning). 4 Aug a soft step
+  down from 3 Aug (−£152, −4 orders) — inside noise, not a trend. ROAS an open
+  gap (no ad cost in Shopify).
+- Settled — the fulfilment gate is CLEARED by data: the **£24.95 Graduation
+  Pebble Picture will sell.** Variant reads −11 / totalInventory 0, but
+  `tracksInventory: false` and `inventoryPolicy: DENY` only bites when inventory
+  is *tracked* — with tracking off, checkout stays open; the −11 is a frozen
+  legacy counter, not a stop. So yesterday's falsifiable (b) resolves: made-to-
+  order accounting, safe to point traffic at. ① no longer waits on a stock
+  question — only on Max's post-go.
+- Settled — falsifiable (a) resolves unmoved: the **Results Day SIGN wording
+  still does not exist** (`search_products` all-statuses empty). Tenth day of
+  naming it, ~8 days from the live date. Still a keyboard job nobody has done.
+- Learned: (references) clean sweep, no 429 — **spacing the fetches worked** (the
+  3–4 Aug lesson, finally applied). TreatBox Results Day still featured, Advent
+  now *priced* (£55 instalment / £165 full), corporate portal back; Little
+  Perfections "Proof Within 24 Hours" a **seventh** read, still unmatched by us;
+  Crafty Bonobo static, Father's Day SKU ~ten weeks stale.
+- Where we split (real, and it's a good one): Freya framed ① as the **results-
+  day** post — "results land the 13th... their name under the cap." Alan's cold
+  read: that pebble is a **university-graduation** product (capped-and-gowned
+  figure) whose natural window was **July ceremonies**, while UK exam results day
+  (13 & 21 Aug) is a **16–18 audience opening an envelope** — a different
+  occasion wearing the same word. Real inventory, imperfect occasion-fit.
+  **Resolution:** ① ships this week (it's the only confirmed on-window inventory
+  and it costs nothing), but the caption rides the **results → offers → off-to-
+  uni pipeline** as a congratulations/you're-going gift — which genuinely fits a
+  gown pebble as a forward-looking keepsake — NOT the envelope moment on the
+  13th. The envelope moment is precisely what the **SIGN wording** is for, which
+  is one more reason to finally type it. Freya's asset stands; Alan's fit note
+  reframes the caption and re-motivates the sign.
+- Changing (the pivot): both of this week's moves are now unblocked on our side.
+  (1) Ship ① — the confirmed graduation pebble — framed to the uni pipeline, on
+  Max's post-go. (2) Type the Results Day sign wording into the catalogue today
+  for the 13/21 peak: evergreen **"THE SMART ONE LIVES HERE — CLASS OF 2026"**
+  (filmable stock sign) + personalised **"[NAME] — YOU SMASHED IT (obviously).
+  CLASS OF 2026"**. Ten days of naming it ends with a text field.
+- Carried: **2 Aug pebble carousel still unmeasured** (photo carousels don't
+  surface via yt-dlp) — gates the original wedding-pebble idea and the pebble/AOV
+  causal claim; no fourth pebble asset before it reports. **Reconcile tripwire is
+  silently dead** — line 198 reads `video_count`, the snapshot stores `videos`;
+  a one-line fix (`video_count` → `videos`, lines 198–199). Decorative until
+  fixed; 170 pulled by hand, held flat from 4 Aug — nothing shipped unlogged.
+- Testing tomorrow (falsifiable): **(a)** the Results Day sign wording exists in
+  the catalogue within 24h — tenth → eleventh day; if not, a named process
+  failure on a keyboard job. **(b)** if ① ships, it's judged on **link clicks +
+  saves** (SOLVE), settled by `daisy-social-analytics`, not raw views.
+- Gaps, named: **ROAS/spend not pulled** (Windsor job) — £1,839 is revenue, not
+  profit. **IG 429, ninth-plus day** — two `reported` rows (DM-C020-CORRECTION,
+  DM-HOUSE-QUIZ) stay unverified. **Pebble carousel unmeasured.** **Reconcile
+  tripwire line dead** pending the one-line fix.
+- Confidence: (A) high on the Shopify figures and the pebble-fulfilment read
+  (checked the inventory flags, not guessed), ROAS open; (F) high that ① is the
+  right on-window post now the gate's cleared, and that the graduation-vs-results
+  occasion-fit is real and handled by reframing the caption to the uni pipeline.
+- Signed: Freya · Alan
