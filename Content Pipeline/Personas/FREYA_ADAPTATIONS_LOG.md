@@ -659,3 +659,70 @@ Format:
   only thing that tests it. The whole team's credibility this week rests on one
   post going out, not on a better brief.
 - Signed: Freya · Alan
+
+## 2026-08-07
+
+*(Filed under the session's operating date. See the date-anchor gap below — the
+data clock runs ~1 day behind this label, and it's named, not hidden.)*
+
+- **The drought broke — on the making side, and the reach read is brutal.** The
+  MEDICI wedding street-sign reel Max posted from his phone is confirmed live on
+  TikTok (id 7670522651596639510, 4s video, uploaded 5 Aug), now reconciled into
+  `PUBLISH_LOG.md` as `DM-MEDICI-WEDDING`. The 6 Aug falsifiable — "did a post
+  actually ship?" — settles **yes**, and being video it's measurable. The number:
+  **0 views / 0 likes / 0 comments a full day in.** A real zero, not a gap. So a
+  post shipping was never the whole problem — a genuine video from Max, a day old,
+  at zero, is *worse* than the photo carousels, and it re-confirms the ceiling is
+  **distribution/account reach**, hard.
+- Where we split (real, and it matters this week): Freya wants to hold cadence and
+  ship again today (① Bond reel → TikTok). Alan's push-back: MEDICI at 0 says
+  posting more into a pipe that returns nothing isn't obviously the move — if the
+  next one also flatlines, the **account is the ceiling**, not the format or hook,
+  and we should stop making and start fixing distribution. **Resolution:** ship ①
+  Bond — but explicitly **as the distribution test**, and post it with the basics
+  MEDICI may have missed (a trending sound, hashtags in the first comment, a live
+  posting hour). Falsifiable: if Bond also reads **<50 TikTok views at ~24h**, the
+  next session pivots from *making* to *distribution mechanics* (sound, timing,
+  hashtags, cross-post, engagement) — no new assets until reach moves. If it gets
+  normal early serve, MEDICI's zero was a posting-mechanics miss, not a ceiling.
+  Freya keeps cadence; Alan gets the trigger. Both honoured.
+- Learned: (A) live Shopify — **5 Aug, last full day: 50 orders / £1,509.48 / AOV
+  £24.80** (solid). The "24 / £652.75" verified yesterday was a **partial mid-day
+  capture** of the same day — it closed at 50; **never call a colour off a
+  partial.** 6 Aug reads 5 / £165.48 but is Shopify's *current, in-progress* day —
+  **not a red day, an unfinished one.** ROAS an open gap (no ad cost in Shopify).
+- **Date-anchor gap, named (Alan caught it):** the env/Shopify data clock reads a
+  day behind this session's operating label — Shopify's current day is 6 Aug while
+  the brief is filed 7 Aug. The append-only logs have been incremented per session
+  request, not off the wall clock, so they've drifted ~1 day ahead. Not rewriting
+  committed history over it; **go-forward rule: anchor the session date to
+  Shopify's data clock at the top of each run,** and never grade a partial day as
+  closed.
+- **Higgsfield unexplained draw: 557.12, down 20 from 577.12**, nothing generated
+  by us this session. Most likely the MEDICI reel's own synthetic generation (a
+  4s AI wedding reel is in that credit range) — **likely, not confirmed;** flagged
+  as a gap, not asserted. If Max generated MEDICI on Higgsfield, that's the 20.
+- Learned: (references) clean sweep, **third day no 429** — the spacing method is
+  settled practice now. TreatBox Results Day still hero-featured (~6 days to 13
+  Aug); Little Perfections "Receive Proof Within 24 Hours" a **ninth** read, still
+  unmatched; Crafty Bonobo static, Father's Day SKU ten-plus weeks stale. We still
+  don't sell the one dated occasion both sign rivals leave open.
+- Ready queue, still zero-cost, so cadence never stalls: **graduation pebble
+  carousel** (`READY_TO_POST/2026-08-06-graduation-pebble.md`, un-shipped) as the
+  no-decision fallback; **the MEDICI second beat** (synthetic, ~1 credit) as next
+  session's growth bet once the distribution test reads.
+- Testing next session (falsifiable): **(a)** Bond reel's ~24h TikTok views —
+  <50 triggers the distribution pivot; **(b)** MEDICI's view count moves off zero
+  or it doesn't (settles whether it's dead-on-arrival or just slow); **(c)**
+  re-anchor the date to the data clock and confirm the drift.
+- Gaps, named: MEDICI **0 views** is real (not missing) but IG can't corroborate
+  cross-post (429, 12th day); 2 IG `reported` rows still unverifiable; 2 Aug/30 Jul
+  pebble carousel still unmeasured (photo format); **Higgsfield −20 unexplained**;
+  **date drift ~1 day**; reconcile tripwire still silently no-ops (`video_count`
+  vs `videos`, line 198 — a one-line fix, named five days running, 171 pulled by
+  hand); ROAS uncomputable (no ad cost in Shopify).
+- Confidence: (A) high on the 5 Aug full-day figures and that MEDICI is live at
+  zero; (F) high that the constraint has moved from "no post ships" to "posts ship
+  and die on reach," which is a *different* problem needing distribution work, not
+  more assets — and ① Bond is the clean test of exactly that.
+- Signed: Freya · Alan

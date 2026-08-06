@@ -66,6 +66,7 @@ not a silent-only format. Views land in the next daily pull.
 | 229 | - | "The gown goes back. This doesn't." - 28 Jul |
 | **7** | - | "Drop your wording in the comments and we'll make it" - 28 Jul |
 | **5** | DM-C020-CORRECTION | "Dave ordered the sign. Someone else ordered the correction." - 29 Jul |
+| **0** | DM-MEDICI-WEDDING | "The flowers get cleared away. The fairy lights come down. This is the..." - MR & MRS MEDICI wedding street-sign reel (4s video, 12 Sep 2026 date on sign) - **5 Aug**. *Max posted from his phone; never logged until reconciled 7 Aug. 0 views / 0 likes / 0 comments at 6 Aug 06:37 pull — a real number, not a gap. [id 7670522651596639510](https://www.tiktok.com/@daisymaison/video/7670522651596639510)* |
 
 **What the full ladder says that the truncated one hid.** The top three are
 9,400 / 6,500 / 4,574 - nearly 3x the figure we thought was our ceiling. All
