@@ -31,7 +31,7 @@ Getting more of the people who arrive to buy.
 |---|---|---|
 | Mobile experience | Critical — 87.6% mobile traffic | Any friction hits mobile first. Theme changes are high-risk. |
 | Product page | No systematic A/B testing yet | AI lifestyle images in use. Winning template identified for social. |
-| Checkout friction | No known issues | Confirmed clean after 5 May theme update (initial drop recovered). |
+| Checkout friction | Audited 6 Aug 2026 — see `checkout-audit-2026-08-06.md` | Completion 64.7% (30d) and improving; abandonment concentrated at the shipping-cost reveal, not the form. £50 free-ship threshold vs £23.81 AOV is the prime suspect. |
 | Price perception | — | No testing beyond add-on pricing. |
 
 **Benchmark:** 3%+ conversion rate is healthy. Below 3% warrants investigation. Recent range: 3.35%–6.29%.
