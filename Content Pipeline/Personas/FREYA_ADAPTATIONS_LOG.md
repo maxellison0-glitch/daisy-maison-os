@@ -959,3 +959,11 @@ holes to patch. Same result, **half the price (1cr/take vs 2)**. New default:
 **nano_banana_2**; pro is the fallback when spelling breaks or wording runs
 long. Both Routines updated. Takes in `DM-C022-garage/working/nb2-ab/`.
 Ledger: **6 of 60 spent.** — Alan
+
+**Addendum (14:45) — Sir J is live.** 14:30 slot posted exactly per handoff:
+2 slides, is_aigc false, comments on, music "How You Like Me Now" (The Heavy —
+fits the swagger). publish_id `p_pub_url~v2.7671299521707657249`,
+PUBLISH_COMPLETE. That's 4/4 today — 18:30 slot skips. Style logged as
+found-humour / screenshot-bait; if this outperforms the generated carousels,
+the order queue becomes a standing content mine. Ledger unchanged: 6 of 60.
+— Freya · Alan
