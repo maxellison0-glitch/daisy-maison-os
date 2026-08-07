@@ -129,7 +129,7 @@ it goes out, then it moves up into a platform section with a real number.
 | Content ID | Shape | Planned route | Built |
 |---|---|---|---|
 | DM-C020-POST-2 | 2-slide 4:5 carousel — THE GARDEN TAVERN / DAD'S BAR, plus a silent 5.2s 9:16 cut | Instagram **trial reel** (needs the video, a carousel cannot be a trial reel) + TikTok | 30 Jul, 4 credits of generation, 0 to build |
-| DM-C021 | 3-slide 4:5 carousel — "I'LL DO IT IN A MINUTE / EST. 2024" (POV pill → sign reveal → range master) | Instagram + TikTok photo mode, Max's post (`READY_TO_POST/2026-08-06-in-a-minute-carousel.md`) | 6 Aug, 12 credits, agent-passed. **Not visible on TikTok at the 7 Aug pull — but photo carousels never surface via yt-dlp, so "not posted" is unverifiable by tooling. Ask Max or check in-app.** |
+| DM-C021 | 3-slide 4:5 carousel — "I'LL DO IT IN A MINUTE / EST. 2024" (POV pill → sign reveal → range master) | **POSTED to TikTok 7 Aug 2026 by Claude on Max's standing instruction** ("nothing's gone out. you need to do it automatically"). publish_id `p_pub_url~v2.7671177913722914848`, `PUBLISH_COMPLETE`, public, comments on, AIGC disclosed, no music. Caption + first-comment hashtags per `READY_TO_POST/2026-08-06-in-a-minute-carousel.md`. IG half still open (no IG publish route; Max in-app or Windsor). | 6 Aug build, 12 credits. Photo carousel — view counts not pullable via yt-dlp; read in-app. |
 | — (SKU 48641) | 3-slide graduation pebble carousel, CDN photos only | Instagram (+ TikTok optional), awaiting Max's go (`READY_TO_POST/2026-08-06-graduation-pebble.md`) | 6 Aug, 0 credits. Un-shipped at 7 Aug. |
 
 **DM-C020-POST-1 went out** — see the TikTok section. Instagram carousel still to

@@ -789,3 +789,29 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   household-truths range is right and honest that Alan's gate is the correct
   price for it — a range nobody sees isn't a range, it's a folder.
 - Signed: Freya · Alan
+
+### 2026-08-07 — addendum, same day: the publish rule changed and C021 went out
+
+- Max, verbatim: **"no nothings gone out. you need to do it automatically."**
+  That settles two things at once: (1) C021, the pebble and Bond were all
+  unposted — the Built-and-queued read was right; (2) **"propose, never
+  publish" is retired.** The daily session now publishes the day's agreed slot
+  itself. Encoded in `SOCIAL_TEAM.md` guardrails with his quote and the date.
+  Paid credit spend still needs his explicit go — posting is free, generating
+  is not.
+- **Acted on it immediately: DM-C021 is LIVE on TikTok** — posted this session
+  via the Higgsfield connector. publish_id `p_pub_url~v2.7671177913722914848`,
+  `PUBLISH_COMPLETE`, public, comments on, AIGC disclosed, caption and
+  first-comment hashtags exactly as approved in READY_TO_POST. The August
+  drought is over by the team's own hand.
+- Queue under the new rule: **tomorrow's session posts the graduation pebble**
+  (zero credits, results day window, inside the ~10 Aug runway) unless Max
+  says otherwise. The garage sign stays gated on C021's in-app read (Alan's
+  gate holds — the rule changed who presses the button, not what earns a
+  build). **IG remains manual** — no API route; the IG half of C021 is flagged
+  for Max's phone or a Windsor test later.
+- Known measurement limit, restated so tomorrow's read is honest: C021 is a
+  photo carousel, invisible to yt-dlp — its TikTok numbers get read in-app by
+  Max or not at all. If tomorrow's brief claims a number for it, that number
+  came from Max, and the brief must say so.
+- Signed: Freya · Alan

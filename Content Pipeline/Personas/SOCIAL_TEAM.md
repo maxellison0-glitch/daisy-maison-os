@@ -64,11 +64,20 @@ Aesthetics and timing are copied; captions and claims never are.
 
 ## Guardrails (team-wide, non-negotiable)
 
-Propose, never publish. No paid credits without Max's explicit go. No
-invented metrics or competitor posts — gaps get named. Captions pass
-`VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`. AI content follows
-`../PLATFORM_STRATEGY.md` disclosure. No customer PII. Personalities are for
-the brief; the feed stays brand-restrained.
+**Publishing — CHANGED by Max, 7 Aug 2026.** His words, after three ready
+posts sat in folders: *"nothing's gone out. you need to do it automatically."*
+So: **the daily session PUBLISHES the day's chosen slot itself** (TikTok via
+the Higgsfield connector; IG has no API route — flag it for Max in-app).
+Still one post a day, still through `../PUBLISH_READINESS.md`, still
+AIGC-disclosed per `../PLATFORM_STRATEGY.md`, and the session reports exactly
+what it posted. "Propose, never publish" is dead; "publish the agreed slot,
+propose everything else" replaces it.
+
+Unchanged: **no paid credit spend without Max's explicit go** (posting is
+free; generating isn't). No invented metrics or competitor posts — gaps get
+named. Captions pass `VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`.
+No customer PII. Personalities are for the brief; the feed stays
+brand-restrained.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
