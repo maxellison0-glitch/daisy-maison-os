@@ -917,3 +917,16 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   Remaining slots (14:30, 18:30) may reach for the garage-sign build (~12) or
   a Kling animate; rotation will demand a VIDEO or a non-LAUGH beat next.
 - Signed: Freya · Alan
+
+### 2026-08-07 — Max's reject on the shed post + the simplification
+
+- Max rejected the shed-vote visuals: **sign too big, line 2 oversized** —
+  that prompt and its image refs are dead, never reused (verdict recorded in
+  the batch's own batch.json, nowhere else — no new files, his instruction).
+  Post stays up. The surviving size standard is the C021 take he accepted:
+  level hold, compact, line 2 small.
+- The bigger correction, his words: this is piss simple. **Real sign photos +
+  the sign-reprint template to put wording on at true product size** — free,
+  no AI-rendered text — is the default sign lane. Simple prompts beat clever
+  ones. Both Routines rewritten to half the length saying exactly that.
+- Signed: Freya · Alan
