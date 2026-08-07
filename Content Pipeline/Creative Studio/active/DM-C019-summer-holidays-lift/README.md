@@ -12,10 +12,33 @@ Six seconds, 9:16, 1080p, one continuous take. Freya stands in the hallway
 holding `THE SUMMER HOLIDAYS / DAY 4 OF 42` and raises it toward the camera
 until it fills the frame and holds there, readable.
 
-The sign is on-season to the day. UK schools break up in the last week of July,
+**KILLED 29 Jul 2026. Do not ship either cut. The paragraph below was wrong and
+is kept so the mistake is legible.**
+
+~~The sign is on-season to the day. UK schools break up in the last week of July,
 so "day 4 of 42" is roughly today — this is a piece of content with a shelf life
 measured in days, which is the point of having a pipeline that can turn one
-around in an hour.
+around in an hour.~~
+
+Two independent reasons it is dead:
+
+1. **The number is wrong, and this sentence is where it came from.** UK schools
+   break up in the **third or fourth** week of July, not the last. Verified
+   29 Jul: England and Wales start 20–23 July, Scotland 29 June, Northern
+   Ireland 1 July. So on 29 July the honest count is **day 7–10** in England and
+   Wales, day 31 in Scotland. "DAY 4" needs a start of Sunday 26 July, which no
+   UK nation has — and it was already wrong on 28 July when this rendered. "OF
+   42" is fine; six weeks is 42 days. The count is burnt into the generated sign
+   face, so it cannot be corrected without a full regeneration.
+2. **The concept was killed on merit first.** Max, 28 Jul: *"It can't just be
+   some bullshit that people wouldn't actually have in their house, like 'day
+   four of summer holidays.' No one's buying that."* Trailing-365 Shopify agrees
+   — 4,558 Mr & Mrs, 4,187 large custom, 2,203 Valentine's. This is an
+   occasion-gift audience. Nobody buys a sign about their own tiredness.
+
+The general lesson, which outlives this concept: **a burnt-in date or count is a
+claim, and it gets verified like one.** A parent scrolling on day nine sees
+"DAY 4" and knows we made it up — worse than not posting.
 
 ## Why the sign never turns
 

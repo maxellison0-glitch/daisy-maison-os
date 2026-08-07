@@ -20,6 +20,10 @@ street signs today, diffuser next, whatever follows.
 
 Fires into the Jarvis session (repo + Higgsfield + Shopify all present).
 
+0. **Reconcile the log before anything else.** `reconcile_log.py` reads both
+   accounts, diffs them against `../PUBLISH_LOG.md`, and prints the rows to add.
+   Apply them. This step exists so that nobody ever asks Max which posts went
+   out — the accounts are the source of truth and he is not a data-entry clerk.
 1. **Delegate in parallel:**
    - **Agent "Alan"**: read the latest digests/`operating systems` numbers;
      run the reference-account sweep (`FREYA_REFERENCE_ACCOUNTS.md`, TreatBox
@@ -60,21 +64,70 @@ Aesthetics and timing are copied; captions and claims never are.
 
 ## Guardrails (team-wide, non-negotiable)
 
-Propose, never publish. No paid credits without Max's explicit go. No
-invented metrics or competitor posts — gaps get named. Captions pass
-`VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`. AI content follows
-`../PLATFORM_STRATEGY.md` disclosure. No customer PII. Personalities are for
-the brief; the feed stays brand-restrained.
+**The operating contract — set by Max, 7 Aug 2026 (supersedes everything
+above it in this section's history).** First: *"nothing's gone out. you need
+to do it automatically."* Then, the same morning: *"you are posting on TikTok
+now... I'm going to give you a budget"* — upped in the next breath to **60
+credits a day**. The terms, in force until Max changes them:
+
+1. **The team POSTS TO TIKTOK ITSELF.** The morning Routine
+   (`trig_01WMGTPaX565eJAi62y8uVPC`, 06:30 UTC) runs the session AND
+   publishes the day's slot via the Higgsfield connector. No Instagram — no
+   API route exists; do not plan IG halves.
+2. **One post a day → two when earned.** If a post does well by the
+   account's own ladder, Max's twice-a-day rule kicks in: enable the
+   afternoon Routine (`trig_01TErrfp23nV1G7w7uWPhr3A`, 16:30 UTC, created
+   disabled). The morning brief flags when the condition looks met; Max
+   confirms or the team enables it with his word.
+3. **Standing budget: 60 Higgsfield credits/day, free rein inside it.** No
+   per-spend approval. Every credit preflighted (`get_cost`), every gate in
+   `daisy-video-generation` respected, every credit logged in the take-home
+   ledger. Kling image→animate is a Max-proven lane (his MEDICI reel: 5s
+   1080p ≈ 12 credits — animate a strong still). Unspent budget does not
+   roll over; a zero-spend day that ships a queued asset is a good day.
+4. **The quality bar, in his words:** hooks and on-screen type must look
+   like they were *"written by a human who cares"* — because a human who
+   cares set this up. Stagger and colour pills per `hook_pill.py` doctrine;
+   no template placement; the `design-for-ai` skill is the reviewer when in
+   doubt.
+
+**The engagement stack — Max, 7 Aug 2026, every post, no exceptions.** His
+checklist, verbatim in spirit: *on-screen hooks · POVs · captions · music when
+possible · sound effects · on-screen animations.* "All this is what adds up and
+helps engagement." The test he set: *think ahead — this post already has 20,000
+likes; what does the person about to share it need to be seeing? What
+incentivises more dopamine? It definitely isn't a still image with a caption.*
+
+- A bare image + caption is an UNFINISHED post. Real website/product photos are
+  actively good ("nothing wrong with that image... it's nice to break it up and
+  have authenticity" — and they carry no AI label), but they ship DRESSED:
+  on-screen hook over the first frame, staggered pill, colour with intent.
+- **Music on photo posts is supported and expected** — `tiktok_music_trending`
+  → pass `music_sound_id` to `tiktok_publish` (Commercial Music Library, so
+  it's licensed; see `daisy-audio` for picking by vibe/BPM). A silent post
+  needs a reason, not a default. Sound effects and on-screen animation belong
+  to the video lane (Kling + hyperframes overlays at zero credits).
+- The share-moment test is the last gate before publish: cover the caption —
+  would someone mid-scroll screenshot or send this? If the answer needs the
+  caption, the on-screen layer is underbuilt.
+
+Unchanged and non-negotiable: no invented metrics, results, or competitor
+posts — gaps get named. Captions pass `VOICE_AND_CAPTION_GUIDE.md` +
+`../PUBLISH_READINESS.md`. AI content is AIGC-disclosed per
+`../PLATFORM_STRATEGY.md`. No customer PII. Personalities are for the brief;
+the feed stays brand-restrained. Spend above the daily 60 still needs Max's
+explicit go.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
-Thirty-six skills live in `.claude/skills/`. Ten are vendored from
+Forty-nine skills live in `.claude/skills/`. Ten are vendored from
 `coreyhaines31/marketingskills` (MIT), twenty-five from `heygen-com/hyperframes`
-(Apache 2.0, the video lane); `daisy-social-analytics` is ours. They
-exist to be *used* — a skill nobody invokes is worse than no skill, because it
-looks like capability while changing nothing. Max, on installing them: "we need
-to make sure that the Digest adapts with these skills so we actually don't
-create something that isn't utilised later on."
+(Apache 2.0, the video lane), **eight from `greensock/gsap-skills` (MIT, added
+29 Jul 2026 — the official GSAP set, written by GreenSock)**; the three
+`daisy-*` skills are ours. They exist to be *used* — a skill nobody invokes is
+worse than no skill, because it looks like capability while changing nothing.
+Max, on installing them: "we need to make sure that the Digest adapts with these
+skills so we actually don't create something that isn't utilised later on."
 
 Every one of the thirty-six is accounted for below: either it has a step in the
 session, or it is named in "Installed but NOT for us" with the reason. Nothing
@@ -84,6 +137,7 @@ So the daily session now runs them at fixed points:
 
 | Step | Skill | What it must change about the output |
 |---|---|---|
+| **Alan, FIRST — before anything else** | **`reconcile_log.py`** (not a skill, a tool: `../tools/social_api/reconcile_log.py`) | **Never ask Max what he posted.** Run it, apply what it finds to `../PUBLISH_LOG.md`, and the log is current without him typing a word. Max, 29 Jul, after being asked: *"I don't have time to sit here and tell you which fucking post I've done."* He was right — the account already knows. Rows still marked `reported` are unverified claims, and the tool counts them for you. |
 | Alan, before any performance claim | **`daisy-social-analytics`** | Every number in the brief comes from a pull. No remembered figures, ever. It also states what could not be measured. |
 | Alan, reference sweep | **`competitor-profiling`** | Reference notes become structured dossiers rather than prose, so week-on-week change is visible at a glance. |
 | Freya, generating the three | **`social`** | Use its short-form structures and, in particular, `references/reverse-engineering.md` when a reference post has clearly worked. |
@@ -93,6 +147,7 @@ So the daily session now runs them at fixed points:
 | Freya, deciding what to make at all | **`content-strategy`** | Pillars and topic clusters, so the week is a plan rather than five separate good ideas. Use it when the question is "what next", not "how do I write this". |
 | Anything that needs generating | **`image`** / **`video`** | Both name our actual stack (Nano Banana, Seedance, Hailuo, Kling), so use their prompting references rather than improvising. |
 | Any moving deliverable | **`hyperframes`** | Written as HTML, rendered locally, **zero credits**. Always enter through `hyperframes` — it is the router and it loads whichever sub-skill the job needs. Do not hand-pick them. See `../Creative Studio/video/README.md`. |
+| Writing or debugging the actual animation code inside a composition | **`gsap-timeline`** → **`gsap-core`** → **`gsap-utils`** / **`gsap-performance`** | The official GreenSock reference for the runtime our whole zero-credit video lane already runs on. Reach for these when a cue won't land, an ease looks wrong, a stagger is uneven, or a render comes out static — not for deciding *what* to animate, which is `motion-doctrine`'s job. **Hard gate: everything here is checked against `hyperframes-core → references/determinism-rules.md` first, and where they disagree our render contract wins.** |
 | Text, hooks and overlays on a video | **`captions-overlay`** + **`motion-doctrine`** | Where hyperframes genuinely beats a generator. Max, 28 Jul: **"an image with video formats around it is just a useless concept. If we're doing a video, it needs to be a video."** So this lane renders *type and graphics*; the moving picture underneath comes from real video generation. |
 | Every falsifiable call | **`ab-testing`** | And the house rule that outranks it: a call only counts if `daisy-social-analytics` can already pull the number that settles it. |
 | When the CVR slides | **`cro`** | Site-side, not content-side. Worth remembering that not every bad day is a content problem. |
@@ -109,6 +164,35 @@ rest.
 
 Written out in full deliberately: this list is checkable with a grep, and a
 shorthand like `-cli` would silently pass as unaccounted for.
+
+### GSAP — half of it is banned in our render lane, and it fails silently
+
+A HyperFrames render is a **deterministic frame seek**, not a browser session.
+`hyperframes-core` bans render-time clocks, unseeded `Math.random`, network,
+`repeat: -1` and **input state** — and that last one disqualifies a large part
+of GSAP. Written down here because the failure is quiet: the preview looks
+right and the render comes out static.
+
+- **In lane:** `gsap-core`, `gsap-timeline`, `gsap-utils`, `gsap-performance`.
+- **One trap inside `gsap-utils`, checked in the source:** `gsap.utils.random()`
+  is **not seedable** and is therefore **banned in a composition**, exactly like
+  `Math.random`. Its optional `true` argument is `returnFunction` — a reusable
+  generator that returns a *new* value on every call — not a seed. The
+  `"random(-100, 100)"` string form inside tween vars is the same hazard and is
+  banned for the same reason: GSAP re-evaluates it per target, so two renders of
+  the same composition are not identical. If a scatter or jitter is wanted, hard-code
+  the values or derive them from the element index.
+- **`gsap-plugins` is half in lane.** Seek-safe: CustomEase, EasePack,
+  CustomWiggle, CustomBounce, SplitText, DrawSVG, MorphSVG, MotionPath, Flip.
+  Banned: Draggable, Observer, Inertia, ScrollSmoother, ScrollToPlugin — all
+  pointer- or scroll-driven, and neither exists during a render.
+- **`gsap-scrolltrigger` is banned in the render lane.** Scroll position *is*
+  input state. This is why ScrollTrigger appears nowhere in any `hyperframes-*`
+  skill — checked, not assumed. Only ever correct on the Shopify storefront.
+- **`gsap-react` and `gsap-frameworks` are not our stack** — compositions are
+  plain HTML, the store is Shopify/Liquid. No React, Vue, Nuxt or Svelte
+  anywhere. They ship as part of the official set and are named here so nobody
+  spends a session discovering it.
 
 ### Installed but NOT for us
 

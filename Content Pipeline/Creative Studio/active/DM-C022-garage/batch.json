@@ -1,0 +1,23 @@
+{
+  "concept": "DM-C022-GARAGE",
+  "date": "2026-08-07",
+  "brief": "Lane test after Max killed the overlay path: single-pass generation, SIMPLE prompt, one real product ref, any background. Wording: IT'S IN THE GARAGE / SOMEWHERE.",
+  "model": "nano_banana_pro (served nano_banana_2)", "resolution": "2k", "aspect_ratio": "9:16",
+  "credits": 4, "reference": "492134f2 real-product front (construction/scale/type only)",
+  "jobs": [
+    {"take": 1, "id": "1fc29c4b-b7a2-406f-9a74-cb523dcc82d4", "qc": "agent-pass PICK - grubby work tee, dirty hands, cluttered shelves; wording exact, sign level, ends inside arms, line 2 tiny. Max on the lane: 'sign looks real.'"},
+    {"take": 2, "id": "953be5c8-c5ee-49d2-ab38-1516e557e846", "qc": "agent-pass - cleaner variant, also exact wording and neat scale; second choice"}
+  ],
+  "status": "queued for tomorrow slot 1 - dress with pill + music before posting",
+  "note": "Simple prompt held 3-word + 1-word text at 2k on both takes. The lane: words in prompt, product from ref, scene described freely.",
+  "ab_nano_banana_2": {
+    "date": "2026-08-07", "trigger": "Max: 'nano_banana_pro what about nano banana 2'",
+    "model": "nano_banana_2 (served nano_banana_flash)", "resolution": "2k", "aspect_ratio": "9:16", "credits": 2,
+    "same_prompt_and_ref": true,
+    "jobs": [
+      {"take": "nb2-01", "id": "53455c70-15f3-42b8-839a-66753a2cfdbd", "qc": "pass - wording exact, line 2 tiny, sign level; only tell is garbled paint-tin labels in background"},
+      {"take": "nb2-02", "id": "9adbdc34-c856-4ea0-8333-d78ee3096108", "qc": "pass - wording exact, no visible mounting holes, blue-shirt variant, cleaner background"}
+    ],
+    "verdict": "nano_banana_2 matches pro on this lane at HALF the cost (1cr/take at 2k vs 2). New default: nano_banana_2; nano_banana_pro is the fallback when spelling breaks or wording runs long. Both Routines updated 2026-08-07."
+  }
+}

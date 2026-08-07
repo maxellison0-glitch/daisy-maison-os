@@ -1,0 +1,34 @@
+{
+  "concept": "DM-C021-IN-A-MINUTE",
+  "date": "2026-08-06",
+  "brief": "Dry-humour POV carousel. Slide 1: Alan, sign back to camera + pill 'POV: you asked him to put the shelf up.' Slide 2 reveal: I'LL DO IT IN A MINUTE / EST. 2024. Slide 3: real CAT'S HOUSE master as range landing.",
+  "model": "nano_banana_pro (served as nano_banana_2)",
+  "resolution": "2k", "aspect_ratio": "9:16",
+  "credits_spent": 12,
+  "balance": "557.12 -> 545.12",
+  "references": {
+    "image_1_identity_room": "d8b67384 ALAN-LOCK-black-tee-workshop-APPROVED.jpg (sha256 0af3797d...)",
+    "image_2_size_authority": "1b8916da DM-C020 ideas-B-bargrill/take-02.png (Max-approved scale)",
+    "image_3_product_front": "492134f2 real-product-pack 01-front (reveal batch only)",
+    "image_3_product_back": "586e3dab real-product-pack 04-white-back (back batch only)"
+  },
+  "jobs": {
+    "reveal": [
+      {"take": 1, "id": "c63e6a34-4965-4712-8ad3-53b36d369666", "verdict": "reject - scale ok but framing looser, holes both ends"},
+      {"take": 2, "id": "e5ec3f7f-5eab-4ddc-90c4-e020ec723da4", "verdict": "reject - sign ends reach arm line, reads large"},
+      {"take": 3, "id": "adb9312b-ea58-47ee-8a56-d58d73bff926", "verdict": "reject - line 2 slightly large, sign high on chest"},
+      {"take": 4, "id": "8c300859-63af-46fa-901d-7038c4890054", "verdict": "agent-pass SELECTED - best arm-line scale, elbows tucked, line 2 delicate; wording exact all four takes"}
+    ],
+    "back": [
+      {"take": 1, "id": "b8fae6da-98c3-4cd5-9201-520ffbae9a34", "verdict": "agent-pass SELECTED - same room as reveal (swipe continuity), clean white back, no holes"},
+      {"take": 2, "id": "e7238bb8-a03a-41bb-b2d1-68bd5e179242", "verdict": "reject - invented different room (packing bay), breaks slide continuity, faint holes"}
+    ]
+  },
+  "post_work": [
+    "take-04: two inherited mounting-hole dots patched at (141,1471) and (1402,1457), cream ring-median fill - the CHARACTER-LOCK-SYSTEM documented plan (negative prompt does not beat a reference; lock has holes)",
+    "note: first automated patch attempt locked onto the border and a second pass blobbed cream into the notch border - REVERTED to pristine and redone with grey-on-cream detection. Lesson: patch at measured coordinates, never darkest-pixel search near a border.",
+    "hook pill via tools/hook_pill.py, black colourway from product-rules.json, Poppins-ExtraBold, slot top/centre, white text 20.9:1",
+    "final set 4:5 1080x1350 per CAROUSEL_FORMAT.md; works TikTok photo mode + IG"
+  ],
+  "human_approval": "PENDING - Max sees finals before posting. agent-pass is not production-ready per house rule."
+}

@@ -37,8 +37,14 @@ job ran — 18 credits for a prompt that said "test". On this tool the flag goes
 preflight comes back with a job `id` and `status: "pending"`, it is not a
 preflight; it is a generation.
 
-**No paid generation without Max's explicit go in the conversation.** Not
-implied by a previous approval, not implied by "carry on".
+**Spend authority, CHANGED by Max on 7 Aug 2026: the daily social session
+holds a standing budget of 60 credits/day** ("I'm going to give you a budget
+of 30 credits a day... Up the budget to 60 credits, actually") with free rein
+for organic content. Inside that ledger no per-spend ask is needed; the
+take-home entry logs every credit. Anything beyond the daily 60 still needs
+Max's explicit go in the conversation — not implied by a previous approval,
+not implied by "carry on". His own proven lane for reference: a liked still
+animated with Kling, 5s 1080p, ≈12 credits (the MEDICI reel).
 
 **NEVER GENERATE THE SAME PROMPT TWICE IN ONE BATCH.** Added 28 Jul 2026 by
 Max, after two identical 18-credit video takes: *"Don't ever make two videos of

@@ -201,3 +201,54 @@ The check, before any upload:
 
 Treat a missing hook exactly like a missing colourway check: it is not a taste
 call, it is a fault, and the post does not go.
+
+## Hard gate: the frame under the hook must change too
+
+Added 29 Jul 2026, by Freya, and it is the direct sibling of the gate above.
+The 28 Jul gate checks the **text**. Nothing in this rubric asked whether the
+**image beneath the text** differed from the last thing we shipped — and it
+didn't. Nine frames, seven concepts, one composition: person centred, front-on,
+camera at chest height, sign held at chest height, neutral interior, soft
+daylight, faint closed-mouth smile, no camera movement. Change the wording on
+the sign and you have described everything this account published in a week.
+
+Why it is a gate and not a style note: ranking systems diversify a user's feed
+on visual similarity, so serving near-identical frames from one account is an
+efficient way to be deprioritised — and it looks exactly like what we are
+seeing, distribution demonstrably existing (the pinned October reel holds
+11,889 views) and simply not being granted now. On the human side, mere
+exposure has tipped into habituation; a returning follower's eye stops
+registering the ninth instance of a frame it has already parsed eight times.
+
+**No two consecutive posts may share all three of: subject count, camera
+height, and room.** Break at least one. A second person, a background figure,
+a low or high angle, a workshop instead of a hallway, a close crop instead of
+a mid — any one of them clears it.
+
+This is a checklist item, not a production cost. The failure it catches is that
+we industrialised the pipeline — one pose reference, one lighting brief, one
+framing — and efficiency at the frame level became homogeneity at the feed
+level in about six days.
+
+### Where the pill goes, and why it is never centred
+
+Added 30 Jul 2026, from Max asking the obvious question: should the hook sit near
+the face and the sign instead of up in the ceiling?
+
+**No, and the middle band is the one place it cannot go.** The face and the sign's
+printed wording are the two things the viewer needs, and between them they occupy
+roughly 25-85% of a 4:5 frame. A pill there covers the joke.
+
+So the pill lives in one of two bands - `y 0.075` (top) or `y 0.855` (below the
+sign). Tested across all five office rooms: the top band wins on readability every
+time, because the galvanised ceiling is a consistent neutral in every plate.
+
+**But slide 1 is top and the rest alternate.** Not for readability - for the
+template problem. Five frames with the pill stamped at the same height read as one
+asset repeated, which is the same failure the frame-diversity gate above exists to
+catch. Slide 1 stays top because it is the frame a scrolling viewer actually sees.
+
+Colour: burgundy pill, white type - already `VIDEO_CAPTION_SYSTEM.md` 1.2's
+keyword-highlight fill, so this is in spec rather than a new colour. Burgundy
+*type* on a white pill was tried and binned: at caption weight the colour is too
+thin to read as a decision and looks like a mistake.
