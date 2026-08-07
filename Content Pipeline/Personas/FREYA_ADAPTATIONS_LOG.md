@@ -951,3 +951,11 @@ label and clock agree, so the sequence self-heals here rather than inventing an
 - Garage takes (DM-C022, take-01 the pick) queued for tomorrow slot 1 —
   dress with pill + music first. Ledger: **4 of 60 spent.**
 - Signed: Freya · Alan
+
+**Addendum (12:10) — model A/B, Max's call.** Max asked why nano_banana_pro
+and not nano_banana_2. Tested: same garage prompt, same real-product ref, two
+takes on nano_banana_2 at 2k — both exact wording, line 2 tiny, one with zero
+holes to patch. Same result, **half the price (1cr/take vs 2)**. New default:
+**nano_banana_2**; pro is the fallback when spelling breaks or wording runs
+long. Both Routines updated. Takes in `DM-C022-garage/working/nb2-ab/`.
+Ledger: **6 of 60 spent.** — Alan
