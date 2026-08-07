@@ -815,3 +815,28 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   Max or not at all. If tomorrow's brief claims a number for it, that number
   came from Max, and the brief must say so.
 - Signed: Freya · Alan
+
+### 2026-08-07 — second addendum: the operating contract
+
+- Max, same morning, after C021 went out by our hand: **"you are posting on
+  TikTok now"** — with a daily budget of 30 credits, upped moments later:
+  **"Up the budget to 60 credits, actually."** No Instagram (no route, his
+  call). If a post does well, **twice a day**. Hooks must look **"written by
+  a human who cares."**
+- Implemented, not just noted: the **morning Routine rewritten**
+  (trig_01WMGTPaX565eJAi62y8uVPC, 06:30 UTC — session + publish + 60-credit
+  ledger); an **afternoon Routine created and left DISABLED**
+  (trig_01TErrfp23nV1G7w7uWPhr3A, 16:30 UTC) until the did-well condition
+  unlocks it. Contract encoded in SOCIAL_TEAM.md guardrails and the
+  daisy-video-generation spend rules, both with dated verbatim quotes.
+- What this changes tomorrow: the session anchors to the data clock, reads
+  its OWN posts as the performance loop (C021 in-app read still comes from
+  Max — photo carousels stay invisible to yt-dlp), posts the pebble (queued
+  slot, zero credits), and can spend up to 60 on the garage sign or a Kling
+  animate WITHOUT asking — gated only by its own judgement and the ledger.
+  Today's ledger: 0 of 60 spent (C021's 12 were charged yesterday).
+- The bar Freya signs up to: no template placement, staggered pills, colour
+  with intent — if it looks generated, it fails before it posts. The bar
+  Alan signs up to: the ledger line appears in every take-home, and a
+  zero-spend day that ships a queued asset is a good day.
+- Signed: Freya · Alan

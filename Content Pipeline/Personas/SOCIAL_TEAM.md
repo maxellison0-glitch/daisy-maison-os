@@ -64,20 +64,39 @@ Aesthetics and timing are copied; captions and claims never are.
 
 ## Guardrails (team-wide, non-negotiable)
 
-**Publishing — CHANGED by Max, 7 Aug 2026.** His words, after three ready
-posts sat in folders: *"nothing's gone out. you need to do it automatically."*
-So: **the daily session PUBLISHES the day's chosen slot itself** (TikTok via
-the Higgsfield connector; IG has no API route — flag it for Max in-app).
-Still one post a day, still through `../PUBLISH_READINESS.md`, still
-AIGC-disclosed per `../PLATFORM_STRATEGY.md`, and the session reports exactly
-what it posted. "Propose, never publish" is dead; "publish the agreed slot,
-propose everything else" replaces it.
+**The operating contract — set by Max, 7 Aug 2026 (supersedes everything
+above it in this section's history).** First: *"nothing's gone out. you need
+to do it automatically."* Then, the same morning: *"you are posting on TikTok
+now... I'm going to give you a budget"* — upped in the next breath to **60
+credits a day**. The terms, in force until Max changes them:
 
-Unchanged: **no paid credit spend without Max's explicit go** (posting is
-free; generating isn't). No invented metrics or competitor posts — gaps get
-named. Captions pass `VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`.
-No customer PII. Personalities are for the brief; the feed stays
-brand-restrained.
+1. **The team POSTS TO TIKTOK ITSELF.** The morning Routine
+   (`trig_01WMGTPaX565eJAi62y8uVPC`, 06:30 UTC) runs the session AND
+   publishes the day's slot via the Higgsfield connector. No Instagram — no
+   API route exists; do not plan IG halves.
+2. **One post a day → two when earned.** If a post does well by the
+   account's own ladder, Max's twice-a-day rule kicks in: enable the
+   afternoon Routine (`trig_01TErrfp23nV1G7w7uWPhr3A`, 16:30 UTC, created
+   disabled). The morning brief flags when the condition looks met; Max
+   confirms or the team enables it with his word.
+3. **Standing budget: 60 Higgsfield credits/day, free rein inside it.** No
+   per-spend approval. Every credit preflighted (`get_cost`), every gate in
+   `daisy-video-generation` respected, every credit logged in the take-home
+   ledger. Kling image→animate is a Max-proven lane (his MEDICI reel: 5s
+   1080p ≈ 12 credits — animate a strong still). Unspent budget does not
+   roll over; a zero-spend day that ships a queued asset is a good day.
+4. **The quality bar, in his words:** hooks and on-screen type must look
+   like they were *"written by a human who cares"* — because a human who
+   cares set this up. Stagger and colour pills per `hook_pill.py` doctrine;
+   no template placement; the `design-for-ai` skill is the reviewer when in
+   doubt.
+
+Unchanged and non-negotiable: no invented metrics, results, or competitor
+posts — gaps get named. Captions pass `VOICE_AND_CAPTION_GUIDE.md` +
+`../PUBLISH_READINESS.md`. AI content is AIGC-disclosed per
+`../PLATFORM_STRATEGY.md`. No customer PII. Personalities are for the brief;
+the feed stays brand-restrained. Spend above the daily 60 still needs Max's
+explicit go.
 
 ## Skills the daily session must use (added 28 Jul 2026)
 
