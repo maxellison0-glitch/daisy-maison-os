@@ -91,6 +91,26 @@ credits a day**. The terms, in force until Max changes them:
    no template placement; the `design-for-ai` skill is the reviewer when in
    doubt.
 
+**The engagement stack — Max, 7 Aug 2026, every post, no exceptions.** His
+checklist, verbatim in spirit: *on-screen hooks · POVs · captions · music when
+possible · sound effects · on-screen animations.* "All this is what adds up and
+helps engagement." The test he set: *think ahead — this post already has 20,000
+likes; what does the person about to share it need to be seeing? What
+incentivises more dopamine? It definitely isn't a still image with a caption.*
+
+- A bare image + caption is an UNFINISHED post. Real website/product photos are
+  actively good ("nothing wrong with that image... it's nice to break it up and
+  have authenticity" — and they carry no AI label), but they ship DRESSED:
+  on-screen hook over the first frame, staggered pill, colour with intent.
+- **Music on photo posts is supported and expected** — `tiktok_music_trending`
+  → pass `music_sound_id` to `tiktok_publish` (Commercial Music Library, so
+  it's licensed; see `daisy-audio` for picking by vibe/BPM). A silent post
+  needs a reason, not a default. Sound effects and on-screen animation belong
+  to the video lane (Kling + hyperframes overlays at zero credits).
+- The share-moment test is the last gate before publish: cover the caption —
+  would someone mid-scroll screenshot or send this? If the answer needs the
+  caption, the on-screen layer is underbuilt.
+
 Unchanged and non-negotiable: no invented metrics, results, or competitor
 posts — gaps get named. Captions pass `VOICE_AND_CAPTION_GUIDE.md` +
 `../PUBLISH_READINESS.md`. AI content is AIGC-disclosed per

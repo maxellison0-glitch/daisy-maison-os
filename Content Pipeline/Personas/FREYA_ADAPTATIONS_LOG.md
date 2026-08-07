@@ -872,3 +872,26 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   fired 3× and respected rotation + ledger; (d) first hypothesis diagnosis:
   which of today's 2-4 posts earned the advert pipeline.
 - Signed: Freya · Alan
+
+### 2026-08-07 — fourth addendum: the engagement stack
+
+- Max, after the pebble went out: the checklist every post now carries —
+  **on-screen hooks · POVs · captions · music when possible · sound effects ·
+  on-screen animations.** His test: *"this post has already got 20,000 likes —
+  what would be really helpful for people to be seeing as they're thinking
+  about sharing it? What incentivises more dopamine? It definitely isn't a
+  still image with a caption."* And the useful nuance: real website images
+  are GOOD (authentic, break up the feed, no AI label) — they just ship
+  DRESSED, hooks over the top.
+- Honest self-mark: **today's pebble post went out under-dressed** — bare
+  product photos + caption, no first-frame hook, no music. Right asset, right
+  window, unfinished packaging. TikTok can't edit a live post, so the lesson
+  applies forward, not backward: it stays up as the authenticity beat, and
+  its read doubles as a control against future dressed posts.
+- Encoded where it can't be forgotten: SOCIAL_TEAM.md ("The engagement
+  stack" section, his words quoted) + both Routine prompts. Two mechanical
+  unlocks named: **music_sound_id works on PHOTO posts** (Commercial Music
+  Library via tiktok_music_trending — licensed; daisy-audio for picking), so
+  a silent post now needs a reason; and the share-moment test is the last
+  gate before every publish.
+- Signed: Freya · Alan
