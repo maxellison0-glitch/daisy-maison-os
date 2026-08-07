@@ -895,3 +895,25 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   a silent post now needs a reason; and the share-moment test is the last
   gate before every publish.
 - Signed: Freya · Alan
+
+### 2026-08-07 — slot addendum (10:30 firing): third post live, first fully stacked
+
+- Slot 1 of 3 fired and shipped **DM-C020-POST-2**: THE GARDEN TAVERN ("so,
+  closed", grass pill, top/centre) → DAD'S BAR ("he wrote that himself",
+  black pill, low/left) — publish_id `p_pub_url~v2.7671239088162441249`,
+  PUBLISH_COMPLETE. **First post under the full engagement stack:** staggered
+  reaction pills, trending CML music ("Ok I Like It" — Milky Chance), caption
+  running an A-or-B vote (comments job), AIGC disclosed.
+- Style rotation honoured across the day so far: LAUGH/synthetic/no-music →
+  FEEL/real-product/bare (the control) → LAUGH/dressed/music/vote. Three
+  posts, three different builds.
+- Production notes: the two winning takes were never on disk — retrieved free
+  by job ID from the 30 Jul batch.json (provenance paid for itself); one
+  inherited hole dot patched on garden-t1 before posting.
+- Hypothesis on this one: dressed (pills+music+vote) beats bare on
+  engagement-per-view; the pebble is the same-day control. Comments is the
+  target metric — first post ever aimed at it deliberately.
+- Ledger: **0 of 60 spent** — three posts live today, all zero-credit.
+  Remaining slots (14:30, 18:30) may reach for the garage-sign build (~12) or
+  a Kling animate; rotation will demand a VIDEO or a non-LAUGH beat next.
+- Signed: Freya · Alan
