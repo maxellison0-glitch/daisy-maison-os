@@ -1149,3 +1149,65 @@ Entry format:
   here is presented as a live social post.
 
 — Alan
+
+## 2026-08-07 (second entry — re-anchored to the Shopify data clock)
+
+- **Why two 07-Aug headings exist, so nobody trips on it later:** yesterday's
+  07-Aug entry was written while the Shopify data clock read **6 Aug** — the
+  session label ran a day ahead and the drift was logged, not rewritten. Today
+  the go-forward rule (anchor to Shopify) kicks in for the first time, and
+  Shopify's current day genuinely reads **2026-08-07** (in progress, 6 orders at
+  pull). So the correct heading today is 08-07 again — filing under 08-08 would
+  invent a day the data clock hasn't reached. Last FULL data day: **6 Aug**.
+  Sequence going forward is clean.
+- **TreatBox (treatboxuk.com) — READ, 200. Fetched first, one call, spaced.**
+  Fourth clean day running, no 429. Nothing moved. **Results Day Gifts** still
+  featured among occasion rails; **Build Your Own £29.95/£34.95/£41.95**;
+  **Advent Calendar £165 / instalments from £55**; **40% OFF SALE** in nav
+  (Comfort Collective pyjamas up to 45% off); **Free Next Day Delivery over £25,
+  order before 4pm**, countdown timer; 10% off first-order signup. Still no
+  back-to-school, still no graduation SKU of their own.
+- **Little Perfections (littleperfections.co.uk) — READ, 200.** Unchanged. Hero
+  **"Luxury Wedding Stationery & Signage"**, same subtagline. **"Receive Proof
+  Within 24 Hours" holds — a TENTH read as a public promise**, with unlimited
+  edits, 2-working-day Express, free standard over £100, 3–5 days standard,
+  2,000+ five-star Trustpilot. Wedding taxonomy still Planning → Ceremony →
+  Wedding Breakfast → Reception → Finishing Touches. **Still no Results Day /
+  graduation / back-to-school / autumn** — the wedding operator stays in its
+  lane with six days to the window.
+- **The Crafty Bonobo (thecraftybonobo.com) — READ, 200.** Unchanged. Hero
+  **"Personalised · Illuminated · British-made"**, CTAs "Shop Bestsellers" /
+  "Start Something Bespoke". **3D Street Sign still from £24.99**; same joke-copy
+  family ("The Dog Lives Here", "If Mum's in Charge of Dinner", the M&S
+  picky-bits board). Proof bar **4.9/5 Google · 250,000+ orders**. **Father's Day
+  Spirit Level Bottle Opener still live from £19.99 — now ~eleven weeks stale.**
+  Zero Results Day / back-to-school / autumn / Halloween / graduation.
+- **Season read: 6 days to 13 Aug on the data clock, and the gap is still ours
+  to take.** Fourth consecutive clean sweep (all three 200, TreatBox first,
+  spaced, no 429) — the method is settled. Same fortnight-old split: one
+  occasion-led operator selling the day, two object-led sign brands ignoring it.
+  UK results days **13 & 21 Aug**.
+- **Translate to us:**
+  1. **MEDICI moved off zero: 2 views at the 7 Aug 06:39 pull** (was 0 a day
+     in). Not dead-on-arrival, but 2 views in ~48h is the distribution ceiling
+     in one integer. PUBLISH_LOG updated.
+  2. **Bond is NOT on TikTok as of this pull.** Video count by hand: **171**
+     (key `videos`, unchanged 06→07 Aug; the tripwire was 171 and 170→171 was
+     MEDICI). No post title in the 18-post read matches the Bond reel. Max says
+     it went out days ago — possibilities: posted somewhere other than
+     @daisymaison TikTok, posted and deleted, or never posted. Needs Max's link,
+     not a guess.
+  3. **DM-C021 ("I'LL DO IT IN A MINUTE") unverifiable by tooling** — photo
+     carousels don't surface via yt-dlp. Not visible ≠ not posted. Ask Max or
+     check in-app. Logged under Built and queued.
+  4. **Graduation pebble carousel (SKU 48641) still un-shipped**, zero-cost,
+     aimed at the exact occasion all three references leave open, 6 days out.
+- **Unreachable today:** none of the three priority sites. instagram.com public
+  metrics still 429 (**thirteenth** consecutive day; reconciler named it, did
+  not retry). Not attempted: etsy.com (403 to date), notonthehighstreet.com,
+  Covering All Occasions, beyondthefridge.co.uk. Reconcile tripwire still reads
+  `video_count` and silently no-ops (line 198, named six days running) — 171
+  pulled by hand. All three site reads are homepages, HTTP 200. Nothing here is
+  presented as a live social post.
+
+— Alan

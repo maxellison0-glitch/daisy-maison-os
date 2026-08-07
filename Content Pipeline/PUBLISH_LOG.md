@@ -66,7 +66,7 @@ not a silent-only format. Views land in the next daily pull.
 | 229 | - | "The gown goes back. This doesn't." - 28 Jul |
 | **7** | - | "Drop your wording in the comments and we'll make it" - 28 Jul |
 | **5** | DM-C020-CORRECTION | "Dave ordered the sign. Someone else ordered the correction." - 29 Jul |
-| **0** | DM-MEDICI-WEDDING | "The flowers get cleared away. The fairy lights come down. This is the..." - MR & MRS MEDICI wedding street-sign reel (4s video, 12 Sep 2026 date on sign) - **5 Aug**. *Max posted from his phone; never logged until reconciled 7 Aug. 0 views / 0 likes / 0 comments at 6 Aug 06:37 pull — a real number, not a gap. [id 7670522651596639510](https://www.tiktok.com/@daisymaison/video/7670522651596639510)* |
+| **2** | DM-MEDICI-WEDDING | "The flowers get cleared away. The fairy lights come down. This is the..." - MR & MRS MEDICI wedding street-sign reel (4s video, 12 Sep 2026 date on sign) - **5 Aug**. *Max posted from his phone; never logged until reconciled 7 Aug. 0 views at 6 Aug 06:37 pull; **2 views at 7 Aug 06:39 pull** — moved off zero, barely. Like count not returned (missing, not zero). [id 7670522651596639510](https://www.tiktok.com/@daisymaison/video/7670522651596639510)* |
 
 **What the full ladder says that the truncated one hid.** The top three are
 9,400 / 6,500 / 4,574 - nearly 3x the figure we thought was our ceiling. All
@@ -129,6 +129,8 @@ it goes out, then it moves up into a platform section with a real number.
 | Content ID | Shape | Planned route | Built |
 |---|---|---|---|
 | DM-C020-POST-2 | 2-slide 4:5 carousel — THE GARDEN TAVERN / DAD'S BAR, plus a silent 5.2s 9:16 cut | Instagram **trial reel** (needs the video, a carousel cannot be a trial reel) + TikTok | 30 Jul, 4 credits of generation, 0 to build |
+| DM-C021 | 3-slide 4:5 carousel — "I'LL DO IT IN A MINUTE / EST. 2024" (POV pill → sign reveal → range master) | Instagram + TikTok photo mode, Max's post (`READY_TO_POST/2026-08-06-in-a-minute-carousel.md`) | 6 Aug, 12 credits, agent-passed. **Not visible on TikTok at the 7 Aug pull — but photo carousels never surface via yt-dlp, so "not posted" is unverifiable by tooling. Ask Max or check in-app.** |
+| — (SKU 48641) | 3-slide graduation pebble carousel, CDN photos only | Instagram (+ TikTok optional), awaiting Max's go (`READY_TO_POST/2026-08-06-graduation-pebble.md`) | 6 Aug, 0 credits. Un-shipped at 7 Aug. |
 
 **DM-C020-POST-1 went out** — see the TikTok section. Instagram carousel still to
 run, Max's side.

@@ -726,3 +726,66 @@ data clock runs ~1 day behind this label, and it's named, not hidden.)*
   and die on reach," which is a *different* problem needing distribution work, not
   more assets — and ① Bond is the clean test of exactly that.
 - Signed: Freya · Alan
+
+## 2026-08-07 — re-anchored to the Shopify data clock
+
+*(Second 08-07 heading, deliberately: the entry above carrying this date was
+written while the data clock still read 6 Aug — the drift Alan flagged. Today
+label and clock agree, so the sequence self-heals here rather than inventing an
+08-08 the clock hasn't reached. Same convention in REFERENCE_TRACKER.md.)*
+
+- Learned: (A) live Shopify — **6 Aug closed: 64 orders / £1,809.83 / AOV
+  £22.81.** Re-verified 5 Aug closed at **50 / £1,503.78 / £24.80** — the
+  "24 / £652.75" read last session was a partial capture, as suspected;
+  partial-day discipline vindicated twice in one week. ROAS an open gap. Till
+  is healthy; the account is not the problem the feed is.
+- Settled: **MEDICI moved off zero — to 2 views in ~48 hours.** Not a gap, a
+  measurement: a real video, live, essentially unserved. The pipe is still the
+  wound.
+- Settled, uncomfortably: **the Bond distribution test never ran.** Tripwire
+  held at 171 (the only step was MEDICI); nothing on @daisymaison TikTok
+  resembles the Bond reel. Max said it went out days ago — so it's either
+  posted somewhere tooling can't see, posted-then-deleted, or never posted.
+  Needs his link, stated flat, no accusation. Until then the <50-views trigger
+  is UNMEASURED, not passed.
+- Unverifiable by tooling: **whether C021 ("I'll do it in a minute") has been
+  posted** — photo carousels don't surface via yt-dlp and IG is on its 13th
+  429 day. Logged as Built-and-queued alongside the pebble so neither can go
+  invisible again.
+- Where we split (real): Freya's backed favourite is the next household truth —
+  **"IT'S IN THE GARAGE (somewhere)"**, pill "POV: you asked where the drill
+  went.", the C021 recipe end-to-end, 12 credits — because one joke is a post
+  and two is a range. Alan's push-back, with the sharper evidence: MEDICI at 2
+  views says the pipe eats what we feed it; the agreed distribution test never
+  ran; and the one zero-cost post aimed at the one open occasion (graduation
+  pebble, results day in 6 days) is still sitting in a folder — new spends
+  compete with "post the free thing first" and lose by default. **Resolution:**
+  today nothing new is built. Today's slot is C021 (if it hasn't gone out — Max
+  confirms in-app); the pebble is locked for the next open slot, hard deadline
+  ~10 Aug so made-to-order has runway before the 13th; the garage sign stays
+  the *next build*, gated on C021's in-app read showing any life (Alan's gate:
+  a spend must explain why it survives the pipe that did 2-views-in-48h).
+  Freya keeps the range; Alan keeps the wallet. Both signed up to it.
+- Learned: (references) **fourth consecutive clean sweep** — spacing is now
+  settled practice. Nothing moved: TreatBox still owns Results Day (BYO
+  £29.95), Little Perfections "Proof Within 24 Hours" a **tenth** read,
+  Crafty Bonobo ~eleven weeks stale on Father's Day. **6 days to 13 Aug and
+  both sign rivals still leave the day open.**
+- Route/cost: Higgsfield **545.12, exactly as expected** after C021's 12 — the
+  earlier −20 mystery did not recur. Queue, cheapest first: pebble (0), C021
+  (built), garage sign (~12, gated).
+- Testing next session (falsifiable): **(a)** C021 posting status confirmed by
+  Max (in-app read if live — likes/tags/shares, the LAUGH metrics); **(b)** the
+  pebble ships by ~10 Aug or the window is being wasted, named as such;
+  **(c)** Bond's whereabouts settled by a link or its absence; **(d)** MEDICI's
+  next read — 2 views → anything — tells us if the pipe serves late or not at
+  all.
+- Gaps, named: IG public 429 (day 13); C021 status (format gap); Bond
+  whereabouts; ROAS (no ad-cost source); pebble carousels view-count-less;
+  MEDICI like count missing-not-zero; the reconcile `video_count` one-liner
+  still unfixed, sixth day named — at this point the fix is quicker than the
+  naming.
+- Confidence: (A) high on the Shopify closes and the 171 tripwire; (F) high the
+  household-truths range is right and honest that Alan's gate is the correct
+  price for it — a range nobody sees isn't a range, it's a folder.
+- Signed: Freya · Alan
