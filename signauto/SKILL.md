@@ -1,12 +1,12 @@
 # Daisy Maison Street Signs — agent skill
 
-> **MOVED.** The live system is the standalone signauto repository (seed:
-> `signauto/` at this repo root, see `signauto/EXTRACT.md`). Use its SKILL.md;
-> this copy is frozen and its SKU tables are stale.
-
 Hand this file to any capable coding agent with a terminal on a Windows machine.
 It is self-contained: everything the pipeline needs is committed here, so a fresh
 `git clone` is enough.
+
+**For the daily morning print run, read `AGENT.md` instead** — it is the
+operator-facing runbook (commands: print / go / skip / redo / jig / status).
+This file is for building, repairing, or extending the pipeline underneath it.
 
 **What it does:** turns Daisy Maison street-sign orders into print-ready bed PDFs
 for the Mimaki UJF-6042MkII — correctly laid out, correctly coloured, with the
@@ -30,8 +30,8 @@ right signs carrying the heart — and loads them into the printer's hot folder.
 ## Setup
 
 ```powershell
-git clone https://github.com/maxellison0-glitch/daisy-maison-os
-cd "daisy-maison-os\projects\daisy-street-sign"
+git clone https://github.com/maxellison0-glitch/signauto
+cd signauto
 python -m pip install -r requirements.txt
 ```
 
@@ -97,13 +97,17 @@ know the SKU. So a Family sign reading `THE SMITH & JONES FAMILY`, or a
 Retirement sign whose text contains `&`, renders with the Mr & Mrs heart unless
 the SKU is passed. **Always pass `-Sku`.** `run-batch.ps1` does this for you.
 
-Exactly four SKUs get the heart:
+Exactly six SKUs get the heart (the store was re-SKU'd on 2026-08-06; the ST-*
+SKUs are the same products as their numeric predecessors, and old open orders
+still carry the old SKUs):
 
 | SKU | Product |
 |---|---|
-| `36961` | Mr & Mrs Personalised Street Sign |
+| `ST-001-MR` | Mr & Mrs Personalised Street Sign |
+| `ST-002-VAL` | My Valentine |
+| `36961` | Mr & Mrs (old SKU) |
 | `36965-1-1` | Mr & Mrs First Christmas |
-| `36965-3` | My Valentine |
+| `36965-3` | My Valentine (old SKU) |
 | `36965-3-1` | My Galentine |
 
 Every other classified SKU has it removed. Matching is **exact** — `36961-2` is
@@ -149,21 +153,35 @@ A plain array also works, for a manual run:
 ### 2. Plan the batch — read-only, changes nothing
 
 ```powershell
-python scripts\plan-batch.py orders.json --out-dir plan
+python scripts\plan-batch.py plan\orders-p1.json plan\orders-p2.json --printed-log state\printed.log --out-dir plan
 ```
 
-Keeps sign lines with a positive unfulfilled quantity, packs them into beds, and
-writes `plan\batch-plan.json` plus a review sheet `plan\batch-plan.md`.
+Takes every saved page, deduplicates, subtracts what `state/printed.log` says
+was already printed, keeps sign lines with a positive unfulfilled quantity,
+packs them into beds, and writes `plan\batch-plan.json` plus a review sheet
+`plan\batch-plan.md`. Sign-like lines it cannot classify go in a NEEDS
+ATTENTION list — visible, never guessed, never silently dropped.
 
 **Show the review sheet to a person before going further.** It lists every
 personalisation exactly as it will print, with its colour, and flags anything it
 is unsure about. A typo caught here costs nothing.
 
-### 3. Produce the beds
+### 3. Gate, then produce the beds
 
 ```powershell
+python scripts\select-beds.py plan\batch-plan.json --out plan\go.json
 powershell -NoProfile -ExecutionPolicy Bypass -File production\run-batch.ps1 `
-    -OrdersJson plan\batch-plan.json -OutDir production\print\2026-07-28
+    -OrdersJson plan\go.json -OutDir production\print\2026-08-07
+```
+
+`select-beds.py` is the gate: it refuses any position still carrying a review
+flag, pins the plan-batch → bed-number mapping, and prints the loading map.
+Feed run-batch the go manifest it writes, not the raw plan. After a
+`-SendToPrinter` run succeeds, record it:
+
+```powershell
+python scripts\log-printed.py plan\go.json --log state\printed.log
+git add state\printed.log; git commit -m "print log 2026-08-07"; git push
 ```
 
 Per sign: build the SVG, apply that sign's colour and heart rules, add the 4 mm

@@ -1,27 +1,19 @@
-# Daisy Street Sign Automation
+# signauto operations manual
 
-> **MOVED (2026-08-06, on Max's instruction).** The live system is the
-> standalone **signauto** repository (`github.com/maxellison0-glitch/signauto`;
-> seed at `signauto/` in this repo until it exists - see `signauto/EXTRACT.md`).
-> For the daily print run read `signauto/AGENT.md`; this file's machine detail
-> lives on, updated, as `signauto/docs/OPERATIONS.md`. Note the store was
-> re-SKU'd (ST-001-MR etc.) - the SKU tables below are stale. Do not operate
-> from this file.
-
-> Canonical Jarvis workflow for Daisy Maison street signs.
-> Copy and paste this entire file into Claude, Codex, or another capable AI chat.
-> Current production scope: Mr & Mrs on white acrylic, **Small, Medium and Large**,
-> any of the eight border colourways.
+> The machine manual and repair routes behind `AGENT.md`. For the daily morning
+> run, use AGENT.md; come here when something needs understanding or fixing.
+> Current production scope: the classified SKUs in `production/product-rules.json`
+> on white acrylic, **Small, Medium and Large**, any of the eight border colourways.
 >
-> **Updated 2026-07-26.** Printing is now IMPLEMENTED and authorised. The previous
-> version of this file said never to send anything to a printer or hot folder; that
-> rule is superseded, and the reasons are recorded below.
+> **Updated 2026-08-06.** This system now lives in its own repo (signauto),
+> moved from daisy-maison-os on Max's instruction. Printing is IMPLEMENTED and
+> authorised (since 2026-07-26).
 
 ## Start Here
 
 You are operating Daisy Maison's street-sign system. There are three modes:
 
-1. **PRODUCE SIGNS** - order numbers to printed signs.
+1. **PRODUCE SIGNS** - the daily run. Follow `AGENT.md`; this file is its appendix.
 2. **IMPROVE AUTOMATION** - modify, debug, test, or extend the system.
 3. **NEW SIZE** - all three sizes are built. See Sizes before adding a fourth.
 
@@ -29,10 +21,8 @@ Infer the mode from Max's request. Ask only if genuinely ambiguous.
 
 ## Source Of Truth
 
-`%USERPROFILE%\AA Daisy Maison OS\projects\daisy-street-sign`
-
-Run `git pull --ff-only` from `%USERPROFILE%\AA Daisy Maison OS` before changing
-files. Do not create a copy elsewhere.
+The signauto repo root, wherever it is cloned. Run `git pull --ff-only` before
+changing files. Do not create a copy elsewhere.
 
 ## The Machine And Its One Broken Thing
 
@@ -84,50 +74,37 @@ wanted, Mimaki material code `0048` (acrylic) covers media codes 000000402,
 Orders in, print-ready PDFs out. Everything after this section is the manual
 per-stage route, kept because it is what you need when something goes wrong.
 
-**Pull the orders yourself** with the Shopify connector and save the reply
-verbatim as `orders.json`. Do not reshape it - `plan-batch.py` reads the raw
-`{data:{orders:{nodes:[...]}}}` reply, and a hand-reshape is a place for signs to
-go missing. Run this exact query:
+**Pull the orders yourself** with the Shopify connector, using the exact query
+committed in `queries/orders.graphql`. Save each page's reply verbatim as
+`plan/orders-p1.json`, `plan/orders-p2.json`, ... and page with the `after`
+cursor until `hasNextPage` is false. Do not reshape the JSON - `plan-batch.py`
+reads the raw `{data:{orders:{nodes:[...]}}}` reply, and a hand-reshape is a
+place for signs to go missing.
 
-```graphql
-query UnfulfilledStreetSigns {
-  orders(first: 50, query: "fulfillment_status:unfulfilled AND financial_status:paid AND created_at:>2026-01-01",
-         sortKey: CREATED_AT, reverse: true) {
-    pageInfo { hasNextPage endCursor }
-    nodes {
-      name createdAt
-      customer { displayName }
-      lineItems(first: 25) {
-        nodes {
-          id sku title quantity unfulfilledQuantity
-          product { handle }
-          customAttributes { key value }
-        }
-      }
-    }
-  }
-}
-```
-
-The `created_at` bound is not cosmetic. The store still holds September-2024
-orders marked unfulfilled that carry SKU 36961 with no personalisation at all;
-without the bound they appear in every plan forever. They are flagged rather than
-printed, but they are noise. Move the date on as needed.
-
-Do not filter by SKU in the query. `plan-batch.py` decides what is a sign, from
-`product-rules.json` - a second filter here is a second thing to keep in sync.
+The `created_at` bound in that file is not cosmetic: ancient orders marked
+unfulfilled would otherwise appear in every plan forever. Move the date on as
+the backlog ages. Do not filter by SKU in the query - `plan-batch.py` decides
+what is a sign, from `product-rules.json`.
 
 Then:
 
 ```powershell
-python scripts\plan-batch.py orders.json --out-dir plan
+python scripts\plan-batch.py plan\orders-p1.json plan\orders-p2.json --printed-log state\printed.log --out-dir plan
 ```
 
-Read `plan\batch-plan.md`, check the personalisation, then:
+Read `plan\batch-plan.md`, check the personalisation, then gate and produce:
 
 ```powershell
+python scripts\select-beds.py plan\batch-plan.json --out plan\go.json
 powershell -NoProfile -ExecutionPolicy Bypass -File production\run-batch.ps1 `
-    -OrdersJson plan\batch-plan.json -OutDir production\print\2026-07-27
+    -OrdersJson plan\go.json -OutDir production\print\2026-08-07
+```
+
+After a `-SendToPrinter` run succeeds, record and share what was printed:
+
+```powershell
+python scripts\log-printed.py plan\go.json --log state\printed.log
+git add state\printed.log; git commit -m "print log 2026-08-07"; git push
 ```
 
 `run-batch.ps1` chains build -> recolour -> bleed -> impose -> jig -> PDF and
@@ -287,7 +264,7 @@ Then a human presses **ENTER** on the printer. See the known fault above.
 ## Driving RasterLink7 From Code
 
 RasterLink7 has no CLI. It can be driven with PowerShell synthetic input; the full
-pattern is in `memory/rasterlink7-gui-automation.md`. Essentials:
+pattern is in the max-os repo, `memory/rasterlink7-gui-automation.md`. Essentials:
 
 - Processes are `unitUI` (the window), `unitCtrl`, `unitRip`, `unitMDC` - **not**
   anything called "RasterLink". Searching for that name finds nothing.
@@ -410,18 +387,23 @@ powershell -NoProfile -ExecutionPolicy Bypass -File production\recolour-sign.ps1
 because sibling SKUs are different products:
 
 ```
-36961      Mr & Mrs Personalised Street Sign   -> HEART
+ST-001-MR  Mr & Mrs Personalised Street Sign   -> HEART   (re-SKU of 36961)
+ST-002-VAL My Valentine                        -> HEART   (re-SKU of 36965-3)
+36961      Mr & Mrs (old SKU)                  -> HEART
 36965-1-1  Mr & Mrs First Christmas            -> HEART
-36965-3    My Valentine                        -> HEART
+36965-3    My Valentine (old SKU)              -> HEART
 36965-3-1  My Galentine                        -> HEART
-36961-1    Engagement (Yes Day)                -> no heart, despite the 36961 base
+ST-003-FAM Family Street Sign                  -> no heart (re-SKU of 36965)
+ST-516-YD  Engagement (Yes Day)                -> no heart (re-SKU of 36961-1)
+36961-1    Engagement (old SKU)                -> no heart, despite the 36961 base
 36961-2    Retirement                          -> no heart, despite the 36961 base
-36965      Family Street Sign                  -> no heart
+36965      Family Street Sign (old SKU)        -> no heart
 36965-3-2  Mother's Day Our Family             -> no heart
 ```
 
-Four heart SKUs, confirmed complete by Max 2026-07-26. Anything not on that list
-gets no heart.
+Heart rules confirmed complete by Max 2026-07-26; the ST-* re-SKUs were mapped to
+the same products by handle and title against the live catalogue on 2026-08-06.
+Anything not on that list gets no heart - and an unlisted SKU is refused outright.
 
 **build.py draws the heart whenever line 1 contains an ampersand**, because that is
 where the locked signature unit sits. It has no idea what SKU it is building. So the

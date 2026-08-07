@@ -1,0 +1,12 @@
+# Daisy Maison street-sign pipeline - Python dependencies.
+#   python -m pip install -r requirements.txt
+#
+# Versions are the ones the pipeline is verified against on Max's machine, given
+# as minimums rather than pins so a newer environment is not blocked. If a fresh
+# install ever disagrees with a committed output, pin to exactly these.
+
+fonttools>=4.63.0   # reads times.ttf metrics and subsets the embedded font
+pillow>=12.3.0      # heart alpha channel, and the rendered-mask geometry checks
+numpy>=2.5.1        # mask maths in verify-heart-placement.py
+shapely>=2.1.2      # insets the cut contour to make the inner panel and the bleed
+tzdata>=2025.1      # IANA zones for zoneinfo on Windows - log-printed.py stamps Europe/London dates

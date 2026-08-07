@@ -1,0 +1,9 @@
+# Working output - reproducible from the order text plus these scripts, and it
+# carries customer names. plan/ also holds the raw Shopify pulls.
+plan/
+production/print/
+production/jig-*
+artwork/orders/
+_check/
+__pycache__/
+*.pyc

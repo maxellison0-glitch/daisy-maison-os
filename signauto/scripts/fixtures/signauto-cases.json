@@ -1,0 +1,109 @@
+{
+  "_comment": "Synthetic orders exercising every signauto planner behaviour. Used by scripts/test-plan-batch.py.",
+  "data": { "orders": { "pageInfo": { "hasNextPage": false, "endCursor": "x" }, "nodes": [
+    {
+      "name": "#DM90001", "createdAt": "2026-08-01T09:00:00Z",
+      "customer": { "displayName": "Test One" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90001-1", "sku": "ST-001-MR", "title": "Personalised Mr & Mrs Street Sign Gift", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "MR & MRS TEST" },
+            { "key": "Line 2", "value": "FROM THIS DAY FORWARD - 01/01/2027" },
+            { "key": "Size", "value": "Large 57 x 12cm (+£8.99)" },
+            { "key": "_Bundle ID", "value": "street-sign-1" } ] },
+        { "id": "gid://li/90001-2", "sku": "XT-626-SUL", "title": "Size Upgrade — Large", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "9-large-street-sign" },
+          "customAttributes": [ { "key": "_Bundle ID", "value": "street-sign-1" }, { "key": "Upgrade", "value": "Large 57x12cm" } ] }
+      ] }
+    },
+    {
+      "name": "#DM90002", "createdAt": "2026-08-01T09:05:00Z",
+      "customer": { "displayName": "Test Two" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90002-1", "sku": "ST-003-FAM", "title": "Personalised Family Street Sign Gift", "quantity": 2, "unfulfilledQuantity": 2,
+          "product": { "handle": "family-personalised-street-sign" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "THE TESTERS" },
+            { "key": "Line 2", "value": "" },
+            { "key": "Colour border", "value": "sage" },
+            { "key": "Size", "value": "Small 28 x 12cm" } ] }
+      ] }
+    },
+    {
+      "name": "#DM90003", "createdAt": "2026-08-01T09:10:00Z",
+      "customer": { "displayName": "Test Three" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90003-1", "sku": "36955", "title": "Personalised Grandparent Gift Street Sign", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "grandparent-garden-personalised-street-sign" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "THE GRANS" },
+            { "key": "Colour ", "value": "Grass" },
+            { "key": "Size", "value": "Medium (45x12x0.3cm)" } ] },
+        { "id": "gid://li/90003-2", "sku": "XT-627-SUM", "title": "Size Upgrade — Medium", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "6-medium-street-sign" },
+          "customAttributes": [] }
+      ] }
+    },
+    {
+      "name": "#DM90004", "createdAt": "2026-08-01T09:15:00Z",
+      "customer": { "displayName": "Test Four" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90004-1", "sku": "ST-001-MR", "title": "Personalised Mr & Mrs Street Sign Gift", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+          "customAttributes": [] },
+        { "id": "gid://li/90004-2", "sku": "XT-627-SUM", "title": "Size Upgrade — Medium", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "6-medium-street-sign" },
+          "customAttributes": [] }
+      ] }
+    },
+    {
+      "name": "#DM90005", "createdAt": "2026-08-01T09:20:00Z",
+      "customer": { "displayName": "Test Five" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90005-1", "sku": "ST-005-BOS", "title": "(+£13.40) **Bundle OFFER** Street sign x2", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "13-40-bundle-offer-street-sign-x2" },
+          "customAttributes": [] }
+      ] }
+    },
+    {
+      "name": "#DM90006", "createdAt": "2026-08-01T09:25:00Z",
+      "customer": { "displayName": "Test Six" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90006-1", "sku": "ST-001-MR", "title": "Personalised Mr & Mrs Street Sign Gift", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "MR & MRS PRINTED" },
+            { "key": "Line 2", "value": "ALREADY DONE" },
+            { "key": "Size", "value": "Small 28 x 12cm" } ] },
+        { "id": "gid://li/90006-2", "sku": "PP-002-WED", "title": "Personalised Wedding Pebble Picture Gift", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "wedding-flower-arch-personalised-pebble-picture" },
+          "customAttributes": [ { "key": "Line 1", "value": "NOT A SIGN" } ] }
+      ] }
+    },
+    {
+      "name": "#DM90007", "createdAt": "2026-08-01T09:30:00Z",
+      "customer": { "displayName": "Test Seven" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90007-1", "sku": "ST-001-MR", "title": "Personalised Mr & Mrs Street Sign Gift", "quantity": 2, "unfulfilledQuantity": 2,
+          "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "MR & MRS TWICE" },
+            { "key": "Line 2", "value": "ONE OF TWO DONE" },
+            { "key": "Size", "value": "Small 28 x 12cm" } ] }
+      ] }
+    },
+    {
+      "name": "#DM90008", "createdAt": "2026-08-01T09:35:00Z",
+      "customer": { "displayName": "Test Eight" },
+      "lineItems": { "nodes": [
+        { "id": "gid://li/90008-1", "sku": "ST-001-MR", "title": "Personalised Mr & Mrs Street Sign Gift", "quantity": 1, "unfulfilledQuantity": 1,
+          "product": { "handle": "mr-mrs-personalised-street-sign-gift" },
+          "customAttributes": [
+            { "key": "Line 1", "value": "MR & MRS SKIPPED" },
+            { "key": "Line 2", "value": "OPERATOR SAID SKIP" },
+            { "key": "Size", "value": "Small 28 x 12cm" } ] }
+      ] }
+    }
+  ] } }
+}
