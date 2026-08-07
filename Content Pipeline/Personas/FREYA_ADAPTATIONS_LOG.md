@@ -840,3 +840,35 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   Alan signs up to: the ledger line appears in every take-home, and a
   zero-spend day that ships a queued asset is a good day.
 - Signed: Freya · Alan
+
+### 2026-08-07 — third addendum: volume mandate, second post live
+
+- Max, verbatim: **"I need volume... two to four posts a day on TikTok is
+  mandatory for us, trying different styles every time: a video, a carousel,
+  funny, emotional, different colours."** And the mission statement the whole
+  pipeline now serves: **"the posts that go viral, that's your job...
+  psychologically, you need to understand what it takes to go viral on TikTok
+  with our products, and then we turn them into adverts."** He posts his own
+  to Instagram; ours is the TikTok viral lab.
+- Implemented: the afternoon Routine is **ENABLED and expanded** — it now
+  fires **3× daily (10:30/14:30/18:30 UTC)** with style-rotation as law (each
+  post must differ from the day's earlier ones in format OR engine OR
+  palette), a skip rule (a skipped slot beats a beige post, but ≥2 posts/day
+  is mandatory), and hypothesis-tagging on every PUBLISH_LOG row so winners
+  can be diagnosed into adverts. The morning Routine now plans the day's
+  rotation and keeps the queue stocked.
+- **Second post of the day is LIVE: the graduation pebble carousel** —
+  publish_id `p_pub_url~v2.7671186439752730657`, PUBLISH_COMPLETE, is_aigc
+  false (real product photos). Style rotation honoured on day one: slot 1 was
+  LAUGH/synthetic/joke-sign; slot 2 is FEEL+SOLVE/real-product/occasion. The
+  results-day runway (13 Aug) is no longer being wasted — shipped 3 days
+  before the deadline we set ourselves.
+- Ledger: **0 of 60 spent today.** Two posts out, both zero-credit. The slot
+  Routine's first firing is 10:30 UTC today; queue holds "One shed. Two
+  futures." (built C020 stills, comments engine) and the garage-sign build
+  (~12 credits) as the day's likely third/fourth beats.
+- Tomorrow's falsifiables: (a) C021 + pebble in-app reads (Max's eyes — photo
+  format); (b) MEDICI's next measurable read; (c) the slot Routine actually
+  fired 3× and respected rotation + ledger; (d) first hypothesis diagnosis:
+  which of today's 2-4 posts earned the advert pipeline.
+- Signed: Freya · Alan
