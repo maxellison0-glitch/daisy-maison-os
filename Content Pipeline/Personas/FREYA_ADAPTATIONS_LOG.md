@@ -930,3 +930,24 @@ label and clock agree, so the sequence self-heals here rather than inventing an
   no AI-rendered text — is the default sign lane. Simple prompts beat clever
   ones. Both Routines rewritten to half the length saying exactly that.
 - Signed: Freya · Alan
+
+### 2026-08-07 — overlay killed, generation lane confirmed, Sir J queued
+
+- Max killed the overlay/reprint lane for content ("flawed every time; if we
+  want a different background you can't do it"). Confirmed by test: the lane
+  is **single-pass generation, simple prompt, real product photo as ref 1,
+  exact wording spelled, any scene described** — two garage takes, both
+  exact, 4 credits. Max: "sign looks real." Both Routines already updated.
+- **Found gold in the live queue:** order #DM38448 (real, last night) — the
+  funniest personalisation fields this account has ever seen. Built as a
+  redacted quote-card (name + town blocked, typo kept) + the real train-sign
+  range wall as slide 2. **14:30 slot: post exactly these two files —**
+  `READY_TO_POST/order-card-sir-j.jpg` + `order-card-sir-j-slide2.jpg`,
+  caption: "We print what you type. No questions. Some concerns. (Real
+  order, name protected — congratulations, Sir J. 🏆)", hashtags
+  #personalised #madetoorder #funnygifts #stagdo #ukgifts #realorder, a
+  trending upbeat track, is_aigc FALSE (typographic card + real photo),
+  comments ON. That makes 4/4 today — **18:30 slot SKIPS.**
+- Garage takes (DM-C022, take-01 the pick) queued for tomorrow slot 1 —
+  dress with pill + music first. Ledger: **4 of 60 spent.**
+- Signed: Freya · Alan
