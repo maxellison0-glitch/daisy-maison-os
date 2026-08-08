@@ -1,0 +1,13 @@
+{
+  "concept": "DM-C023-NEW-HOME",
+  "date": "2026-08-08",
+  "brief": "FEEL slot post. Hook 'the last thing you put up makes it a home' -> THE TAYLORS / EST. 2026, sage, new-home hallway with moving boxes. Single image per the no-filler-slides rule.",
+  "model": "nano_banana_2 (served nano_banana_flash)", "resolution": "2k", "aspect_ratio": "9:16",
+  "credits": 2, "reference": "492134f2 real-product front (construction/scale/type only)",
+  "jobs": [
+    {"take": 1, "id": "297d7e70-9bfb-403e-a0b5-23e81a27615b", "qc": "reject - wording exact but panel too tall, reads chunky vs 570x125"},
+    {"take": 2, "id": "2d90d57e-886b-4ea0-8aaa-2b2ebd4bb751", "qc": "agent-pass PICK - correct thin proportion, smaller in frame, wording exact, line 2 tiny; two hole dots patched at (97,861)/(994,861)+(1004,859) ring-median on the pilled 4:5"}
+  ],
+  "status": "POSTED 2026-08-08 10:30 slot - publish_id p_pub_url~v2.7671608741783013408, single image, sage pill, music Little Things (Adrian Berenguer)",
+  "note": "First single-image post under the 'strong single beats padded pair' rule. Sage colourway lane test."
+}
