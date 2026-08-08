@@ -996,3 +996,8 @@ an advert). Shopify: 73 orders, £2,021, CVR 5.54%. Ledger: **0 of 60 spent**
 toward the account's organic tier. Names/towns always redacted.
 
 **Posted today so far:** 1 (slot 1). Signed: Freya · Alan
+
+**Addendum — Max killed the Sir J video idea (both versions).** No card
+rerun, no censored-sign sequel — REJECTED, idea dead entirely. No Sir J
+retreads in any form. 14:30 slot: fresh concept from the standard rotation
+(new wording, new scene) or skip — the day is fine at 2–3 posts. — Freya
