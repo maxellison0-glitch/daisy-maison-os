@@ -1211,3 +1211,22 @@ Entry format:
   presented as a live social post.
 
 — Alan
+
+## 2026-08-08 — Alan
+
+- **Our own account (the loop that matters):** fresh pull 06:36 UTC — 184
+  followers, 175 videos (up 4: yesterday's posts, tripwire integer by hand
+  again, line 198 bug still unfixed). First reads on yesterday's four:
+  **Sir J order card 239 views in ~16h** — fastest starter this system has
+  had; shed vote 252 (career total); pebble 234; C021 lineage 19. For scale:
+  the account's best-ever is 9,400 (found humour + trending sound) and
+  "Three that came through this week" (real-order roundup, same species as
+  Sir J) sits at 704. Early signal: **real-order found humour is the only
+  system format pacing toward the account's organic tier.**
+- **TreatBox:** TikTok read blocked again (anti-bot, "no videos" on a
+  266K-follower account — false). No IG route since the 429 wall. Recorded
+  as blocked, not skipped. No competitor numbers invented.
+- Shopify 7 Aug: 73 orders, £2,021.41, AOV £22.53, 1,065 sessions, CVR
+  5.54% — best day of the week, up from 64/£1,722 on the 6th.
+
+— Alan

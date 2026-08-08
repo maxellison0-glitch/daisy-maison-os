@@ -967,3 +967,32 @@ PUBLISH_COMPLETE. That's 4/4 today — 18:30 slot skips. Style logged as
 found-humour / screenshot-bait; if this outperforms the generated carousels,
 the order queue becomes a standing content mine. Ledger unchanged: 6 of 60.
 — Freya · Alan
+
+### 2026-08-08 — slot 1 out, the Sir J signal, day plan
+
+**Alan, yesterday honestly:** 4 posts out, and the early ladder says the
+found-humour card is the one moving — **Sir J 239 views in 16h** while the
+generated carousels sit at their usual 230-250 career pace. That matches the
+account's all-time top three (9,400 / 6,501 / 4,574 — all found/organic, none
+an advert). Shopify: 73 orders, £2,021, CVR 5.54%. Ledger: **0 of 60 spent**
+(slot 1 used yesterday's takes).
+
+**Freya, today's three (Match Law):**
+1. **BACKED & POSTED (slot 1):** pill "POV: you asked him where anything is"
+   → sign "IT'S IN THE GARAGE / SOMEWHERE". publish_id
+   `p_pub_url~v2.7671547094087321633`, PUBLISH_COMPLETE, AIGC on, music
+   "Grifting in Vegas", hole dots patched pre-post. LAUGH · black · carousel.
+2. **10:30 slot — FEEL, different colour:** hook "The last thing you put up
+   makes it a home" → sign "THE [SURNAME] FAMILY / EST. 2026", sage or
+   duskypink, generate on nano_banana_2 (1cr/take, 2 takes), hallway/doorway
+   scene, pill staggered slot 2.
+3. **14:30 slot — VIDEO (first Kling of the mandate):** animate the Sir J
+   quote card or the garage still — slow push-in, nothing moves but camera
+   (≈12cr). If the card, caption "still can't believe we printed this."
+   18:30 skips if that makes 3 — three good ones beat four fillers.
+
+**Standing note:** mine the order queue every morning — Sir J and the
+704-view roundup are the same species and it's the only species pacing
+toward the account's organic tier. Names/towns always redacted.
+
+**Posted today so far:** 1 (slot 1). Signed: Freya · Alan
