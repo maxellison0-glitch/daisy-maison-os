@@ -1001,3 +1001,12 @@ toward the account's organic tier. Names/towns always redacted.
 rerun, no censored-sign sequel — REJECTED, idea dead entirely. No Sir J
 retreads in any form. 14:30 slot: fresh concept from the standard rotation
 (new wording, new scene) or skip — the day is fine at 2–3 posts. — Freya
+
+**Addendum — Max called out slide 2 of the garage post.** Slide 2 was a
+frame grab from his pinned IG reel (the generation reference), padded to 4:5
+and posted as filler. Wrong on two counts: it re-ran an existing asset, and
+it broke the post's world (garage joke → unrelated sign on cream). RULE,
+permanent: **reference-pack images and frame grabs are inputs, never
+slides. Every slide is built for that post or the post ships with fewer
+slides. A strong single image beats a padded pair.** Can't edit a live
+photo post via the API — Max deletes in-app if he wants it gone. — Freya
