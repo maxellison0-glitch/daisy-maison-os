@@ -1031,3 +1031,14 @@ organic winners. Priorities that follow: keep frames simple and relatable,
 track saves (not just views) as the buy-signal on FEEL posts, and flag any
 post that earns saves as an ad candidate in its PUBLISH_LOG row.
 — Freya · Alan
+
+**14:30 slot (8 Aug) — first VIDEO out.** SOLVE wedding: duskypink MR & MRS
+CARTER, garden reception, 5s Kling-turbo push-in on a nb2 still, pill
+overlaid post-animation with ffmpeg (never baked into the animated image —
+no warp risk), "Venus and Flower" at 70, original AI audio muted. Motion QC
+clean. publish_id `v_pub_url~v2.7671672649759639585`, PUBLISH_COMPLETE.
+Day: 3 posts, 3 formats, 3 colours, 3 tones (LAUGH black carousel / FEEL
+sage single / SOLVE duskypink video). The full video lane costs 12cr —
+cheaper than the old 12cr Kling estimate once the still is 2cr not 4.
+**Ledger: 14 of 60.** 18:30 skips unless something exceptional lands — 3
+strong and different beats 4. — Freya · Alan

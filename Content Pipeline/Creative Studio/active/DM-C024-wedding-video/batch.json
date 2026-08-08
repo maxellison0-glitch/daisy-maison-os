@@ -1,0 +1,21 @@
+{
+  "concept": "DM-C024-WEDDING-VIDEO",
+  "date": "2026-08-08",
+  "brief": "First VIDEO of the volume mandate. SOLVE, wedding season. Hook 'what do you get the couple who has everything?' -> MR & MRS CARTER / 12TH SEPTEMBER 2026, duskypink, garden reception with marquee + festoon lights.",
+  "still": {
+    "model": "nano_banana_2 (served nano_banana_flash)", "resolution": "2k", "aspect_ratio": "9:16", "credits": 2,
+    "reference": "492134f2 real-product front",
+    "jobs": [
+      {"take": 1, "id": "c378bcc8-8f68-4107-9bf4-85d2087c390d", "qc": "agent-pass PICK - golden hour, sign smaller/neater, wording exact, line 2 small"},
+      {"take": 2, "id": "4e3e7b87-81f6-4ab1-8d22-f3b749334dfc", "qc": "pass but sign spans wider (ends near frame edges) - second choice"}
+    ]
+  },
+  "video": {
+    "model": "kling3_0_turbo", "duration_s": 5, "resolution": "1080p", "credits": 10,
+    "job": "b92317d0-2021-4ba6-abcc-aa324f673652",
+    "motion_qc": "pass - no warp/morph, text crisp throughout, gentle push-in; sign ends leave frame in final ~1s (natural push-in crop, accepted)",
+    "post": "pill overlaid post-animation via ffmpeg (PIL transparent PNG, duskypink #CB9CA5, top slot y=190) - pills never baked into the animated image; scaled 1076x1928 -> 1080x1920, original AI audio stripped"
+  },
+  "status": "POSTED 2026-08-08 14:30 slot - publish_id v_pub_url~v2.7671672649759639585, music Venus and Flower (Austin Farwell) vol 70, original sound 0",
+  "note": "Lane extension proven: still (nb2, 2cr) -> Kling turbo animate (10cr) -> ffmpeg pill overlay. 12cr total per video vs 12 for Kling alone on the old estimate."
+}
