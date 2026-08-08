@@ -2,8 +2,7 @@
 
 > **MOVED (2026-08-06, on Max's instruction).** The live street-sign system is
 > now the standalone **signauto** repository
-> (`github.com/maxellison0-glitch/signauto`; until that repo exists, the seed
-> is the `signauto/` folder at this repo's root - see `signauto/EXTRACT.md`).
+> (https://github.com/maxellison0-glitch/signauto).
 > signauto adds the agent-run morning workflow (AGENT.md), the printed.log
 > anti-reprint state, and the re-SKU'd product rules (ST-001-MR etc.).
 > **This folder is now a frozen snapshot: do not run production from it and do

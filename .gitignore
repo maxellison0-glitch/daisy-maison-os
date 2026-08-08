@@ -31,18 +31,6 @@ projects/daisy-street-sign/plan/
 !workflows/starred/
 !workflows/starred/daisy-street-sign-automation.md
 
-# signauto seed: the street-sign system packaged to become its own repository
-# (see signauto/EXTRACT.md). Delete this whole block once the standalone repo
-# exists and the folder is removed.
-!signauto/
-!signauto/**
-signauto/**/__pycache__/
-signauto/**/*.pyc
-signauto/plan/
-signauto/production/print/
-signauto/production/jig-*
-signauto/artwork/orders/
-
 
 !projects/gift-box/
 !projects/gift-box/**

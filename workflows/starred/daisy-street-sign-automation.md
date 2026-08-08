@@ -1,8 +1,7 @@
 # Daisy Street Sign Automation
 
 > **MOVED (2026-08-06, on Max's instruction).** The live system is the
-> standalone **signauto** repository (`github.com/maxellison0-glitch/signauto`;
-> seed at `signauto/` in this repo until it exists - see `signauto/EXTRACT.md`).
+> standalone **signauto** repository (https://github.com/maxellison0-glitch/signauto).
 > For the daily print run read `signauto/AGENT.md`; this file's machine detail
 > lives on, updated, as `signauto/docs/OPERATIONS.md`. Note the store was
 > re-SKU'd (ST-001-MR etc.) - the SKU tables below are stale. Do not operate

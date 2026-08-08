@@ -1,7 +1,6 @@
 # Daisy Maison Street Signs — agent skill
 
-> **MOVED.** The live system is the standalone signauto repository (seed:
-> `signauto/` at this repo root, see `signauto/EXTRACT.md`). Use its SKILL.md;
+> **MOVED.** The live system is the standalone signauto repository (https://github.com/maxellison0-glitch/signauto). Use its SKILL.md;
 > this copy is frozen and its SKU tables are stale.
 
 Hand this file to any capable coding agent with a terminal on a Windows machine.
