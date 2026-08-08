@@ -1018,3 +1018,16 @@ Take 1 binned (panel too tall), take 2 posted after hole-dot patches.
 publish_id `p_pub_url~v2.7671608741783013408`, PUBLISH_COMPLETE. Day: 2
 posts (garage LAUGH black, this FEEL sage). 14:30 rotates again — no Sir J
 retreads, rejected ideas stay dead. Ledger: **2 of 60.** — Freya · Alan
+
+**Addendum — first save, and Max set the roadmap.** THE TAYLORS post got a
+SAVE within hours — the exact FEEL metric (a save = "I could use that"), and
+Max's read: a relatable woman + a dead-simple frame is all it takes. His
+verdict verbatim: "I'd rather we had basic and not something that doesn't
+really make sense." THE ROADMAP, from Max: this daily automation IS the
+marketing scheme — we test the organic algorithm for free every day, 2–4
+posts/day every day until Christmas; what works becomes a TikTok advert;
+target: **running TikTok ads by September/October** off the back of proven
+organic winners. Priorities that follow: keep frames simple and relatable,
+track saves (not just views) as the buy-signal on FEEL posts, and flag any
+post that earns saves as an ad candidate in its PUBLISH_LOG row.
+— Freya · Alan
