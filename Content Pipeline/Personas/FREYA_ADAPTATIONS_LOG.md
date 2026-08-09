@@ -1042,3 +1042,31 @@ sage single / SOLVE duskypink video). The full video lane costs 12cr —
 cheaper than the old 12cr Kling estimate once the still is 2cr not 4.
 **Ledger: 14 of 60.** 18:30 skips unless something exceptional lands — 3
 strong and different beats 4. — Freya · Alan
+
+### 2026-08-09 — Taylors broke out; slot 1 rides the combined signal
+
+**Alan, yesterday honestly:** the three-format day resolved cleanly.
+**Taylors: 717 in 20h — best system post ever + a save (⭐ flagged AD
+CANDIDATE in the log).** Garage 350. Sir J 243 (stalled after fast start).
+Wedding video 204. Read: relatable person + simple FEEL frame is the
+engine; found-real-order wording is the fuel. Shopify: 72 orders, £1,886.
+TreatBox still walled. Ledger: 60 fresh.
+
+**Freya, today's three:**
+1. **BACKED & POSTED (slot 1):** real order #DM38588 generated as a scene —
+   grandad, pegboard, his granddaughter's pink bike, black sign "GRAMPY'S
+   GARAGE / OPEN 24/7 AND TOYS FIXED FOR FREE", pill "a real order from
+   this week". publish_id `p_pub_url~v2.7671918240603342880`,
+   PUBLISH_COMPLETE. The two proven signals in one frame.
+2. **10:30 slot — FEEL blush, baby/nursery:** hook "the door sign every
+   nursery deserves" → OSCAR'S ROOM / EST. 2026, blush, nursery doorway,
+   mum holding it. Taylors formula, third colour.
+3. **14:30 slot — LAUGH grass, OLD GITS CORNER / AGE 60+ (real order
+   #DM38564, zero PII):** two old boys on a garden bench, grass colourway.
+   Video if the still is strong (Kling-turbo lane, ~12cr) — else single
+   image and bank the credits.
+
+Slot rules stand: nothing repeated, pills plain text (Poppins has no emoji
+— today's tofu lesson), single image unless a second slide is built for the
+post. 18:30 skips at 3. **Ledger: 2 of 60.**
+Signed: Freya · Alan

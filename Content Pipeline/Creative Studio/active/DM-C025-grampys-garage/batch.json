@@ -1,0 +1,13 @@
+{
+  "concept": "DM-C025-GRAMPYS-GARAGE",
+  "date": "2026-08-09",
+  "brief": "Real order #DM38588 (create-your-own, zero PII: no surname/town in wording) generated as a scene: GRAMPY'S GARAGE / OPEN 24/7 AND TOYS FIXED FOR FREE. Combines the two proven signals: real-order authenticity + Taylors relatable-person formula.",
+  "model": "nano_banana_2 (served nano_banana_flash)", "resolution": "2k", "aspect_ratio": "9:16",
+  "credits": 2, "reference": "492134f2 real-product front",
+  "jobs": [
+    {"take": 1, "id": "674dec5d-05ad-486e-8259-8c2bac3c1b82", "qc": "agent-pass PICK - grandad + pegboard + PINK KID'S BIKE (sells 'toys fixed for free' visually), wording exact incl apostrophe, line 2 small; two hole dots patched (117,855)/(983,863)"},
+    {"take": 2, "id": "31b47b5f-16cc-4e12-be7e-3691b01122ec", "qc": "pass - cardigan variant, closer crop, sign larger in frame; second choice"}
+  ],
+  "status": "POSTED 2026-08-09 slot 1 - publish_id p_pub_url~v2.7671918240603342880, pill 'a real order from this week' (black), music In the Spring (Jerome Chauvel)",
+  "lesson": "Poppins has no emoji glyphs - emoji in pill text renders as tofu. Pills are plain text only; emoji live in captions."
+}

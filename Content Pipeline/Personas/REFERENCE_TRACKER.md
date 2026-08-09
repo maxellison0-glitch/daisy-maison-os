@@ -1230,3 +1230,22 @@ Entry format:
   5.54% — best day of the week, up from 64/£1,722 on the 6th.
 
 — Alan
+
+## 2026-08-09 — Alan
+
+- **Our account, the three-format test resolved (9 Aug 06:36 pull, 184
+  followers, 178 videos):** THE TAYLORS sage FEEL single **717 views in
+  ~20h — best system post ever**, beat the 710 all-time roundup, plus
+  Max-confirmed save. Garage LAUGH carousel 350 @ 24h. Sir J card 243 @ 40h
+  (fast start, stalled). Wedding video 204 @ 16h. **Verdict: relatable
+  person + simple FEEL frame wins; single image beats carousel this week;
+  video lane needs more reps before judging.**
+- TreatBox: TikTok read blocked again (anti-bot). Recorded, not invented.
+- Shopify 8 Aug: 72 orders, £1,886.43, AOV £20.83 — second £1.8k+ day
+  running.
+- Order-queue mine: two zero-PII gems — "GRAMPY'S GARAGE / OPEN 24/7 AND
+  TOYS FIXED FOR FREE" (#DM38588, → today's slot 1) and "OLD GITS CORNER /
+  AGE 60+" (#DM38564, queued). Wedding line-2 poetry everywhere ("LOOKS
+  LIKE WE MADE IT") — a future roundup format.
+
+— Alan
