@@ -45,6 +45,36 @@ requesting permission for each normal production step.
   posts publish autonomously.
 - The creative target is premium and frictionless, never AI spectacle.
 
+## Content creation rules — hard stops
+
+These come from Max's direct feedback. They are not guidelines. They are
+rules that override any cost-saving or efficiency logic.
+
+1. **Never overlay text on a generated or reprinted image.** No hook pills,
+   no captions composited onto the photo. The image ships clean. On-screen
+   text belongs in the platform's native caption tools or in video
+   post-production — never baked into a still image by this pipeline.
+
+2. **Never reuse the same plate/background for multiple posts.** A plate
+   reprinted with different wording is the same image to anyone who has seen
+   it before. Posting the same Freya-in-hallway scene with swapped sign text
+   is recycled content, not new content. Every post must have a distinct,
+   freshly generated background/scene created via Higgsfield.
+
+3. **Use Higgsfield to create new backgrounds — be creative.** The point of
+   the image generation tooling is to produce new, varied, visually
+   interesting scenes. Reprint is a production tool for carousels within a
+   single post (multiple wordings, same scene, shown together). It is NOT
+   a content strategy for separate posts across days.
+
+4. **Zero credits is not a virtue if the output is not usable.** Cost
+   efficiency means nothing when the content is recycled or lazy. Spend the
+   credits to make something worth posting.
+
+Origin: Max's feedback on the DM-HOME-STORY post, 10 Aug 2026. The post
+used a reprinted plate with an overlaid text pill and was correctly rejected
+as awful.
+
 When Max requests Claude and Codex together, invoke the real Codex collaborator
 through:
 
