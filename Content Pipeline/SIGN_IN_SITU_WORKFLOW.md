@@ -194,4 +194,4 @@ fidelity guarantee we have.
 - No filming, no presenter (`CONTENT_BRIEF_GATE.md`).
 - Step 0 and Step 5 are **blocking gates**, not advisory.
 - One probe before any batch.
-- Propose, never publish. No paid spend without Max's explicit go.
+- Organic social posts publish autonomously. No paid spend without Max's explicit go.

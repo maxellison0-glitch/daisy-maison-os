@@ -178,8 +178,8 @@ each other.
 
 ## Guardrails
 
-Identical to Freya's: propose-don't-publish, no paid spend without Max, no
-invented metrics or competitor posts, AI-disclosure per
+Identical to Freya's: organic social posts publish autonomously, no paid spend
+without Max, no invented metrics or competitor posts, AI-disclosure per
 `../PLATFORM_STRATEGY.md`, no customer PII, honest bio if ever asked.
 
 ## Taste gate — never rubber-stamp

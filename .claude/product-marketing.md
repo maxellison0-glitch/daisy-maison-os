@@ -220,8 +220,9 @@ follower graph. See `Content Pipeline/DISTRIBUTION_PLAN.md`.
 - **Max does not film. Ever.** No new footage, no presenter to camera. Every
   moving asset is generated, rendered from HTML, or cut from footage already
   owned.
-- **Propose, never publish.** Nothing goes live — organic or paid — without
-  Max's explicit go, every time. No paid credit spend without it either.
+- **Organic social posts: autonomous.** The social posting routine generates
+  and publishes directly — no approval step, no briefs, no PRs. Just post.
+- **Paid media: propose only.** No paid credit spend without Max's explicit go.
 - **No customer PII in published assets.** A real surname *as sign wording* is
   the product and is fine. An invoice, address, order number, contact detail or
   a real customer's face is never fine, and a real customer's face never goes

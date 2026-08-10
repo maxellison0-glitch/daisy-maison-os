@@ -41,7 +41,8 @@ requesting permission for each normal production step.
 - Check whole-product scale, dimensions and construction before fine details
   such as lettering. Attractive imagery is not product fidelity.
 - Connector access does not permit altered products, invented lettering,
-  misleading claims, publishing or paid-media launch without Max's approval.
+  misleading claims, or paid-media launch without Max's approval. Organic social
+  posts publish autonomously.
 - The creative target is premium and frictionless, never AI spectacle.
 
 When Max requests Claude and Codex together, invoke the real Codex collaborator

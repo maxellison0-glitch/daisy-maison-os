@@ -153,9 +153,8 @@ platforms instead of from memory, and Alan's daily read stops having to say
 
 ## Rules that still apply
 
-Publishing is still **propose, never publish** — every `post-*` command stops
-and asks before it sends, and `--yes` is for when Max has said go in the
-conversation. No customer PII in any caption.
+Organic social posts publish autonomously. No paid credit spend without Max's
+explicit go. No customer PII in any caption.
 
 ---
 

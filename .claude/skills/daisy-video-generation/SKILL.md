@@ -20,7 +20,7 @@ writing a prompt.
 
 **Read `.claude/product-marketing.md` first** for the product truth and the hard
 constraints — especially *Max does not film*, *no customer faces into a
-generator*, and *propose, never publish*.
+generator*, and *organic social posts publish autonomously; paid media needs Max's go*.
 
 ---
 
@@ -37,8 +37,9 @@ job ran — 18 credits for a prompt that said "test". On this tool the flag goes
 preflight comes back with a job `id` and `status: "pending"`, it is not a
 preflight; it is a generation.
 
-**No paid generation without Max's explicit go in the conversation.** Not
-implied by a previous approval, not implied by "carry on".
+**No paid generation above 5 credits without Max's explicit go.** Organic social
+image generation (1-2 credits) runs autonomously. Expensive video generation
+still needs approval.
 
 **NEVER GENERATE THE SAME PROMPT TWICE IN ONE BATCH.** Added 28 Jul 2026 by
 Max, after two identical 18-credit video takes: *"Don't ever make two videos of

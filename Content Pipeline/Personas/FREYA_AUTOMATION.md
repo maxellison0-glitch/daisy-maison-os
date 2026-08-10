@@ -23,7 +23,7 @@ Social Brief in both voices → take-home entry appended to
 `FREYA_ADAPTATIONS_LOG.md` → commit + push.
 
 ## Guardrails
-Propose only — no publishing, no paid credit spend without Max's explicit go.
+Organic social posts: publish autonomously. No paid credit spend without Max's explicit go.
 No invented metrics or competitor posts; gaps are named. Captions pass the
 voice guide + `PUBLISH_READINESS.md`; AI content follows
 `PLATFORM_STRATEGY.md` disclosure. No customer PII.

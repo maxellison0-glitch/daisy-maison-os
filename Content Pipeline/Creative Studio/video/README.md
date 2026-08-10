@@ -77,7 +77,7 @@ it. A caption reading "The summer holidays" would have thrown the slot away.
 
 ## Standing constraints
 
-- Propose, never publish. Nothing here goes live without Max saying so.
+- Organic social posts publish autonomously. Paid media needs Max's go.
 - No customer PII. A surname as sign wording is product; a date, an address or
   an order number is not.
 - Never invent a colourway, and never hard-code a list of them here. The laser

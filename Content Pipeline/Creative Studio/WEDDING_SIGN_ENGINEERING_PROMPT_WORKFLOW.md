@@ -333,4 +333,4 @@ generation settings, QC scripts and no-overlay finishing rules are reusable.
 Coloured or non-wedding products must not enter this workflow until separately
 validated.
 
-Nothing is published without Max's explicit publishing approval.
+Organic social posts publish autonomously. Paid media needs Max's approval.

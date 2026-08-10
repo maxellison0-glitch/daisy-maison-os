@@ -127,6 +127,6 @@ So:
 
 ## Guardrails
 
-Propose only. Never publish from this skill. Never invent a metric, a competitor
-post or a result — name the gap instead. No customer PII in anything written to
+Analytics only — this skill reads, it doesn't post. Never invent a metric, a
+competitor post or a result — name the gap instead. No customer PII in anything written to
 the repo.

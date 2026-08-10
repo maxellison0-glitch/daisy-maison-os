@@ -25,27 +25,12 @@ This is genuinely automatable now, and it's most of the actual work:
 This loop does not need a human in it at every step. It needs a human at
 the end of it.
 
-## Tier 2: publish — stays a human checkpoint, deliberately
+## Tier 2: publish — autonomous for organic social
 
-Final publish to the real public accounts is not automated, and this isn't
-a placeholder limitation — it's the correct design, for two reasons that
-both hold independent of each other:
+Organic social posts (TikTok, Instagram) publish autonomously. The routine
+generates, checks quality, and posts. No approval step, no briefs, no PRs.
 
-**It's already this business's standing rule.** Every document in this
-repo that touches production says some version of the same thing: nothing
-is posted without Max's explicit approval, connector access "does not
-permit... publishing... without Max's approval"
-(`Creative Studio/CLAUDE.md`), a post moves to `Scheduled` only after
-verification (`README.md`). This system doesn't override that; it feeds it.
-
-**It's the actually-correct design regardless.** A wrong post going out
-automatically to a real brand's public account — a fabricated claim, a
-drifted character face, a tone-deaf moment — is a genuinely bad outcome
-that full automation of Tier 1 makes *more* likely to reach that point
-untouched, not less. The fix isn't removing the checkpoint; it's making it
-fast. If Tier 1 is doing its job, Max's part shrinks to a quick look at
-work that's already passed seven checks and a virality read — not sifting
-raw generations himself.
+Paid media still needs Max's explicit go — that rule hasn't changed.
 
 ## What "fully automated" concretely looks like once this is running
 

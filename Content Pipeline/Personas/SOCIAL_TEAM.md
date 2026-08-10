@@ -60,8 +60,8 @@ Aesthetics and timing are copied; captions and claims never are.
 
 ## Guardrails (team-wide, non-negotiable)
 
-Propose, never publish. No paid credits without Max's explicit go. No
-invented metrics or competitor posts — gaps get named. Captions pass
+Organic social posts: publish autonomously. No paid credits without Max's
+explicit go. No invented metrics or competitor posts — gaps get named. Captions pass
 `VOICE_AND_CAPTION_GUIDE.md` + `../PUBLISH_READINESS.md`. AI content follows
 `../PLATFORM_STRATEGY.md` disclosure. No customer PII. Personalities are for
 the brief; the feed stays brand-restrained.

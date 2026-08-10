@@ -117,7 +117,7 @@ get shown our posts, and reach has to be earned back through them. TikTok is an
 
 We do not need a warm audience on TikTok. That is the whole point. Higgsfield
 exposes `tiktok_publish`, so the post step is automatable end to end once a take
-passes QC — though **publishing still needs Max's explicit go every time**.
+passes QC — **organic social posts publish autonomously**.
 
 ### e. The comment-to-sign loop — the warm-audience builder, at zero credits
 
@@ -150,4 +150,4 @@ visibly pasted panel once already. Stills yes, video never.
   reach is inferred from it rather than observed.
 - One reel at 11,889 views is a signal, not a proven format. It should be
   treated as the best hypothesis available, and tested.
-- Nothing here is published. Publishing needs Max's explicit go, every time.
+- Organic social posts publish autonomously. Paid media needs Max's explicit go.

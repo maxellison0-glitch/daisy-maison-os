@@ -275,7 +275,7 @@ both sets and should be dropped or reworked.
 - No filming, no presenter (`CONTENT_BRIEF_GATE.md`).
 - Only the five real colourways. `build.py` hard-fails on anything else.
 - No customer PII, and never pass real customers' faces to a generator.
-- Propose, never publish. No paid credit spend without Max's explicit go.
+- Organic social posts publish autonomously. No paid credit spend without Max's explicit go.
 
 ## 11. Price the paid option BEFORE building the free one
 

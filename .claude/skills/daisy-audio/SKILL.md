@@ -166,4 +166,4 @@ stranded against a new tempo.
 - **Never claim a track is trending from memory.** Pull it, or name the gap.
 - **Beat detection is an estimate.** If a cue looks wrong on the frame, trust
   the frame.
-- **Propose, never publish.** Attaching a sound at publish is still publishing.
+- Organic social posts publish autonomously. Paid media needs Max's go.
