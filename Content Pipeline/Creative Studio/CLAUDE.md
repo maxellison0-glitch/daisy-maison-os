@@ -71,9 +71,23 @@ rules that override any cost-saving or efficiency logic.
    efficiency means nothing when the content is recycled or lazy. Spend the
    credits to make something worth posting.
 
-Origin: Max's feedback on the DM-HOME-STORY post, 10 Aug 2026. The post
-used a reprinted plate with an overlaid text pill and was correctly rejected
-as awful.
+5. **Never describe the product in a prompt.** The reference image is the
+   complete description of the product. Do not say what it is made of. Do
+   not say "wooden", "acrylic", "large", or any other material/size word.
+   The validated prompts say "Reference 1 is a real photograph of a Daisy
+   Maison street sign — preserve it exactly." That is all. Any descriptive
+   words you add about the product will be wrong and will produce rejected
+   output. The image is what we are copying. It looks exactly like that.
+
+6. **Use validated prompt templates only.** Social content uses the template
+   in `prompts/social-content/FREYA-SOCIAL-HERO.txt`. The only creative
+   variable is the scene/setting. The product block and the identity block
+   are locked. Do not write new product descriptions. Do not improvise.
+
+Origin: Rules 1-4 from Max's feedback on the DM-HOME-STORY post, 10 Aug
+2026. Rules 5-6 from Max's feedback on the Slot 1 LAUGH post, 11 Aug 2026.
+The prompt invented "wooden sign" — the signs are not wooden, and the
+reference image already showed the correct product.
 
 When Max requests Claude and Codex together, invoke the real Codex collaborator
 through:
