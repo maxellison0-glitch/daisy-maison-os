@@ -84,10 +84,20 @@ rules that override any cost-saving or efficiency logic.
    variable is the scene/setting. The product block and the identity block
    are locked. Do not write new product descriptions. Do not improvise.
 
+7. **Line 2 (subtitle) must stay small.** The real product has a 5:1 size
+   ratio between line 1 and line 2 (59pt vs 11.5pt in build.py). When
+   using the SVG generator this is enforced by code. When using
+   Higgsfield print-edit, visually verify after generation that line 2
+   is noticeably smaller than line 1 — it should read as a subtitle, not
+   a second headline. If line 2 appears too large, reject the output
+   and regenerate. When writing sign wording, prefer 2+ words on line 1
+   to avoid unnatural stretching of short text.
+
 Origin: Rules 1-4 from Max's feedback on the DM-HOME-STORY post, 10 Aug
 2026. Rules 5-6 from Max's feedback on the Slot 1 LAUGH post, 11 Aug 2026.
 The prompt invented "wooden sign" — the signs are not wooden, and the
-reference image already showed the correct product.
+reference image already showed the correct product. Rule 7 from Max's
+feedback on the Slot 1 generation review, 11 Aug 2026.
 
 When Max requests Claude and Codex together, invoke the real Codex collaborator
 through:

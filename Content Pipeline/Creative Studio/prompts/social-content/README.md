@@ -15,6 +15,14 @@ street sign" — the model invents its own version. The validated prompts that w
 say: "Reference 1 is a real photograph of a Daisy Maison street sign — preserve
 it exactly." That is all.
 
+## Line 2 size gate
+
+Line 2 (the subtitle) must be roughly one-fifth the height of line 1. The
+real product is 59pt vs 11.5pt — a 5:1 ratio. The SVG generator (`build.py`)
+enforces this by code. When Higgsfield does the print-edit, visually verify
+after generation that line 2 reads as a small caption, not a second headline.
+If it looks too big, reject and regenerate.
+
 ## Templates
 
 - `FREYA-SOCIAL-HERO.txt` — Freya holding the sign in a new scene. Uses 3

@@ -6,6 +6,8 @@ Reference 3 is a SCALE AUTHORITY ONLY — a real photograph of a person holding 
 
 SCALE: the sign is roughly 57 cm wide — clearly wider than this woman's shoulders. Held by her, the sign must extend well PAST both of her shoulders on each side, her hands gripping the shaped end areas so her arms are spread wider than her shoulder width.
 
+TEXT SIZE RULE: if the sign carries two lines of text, line 2 (the subtitle) must be much smaller than line 1 — roughly one-fifth the height. Line 2 is a small caption beneath the main wording, never a second headline at similar size.
+
 Generate: this exact woman, matching reference 2, holding the reference-1 sign up at chest height with both hands in {{SCENE}}. Genuine warm smile toward camera. Real skin texture, no airbrushing, no artificial symmetry, no glossy influencer sheen, no fake tan, no added hair highlights. The sign remains completely unchanged from reference 1. Photorealistic, no illustration. No mounting holes.
 
 {{PHONE_SNAPSHOT_BLOCK}}
