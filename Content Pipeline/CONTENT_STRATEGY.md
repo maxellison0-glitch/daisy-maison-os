@@ -89,7 +89,29 @@ We can now make a reel **two** ways. Using the wrong one wastes time or credits.
 
 ---
 
-## 7. Open threads (to resolve into the weekly plan)
+## 7. Daily posting schedule (4 slots, all BST)
+
+| Slot | BST | UTC | Engine | Job |
+|---|---|---|---|---|
+| 1 | 07:00 | 06:00 | LAUGH | Reach + shares. Funny/relatable sign, POV or tag hook. |
+| 2 | 10:30 | 09:30 | FEEL | Saves + gifting intent. Sentimental — wedding, family, granddad, new home. |
+| 3 | 15:30 | 14:30 | SOLVE | Conversions. "What do you get…" / occasion / deadline hook. |
+| 4 | 19:30 | 18:30 | LAUGH | Evening reach. Humour for the scroll-before-bed audience. |
+
+**Production:** each post uses the two-step validated chain (~4 credits):
+1. Print-edit on master product photo (swap wording)
+2. Freya hero with 3 references (product, identity lock, scale authority)
+
+**Testing loop:** all posts go to TikTok first. Winners (engagement above
+baseline) get cross-posted to Instagram manually or via API.
+
+**Schedule change log:**
+- 11 Aug 2026: Slot 1 moved from 10:30 to 07:00 BST (Max's request).
+- 11 Aug 2026: Added Slot 2 at 10:30 BST, expanding from 3 to 4 daily slots.
+
+---
+
+## 8. Open threads (to resolve into the weekly plan)
 
 - **Reed diffuser launch (this week):** a new product breaks the sign-turn format and needs its own reveal logic — pending product details (personalisation? scent? price? hero angle?).
 - **Sibling concept on `claude/social-media-manager-characters-rhe97c`:** a "social media manager characters" idea is in flight on another branch — reconcile before it forks the strategy.
