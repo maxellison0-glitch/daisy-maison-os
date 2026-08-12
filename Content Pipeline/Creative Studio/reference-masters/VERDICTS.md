@@ -9,6 +9,36 @@ wording is the spec.
 
 ---
 
+## Round 3 — 12 Aug 2026: the presenter-logic rule, and the hook is not optional
+
+The automated morning slot posted Freya holding "I'M SEXY & I MOW IT /
+DAVE'S GARDEN" — bare, no on-screen hook. Max, same day:
+
+> "I feel like we did this yesterday... I literally said, why would a female
+> hold up that sign? It doesn't really make sense... There's no on-screen
+> hook. If you're picking a sign, you pick line 1, line 2, and then you pick
+> an on-screen hook to match it. You are literally creating content. You're
+> not just creating a sign and posting what you're doing... Not just posting
+> a sign. That's not good enough, and it's not what I built you for."
+
+Two rules, both blocking:
+
+1. **PRESENTER LOGIC.** The person in frame must make sense holding that
+   sign. A first-person wording ("I'm sexy & I mow it") plus a name
+   ("Dave's") belongs to Dave — Freya holding it reads as nonsense unless
+   the on-screen hook explicitly frames her as the gift-giver. Check this
+   at concept stage, before a single credit is spent.
+2. **NO POST WITHOUT AN ON-SCREEN HOOK.** Second time this has been said
+   (first: 28 Jul, `PUBLISH_READINESS.md` hard gate). The sign is the
+   close; the hook opens the loop. A sign with no hook is half a post.
+
+Note also: he said the presenter thing on **11 Aug and it was never written
+down**, which is the only reason 12 Aug repeated it. Verdicts get logged
+the moment they're spoken, or they didn't happen. Full slot checklist:
+`CONTENT_STRATEGY.md` §2b, THE SLOT GATE.
+
+---
+
 ## Round 2 — four new held images, and the phone-snapshot rule
 
 Four images built off Freya, four colourways, four wordings, four rooms. 8 credits.

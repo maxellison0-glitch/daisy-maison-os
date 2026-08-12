@@ -263,6 +263,11 @@ and sufficient. Pay for Seedance 2.0 only when the sign itself must move.
 
 ## 5. Pre-flight checklist — answer before any product generation
 
+0. **Have I passed THE SLOT GATE** (`../CONTENT_STRATEGY.md` §2b)? Line 1 +
+   line 2 + on-screen hook picked as one trio, presenter logically matches
+   the sign wording, and the concept isn't a repeat of anything in the last
+   7 days of `PUBLISH_LOG.md` or a rejection in
+   `reference-masters/VERDICTS.md`? If no — stop before spending a credit.
 1. Am I passing the **approved product photograph** as reference 1? If no — stop.
 2. Am I using a **validated prompt** from the case folder, with only the wording
    changed? If no — stop.
@@ -272,3 +277,7 @@ and sufficient. Pay for Seedance 2.0 only when the sign itself must move.
 6. Have I preflighted the cost with `get_cost:true`?
 
 If any answer is no, the generation does not run.
+
+And before any *upload*: the on-screen hook is burnt into the final file
+(`../PUBLISH_READINESS.md`, hard gate, 28 Jul). Open the file and look. A
+bare sign photo never ships.
