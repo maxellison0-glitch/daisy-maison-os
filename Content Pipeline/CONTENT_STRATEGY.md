@@ -36,6 +36,47 @@ Examples of a locked pair:
 
 ---
 
+## 2b. THE SLOT GATE — blocking, for every automated posting slot
+
+*Added 12 Aug 2026 after the morning slot shipped a bare sign photo. Max:
+"if you're picking a sign, you pick line 1, line 2, and then you pick an
+on-screen hook to match it. You are literally creating content. You're not
+just creating a sign and posting what you're doing... Not just posting a
+sign. That's not good enough, and it's not what I built you for."*
+
+Every automated slot answers these IN ORDER, before generating anything.
+A failed answer stops the slot — regenerate the concept, not the image.
+
+1. **Pick the trio as one creative decision: line 1 + line 2 + on-screen
+   hook.** The hook is chosen WITH the sign, before any generation — not
+   discovered afterwards, not skipped. Test per the Match Law: cover the
+   sign; does the hook make you need to see it?
+2. **Presenter logic.** Whoever is in frame must make sense holding that
+   sign. Max, 11–12 Aug, on Freya holding "DAVE'S GARDEN / I'M SEXY & I
+   MOW IT": *"Why would a female hold up that sign?"* A first-person sign
+   belongs to the named person; if someone else holds it, the hook must
+   frame them as the gift-giver ("made this for my dad...") or the concept
+   is broken.
+3. **Why am I posting this?** Name the engine, the audience, and the
+   scroll-stop mechanic out loud in the worklog. "It's a funny sign" is
+   not an answer.
+4. **Check the record before picking.** Read the last 7 days of
+   `PUBLISH_LOG.md` and `Creative Studio/reference-masters/VERDICTS.md`.
+   Never repeat a concept, wording or product Max has rejected, and never
+   re-run yesterday's post with a new coat of paint.
+5. **Composite the on-screen hook onto the image.** Per
+   `PUBLISH_READINESS.md`'s hard gate (28 Jul): a bare photo NEVER ships —
+   the caption is collapsed behind a tap and does not count. Render the
+   pill per `VIDEO_CAPTION_SYSTEM.md` locally (the DM-C020 Chromium →
+   composite method, zero credits) and burn it in before JPEG conversion.
+   Open the final file and confirm the text is on it.
+6. **Log everything, including rejections, the moment they happen.** The
+   12 Aug repeat happened because the 11 Aug rejection was never written
+   down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does
+   not exist for the next slot.
+
+---
+
 ## 3. The three engines (each family → one engine → one job)
 
 Every sign maps to one of three engines. The engine decides the hook, the metric, and the posting job.
