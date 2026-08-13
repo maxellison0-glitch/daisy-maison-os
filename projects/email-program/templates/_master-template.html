@@ -1,0 +1,63 @@
+<!-- ============================================================
+     DAISY MAISON — EMAIL MASTER TEMPLATE
+     Paste into Shopify Email → custom code editor.
+     Design tokens (from .claude/product-marketing.md):
+       Ink #4A3A2C · Ground #FAF6EE · Display font Fraunces 600
+       Sage accent #7D8B6F (approximation — verify against roundel)
+     Rules: 600px single column · one CTA per email · British spelling
+     Fraunces loads in Apple Mail (most of our 90% mobile audience);
+     everything falls back to Georgia gracefully.
+     Shopify Email appends its own unsubscribe footer automatically.
+     ============================================================ -->
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+  PREHEADER TEXT HERE&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap');
+  .dm-serif { font-family: 'Fraunces', Georgia, 'Times New Roman', serif !important; }
+  @media (prefers-color-scheme: dark) { /* keep cream ground — the brand IS the cream */ }
+</style>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FAF6EE;">
+  <tr><td align="center" style="padding:32px 16px;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
+
+      <!-- WORDMARK -->
+      <tr><td align="center" style="padding:8px 0 28px;">
+        <div class="dm-serif" style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;letter-spacing:0.22em;color:#4A3A2C;">DAISY&nbsp;MAISON</div>
+        <div style="font-family:Georgia,serif;font-size:11px;letter-spacing:0.28em;color:#8A7A68;padding-top:6px;">HOME&nbsp;OF&nbsp;PERSONALISED&nbsp;GIFTS</div>
+      </td></tr>
+
+      <!-- ===== THE SIGN (the signature block — customer's wording rendered live) ===== -->
+      <tr><td align="center" style="padding:0 0 28px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr><td align="center" style="background-color:#FFFFFF;border:3px solid #1F1B16;border-radius:48px;padding:26px 30px;">
+            <div class="dm-serif" style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;letter-spacing:0.10em;color:#1F1B16;text-transform:uppercase;line-height:1.15;">
+              SIGN WORDING HERE
+            </div>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- HEADLINE + BODY -->
+      <tr><td align="center" style="padding:0 24px 8px;">
+        <div class="dm-serif" style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:26px;color:#4A3A2C;line-height:1.3;">Headline here</div>
+      </td></tr>
+      <tr><td align="center" style="padding:8px 32px 24px;">
+        <div style="font-family:Georgia,serif;font-size:16px;color:#4A3A2C;line-height:1.65;">Body copy here. Warm, dry, understated. Never shouty.</div>
+      </td></tr>
+
+      <!-- CTA (one per email) -->
+      <tr><td align="center" style="padding:4px 0 36px;">
+        <a href="https://daisymaison.co.uk" style="background-color:#4A3A2C;color:#FAF6EE;font-family:Georgia,serif;font-size:14px;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:16px 38px;border-radius:999px;display:inline-block;">Call to action</a>
+      </td></tr>
+
+      <!-- PROOF STRIP -->
+      <tr><td align="center" style="border-top:1px solid #E8E0D0;padding:24px 24px 8px;">
+        <div style="font-family:Georgia,serif;font-size:13px;color:#8A7A68;line-height:1.7;">
+          Made to order in our Lancashire workshop &nbsp;·&nbsp; One family, one laser &nbsp;·&nbsp; Any wording at all
+        </div>
+      </td></tr>
+
+    </table>
+  </td></tr>
+</table>
