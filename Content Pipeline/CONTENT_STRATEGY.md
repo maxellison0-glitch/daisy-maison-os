@@ -70,6 +70,13 @@ A failed answer stops the slot — regenerate the concept, not the image.
    pill per `VIDEO_CAPTION_SYSTEM.md` locally (the DM-C020 Chromium →
    composite method, zero credits) and burn it in before JPEG conversion.
    Open the final file and confirm the text is on it.
+   **HARD RULE (13 Aug 2026): never produce a final post by drawing text
+   with Pillow, ImageDraw, Python imaging, or any code-rendered text
+   compositing.** The result looks amateur and unfinished — it is not
+   finalised content. Every on-screen hook, caption and text overlay must
+   go through the Chromium CSS renderer (`VIDEO_CAPTION_SYSTEM.md` §1–2)
+   or, as a backup, CapCut. If the Chromium pipeline is unavailable, the
+   post does not ship — a bad-looking hook is worse than no post.
 6. **Log everything, including rejections, the moment they happen.** The
    12 Aug repeat happened because the 11 Aug rejection was never written
    down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does

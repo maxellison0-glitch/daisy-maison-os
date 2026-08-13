@@ -322,6 +322,12 @@ matter as a **backup** and as a reference for the look.
   clear the UI.
 
 **Don't**
+- **No Pillow / ImageDraw / Python-rendered text on final posts. Ever.**
+  (Added 13 Aug 2026.) Drawing text with PIL produces flat, aliased,
+  amateur-looking output — it is not finalised content. All on-screen text
+  goes through the Chromium CSS renderer (§1–2) or CapCut as backup. If
+  neither is available, the post does not ship. This includes hook pills,
+  captions, hero words — anything a viewer reads.
 - No **grey** text, ever. Only ink / paper / burgundy.
 - No square-cornered boxes, no hard black border (that's the retired
   `drawtext` look).
