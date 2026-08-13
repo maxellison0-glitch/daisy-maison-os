@@ -1,5 +1,8 @@
 # Daisy Maison Street Signs — agent skill
 
+> **MOVED.** The live system is the standalone signauto repository (https://github.com/maxellison0-glitch/signauto). Use its SKILL.md;
+> this copy is frozen and its SKU tables are stale.
+
 Hand this file to any capable coding agent with a terminal on a Windows machine.
 It is self-contained: everything the pipeline needs is committed here, so a fresh
 `git clone` is enough.
