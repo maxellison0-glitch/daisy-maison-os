@@ -18,6 +18,49 @@ Entry format:
 
 ---
 
+## 2026-08-10
+- **Full sweep attempted, zero reads landed — a new failure mode.** Every prior
+  gap in this tracker (TreatBox/Crafty Bonobo/Little Perfections 429s, Etsy 403,
+  no TikTok read endpoint) was the *target* refusing us. Today's block is
+  upstream of that: this session's own network egress proxy returned
+  `EGRESS_BLOCKED` / 403 policy denial on CONNECT for every external host
+  attempted — instagram.com, tiktok.com, treatboxuk.com, thecraftybonobo.com —
+  tried via four separate transport paths (WebFetch, `ig_public.py`,
+  `tiktok_public.py`, raw curl). Confirmed via `$HTTPS_PROXY/__agentproxy/status`:
+  `recentRelayFailures` logs `connect_rejected` / "gateway answered 403 to
+  CONNECT" for all three test hosts. This is a session/infrastructure gap, not
+  a rate limit — none of the 27 Jul method fixes (refsweep direct-fetch,
+  one-request-per-day pacing) apply to it. Worth flagging to whoever owns this
+  session's egress policy.
+- TreatBox: **NOT READ.** Blocked at the proxy. Standing 28 Jul read (Results
+  Day first-tile in two homepage rails, Christmas advent live in July, autumn
+  pre-order live) unconfirmed for 13 days.
+- Crafty Bonobo, Little Perfections: **NOT READ.** Same block. Standing 28 Jul
+  reads (Bonobo street sign "Our Bestseller" from £24.99, joke-copy led;
+  Little Perfections colour/style/season taxonomy, autumn facet live)
+  unconfirmed for 13 days.
+- Instagram (ours + competitors): **NOT READ.** `ig_public.py` blocked at the
+  proxy before reaching Instagram's API at all. Last successful read 28 Jul
+  (23,535 followers, last-three-posts 7/6/4 likes). No update.
+- TikTok: **NOT READ.** Same block; also still no owner-metrics endpoint
+  regardless of the block.
+- Etsy, NOTHS, Covering All Occasions: not attempted — Etsy already known 403
+  from the site itself in past runs; the other two weren't tried once the
+  blanket block was confirmed on four other hosts.
+- Season read: no fresh signal today. Standing hypothesis unchanged from 28
+  Jul — Results Day (mid-Aug UK) live on TreatBox as of that read, and today
+  (10 Aug) puts it inside the live window by calendar date alone, even without
+  a fresh confirming read. Worth a manual check outside this session rather
+  than waiting on the next automated run.
+- Translate to us: no new comparator data to translate today. Falling back to
+  28 Jul's standing translations, dated as such: (1) still no Results Day sign
+  wording in the catalogue — now more time-pressured given the date; (2) still
+  no repricing move against Bonobo's Wedding Pebble at £29.99 vs our £22.95.
+  Neither should be treated as a today-verified signal.
+- Unreachable today: TreatBox, Crafty Bonobo, Little Perfections, Instagram,
+  TikTok, Etsy, NOTHS — all named above. This entry records the infrastructure
+  gap honestly rather than manufacture a signal from a stale read.
+
 ## 2026-07-24 — Day 0 (instrument created)
 - TreatBox: baseline established — UK letterbox-gifting north star, ~266K,
   reveal/build-your-own mechanics, warm-not-twee tone. Daily reads start
