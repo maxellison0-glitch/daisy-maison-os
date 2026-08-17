@@ -1,6 +1,7 @@
 # Sync only the compact operating context used by Daisy automations.
 *
 !.gitignore
+!.gitattributes
 !README.md
 !operating systems/
 !operating systems/**
@@ -40,6 +41,15 @@ projects/daisy-street-sign/personaliser/backup-*/assets/daisy-street-sign-previe
 
 !projects/daisy-scroll-story/
 !projects/daisy-scroll-story/**
+
+# Daisy Maison Care: supplier source copy, editable artwork, print JPG and mockup.
+!projects/daisy-maison-care/
+!projects/daisy-maison-care/**
+
+# Keep the verified print proof, without opening the rest of output/ to Git.
+!output/
+!output/pdf/
+!output/pdf/PL-489$front.pdf
 
 # Content Pipeline: track the briefs and context CLAUDE.md reads, not the media.
 # The exports (mp4/jpg/png masters) are ~370MB of build output and would bloat

@@ -1,0 +1,254 @@
+{% liquid
+  assign hero_image = product.featured_image
+  assign active_variant = product.selected_or_first_available_variant
+%}
+
+<section id="DaisyCare-{{ section.id }}" class="daisy-care" aria-labelledby="DaisyCareTitle-{{ section.id }}">
+  <div class="daisy-care__hero">
+    <div class="daisy-care__copy">
+      <p class="daisy-care__eyebrow">DAISY MAISON CARE <span aria-hidden="true">·</span> COMING SOON</p>
+      <h1 id="DaisyCareTitle-{{ section.id }}" class="daisy-care__title">Daily<br>Marine Collagen</h1>
+      <p class="daisy-care__intro">A quiet daily ritual: 10 g hydrolysed marine collagen with hyaluronic acid, vitamin C and B vitamins, in an unflavoured powder.</p>
+
+      <div class="daisy-care__facts" aria-label="Product highlights">
+        <span><strong>10 g</strong><small>collagen per serving</small></span>
+        <span><strong>29</strong><small>servings</small></span>
+        <span><strong>300 g</strong><small>unflavoured powder</small></span>
+      </div>
+
+      <div class="daisy-care__price-row">
+        <span class="daisy-care__price">{{ active_variant.price | money }}</span>
+        <span class="daisy-care__status">First batch in preparation</span>
+      </div>
+
+      {% form 'customer', class: 'daisy-care__form' %}
+        <input type="hidden" name="contact[tags]" value="daisy-maison-care,collagen-waitlist">
+        <label for="DaisyCareEmail-{{ section.id }}">Be first to know when it is ready</label>
+        <div class="daisy-care__field">
+          <input
+            id="DaisyCareEmail-{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email }}"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            placeholder="Email address"
+            required
+          >
+          <button type="submit">Join the first batch <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="daisy-care__note">No payment is taken. We will only email about Daisy Maison Care.</p>
+        {% if form.posted_successfully? %}
+          <p class="daisy-care__success" role="status">You are on the list. We will be in touch when the first batch is ready.</p>
+        {% endif %}
+        {% if form.errors %}
+          <div class="daisy-care__error" role="alert">{{ form.errors | default_errors }}</div>
+        {% endif %}
+      {% endform %}
+    </div>
+
+    <div class="daisy-care__visual">
+      <span class="daisy-care__halo" aria-hidden="true"></span>
+      {% if hero_image != blank %}
+        {{ hero_image | image_url: width: 1800 | image_tag: class: 'daisy-care__image', widths: '500, 760, 1000, 1400, 1800', sizes: '(min-width: 990px) 48vw, 90vw', loading: 'eager', fetchpriority: 'high' }}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'daisy-care__image daisy-care__placeholder' }}
+      {% endif %}
+      <p class="daisy-care__caption">Made in the UK <span aria-hidden="true">·</span> Food Supplement <span aria-hidden="true">·</span> Marine source</p>
+    </div>
+  </div>
+
+  <div class="daisy-care__proof">
+    <div>
+      <p class="daisy-care__kicker">APPROVED NUTRITION BENEFITS</p>
+      <h2>What the vitamins contribute</h2>
+    </div>
+    <div class="daisy-care__claims">
+      <p><span>01</span>Vitamin C contributes to normal collagen formation for the normal function of skin, bones and cartilage.</p>
+      <p><span>02</span>Riboflavin, biotin and niacin contribute to the maintenance of normal skin.</p>
+    </div>
+  </div>
+
+  <div class="daisy-care__ritual">
+    <p class="daisy-care__kicker">THE DAILY RITUAL</p>
+    <ol>
+      <li><span>01</span><strong>Scoop</strong><small>Add one level scoop to 250 ml water or juice.</small></li>
+      <li><span>02</span><strong>Shake</strong><small>Shake rather than stir for the smoothest dissolve.</small></li>
+      <li><span>03</span><strong>Make it yours</strong><small>Use cold, warm or tepid liquid as part of your routine.</small></li>
+    </ol>
+  </div>
+
+  <details class="daisy-care__details">
+    <summary>Ingredients, nutrition and important information <span aria-hidden="true">+</span></summary>
+    <div class="daisy-care__rte rte">{{ product.description }}</div>
+  </details>
+</section>
+
+{% stylesheet %}
+  .daisy-care {
+    --care-ink: #24231f;
+    --care-olive: #4f5a48;
+    --care-sage: #c8caba;
+    --care-pale: #e4e4da;
+    --care-paper: #f4f0e8;
+    --care-blush: #d8bdb0;
+    --care-line: rgba(79, 90, 72, 0.24);
+    color: var(--care-ink);
+    background: var(--care-paper);
+  }
+
+  .daisy-care *, .daisy-care *::before, .daisy-care *::after { box-sizing: border-box; }
+
+  .daisy-care__hero {
+    min-height: min(840px, calc(100svh - 120px));
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+    border-top: 1px solid var(--care-line);
+    border-bottom: 1px solid var(--care-line);
+  }
+
+  .daisy-care__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(56px, 7vw, 120px) clamp(28px, 7vw, 112px);
+    border-right: 1px solid var(--care-line);
+  }
+
+  .daisy-care__eyebrow, .daisy-care__kicker {
+    margin: 0 0 25px;
+    color: var(--care-olive);
+    font: 600 11px/1.2 Arial, sans-serif;
+    letter-spacing: .22em;
+  }
+
+  .daisy-care__title {
+    max-width: 680px;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(54px, 6.3vw, 108px);
+    font-weight: 400;
+    line-height: .88;
+    letter-spacing: -.055em;
+  }
+
+  .daisy-care__intro {
+    max-width: 620px;
+    margin: 36px 0 0;
+    font: 400 clamp(16px, 1.25vw, 20px)/1.55 Arial, sans-serif;
+  }
+
+  .daisy-care__facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 680px;
+    margin-top: 42px;
+    border-top: 1px solid var(--care-line);
+    border-bottom: 1px solid var(--care-line);
+  }
+
+  .daisy-care__facts span { padding: 17px 14px 17px 0; }
+  .daisy-care__facts span + span { padding-left: 18px; border-left: 1px solid var(--care-line); }
+  .daisy-care__facts strong, .daisy-care__facts small { display: block; }
+  .daisy-care__facts strong { color: var(--care-olive); font: 600 18px/1.2 Georgia, serif; }
+  .daisy-care__facts small { margin-top: 4px; font: 400 11px/1.3 Arial, sans-serif; letter-spacing: .03em; }
+
+  .daisy-care__price-row { display: flex; align-items: baseline; gap: 18px; margin-top: 28px; }
+  .daisy-care__price { font: 400 28px/1 Georgia, serif; }
+  .daisy-care__status { color: var(--care-olive); font: 600 11px/1.2 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+
+  .daisy-care__form { max-width: 680px; margin-top: 30px; }
+  .daisy-care__form > label { display: block; margin-bottom: 10px; font: 600 12px/1.2 Arial, sans-serif; letter-spacing: .04em; }
+  .daisy-care__field { display: flex; border-bottom: 1px solid var(--care-olive); }
+  .daisy-care__field input { width: 100%; min-height: 54px; padding: 0 14px 0 0; border: 0; outline: 0; background: transparent; color: var(--care-ink); font: 400 16px/1.2 Arial, sans-serif; }
+  .daisy-care__field button { flex: 0 0 auto; border: 0; padding: 0 18px; background: var(--care-olive); color: #fff; font: 600 12px/1.2 Arial, sans-serif; letter-spacing: .04em; cursor: pointer; }
+  .daisy-care__field button:hover { background: var(--care-ink); }
+  .daisy-care__note { margin: 9px 0 0; color: rgba(36,35,31,.68); font: 400 11px/1.4 Arial, sans-serif; }
+  .daisy-care__success, .daisy-care__error { margin: 13px 0 0; font: 600 13px/1.4 Arial, sans-serif; }
+
+  .daisy-care__visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 660px;
+    overflow: hidden;
+    padding: clamp(30px, 5vw, 70px);
+    background: radial-gradient(circle at 50% 30%, #fff 0, #ebe7de 46%, #d9d3c7 100%);
+  }
+
+  .daisy-care__halo { position: absolute; width: 74%; aspect-ratio: 1; border: 1px solid rgba(79,90,72,.18); border-radius: 50%; }
+  .daisy-care__halo::before, .daisy-care__halo::after { content: ''; position: absolute; inset: 12%; border: inherit; border-radius: inherit; }
+  .daisy-care__halo::after { inset: 25%; }
+  .daisy-care__image { position: relative; z-index: 1; width: min(78%, 720px); max-height: 680px; object-fit: contain; filter: drop-shadow(0 28px 26px rgba(52,49,43,.16)); }
+  .daisy-care__caption { position: absolute; right: 28px; bottom: 24px; z-index: 2; margin: 0; color: var(--care-olive); font: 600 10px/1.2 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+
+  .daisy-care__proof, .daisy-care__ritual { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(40px, 8vw, 130px); padding: clamp(64px, 8vw, 128px) clamp(28px, 8vw, 132px); }
+  .daisy-care__proof h2 { max-width: 420px; margin: 0; font: 400 clamp(36px, 4vw, 66px)/1 Georgia, serif; letter-spacing: -.04em; }
+  .daisy-care__claims { border-top: 1px solid var(--care-line); }
+  .daisy-care__claims p { display: grid; grid-template-columns: 48px 1fr; gap: 18px; margin: 0; padding: 26px 0; border-bottom: 1px solid var(--care-line); font: 400 clamp(17px, 1.6vw, 25px)/1.45 Georgia, serif; }
+  .daisy-care__claims span { padding-top: 7px; color: var(--care-blush); font: 600 10px/1 Arial, sans-serif; letter-spacing: .12em; }
+
+  .daisy-care__ritual { grid-template-columns: .45fr 1.55fr; background: var(--care-pale); }
+  .daisy-care__ritual ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--care-line); }
+  .daisy-care__ritual li { min-height: 190px; padding: 22px 22px 22px 0; border-bottom: 1px solid var(--care-line); }
+  .daisy-care__ritual li + li { padding-left: 22px; border-left: 1px solid var(--care-line); }
+  .daisy-care__ritual li span, .daisy-care__ritual li strong, .daisy-care__ritual li small { display: block; }
+  .daisy-care__ritual li span { color: var(--care-blush); font: 600 10px/1 Arial, sans-serif; }
+  .daisy-care__ritual li strong { margin-top: 44px; font: 400 28px/1 Georgia, serif; }
+  .daisy-care__ritual li small { margin-top: 12px; max-width: 230px; font: 400 13px/1.45 Arial, sans-serif; }
+
+  .daisy-care__details { padding: 0 clamp(28px, 8vw, 132px); border-top: 1px solid var(--care-line); border-bottom: 1px solid var(--care-line); }
+  .daisy-care__details summary { display: flex; justify-content: space-between; gap: 20px; padding: 30px 0; cursor: pointer; list-style: none; font: 400 clamp(20px, 2vw, 30px)/1.2 Georgia, serif; }
+  .daisy-care__details summary::-webkit-details-marker { display: none; }
+  .daisy-care__details[open] summary span { transform: rotate(45deg); }
+  .daisy-care__rte { max-width: 900px; padding: 0 0 60px; font: 400 15px/1.6 Arial, sans-serif; }
+
+  @media (max-width: 989px) {
+    .daisy-care__hero { grid-template-columns: 1fr; }
+    .daisy-care__copy { order: 2; border-top: 1px solid var(--care-line); border-right: 0; }
+    .daisy-care__visual { min-height: 520px; }
+    .daisy-care__image { width: min(84%, 560px); max-height: 500px; }
+    .daisy-care__proof, .daisy-care__ritual { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 620px) {
+    .daisy-care__copy { padding: 48px 22px 54px; }
+    .daisy-care__title { font-size: clamp(52px, 17vw, 76px); }
+    .daisy-care__intro { margin-top: 28px; }
+    .daisy-care__facts { grid-template-columns: 1fr; }
+    .daisy-care__facts span + span { padding-left: 0; border-top: 1px solid var(--care-line); border-left: 0; }
+    .daisy-care__price-row { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .daisy-care__field { display: grid; border: 0; gap: 10px; }
+    .daisy-care__field input { border-bottom: 1px solid var(--care-olive); }
+    .daisy-care__field button { min-height: 52px; }
+    .daisy-care__visual { min-height: 440px; padding: 24px; }
+    .daisy-care__caption { right: 16px; bottom: 14px; font-size: 8px; }
+    .daisy-care__proof, .daisy-care__ritual { padding: 60px 22px; }
+    .daisy-care__claims p { grid-template-columns: 32px 1fr; }
+    .daisy-care__ritual ol { grid-template-columns: 1fr; }
+    .daisy-care__ritual li { min-height: 0; padding: 22px 0; }
+    .daisy-care__ritual li + li { padding-left: 0; border-left: 0; }
+    .daisy-care__ritual li strong { margin-top: 24px; }
+    .daisy-care__details { padding: 0 22px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .daisy-care__image { animation: daisyCareFloat 7s ease-in-out infinite; }
+    @keyframes daisyCareFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Daisy Maison Care product",
+  "tag": "section",
+  "class": "section-daisy-care-product",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Daisy Maison Care product"
+    }
+  ]
+}
+{% endschema %}
