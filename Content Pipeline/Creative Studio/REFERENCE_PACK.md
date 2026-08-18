@@ -273,8 +273,22 @@ and sufficient. Pay for Seedance 2.0 only when the sign itself must move.
    changed? If no — stop.
 3. Is the sign face from **`build.py`**, not a description or a model's guess?
 4. Have I added every supporting construction reference that applies?
-5. Is this a **batch of four** for a human to choose from?
-6. Have I preflighted the cost with `get_cost:true`?
+5. **Border colour check.** Does my prompt enforce that the border and
+   lettering are the SAME colour as the chosen colourway? The border is
+   NEVER white. See `SIGN_CAPABILITIES.md` — border + lettering carry the
+   colour; the field is cream/off-white. If I am generating a coloured sign,
+   am I using the validated colourway prompt (`03-validated-freya-hero-
+   coloured-sign.txt` or the adapted clause from `DM-HARPERS-colour-green/`)
+   that locks border colour to lettering colour? If no — stop.
+6. **Scale check.** Am I using a scale-authority reference (real photo of a
+   person holding the sign)? After generation, check: do the sign's ends
+   extend past the outer edge of the presenter's arms? If yes — REJECT,
+   the sign is too big. The arm-line test is the gate (see
+   `prompts/CHARACTER-LOCK-SYSTEM.txt`). Writing a ratio in the prompt does
+   not enforce it — generate several takes and pick. Background ratio for
+   reference only: ~1.20–1.45 sign:shoulder for a man, ≥ 1.9 for Freya.
+7. Is this a **batch of four** for a human to choose from?
+8. Have I preflighted the cost with `get_cost:true`?
 
 If any answer is no, the generation does not run.
 
