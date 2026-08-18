@@ -57,20 +57,45 @@ A failed answer stops the slot — regenerate the concept, not the image.
    belongs to the named person; if someone else holds it, the hook must
    frame them as the gift-giver ("made this for my dad...") or the concept
    is broken.
-3. **Why am I posting this?** Name the engine, the audience, and the
+3. **Sign colour and border — use ONLY the five official colourways.**
+   The five colours are: Black, Grass, Sage, Blue (muted steel-blue), Grey.
+   See `Creative Studio/SIGN_CAPABILITIES.md`. **The border and lettering
+   are ALWAYS the same colour as each other. The field is cream/off-white.
+   There is NEVER a white border or white outline on any colourway. NEVER.**
+   A blue sign has a blue border and blue lettering on cream. A black sign
+   has a black border and black lettering on cream. If the generated image
+   shows a white border, white outline, or any border colour that doesn't
+   match the lettering — REJECT it and regenerate. This is what the real
+   product looks like; getting it wrong misrepresents what the customer
+   receives.
+4. **Scale gate — measure before publishing.** The sign's ends must NOT
+   extend past the outer edge of the presenter's arms (Max's rule, 28 Jul
+   2026 — see `Creative Studio/prompts/CHARACTER-LOCK-SYSTEM.txt`). Draw a
+   vertical line at each end of the sign; if either falls outside the arm,
+   the sign is too big. Use the approved scale-authority reference (a real
+   photo of a person holding the product) in the generation prompt.
+   Writing a ratio in the prompt does not enforce it — generate several
+   takes and pick the one where scale passes. Background ratio for
+   reference only: ~1.20–1.45 sign:shoulder for a man, ≥ 1.9 for Freya.
+5. **Use validated prompts — do not write new ones.** Generation prompts
+   come from `Creative Studio/prompts/` case folders with only the wording
+   changed. Ad-hoc prompts skip the border locks, scale locks, and colour
+   locks that validated prompts enforce. See `Creative Studio/
+   REFERENCE_PACK.md` §3.
+6. **Why am I posting this?** Name the engine, the audience, and the
    scroll-stop mechanic out loud in the worklog. "It's a funny sign" is
    not an answer.
-4. **Check the record before picking.** Read the last 7 days of
+7. **Check the record before picking.** Read the last 7 days of
    `PUBLISH_LOG.md` and `Creative Studio/reference-masters/VERDICTS.md`.
    Never repeat a concept, wording or product Max has rejected, and never
    re-run yesterday's post with a new coat of paint.
-5. **Composite the on-screen hook onto the image.** Per
+8. **Composite the on-screen hook onto the image.** Per
    `PUBLISH_READINESS.md`'s hard gate (28 Jul): a bare photo NEVER ships —
    the caption is collapsed behind a tap and does not count. Render the
    pill per `VIDEO_CAPTION_SYSTEM.md` locally (the DM-C020 Chromium →
    composite method, zero credits) and burn it in before JPEG conversion.
    Open the final file and confirm the text is on it.
-6. **Log everything, including rejections, the moment they happen.** The
+9. **Log everything, including rejections, the moment they happen.** The
    12 Aug repeat happened because the 11 Aug rejection was never written
    down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does
    not exist for the next slot.
