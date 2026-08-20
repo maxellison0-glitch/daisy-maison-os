@@ -1,5 +1,75 @@
 # Reference audit — Max's verdicts, 25 Jul 2026
 
+---
+
+## Round 4 — 20 Aug 2026: THE SIGN CONSTRUCTION IS INVERTED. Second failure running.
+
+The slot-2 automated post shipped Freya holding a **navy panel with white
+lettering**. Max, same day:
+
+> "signs fucking wrong again 2 times in a row. Failure"
+
+**That product does not exist.** Measured against
+`street-sign-COLOURWAY-SWATCH.jpg` and the live Shopify listing photo
+(THE POTTER FAMILY), every real Daisy Maison street sign is:
+
+| Element | Truth | What shipped 20 Aug |
+|---|---|---|
+| Panel | **CREAM, always** | navy — wrong |
+| Outer border | **the colourway** (blue/black/brown/grass/sage/grey) | thin cream keyline — wrong |
+| Lettering | **the colourway, on the cream panel** | white — wrong |
+
+**A colourway names the BORDER AND INK colour, never the panel.** "Blue sign"
+= blue border + blue text on cream. The panel is cream on every single
+colourway in the swatch. What shipped is a colour-inverted object we do not
+sell, published at a real price (£14.95) on the shop's own account.
+
+### Root cause — the REFERENCE_PACK pre-flight was not run at all
+
+`REFERENCE_PACK.md` §5 is six blocking questions. All six were failed:
+
+1. **Approved product photograph as reference 1** — FAILED. I passed
+   `FREYA-holding-sign-BLUE-MASTER.jpg`, which is the **character + scale**
+   master. Per the multi-reference rule in `REFERENCE_PACK.md`, that
+   reference answers *who holds it and at what size*. It does **not** answer
+   *what the object is*. The object authority is
+   `street-sign-BLACK-on-white-MASTER.jpg` and it was never passed.
+2. **Validated prompt from the case folder** — FAILED. Wrote a fresh prompt.
+3. **Sign face from `build.py`** — FAILED, and this is the one that caused
+   the inversion. No artwork was supplied at all; the construction was
+   *described in English* and the model guessed it. The fault-line table
+   warns that handing a model the flat SVG produces a fake sign — handing it
+   **nothing** lets it invent the product outright.
+4. **Every supporting construction reference** — FAILED.
+5. **Batch of four** — FAILED, ran two.
+6. **Cost preflight** — FAILED.
+
+The file says: *"If any answer is no, the generation does not run."* Six no's
+and it ran.
+
+### Why it repeated 8 days after the last repeat
+
+12 Aug failed because a verdict from 11 Aug was never logged. 20 Aug failed
+for the *adjacent* reason: the SLOT GATE (`CONTENT_STRATEGY.md` §2b) was
+written and followed, and it says nothing about product construction. It
+gates the *concept* — trio, presenter logic, no repeats. It has no line that
+forces `REFERENCE_PACK.md` §5 to run. So the slot passed its checklist,
+felt correct, and shipped an invented product.
+
+**A concept gate is not a product gate.** Both have to fire, every slot.
+
+### Binding, effective immediately
+
+- **The colourway rule, stated once so it cannot be misread again:** cream
+  panel, coloured border, coloured ink. Never a coloured panel. Never white
+  lettering.
+- **No sign wording is ever described in prose to a generator.** It comes
+  from `build.py` as artwork, or the generation does not run.
+- **`FREYA-holding-sign-BLUE-MASTER.jpg` is never reference 1.** It is the
+  scale/character reference and must be accompanied by the object master.
+
+---
+
 Every sign image in the Higgsfield account (117 generations, back to 23 Jul) was
 pulled and reviewed. **Nothing was generated for this; it cost 0 credits.**
 

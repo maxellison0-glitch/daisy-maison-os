@@ -74,6 +74,24 @@ A failed answer stops the slot — regenerate the concept, not the image.
    12 Aug repeat happened because the 11 Aug rejection was never written
    down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does
    not exist for the next slot.
+7. **THE PRODUCT GATE — run `REFERENCE_PACK.md` §5 and answer all six
+   questions in the worklog.** Added 20 Aug 2026 after slot 2 published a
+   sign that does not exist: a navy panel with white lettering, when every
+   real sign is a **cream panel with a coloured border and coloured ink**.
+   Steps 1–6 above all passed that day. They gate the *concept*; they say
+   nothing about whether the object is real. **A concept gate is not a
+   product gate — both fire, every slot.**
+   The two that were failed hardest, so check them first:
+   - **The sign face comes from `build.py` as artwork.** Never describe a
+     sign's construction in prose and let the generator draw it. Given no
+     artwork, it invents the product.
+   - **Reference 1 is the approved product photograph** — the object
+     authority (`street-sign-BLACK-on-white-MASTER.jpg`).
+     `FREYA-holding-sign-BLUE-MASTER.jpg` is the *scale and character*
+     reference and is never reference 1; passing it alone is what caused
+     the 20 Aug failure.
+   Colourway, stated so it cannot be misread: **cream panel, coloured
+   border, coloured ink.** Never a coloured panel, never white lettering.
 
 ---
 
