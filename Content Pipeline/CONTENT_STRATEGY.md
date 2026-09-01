@@ -60,10 +60,14 @@ A failed answer stops the slot — regenerate the concept, not the image.
 3. **Why am I posting this?** Name the engine, the audience, and the
    scroll-stop mechanic out loud in the worklog. "It's a funny sign" is
    not an answer.
-4. **Check the record before picking.** Read the last 7 days of
-   `PUBLISH_LOG.md` and `Creative Studio/reference-masters/VERDICTS.md`.
-   Never repeat a concept, wording or product Max has rejected, and never
-   re-run yesterday's post with a new coat of paint.
+4. **Check the tracker before picking.** Load `CONTENT_TRACKER.json` and
+   enforce every rotation rule: line 1 (14-day cooldown), sign family
+   (7 days / 3 posts), colourway (not 3 in a row, 2+ different in any 5),
+   plate (never consecutive), engine (max 2 consecutive), POV (not 3 in a
+   row). Also read `Creative Studio/reference-masters/VERDICTS.md`. If the
+   candidate trio violates any rule, pick a different concept — do not
+   override. After publishing or rejecting, write the entry to the tracker
+   JSON and update `CONTENT_TRACKER.md` before the slot ends.
 5. **Composite the on-screen hook onto the image.** Per
    `PUBLISH_READINESS.md`'s hard gate (28 Jul): a bare photo NEVER ships —
    the caption is collapsed behind a tap and does not count. Render the
@@ -73,7 +77,10 @@ A failed answer stops the slot — regenerate the concept, not the image.
 6. **Log everything, including rejections, the moment they happen.** The
    12 Aug repeat happened because the 11 Aug rejection was never written
    down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does
-   not exist for the next slot.
+   not exist for the next slot. Write every post to `CONTENT_TRACKER.json`
+   (line 1, line 2, colourway, plate, hook, engine, POV, sign family,
+   status) and update the table in `CONTENT_TRACKER.md`. Both files must
+   be updated before the slot ends — the next slot reads the tracker first.
 
 ---
 
