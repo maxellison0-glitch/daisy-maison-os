@@ -11,7 +11,9 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 
 ## Standing Knowledge (things that don't change)
 
-- **TEST OCT 2022 (Facebook campaign)** — This is intentional. It runs by design and brings in higher average order value products. Do not flag it, question it, recommend pausing it, or mention it as a concern. Ever. Just report its spend and clicks like any other campaign, nothing more.
+- **TEST OCT 2022 (Facebook campaign)** — This is intentional. It runs by design and brings in higher average order value products. Do not flag it, question it, recommend pausing it, or mention it as a concern. Ever. Just report its spend and clicks like any other campaign, nothing more. **If it is absent, report the fact ("TEST OCT 2022: no spend") and move on. Do NOT invent "lost revenue" estimates, do NOT demand Ads Manager access, do NOT treat its absence as a crisis. It is Daryl's campaign to manage.**
+- **ADS MANAGER ACCESS — SETTLED 3 Sep 2026 by Max.** Max has full access to everything. He is CHOOSING to let Daryl manage the ads while he observes and learns. The digest must NEVER tell Max to "get Ads Manager access", request access from Daryl, or treat the lack of intervention as a problem. Max will change the ads when he decides to. Stop asking.
+- **BUDGET RECOMMENDATIONS — SETTLED 3 Sep 2026 by Max.** Do not repeat the same budget enforcement recommendation day after day. If a recommendation has been stated (e.g. TOF-WEDDING £125 cap), note it once and stop. Repeating it 24 days running is not insight, it's noise. Max is aware. He is observing Daryl's decisions, not overriding them.
 
 ---
 
@@ -255,7 +257,8 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 ## Corrections Log
 *(Running list of things I got wrong so I don't repeat them)*
 
-- **TEST OCT 2022**: Flagged as a legacy test campaign on multiple occasions. Owner confirmed it is intentional and should never be flagged again.
+- **TEST OCT 2022**: Flagged as a legacy test campaign on multiple occasions. Owner confirmed it is intentional and should never be flagged again. FURTHER CORRECTION 3 Sep 2026: the digest spent 13 days inventing "lost revenue" estimates from TEST OCT 2022's absence (e.g. "~£2,400+ estimated lost revenue") and demanding Max get Ads Manager access — both wrong. Max has full access and is choosing to observe Daryl, not intervene. The "lost revenue" figures were fabricated, not measured. Never invent revenue impact from a campaign's absence.
+- **"GET ADS MANAGER ACCESS" — 3 Sep 2026**: The digest repeated this directive for 13 consecutive days. Max has full access. He is observing, not cut off. The digest was treating a deliberate choice as a problem. Never repeat this directive again.
 - **£3k target on 30 May**: Was hit (£3,108 total sales) but not mentioned in the digest. Always note when a target is hit.
 - **Gross sales vs total sales**: Never use gross_sales as the headline revenue figure. Always use total_sales (full revenue including shipping and tax). That's the number the owner cares about.
 - **Organic social**: Owner confirmed organic social tracking (Instagram, Facebook organic) has been dropped from Windsor.ai. Do not pull or report organic social metrics.
