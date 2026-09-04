@@ -12,26 +12,27 @@
     position: absolute; top: 0; left: 0;
   }
 
-  /* Subtle gradient at bottom for text legibility */
   .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(
       180deg,
       rgba(0,0,0,0) 0%,
-      rgba(0,0,0,0) 65%,
-      rgba(0,0,0,0.55) 100%
+      rgba(0,0,0,0) 60%,
+      rgba(0,0,0,0.6) 100%
     );
   }
 
-  .top-brand {
+  .top-badge {
     position: absolute; top: 48px; left: 56px;
     z-index: 2;
+    background: #4A3A2C;
+    color: #FAF6EE;
     font-size: 14px;
     font-weight: 600;
-    color: #4A3A2C;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    opacity: 0.7;
+    padding: 12px 24px;
+    border-radius: 6px;
   }
 
   .bottom {
@@ -39,54 +40,58 @@
     z-index: 2;
   }
 
-  .headline {
-    font-family: 'Fraunces', serif;
+  .intro-label {
+    font-size: 16px;
     font-weight: 600;
-    font-size: 52px;
-    line-height: 1.15;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    margin-bottom: 8px;
+  }
+
+  .price-hero {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 96px;
+    line-height: 1;
     color: #fff;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-    margin-bottom: 16px;
+    letter-spacing: -2px;
+    text-shadow: 0 3px 24px rgba(0,0,0,0.4);
+    margin-bottom: 12px;
   }
 
-  .row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  .sub {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
 
-  .price-pill {
+  .cta-pill {
     display: inline-flex;
     background: rgba(250,246,238,0.95);
     color: #4A3A2C;
-    font-family: 'Fraunces', serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
-    font-size: 24px;
-    padding: 14px 32px;
+    font-size: 20px;
+    padding: 16px 36px;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  }
-
-  .cta {
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-    opacity: 0.85;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
   }
 </style>
 </head>
 <body>
   <div class="bg"></div>
   <div class="overlay"></div>
-  <div class="top-brand">Daisy Maison</div>
+  <div class="top-badge">New</div>
   <div class="bottom">
-    <div class="headline">Their name. Their date.<br>Their home.</div>
-    <div class="row">
-      <div class="price-pill">From £14.95</div>
-      <div class="cta">Shop personalised gifts &rarr;</div>
-    </div>
+    <div class="intro-label">Introductory Offer</div>
+    <div class="price-hero">£14.95</div>
+    <div class="sub">A personalised reed diffuser with their name<br>and wedding date. Handmade. Gift-boxed.</div>
+    <div class="cta-pill">Personalise yours &rarr;</div>
   </div>
 </body>
 </html>
