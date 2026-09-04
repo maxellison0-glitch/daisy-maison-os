@@ -8,112 +8,93 @@
 
   .bg {
     width: 100%; height: 100%;
-    /* Show the full gift box + tag — product is the star */
-    background: url('hero-flatlay.png') center 35% / cover no-repeat;
+    background: url('hero-flatlay.png') center center / cover no-repeat;
     position: absolute; top: 0; left: 0;
   }
 
-  /* Cream block at bottom — BELOW the product */
-  .text-block {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 360px;
-    background: #FAF6EE;
+  /* Soft gradient bottom only */
+  .overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) 70%,
+      rgba(0,0,0,0.5) 100%
+    );
+  }
+
+  .top-brand {
+    position: absolute; top: 48px; left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
-    padding: 40px 64px;
-  }
-
-  /* Blend from photo to block */
-  .blend {
-    position: absolute;
-    bottom: 360px; left: 0; right: 0;
-    height: 100px;
-    background: linear-gradient(180deg, transparent 0%, #FAF6EE 100%);
-    z-index: 1;
-  }
-
-  .features {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid rgba(74,58,44,0.12);
-  }
-
-  .feat {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1;
-  }
-
-  .feat-label {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: #9B8A76;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-  }
-
-  .feat-val {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 26px;
     color: #4A3A2C;
-    letter-spacing: -0.3px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .bottom {
+    position: absolute; bottom: 56px; left: 56px; right: 56px;
+    z-index: 2;
   }
 
   .headline {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 44px;
     line-height: 1.2;
-    color: #4A3A2C;
-    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: -0.3px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    margin-bottom: 16px;
   }
 
-  .bottom-row {
+  .row {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .brand-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #9B8A76;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
+  .features {
+    display: flex;
+    gap: 24px;
+  }
+
+  .feat {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  .feat-sep {
+    color: rgba(255,255,255,0.4);
   }
 
   .cta {
     font-size: 20px;
     font-weight: 600;
-    color: #4A3A2C;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
   }
 </style>
 </head>
 <body>
   <div class="bg"></div>
-  <div class="blend"></div>
-  <div class="text-block">
-    <div class="features">
-      <div class="feat">
-        <div class="feat-label">Personalised</div>
-        <div class="feat-val">Their name</div>
+  <div class="overlay"></div>
+  <div class="top-brand">Daisy Maison</div>
+  <div class="bottom">
+    <div class="headline">A wedding gift with<br>their name on it.</div>
+    <div class="row">
+      <div class="features">
+        <span class="feat">Personalised</span>
+        <span class="feat-sep">·</span>
+        <span class="feat">Gift boxed</span>
+        <span class="feat-sep">·</span>
+        <span class="feat">From £14.95</span>
       </div>
-      <div class="feat">
-        <div class="feat-label">Gift boxed</div>
-        <div class="feat-val">Ready to give</div>
-      </div>
-      <div class="feat">
-        <div class="feat-label">Price</div>
-        <div class="feat-val">From £14.95</div>
-      </div>
-    </div>
-    <div class="headline">A wedding gift with their name on it.</div>
-    <div class="bottom-row">
-      <div class="brand-name">Daisy Maison</div>
       <div class="cta">Shop now &rarr;</div>
     </div>
   </div>

@@ -8,49 +8,46 @@
 
   .bg {
     width: 100%; height: 100%;
-    /* Push the product UP so it sits in the top 60% with breathing room */
-    background: url('hero-clean.png') center 25% / cover no-repeat;
+    background: url('hero-clean.png') center center / cover no-repeat;
     position: absolute; top: 0; left: 0;
   }
 
-  /* Clean cream block at the very bottom — BELOW the product, not over it */
-  .text-block {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 340px;
-    background: #FAF6EE;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 72px;
+  /* Subtle gradient at bottom for text legibility */
+  .overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) 65%,
+      rgba(0,0,0,0.55) 100%
+    );
   }
 
-  /* Soft blend from photo to cream block */
-  .blend {
-    position: absolute;
-    bottom: 340px; left: 0; right: 0;
-    height: 120px;
-    background: linear-gradient(180deg, transparent 0%, #FAF6EE 100%);
-    z-index: 1;
+  .top-brand {
+    position: absolute; top: 48px; left: 56px;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4A3A2C;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .bottom {
+    position: absolute; bottom: 56px; left: 56px; right: 56px;
+    z-index: 2;
   }
 
   .headline {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 52px;
-    line-height: 1.2;
-    color: #4A3A2C;
+    line-height: 1.15;
+    color: #fff;
     letter-spacing: -0.5px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
     margin-bottom: 16px;
-  }
-
-  .sub {
-    font-size: 24px;
-    font-weight: 400;
-    color: #6B5B4B;
-    line-height: 1.5;
-    margin-bottom: 28px;
   }
 
   .row {
@@ -61,29 +58,31 @@
 
   .price-pill {
     display: inline-flex;
-    background: #4A3A2C;
-    color: #FAF6EE;
+    background: rgba(250,246,238,0.95);
+    color: #4A3A2C;
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 26px;
-    padding: 16px 36px;
+    font-size: 24px;
+    padding: 14px 32px;
     border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   }
 
   .cta {
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 500;
-    color: #4A3A2C;
-    opacity: 0.65;
+    color: #fff;
+    opacity: 0.85;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
   }
 </style>
 </head>
 <body>
   <div class="bg"></div>
-  <div class="blend"></div>
-  <div class="text-block">
+  <div class="overlay"></div>
+  <div class="top-brand">Daisy Maison</div>
+  <div class="bottom">
     <div class="headline">Their name. Their date.<br>Their home.</div>
-    <div class="sub">A personalised reed diffuser, handmade in our UK workshop.</div>
     <div class="row">
       <div class="price-pill">From £14.95</div>
       <div class="cta">Shop personalised gifts &rarr;</div>

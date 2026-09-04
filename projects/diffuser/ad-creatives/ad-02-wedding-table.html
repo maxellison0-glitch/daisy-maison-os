@@ -8,96 +8,106 @@
 
   .bg {
     width: 100%; height: 100%;
-    /* Product sits in top-center — keep it fully visible */
-    background: url('hero-wedding-table.png') center 20% / cover no-repeat;
+    background: url('hero-wedding-table.png') center center / cover no-repeat;
     position: absolute; top: 0; left: 0;
   }
 
-  /* Cream block at bottom — sits BELOW the product, not over it */
-  .text-block {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 320px;
-    background: #FAF6EE;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 72px;
+  /* Light vignette top + bottom for text */
+  .overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0) 18%,
+      rgba(0,0,0,0) 70%,
+      rgba(0,0,0,0.5) 100%
+    );
   }
 
-  /* Gradient blend from image to cream */
-  .blend {
-    position: absolute;
-    bottom: 320px; left: 0; right: 0;
-    height: 100px;
-    background: linear-gradient(180deg, transparent 0%, #FAF6EE 100%);
-    z-index: 1;
+  .top {
+    position: absolute; top: 48px; left: 56px; right: 56px;
+    z-index: 2;
   }
 
   .eyebrow {
     font-size: 14px;
     font-weight: 600;
-    color: #9B8A76;
+    color: rgba(255,255,255,0.8);
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
   }
 
-  .headline {
+  .hook {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 46px;
-    line-height: 1.2;
-    color: #4A3A2C;
+    font-size: 48px;
+    line-height: 1.15;
+    color: #fff;
     letter-spacing: -0.5px;
-    margin-bottom: 14px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+
+  .bottom {
+    position: absolute; bottom: 56px; left: 56px; right: 56px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .sub {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 400;
-    color: #6B5B4B;
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-
-  .row {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+    color: #fff;
+    opacity: 0.9;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+    line-height: 1.4;
   }
 
   .cta-btn {
     display: inline-flex;
-    background: #4A3A2C;
-    color: #FAF6EE;
+    background: rgba(250,246,238,0.95);
+    color: #4A3A2C;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    padding: 16px 40px;
+    padding: 16px 36px;
     border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    width: fit-content;
   }
 
   .price {
     font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 30px;
-    color: #4A3A2C;
+    font-weight: 300;
+    font-size: 56px;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    line-height: 1;
   }
 </style>
 </head>
 <body>
   <div class="bg"></div>
-  <div class="blend"></div>
-  <div class="text-block">
+  <div class="overlay"></div>
+  <div class="top">
     <div class="eyebrow">Personalised Wedding Gifts</div>
-    <div class="headline">The gift they'll keep forever.</div>
-    <div class="sub">Their name and date, on a handmade reed diffuser.</div>
-    <div class="row">
-      <div class="cta-btn">Personalise yours</div>
-      <div class="price">£14.95</div>
+    <div class="hook">The gift they'll<br>keep forever.</div>
+  </div>
+  <div class="bottom">
+    <div class="left-col">
+      <div class="sub">Their name and date, on a<br>handmade reed diffuser.</div>
+      <div class="cta-btn">Personalise yours &rarr;</div>
     </div>
+    <div class="price">£14.95</div>
   </div>
 </body>
 </html>
