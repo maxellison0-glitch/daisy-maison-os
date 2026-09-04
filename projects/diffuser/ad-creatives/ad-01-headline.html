@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=DM+Sans:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1350px; overflow: hidden; position: relative; font-family: 'DM Sans', sans-serif; }
+
+  .bg {
+    width: 100%; height: 100%;
+    background: url('hero-clean.png') center center / cover no-repeat;
+    position: absolute; top: 0; left: 0;
+  }
+
+  /* Soft bottom fade only — keep the airy feel */
+  .fade {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+    background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0.92) 100%);
+  }
+
+  .content {
+    position: absolute; bottom: 64px; left: 72px; right: 72px;
+    z-index: 2;
+  }
+
+  .headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #4A3A2C;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .sub {
+    font-size: 26px;
+    font-weight: 400;
+    color: #6B5B4B;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .price-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #4A3A2C;
+    color: #FAF6EE;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 28px;
+    padding: 16px 36px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+  }
+
+  .cta {
+    font-size: 22px;
+    font-weight: 500;
+    color: #4A3A2C;
+    letter-spacing: 0.3px;
+    opacity: 0.7;
+  }
+
+  /* Top-left brand mark */
+  .brand {
+    position: absolute; top: 48px; left: 72px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .brand-dot {
+    width: 10px; height: 10px;
+    background: #4A3A2C;
+    border-radius: 50%;
+  }
+  .brand-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #4A3A2C;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="fade"></div>
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <div class="brand-name">Daisy Maison</div>
+  </div>
+  <div class="content">
+    <div class="headline">Their name.<br>Their date.<br>Their home.</div>
+    <div class="sub">A personalised reed diffuser, made to order in our UK workshop.</div>
+    <div class="row">
+      <div class="price-pill">From £14.95</div>
+      <div class="cta">Shop personalised gifts &rarr;</div>
+    </div>
+  </div>
+</body>
+</html>
