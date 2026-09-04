@@ -27,6 +27,8 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 - **Mr & Mrs Personalised Street Sign** updated 26 Jun 2026: now has Small, Medium, and Large size variants (previously one size, one price). Change made for margin improvement. Daryl briefed.
 - **Add-on roadmap:** Goal is size-matched upsells at checkout — Large → gift box, Medium → easel, Small → mounting strips. Cleaning-kit upsell was confirmed completed/ticked off by Max on 12 Jul 2026; exact placement, eligible products, and live verification are not yet recorded.
 - **Digest section to include:** Teacher vs Wedding split — orders and gross by product category each day, flag which is worth scaling.
+- **Mr & Mrs Reed Diffuser — LAUNCHED 4 Sep 2026.** New product, live on the store. Watch for it appearing in Shopify orders from 4 Sep onwards. Report any sales in the top-products section.
+- **Max's first self-run Meta campaign — LIVE 4 Sep 2026.** CBO, £50/day budget, 5 ads active, purchase-optimised. Meta review period expected <24h before impressions serve. **Do not judge before 7–8 Sep** — conversion lag on considered purchases means day-one ROAS will understate reality. This is separate from Daryl's campaigns (TOF-WEDDING, Social Engagement); look for it in Windsor Facebook Ads data. Report spend, clicks, and any purchases once it appears.
 
 ---
 
