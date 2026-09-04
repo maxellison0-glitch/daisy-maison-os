@@ -4,7 +4,7 @@ const ads = [
   { html: 'ad-01-headline.html',     out: 'ad-01-headline.png',     w: 1080, h: 1350 },
   { html: 'ad-02-wedding-table.html', out: 'ad-02-wedding-table.png', w: 1080, h: 1350 },
   { html: 'ad-03-dark-romance.html',  out: 'ad-03-dark-romance.png',  w: 1080, h: 1080 },
-  { html: 'ad-04-flatlay.html',       out: 'ad-04-flatlay.png',       w: 1080, h: 1080 },
+  { html: 'ad-04-flatlay.html',       out: 'ad-04-flatlay.png',       w: 1080, h: 1350 },
   { html: 'ad-05-luxury-price.html',  out: 'ad-05-luxury-price.png',  w: 1080, h: 1350 },
 ];
 
