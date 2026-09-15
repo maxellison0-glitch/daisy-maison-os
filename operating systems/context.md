@@ -247,6 +247,16 @@ Daisy Maison UK is a personalised gift store (daisymaisonuk.myshopify.com). Prim
 - **Quarterly**: refresh the "1,600+ couples" social-proof number on site so it stays true.
 - Open build threads (Max/Codex, not digest actions): stale theme draft 202868851027 to delete + re-duplicate; one real test order to verify fulfilment properties; size-guide photos missing on Always & Forever street sign + Traditional, Vintage Train, USA Road, Holiday, seasonal legacy signs; gift box sentiments to pick (EOI range) before boxes arrive; Etsy dashboard review mining for gap pages; conditional cart upsells + post-purchase app (with gift box rollout); Complete Your Gift sections for Dad's Bar & Football unfinished.
 
+## Etsy Operational Update — 15 Sep 2026
+
+- **4 reed diffusers now live** with optimised titles/tags (including Christmas variant, published from draft). Etsy Ads ON for all 4 — no performance data yet, first read in a few days.
+- **New listing: Personalised New Home Gift Set** (street sign + diffuser bundle) — LIVE, £28.95–£38.95, Etsy Ads ON. Gets its own ROAS line. Needs one styled photo of sign + diffuser together as hero when video gets filmed.
+- **3 native buy-together bundles** created at 10% off — New Home (~£55), Wedding (~£72), Christmas (~£71). Display automatically from 23 Sep when SEPTEMBERSALE ends (Etsy won't show bundles on listings already in a sale).
+- **Interested Shopper offer activated** — 10% off, code WELCOME10. Now all 4 automated offers running.
+- **Shop front updated**: Featured items reordered — Family Street Sign and Mr & Mrs Street Sign now lead. Shop announcement rewritten (was from June 2021) — now flags diffuser range + Christmas ordering.
+- **8 listings now advertised** (2 street signs, swing arch, 4 diffusers, gift set). Month-to-date Etsy Ads ROAS 1.79x — diffusers + gift set are the play to lift it.
+- **Open to-dos**: Sign up for Cyber Specials (23 Nov–1 Dec) in Sales & Discounts. Film diffuser video. Next sale: use "selected listings" not whole-shop, so bundles keep running. 169 listings still have title recommendations from Etsy — batch job for another session.
+
 ## Open Decisions to Track
 
 - **Upsell .95→.99 price sweep — QUEUED for 5 Jul**: Max confirmed the move (upsells only, for consistency with strips/protection at £1.99). On hold until he checks the new checkout code for typed prices. List when green-lit: Wooden Display Easel £4.95→£4.99, Gift Wrap Kit £4.95→£4.99, (£4.95) Mounting Strips →£4.99 (variant + title), Lucky Sixpence £4.95→£4.99; Wedding Congratulations Card £2.95 TBD; skip legacy Globo easel add-ons (replaced next week).
