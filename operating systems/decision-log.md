@@ -51,3 +51,19 @@ Each entry:
 **Rollback:** Files still exist at original locations (copies, not moves). Re-point SKILL.md paths.
 
 **Result:** Complete. Digest paths updated. Files verified at new location.
+
+---
+
+### 2026-09-22 — Christmas Gift Wrap Kit: one card, two styles (Classic / Christmas)
+
+**Decision:** Offer both wrap kits everywhere the classic kit is offered, as a single add-on card with a Classic / Christmas choice inside it (two thumbnails, one button per style). Not two cards, not Christmas-only. Built as one shared script (`assets/daisy-wrap-kits.js`) layered onto the existing custom builders, with the Christmas option switched on/off by the product's status. Full record: `projects/gift-wrap-kit/README.md`.
+
+**Reason:** A second card doubles the add-on decision on a phone and invites double-adds; Christmas-only breaks wedding/christening gifts bought in December (Mr & Mrs is ~50% of orders; wedding arch was a top-6 Christmas landing page). Wrap attach has slid 12.3% → 6.3% since June, so a festive option is the cheapest lift available in Q4.
+
+**Expected outcome:** Wrap attach back above 10% of orders in Nov–Dec with no drop in classic-kit sales on wedding products. Both kits at £5.95.
+
+**Risk:** Builder-level regression on the Mr & Mrs page (30% of sessions). Mitigated: builders untouched, the script only runs while the Christmas product is live, and the whole thing is on an unpublished duplicate theme until QA passes.
+
+**Rollback:** Set the Christmas Gift Wrap Kit product to Draft — every page reverts instantly. Or republish the previous theme.
+
+**Result:** Pending — code on "In construction 🚧 v2" theme, not yet published.
