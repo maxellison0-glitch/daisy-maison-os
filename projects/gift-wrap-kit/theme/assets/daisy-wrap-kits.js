@@ -68,6 +68,12 @@
   }
   function halfPrice(k) { return Math.round(k.price / 2); }
   function pairPrice(k) { return k.price + halfPrice(k); }
+  // Write-only-if-different helpers. The card observer below re-syncs on
+  // attribute changes, and a no-op classList.toggle / setAttribute still
+  // queues a mutation record, so every write here must be conditional.
+  function setClass(el, name, on) { if (el.classList.contains(name) !== !!on) el.classList.toggle(name, !!on); }
+  function setAttr(el, name, value) { if (el.getAttribute(name) !== value) el.setAttribute(name, value); }
+  function setHidden(el, hidden) { if (el.hidden !== !!hidden) el.hidden = !!hidden; }
 
   /* ---------------- second kit (shared) ---------------- */
 
@@ -86,11 +92,11 @@
     var block = qs(container, '.dm-wrap-second');
     if (!block) return;
     if (!on && state.second) state.second = null;
-    block.hidden = !on;
+    setHidden(block, !on);
     qsa(block, '[data-wrap-second]').forEach(function (btn) {
       var sel = on && btn.getAttribute('data-wrap-second') === state.second;
-      btn.classList.toggle('is-selected', sel);
-      btn.setAttribute('aria-pressed', sel ? 'true' : 'false');
+      setClass(btn, 'is-selected', sel);
+      setAttr(btn, 'aria-pressed', sel ? 'true' : 'false');
     });
   }
   function syncAllSecond() {
@@ -229,13 +235,12 @@
       } else if (btn.hasAttribute('data-wrap-active')) {
         btn.removeAttribute('data-wrap-active');
       }
-      var pressed = active ? 'true' : 'false';
-      if (btn.getAttribute('aria-pressed') !== pressed) btn.setAttribute('aria-pressed', pressed);
+      setAttr(btn, 'aria-pressed', active ? 'true' : 'false');
     });
     qsa(card, '[data-wrap-thumb]').forEach(function (fig) {
       var mine = fig.getAttribute('data-wrap-thumb') === style;
-      fig.classList.toggle('is-selected', on && mine);
-      fig.classList.toggle('is-dimmed', on && !mine);
+      setClass(fig, 'is-selected', on && mine);
+      setClass(fig, 'is-dimmed', on && !mine);
     });
     var name = qs(card, '.dm-cyg__name');
     if (name && name.dataset.wrapBaseName) {
@@ -248,10 +253,14 @@
   function watchCard(card) {
     if (!window.MutationObserver) return;
     // The builders re-mark is-active / aria-pressed on every update (both
-    // style buttons are "single" to them). Re-sync after each change; writes
-    // above are conditional, so this settles in one pass.
-    new MutationObserver(function () { syncCygCard(card); })
-      .observe(card, { attributes: true, subtree: true, attributeFilter: ['class', 'aria-pressed', 'data-addon-mode'] });
+    // style buttons are "single" to them). Re-sync after each change. Every
+    // write in the sync is conditional and the sync's own records are
+    // discarded, so this settles in one pass and can never loop.
+    var observer = new MutationObserver(function () {
+      syncCygCard(card);
+      observer.takeRecords(); // drop the records our own writes just queued
+    });
+    observer.observe(card, { attributes: true, subtree: true, attributeFilter: ['class', 'aria-pressed', 'data-addon-mode'] });
   }
 
   // Capture phase, registered before the builders' own document/root
@@ -300,11 +309,11 @@
   }
 
   function setMode(card, mode) {
-    card.dataset.addonMode = mode;
+    if (card.dataset.addonMode !== mode) card.dataset.addonMode = mode;
     qsa(card, '.dm-addon-mode > [data-dm-addon-mode]').forEach(function (btn) {
       var active = btn.getAttribute('data-dm-addon-mode') === mode;
-      btn.classList.toggle('is-active', active);
-      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      setClass(btn, 'is-active', active);
+      setAttr(btn, 'aria-pressed', active ? 'true' : 'false');
     });
     syncCygCard(card);
     var input = card.__dmInput;
