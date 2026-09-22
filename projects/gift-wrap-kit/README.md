@@ -58,7 +58,7 @@ option piggybacks on all of them from ONE shared script, so no builder was edite
 |---|---|---|---|
 | Mr & Mrs street sign | `snippets/dm-gc.liquid` card + `daisy-street-sign-options.js` | Two thumbnails + Classic / Christmas buttons in the existing card | 30% |
 | Pebble pictures (flower arch, love tree, blossom tree, christening…) | `daisy-pebble-picture.js` renders the same card style | Same as above | ~28% |
-| Street-sign clones (family, kitchen, retirement, teacher, …) | ~23 `daisy-*-street-sign.js` files, checkbox row | The tick-box row is hidden and **the identical Mr & Mrs card** is mounted in its place, kept in sync with the hidden tick box | ~8% |
+| Street-sign clones (family, kitchen, retirement, teacher, football, …) | 22 `daisy-*-street-sign.js` builders with a gift-wrap tick box (each sign has its own file; the two football signs key the box on a data attribute) | The tick-box row is hidden and **the identical Mr & Mrs card** is mounted in its place, kept in sync with the hidden tick box. The USA road sign and the vintage train sign never offered a wrap kit, so nothing appears there | ~8% |
 | Reed diffusers (4) | `daisy-diffuser-builder.js` extras | Same: the "Add a Gift Wrap Kit" row becomes the card | ~4% |
 | Hearts | `daisy-heart-builder.js` | **No wrap kit offered today at all** — see follow-ups | ~5% |
 | Products still on Globo (Christmas pebble star, A4 prints, …) | Globo checkbox | Classic only — see the Globo brief | ~5% |
@@ -167,7 +167,8 @@ alone.
   Gift Wrap Kit extra to the heart configs (the diffuser configs show the exact
   JSON) and the Christmas toggle appears automatically.
 - **The legacy Christmas street signs** (Family Sleigh, Santa Stop Here, …) use the
-  inline builder in `theme.liquid` and offer strips but no wrap. Same gap.
+  inline builder in `theme.liquid` and offer strips but no wrap. Same gap. Same
+  for the USA road sign and the vintage train sign builders.
 - **Cart page "finish" upsells** (`dm-cart-upsells.liquid`) and the checkout
   "Useful Extras" still push the classic kit only. Fine for now; a seasonal swap
   there is a small follow-up.

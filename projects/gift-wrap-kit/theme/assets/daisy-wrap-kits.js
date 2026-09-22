@@ -301,6 +301,10 @@
   function isWrapCheckbox(input) {
     if (input.type !== 'checkbox' || input.dataset.wrapEnhanced) return false;
     if (/gift[-_]?wrap/i.test(input.name || '')) return true;
+    // The football signs key their tick box on a data attribute instead of a name.
+    for (var i = 0; i < input.attributes.length; i++) {
+      if (/gift[-_]?wrap/i.test(input.attributes[i].name)) return true;
+    }
     if (input.hasAttribute('data-heart-extra')) {
       var label = input.closest('label');
       return !!(label && /gift wrap kit/i.test(label.textContent || ''));
@@ -328,7 +332,9 @@
 
   function mountCard(input) {
     input.dataset.wrapEnhanced = 'true';
-    var host = input.closest('label') || input.parentNode;
+    // Hide the whole row (some builders wrap the label in a card with its own
+    // quantity buttons), or the label, or as a last resort the parent.
+    var host = input.closest('.daisy-street-options__choice') || input.closest('label') || input.parentNode;
     if (!host || !host.parentNode) return;
     var mount = document.createElement('div');
     mount.className = 'dm-wrap-mount';
@@ -359,9 +365,9 @@
   /* ---------------- cart hooks ---------------- */
 
   function renameAddon(value) {
-    return (typeof value === 'string' && /gift wrap kit/i.test(value) && !/christmas/i.test(value))
-      ? value.replace(/gift wrap kit/i, 'Christmas Gift Wrap Kit')
-      : value;
+    if (typeof value !== 'string' || !/gift wrap kit/i.test(value) || /christmas/i.test(value)) return value;
+    // "Add a Gift Wrap Kit" (the diffuser label) -> "Christmas Gift Wrap Kit"
+    return value.replace(/^add an? /i, '').replace(/gift wrap kit/i, 'Christmas Gift Wrap Kit');
   }
 
   function rewriteItems(items) {
