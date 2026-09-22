@@ -116,8 +116,9 @@ purchasable**. Everything (price, name, images) is read live from the two produc
 | `theme/assets/daisy-wrap-kits.js` | NEW. The shared card. Family A (dm-cyg cards on Mr & Mrs and the pebble pictures) gets the two thumbnails and Classic / Christmas buttons added to the existing card; choosing a style swaps the card's `data-variant`/`data-price` so the builders' own cart code adds the right product. Families B/C (tick-box rows on the street-sign clones, diffusers and hearts) hide the row and mount the identical card, kept in sync with the hidden tick box; the classic variant id those builders hold is swapped at submit time through three hooks: `DaisyCartSubmit.create().add`, `DaisyNativeStreetSizes.submit/add`, and `window.fetch` for direct `/cart/add.js` posts (JSON, form-encoded and FormData). The same hooks append the half-price second kit line. Hooks are inert unless a choice was made on the page. |
 | `theme/snippets/dm-mobile-fixes.liquid` | EDITED. Now renders `dm-wrap-kits` on product pages. Chosen because `layout/theme.liquid` renders it in `<head>` after `daisy-cart-submit.js` and before every builder — the load order the script needs — without re-uploading the 147 KB layout. Move the one-line render into `theme.liquid` next time that file is edited. |
 
-Uploaded to the API duplicate of the live theme: **"In construction 🚧 v2 — Christmas
-wrap kit (copy of live 22 Sep)"**. The earlier "In construction 🚧" duplicate is
+Built on the API duplicate of the live theme, **"In construction 🚧 v2 — Christmas
+wrap kit (copy of live 22 Sep)"**, which Max published as the live theme on
+22 Sep 2026 at 17:42 UTC. The earlier "In construction 🚧" duplicate is
 broken — Shopify refuses to preview it because it has no `layout/theme.liquid`
 or `config/settings_schema.json` (43 files instead of ~900). Delete it.
 
