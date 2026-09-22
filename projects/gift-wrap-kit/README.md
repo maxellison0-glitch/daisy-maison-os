@@ -58,14 +58,36 @@ option piggybacks on all of them from ONE shared script, so no builder was edite
 |---|---|---|---|
 | Mr & Mrs street sign | `snippets/dm-gc.liquid` card + `daisy-street-sign-options.js` | Two thumbnails + Classic / Christmas buttons in the existing card | 30% |
 | Pebble pictures (flower arch, love tree, blossom tree, christening…) | `daisy-pebble-picture.js` renders the same card style | Same as above | ~28% |
-| Street-sign clones (family, kitchen, retirement, teacher, …) | ~23 `daisy-*-street-sign.js` files, checkbox row | "Choose your kit" row with both thumbnails appears under the ticked row | ~8% |
-| Reed diffusers (4) | `daisy-diffuser-builder.js` extras | Same "Choose your kit" row | ~4% |
+| Street-sign clones (family, kitchen, retirement, teacher, …) | ~23 `daisy-*-street-sign.js` files, checkbox row | The tick-box row is hidden and **the identical Mr & Mrs card** is mounted in its place, kept in sync with the hidden tick box | ~8% |
+| Reed diffusers (4) | `daisy-diffuser-builder.js` extras | Same: the "Add a Gift Wrap Kit" row becomes the card | ~4% |
 | Hearts | `daisy-heart-builder.js` | **No wrap kit offered today at all** — see follow-ups | ~5% |
 | Products still on Globo (Christmas pebble star, A4 prints, …) | Globo checkbox | Classic only — see the Globo brief | ~5% |
 
-For the checkbox rows the default is **Classic** (the safe kit for a wedding or
-christening); the Christmas card sits right beside it. For the card surfaces
-there is no default because choosing a style is the add action.
+One card, everywhere. It was built once for Mr & Mrs and the tick-box pages
+mount the same markup, so any later change to the card is a change in one
+place. There is no default style: choosing a style IS the add action. On
+Christmas products (URL contains christmas / xmas / santa / elf / festive…)
+the Christmas thumbnail and button come first; everywhere else Classic does.
+
+## Second kit, half price
+
+Once a kit is chosen the card grows a line: **"Wrapping another present?
+Second kit half price · +£2.98 at basket"** with two small chips, Christmas and
+Classic. Tapping a chip adds a second kit as its own basket line
+(`Add-on: Second gift wrap kit (half price)`), so the customer can mix a
+Christmas kit with a Classic one or take two of the same.
+
+The price cut itself is **not** done in the theme. It comes from the automatic
+discount **"Second gift wrap kit half price"** (buy 1 of either kit, get 1 of
+either kit at 50%, once per order; `gid://shopify/DiscountAutomaticNode/1839836299603`,
+live store-wide since 22 Sep). The basket is therefore always right, whatever
+path the kits arrive by — including the existing "Two · £11.90" button, which
+now reads "Two · £8.93". Turning the offer off is two steps: deactivate that
+discount in admin **and** set `"secondKit": false` in `dm-wrap-kits.liquid`.
+
+Why a second kit rather than a bundle product or a pop-up: it is one tap in the
+place the customer is already deciding about wrapping, it needs no new SKU, and
+the discount shows on the basket line where they check it.
 
 ## The season switch is a product, not code
 
@@ -84,7 +106,7 @@ purchasable**. Everything (price, name, images) is read live from the two produc
 | File | What |
 |---|---|
 | `theme/snippets/dm-wrap-kits.liquid` | NEW. Outputs `window.DAISY_WRAP_KITS` (both kits: variant id, price, name, thumb, zoom), the CSS, and the script tag — only while the Christmas kit is live. |
-| `theme/assets/daisy-wrap-kits.js` | NEW. The shared style toggle. Family A (dm-cyg cards) swaps the card's `data-variant`/`data-price` so the builders' own cart code adds the right product. Families B/C (checkbox rows) swap the classic variant id at submit time through three hooks: `DaisyCartSubmit.create().add`, `DaisyNativeStreetSizes.submit/add`, and `window.fetch` for direct `/cart/add.js` posts. Hooks are inert unless a style row exists on the page and Christmas is chosen. |
+| `theme/assets/daisy-wrap-kits.js` | NEW. The shared card. Family A (dm-cyg cards on Mr & Mrs and the pebble pictures) gets the two thumbnails and Classic / Christmas buttons added to the existing card; choosing a style swaps the card's `data-variant`/`data-price` so the builders' own cart code adds the right product. Families B/C (tick-box rows on the street-sign clones, diffusers and hearts) hide the row and mount the identical card, kept in sync with the hidden tick box; the classic variant id those builders hold is swapped at submit time through three hooks: `DaisyCartSubmit.create().add`, `DaisyNativeStreetSizes.submit/add`, and `window.fetch` for direct `/cart/add.js` posts (JSON, form-encoded and FormData). The same hooks append the half-price second kit line. Hooks are inert unless a choice was made on the page. |
 | `theme/snippets/dm-mobile-fixes.liquid` | EDITED. Now renders `dm-wrap-kits` on product pages. Chosen because `layout/theme.liquid` renders it in `<head>` after `daisy-cart-submit.js` and before every builder — the load order the script needs — without re-uploading the 147 KB layout. Move the one-line render into `theme.liquid` next time that file is edited. |
 
 Uploaded to the API duplicate of the live theme: **"In construction 🚧 v2 — Christmas
@@ -111,10 +133,16 @@ or `config/settings_schema.json` (43 files instead of ~900). Delete it.
    chosen style.
 3. Pebble picture (e.g. wedding flower arch): same card behaviour; second frame
    → "Two wraps" still works.
-4. Family street sign: tick Gift Wrap Kit → "Choose your kit" row appears;
-   choose Christmas → basket line is the Christmas kit at £5.95.
-5. Diffuser: tick "Add a Gift Wrap Kit" → row appears; basket line correct.
-6. Set the Christmas product to Draft → every page reverts to today's single
+4. Family street sign: the add-ons list shows the same card as Mr & Mrs (old
+   tick-box row hidden). Tap Christmas → total rises by £5.95; basket line is
+   the Christmas kit at £5.95 with `_Linked product` / `_Bundle ID`.
+5. Diffuser: the "Add a Gift Wrap Kit" extra is the same card; basket line
+   correct.
+6. Second kit: after choosing a style, the "Second kit half price" chips
+   appear; tap Classic → basket has two kit lines and the automatic discount
+   takes £2.97–£2.98 off the second. Tap "No thanks" → chips disappear and the
+   second kit is dropped.
+7. Set the Christmas product to Draft → every page reverts to today's single
    classic control with no console errors.
 
 ## Elf Arrival Postcard landing page (added 22 Sep on request)
@@ -123,7 +151,8 @@ or `config/settings_schema.json` (43 files instead of ~900). Delete it.
 "Build the set" list (plush elf, pyjamas, report sheets). A fourth row,
 **Christmas Gift Wrap Kit +£5.95**, now sits in that list in the same pattern:
 tick to add, and when the sibling offer is on it shows "Just one · £5.95 /
-One each · £11.90". Variant id, price and thumbnail are read live from the
+One each · £8.93 (2nd half price)" — two kits on one line, halved by the same
+automatic discount. Variant id, price and thumbnail are read live from the
 product, and the row only renders while the kit is active + purchasable, so
 the same Draft switch turns it off. Cart line carries `Add-on: Christmas Gift
 Wrap Kit`. Christmas kit only on this page — it is a Christmas product. The

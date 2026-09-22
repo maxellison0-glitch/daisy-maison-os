@@ -182,7 +182,7 @@
         <label class="lp-check" data-row="wrap"><input type="checkbox" id="dm-add-wrap"><img src="{{ dm_wrap_img | image_url: width: 128 }}" width="44" height="44" alt="" loading="lazy"><span class="lp-ck-name">Christmas Gift Wrap Kit<span class="lp-ck-sub">Kraft paper, red &amp; white twine, pine sprig and a gift tag. Sealed flat, ready to wrap it up.</span></span><span class="lp-ck-price" data-price-label="wrap">+£{{ dm_wrap_v.price | money_without_currency }}</span>
           <span class="lp-qty" data-qty="wrap" role="radiogroup" aria-label="How many gift wrap kits">
             <label class="lp-chip lp-on"><input type="radio" name="wrapqty" value="1" checked>Just one · £{{ dm_wrap_v.price | money_without_currency }}</label>
-            <label class="lp-chip"><input type="radio" name="wrapqty" value="2">One each · £{{ dm_wrap_v.price | times: 2 | money_without_currency }}</label>
+            <label class="lp-chip"><input type="radio" name="wrapqty" value="2">One each · £{{ dm_wrap_v.price | times: 1.5 | round | money_without_currency }} <span class="lp-save">2nd half price</span></label>
           </span>
         </label>
         {%- endif -%}
@@ -276,14 +276,14 @@
     var t=BASE;
     if(sib.checked)t+=995;
     if(plush.checked)t+=(qtyOf('plushqty')===2?PLUSH.two.p:PLUSH.one.p);
-    if(wrap&&wrap.checked)t+=WRAP.p*(qtyOf('wrapqty')===2?2:1);
+    if(wrap&&wrap.checked)t+=(qtyOf('wrapqty')===2?WRAP.p+Math.round(WRAP.p/2):WRAP.p);
     if(bundleActive()){t+=995;note.style.display='block'}else{note.style.display='none';if(pj.checked)t+=(qtyOf('pjqty')===2?PJ.two.p:PJ.one.p);if(sheets.checked)t+=495}
     offerBox.classList.toggle('lp-sel',sib.checked);
     document.querySelector('[data-row="plush"]').classList.toggle('lp-sel',plush.checked);
     document.querySelector('[data-row="pj"]').classList.toggle('lp-sel',pj.checked);
     document.querySelector('[data-row="sheets"]').classList.toggle('lp-sel',sheets.checked);
     if(wrapRow)wrapRow.classList.toggle('lp-sel',!!(wrap&&wrap.checked));
-    if(wrapLabel)wrapLabel.textContent='+£'+((WRAP.p*((wrap&&wrap.checked&&qtyOf('wrapqty')===2)?2:1))/100).toFixed(2);
+    if(wrapLabel)wrapLabel.textContent='+£'+(((wrap&&wrap.checked&&qtyOf('wrapqty')===2)?WRAP.p+Math.round(WRAP.p/2):WRAP.p)/100).toFixed(2);
     document.querySelectorAll('.lp-qty').forEach(function(q){q.classList.toggle('lp-show',sib.checked)});
     document.querySelector('[data-price-label="plush"]').textContent=(plush.checked&&qtyOf('plushqty')===2)?'+£13.95':'+£7.95';
     document.querySelector('[data-price-label="pj"]').textContent=(pj.checked&&qtyOf('pjqty')===2)?'+£13.95':'+£7.95';

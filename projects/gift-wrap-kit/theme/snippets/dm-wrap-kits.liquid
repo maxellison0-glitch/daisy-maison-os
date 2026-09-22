@@ -13,6 +13,10 @@
   Prices, names and images all track the two products, so a price change in
   admin flows through here with no code change.
 
+  secondKit: true switches on the "second kit half price" line. It relies on
+  the store's automatic discount "Second gift wrap kit half price" (buy one
+  kit, second kit 50% off, once per order). Remove that discount = set false.
+
   Thumbnails use each kit's SECOND image (the clean product shot); tapping a
   thumbnail zooms the FIRST image (the annotated "what's inside" graphic).
 {%- endcomment -%}
@@ -33,6 +37,7 @@
 <script>
 window.DAISY_WRAP_KITS = {
   "currency": {{ cart.currency.iso_code | default: shop.currency | json }},
+  "secondKit": true,
   "copy": "Paper, twine, ribbon and a gift tag, sealed in cellophane and ready to use — in classic neutrals or a festive Christmas set.",
   "classic": {
     "style": "classic",
@@ -70,7 +75,7 @@ window.DAISY_WRAP_KITS = {
 .dm-wrap-style__price{display:block;font-size:11px;font-weight:600;color:#8a8a7a}
 .dm-cyg__card--wrap-styles .dm-addon-mode__option[data-dm-wrap-style].is-active:not([data-wrap-active]){border-color:#e4ddd4!important;background:#fff!important;box-shadow:none!important}
 .dm-cyg__card--wrap-styles .dm-addon-mode__option[data-wrap-active]{border-color:var(--dm-sage,#b0af9b)!important;background:#f3f5ec!important;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)!important}
-.dm-wrap-row{grid-column:1/-1;flex:1 1 100%;margin:6px 0 10px;padding:10px 12px;border:1px solid #ece6dd;border-radius:12px;background:#fbfcf8;box-sizing:border-box}
+.dm-wrap-row{grid-column:1/-1;flex:1 1 100%;margin:-2px 0 10px;padding:10px 12px;border:1px solid #ece6dd;border-radius:12px;background:#fbfcf8;box-sizing:border-box}
 .dm-wrap-row[hidden]{display:none!important}
 .dm-wrap-row__title{margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6b6055}
 .dm-wrap-row__choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -79,6 +84,20 @@ window.DAISY_WRAP_KITS = {
 .dm-wrap-choice__label{display:block;font-weight:700;font-size:13px}
 .dm-wrap-choice__price{display:block;font-size:12px;color:#8a8a7a}
 .dm-wrap-choice.is-selected{border-color:var(--dm-sage,#b0af9b);background:#f3f5ec;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)}
+.dm-wrap-choice.is-selected .dm-wrap-choice__label:before{content:"\2713 ";font-weight:800;color:#2f3724}
+.dm-wrap-mount{grid-column:1/-1;flex:1 1 100%;width:100%;margin:6px 0 10px;box-sizing:border-box}
+.dm-wrap-mount .dm-cyg__top{display:flex;justify-content:space-between;gap:12px}
+.dm-wrap-mount .dm-cyg__media{display:flex;gap:12px;align-items:flex-start}
+.dm-wrap-mount .dm-addon-mode{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.dm-wrap-second{margin-top:10px;padding-top:10px;border-top:1px dashed #e4ddd4}
+.dm-wrap-second[hidden]{display:none!important}
+.dm-wrap-second__title{margin:0 0 8px;font-size:12.5px;line-height:1.35;color:#5a5a5a}
+.dm-wrap-second__title strong{color:#2b2b2b}
+.dm-wrap-second__chips{display:flex;gap:8px}
+.dm-wrap-chip{flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 6px;border:1px solid #e4ddd4;border-radius:10px;background:#fff;font:inherit;font-size:12px;font-weight:700;color:#2b2b2b;cursor:pointer;min-width:0}
+.dm-wrap-chip img{width:24px;height:24px;border-radius:6px;object-fit:cover;border:1px solid #ece6dd}
+.dm-wrap-chip.is-selected{border-color:var(--dm-sage,#b0af9b);background:#f3f5ec;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)}
+.dm-wrap-chip.is-selected:before{content:"\2713";font-weight:800;color:#2f3724}
 </style>
 <script src="{{ 'daisy-wrap-kits.js' | asset_url }}" defer></script>
 {%- endif -%}

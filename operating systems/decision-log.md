@@ -67,3 +67,19 @@ Each entry:
 **Rollback:** Set the Christmas Gift Wrap Kit product to Draft — every page reverts instantly. Or republish the previous theme.
 
 **Result:** Pending — code on "In construction 🚧 v2" theme, not yet published.
+
+---
+
+### 2026-09-22 — Wrap kit card built once, second kit half price
+
+**Decision:** The Classic / Christmas wrap-kit card built for the Mr & Mrs page is the only wrap-kit control. The ~23 street-sign clones and the diffuser/heart builders no longer show their tick-box row; the shared script hides it and mounts the identical card in its place, kept in sync with the hidden tick box. Alongside it, a "Wrapping another present? Second kit half price" line with Christmas / Classic chips adds a second kit as its own basket line, and the automatic discount "Second gift wrap kit half price" (buy 1 kit, second kit 50% off, once per order) takes the money off at the basket.
+
+**Reason:** Max: "just do exactly what you did for the Mr & Mrs landing page, don't create new code for each one, perfect it once and apply to others." The earlier tick-box variant hid the Christmas option until the box was ticked, so the family street sign looked as if it had no Christmas kit. One card means one place to change. The second kit is the "extra for Christmas?" marketing idea: one tap where the customer is already deciding about wrapping, no new SKU, and the discount is visible on the basket line.
+
+**Expected outcome:** Same card on every builder page; wrap attach lifted by the festive kit and by second kits (two different presents, two kits). Basket is always the source of truth for the price.
+
+**Risk:** The discount is store-wide from 22 Sep (any two kits, any path, get the second half price) — small margin give-away on existing "Two" buttons (£11.90 → £8.93). Mitigated: kits are near-100% margin; deactivate the discount and set `secondKit: false` in `dm-wrap-kits.liquid` to withdraw.
+
+**Rollback:** Set the Christmas kit product to Draft (all pages revert to the classic control), deactivate the discount.
+
+**Result:** Pending — on the "In construction 🚧 v2" theme, browser QA in progress.
