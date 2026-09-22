@@ -117,6 +117,19 @@ or `config/settings_schema.json` (43 files instead of ~900). Delete it.
 6. Set the Christmas product to Draft → every page reverts to today's single
    classic control with no console errors.
 
+## Elf Arrival Postcard landing page (added 22 Sep on request)
+
+`theme/sections/dm-elf-landing.liquid` — the elf page is its own section with a
+"Build the set" list (plush elf, pyjamas, report sheets). A fourth row,
+**Christmas Gift Wrap Kit +£5.95**, now sits in that list in the same pattern:
+tick to add, and when the sibling offer is on it shows "Just one · £5.95 /
+One each · £11.90". Variant id, price and thumbnail are read live from the
+product, and the row only renders while the kit is active + purchasable, so
+the same Draft switch turns it off. Cart line carries `Add-on: Christmas Gift
+Wrap Kit`. Christmas kit only on this page — it is a Christmas product. The
+checkbox deliberately has no `gift-wrap` name, so the shared script leaves it
+alone.
+
 ## Follow-ups (not done here)
 
 - **Hearts offer no wrap kit at all** (`dm-heart-builder.liquid` has `extras`
