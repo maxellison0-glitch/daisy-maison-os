@@ -82,4 +82,4 @@ Each entry:
 
 **Rollback:** Set the Christmas kit product to Draft (all pages revert to the classic control), deactivate the discount.
 
-**Result:** Pending — on the "In construction 🚧 v2" theme, browser QA in progress.
+**Result:** Verified 22 Sep on the "In construction 🚧 v2" theme with a real basket on Mr & Mrs, family, kitchen, teacher and football signs, both diffuser types, a pebble picture and the elf page (Christmas kit + half-price second kit, £2.97 off). Same evening: hearts get the classic wrap-kit extra injected at page load (always on) so the card appears on all 25 heart pages; the classic Two Kits variant joined the discount and converts to 2 × Christmas singles when Christmas is chosen. Waiting on Max to publish v2.

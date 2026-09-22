@@ -44,6 +44,10 @@
   var classicId = Number(CLASSIC.variantId);
   var xmasId = Number(XMAS.variantId);
   if (!classicId || !xmasId || classicId === xmasId) return;
+  // The classic "Two Kits" variant, which the diffuser builders send when the
+  // second-diffuser offer is on. There is no Christmas two-pack, so a
+  // Christmas choice turns it into 2 x the Christmas single.
+  var twoPackId = Number(CLASSIC.twoPackVariantId) || 0;
   var SECOND = !!KITS.secondKit;
   var SECOND_LABEL = 'Second gift wrap kit (half price)';
   var FESTIVE_PAGE = /christmas|xmas|santa|elf|festive|stocking|reindeer|sleigh/i.test(window.location.pathname);
@@ -53,7 +57,8 @@
   function qs(root, sel) { return (root || document).querySelector(sel); }
   function qsa(root, sel) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function kit(style) { return style === 'christmas' ? XMAS : CLASSIC; }
-  function isKitId(id) { id = Number(id); return id === classicId || id === xmasId; }
+  function isKitId(id) { id = Number(id); return id === classicId || id === xmasId || (twoPackId && id === twoPackId); }
+  function isClassicId(id) { id = Number(id); return id === classicId || (twoPackId && id === twoPackId); }
   function esc(v) {
     return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -366,19 +371,20 @@
 
   function renameAddon(value) {
     if (typeof value !== 'string' || !/gift wrap kit/i.test(value) || /christmas/i.test(value)) return value;
-    // "Add a Gift Wrap Kit" (the diffuser label) -> "Christmas Gift Wrap Kit"
-    return value.replace(/^add an? /i, '').replace(/gift wrap kit/i, 'Christmas Gift Wrap Kit');
+    // "Add a Gift Wrap Kit" / "Add 2 Gift Wrap Kits" (builder labels) -> "Christmas Gift Wrap Kit(s)"
+    return value.replace(/^add (an?|\d+) /i, '').replace(/gift wrap kit/i, 'Christmas Gift Wrap Kit');
   }
 
   function rewriteItems(items) {
     if (state.style !== 'christmas' || !state.rows) return items;
     return items.map(function (item) {
-      if (!item || Number(item.id) !== classicId) return item;
+      if (!item || !isClassicId(item.id)) return item;
       // The hooks stack (native sizes -> DaisyCartSubmit -> fetch), so a
       // Classic second kit added by an earlier pass must stay Classic.
       if (item.properties && item.properties['Add-on'] === SECOND_LABEL) return item;
       var copy = {};
       Object.keys(item).forEach(function (key) { copy[key] = item[key]; });
+      if (Number(item.id) === twoPackId) copy.quantity = (Number(item.quantity) || 1) * 2;
       copy.id = xmasId;
       if (item.properties && typeof item.properties === 'object') {
         var props = {};
@@ -448,7 +454,8 @@
   function rewriteForm(body) {
     var id = Number(body.get('id'));
     if (!isKitId(id)) return null;
-    if (id === classicId && state.rows && state.style === 'christmas') {
+    if (isClassicId(id) && state.rows && state.style === 'christmas') {
+      if (id === twoPackId) body.set('quantity', String((Number(body.get('quantity')) || 1) * 2));
       body.set('id', String(xmasId));
       if (body.has('properties[Add-on]')) body.set('properties[Add-on]', renameAddon(body.get('properties[Add-on]')));
     }

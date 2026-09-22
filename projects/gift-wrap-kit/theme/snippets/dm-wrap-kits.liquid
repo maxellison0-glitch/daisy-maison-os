@@ -25,6 +25,7 @@
   assign dm_wk_classic = all_products['gift-wrapping']
   assign dm_wk_classic_v = dm_wk_classic.variants | where: 'sku', 'XT-300-WK-1' | first | default: dm_wk_classic.selected_or_first_available_variant
   assign dm_wk_classic_thumb = dm_wk_classic.images[1] | default: dm_wk_classic.featured_image
+  assign dm_wk_classic_two = dm_wk_classic.variants | where: 'sku', 'XT-300-WK-2' | first
   assign dm_wk_xmas = all_products['christmas-gift-wrap-kit']
   assign dm_wk_xmas_v = dm_wk_xmas.selected_or_first_available_variant
   assign dm_wk_xmas_thumb = dm_wk_xmas.images[1] | default: dm_wk_xmas.featured_image
@@ -33,6 +34,36 @@
     assign dm_wk_live = true
   endif
 -%}
+{%- if dm_wk_classic_v and dm_wk_classic_thumb -%}
+<script type="module">
+/* Hearts: give the heart builder the classic Gift Wrap Kit extra the diffusers
+   already carry, so every heart page offers the kit (and, in season, the
+   Classic / Christmas card). A module script runs after parsing and before
+   daisy-heart-builder.js (both deferred, document order), so the builder
+   reads the patched config. No-op on diffusers, on the elf page, and once
+   the heart configs in dm-heart-builder.liquid carry the extra themselves
+   (fold it in at that file's next edit). */
+(function () {
+  var node = document.querySelector('[data-daisy-heart-config]');
+  if (!node) return;
+  var config;
+  try { config = JSON.parse(node.textContent); } catch (e) { return; }
+  if (!config || typeof config !== 'object') return;
+  var kind = String(config.kind || '');
+  if (/^diff/.test(kind) || kind === 'elfpostcard') return;
+  var extras = Array.isArray(config.extras) ? config.extras : [];
+  if (extras.some(function (x) { return x && /gift wrap/i.test(String(x.label || x.key || '')); })) return;
+  extras.push({
+    "key": "Gift Wrap Kit", "yes": "YES Please", "no": "NO Thanks",
+    "variantId": {{ dm_wk_classic_v.id | json }}, "pricePence": {{ dm_wk_classic_v.price | json }},
+    "label": "Add a Gift Wrap Kit", "note": "Tissue paper, ribbon, twine and a gift tag, ready to use",
+    "image": {{ dm_wk_classic_thumb | image_url: width: 400 | json }}, "layout": "card", "badge": "Finishing touch"
+  });
+  config.extras = extras;
+  node.textContent = JSON.stringify(config);
+})();
+</script>
+{%- endif -%}
 {%- if dm_wk_live -%}
 <script>
 window.DAISY_WRAP_KITS = {
@@ -44,6 +75,7 @@ window.DAISY_WRAP_KITS = {
     "label": "Classic",
     "name": {{ dm_wk_classic.title | json }},
     "variantId": {{ dm_wk_classic_v.id | json }},
+    "twoPackVariantId": {{ dm_wk_classic_two.id | default: 0 | json }},
     "price": {{ dm_wk_classic_v.price | json }},
     "thumb": {{ dm_wk_classic_thumb | image_url: width: 160 | json }},
     "zoom": {{ dm_wk_classic.featured_image | image_url: width: 1200 | json }}

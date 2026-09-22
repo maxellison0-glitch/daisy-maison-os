@@ -60,7 +60,7 @@ option piggybacks on all of them from ONE shared script, so no builder was edite
 | Pebble pictures (flower arch, love tree, blossom tree, christening…) | `daisy-pebble-picture.js` renders the same card style | Same as above | ~28% |
 | Street-sign clones (family, kitchen, retirement, teacher, football, …) | 22 `daisy-*-street-sign.js` builders with a gift-wrap tick box (each sign has its own file; the two football signs key the box on a data attribute) | The tick-box row is hidden and **the identical Mr & Mrs card** is mounted in its place, kept in sync with the hidden tick box. The USA road sign and the vintage train sign never offered a wrap kit, so nothing appears there | ~8% |
 | Reed diffusers (4) | `daisy-diffuser-builder.js` extras | Same: the "Add a Gift Wrap Kit" row becomes the card | ~4% |
-| Hearts | `daisy-heart-builder.js` | **No wrap kit offered today at all** — see follow-ups | ~5% |
+| Hearts (25 pages) | `daisy-heart-builder.js` | The hearts never carried a wrap-kit extra. `dm-wrap-kits.liquid` now adds the classic Gift Wrap Kit extra to the heart config at page load (a module script that runs before the builder, always on, not just in season), so the heart builder renders its own row and the same card replaces it | ~5% |
 | Products still on Globo (Christmas pebble star, A4 prints, …) | Globo checkbox | Classic only — see the Globo brief | ~5% |
 
 One card, everywhere. It was built once for Mr & Mrs and the tick-box pages
@@ -85,6 +85,13 @@ path the kits arrive by — including the existing "Two · £11.90" button, whic
 now reads "Two · £8.93". Turning the offer off is two steps: deactivate that
 discount in admin **and** set `"secondKit": false` in `dm-wrap-kits.liquid`.
 
+The classic **Two Kits** variant (£9.99, `XT-300-WK-2`) is what the diffuser
+builders send when the second-diffuser offer is on. It is in the discount's
+buy/get sets too, so "two kits + a second kit chip" still halves the extra
+single. When Christmas is chosen it becomes 2 × the Christmas single (there
+is no Christmas two-pack): £8.93 at the basket against the £9.99 the builder
+displayed, which is the kinder direction.
+
 Why a second kit rather than a bundle product or a pop-up: it is one tap in the
 place the customer is already deciding about wrapping, it needs no new SKU, and
 the discount shows on the basket line where they check it.
@@ -105,7 +112,7 @@ purchasable**. Everything (price, name, images) is read live from the two produc
 
 | File | What |
 |---|---|
-| `theme/snippets/dm-wrap-kits.liquid` | NEW. Outputs `window.DAISY_WRAP_KITS` (both kits: variant id, price, name, thumb, zoom), the CSS, and the script tag — only while the Christmas kit is live. |
+| `theme/snippets/dm-wrap-kits.liquid` | NEW. Outputs `window.DAISY_WRAP_KITS` (both kits: variant id, price, name, thumb, zoom, the classic two-pack id), the CSS, and the script tag — only while the Christmas kit is live. Also, always on: a module script that appends the classic Gift Wrap Kit extra (same JSON the diffuser configs carry) to `[data-daisy-heart-config]` on heart pages, so every heart offers the kit. It no-ops on diffusers, on the elf page, and once the heart configs in `dm-heart-builder.liquid` carry the extra themselves — fold it in there at that file's next edit (250 KB, not worth a blind upload tonight). |
 | `theme/assets/daisy-wrap-kits.js` | NEW. The shared card. Family A (dm-cyg cards on Mr & Mrs and the pebble pictures) gets the two thumbnails and Classic / Christmas buttons added to the existing card; choosing a style swaps the card's `data-variant`/`data-price` so the builders' own cart code adds the right product. Families B/C (tick-box rows on the street-sign clones, diffusers and hearts) hide the row and mount the identical card, kept in sync with the hidden tick box; the classic variant id those builders hold is swapped at submit time through three hooks: `DaisyCartSubmit.create().add`, `DaisyNativeStreetSizes.submit/add`, and `window.fetch` for direct `/cart/add.js` posts (JSON, form-encoded and FormData). The same hooks append the half-price second kit line. Hooks are inert unless a choice was made on the page. |
 | `theme/snippets/dm-mobile-fixes.liquid` | EDITED. Now renders `dm-wrap-kits` on product pages. Chosen because `layout/theme.liquid` renders it in `<head>` after `daisy-cart-submit.js` and before every builder — the load order the script needs — without re-uploading the 147 KB layout. Move the one-line render into `theme.liquid` next time that file is edited. |
 
@@ -161,11 +168,10 @@ alone.
 
 ## Follow-ups (not done here)
 
-- **Hearts offer no wrap kit at all** (`dm-heart-builder.liquid` has `extras`
-  only on the remembrance heart). The First Christmas hearts were the #11
-  landing page this month and Christmas hearts sold 120+ units last Q4. Add the
-  Gift Wrap Kit extra to the heart configs (the diffuser configs show the exact
-  JSON) and the Christmas toggle appears automatically.
+- **Hearts:** the wrap-kit extra is injected at page load by
+  `dm-wrap-kits.liquid` (see the files table). Move it into the heart configs
+  in `dm-heart-builder.liquid` at that file's next edit; the injection then
+  becomes a no-op and can be deleted.
 - **The legacy Christmas street signs** (Family Sleigh, Santa Stop Here, …) use the
   inline builder in `theme.liquid` and offer strips but no wrap. Same gap. Same
   for the USA road sign and the vintage train sign builders.
