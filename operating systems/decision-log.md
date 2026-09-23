@@ -79,7 +79,7 @@ Sale badges and the tealight holder come off the homepage. Built on the unpublis
 - The hero goes stale after Christmas. It needs an owner and a calendar date (see "Swapping the seasonal hero").
 - Best sellers is all-time, so the Valentine's sign ranks #2 in the Christmas run-up.
 - Claims to confirm before publishing. The owner declared the first two established; the site data doesn't back them yet:
-  - "10,000+ five-star reviews": no source found, and Feefo is closed.
+  - "10,000+ five-star reviews": no source found, and Feefo is closed. Max changed it to "Thousands of 5-star reviews" on 23 Sep.
   - The welcome 10% covers 54 collections, not the whole order. Nothing confirms that a welcome email flow sends the code to people who sign up with the homepage form.
   - Dispatch times disagree: the proof strip and FAQ say 5–7 working days; the FAQ says up to 7–14 at Christmas; the free-delivery rate says 3–5.
 - Publishing the copy would undo any live-theme edits made after 10:43 on 23 Sep.

@@ -61,7 +61,7 @@ HERO_BASE.update({
     "font_size_heading_mb": 26,
     "border_title": "none",
     "border_color_title_mobile": "#232323",
-    "text": "<span style=\"color:#c6a45a;letter-spacing:1px\">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 10,000+ five-star reviews",
+    "text": "<span style=\"color:#c6a45a;letter-spacing:1px\">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Thousands of 5-star reviews",
     "font_size_des": 14,
     "font_size_des_mb": 14,
     "line_height_des": 20,
@@ -185,7 +185,7 @@ def proof_item(icon, html):
 
 proof = copy.deepcopy(old["16393870238958f868"])
 proof["blocks"] = {
-    "proof_reviews": proof_item("star", "<strong>10,000+</strong> five-star reviews"),
+    "proof_reviews": proof_item("star", "<strong>Thousands</strong> of 5-star reviews"),
     "proof_handmade": proof_item("heart", "<strong>Handmade</strong> in Lancashire"),
     "proof_dispatch": proof_item("clock", "<strong>Made and dispatched</strong> in 5–7 working days, express 2–3"),
     "proof_delivery": proof_item("van", "<strong>Free UK delivery</strong> over £50"),

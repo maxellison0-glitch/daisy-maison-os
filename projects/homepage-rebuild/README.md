@@ -24,10 +24,10 @@ Direct landers know the brand but find nowhere obvious to go. The homepage's job
 | # | Section id | Ella section | What it is now | Why |
 |---|---|---|---|---|
 | 1 | `announcement_bar_a4ALfD` (header group) | announcement-bar | One line: "Free UK delivery over £50". Soft stone bar (`#f3f2ee`) with charcoal text (`#2b2b2b`), 13 px, no close button. | 7 of 9 benchmark stores lead with a promise. The Christmas cut-off line ("Order by … for guaranteed Christmas dispatch") goes back in as a second, rotating line once Max sets the date. Site-wide on this theme. |
-| 2 | `image_banner_UJGTQq` | image-banner | **Carousel of two street-sign photos**, fading on its own every few seconds, with dots: 1. the "MR & MRS POTTER" sign at a wedding → **Shop the Mr & Mrs sign**; 2. "THE POTTER FAMILY" sign on a lit mantel → **Shop the family sign**. The words stay the same on both slides: "Handmade to order in Lancashire", headline **"Personalised gifts, handmade to order"**, ★★★★★ 10,000+ five-star reviews, and a small text link **Shop Christmas gifts** (`/collections/christmas`). On phones the text card sits under the photo. On tablets and desktop the photo sits on the left and the words on the right, so the picture changes there too. | The two biggest sellers, which were also #1 and #2 in last year's Christmas quarter. Both photos are the main shots already on their product pages (1,566 and 2,048 px), and each keeps the whole sign inside the crop. Wedding and engagement are the first tiles in the next row. |
+| 2 | `image_banner_UJGTQq` | image-banner | **Carousel of two street-sign photos**, fading on its own every few seconds, with dots: 1. the "MR & MRS POTTER" sign at a wedding → **Shop the Mr & Mrs sign**; 2. "THE POTTER FAMILY" sign on a lit mantel → **Shop the family sign**. The words stay the same on both slides: "Handmade to order in Lancashire", headline **"Personalised gifts, handmade to order"**, ★★★★★ Thousands of 5-star reviews, and a small text link **Shop Christmas gifts** (`/collections/christmas`). On phones the text card sits under the photo. On tablets and desktop the photo sits on the left and the words on the right, so the picture changes there too. | The two biggest sellers, which were also #1 and #2 in last year's Christmas quarter. Both photos are the main shots already on their product pages (1,566 and 2,048 px), and each keeps the whole sign inside the crop. Wedding and engagement are the first tiles in the next row. |
 | 3 | `spotlight_block_JFKrLj` + `dm_occasion_row_2` | spotlight-block ×2 | **Shop by occasion**: two rows of four, three visible plus a peek, each row swipes. Christmas · Wedding · Engagement · Christening / New home · Anniversary · Teacher · For Mum. | Replaces the one-tile-per-screen "Our Most Cherished Gifts" (same section id, reused). |
 | 4 | `product_block_QcxFaJ` | product-block | **Best sellers**: 8 products from the new automated `best-sellers` collection, with prices, no sale badges or struck-through prices, and a "Shop all best sellers" link. | Replaces the hand-picked "Trending Now" (tealight first). Never needs curating. |
-| 5 | `16393870238958f868` | custom-service-block | **Proof strip**, 2 × 2 with icons: 10,000+ five-star reviews · Handmade in Lancashire · Made and dispatched in 5–7 working days, express 2–3 · Free UK delivery over £50. | Proof with numbers, no slider. The text-only "Why thousands choose us" (`custom_service_block_jYPjBJ`) is removed. |
+| 5 | `16393870238958f868` | custom-service-block | **Proof strip**, 2 × 2 with icons: Thousands of 5-star reviews · Handmade in Lancashire · Made and dispatched in 5–7 working days, express 2–3 · Free UK delivery over £50. | Proof with numbers, no slider. The text-only "Why thousands choose us" (`custom_service_block_jYPjBJ`) is removed. |
 | 6 | `dm_christmas_edit` | spotlight-block | **The Christmas edit**, 2 × 2: Christmas street signs · First Christmas hearts · Christmas reed diffuser · Elf arrival postcard. | Replaces "New Arrivals" (`163945138066afddf5`, removed), which showed SALE badges. |
 | 7 | `dm_how_it_works` | custom-service-block | **How it works**: 1. Choose the gift · 2. Personalise it and see it live · 3. We make it by hand and dispatch it. Step 2 is a phone screenshot of the live sign preview on the Mr & Mrs page ("MR & MRS TAYLOR" typed in). | The live preview is the differentiator. Built from an existing Ella section (image + title + text), so it needs no new section code. |
 | 8 | `dm_reviews` + `17394583817a28cc5e` | customer-review-block + apps (Feefo) | **What our customers say**: three verbatim 5-star reviews with product photos, each linking to its product. The Feefo block sits straight after it. | See "Feefo" below: the Feefo widget renders nothing. Quotes are copied word for word from `snippets/dm-proof.liquid` (harvested 4 Jul 2026 from Trustpilot/Feefo). |
@@ -59,6 +59,7 @@ The six sections that were already disabled (Elfsight, press banner, wedding bes
 | The main image is one still image; a swiping carousel of best sellers would look cleaner | The hero is a carousel that fades on its own, with dots you can tap or swipe. Each slide has its own photo on phone and desktop. |
 | Get rid of the low-resolution video under "Personalised by you…" | Removed. The words stay, as a plain sage panel. |
 | Christmas heart, Mr & Mrs sign, family blossom tree; high quality and proven winners | First pass: star, Mr & Mrs sign, blossom tree (the star replaced the heart on sales). Replaced by the next row. |
+| "10,000+ five-star reviews": change to "thousands of 5-star reviews", more truthful with the current review setup | Changed in the hero (both slides) and the proof strip. "10,000" no longer appears on the page. |
 | "Make the wedding street sign the 1st image, the other 2 are lowkey chopped" | The Mr & Mrs sign leads. The star and the blossom tree are gone: framed and hand-held products lose their edges in the crop. Slide 2 is the family street sign on a mantel. "Shop Christmas gifts" moved to the small link under the button, so the season is still one tap away. |
 
 Proven winners (ShopifyQL, units sold):
@@ -145,7 +146,10 @@ WHERE landing_page_path = '/' GROUP BY referrer_source SINCE -30d UNTIL today OR
 1. Look at the preview on your phone.
 2. Optional: once the Christmas cut-off is set, add it on the copy (Themes → "In construction 🚧" → Customize → Header → Announcement bar → add an announcement: "Order by 〈date〉 for guaranteed Christmas dispatch"). The bar already rotates if it has two lines.
 3. **Confirm the 10% welcome code actually reaches people who sign up with this form.** The form creates a customer tagged `newsletter`; the theme sends no code. The code has to come from a Shopify Email or Klaviyo welcome flow. If there is no such flow, change the newsletter heading before publishing. The code (`welcome10`) covers 54 collections, not the whole order.
-4. **Check the live theme's "Last saved" time.** The copy was made at 10:43 on 23 Sep. If anything was changed on the live theme after that, publishing the copy would undo it. In that case, port the two changed files (`templates/index.json`, `sections/header-group.json`) onto a fresh duplicate instead.
+4. **Check the live theme's "Last saved" time.** The copy was made at 10:43 on 23 Sep. If anything was changed on the live theme after that, publishing the copy would undo it.
+   - Checked on 23 Sep at 17:40. Exactly one live file had changed since the copy was made: `locales/en.default.json` at 13:11. It added one checkout string, "Shipping method — estimated delivery dates".
+   - That file was copied onto the copy, and the two versions were confirmed identical.
+   - If the live theme's "Last saved" is later than 13:11 on 23 Sep when you publish, re-check before publishing, or port the two changed files (`templates/index.json`, `sections/header-group.json`) onto a fresh duplicate instead.
 5. Themes → "In construction 🚧" → **Publish**.
 6. **Rollback:** the old theme stays in the theme library. Publish it again, or put back `index.before.json` / `header-group.before.json`.
 
@@ -153,7 +157,7 @@ WHERE landing_page_path = '/' GROUP BY referrer_source SINCE -30d UNTIL today OR
 
 | File | What |
 |---|---|
-| `index.json` | The new `templates/index.json`, as uploaded (md5 `1088499efc89b6336f265bdda386e9f4`, re-read from Shopify after upload) |
+| `index.json` | The new `templates/index.json`, as uploaded (md5 `4abcc3e8af411ffbe16573b6f384c8ff`, re-read from Shopify after upload) |
 | `index.before.json` | The original homepage, byte-exact (md5 `c2b6449ec05ca78c521c11100d140093`, identical on live and copy) |
 | `header-group.json` / `header-group.before.json` | Header group with the new announcement bar (md5 `c7f8c852204761835b4bde82125046aa`) / the original as returned by the API |
 | `dm-home-styles.liquid` | The one custom-liquid block: homepage-only CSS for the hero card (under the photo on phones, beside it on desktop), sentence-case headings, text link, badges and 2-line card titles, 3-across tiles, 2 × 2 proof strip, how-it-works rows, the made-to-order panel heading and review photos. Several rules target section ids (`16393870238958f868`, `dm_*`, `spotlight_block_JFKrLj`): if one of those sections is deleted and re-added in the theme editor, it gets a new id and its CSS stops applying. |
@@ -178,7 +182,7 @@ python3 validate_template.py index.json --theme-dir <theme>/ --before index.befo
   - two Feefo 400s
   - an `en-US@posix` locale warning
   - the same three page errors
-- After Max's reviews (v8, md5 `1088499e…`):
+- After Max's reviews (v9, md5 `4abcc3e8…`):
   - The carousel starts, has 2 slides and 2 dots, and moves on its own.
   - Slide 1 is the Mr & Mrs sign → `/products/mr-mrs-personalised-street-sign-gift`; slide 2 is the family sign → `/products/family-personalised-street-sign`. The small link on both goes to `/collections/christmas`.
   - Each slide's button fits on one line at 390 px.
