@@ -51,3 +51,39 @@ Each entry:
 **Rollback:** Files still exist at original locations (copies, not moves). Re-point SKILL.md paths.
 
 **Result:** Complete. Digest paths updated. Files verified at new location.
+
+---
+
+### 2026-09-23 — Rebuild the mobile homepage as a shop floor (on a theme copy)
+
+**Decision:** Rebuild the mobile homepage from sections Ella already has. The new order is:
+1. Promise bar
+2. Seasonal Christmas hero with one button
+3. Shop by occasion (3 across)
+4. Real best sellers from a new automated "Best sellers" collection
+5. Proof strip with numbers
+6. The Christmas edit
+7. How it works (with a screenshot of the live sign preview)
+8. Real reviews
+9. Shop by recipient
+10. Made in Lytham
+11. Instagram, then an inline 10% sign-up
+
+Sale badges and the tealight holder come off the homepage. Built on the unpublished copy "In construction 🚧" (207623029075). Max publishes. Details: `projects/homepage-rebuild/README.md`.
+
+**Reason:** 7% of sessions land on the homepage. Direct homepage landers convert at 0.99% (1,413 sessions, 14 checkouts, last 30 days) against 9.97% for brand search. The old page gave them nowhere obvious to go: a generic hero with a wedding button, a hand-picked row led by a £10.99 tealight holder, a text-only promise slider and one tile per screen.
+
+**Expected outcome:** Direct homepage-landing conversion rises from 0.99% towards the search figure. Anything above 2.5% over the 28 days after publishing pays for the work. Measure with the ShopifyQL query in the README, split by `referrer_source`.
+
+**Risk:**
+- The hero goes stale after Christmas. It needs an owner and a calendar date (see "Swapping the seasonal hero").
+- Best sellers is all-time, so the Valentine's sign ranks #2 in the Christmas run-up.
+- Claims to confirm before publishing:
+  - "Lytham St Annes": the site address is Blackpool.
+  - "10,000+ five-star reviews": no source found, and Feefo is closed.
+  - The welcome 10% covers 54 collections, not the whole order.
+- Publishing the copy would undo any live-theme edits made after 10:43 on 23 Sep.
+
+**Rollback:** Re-publish the previous live theme, which stays in the theme library. Or restore `index.before.json` and `header-group.before.json` from `projects/homepage-rebuild/`. The Best sellers collection can be unpublished or deleted separately.
+
+**Result:** Pending. The build is on the preview, waiting for Max to review and publish. Measure 28 days after publish.

@@ -1,0 +1,447 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "⚠️We're on holiday! Orders are welcome but won't be dispatched until 20th April 🌴",
+            "btn_color": "#ffffff",
+            "btn_border_color": "#000000",
+            "btn_bg_color": "#232323",
+            "btn_bg_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "enable_announcement": true,
+        "layout": "slider",
+        "enable_close": false,
+        "color_text": "#ffffff",
+        "bg_color_text": "#000000",
+        "bg_color_text_gradient": "",
+        "font_size_text": 18,
+        "font_style_text": "italic",
+        "font_weight_text": "900",
+        "arrow_active": false,
+        "content_max_width": 38,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "header_utility_GMkd3p": {
+      "type": "header-utility",
+      "blocks": {
+        "logo_eJeWR3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Daisy_Maison_Logo_White.png",
+            "logo_width": 300,
+            "logo_text": "",
+            "logo_font_size": 30,
+            "logo_font_weight": "900",
+            "logo_text_transform": "uppercase",
+            "logo_color": "#232323"
+          }
+        },
+        "text_NLjPHq": {
+          "type": "text",
+          "settings": {
+            "customer_service_text": "<p> </p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "search_NUc3cp": {
+          "type": "search",
+          "settings": {
+            "search_color": "#acacac",
+            "bg_search_color": "#f8f8f8",
+            "search_icon_color": "#acacac",
+            "search_border_radius": 25
+          }
+        },
+        "function_group_yiiwBW": {
+          "type": "function_group",
+          "settings": {
+            "show_customer": true,
+            "customer_color": "#ffffff",
+            "show_wishlist": true,
+            "wishlist_color": "#ffffff",
+            "show_wishlist_number": false,
+            "wishlist_color_item": "#ffffff",
+            "wishlist_bg_item": "#ffffff",
+            "show_cart": true,
+            "cart_color": "#ffffff",
+            "cart_color_item": "#ffffff",
+            "cart_bg_item": "#232323",
+            "cart_item_font_size": 12,
+            "show_language_currency": true,
+            "language_currency_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "logo_eJeWR3",
+        "text_NLjPHq",
+        "search_NUc3cp",
+        "function_group_yiiwBW"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 75,
+        "header_bg": "#b0af9b",
+        "header_bg_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header_navigation_full_elements_YaWbtd": {
+      "type": "header-navigation-full-elements",
+      "blocks": {
+        "megamenu_style_1_Tj9Rxq": {
+          "type": "megamenu_style_1",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "item": "Catalog",
+            "column": 3,
+            "show_banner_1": false,
+            "banner_url_1": "",
+            "show_product": false,
+            "product_title": "Featured Products",
+            "product_collection": ""
+          }
+        },
+        "logo_YzL8aN": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "logo_position": "always",
+            "logo": "shopify://shop_images/3.png",
+            "logo_width": 300,
+            "logo_width_fixed": 100,
+            "logo_text": "",
+            "logo_font_size": 20,
+            "logo_font_weight": "900",
+            "logo_text_transform": "uppercase",
+            "logo_color": "#000000"
+          }
+        },
+        "main_menu_JgBF9B": {
+          "type": "main_menu",
+          "settings": {
+            "menu": "main-nav",
+            "menu_top_spacing": 10,
+            "menu_bottom_spacing": 10,
+            "grid_gap_menu_item": 10,
+            "alignment": "center",
+            "bg_mega_menu": "#ffffff",
+            "bg_mega_menu_gradient": "",
+            "lv_1_color": "#ffffff",
+            "lv_1_color_hover": "#232323",
+            "lv_2_color": "#232323",
+            "lv_2_color_hover": "#232323",
+            "lv_3_color": "#3c3c3c",
+            "lv_3_color_hover": "#3c3c3c",
+            "sale_item_1": "",
+            "sale_item_2": "",
+            "sale_item_3": "",
+            "sale_item_color": "#d12442",
+            "label_position": "main_menu",
+            "show_label_blink": false,
+            "new_label_1": "",
+            "new_label_2": "",
+            "new_label_3": "",
+            "new_label_color": "#ffffff",
+            "new_label_bg": "#232323",
+            "new_label_bg_gradient": "",
+            "sale_label_1": "",
+            "sale_label_2": "",
+            "sale_label_3": "",
+            "sale_label_color": "#ffffff",
+            "sale_label_bg": "#232323",
+            "sale_label_bg_gradient": "",
+            "hot_label_1": "",
+            "hot_label_2": "",
+            "hot_label_3": "",
+            "hot_label_color": "#ffffff",
+            "hot_label_bg": "#232323",
+            "hot_label_bg_gradient": ""
+          }
+        },
+        "megamenu_style_5_6JHe3B": {
+          "type": "megamenu_style_5",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style1",
+            "item": "Wedding Stationery",
+            "column": 3,
+            "menu_text_left": "",
+            "menu_text_left_sale": "",
+            "show_banner_1": false,
+            "banner_url_1": "",
+            "product_limit": 4,
+            "show_product": false,
+            "product_title": "Featured Products",
+            "product_collection": "",
+            "bg_mega_menu_bottom": "#f8f8f8"
+          }
+        },
+        "megamenu_style_3_4bwetn": {
+          "type": "megamenu_style_3",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style1",
+            "item": "Pebble People",
+            "column": 4,
+            "show_banner_1": true,
+            "banner_1": "shopify://shop_images/BlossomTree-for_542dffd3-8dc7-4ed9-8965-fbf361d6eba6.jpg",
+            "banner_url_1": "shopify://collections/framed-pebble-art",
+            "show_banner_2": true,
+            "banner_2": "shopify://shop_images/Main-17.jpg",
+            "banner_url_2": "shopify://collections/pebblescapes",
+            "show_banner_3": true,
+            "banner_3": "shopify://shop_images/Couple-final_203c1aaf-2f99-41a0-bdd1-5c2da038ef3a.jpg",
+            "banner_url_3": "shopify://collections/pebble-hanging-hearts",
+            "show_banner_4": true,
+            "banner_4": "shopify://shop_images/ENAGEMENT4.jpg",
+            "banner_url_4": "shopify://collections/mini-pebble-pictures",
+            "show_banner_5": false,
+            "banner_url_5": ""
+          }
+        },
+        "megamenu_style_5_ecewGg": {
+          "type": "megamenu_style_5",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style2",
+            "item": "Gifts",
+            "column": 4,
+            "menu_text_left": "",
+            "menu_text_left_sale": "",
+            "show_banner_1": false,
+            "banner_1": "shopify://shop_images/On_Your_Wed_Day_Family_1_copy.jpg",
+            "banner_url_1": "",
+            "product_limit": 3,
+            "show_product": true,
+            "product_title": "Best Selling Gifts",
+            "product_collection": "wedding-engagement",
+            "bg_mega_menu_bottom": "#f8f8f8"
+          }
+        },
+        "megamenu_style_5_nwKP4m": {
+          "type": "megamenu_style_5",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style2",
+            "item": "Occasions",
+            "column": 4,
+            "menu_text_left": "",
+            "menu_text_left_sale": "",
+            "show_banner_1": false,
+            "banner_url_1": "",
+            "product_limit": 2,
+            "show_product": true,
+            "product_title": "Featured Products",
+            "product_collection": "personalised-signs",
+            "bg_mega_menu_bottom": "#f8f8f8"
+          }
+        },
+        "megamenu_style_5_JHepGh": {
+          "type": "megamenu_style_5",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style2",
+            "item": "Gifts UNDER £10",
+            "column": 2,
+            "menu_text_left": "",
+            "menu_text_left_sale": "",
+            "show_banner_1": false,
+            "banner_1": "shopify://shop_images/Chopping-Board-9_2d61b3b7-76e9-4855-9913-a5eedf1ef94b.jpg",
+            "banner_url_1": "",
+            "product_limit": 4,
+            "show_product": false,
+            "product_title": "Featured Products",
+            "product_collection": "wedding-engagement",
+            "bg_mega_menu_bottom": "#f8f8f8"
+          }
+        },
+        "megamenu_style_5_JcmGtJ": {
+          "type": "megamenu_style_5",
+          "settings": {
+            "layout_block": "custom_width",
+            "header_custom_width_size": 1200,
+            "mega_tyle": "style2",
+            "item": "Street Signs",
+            "column": 4,
+            "menu_text_left": "",
+            "menu_text_left_sale": "",
+            "show_banner_1": false,
+            "banner_url_1": "",
+            "product_limit": 3,
+            "show_product": true,
+            "product_title": "Featured Products",
+            "product_collection": "personalised-signs",
+            "bg_mega_menu_bottom": "#f8f8f8"
+          }
+        }
+      },
+      "block_order": [
+        "megamenu_style_1_Tj9Rxq",
+        "logo_YzL8aN",
+        "main_menu_JgBF9B",
+        "megamenu_style_5_6JHe3B",
+        "megamenu_style_3_4bwetn",
+        "megamenu_style_5_ecewGg",
+        "megamenu_style_5_nwKP4m",
+        "megamenu_style_5_JHepGh",
+        "megamenu_style_5_JcmGtJ"
+      ],
+      "settings": {
+        "container": "full",
+        "padding_full_width": 0,
+        "header_navigation_bg": "#b0af9b",
+        "header_navigation_bg_gradient": "",
+        "sticky_header_type": "none",
+        "sticky_header_width": "full"
+      }
+    },
+    "header-mobile": {
+      "type": "header-mobile",
+      "blocks": {
+        "7de2266e-0cd4-4fda-9f09-06f75a17f944": {
+          "type": "menu",
+          "settings": {
+            "color": "#ffffff",
+            "menu_tab_bg": "#b0af9b"
+          }
+        },
+        "163e2cb5-14f2-4af6-9ac3-77193c082f53": {
+          "type": "search",
+          "settings": {
+            "color": "#ffffff"
+          }
+        },
+        "550fbd21-75fb-4051-9dee-77d91b5239f0": {
+          "type": "logo",
+          "settings": {
+            "logo_mobile": "shopify://shop_images/Daisy_Maison_Logo_White.png",
+            "logo_transparent": "shopify://shop_images/Daisy_Maison_Logo_White.png",
+            "logo_width_mobile": 150,
+            "logo_text": "",
+            "logo_font_size": 20,
+            "logo_font_weight": "900",
+            "logo_text_transform": "uppercase",
+            "logo_color": "#232323"
+          }
+        },
+        "20dae707-64c0-4ea3-a05e-561cae9836d8": {
+          "type": "customer",
+          "settings": {
+            "icon": "1",
+            "color": "#ffffff"
+          }
+        },
+        "633f9dae-3f65-4bda-9ca8-9d3e231aaf9d": {
+          "type": "cart",
+          "settings": {
+            "icon": "3",
+            "color": "#ffffff",
+            "color_bubble": "#ffffff",
+            "bg_bubble": "#232323"
+          }
+        }
+      },
+      "block_order": [
+        "7de2266e-0cd4-4fda-9f09-06f75a17f944",
+        "163e2cb5-14f2-4af6-9ac3-77193c082f53",
+        "550fbd21-75fb-4051-9dee-77d91b5239f0",
+        "20dae707-64c0-4ea3-a05e-561cae9836d8",
+        "633f9dae-3f65-4bda-9ca8-9d3e231aaf9d"
+      ],
+      "settings": {
+        "background": "#b0af9b",
+        "gradient": "",
+        "sticky_header_type": "on_scroll",
+        "enable_transparent": false,
+        "transparent_color": "#ffffff",
+        "transparent_border_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "announcement_bar_a4ALfD": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_dispatch": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Order by [date] for guaranteed Christmas dispatch</p>",
+            "btn_color": "#ffffff",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#2b2b2b",
+            "btn_bg_color_gradient": ""
+          }
+        },
+        "announcement_delivery": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Free UK delivery over £50</p>",
+            "btn_color": "#ffffff",
+            "btn_border_color": "#ffffff",
+            "btn_bg_color": "#2b2b2b",
+            "btn_bg_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_dispatch",
+        "announcement_delivery"
+      ],
+      "settings": {
+        "enable_announcement": true,
+        "layout": "slider",
+        "enable_close": false,
+        "color_text": "#ffffff",
+        "bg_color_text": "#2b2b2b",
+        "bg_color_text_gradient": "",
+        "font_size_text": 13,
+        "font_style_text": "normal",
+        "font_weight_text": "500",
+        "arrow_active": false,
+        "content_max_width": 38,
+        "padding_top": 2,
+        "padding_bottom": 2
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header_utility_GMkd3p",
+    "header_navigation_full_elements_YaWbtd",
+    "header-mobile",
+    "announcement_bar_a4ALfD"
+  ]
+}
