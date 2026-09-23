@@ -395,37 +395,26 @@
     "announcement_bar_a4ALfD": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_dispatch": {
-          "type": "announcement",
-          "settings": {
-            "text": "<p>Order by [date] for guaranteed Christmas dispatch</p>",
-            "btn_color": "#ffffff",
-            "btn_border_color": "#ffffff",
-            "btn_bg_color": "#2b2b2b",
-            "btn_bg_color_gradient": ""
-          }
-        },
         "announcement_delivery": {
           "type": "announcement",
           "settings": {
             "text": "<p>Free UK delivery over £50</p>",
-            "btn_color": "#ffffff",
-            "btn_border_color": "#ffffff",
-            "btn_bg_color": "#2b2b2b",
+            "btn_color": "#2b2b2b",
+            "btn_border_color": "#2b2b2b",
+            "btn_bg_color": "#f3f2ee",
             "btn_bg_color_gradient": ""
           }
         }
       },
       "block_order": [
-        "announcement_dispatch",
         "announcement_delivery"
       ],
       "settings": {
         "enable_announcement": true,
         "layout": "slider",
         "enable_close": false,
-        "color_text": "#ffffff",
-        "bg_color_text": "#2b2b2b",
+        "color_text": "#2b2b2b",
+        "bg_color_text": "#f3f2ee",
         "bg_color_text_gradient": "",
         "font_size_text": 13,
         "font_style_text": "normal",

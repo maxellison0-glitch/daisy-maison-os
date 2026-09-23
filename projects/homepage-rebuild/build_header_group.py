@@ -14,17 +14,15 @@ group = json.loads(raw[header.end():] if header else raw)
 
 bar = group["sections"]["announcement_bar_a4ALfD"]
 bar["blocks"] = {
-    "announcement_dispatch": {"type": "announcement", "settings": {
-        "text": "<p>Order by [date] for guaranteed Christmas dispatch</p>",
-        "btn_color": "#ffffff", "btn_border_color": "#ffffff", "btn_bg_color": "#2b2b2b", "btn_bg_color_gradient": ""}},
+    # the Christmas cut-off line ("Order by <date> for guaranteed Christmas dispatch") goes back in once Max sets the date
     "announcement_delivery": {"type": "announcement", "settings": {
         "text": "<p>Free UK delivery over £50</p>",
-        "btn_color": "#ffffff", "btn_border_color": "#ffffff", "btn_bg_color": "#2b2b2b", "btn_bg_color_gradient": ""}},
+        "btn_color": "#2b2b2b", "btn_border_color": "#2b2b2b", "btn_bg_color": "#f3f2ee", "btn_bg_color_gradient": ""}},
 }
-bar["block_order"] = ["announcement_dispatch", "announcement_delivery"]
+bar["block_order"] = ["announcement_delivery"]
 bar["settings"].update({
     "enable_announcement": True, "layout": "slider", "enable_close": False, "arrow_active": False,
-    "color_text": "#ffffff", "bg_color_text": "#2b2b2b", "bg_color_text_gradient": "",
+    "color_text": "#2b2b2b", "bg_color_text": "#f3f2ee", "bg_color_text_gradient": "",
     "font_size_text": 13, "font_style_text": "normal", "font_weight_text": "500",
     "content_max_width": 38, "padding_top": 2, "padding_bottom": 2,
 })

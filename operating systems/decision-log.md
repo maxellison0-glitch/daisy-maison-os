@@ -58,7 +58,7 @@ Each entry:
 
 **Decision:** Rebuild the mobile homepage from sections Ella already has. The new order is:
 1. Promise bar
-2. Seasonal Christmas hero with one button
+2. Hero carousel of three proven sellers (Christmas star, Mr & Mrs sign, Family Blossom Tree), one button each
 3. Shop by occasion (3 across)
 4. Real best sellers from a new automated "Best sellers" collection
 5. Proof strip with numbers
@@ -66,10 +66,10 @@ Each entry:
 7. How it works (with a screenshot of the live sign preview)
 8. Real reviews
 9. Shop by recipient
-10. Made in Lytham
+10. Made in Lancashire
 11. Instagram, then an inline 10% sign-up
 
-Sale badges and the tealight holder come off the homepage. The workshop video is kept, but it shows paper-flower making (a Canva clip), so the copy doesn't call it "our workshop". Built on the unpublished copy "In construction 🚧" (207623029075). Max publishes. Details: `projects/homepage-rebuild/README.md`.
+Sale badges and the tealight holder come off the homepage. Built on the unpublished copy "In construction 🚧" (207623029075). Max publishes. Details: `projects/homepage-rebuild/README.md`.
 
 **Reason:** 7% of sessions land on the homepage. Direct homepage landers convert at 0.99% (1,413 sessions, 14 checkouts, last 30 days) against 9.97% for search (per the brief, 7% of all sessions land on the homepage). The old page gave them nowhere obvious to go: a generic hero with a wedding button, a hand-picked row led by a £10.99 tealight holder, a text-only promise slider and one tile per screen.
 
@@ -79,7 +79,6 @@ Sale badges and the tealight holder come off the homepage. The workshop video is
 - The hero goes stale after Christmas. It needs an owner and a calendar date (see "Swapping the seasonal hero").
 - Best sellers is all-time, so the Valentine's sign ranks #2 in the Christmas run-up.
 - Claims to confirm before publishing. The owner declared the first two established; the site data doesn't back them yet:
-  - "Lytham St Annes": the site address is Blackpool.
   - "10,000+ five-star reviews": no source found, and Feefo is closed.
   - The welcome 10% covers 54 collections, not the whole order. Nothing confirms that a welcome email flow sends the code to people who sign up with the homepage form.
   - Dispatch times disagree: the proof strip and FAQ say 5–7 working days; the FAQ says up to 7–14 at Christmas; the free-delivery rate says 3–5.
@@ -87,4 +86,12 @@ Sale badges and the tealight holder come off the homepage. The workshop video is
 
 **Rollback:** Re-publish the previous live theme, which stays in the theme library. Or restore `index.before.json` and `header-group.before.json` from `projects/homepage-rebuild/`. The Best sellers collection can be unpublished or deleted separately.
 
-**Result:** Pending. The build is on the preview, waiting for Max to review and publish. Measure 28 days after publish.
+**Max's review, 23 Sep:** He liked the reviews, Shop by occasion, Best sellers and the Christmas button. Changed on the copy the same day:
+- "Lytham St Annes" is now "Lancashire" everywhere.
+- The hero is a three-slide carousel, not one still photo, with its own photo per slide on desktop too.
+- The low-resolution workshop video is removed. The "Personalised by you" words stay as a plain panel.
+- The announcement bar is one soft line, "Free UK delivery over £50". The "[date]" line is gone until the Christmas cut-off is set.
+
+He asked for the Christmas heart. The Christmas slide uses the Family Festive star instead: it sold 128 units in Oct–Dec 2025, against 16 for the "Our 1st Christmas Together" heart. That is one image to swap back if he prefers the heart.
+
+**Result:** Pending. The build is on the preview, waiting for Max to publish. Measure 28 days after publish.

@@ -15,11 +15,25 @@
 @media (max-width:767px){
   .template-index [id^="halo-image-banner-"] .container-1170{padding-left:0!important;padding-right:0!important}
   .template-index [id^="halo-image-banner-"] .banner-heading{--heading_line_height_tab:32px!important}
-  .template-index [id^="halo-image-banner-"] .img-box--mobile .image-mobile{padding-top:80%!important}
+  .template-index [id^="halo-image-banner-"] .img-box--mobile .image{padding-top:80%!important}
   .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{
     position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
     transform:none!important;width:100%!important;max-width:none!important;max-height:none!important;
     overflow:visible!important;border-radius:0!important;margin:0!important;padding:18px 20px 22px!important}
+}
+
+/* 2b. Hero on tablets and desktop: photo on the left, words on the right, so each slide shows its own photo */
+@media (min-width:768px){
+  .template-index [id^="halo-image-banner-"] .item--largeImg .banner-item{display:flex!important;align-items:center;background:#fff9f2}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .img-box--mobile{flex:0 0 50%;max-width:50%}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .img-box--mobile .image{padding-top:75%!important}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{
+    position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
+    transform:none!important;flex:1 1 50%;width:auto!important;max-width:520px!important;max-height:none!important;
+    overflow:visible!important;margin:0 auto!important;padding:32px 40px!important;background:none!important}
+}
+@media (min-width:768px) and (max-width:1024px){
+  .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{padding:20px 16px!important}
 }
 
 /* 3. Hero: the second button reads as a small text link under the main button */
@@ -66,10 +80,8 @@
 }
 .custom-service-block[class*="__dm_how_it_works"] .policies-icon img{width:100%!important;height:auto!important;border-radius:10px;display:block}
 
-/* 8. Made in Lytham: give the heading and copy room on desktop */
-.template-index .video-section .halo-block-header .title .text{width:auto!important;max-width:720px}
-.template-index .video-section .halo-block-header .title{line-height:1.25!important}
-.template-index .video-section .subtext-video{max-width:640px;margin:0 auto}
+/* 8. Made in Lancashire panel: sentence-case heading */
+.template-index .rich-text .heading{text-transform:none!important}
 
 /* 9. Reviews: product photo as a small square, product name links to the product */
 .customer-review-block[class*="__dm_reviews"] .review__item-image{max-width:140px!important;margin:0 auto 12px!important}

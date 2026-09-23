@@ -47,13 +47,14 @@ styles = {
     "settings": {"custom_liquid": (HERE / "dm-home-styles.liquid").read_text(encoding="utf-8").strip()},
 }
 
-# ---------------------------------------------------------------- 2. Hero
+# ---------------------------------------------------------------- 2. Hero (carousel of best-seller photos)
 hero = copy.deepcopy(old["image_banner_UJGTQq"])
-hero["settings"].update({"container": "1170"})  # desktop keeps its 1170 frame; phones go edge to edge via dm-home-styles
-hero["blocks"]["large_img_nMR3HH"]["settings"].update({
-    # desktop keeps the existing landscape banner; phones get a real-room Christmas photo
-    "mobile_image": img("FullSizeRender_879ae487-f623-4a13-9a53-350cf75daac1.heic"),
-    "sub_title": "Handmade to order in Lytham St Annes",
+# desktop keeps its 1170 frame with the photo beside the words; phones go edge to edge via dm-home-styles
+hero["settings"].update({"container": "1170", "display_type": "slide",
+                         "enable_autoplay": True, "enable_dots": True, "enable_arrows": False})
+HERO_BASE = copy.deepcopy(hero["blocks"]["large_img_nMR3HH"]["settings"])
+HERO_BASE.update({
+    "sub_title": "Handmade to order in Lancashire",
     "font_size_sub_title_mb": 12,
     "margin_bottom_sub_title": 8,
     "heading": "Personalised gifts, handmade to order",
@@ -65,11 +66,31 @@ hero["blocks"]["large_img_nMR3HH"]["settings"].update({
     "font_size_des_mb": 14,
     "line_height_des": 20,
     "margin_bottom_des": 16,
-    "btn_text": "Shop Christmas gifts",
-    "link": col("christmas"),
     "btn_text_2": "Wedding & engagement",
     "link_2": col("wedding-engagement"),
+    "button_1_width": 260,  # longest label is "Shop the Mr & Mrs sign"
 })
+
+
+def hero_slide(photo, button, link):
+    # the same square photo on phone and desktop: desktop shows it beside the words (dm-home-styles rule 2b),
+    # so each slide changes picture there too instead of repeating the old landscape banner
+    s = copy.deepcopy(HERO_BASE)
+    s.update({"image": img(photo), "mobile_image": img(photo), "btn_text": button, "link": link})
+    return {"type": "largeImg", "settings": s}
+
+
+# same words on every slide (it fades, so only the photo and the button label change). Real photos of proven
+# sellers only: Family Festive star = #1 Christmas product Oct-Dec 2025 (128 sold); Mr & Mrs sign = #1 overall
+# (5,194 in 12 months); Family Blossom Tree = 670 in 12 months. All sources >= 1200 px (phones load at most 750 px).
+hero["blocks"] = {
+    "large_img_nMR3HH": hero_slide("Large-Star-3.jpg", "Shop Christmas gifts", col("christmas")),
+    "hero_mr_mrs": hero_slide("rn-image_picker_lib_temp_58b6d173-9a7f-478e-9825-759fc1d8df8d.png",
+                              "Shop the Mr & Mrs sign", prod("mr-mrs-personalised-street-sign-gift")),
+    "hero_family_tree": hero_slide("Family_Blossom_Tree_1.jpg",
+                                   "Shop the blossom tree", prod("family-blossom-tree-personalised-pebble-picture-gift-2")),
+}
+hero["block_order"] = list(hero["blocks"])
 
 
 # ---------------------------------------------------------------- tile helpers
@@ -207,7 +228,7 @@ how = {"type": "custom-service-block", "blocks": {
                   "Add your names and dates. On our street signs the preview updates as you type.",
                   prod("mr-mrs-personalised-street-sign-gift")),
     "how_3": step("street_sign_christmas_wrapped.png", "3. We make it by hand and dispatch it",
-                  "Made by hand in Lytham St Annes, then dispatched to you."),
+                  "Made by hand in Lancashire, then dispatched to you."),
 }, "block_order": ["how_1", "how_2", "how_3"], "settings": {
     "id_section": "", "container": "1170", "padding_full_width": 0, "display_border_top": False, "display_border_bottom": False,
     "service_block_swipe_on_mobile": "list", "service_block_style": "style_1", "policies_bg": SECTION_BG,
@@ -263,25 +284,33 @@ recipient_2 = tile_row("", [
     tile("For friends", "hf_20260515_134703_d6d4f816-2534-4fd6-b717-2511f043a17d.png", col("friendship-special-occasions")),
 ], "recipient2", layout="list", column="3", column_mb="2", mg_top_mb=0, mg_bottom_mb=30)
 
-# ---------------------------------------------------------------- 10. Made in Lytham (enable the video block, real copy, sage panel)
+# ---------------------------------------------------------------- 10. Made in Lancashire (sage text panel, no video)
+made_in_lancashire = {"type": "rich-text", "blocks": {
+    "lancashire_heading": {"type": "heading", "settings": {
+        "heading": "Personalised by you. Handmade by us in Lancashire.",
+        "heading_size": 30, "heading_size_mb": 24, "heading_line_height": 1.2, "heading_color": INK}},
+    "lancashire_text": {"type": "text", "settings": {
+        "text": "<p>Our signs and pebble pictures are made to order in Lancashire. You choose the words, and we make each one by hand, just for you.</p>",
+        "text_size": 17, "text_size_mb": 16, "text_line_height": 1.5, "margin_top_text": 14,
+        "text_color": INK, "text_width": "640px"}},
+}, "block_order": ["lancashire_heading", "lancashire_text"], "settings": {
+    "container": "container", "padding_full_width": 0, "enable_border_top": False, "enable_border_bottom": False,
+    "enable_minus_mg_top": False, "rich_text_bg": SAGE, "rich_text_bg_gradient": "", "enable_column": False,
+    "content_align": "center",
+    "mg_top_desktop": 60, "mg_top_tablet": 50, "mg_top_mobile": 40, "mg_bottom_desktop": 60, "mg_bottom_tablet": 50, "mg_bottom_mobile": 40,
+}}
+
+# The old video block (paper-flower Canva clip) stays DISABLED, but with the bacon-ipsum placeholder removed and the
+# phone-height bug fixed, so it is safe if someone switches it on later with real workshop footage.
 video = copy.deepcopy(old["video_block_86qWNA"])
-video.pop("disabled", None)
+video["disabled"] = True
 video["settings"].update({
-    "container": "container", "spotlight_bg": SAGE, "spotlight_bg_gradient": "",
-    "video_block_title": "Personalised by you. Handmade by us in Lytham St&nbsp;Annes.",
-    "color_title": INK, "fontsize_title": 28, "fontsize_title_mb": 22, "margin_bottom_title": 12,
-    "video_block_des": ("<p>Our signs and pebble pictures are made to order in Lytham St Annes. "
-                        "You choose the words, and we make each one by hand, just for you.</p>"),
-    "color_des": INK, "fontsize_des": 16, "title_align": "center",
-    # the 480p Shopify rendition (3.7 MB) instead of the 19.3 MB original; url_mp4_mb stays blank
-    # because custom.css shows both videos when it is set
-    "url_mp4": "https://cdn.shopify.com/videos/c/vp/15750962af724ca592911f46cc1d8a13/15750962af724ca592911f46cc1d8a13.SD-480p-1.5Mbps-34610101.mp4",
-    "url_mp4_mb": "",
+    "heading": "", "text": "", "btn_text": "", "link": "",
     # the theme appends "%"; the saved "66%"/"100%" rendered as "100%%" and collapsed the video on phones
     "video_height": "56.25", "video_height_mb": "56.25",
-    "full_width": False, "heading": "", "text": "", "btn_text": "", "link": "",
-    "mg_top_desktop": 50, "mg_top_tablet": 40, "mg_top_mobile": 30,
-    "mg_bottom_desktop": 50, "mg_bottom_tablet": 40, "mg_bottom_mobile": 30,
+    # the 480p Shopify rendition (3.7 MB) instead of the 19.3 MB original
+    "url_mp4": "https://cdn.shopify.com/videos/c/vp/15750962af724ca592911f46cc1d8a13/15750962af724ca592911f46cc1d8a13.SD-480p-1.5Mbps-34610101.mp4",
+    "url_mp4_mb": "",
 })
 
 # ---------------------------------------------------------------- 11. Inline newsletter under Instagram
@@ -321,12 +350,15 @@ sections = {
     "17394583817a28cc5e": copy.deepcopy(old["17394583817a28cc5e"]),  # Feefo on-page reviews, moved up
     "dm_recipient_row_1": recipient_1,
     "dm_recipient_row_2": recipient_2,
-    "video_block_86qWNA": video,
+    "dm_made_in_lancashire": made_in_lancashire,
     "16378128152fdd5fe7": copy.deepcopy(old["16378128152fdd5fe7"]),  # Instagram heading, unchanged
     "1726396330d08baf63": copy.deepcopy(old["1726396330d08baf63"]),  # Instafeed app block, unchanged
     "dm_newsletter": newsletter,
 }
 order = list(sections)
+
+sections["video_block_86qWNA"] = video  # disabled, kept at the end with the other parked sections
+order.append("video_block_86qWNA")
 
 # sections that were already disabled stay in the file, still disabled, at the end
 for key in before["order"]:
