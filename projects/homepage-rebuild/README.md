@@ -22,7 +22,7 @@ Direct landers know the brand but find nowhere obvious to go. The homepage's job
 | # | Section id | Ella section | What it is now | Why |
 |---|---|---|---|---|
 | 1 | `announcement_bar_a4ALfD` (header group) | announcement-bar | Two lines rotating every 3 s: "Order by [date] for guaranteed Christmas dispatch" and "Free UK delivery over £50". Dark bar, 13 px, no close button. | 7 of 9 benchmark stores lead with a promise. The combined line is 474 px wide and would not fit a 340 px phone, so it rotates instead. Site-wide on this theme. |
-| 2 | `image_banner_UJGTQq` | image-banner | Real-room photo of the "Our First Christmas Together" pebble heart. Under it: "Handmade to order in Lytham St Annes", headline **"Personalised gifts, handmade to order"**, ★★★★★ 10,000+ five-star reviews, one button **Shop Christmas gifts** → `/collections/christmas`, and a small text link **Wedding & engagement** → `/collections/wedding-engagement`. 588 px tall; the next row is visible above the fold. | Season, one button, proof with a number. The full headline ("…in Lytham St Annes") wrapped to 3 lines at 390 px, so the brief's tighter version is used. On phones the text card sits under the photo instead of covering it. Desktop keeps its old landscape image and overlay. |
+| 2 | `image_banner_UJGTQq` | image-banner | Real-room photo of the "Our First Christmas Together" pebble heart. Under it: "Handmade to order in Lytham St Annes", headline **"Personalised gifts, handmade to order"**, ★★★★★ 10,000+ five-star reviews, one button **Shop Christmas gifts** → `/collections/christmas`, and a small text link **Wedding & engagement** → `/collections/wedding-engagement`. 568 px tall; the next row is visible above the fold. | Season, one button, proof with a number. The full headline ("…in Lytham St Annes") wrapped to 3 lines at 390 px, so the brief's tighter version is used. On phones the text card sits under the photo instead of covering it. Desktop keeps its old landscape image and overlay. |
 | 3 | `spotlight_block_JFKrLj` + `dm_occasion_row_2` | spotlight-block ×2 | **Shop by occasion**: two rows of four, three visible plus a peek, each row swipes. Christmas · Wedding · Engagement · Christening / New home · Anniversary · Teacher · For Mum. | Replaces the one-tile-per-screen "Our Most Cherished Gifts" (same section id, reused). |
 | 4 | `product_block_QcxFaJ` | product-block | **Best sellers**: 8 products from the new automated `best-sellers` collection, with prices, no sale badges or struck-through prices, and a "Shop all best sellers" link. | Replaces the hand-picked "Trending Now" (tealight first). Never needs curating. |
 | 5 | `16393870238958f868` | custom-service-block | **Proof strip**, 2 × 2 with icons: 10,000+ five-star reviews · Handmade in Lancashire · Made and dispatched in 5–7 working days, express 2–3 · Free UK delivery over £50. | Proof with numbers, no slider. The text-only "Why thousands choose us" (`custom_service_block_jYPjBJ`) is removed. |
@@ -30,7 +30,7 @@ Direct landers know the brand but find nowhere obvious to go. The homepage's job
 | 7 | `dm_how_it_works` | custom-service-block | **How it works**: 1. Choose the gift · 2. Personalise it and see it live · 3. We make it by hand and dispatch it. Step 2 is a phone screenshot of the live sign preview on the Mr & Mrs page ("MR & MRS TAYLOR" typed in). | The live preview is the differentiator. Built from an existing Ella section (image + title + text), so it needs no new section code. |
 | 8 | `dm_reviews` + `17394583817a28cc5e` | customer-review-block + apps (Feefo) | **What our customers say**: three verbatim 5-star reviews with product photos, each linking to its product. The Feefo block sits straight after it. | See "Feefo" below: the Feefo widget renders nothing. Quotes are copied word for word from `snippets/dm-proof.liquid` (harvested 4 Jul 2026 from Trustpilot/Feefo). |
 | 9 | `dm_recipient_row_1` + `dm_recipient_row_2` | spotlight-block ×2 | **Shop by recipient**, 3 across: For couples · For Mum · For grandparents / For teachers · For the family · For friends. | Second way in. |
-| 10 | `video_block_86qWNA` | video-block | Enabled. Sage panel: **"Personalised by you. Handmade by us in Lytham St Annes."** plus three plain sentences, then the video. | The placeholder "Hamburger ham picanha…" text is gone. |
+| 10 | `video_block_86qWNA` | video-block | Enabled. Sage panel: **"Personalised by you. Handmade by us in Lytham St Annes."** plus two plain sentences ("Our signs and pebble pictures are made to order in Lytham St Annes. You choose the words, and we make each one by hand, just for you."), then the video. | The placeholder "Hamburger ham picanha…" text is gone. The copy doesn't call the clip "our workshop" (see below) and doesn't repeat dispatch times. |
 | 11 | `16378128152fdd5fe7`, `1726396330d08baf63`, `dm_newsletter` | instagram, apps (Instafeed), newsletter | #DaisyMaison unchanged, then an inline sign-up: **"10% off your first order"**. No popup. | Newsletter with an incentive, inline. |
 | – | `dm_home_styles` | custom-liquid | A `<style>` block, first in the order, renders nothing visible. | The only new code. See `dm-home-styles.liquid`. |
 
@@ -39,12 +39,14 @@ The six sections that were already disabled (Elfsight, press banner, wedding bes
 ### Where the build differs from the brief, and why
 
 1. **"column_mb 3" does not exist in Ella.** The setting only accepts 1 or 2, and a spotlight-block holds at most 4 tiles. So the 8 occasion tiles are two spotlight sections of 4, the 6 recipient tiles are two of 3, and a few lines of CSS make them three across.
-2. **The "second service block" had no icon images.** All three of its blocks were `icon_type: image` with the image left empty. Content > Files has no icon images at all (the full library of 3,230 files was checked). The proof strip therefore uses Ella's other icon option: `icon_type: "text"`, which takes inline SVG. The four simple line icons are star, heart, clock and van.
+2. **The "second service block" had no icon images.** All three of its blocks were `icon_type: image` with the image left empty. Content > Files has no suitable icon images (the full library of 3,230 files was checked; the only line icon is a shipping-protection shield). The proof strip therefore uses Ella's other icon option: `icon_type: "text"`, which takes inline SVG. The four simple line icons are star, heart, clock and van.
 3. **Feefo cannot show anything.** Feefo's API answers `'Closed' account is not able to interact with the Reviews API` for `daisy-maison`. The on-page widget renders at 0 px on the live homepage today. The two "400 Bad Request" console errors on every page are Feefo. That is why the Feefo block was moved but three real reviews were added above it.
 4. **No stars on product cards.** The card template (`product-card-02`) has no rating markup, and Feefo is closed. Stars on cards would need a snippet edit plus a working reviews app.
 5. **The workshop video.** It plays and is kept. It is "Untitled design (3).mp4" (a Canva export): hands making a pink paper flower with a DM watermark, not signs or pebbles. The section now loads Shopify's 480p rendition (3.7 MB) instead of the 19.3 MB original. The saved video heights (`"66%"`, `"100%"`) rendered as `100%%` and collapsed the video to 0 px on phones, so they are now `56.25` (16:9).
 6. **Newsletter wording.** The live welcome discount (`welcome10`, unique codes) gives 10% off **54 named collections**, not the whole order. The heading keeps the brief's "10% off your first order", and the line underneath says "10% off selected ranges".
-7. **Sentence case.** The theme capitalises every word of every heading. On the homepage only, headings now show as written ("Best sellers", not "Best Sellers").
+7. **Sentence case.** The theme capitalises every word of every heading. On the homepage only, headings now show as written ("Best sellers", not "Best Sellers"). Buttons keep the theme's site-wide uppercase style.
+8. **Dispatch times appear once**, in the proof strip, as the brief asks. The FAQ says Christmas dispatch "can be up to 7-14 working days", and the free-delivery rate says "3-5 Working day dispatch". The three disagree, so check them before the Christmas cut-off goes up.
+9. **Tablets.** The 3-across occasion rows also apply from 768 to 992 px, where Ella would otherwise show a big-tile carousel.
 
 ## New things on the store (outside the theme)
 
@@ -69,7 +71,7 @@ The six sections that were already disabled (Elfsight, press banner, wedding bes
 | New home | `my-home` | New-Home-Christmas.jpg | **No New Home collection exists** |
 | Anniversary | `anniversary` | Pink_4f1f5235….jpg | |
 | Teacher | `teachers-gifts` | Star-Keyring-BLUE-2.jpg | Collection includes a tealight holder (#2) |
-| For Mum (occasion) | `mothers-day` | Mothers-Day-S.S-Img-5-Grey.jpg | |
+| For Mum (occasion) | `mothers-day` | MUM-NEW-1.jpg | The collection's own image now shows a "NANNY, JACK & CONNOR" sign, so it isn't used |
 | Christmas street signs | `christmas-street-signs` | Xmas-Sign-BS-Family.jpg | Collection sorts football stadium signs first |
 | First Christmas hearts | `christmas-pebble-hanging-hearts` | 1st-Christmas-as-Mummy-and-Daddy-copy.jpg | **No First Christmas collection**; this one holds 6 of the 13 |
 | Christmas reed diffuser | product `personalised-christmas-reed-diffuser-gift` | christmas_reed_diffuser.png | |
@@ -114,19 +116,20 @@ WHERE landing_page_path = '/' GROUP BY referrer_source SINCE -30d UNTIL today OR
 ## How to publish (Max)
 
 1. Look at the preview on your phone.
-2. On the copy (Themes → "In construction 🚧" → Customize), fill in the **[date]** in the announcement bar.
-3. **Check the live theme's "Last saved" time.** The copy was made at 10:43 on 23 Sep. If anything was changed on the live theme after that, publishing the copy would undo it. In that case, port the two changed files (`templates/index.json`, `sections/header-group.json`) onto a fresh duplicate instead.
-4. Themes → "In construction 🚧" → **Publish**.
-5. **Rollback:** the old theme stays in the theme library. Publish it again, or put back `index.before.json` / `header-group.before.json`.
+2. On the copy (Themes → "In construction 🚧" → Customize), fill in the **[date]** in the announcement bar. It shows on every page, so it must not go live as "[date]".
+3. **Confirm the 10% welcome code actually reaches people who sign up with this form.** The form creates a customer tagged `newsletter`; the theme sends no code. The code has to come from a Shopify Email or Klaviyo welcome flow. If there is no such flow, change the newsletter heading before publishing. The code (`welcome10`) covers 54 collections, not the whole order.
+4. **Check the live theme's "Last saved" time.** The copy was made at 10:43 on 23 Sep. If anything was changed on the live theme after that, publishing the copy would undo it. In that case, port the two changed files (`templates/index.json`, `sections/header-group.json`) onto a fresh duplicate instead.
+5. Themes → "In construction 🚧" → **Publish**.
+6. **Rollback:** the old theme stays in the theme library. Publish it again, or put back `index.before.json` / `header-group.before.json`.
 
 ## Files
 
 | File | What |
 |---|---|
-| `index.json` | The new `templates/index.json`, as uploaded (md5 `7285d2e50304259853bec234c9765c76`, re-read from Shopify after upload) |
+| `index.json` | The new `templates/index.json`, as uploaded (md5 `5c7bf752685f5c41640834fc4a57e230`, re-read from Shopify after upload) |
 | `index.before.json` | The original homepage, byte-exact (md5 `c2b6449ec05ca78c521c11100d140093`, identical on live and copy) |
 | `header-group.json` / `header-group.before.json` | Header group with the new announcement bar (md5 `91d6746fda42f340de861ab5cc68313d`) / the original as returned by the API |
-| `dm-home-styles.liquid` | The one custom-liquid block: homepage-only CSS for the hero card, sentence-case headings, text link, badges, 3-across tiles, 2 × 2 proof strip, how-it-works rows and review photos |
+| `dm-home-styles.liquid` | The one custom-liquid block: homepage-only CSS for the hero card, sentence-case headings, text link, badges and 2-line card titles, 3-across tiles, 2 × 2 proof strip, how-it-works rows, the Made in Lytham heading and review photos. Several rules target section ids (`16393870238958f868`, `dm_*`, `spotlight_block_JFKrLj`): if one of those sections is deleted and re-added in the theme editor, it gets a new id and its CSS stops applying. |
 | `build_index.py`, `build_header_group.py` | Rebuild both JSON files from the originals |
 | `validate_template.py` | Checks every setting against the section schemas, plus images, links and block limits |
 | `screenshots/` | Phone screenshots of the preview (390 px) and the step-2 image |
@@ -148,4 +151,7 @@ python3 validate_template.py index.json --theme-dir <theme>/ --before index.befo
   - two Feefo 400s
   - an `en-US@posix` locale warning
   - the same three page errors
+- The final run also logged one `503` from `/cart.js`. The theme calls that on every page, and it didn't appear in the two earlier runs, so it is most likely throttling after a day of test loads.
+- A 1440 px desktop check was clean. The page is 10 px wider than the window, but live is too.
+- Reviewed by three independent passes (brief, copy and claims, CSS risk) before the PR. Their fixes are in.
 - Not verifiable headless: video playback (the test browser has no H.264; the file is valid) and the Instafeed grid, which is empty headless on the live homepage too.

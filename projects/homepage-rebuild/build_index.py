@@ -49,7 +49,7 @@ styles = {
 
 # ---------------------------------------------------------------- 2. Hero
 hero = copy.deepcopy(old["image_banner_UJGTQq"])
-hero["settings"].update({"container": "fullwidth"})
+hero["settings"].update({"container": "1170"})  # desktop keeps its 1170 frame; phones go edge to edge via dm-home-styles
 hero["blocks"]["large_img_nMR3HH"]["settings"].update({
     # desktop keeps the existing landscape banner; phones get a real-room Christmas photo
     "mobile_image": img("FullSizeRender_879ae487-f623-4a13-9a53-350cf75daac1.heic"),
@@ -119,7 +119,7 @@ occasion_2 = tile_row("", [
     tile("New home", "New-Home-Christmas.jpg", col("my-home")),
     tile("Anniversary", "Pink_4f1f5235-141a-45e8-9380-015342809a7b.jpg", col("anniversary")),
     tile("Teacher", "Star-Keyring-BLUE-2.jpg", col("teachers-gifts")),
-    tile("For Mum", "Mothers-Day-S.S-Img-5-Grey.jpg", col("mothers-day")),
+    tile("For Mum", "MUM-NEW-1.jpg", col("mothers-day")),
 ], "occasion2", layout="scroll", column="4", column_mb="1", mg_top_mb=10, mg_bottom_mb=20)
 
 # ---------------------------------------------------------------- 4. Best sellers (was "Trending Now")
@@ -207,7 +207,7 @@ how = {"type": "custom-service-block", "blocks": {
                   "Add your names and dates. On our street signs the preview updates as you type.",
                   prod("mr-mrs-personalised-street-sign-gift")),
     "how_3": step("street_sign_christmas_wrapped.png", "3. We make it by hand and dispatch it",
-                  "Handmade to order in Lytham St Annes and dispatched in 5–7 working days, or 2–3 with express."),
+                  "Made by hand in Lytham St Annes, then dispatched to you."),
 }, "block_order": ["how_1", "how_2", "how_3"], "settings": {
     "id_section": "", "container": "1170", "padding_full_width": 0, "display_border_top": False, "display_border_bottom": False,
     "service_block_swipe_on_mobile": "list", "service_block_style": "style_1", "policies_bg": SECTION_BG,
@@ -268,11 +268,10 @@ video = copy.deepcopy(old["video_block_86qWNA"])
 video.pop("disabled", None)
 video["settings"].update({
     "container": "container", "spotlight_bg": SAGE, "spotlight_bg_gradient": "",
-    "video_block_title": "Personalised by you. Handmade by us in Lytham St Annes.",
+    "video_block_title": "Personalised by you. Handmade by us in Lytham St&nbsp;Annes.",
     "color_title": INK, "fontsize_title": 28, "fontsize_title_mb": 22, "margin_bottom_title": 12,
-    "video_block_des": ("<p>Every sign, pebble picture and keepsake is made to order in our Lytham St Annes workshop. "
-                        "You choose the words and we make it by hand, just for you. "
-                        "Orders are made and dispatched in 5–7 working days, or 2–3 with express.</p>"),
+    "video_block_des": ("<p>Our signs and pebble pictures are made to order in Lytham St Annes. "
+                        "You choose the words, and we make each one by hand, just for you.</p>"),
     "color_des": INK, "fontsize_des": 16, "title_align": "center",
     # the 480p Shopify rendition (3.7 MB) instead of the 19.3 MB original; url_mp4_mb stays blank
     # because custom.css shows both videos when it is set

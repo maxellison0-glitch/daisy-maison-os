@@ -11,8 +11,10 @@
 .template-index .halo-block-header .title,
 .template-index .halo-block-header .title .text{text-transform:none!important}
 
-/* 2. Hero on phones: headline card sits under the photo instead of covering it */
+/* 2. Hero on phones: edge-to-edge photo, headline card under it instead of covering it */
 @media (max-width:767px){
+  .template-index [id^="halo-image-banner-"] .container-1170{padding-left:0!important;padding-right:0!important}
+  .template-index [id^="halo-image-banner-"] .banner-heading{--heading_line_height_tab:32px!important}
   .template-index [id^="halo-image-banner-"] .img-box--mobile .image-mobile{padding-top:80%!important}
   .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{
     position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
@@ -35,11 +37,14 @@
 .template-index .sections-product-block .card-price .price__saved{display:none!important}
 .template-index .sections-product-block .price--on-sale .price-item--sale,
 .template-index .sections-product-block .price--on-sale .price-item--sale .money{color:var(--product-price-color)!important}
+.template-index .sections-product-block .card-title{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 
-/* 5. Tile rows: three across on phones (Ella only offers one or two) */
-@media (max-width:767px){
+/* 5. Tile rows: three across on phones and small tablets (Ella only offers one or two) */
+@media (max-width:992px){
   .spotlight-block[id$="__spotlight_block_JFKrLj"] .halo-row.scroll-snap-mobile .halo-item,
   .spotlight-block[id$="__dm_occasion_row_2"] .halo-row.scroll-snap-mobile .halo-item{flex:0 0 30%!important;max-width:none!important;scroll-snap-stop:normal!important}
+}
+@media (max-width:767px){
   .spotlight-block[id$="__dm_recipient_row_1"] .halo-row.column-mb-2 .halo-item,
   .spotlight-block[id$="__dm_recipient_row_2"] .halo-row.column-mb-2 .halo-item{width:33.3333%!important}
   .template-index .spotlight-block .spotlight-inner .title.custom-text-style{margin-top:8px!important;margin-bottom:0!important;line-height:1.25!important}
@@ -61,7 +66,12 @@
 }
 .custom-service-block[class*="__dm_how_it_works"] .policies-icon img{width:100%!important;height:auto!important;border-radius:10px;display:block}
 
-/* 8. Reviews: product photo as a small square, product name links to the product */
+/* 8. Made in Lytham: give the heading and copy room on desktop */
+.template-index .video-section .halo-block-header .title .text{width:auto!important;max-width:720px}
+.template-index .video-section .halo-block-header .title{line-height:1.25!important}
+.template-index .video-section .subtext-video{max-width:640px;margin:0 auto}
+
+/* 9. Reviews: product photo as a small square, product name links to the product */
 .customer-review-block[class*="__dm_reviews"] .review__item-image{max-width:140px!important;margin:0 auto 12px!important}
 .customer-review-block[class*="__dm_reviews"] .review__item-image img{border-radius:10px}
 .customer-review-block[class*="__dm_reviews"] .heading a{color:inherit;text-decoration:underline;text-underline-offset:3px}

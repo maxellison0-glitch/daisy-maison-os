@@ -69,19 +69,20 @@ Each entry:
 10. Made in Lytham
 11. Instagram, then an inline 10% sign-up
 
-Sale badges and the tealight holder come off the homepage. Built on the unpublished copy "In construction 🚧" (207623029075). Max publishes. Details: `projects/homepage-rebuild/README.md`.
+Sale badges and the tealight holder come off the homepage. The workshop video is kept, but it shows paper-flower making (a Canva clip), so the copy doesn't call it "our workshop". Built on the unpublished copy "In construction 🚧" (207623029075). Max publishes. Details: `projects/homepage-rebuild/README.md`.
 
-**Reason:** 7% of sessions land on the homepage. Direct homepage landers convert at 0.99% (1,413 sessions, 14 checkouts, last 30 days) against 9.97% for brand search. The old page gave them nowhere obvious to go: a generic hero with a wedding button, a hand-picked row led by a £10.99 tealight holder, a text-only promise slider and one tile per screen.
+**Reason:** 7% of sessions land on the homepage. Direct homepage landers convert at 0.99% (1,413 sessions, 14 checkouts, last 30 days) against 9.97% for search (per the brief, 7% of all sessions land on the homepage). The old page gave them nowhere obvious to go: a generic hero with a wedding button, a hand-picked row led by a £10.99 tealight holder, a text-only promise slider and one tile per screen.
 
 **Expected outcome:** Direct homepage-landing conversion rises from 0.99% towards the search figure. Anything above 2.5% over the 28 days after publishing pays for the work. Measure with the ShopifyQL query in the README, split by `referrer_source`.
 
 **Risk:**
 - The hero goes stale after Christmas. It needs an owner and a calendar date (see "Swapping the seasonal hero").
 - Best sellers is all-time, so the Valentine's sign ranks #2 in the Christmas run-up.
-- Claims to confirm before publishing:
+- Claims to confirm before publishing. The owner declared the first two established; the site data doesn't back them yet:
   - "Lytham St Annes": the site address is Blackpool.
   - "10,000+ five-star reviews": no source found, and Feefo is closed.
-  - The welcome 10% covers 54 collections, not the whole order.
+  - The welcome 10% covers 54 collections, not the whole order. Nothing confirms that a welcome email flow sends the code to people who sign up with the homepage form.
+  - Dispatch times disagree: the proof strip and FAQ say 5–7 working days; the FAQ says up to 7–14 at Christmas; the free-delivery rate says 3–5.
 - Publishing the copy would undo any live-theme edits made after 10:43 on 23 Sep.
 
 **Rollback:** Re-publish the previous live theme, which stays in the theme library. Or restore `index.before.json` and `header-group.before.json` from `projects/homepage-rebuild/`. The Best sellers collection can be unpublished or deleted separately.
