@@ -58,7 +58,7 @@ Each entry:
 
 **Decision:** Rebuild the mobile homepage from sections Ella already has. The new order is:
 1. Promise bar
-2. Hero carousel of three proven sellers (Christmas star, Mr & Mrs sign, Family Blossom Tree), one button each
+2. Hero carousel of the two biggest sellers (Mr & Mrs sign first, then the family sign), with "Shop Christmas gifts" as the small link
 3. Shop by occasion (3 across)
 4. Real best sellers from a new automated "Best sellers" collection
 5. Proof strip with numbers
@@ -92,6 +92,8 @@ Sale badges and the tealight holder come off the homepage. Built on the unpublis
 - The low-resolution workshop video is removed. The "Personalised by you" words stay as a plain panel.
 - The announcement bar is one soft line, "Free UK delivery over £50". The "[date]" line is gone until the Christmas cut-off is set.
 
-He asked for the Christmas heart. The Christmas slide uses the Family Festive star instead: it sold 128 units in Oct–Dec 2025, against 16 for the "Our 1st Christmas Together" heart. That is one image to swap back if he prefers the heart.
+He asked for the Christmas heart. The Christmas slide first used the Family Festive star instead: it sold 128 units in Oct–Dec 2025, against 16 for the "Our 1st Christmas Together" heart.
+
+Second pass, same day: he asked for the wedding street sign first and called the star and blossom-tree photos "chopped". Framed and hand-held products lose their edges in the 5:4 phone crop. The hero is now two street-sign slides: the Mr & Mrs sign, then the family sign. In Oct–Dec 2025 those were the #1 and #2 products, with 690 and 652 sold, about five times the star. "Shop Christmas gifts" is the small link on both slides.
 
 **Result:** Pending. The build is on the preview, waiting for Max to publish. Measure 28 days after publish.

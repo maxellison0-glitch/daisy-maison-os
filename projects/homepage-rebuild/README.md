@@ -4,7 +4,7 @@
 
 **Preview on your phone:** https://daisymaison.co.uk/?preview_theme_id=207623029075
 
-**Revised after Max's review (23 Sep, afternoon):** the hero is now a three-photo carousel of proven sellers, "Lytham St Annes" is "Lancashire" everywhere, the workshop video is gone, and the announcement bar is one quiet line with no "[date]". See "Max's review" below.
+**Revised after Max's review (23 Sep, afternoon):** the hero is now a two-photo carousel of the two biggest sellers (wedding sign first), "Lytham St Annes" is "Lancashire" everywhere, the workshop video is gone, and the announcement bar is one quiet line with no "[date]". See "Max's review" below.
 
 Full brief with the reference board: https://claude.ai/artifact/1EsvvfN6gzEartTrVNw4b7
 
@@ -24,7 +24,7 @@ Direct landers know the brand but find nowhere obvious to go. The homepage's job
 | # | Section id | Ella section | What it is now | Why |
 |---|---|---|---|---|
 | 1 | `announcement_bar_a4ALfD` (header group) | announcement-bar | One line: "Free UK delivery over £50". Soft stone bar (`#f3f2ee`) with charcoal text (`#2b2b2b`), 13 px, no close button. | 7 of 9 benchmark stores lead with a promise. The Christmas cut-off line ("Order by … for guaranteed Christmas dispatch") goes back in as a second, rotating line once Max sets the date. Site-wide on this theme. |
-| 2 | `image_banner_UJGTQq` | image-banner | **Carousel of three real product photos**, fading on its own every few seconds, with dots: Family Festive star → **Shop Christmas gifts** (`/collections/christmas`); Mr & Mrs Potter street sign → **Shop the Mr & Mrs sign**; Family Blossom Tree → **Shop the blossom tree**. The words stay the same on every slide: "Handmade to order in Lancashire", headline **"Personalised gifts, handmade to order"**, ★★★★★ 10,000+ five-star reviews, and a small text link **Wedding & engagement**. On phones the text card sits under the photo. On tablets and desktop the photo sits on the left and the words on the right, so the picture changes there too. | Season first, then the two biggest sellers. Every photo is a real photo of a proven seller (see "Max's review"), and every source is at least 1,200 px. |
+| 2 | `image_banner_UJGTQq` | image-banner | **Carousel of two street-sign photos**, fading on its own every few seconds, with dots: 1. the "MR & MRS POTTER" sign at a wedding → **Shop the Mr & Mrs sign**; 2. "THE POTTER FAMILY" sign on a lit mantel → **Shop the family sign**. The words stay the same on both slides: "Handmade to order in Lancashire", headline **"Personalised gifts, handmade to order"**, ★★★★★ 10,000+ five-star reviews, and a small text link **Shop Christmas gifts** (`/collections/christmas`). On phones the text card sits under the photo. On tablets and desktop the photo sits on the left and the words on the right, so the picture changes there too. | The two biggest sellers, which were also #1 and #2 in last year's Christmas quarter. Both photos are the main shots already on their product pages (1,566 and 2,048 px), and each keeps the whole sign inside the crop. Wedding and engagement are the first tiles in the next row. |
 | 3 | `spotlight_block_JFKrLj` + `dm_occasion_row_2` | spotlight-block ×2 | **Shop by occasion**: two rows of four, three visible plus a peek, each row swipes. Christmas · Wedding · Engagement · Christening / New home · Anniversary · Teacher · For Mum. | Replaces the one-tile-per-screen "Our Most Cherished Gifts" (same section id, reused). |
 | 4 | `product_block_QcxFaJ` | product-block | **Best sellers**: 8 products from the new automated `best-sellers` collection, with prices, no sale badges or struck-through prices, and a "Shop all best sellers" link. | Replaces the hand-picked "Trending Now" (tealight first). Never needs curating. |
 | 5 | `16393870238958f868` | custom-service-block | **Proof strip**, 2 × 2 with icons: 10,000+ five-star reviews · Handmade in Lancashire · Made and dispatched in 5–7 working days, express 2–3 · Free UK delivery over £50. | Proof with numbers, no slider. The text-only "Why thousands choose us" (`custom_service_block_jYPjBJ`) is removed. |
@@ -56,20 +56,24 @@ The six sections that were already disabled (Elfsight, press banner, wedding bes
 |---|---|
 | "Handmade to order in Lytham St Annes": change to Lancashire, more broad and recognisable | Hero sub-line, the made-to-order panel heading and text, and how-it-works step 3 all say **Lancashire**. No "Lytham" is left on the page. |
 | Announcement bar colours clash; "Order by [date]" looks unfinished | Now one line, "Free UK delivery over £50", in soft stone and charcoal to match the header. The Christmas cut-off line comes back once Max gives the date. |
-| The main image is one still image; a swiping carousel of best sellers would look cleaner | The hero is a three-slide carousel that fades on its own, with dots you can tap or swipe. Each slide has its own photo on phone and desktop. |
+| The main image is one still image; a swiping carousel of best sellers would look cleaner | The hero is a carousel that fades on its own, with dots you can tap or swipe. Each slide has its own photo on phone and desktop. |
 | Get rid of the low-resolution video under "Personalised by you…" | Removed. The words stay, as a plain sage panel. |
-| Christmas heart, Mr & Mrs sign, family blossom tree; high quality and proven winners | Mr & Mrs sign and Family Blossom Tree are in. The Christmas slide uses the **Family Festive star**, not the heart, on sales (below). Swapping it back is one image in the theme editor. |
+| Christmas heart, Mr & Mrs sign, family blossom tree; high quality and proven winners | First pass: star, Mr & Mrs sign, blossom tree (the star replaced the heart on sales). Replaced by the next row. |
+| "Make the wedding street sign the 1st image, the other 2 are lowkey chopped" | The Mr & Mrs sign leads. The star and the blossom tree are gone: framed and hand-held products lose their edges in the crop. Slide 2 is the family street sign on a mantel. "Shop Christmas gifts" moved to the small link under the button, so the season is still one tap away. |
 
 Proven winners (ShopifyQL, units sold):
 
 | Product | Evidence | Photo | Source size |
 |---|---|---|---|
-| Mr & Mrs personalised street sign | #1 product overall: 5,194 units in the last 12 months (£63k) | `rn-image_picker_lib_temp_58b6d173….png` (the real "MR & MRS POTTER" sign at a wedding) | 1,566 px square |
-| Family Blossom Tree pebble picture | 670 units in the last 12 months (£20k) | `Family_Blossom_Tree_1.jpg` (sharpest of its shots) | 1,200 px square |
-| Family Festive star | #1 Christmas product Oct–Dec 2025: 128 units | `Large-Star-3.jpg` | 1,200 px square |
-| "Our 1st Christmas Together" heart (not used) | 16 units Oct–Dec 2025 | | |
+| Mr & Mrs personalised street sign (slide 1) | #1 product: 5,194 units in the last 12 months (£63k); 690 in Oct–Dec 2025 | `rn-image_picker_lib_temp_58b6d173….png` ("MR & MRS POTTER" at a wedding) | 1,566 px square |
+| Family personalised street sign (slide 2) | 1,641 units in the last 12 months (£23k); #2 product in Oct–Dec 2025 with 652 | `hf_20260519_145719….png`, the product's own main photo ("THE POTTER FAMILY" on a mantel) | 2,048 px square |
+| Family Blossom Tree pebble picture (dropped) | 670 in 12 months; 356 in Oct–Dec 2025 | `Family_Blossom_Tree_1.jpg` | 1,200 px square |
+| Family Festive star (dropped) | The best-selling *Christmas-themed* product, but only 128 in Oct–Dec 2025 | `Large-Star-3.jpg` | 1,200 px square |
+| "Our 1st Christmas Together" heart (never used) | 16 in Oct–Dec 2025 | | |
 
-Phones load at most 750 px wide, and desktop shows each photo 585 px wide, so every photo is roughly 2× sharp on a retina screen. The wedding-table shots of the Mr & Mrs sign on Ezel look AI-generated, so the real Potter photo was kept.
+In last year's Christmas quarter, each of the two signs sold about five times as many as the best-selling Christmas-themed product. The Christmas street signs sold 11 or fewer each.
+
+Phones load at most 750 px wide, and desktop shows each photo 585 px wide, so both photos are at least 2× sharp on a retina screen.
 
 ## New things on the store (outside the theme)
 
@@ -112,9 +116,9 @@ All tile images are square and already on the store; none were generated. Tiles 
 
 The hero is the first thing to rot, so give it an owner and put the dates below in the calendar.
 
-1. Online Store → Themes → (live theme) → Customize → Home page → **Image banner**. It holds three slides (large image blocks). The first is the seasonal one.
-2. On the seasonal slide, set **both** the **Image** and the **Mobile image** to the same real-room product photo: square, at least 1,200 px. Don't set a focal point, because that makes the box 20% taller. Desktop crops the photo to 4:3 beside the words.
-3. Edit its button text and link. The sub-line, headline and "Wedding & engagement" text link are repeated on all three slides, so change them on every slide or the text will jump as it fades. Keep one button per slide. The second button is styled as the small text link.
+1. Online Store → Themes → (live theme) → Customize → Home page → **Image banner**. It holds two slides (large image blocks), one per best seller. The season lives in the small link under the button ("Shop Christmas gifts").
+2. To change a slide's photo, set **both** the **Image** and the **Mobile image** to the same product photo: square, at least 1,200 px, with the product in the middle third. Phones crop it to 5:4 and desktop to 4:3, so framed or hand-held products lose their edges. Signs and flat products crop well. Don't set a focal point, because that makes the box 20% taller.
+3. For the season, change the small link's text and link (**Button 2**) on **every** slide, e.g. "Shop Valentine's gifts". The sub-line and headline are also repeated on each slide, so change them on all of them or the text will jump as it fades. Keep one main button per slide.
 4. Swap the four **Christmas edit** tiles for the next season's four, and edit the announcement bar (header → Announcement bar).
 5. Calendar:
    - Christmas → last dispatch date
@@ -149,19 +153,19 @@ WHERE landing_page_path = '/' GROUP BY referrer_source SINCE -30d UNTIL today OR
 
 | File | What |
 |---|---|
-| `index.json` | The new `templates/index.json`, as uploaded (md5 `f191de593db951df561a0c35315e4049`, re-read from Shopify after upload) |
+| `index.json` | The new `templates/index.json`, as uploaded (md5 `1088499efc89b6336f265bdda386e9f4`, re-read from Shopify after upload) |
 | `index.before.json` | The original homepage, byte-exact (md5 `c2b6449ec05ca78c521c11100d140093`, identical on live and copy) |
 | `header-group.json` / `header-group.before.json` | Header group with the new announcement bar (md5 `c7f8c852204761835b4bde82125046aa`) / the original as returned by the API |
 | `dm-home-styles.liquid` | The one custom-liquid block: homepage-only CSS for the hero card (under the photo on phones, beside it on desktop), sentence-case headings, text link, badges and 2-line card titles, 3-across tiles, 2 × 2 proof strip, how-it-works rows, the made-to-order panel heading and review photos. Several rules target section ids (`16393870238958f868`, `dm_*`, `spotlight_block_JFKrLj`): if one of those sections is deleted and re-added in the theme editor, it gets a new id and its CSS stops applying. |
 | `build_index.py`, `build_header_group.py` | Rebuild both JSON files from the originals |
 | `validate_template.py` | Checks every setting against the section schemas, plus images, links and block limits |
-| `screenshots/` | Phone screenshots of the preview (390 px, 1–6), the three hero slides on desktop (7) and the step-2 image |
+| `screenshots/` | Phone screenshots of the preview (390 px, 1–6), the hero slides on desktop (7) and the step-2 image |
 
 ```
 python3 build_index.py && python3 build_header_group.py
 python3 validate_template.py index.json --theme-dir <theme>/ --before index.before.json \
   --files files_inventory.json --collections collections.json --products all_products.json
-# 1,516 settings checked across 23 sections; 0 errors (23 Sep 2026, after Max's review)
+# 1,430 settings checked across 23 sections; 0 errors (23 Sep 2026, after Max's second review)
 ```
 
 ## QA (headless Chromium, 390 × 844, spaced page loads, privacy banner and sticky toolbar removed)
@@ -174,8 +178,9 @@ python3 validate_template.py index.json --theme-dir <theme>/ --before index.befo
   - two Feefo 400s
   - an `en-US@posix` locale warning
   - the same three page errors
-- After Max's review (v7, md5 `f191de59…`):
-  - The carousel starts, has 3 slides and 3 dots, and moves on its own.
+- After Max's reviews (v8, md5 `1088499e…`):
+  - The carousel starts, has 2 slides and 2 dots, and moves on its own.
+  - Slide 1 is the Mr & Mrs sign → `/products/mr-mrs-personalised-street-sign-gift`; slide 2 is the family sign → `/products/family-personalised-street-sign`. The small link on both goes to `/collections/christmas`.
   - Each slide's button fits on one line at 390 px.
   - "Lytham" and "[date]" appear 0 times in the page, and the video section doesn't render.
   - Console errors are still identical to live, and no `503` repeated.

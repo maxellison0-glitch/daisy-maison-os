@@ -66,8 +66,9 @@ HERO_BASE.update({
     "font_size_des_mb": 14,
     "line_height_des": 20,
     "margin_bottom_des": 16,
-    "btn_text_2": "Wedding & engagement",
-    "link_2": col("wedding-engagement"),
+    # the season lives in the small link on every slide; wedding and engagement are the next row's first tiles
+    "btn_text_2": "Shop Christmas gifts",
+    "link_2": col("christmas"),
     "button_1_width": 260,  # longest label is "Shop the Mr & Mrs sign"
 })
 
@@ -80,15 +81,15 @@ def hero_slide(photo, button, link):
     return {"type": "largeImg", "settings": s}
 
 
-# same words on every slide (it fades, so only the photo and the button label change). Real photos of proven
-# sellers only: Family Festive star = #1 Christmas product Oct-Dec 2025 (128 sold); Mr & Mrs sign = #1 overall
-# (5,194 in 12 months); Family Blossom Tree = 670 in 12 months. All sources >= 1200 px (phones load at most 750 px).
+# same words on every slide (it fades, so only the photo and the button label change). Max's call: the wedding
+# street sign leads, and framed pebble pictures crop badly, so both slides are street signs in a real setting.
+# Mr & Mrs sign = #1 product (5,194 sold in 12 months, 690 in Oct-Dec 2025); Family sign = 1,641 in 12 months and
+# #2 in Oct-Dec 2025 (652). Both photos are 1,566-2,048 px and keep the sign in the middle, clear of the crop.
 hero["blocks"] = {
-    "large_img_nMR3HH": hero_slide("Large-Star-3.jpg", "Shop Christmas gifts", col("christmas")),
-    "hero_mr_mrs": hero_slide("rn-image_picker_lib_temp_58b6d173-9a7f-478e-9825-759fc1d8df8d.png",
-                              "Shop the Mr & Mrs sign", prod("mr-mrs-personalised-street-sign-gift")),
-    "hero_family_tree": hero_slide("Family_Blossom_Tree_1.jpg",
-                                   "Shop the blossom tree", prod("family-blossom-tree-personalised-pebble-picture-gift-2")),
+    "large_img_nMR3HH": hero_slide("rn-image_picker_lib_temp_58b6d173-9a7f-478e-9825-759fc1d8df8d.png",
+                                   "Shop the Mr & Mrs sign", prod("mr-mrs-personalised-street-sign-gift")),
+    "hero_family_sign": hero_slide("hf_20260519_145719_6692efb2-306d-4050-b27a-435d003c18bb.png",
+                                   "Shop the family sign", prod("family-personalised-street-sign")),
 }
 hero["block_order"] = list(hero["blocks"])
 
