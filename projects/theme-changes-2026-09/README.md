@@ -1,11 +1,11 @@
 # Theme changes: Christmas decoration builders + Mr & Mrs line 2 (24 Sep 2026)
 
-**Status:** built and tested on the unpublished theme **"Claude – Xmas builders + Mr & Mrs (24 Sep)"** (id 207729066323), duplicated from the live theme "In construction 🚧" at 17:13 on 24 Sep. Not published. Max publishes.
+**Status:** built and tested, now in Max's working draft **"Copy of In construction 🚧"** (id 207727198547). Max made that draft on 24 Sep as the theme to keep working in before publishing. The same three files were first built and tested on "Claude – Xmas builders + Mr & Mrs (24 Sep)" (id 207729066323), which is now redundant and can be deleted. Before the swap, the draft's copies of the three files were byte-identical to live. After the swap, all three match (md5 `b9463a19…`, `b9d71c47…`, `f26557b2…`). Not published. Max publishes.
 
 Preview links:
-- Family Festive star: https://daisymaison.co.uk/products/personalised-family-festive-christmas-pebble-star-hanging-decoration?preview_theme_id=207729066323
-- Merry & Bright: https://daisymaison.co.uk/products/personalised-merry-bright-family-christmas-pebble-hanging-decoration?preview_theme_id=207729066323
-- Mr & Mrs sign: https://daisymaison.co.uk/products/mr-mrs-personalised-street-sign-gift?preview_theme_id=207729066323
+- Family Festive star: https://daisymaison.co.uk/products/personalised-family-festive-christmas-pebble-star-hanging-decoration?preview_theme_id=207727198547
+- Merry & Bright: https://daisymaison.co.uk/products/personalised-merry-bright-family-christmas-pebble-hanging-decoration?preview_theme_id=207727198547
+- Mr & Mrs sign: https://daisymaison.co.uk/products/mr-mrs-personalised-street-sign-gift?preview_theme_id=207727198547
 
 Three files differ from live. The full change is in `xmas-builders-and-mr-mrs-line2.diff`, and `build_xmas.py` regenerates the builder edit from the live files.
 
@@ -61,6 +61,6 @@ Production already handles this: `production/run-batch.ps1` passes a blank line 
 
 ## Before publishing
 
-1. Someone made **"Copy of In construction 🚧"** (id 207727198547) at 16:46 on 24 Sep. If the team is working in that theme, publishing one theme would overwrite the other's work. Merge the three files above into whichever theme goes live.
-2. Re-check the live theme for changes made after 17:13 on 24 Sep, and copy any across first (as on 23 Sep, when a checkout wording change was nearly lost).
+1. Everything now lives in the draft "Copy of In construction 🚧". Keep working there, and don't publish the redundant "Claude – Xmas builders…" theme.
+2. Re-check the live theme for changes made after the draft was created (16:46 on 24 Sep), and copy any across first (as on 23 Sep, when a checkout wording change was nearly lost).
 3. Confirm the star's real size (10 × 10 / 15 × 15 per its Globo form, or 12 × 12 / 20 × 20 per its description).

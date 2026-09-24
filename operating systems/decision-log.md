@@ -106,7 +106,7 @@ Second pass, same day: he asked for the wedding street sign first and called the
 - The last two Christmas decorations still on Globo (Merry & Bright, Family Festive star) move onto the native heart builder that the other Christmas decorations use. They get the Christmas gift wrap kit through `dm-wrap-kits`.
 - On the Mr & Mrs page, a customer who fills in line 1 and leaves line 2 empty now sees a one-line sign, not the sample date.
 
-Built on the unpublished theme "Claude – Xmas builders + Mr & Mrs (24 Sep)" (207729066323). Max publishes. Details: `projects/theme-changes-2026-09/README.md`.
+Built and tested on a throwaway copy, then applied to Max's working draft "Copy of In construction 🚧" (207727198547), which goes live when he publishes it. Details: `projects/theme-changes-2026-09/README.md`.
 
 **Reason:** Max asked for both. The Globo pages were the odd ones out in the Christmas range. The Mr & Mrs preview showed a line 2 the customer hadn't asked for, next to a caption saying "Your sign".
 
@@ -114,7 +114,7 @@ Built on the unpublished theme "Claude – Xmas builders + Mr & Mrs (24 Sep)" (2
 - Property keys must match what fulfilment reads. They are copied verbatim from each product's own Globo form, and the star's from its real orders. The star keeps its own quirks: `Size` not `Size 1`, `(Large heart)` without a price, and Teen/Baby pebbles.
 - Merry & Bright's year question moves from `Add 2025?` to `Add 2026?`, matching Wonderland.
 - No gift boxes on the star until its size is confirmed (its description says 12 × 12 / 20 × 20 cm).
-- A second duplicate, "Copy of In construction 🚧", exists. Publishing either theme would overwrite the other's work.
+- Anything changed on the live theme after the draft was made (16:46, 24 Sep) must be copied into the draft before publishing.
 
 **Rollback:** Republish the previous theme, or revert the three files using the diff in the project folder.
 
