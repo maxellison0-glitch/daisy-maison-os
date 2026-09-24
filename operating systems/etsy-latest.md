@@ -11,10 +11,40 @@ Every morning your digest reads THIS file and adds an Etsy section — so keep i
 ---
 
 === ETSY DATA DUMP ===
-Extracted: 2026-09-11
-Period: 30 days (13 Aug – 10 Sep)
+Extracted: 2026-09-24
+Mode: DAILY QUICK
 
-## 30-Day Summary
+[YESTERDAY — 23 Sep 2026]
+Visits: 185 | Orders: 5 | Revenue: £99.20 | Conversion rate: 2.7%
+
+[LAST 7 DAYS — 18–24 Sep 2026]
+Visits: 1,310 (-24.23% YoY)
+Orders: 60 (-39.39% YoY)
+Conversion rate: 4.6% (-20.01% YoY)
+Revenue: £1,104.95 (-30.88% YoY)
+Note: includes partial data for 24 Sep (7 visits, 0 orders). All % comparisons are year-over-year (Etsy does not show vs previous period).
+
+[TRAFFIC SOURCES — 7d]
+not pulled today
+
+[SEARCH TERMS — 7d, top 10]
+not pulled today
+
+[TOP LISTINGS — 7d, top 8]
+not pulled today
+
+[ETSY ADS — 7d]
+not pulled today
+
+[LAST 30 DAYS]
+not pulled today (previous 30-day pull below is from 2026-09-11)
+
+[NOTES]
+Daily quick pull — deeper sections skipped. Run the full weekly for those.
+
+---
+
+## Previous 30-Day Pull (2026-09-11, retained for reference)
 
 | Metric | Value |
 |---|---|
