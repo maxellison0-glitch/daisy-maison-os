@@ -43,7 +43,11 @@ The star's keys match its three most recent paid orders (Aug–Sep 2026): `Numbe
   - `(+£3) Large Decoration`, £3.00;
   - `Christmas Gift Wrap Kit`, £5.95.
   No Globo blocks were visible.
-- **Merry & Bright:** the page renders the heading, the four pebble types, the year question, the "Add A Second Heart +£10.95" offer and the wrap kit, with no Globo blocks visible. The 7-pebble + offer basket run is listed under "QA" below.
+- **Merry & Bright, 7 pebbles with the year and a second heart (on Max's draft):** the total showed £31.90, and the basket received exactly:
+  - the heart, £15.95, with `Number of pebbles: 7 (Large heart +£5)`, `Size 1: Large 15 x 15cm (£18.95)`, `Pebble 1–7`, `Text above`, `Text below`, `Add 2026?: YES Please`, `**INCREDIBLE OFFER**: YES Please`, and every `(Offer) …` key;
+  - `(+£5) 7/8 pebbles`, £5.00;
+  - `(+£10.95) **INCREDIBLE OFFER** DECORATION`, £10.95.
+  No Globo blocks were visible.
 
 ## 2. Mr & Mrs: line 1 only means a one-line sign
 
