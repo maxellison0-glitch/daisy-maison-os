@@ -1,8 +1,8 @@
 # Mobile homepage rebuild (23 Sep 2026)
 
-**Status:** built and QA'd on the theme copy **"In construction 🚧" (id 207623029075)**. Not published. The live theme ("🚧 ", id 207563915603) has not been touched: its `templates/index.json` and `sections/header-group.json` still carry their 22 Sep checksums.
+**Status:** **published by Max on 24 Sep 2026.** The theme copy **"In construction 🚧" (id 207623029075)** is now the live theme, replacing "🚧 " (id 207563915603). Measure around 22 Oct (see "Measuring").
 
-**Preview on your phone:** https://daisymaison.co.uk/?preview_theme_id=207623029075
+**Live:** https://daisymaison.co.uk/
 
 **Revised after Max's review (23 Sep, afternoon):** the hero is now a two-photo carousel of the two biggest sellers (wedding sign first), "Lytham St Annes" is "Lancashire" everywhere, the workshop video is gone, and the announcement bar is one quiet line with no "[date]". See "Max's review" below.
 

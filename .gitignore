@@ -21,6 +21,8 @@ projects/daisy-street-sign/**/__pycache__/
 !projects/homepage-rebuild/
 !projects/homepage-rebuild/**
 projects/homepage-rebuild/**/__pycache__/
+!projects/theme-changes-2026-09/
+!projects/theme-changes-2026-09/**
 projects/daisy-street-sign/**/*.pyc
 # Generated output: reproducible from the order text plus the scripts, and the
 # repo syncs with git add -A. Tracking it would grow main by ~130 KB per order

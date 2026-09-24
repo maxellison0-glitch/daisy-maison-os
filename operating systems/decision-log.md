@@ -96,4 +96,26 @@ He asked for the Christmas heart. The Christmas slide first used the Family Fest
 
 Second pass, same day: he asked for the wedding street sign first and called the star and blossom-tree photos "chopped". Framed and hand-held products lose their edges in the 5:4 phone crop. The hero is now two street-sign slides: the Mr & Mrs sign, then the family sign. In Oct–Dec 2025 those were the #1 and #2 products, with 690 and 652 sold, about five times the star. "Shop Christmas gifts" is the small link on both slides.
 
-**Result:** Pending. The build is on the preview, waiting for Max to publish. Measure 28 days after publish.
+**Result:** Published by Max on 24 Sep 2026: the copy "In construction 🚧" is now the live theme. Measure 28 days after publishing, around 22 Oct, with the README query.
+
+---
+
+### 2026-09-24 — Move Merry & Bright and Family Festive star onto the native builder; Mr & Mrs one-line signs
+
+**Decision:**
+- The last two Christmas decorations still on Globo (Merry & Bright, Family Festive star) move onto the native heart builder that the other Christmas decorations use. They get the Christmas gift wrap kit through `dm-wrap-kits`.
+- On the Mr & Mrs page, a customer who fills in line 1 and leaves line 2 empty now sees a one-line sign, not the sample date.
+
+Built on the unpublished theme "Claude – Xmas builders + Mr & Mrs (24 Sep)" (207729066323). Max publishes. Details: `projects/theme-changes-2026-09/README.md`.
+
+**Reason:** Max asked for both. The Globo pages were the odd ones out in the Christmas range. The Mr & Mrs preview showed a line 2 the customer hadn't asked for, next to a caption saying "Your sign".
+
+**Risk:**
+- Property keys must match what fulfilment reads. They are copied verbatim from each product's own Globo form, and the star's from its real orders. The star keeps its own quirks: `Size` not `Size 1`, `(Large heart)` without a price, and Teen/Baby pebbles.
+- Merry & Bright's year question moves from `Add 2025?` to `Add 2026?`, matching Wonderland.
+- No gift boxes on the star until its size is confirmed (its description says 12 × 12 / 20 × 20 cm).
+- A second duplicate, "Copy of In construction 🚧", exists. Publishing either theme would overwrite the other's work.
+
+**Rollback:** Republish the previous theme, or revert the three files using the diff in the project folder.
+
+**Result:** Pending publish.
