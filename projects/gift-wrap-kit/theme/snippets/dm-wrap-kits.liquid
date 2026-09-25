@@ -1,0 +1,136 @@
+{%- comment -%}
+  dm-wrap-kits — the gift wrap kits registry: Classic + Christmas.
+
+  Rendered on every product page from snippets/dm-mobile-fixes.liquid (which
+  layout/theme.liquid renders in <head> before any product builder script).
+  Outputs window.DAISY_WRAP_KITS and, ONLY while the Christmas kit is live,
+  the styles + assets/daisy-wrap-kits.js that add the Classic / Christmas
+  choice to every existing gift-wrap control.
+
+  THE SEASON SWITCH IS THE PRODUCT, NOT THE CODE:
+    on  = product 'christmas-gift-wrap-kit' Active + published + purchasable
+    off = set that product to Draft (or unpublish it). Nothing else to touch.
+  Prices, names and images all track the two products, so a price change in
+  admin flows through here with no code change.
+
+  secondKit: true switches on the "second kit half price" line. It relies on
+  the store's automatic discount "Second gift wrap kit half price" (buy one
+  kit, second kit 50% off, once per order). Remove that discount = set false.
+
+  Thumbnails use each kit's SECOND image (the clean product shot); tapping a
+  thumbnail zooms the FIRST image (the annotated "what's inside" graphic).
+{%- endcomment -%}
+{%- if request.page_type == 'product' -%}
+{%- liquid
+  assign dm_wk_classic = all_products['gift-wrapping']
+  assign dm_wk_classic_v = dm_wk_classic.variants | where: 'sku', 'XT-300-WK-1' | first | default: dm_wk_classic.selected_or_first_available_variant
+  assign dm_wk_classic_thumb = dm_wk_classic.images[1] | default: dm_wk_classic.featured_image
+  assign dm_wk_classic_two = dm_wk_classic.variants | where: 'sku', 'XT-300-WK-2' | first
+  assign dm_wk_xmas = all_products['christmas-gift-wrap-kit']
+  assign dm_wk_xmas_v = dm_wk_xmas.selected_or_first_available_variant
+  assign dm_wk_xmas_thumb = dm_wk_xmas.images[1] | default: dm_wk_xmas.featured_image
+  assign dm_wk_live = false
+  if dm_wk_classic_v and dm_wk_classic_thumb and dm_wk_xmas.available and dm_wk_xmas_v.available and dm_wk_xmas_thumb
+    assign dm_wk_live = true
+  endif
+-%}
+{%- if dm_wk_classic_v and dm_wk_classic_thumb -%}
+<script type="module">
+/* Hearts: give the heart builder the classic Gift Wrap Kit extra the diffusers
+   already carry, so every heart page offers the kit (and, in season, the
+   Classic / Christmas card). A module script runs after parsing and before
+   daisy-heart-builder.js (both deferred, document order), so the builder
+   reads the patched config. No-op on diffusers, on the elf page, and once
+   the heart configs in dm-heart-builder.liquid carry the extra themselves
+   (fold it in at that file's next edit). */
+(function () {
+  var node = document.querySelector('[data-daisy-heart-config]');
+  if (!node) return;
+  var config;
+  try { config = JSON.parse(node.textContent); } catch (e) { return; }
+  if (!config || typeof config !== 'object') return;
+  var kind = String(config.kind || '');
+  if (/^diff/.test(kind) || kind === 'elfpostcard') return;
+  var extras = Array.isArray(config.extras) ? config.extras : [];
+  if (extras.some(function (x) { return x && /gift wrap/i.test(String(x.label || x.key || '')); })) return;
+  extras.push({
+    "key": "Gift Wrap Kit", "yes": "YES Please", "no": "NO Thanks",
+    "variantId": {{ dm_wk_classic_v.id | json }}, "pricePence": {{ dm_wk_classic_v.price | json }},
+    "label": "Add a Gift Wrap Kit", "note": "Tissue paper, ribbon, twine and a gift tag, ready to use",
+    "image": {{ dm_wk_classic_thumb | image_url: width: 400 | json }}, "layout": "card", "badge": "Finishing touch"
+  });
+  config.extras = extras;
+  node.textContent = JSON.stringify(config);
+})();
+</script>
+{%- endif -%}
+{%- if dm_wk_live -%}
+<script>
+window.DAISY_WRAP_KITS = {
+  "currency": {{ cart.currency.iso_code | default: shop.currency | json }},
+  "secondKit": true,
+  "copy": "Paper, twine, ribbon and a gift tag, sealed in cellophane and ready to use — in classic neutrals or a festive Christmas set.",
+  "classic": {
+    "style": "classic",
+    "label": "Classic",
+    "name": {{ dm_wk_classic.title | json }},
+    "variantId": {{ dm_wk_classic_v.id | json }},
+    "twoPackVariantId": {{ dm_wk_classic_two.id | default: 0 | json }},
+    "price": {{ dm_wk_classic_v.price | json }},
+    "thumb": {{ dm_wk_classic_thumb | image_url: width: 160 | json }},
+    "zoom": {{ dm_wk_classic.featured_image | image_url: width: 1200 | json }}
+  },
+  "christmas": {
+    "style": "christmas",
+    "label": "Christmas",
+    "name": {{ dm_wk_xmas.title | json }},
+    "variantId": {{ dm_wk_xmas_v.id | json }},
+    "price": {{ dm_wk_xmas_v.price | json }},
+    "thumb": {{ dm_wk_xmas_thumb | image_url: width: 160 | json }},
+    "zoom": {{ dm_wk_xmas.featured_image | image_url: width: 1200 | json }}
+  }
+};
+</script>
+<style>
+/* dm-wrap-kits — Classic / Christmas choice. Tokens match custom.css (--dm-sage, #ece6dd, 12px radius). */
+.dm-cyg__card--wrap-styles .dm-cyg__media:has(img[data-dm-zoomable]):after{display:none!important}
+.dm-wrap-thumbs{display:flex;gap:8px;flex:0 0 auto}
+.dm-wrap-thumb{position:relative;margin:0;width:56px;display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .15s ease}
+.dm-wrap-thumb img.dm-cyg__thumb{border:2px solid #ece6dd!important}
+.dm-wrap-thumb figcaption{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8a8a7a;line-height:1;white-space:nowrap}
+.dm-wrap-thumb:after{content:"";position:absolute;left:3px;top:38px;width:16px;height:16px;border-radius:999px;background:#fffffff0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b2b2a' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='M16 16l4.5 4.5M11 8.5v5M8.5 11h5'/%3E%3C/svg%3E") center/10px 10px no-repeat;box-shadow:0 1px 4px #2b2b2a47;pointer-events:none}
+.dm-wrap-thumb.is-selected img.dm-cyg__thumb{border-color:var(--dm-sage,#b0af9b)!important;box-shadow:0 0 0 2px #f3f5ec!important}
+.dm-wrap-thumb.is-selected figcaption{color:#2f3724}
+.dm-wrap-thumb.is-dimmed{opacity:.5}
+.dm-cyg__card--wrap-styles .dm-addon-mode__option{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.15}
+.dm-wrap-style__label{display:block}
+.dm-wrap-style__price{display:block;font-size:11px;font-weight:600;color:#8a8a7a}
+.dm-cyg__card--wrap-styles .dm-addon-mode__option[data-dm-wrap-style].is-active:not([data-wrap-active]){border-color:#e4ddd4!important;background:#fff!important;box-shadow:none!important}
+.dm-cyg__card--wrap-styles .dm-addon-mode__option[data-wrap-active]{border-color:var(--dm-sage,#b0af9b)!important;background:#f3f5ec!important;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)!important}
+.dm-wrap-row{grid-column:1/-1;flex:1 1 100%;margin:-2px 0 10px;padding:10px 12px;border:1px solid #ece6dd;border-radius:12px;background:#fbfcf8;box-sizing:border-box}
+.dm-wrap-row[hidden]{display:none!important}
+.dm-wrap-row__title{margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6b6055}
+.dm-wrap-row__choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dm-wrap-choice{display:flex;align-items:center;gap:10px;margin:0;padding:8px 10px;border:1px solid #e4ddd4;border-radius:12px;background:#fff;font:inherit;color:#2b2b2b;cursor:pointer;text-align:left;min-width:0}
+.dm-wrap-choice img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:1px solid #ece6dd;flex:0 0 44px}
+.dm-wrap-choice__label{display:block;font-weight:700;font-size:13px}
+.dm-wrap-choice__price{display:block;font-size:12px;color:#8a8a7a}
+.dm-wrap-choice.is-selected{border-color:var(--dm-sage,#b0af9b);background:#f3f5ec;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)}
+.dm-wrap-choice.is-selected .dm-wrap-choice__label:before{content:"\2713 ";font-weight:800;color:#2f3724}
+.dm-wrap-mount{grid-column:1/-1;flex:1 1 100%;width:100%;margin:6px 0 10px;box-sizing:border-box}
+.dm-wrap-mount .dm-cyg__top{display:flex;justify-content:space-between;gap:12px}
+.dm-wrap-mount .dm-cyg__media{display:flex;gap:12px;align-items:flex-start}
+.dm-wrap-mount .dm-addon-mode{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.dm-wrap-second{margin-top:10px;padding-top:10px;border-top:1px dashed #e4ddd4}
+.dm-wrap-second[hidden]{display:none!important}
+.dm-wrap-second__title{margin:0 0 8px;font-size:12.5px;line-height:1.35;color:#5a5a5a}
+.dm-wrap-second__title strong{color:#2b2b2b}
+.dm-wrap-second__chips{display:flex;gap:8px}
+.dm-wrap-chip{flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 6px;border:1px solid #e4ddd4;border-radius:10px;background:#fff;font:inherit;font-size:12px;font-weight:700;color:#2b2b2b;cursor:pointer;min-width:0}
+.dm-wrap-chip img{width:24px;height:24px;border-radius:6px;object-fit:cover;border:1px solid #ece6dd}
+.dm-wrap-chip.is-selected{border-color:var(--dm-sage,#b0af9b);background:#f3f5ec;box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)}
+.dm-wrap-chip.is-selected:before{content:"\2713";font-weight:800;color:#2f3724}
+</style>
+<script src="{{ 'daisy-wrap-kits.js' | asset_url }}" defer></script>
+{%- endif -%}
+{%- endif -%}
