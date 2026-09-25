@@ -92,5 +92,25 @@
       0.9
     ],
     "note": "Freya holding the sign, hallway, BLACK. Max's passed realism format (phone-snapshot rule). Box derived from the top border's straight run (136->779 at y=568) against the SVG silhouette's own top-edge fraction (830/912 wide, inset 4.50% each side): width 707, and the independently measured top/bottom edges (563/718) give height 155. 707/155 = 4.56 = the canonical ratio exactly, so this sign is held flat-on with no foreshortening - that agreement is the check that the box is right. HANDS: the fingers overlap the shaped ends and the printed border only; the panel interior is clear, so the eroded panel mask never paints over skin. damp is low and the band short because the strip above the sign is her shirt and the doorway, not a wall - it is a weaker light witness than a real wall plane."
+  },
+  "alan_workshop": {
+    "image": "plate-alan-workshop-levelled.png",
+    "box": [
+      52,
+      927,
+      1043,
+      1145
+    ],
+    "colourway": "BLACK",
+    "wall_band": 40,
+    "damp": 0.0,
+    "crop45": [
+      0,
+      500,
+      1080,
+      1850
+    ],
+    "wordmark_y": 0.3,
+    "note": "Alan character lock (ALAN-LOCK-black-tee-workshop-APPROVED.jpg), BLACK, workshop. Upscaled 768->1120 wide, levelled by -0.86 deg (source sign tilted 0.86 deg, above the 0.5 deg axis-aligned tolerance), 20px trimmed -> 1080x1967. Inner panel measured 948-1124 flat across x=400..950 after levelling; outer box derived from the canonical 12.4/125mm border fraction. Strip above the sign is his black tee, not a wall, so band short and damp low (same reasoning as freya_hallway). Added 25 Sep 2026 slot 3 when Higgsfield generation was blocked. damp 0: the band above is his black tee flanked by bright hands/wall, so its gradient is not light evidence and it darkened the centre of the panel by ~20%. ink_ratio omitted because grading the whole silhouette lifts the photographed border from 53 to ~90; new ink is instead levelled to the plate's own border level inside the panel mask only (see DM-SHED-LAUGH build)."
   }
 }
