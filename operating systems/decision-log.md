@@ -119,3 +119,35 @@ Built and tested on a throwaway copy, then applied to Max's working draft "Copy 
 **Rollback:** Republish the previous theme, or revert the three files using the diff in the project folder.
 
 **Result:** Pending publish.
+
+---
+
+### 2026-09-25 — Pre-publish clean-up: speed, fake urgency out, basket item first
+
+**Decision:** On Max's working draft (207727198547), before it goes live:
+- The homepage's main photo loads first.
+- The sign preview font is cut from 1.2 MB to 27 KB.
+- Feefo is removed (the account is closed).
+- The weekly "Price increases in X days" countdown and the "X customers are viewing" counter come off product pages.
+- The demo exit pop-up and the browser currency converter are switched off.
+- The drawer wording is UK English and it no longer recommends add-on SKUs.
+- In the basket, the customer's own item comes first: the occasion diffuser card moves below the totals, and the Mr & Mrs matching card stays on top.
+- Express checkout buttons are added, plus "UK delivery from £4.95 · free from £50".
+
+Details: `projects/theme-changes-2026-09/README.md`.
+
+**Reason:** Max asked for everything to be tight before publishing, because the site felt slow and cluttered. The test measurements and a comparison with 9 top UK gift stores on Shopify are in the README. The countdown reset every Monday, which is a banned practice under the DMCC Act 2024.
+
+**Expected outcome:**
+- The homepage photo shows in about half the time (13.5 s → 7.6 s in the test).
+- Lighter sign pages.
+- A higher share of family-sign and pebble-picture baskets reach checkout. They were under 40%, against 65% for Mr & Mrs. Measure after 28 days using the basket-to-checkout rate by landing product.
+
+**Risk:**
+- Diffuser add-ons from the occasion card may fall now that it sits lower on the page. Watch diffuser attach rate.
+- Express checkout skips the "Finish your gift" pop-up.
+- The delivery line hard-codes £4.95 (the threshold comes from the theme setting). Update it if rates change.
+
+**Rollback:** Reverse-apply `speed-honesty-basket-0925.diff`, then restore the five settings and the Feefo embed listed in the README.
+
+**Result:** Pending publish.
