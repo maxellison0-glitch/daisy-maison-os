@@ -8,7 +8,7 @@ description: >-
   'green day', 'should we scale', 'should we cut', 'why are sales down', or asks
   what to do about ad performance today. Load this BEFORE the generic `ads`
   skill — that one is craft, this one is the account. Paid is the largest number
-  in this business: roughly £735/day against a 3x floor.
+  in this business: roughly £735/day, green at 2.7x, goal 3x.
 ---
 
 # Daisy Maison — paid media
@@ -70,13 +70,13 @@ purpose, not an accident.
 
 | Metric | House rule |
 |---|---|
-| **ROAS floor** | **3.0x.** Below it the day is RED. |
+| **ROAS green line** | **2.7x** (set by Max 26 Sep 2026). Below it the day is RED. 3x is the goal. |
 | ROAS definition | Shopify `total_sales` ÷ combined Google + Meta spend. Say which when quoting. |
 | Reference spend band | £540–£585/day produced green days on 20–21 Jul |
 | Recent state | 2.46x on 27 Jul, fourth consecutive red day |
 
 **Known gap: there is no written CPA target, and no per-unit margin.** So this
-repo cannot answer whether 3x is actually the right floor — it is a working
+repo cannot answer whether 2.7x/3x is actually the right floor — it is a working
 threshold, not a derived one. Say that when the floor is used to justify a cut.
 
 ---
