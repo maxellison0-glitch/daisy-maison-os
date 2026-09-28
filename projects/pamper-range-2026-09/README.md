@@ -80,3 +80,7 @@ Emerald Truffle ingredients: not on AW's product page either (it lists only the 
 ## 28 Sep, later
 - Emerald Truffle ingredients were read from Max's label photo and are now on the product page. "Sodium La…" at the photo's cut-off edge is taken as Sodium Laurate. One colour code after CI 42090 is cut off by the photo edge and is left out until someone reads the end of that line on the pack.
 - Muscle Ease Massage Oil set to Active on Max's instruction.
+- Launch (Max: "go"):
+  - `main-nav` now has "Handmade Soap" and "Cocktail Bath Bombs" after Gift Bundles. The previous menu is backed up in the session scratchpad.
+  - All 8 products are in Gifts UNDER £15 (`east-of-india`) and moved to the top in this order: Gin & Tonic, Rose, Mojito, Slice of Sunshine, Piña Colada, Emerald Truffle, Martini, massage oil.
+  - The live theme hadn't changed since the duplicate was made (last live edit 13:20, copy made at 14:29), so publishing the duplicate loses nothing.
