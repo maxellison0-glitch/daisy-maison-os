@@ -26,12 +26,13 @@ Brief with setup, packaging and ChatGPT prompts: `pamper-range-brief.html`
 - `bath-bombs` (Cocktail Bath Bombs), template `collection.pamper`.
 
 **Deal:** automatic discount "Soap: any 3 for £12" (DiscountAutomaticNode/1841638375763). It applies 19.2% off every item in Handmade Soap once 3 or more are in the basket, which makes each soap £4.00 (3 = £12.00, 4 = £16.00). At 19.19% Shopify's per-line rounding gave £12.03, so keep 19.2%. It combines with other discounts.
+Bath bombs: automatic discount "Bath bombs: any 2 sets for £22" (DiscountAutomaticNode/1841685692755), approved by Max. It applies 15.06% off every set in Cocktail Bath Bombs once 2 or more are in the basket, which makes each set £11.00 (2 = £22.00, 3 = £33.00). Tested: Piña Colada + Gin & Tonic come to £22.00.
 
 **Theme files** (copies in `theme/`):
 - `snippets/dm-soap-range.liquid`: one snippet, three modes (reworked after Max's feedback that the upsell sat under Add to Cart).
   - `picker`: sits ABOVE Add to Cart. It shows one row per product in the range: image, name, a plain colour/scent line, price, and a − / + stepper.
     - Soaps: a "3 for £12" badge, "Mix & match any 3 soaps", one of each pre-picked, a 3-step bar, and a live button ("Add 3 soaps · £12.00"). Soaps already in the basket count towards the deal.
-    - Bath bombs: "Choose your cocktail" with the viewed set pre-picked.
+    - Bath bombs: a "2 for £22" badge, "Mix & match any 2 cocktail sets", the viewed set pre-picked (so it reads "Add 1 more for 2 for £22"), and a 2-step bar.
     - Under the button: "Just want this one? Use Add to Cart below."
   - `wrap`: the gift wrap picker, after Add to Cart.
   - `collection`: heading, intro and (soap) offer steps at the top of the collection page.
@@ -51,7 +52,6 @@ Brief with setup, packaging and ChatGPT prompts: `pamper-range-brief.html`
 
 ## Still to do
 - The massage oil waits on AW's safety report.
-- Bath bomb deal: Max to pick (suggested: any 2 sets for £22).
 - Bath bomb stock counts, so inventory can be tracked.
 - When Max approves:
   - add both collections to the menu and the items to Gifts UNDER £15

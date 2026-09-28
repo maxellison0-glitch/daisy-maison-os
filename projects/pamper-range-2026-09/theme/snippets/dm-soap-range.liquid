@@ -10,9 +10,10 @@
                        [data-dm-wrap-instant]); sits after Add to Cart.
     mode 'collection': heading, intro and (soap) offer steps at the top of the collection.
 
-  The £12 price itself is the automatic discount "Soap: any 3 for £12" (3+ items from
-  the Handmade Soap collection, 19.2% off = £4.00 each). Change the price there and in
-  DEAL_EACH / the copy below together.
+  The deal prices are automatic discounts; change them there and in the copy and
+  data-deal-* attributes below together:
+    Soap: any 3 for £12            (3+ from Handmade Soap, 19.2% off = £4.00 each)
+    Bath bombs: any 2 sets for £22 (2+ from Cocktail Bath Bombs, 15.06% off = £11.00 each)
   New scents or sets join automatically (Product type = Soap or Bath Bomb). Add their
   colour/scent line to the case block in dm-pick__note below.
 {%- endcomment -%}
@@ -48,16 +49,23 @@
 <div class="dm-soap-top">
   <h1 class="dm-soap-top__title">{{ dm_sr_h1 }}</h1>
   <p class="dm-soap-top__lede">{{ dm_sr_lede }}</p>
-  {%- if dm_sr_kind == 'soap' -%}
   <div class="dm-soap-top__deal">
+  {%- if dm_sr_kind == 'soap' -%}
     <span class="dm-pick__badge">3 for £12</span>
     <ul>
       <li>Pick any 3 soaps: mix the scents or double up on a favourite.</li>
       <li>The £12 price drops in automatically in your basket.</li>
       <li>Every soap after that is £4.</li>
     </ul>
-  </div>
+  {%- else -%}
+    <span class="dm-pick__badge">2 for £22</span>
+    <ul>
+      <li>Pick any 2 sets: mix the cocktails or double up on a favourite.</li>
+      <li>The £22 price drops in automatically in your basket.</li>
+      <li>Every set after that is £11.</li>
+    </ul>
   {%- endif -%}
+  </div>
 </div>
 <style>
 .dm-soap-top{max-width:720px;margin:0 auto;padding:6px 16px 14px;text-align:center}
@@ -69,15 +77,16 @@
 </style>
 
 {%- elsif mode == 'picker' and dm_sr_col and dm_sr_col.products_count > 0 -%}
-<div class="dm-pick" data-dm-pick data-kind="{{ dm_sr_kind }}">
+<div class="dm-pick" data-dm-pick data-kind="{{ dm_sr_kind }}" {% if dm_sr_kind == 'soap' %}data-deal-min="3" data-deal-each="400" data-deal-label="3 for £12" data-deal-unit="soap" data-deal-type="soap"{% else %}data-deal-min="2" data-deal-each="1100" data-deal-label="2 for £22" data-deal-unit="set" data-deal-type="bath bomb"{% endif %}>
   <div class="dm-pick__head">
     {%- if dm_sr_kind == 'soap' -%}
       <span class="dm-pick__badge">3 for £12</span>
       <p class="dm-pick__title">Mix &amp; match any 3 soaps</p>
       <p class="dm-pick__sub">Choose your scents below. Three for £12, and every soap after that is £4.</p>
     {%- else -%}
-      <p class="dm-pick__title">Choose your cocktail</p>
-      <p class="dm-pick__sub">Three individually wrapped bath bombs in every kraft gift box. Pick one set or mix a few for a gift.</p>
+      <span class="dm-pick__badge">2 for £22</span>
+      <p class="dm-pick__title">Mix &amp; match any 2 cocktail sets</p>
+      <p class="dm-pick__sub">Three individually wrapped bath bombs in every kraft gift box. Two sets for £22, and every set after that is £11.</p>
     {%- endif -%}
   </div>
   <ul class="dm-pick__list">
@@ -124,9 +133,7 @@
       </li>
     {%- endfor -%}
   </ul>
-  {%- if dm_sr_kind == 'soap' -%}
-  <div class="dm-pick__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-  {%- endif -%}
+  <div class="dm-pick__bar{% if dm_sr_kind == 'bath' %} dm-pick__bar--2{% endif %}" aria-hidden="true"><span></span><span></span>{% if dm_sr_kind == 'soap' %}<span></span>{% endif %}</div>
   <p class="dm-pick__status" data-dm-pick-status aria-live="polite"></p>
   <button type="button" class="dm-pick__add" data-dm-pick-add>Add to basket</button>
   <a class="dm-pick__view" href="{{ routes.cart_url }}" hidden>View basket</a>
@@ -153,6 +160,7 @@
 .dm-pick__qty button:disabled{opacity:.35;cursor:default}
 .dm-pick__qty output{min-width:18px;text-align:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
 .dm-pick__bar{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.dm-pick__bar--2{grid-template-columns:repeat(2,1fr)}
 .dm-pick__bar span{height:6px;border-radius:999px;background:#e8e3da;transition:background .2s ease}
 .dm-pick__bar span.is-on{background:var(--dm-sage,#b0af9b)}
 .dm-pick__status{margin:-4px 0 0;font-size:13.5px;line-height:1.4;color:#3c3c3c}
@@ -170,7 +178,11 @@
   if (!root || root.dataset.ready) return;
   root.dataset.ready = '1';
   var soap = root.getAttribute('data-kind') === 'soap';
-  var DEAL_MIN = 3, DEAL_EACH = 400; // pence: matches the "Soap: any 3 for £12" discount
+  var DEAL_MIN = Number(root.getAttribute('data-deal-min')) || 0;   // matches the automatic discount
+  var DEAL_EACH = Number(root.getAttribute('data-deal-each')) || 0; // pence per item once the deal applies
+  var LABEL = root.getAttribute('data-deal-label') || '';
+  var UNIT = root.getAttribute('data-deal-unit') || 'item';
+  var TYPE = root.getAttribute('data-deal-type') || '';
   var rows = [].slice.call(root.querySelectorAll('.dm-pick__row'));
   var status = root.querySelector('[data-dm-pick-status]');
   var bars = root.querySelectorAll('.dm-pick__bar span');
@@ -190,17 +202,17 @@
       row.querySelector('[data-step="-1"]').disabled = q <= 0;
       row.querySelector('[data-step="1"]').disabled = q >= max || row.classList.contains('is-out');
     });
-    var unit = soap ? 'soap' : 'set';
+    var unit = UNIT;
     var total = n + inBasket;
-    var dealOn = soap && total >= DEAL_MIN;
+    var dealOn = DEAL_MIN > 0 && total >= DEAL_MIN;
     var pay = dealOn ? n * DEAL_EACH : full;
     for (var i = 0; i < bars.length; i++) bars[i].classList.toggle('is-on', i < Math.min(total, DEAL_MIN));
     var msg = '';
-    if (soap) {
+    if (DEAL_MIN) {
       var pre = inBasket ? inBasket + ' already in your basket. ' : '';
-      if (total <= 0) msg = 'Pick any 3 for £12.';
-      else if (total < DEAL_MIN) msg = pre + 'Add ' + (DEAL_MIN - total) + ' more for <strong>3 for £12</strong>.';
-      else msg = pre + '<strong>✓ 3 for £12 applied:</strong> £4 a soap.' + (full > pay ? ' You save ' + money(full - pay) + '.' : '');
+      if (total <= 0) msg = 'Pick any ' + LABEL + '.';
+      else if (total < DEAL_MIN) msg = pre + 'Add ' + (DEAL_MIN - total) + ' more for <strong>' + LABEL + '</strong>.';
+      else msg = pre + '<strong>✓ ' + LABEL + ' applied:</strong> ' + money(DEAL_EACH).replace('.00', '') + ' a ' + UNIT + '.' + (full > pay ? ' You save ' + money(full - pay) + '.' : '');
     }
     status.innerHTML = msg;
     if (!busy) {
@@ -236,12 +248,12 @@
     }
   });
   function countBasket() {
-    if (!soap) return Promise.resolve();
+    if (!TYPE) return Promise.resolve();
     return fetch('/cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
       .then(function (r) { return r.json(); })
       .then(function (cart) {
         var n = 0;
-        (cart.items || []).forEach(function (i) { if (String(i.product_type || '').toLowerCase() === 'soap') n += i.quantity; });
+        (cart.items || []).forEach(function (i) { if (String(i.product_type || '').toLowerCase() === TYPE) n += i.quantity; });
         inBasket = n;
         paint();
       }).catch(function () {});
