@@ -94,3 +94,9 @@ Emerald Truffle ingredients: not on AW's product page either (it lists only the 
   - Occasions
   - Street Signs
   - Gifts UNDER £15, which contains Handmade Soap, Cocktail Bath Bombs, Massage Oil and Gift Wrap Kits, followed by the existing Just Because to Clearance items
+- Menu tidy (Max approved). Only menu items changed; no collection, page or product URLs changed, so ad landing links are unaffected.
+  - Gifts UNDER £15 now links to the collection itself instead of an absolute daisymaisonuk.myshopify.com URL. Its dropdown starts with "All Gifts Under £15" and Christmas.
+  - Occasions starts with Christmas and adds Anniversary (48 products, previously missing). The duplicate Wedding and Street Signs entries are gone.
+  - Street Signs starts with "All Street Signs", then Christmas.
+  - Hanging Decorations moves under Pebble People.
+  - Clearance now uses a relative link.
