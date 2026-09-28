@@ -16,6 +16,7 @@ Brief with setup, packaging and ChatGPT prompts: `pamper-range-brief.html`
 | Piña Colada Bath Bomb Set | `pina-colada-bath-bomb-set` | £12.95 | DM-BB-PINACOLADA (EAN 5056422901086) | not tracked yet |
 | Gin & Tonic Bath Bomb Set | `gin-and-tonic-bath-bomb-set` | £12.95 | DM-BB-GINTONIC (EAN 5056422901048) | not tracked yet |
 | Martini Bath Bomb Set | `martini-bath-bomb-set` | £12.95 | DM-BB-MARTINI (EAN 5056422901062) | not tracked yet |
+| Muscle Ease Massage Oil | `muscle-ease-massage-oil` | £12.95 | DM-OIL-ME-100 | tracked, 9 (1L makes 9–10). **DRAFT**: goes live once AW confirms the safety report / Responsible Person for rebottling |
 
 - Soaps: 4 images each (kraft pouch hero, stack, in hand, ruler), matched by colour: pink = Rose, brown swirl = Emerald Truffle, yellow = Slice of Sunshine.
 - Ingredients in the descriptions come from the AW labels. Emerald Truffle's label was cut off in the photo, so its page says the list is on the pack until Max sends a clear photo.
@@ -51,7 +52,7 @@ Bath bombs: automatic discount "Bath bombs: any 2 sets for £22" (DiscountAutoma
 - No page errors and no sideways scroll.
 
 ## Still to do
-- The massage oil waits on AW's safety report.
+- Massage oil: the product is built as a draft, using Max's ASA-safe copy (scent, glide and soft skin; no muscle or pain claims). Set it to Active once AW confirms the safety report. The ingredients line says the full list is on the bottle until AW sends the complete list. Its page (pamper template) shows no picker, only gift wrap; a "pamper night" cross-sell can come with the bundle.
 - Bath bomb stock counts, so inventory can be tracked.
 - When Max approves:
   - add both collections to the menu and the items to Gifts UNDER £15

@@ -14,19 +14,26 @@
   data-deal-* attributes below together:
     Soap: any 3 for £12            (3+ from Handmade Soap, 19.2% off = £4.00 each)
     Bath bombs: any 2 sets for £22 (2+ from Cocktail Bath Bombs, 15.06% off = £11.00 each)
-  New scents or sets join automatically (Product type = Soap or Bath Bomb). Add their
+  New scents or sets join automatically (Product type = Soap or Bath Bomb). Other
+  product types on these templates (e.g. Massage Oil) get no picker, only the gift wrap. Add their
   colour/scent line to the case block in dm-pick__note below.
 {%- endcomment -%}
 {%- liquid
-  assign dm_sr_kind = 'soap'
+  assign dm_sr_kind = 'other'
   if mode == 'collection'
     if collection.handle == 'bath-bombs'
       assign dm_sr_kind = 'bath'
+    elsif collection.handle == 'handmade-soap'
+      assign dm_sr_kind = 'soap'
     endif
   elsif product.type == 'Bath Bomb'
     assign dm_sr_kind = 'bath'
+  elsif product.type == 'Soap'
+    assign dm_sr_kind = 'soap'
   endif
-  if dm_sr_kind == 'bath'
+  if dm_sr_kind == 'other'
+    assign dm_sr_col = nil
+  elsif dm_sr_kind == 'bath'
     assign dm_sr_col = collections['bath-bombs']
     assign dm_sr_h1 = 'Cocktail Bath Bombs'
     assign dm_sr_lede = 'Sets of three 150g bath bombs, each one individually wrapped and packed in a kraft gift box. Made in the UK.'
