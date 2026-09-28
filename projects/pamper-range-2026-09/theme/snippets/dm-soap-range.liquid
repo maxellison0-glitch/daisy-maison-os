@@ -1,17 +1,20 @@
 {%- comment -%}
-  dm-soap-range: the mix & match offer on soap product pages (templates/product.soap.json).
-    mode 'deal'  : one line under the price.
-    mode 'collection': heading, offer and basket progress at the top of
-                   /collections/handmade-soap (templates/collection.soap.json).
-    mode 'range' : "Mix & match any 3 for £12" with every soap in the Handmade Soap
-                   collection as a one-tap Add card, a progress line read from the
-                   basket, and the gift wrap picker (assets/daisy-wrap-kits.js mounts
-                   it into [data-dm-wrap-instant]).
+  dm-soap-range: soap and bath bomb pages (templates/product.soap.json, product.pamper.json)
+  and their collection pages (collection.soap.json, collection.pamper.json).
+
+    mode 'picker'    : sits ABOVE Add to Cart. Every product in the range as a row
+                       (image, name, colour/scent line, price, - / + stepper) and one
+                       button that adds the whole selection. Soaps also get the
+                       "3 for £12" badge, a 3-step bar and a live price.
+    mode 'wrap'      : the gift wrap picker (assets/daisy-wrap-kits.js mounts it into
+                       [data-dm-wrap-instant]); sits after Add to Cart.
+    mode 'collection': heading, intro and (soap) offer steps at the top of the collection.
+
   The £12 price itself is the automatic discount "Soap: any 3 for £12" (3+ items from
-  the Handmade Soap collection, 19.2% off = £4.00 each). Change the price there and
-  in dm_sr_deal below together. New scents join automatically: set Product type = Soap.
-  Bath bombs (Product type = Bath Bomb, collection bath-bombs) use the same page with
-  a "Choose your cocktail" strip and no deal until one is agreed.
+  the Handmade Soap collection, 19.2% off = £4.00 each). Change the price there and in
+  DEAL_EACH / the copy below together.
+  New scents or sets join automatically (Product type = Soap or Bath Bomb). Add their
+  colour/scent line to the case block in dm-pick__note below.
 {%- endcomment -%}
 {%- liquid
   assign dm_sr_kind = 'soap'
@@ -24,165 +27,230 @@
   endif
   if dm_sr_kind == 'bath'
     assign dm_sr_col = collections['bath-bombs']
-    assign dm_sr_deal = ''
-    assign dm_sr_title = 'Choose your cocktail'
-    assign dm_sr_all = 'See all bath bombs'
     assign dm_sr_h1 = 'Cocktail Bath Bombs'
     assign dm_sr_lede = 'Sets of three 150g bath bombs, each one individually wrapped and packed in a kraft gift box. Made in the UK.'
-    assign dm_sr_min = 2
   else
     assign dm_sr_col = collections['handmade-soap']
-    assign dm_sr_deal = 'Mix & match any 3 soaps for £12'
-    assign dm_sr_title = 'Mix & match any 3 for £12'
-    assign dm_sr_all = 'See all soaps'
     assign dm_sr_h1 = 'Handmade Soap'
     assign dm_sr_lede = 'Hand-cut 100g slices, each sealed in a resealable kraft pouch. Made in the UK.'
-    assign dm_sr_min = 1
-  endif
-  if mode == 'collection'
-    assign dm_sr_min = 1
   endif
 -%}
-{%- if mode == 'deal' -%}
-{%- if dm_sr_deal != blank -%}
-<p class="dm-soap-deal"><span class="dm-soap-deal__pill">Offer</span> {{ dm_sr_deal }}</p>
-<style>
-.dm-soap-deal{display:flex;align-items:center;gap:8px;margin:-6px 0 14px;font-size:14px;font-weight:600;color:#2b2b2b}
-.dm-soap-deal__pill{flex:0 0 auto;padding:2px 9px;border-radius:999px;background:var(--dm-sage,#b0af9b);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-</style>
-{%- endif -%}
-{%- elsif dm_sr_col and dm_sr_col.products_count >= dm_sr_min -%}
-{%- if mode == 'collection' -%}
-<div class="dm-soap-top">
-  <h1 class="dm-soap-top__title">{{ dm_sr_h1 }}</h1>
-  <p class="dm-soap-top__lede">{{ dm_sr_lede }}</p>
-{%- endif -%}
-<div class="dm-soap-range" data-dm-soap-range>
-  <div class="dm-soap-range__head">
-    <p class="dm-soap-range__title">{{ dm_sr_title | escape }}</p>
-    {%- if mode == 'range' -%}<a class="dm-soap-range__all" href="{{ dm_sr_col.url }}">{{ dm_sr_all }}</a>{%- endif -%}
-  </div>
-  {%- if dm_sr_kind == 'soap' -%}
-  <div class="dm-soap-range__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-  <p class="dm-soap-range__status" data-dm-soap-status aria-live="polite">Add any 3 soaps and pay £12.</p>
-  {%- endif -%}
-  {%- if mode == 'collection' and dm_sr_kind == 'soap' -%}
-  <ul class="dm-soap-steps">
-    <li>Pick any 3 soaps: mix the scents or double up on a favourite.</li>
-    <li>The £12 price drops in automatically in your basket.</li>
-    <li>Every soap after that is £4.</li>
-  </ul>
-  {%- elsif mode == 'range' -%}
-  <div class="dm-soap-range__cards">
-    {%- for p in dm_sr_col.products limit: 8 -%}
-      {%- assign v = p.selected_or_first_available_variant -%}
-      {%- assign nm = p.title | remove: ' Bath Bomb Set' | remove: ' Soap' -%}
-      {%- assign im_alt = p.featured_image.alt | default: p.title -%}
-      <div class="dm-soap-card{% if p.id == product.id %} is-current{% endif %}">
-        {%- if p.id == product.id -%}
-          <span class="dm-soap-card__img">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', width: 120, height: 120, alt: im_alt }}{%- endif -%}</span>
-          <span class="dm-soap-card__name">{{ nm }}</span>
-          <span class="dm-soap-card__tag">You're viewing</span>
-        {%- else -%}
-          <a class="dm-soap-card__img" href="{{ p.url }}">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', width: 120, height: 120, alt: im_alt }}{%- endif -%}</a>
-          <a class="dm-soap-card__name" href="{{ p.url }}">{{ nm }}</a>
-          <span class="dm-soap-card__tag">{{ v.price | money }}</span>
-        {%- endif -%}
-        <button type="button" class="dm-soap-card__add" data-dm-soap-add="{{ v.id }}" data-name="{{ nm | escape }}"{% unless v.available %} disabled{% endunless %}>{% if v.available %}Add{% else %}Sold out{% endif %}</button>
-      </div>
-    {%- endfor -%}
-  </div>
-  {%- endif -%}
-</div>
-{%- if mode == 'collection' -%}</div>{%- else -%}<div data-dm-wrap-instant></div>{%- endif -%}
-<style>
-.dm-soap-top{max-width:720px;margin:0 auto;padding:6px 16px 14px;text-align:center}
-.dm-soap-top__title{margin:0 0 6px;font-size:26px;line-height:1.2;color:#232323}
-.dm-soap-top__lede{margin:0 0 14px;font-size:14px;color:#5a5a5a}
-.dm-soap-top .dm-soap-range{text-align:left;margin:0}
-.dm-soap-steps{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13px;color:#3c3c3c}
-.dm-soap-range{margin:6px 0 12px;padding:14px;border:1px solid #ece6dd;border-radius:12px;background:#fcfbf9}
-.dm-soap-range__head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.dm-soap-range__title{margin:0;font-size:15px;font-weight:700;color:#232323}
-.dm-soap-range__all{font-size:12.5px;font-weight:600;color:#5f6449;text-decoration:underline;white-space:nowrap}
-.dm-soap-range__bar{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:10px 0 6px}
-.dm-soap-range__bar span{height:6px;border-radius:999px;background:#e8e3da;transition:background .2s ease}
-.dm-soap-range__bar span.is-on{background:var(--dm-sage,#b0af9b)}
-.dm-soap-range__status{margin:0 0 10px;font-size:13px;line-height:1.4;color:#5a5a5a}
-.dm-soap-range__status strong{color:#2f3724}
-.dm-soap-range__cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.dm-soap-card{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:8px 6px;border:1px solid #e4ddd4;border-radius:12px;background:#fff;text-align:center}
-.dm-soap-card.is-current{border-color:var(--dm-sage,#b0af9b);background:#f3f5ec}
-.dm-soap-card__img{display:block;width:100%;max-width:96px}
-.dm-soap-card__img img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:8px}
-.dm-soap-card__name{font-size:12.5px;font-weight:700;line-height:1.2;color:#232323;text-decoration:none;min-height:2.4em;display:flex;align-items:center}
-.dm-soap-card__tag{font-size:11.5px;color:#8a8a7a}
-.dm-soap-card__add{width:100%;margin-top:2px;padding:7px 4px;border:1px solid #d7d3c5;border-radius:999px;background:#fff;color:#232323;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
-.dm-soap-card__add:disabled{opacity:.55;cursor:default}
-.dm-soap-card__add.is-added{background:#87a878;border-color:#87a878;color:#fff}
-.dm-wrap-instant .dm-sa-btn{width:100%;border:1px solid #d7d3c5;border-radius:999px;background:#fff;color:#232323;font-size:13px;font-weight:700;padding:9px 14px;cursor:pointer}
-.dm-wrap-instant .dm-sa-btn:disabled{cursor:default}
-.dm-wrap-instant .dm-sa-btn.dm-sa-added{background:#87a878;border-color:#87a878;color:#fff}
-</style>
-<script>
-(function () {
-  var root = document.querySelector('[data-dm-soap-range]');
-  if (!root || root.dataset.ready) return;
-  root.dataset.ready = '1';
-  var status = root.querySelector('[data-dm-soap-status]');
-  if (!status) status = { set innerHTML(v) {} };
-  var bars = root.querySelectorAll('.dm-soap-range__bar span');
-  function paint(n) {
-    for (var i = 0; i < bars.length; i++) bars[i].classList.toggle('is-on', i < Math.min(n, 3));
-    var text;
-    if (n <= 0) text = 'Add any 3 soaps and pay £12.';
-    else if (n === 1) text = '1 soap in your basket. Add 2 more and pay <strong>£12 for 3</strong>.';
-    else if (n === 2) text = '2 soaps in your basket. Add 1 more and pay <strong>£12 for all 3</strong>.';
-    else text = '<strong>✓ 3 for £12 unlocked.</strong> The price drops in your basket, and every extra soap is £4.';
-    status.innerHTML = text;
-  }
-  function count() {
-    return fetch('/cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
-      .then(function (r) { return r.json(); })
-      .then(function (cart) {
-        var n = 0;
-        (cart.items || []).forEach(function (i) { if (String(i.product_type || '').toLowerCase() === 'soap') n += i.quantity; });
-        paint(n);
-        return n;
-      }).catch(function () { return 0; });
-  }
-  root.addEventListener('click', function (e) {
-    var btn = e.target.closest('[data-dm-soap-add]');
-    if (!btn || btn.disabled) return;
-    e.preventDefault();
-    btn.disabled = true;
-    var label = btn.textContent;
-    btn.textContent = 'Adding…';
-    fetch('/cart/add.js', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ items: [{ id: Number(btn.getAttribute('data-dm-soap-add')), quantity: 1 }] }) })
-      .then(function (r) { if (!r.ok) throw new Error('add'); return count(); })
-      .then(function () {
-        btn.classList.add('is-added');
-        btn.textContent = '✓ Added';
-        document.dispatchEvent(new CustomEvent('cart:refresh'));
-        setTimeout(function () { btn.classList.remove('is-added'); btn.textContent = 'Add another'; btn.disabled = false; }, 1600);
-      })
-      .catch(function () { btn.textContent = label; btn.disabled = false; });
-  });
-  // Recount when the main Add to cart (or anything else) changes the basket.
-  document.addEventListener('cart:refresh', function () { setTimeout(count, 400); });
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) count(); });
-  var form = document.querySelector('form[action*="/cart/add"]');
-  if (form) form.addEventListener('submit', function () { setTimeout(count, 1500); });
-  var atc = document.querySelector('#product-add-to-cart');
-  if (atc) atc.addEventListener('click', function () { setTimeout(count, 1500); });
-  count();
-})();
-</script>
-{%- elsif mode == 'range' -%}
+
+{%- if mode == 'wrap' -%}
 <div data-dm-wrap-instant></div>
 <style>
 .dm-wrap-instant .dm-sa-btn{width:100%;border:1px solid #d7d3c5;border-radius:999px;background:#fff;color:#232323;font-size:13px;font-weight:700;padding:9px 14px;cursor:pointer}
 .dm-wrap-instant .dm-sa-btn:disabled{cursor:default}
 .dm-wrap-instant .dm-sa-btn.dm-sa-added{background:#87a878;border-color:#87a878;color:#fff}
 </style>
+
+{%- elsif mode == 'collection' and dm_sr_col -%}
+<div class="dm-soap-top">
+  <h1 class="dm-soap-top__title">{{ dm_sr_h1 }}</h1>
+  <p class="dm-soap-top__lede">{{ dm_sr_lede }}</p>
+  {%- if dm_sr_kind == 'soap' -%}
+  <div class="dm-soap-top__deal">
+    <span class="dm-pick__badge">3 for £12</span>
+    <ul>
+      <li>Pick any 3 soaps: mix the scents or double up on a favourite.</li>
+      <li>The £12 price drops in automatically in your basket.</li>
+      <li>Every soap after that is £4.</li>
+    </ul>
+  </div>
+  {%- endif -%}
+</div>
+<style>
+.dm-soap-top{max-width:720px;margin:0 auto;padding:6px 16px 14px;text-align:center}
+.dm-soap-top__title{margin:0 0 6px;font-size:26px;line-height:1.2;color:#232323}
+.dm-soap-top__lede{margin:0 0 14px;font-size:14px;color:#5a5a5a}
+.dm-soap-top__deal{display:grid;gap:8px;justify-items:start;text-align:left;padding:14px;border:1px solid #ece6dd;border-radius:12px;background:#fcfbf9}
+.dm-soap-top__deal ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px;color:#3c3c3c}
+.dm-pick__badge{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--dm-sage,#b0af9b);color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+</style>
+
+{%- elsif mode == 'picker' and dm_sr_col and dm_sr_col.products_count > 0 -%}
+<div class="dm-pick" data-dm-pick data-kind="{{ dm_sr_kind }}">
+  <div class="dm-pick__head">
+    {%- if dm_sr_kind == 'soap' -%}
+      <span class="dm-pick__badge">3 for £12</span>
+      <p class="dm-pick__title">Mix &amp; match any 3 soaps</p>
+      <p class="dm-pick__sub">Choose your scents below. Three for £12, and every soap after that is £4.</p>
+    {%- else -%}
+      <p class="dm-pick__title">Choose your cocktail</p>
+      <p class="dm-pick__sub">Three individually wrapped bath bombs in every kraft gift box. Pick one set or mix a few for a gift.</p>
+    {%- endif -%}
+  </div>
+  <ul class="dm-pick__list">
+    {%- for p in dm_sr_col.products limit: 8 -%}
+      {%- assign v = p.selected_or_first_available_variant -%}
+      {%- assign nm = p.title | remove: ' Bath Bomb Set' | remove: ' Soap' -%}
+      {%- assign im_alt = p.featured_image.alt | default: p.title -%}
+      {%- liquid
+        assign dm_max = 20
+        if v.inventory_management == 'shopify' and v.inventory_policy == 'deny'
+          assign dm_max = v.inventory_quantity
+        endif
+        assign dm_start = 0
+        if p.id == product.id or dm_sr_kind == 'soap'
+          assign dm_start = 1
+        endif
+        if v.available == false
+          assign dm_start = 0
+        endif
+      -%}
+      <li class="dm-pick__row{% if p.id == product.id %} is-current{% endif %}{% unless v.available %} is-out{% endunless %}" data-id="{{ v.id }}" data-price="{{ v.price }}" data-max="{{ dm_max }}" data-name="{{ nm | escape }}">
+        <a class="dm-pick__img" href="{{ p.url }}" tabindex="-1">{%- if p.featured_image -%}{{ p.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', width: 88, height: 88, alt: im_alt }}{%- endif -%}</a>
+        <div class="dm-pick__info">
+          <a class="dm-pick__name" href="{{ p.url }}">{{ nm }}</a>
+          <span class="dm-pick__note">
+            {%- case p.handle -%}
+              {%- when 'emerald-truffle-soap' -%}Amber and cocoa swirl · warm, woody scent
+              {%- when 'slice-of-sunshine-soap' -%}Sunny yellow with dried orange · sweet orange and a hint of spice
+              {%- when 'rose-and-rose-petals-soap' -%}Pink, topped with rose petals · classic rose
+              {%- when 'mojito-bath-bomb-set' -%}Revolution de Cuba, Blackberry, Pink Grapefruit
+              {%- when 'pina-colada-bath-bomb-set' -%}Caribbean Dream, Strawberry, Pear
+              {%- when 'gin-and-tonic-bath-bomb-set' -%}Classic G&amp;T, Cucumber, Lime
+              {%- when 'martini-bath-bomb-set' -%}Shaken Not Stirred, French Martini, Espresso Martini
+              {%- else -%}{{ p.description | strip_html | truncatewords: 8 }}
+            {%- endcase -%}
+          </span>
+          <span class="dm-pick__price">{% if v.available %}{{ v.price | money }}{% if p.id == product.id %} · you're viewing{% endif %}{% else %}Sold out{% endif %}</span>
+        </div>
+        <div class="dm-pick__qty">
+          <button type="button" data-step="-1" aria-label="One fewer {{ nm | escape }}"{% unless v.available %} disabled{% endunless %}>&minus;</button>
+          <output aria-live="polite">{{ dm_start }}</output>
+          <button type="button" data-step="1" aria-label="One more {{ nm | escape }}"{% unless v.available %} disabled{% endunless %}>+</button>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+  {%- if dm_sr_kind == 'soap' -%}
+  <div class="dm-pick__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+  {%- endif -%}
+  <p class="dm-pick__status" data-dm-pick-status aria-live="polite"></p>
+  <button type="button" class="dm-pick__add" data-dm-pick-add>Add to basket</button>
+  <a class="dm-pick__view" href="{{ routes.cart_url }}" hidden>View basket</a>
+  <p class="dm-pick__or">Just want this one? Use Add to Cart below.</p>
+</div>
+<style>
+.dm-pick{margin:4px 0 16px;padding:16px 14px;border:1px solid #ece6dd;border-radius:14px;background:#fcfbf9;display:grid;gap:12px}
+.dm-pick__head{display:grid;gap:4px;justify-items:start}
+.dm-pick__badge{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--dm-sage,#b0af9b);color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.dm-pick__title{margin:2px 0 0;font-size:17px;font-weight:700;line-height:1.25;color:#232323}
+.dm-pick__sub{margin:0;font-size:13.5px;line-height:1.45;color:#5a5a5a}
+.dm-pick__list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.dm-pick__row{display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:12px;padding:8px;border:1px solid #e4ddd4;border-radius:12px;background:#fff}
+.dm-pick__row.is-picked{border-color:var(--dm-sage,#b0af9b);box-shadow:inset 0 0 0 1px var(--dm-sage,#b0af9b)}
+.dm-pick__row.is-out{opacity:.55}
+.dm-pick__img{display:block;width:72px;height:72px;border-radius:9px;overflow:hidden;background:#f3efe8}
+.dm-pick__img img{display:block;width:100%;height:100%;object-fit:cover}
+.dm-pick__info{display:grid;gap:2px;min-width:0}
+.dm-pick__name{font-size:14.5px;font-weight:700;line-height:1.25;color:#232323;text-decoration:none}
+.dm-pick__note{font-size:12.5px;line-height:1.35;color:#6b6b62}
+.dm-pick__price{font-size:12.5px;font-weight:600;color:#232323}
+.dm-pick__qty{display:flex;align-items:center;border:1px solid #d7d3c5;border-radius:999px;background:#fff}
+.dm-pick__qty button{width:34px;height:34px;border:0;background:none;font:inherit;font-size:18px;line-height:1;color:#232323;cursor:pointer;padding:0}
+.dm-pick__qty button:disabled{opacity:.35;cursor:default}
+.dm-pick__qty output{min-width:18px;text-align:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.dm-pick__bar{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.dm-pick__bar span{height:6px;border-radius:999px;background:#e8e3da;transition:background .2s ease}
+.dm-pick__bar span.is-on{background:var(--dm-sage,#b0af9b)}
+.dm-pick__status{margin:-4px 0 0;font-size:13.5px;line-height:1.4;color:#3c3c3c}
+.dm-pick__status:empty{display:none}
+.dm-pick__status strong{color:#2f3724}
+.dm-pick__add{width:100%;min-height:48px;border:0;border-radius:999px;background:#232323;color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.dm-pick__add:disabled{background:#bdbab2;cursor:default}
+.dm-pick__add.is-added{background:#87a878}
+.dm-pick__view{justify-self:center;margin-top:-4px;font-size:13.5px;font-weight:700;color:#5f6449;text-decoration:underline}
+.dm-pick__or{margin:0;text-align:center;font-size:12.5px;color:#8a8a7a}
+</style>
+<script>
+(function () {
+  var root = document.querySelector('[data-dm-pick]');
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = '1';
+  var soap = root.getAttribute('data-kind') === 'soap';
+  var DEAL_MIN = 3, DEAL_EACH = 400; // pence: matches the "Soap: any 3 for £12" discount
+  var rows = [].slice.call(root.querySelectorAll('.dm-pick__row'));
+  var status = root.querySelector('[data-dm-pick-status]');
+  var bars = root.querySelectorAll('.dm-pick__bar span');
+  var addBtn = root.querySelector('[data-dm-pick-add]');
+  var view = root.querySelector('.dm-pick__view');
+  var inBasket = 0; // soaps already in the basket also count towards the deal
+  var busy = false;
+  function money(p) { return '£' + (p / 100).toFixed(2); }
+  function qty(row) { return parseInt(row.querySelector('output').textContent, 10) || 0; }
+  function paint() {
+    var n = 0, full = 0;
+    rows.forEach(function (row) {
+      var q = qty(row);
+      n += q; full += q * Number(row.getAttribute('data-price'));
+      row.classList.toggle('is-picked', q > 0);
+      var max = Number(row.getAttribute('data-max'));
+      row.querySelector('[data-step="-1"]').disabled = q <= 0;
+      row.querySelector('[data-step="1"]').disabled = q >= max || row.classList.contains('is-out');
+    });
+    var unit = soap ? 'soap' : 'set';
+    var total = n + inBasket;
+    var dealOn = soap && total >= DEAL_MIN;
+    var pay = dealOn ? n * DEAL_EACH : full;
+    for (var i = 0; i < bars.length; i++) bars[i].classList.toggle('is-on', i < Math.min(total, DEAL_MIN));
+    var msg = '';
+    if (soap) {
+      var pre = inBasket ? inBasket + ' already in your basket. ' : '';
+      if (total <= 0) msg = 'Pick any 3 for £12.';
+      else if (total < DEAL_MIN) msg = pre + 'Add ' + (DEAL_MIN - total) + ' more for <strong>3 for £12</strong>.';
+      else msg = pre + '<strong>✓ 3 for £12 applied:</strong> £4 a soap.' + (full > pay ? ' You save ' + money(full - pay) + '.' : '');
+    }
+    status.innerHTML = msg;
+    if (!busy) {
+      addBtn.disabled = n <= 0;
+      addBtn.textContent = n <= 0 ? 'Choose at least one ' + unit : 'Add ' + n + ' ' + unit + (n === 1 ? '' : 's') + ' · ' + money(pay);
+    }
+  }
+  root.addEventListener('click', function (e) {
+    var step = e.target.closest('[data-step]');
+    if (step && !step.disabled) {
+      var row = step.closest('.dm-pick__row');
+      var out = row.querySelector('output');
+      out.textContent = String(Math.max(0, qty(row) + Number(step.getAttribute('data-step'))));
+      paint();
+      return;
+    }
+    if (e.target.closest('[data-dm-pick-add]') && !addBtn.disabled && !busy) {
+      var items = rows.filter(function (r) { return qty(r) > 0; }).map(function (r) { return { id: Number(r.getAttribute('data-id')), quantity: qty(r) }; });
+      if (!items.length) return;
+      busy = true;
+      addBtn.disabled = true;
+      addBtn.textContent = 'Adding…';
+      fetch('/cart/add.js', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ items: items }) })
+        .then(function (r) { if (!r.ok) throw new Error('add'); rows.forEach(function (x) { x.querySelector('output').textContent = '0'; }); return countBasket(); })
+        .then(function () {
+          addBtn.classList.add('is-added');
+          addBtn.textContent = '✓ Added to your basket';
+          view.hidden = false;
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+          setTimeout(function () { busy = false; addBtn.classList.remove('is-added'); paint(); }, 2200);
+        })
+        .catch(function () { busy = false; addBtn.textContent = 'Something went wrong. Try again'; addBtn.disabled = false; });
+    }
+  });
+  function countBasket() {
+    if (!soap) return Promise.resolve();
+    return fetch('/cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (cart) {
+        var n = 0;
+        (cart.items || []).forEach(function (i) { if (String(i.product_type || '').toLowerCase() === 'soap') n += i.quantity; });
+        inBasket = n;
+        paint();
+      }).catch(function () {});
+  }
+  document.addEventListener('cart:refresh', function () { setTimeout(countBasket, 400); });
+  var atc = document.querySelector('#product-add-to-cart');
+  if (atc) atc.addEventListener('click', function () { setTimeout(countBasket, 1500); });
+  paint();
+  countBasket();
+})();
+</script>
 {%- endif -%}
