@@ -121,3 +121,38 @@ The occasion card is moved by splitting the snippet's output in `main-cart.liqui
 ## Rollback
 
 Revert the files using the diff in this folder (reverse-apply it). For `config/settings_data.json`, set `enable_currencies`, `currency_format_enable`, `show_before_you_leave`, `calculator_free_shipping_message_show_percent` and `show_quick_cart_popular_product` back to `true`, and re-enable the Feefo core app embed. The new font asset can stay; it is only used when `theme.liquid` references it.
+
+---
+
+# 28 Sep 2026: gift wrap range (draft + product data)
+
+**Products (live data, Max approved).** There are five kits, all £5.95, made to demand. None tracks stock, and all keep selling at zero.
+
+| Kit | Handle | SKU | Offered? |
+|---|---|---|---|
+| Gift Wrap Kit – Ivory & Twine (the original, renamed) | `gift-wrapping` | XT-300-WK-1 (two-pack XT-300-WK-2) | yes |
+| Gift Wrap Kit – Christmas (renamed) | `christmas-gift-wrap-kit` | XT-301-WK-1 | yes, in season |
+| Gift Wrap Kit – Emerald & Pampas (new) | `gift-wrap-kit-emerald-pampas` | XT-302-WK-1 | yes |
+| Gift Wrap Kit – Blush Blossom (new) | `gift-wrap-kit-blush-blossom` | XT-303-WK-1 | yes |
+| Gift Wrap Kit – Midnight Sparkle (new) | `gift-wrap-kit-midnight-sparkle` | XT-304-WK-1 | no. Max doesn't want to push it, so it's in admin only |
+
+- Descriptions for the new kits use only what the product photos show.
+- New collection **Gift Wrap Kits** (`/collections/gift-wrap-kits`) holds Ivory, Christmas, Emerald and Blush in manual order. It is published but not yet in the menu. Menus are shared with live, so the link goes in once Max has checked the draft.
+- The automatic discount "Second gift wrap kit half price" now also covers Emerald and Blush.
+- The Mr & Mrs Small variant no longer has its own photo, so the gallery no longer jumps to photo 12 of 14. This is live product data.
+
+**Draft theme.**
+- `snippets/dm-wrap-kits.liquid` + `assets/daisy-wrap-kits.js`:
+  - The Classic/Christmas pair is now a row of colour swatches on every builder that offers the kit.
+  - Each colour appears while its product is active. To add one later, put it in the discount and add one line to `dm_wk_extra`.
+  - The best match for the page is pre-selected, shown first and badged "Best match": Christmas pages get Christmas, Mum/Nan/sister pages get Blush, and home/family/engagement/tree pages get Emerald. Other pages (e.g. Mr & Mrs) show all colours equally with nothing pre-selected.
+  - The half-price second kit can be any colour.
+  - The builders are untouched. Cards swap the variant; tick-box builders are rewritten at submit, as before.
+- `snippets/dm-pebble-picture-builder.liquid`: the picture-cleaning spray row is switched off (1 sale in 313 eligible orders). A comment in the file says how to turn it back on.
+
+**Tested on the draft (phone, headless):**
+- **Christmas heart:** Christmas is pre-selected. Picking Emerald makes the submit hook send the Emerald variant.
+- **Mum pebble picture:** Blush is pre-selected, and there's no spray row.
+- **Mr & Mrs:** no pre-selection. Picking Blush and adding to basket gives the sign plus "Gift Wrap Kit – Blush Blossom" £5.95. No page errors.
+
+**Known gap:** `snippets/dm-simple-addons.liquid` has its own "Add gift wrap" button, which adds the Ivory kit only. It is not part of the swatch picker.
