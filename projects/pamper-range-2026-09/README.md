@@ -84,3 +84,6 @@ Emerald Truffle ingredients: not on AW's product page either (it lists only the 
   - `main-nav` now has "Handmade Soap" and "Cocktail Bath Bombs" after Gift Bundles. The previous menu is backed up in the session scratchpad.
   - All 8 products are in Gifts UNDER £15 (`east-of-india`) and moved to the top in this order: Gin & Tonic, Rose, Mojito, Slice of Sunshine, Piña Colada, Emerald Truffle, Martini, massage oil.
   - The live theme hadn't changed since the duplicate was made (last live edit 13:20, copy made at 14:29), so publishing the duplicate loses nothing.
+- Menu consolidated (Max: too many top-level items). `main-nav` now has 7 top-level items. The new one is "Pamper & Extras", linking to the new smart collection `pamper-gifts` (tag = pamper, template `collection.pamper`, which shows a heading, intro and a panel with both offers).
+  - Its children are Handmade Soap, Cocktail Bath Bombs, Massage Oil (product), Gift Wrap Kits and Gift Bundles.
+  - The separate top-level Gift Bundles, Handmade Soap, Cocktail Bath Bombs and Gift Wrap Kits items are gone.

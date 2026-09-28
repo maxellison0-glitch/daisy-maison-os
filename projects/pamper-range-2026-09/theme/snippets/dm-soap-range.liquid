@@ -38,6 +38,11 @@
   endif
   if dm_sr_kind == 'other'
     assign dm_sr_col = nil
+    if mode == 'collection'
+      assign dm_sr_col = collection
+      assign dm_sr_h1 = collection.title
+      assign dm_sr_lede = collection.description | strip_html | strip
+    endif
   elsif dm_sr_kind == 'bath'
     assign dm_sr_col = collections['bath-bombs']
     assign dm_sr_h1 = 'Cocktail Bath Bombs'
@@ -106,6 +111,13 @@
       <li>The £12 price drops in automatically in your basket.</li>
       <li>Every soap after that is £4.</li>
     </ul>
+  {%- elsif dm_sr_kind == 'other' -%}
+    <span class="dm-pick__badge">Mix &amp; match offers</span>
+    <ul>
+      <li><a href="{{ collections['handmade-soap'].url }}">Handmade soap</a>: any 3 for £12.</li>
+      <li><a href="{{ collections['bath-bombs'].url }}">Cocktail bath bombs</a>: any 2 sets for £22.</li>
+      <li>The deal price drops in automatically in your basket.</li>
+    </ul>
   {%- else -%}
     <span class="dm-pick__badge">2 for £22</span>
     <ul>
@@ -121,6 +133,7 @@
 .dm-soap-top__title{margin:0 0 6px;font-size:26px;line-height:1.2;color:#232323}
 .dm-soap-top__lede{margin:0 0 14px;font-size:14px;color:#5a5a5a}
 .dm-soap-top__deal{display:grid;gap:8px;justify-items:start;text-align:left;padding:14px;border:1px solid #ece6dd;border-radius:12px;background:#fcfbf9}
+.dm-soap-top__deal a{color:#2f3724;font-weight:700}
 .dm-soap-top__deal ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px;color:#3c3c3c}
 .dm-pick__badge{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--dm-sage,#b0af9b);color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
 </style>
