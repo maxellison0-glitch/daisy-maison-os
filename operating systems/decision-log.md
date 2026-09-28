@@ -118,7 +118,7 @@ Built and tested on a throwaway copy, then applied to Max's working draft "Copy 
 
 **Rollback:** Republish the previous theme, or revert the three files using the diff in the project folder.
 
-**Result:** Pending publish.
+**Result:** Published 28 Sep 2026 (theme "constructed 🚧"). Live checks passed: the menu link, a sign with an Emerald kit through to checkout, and the tea light card with the half-price second kit (£8.93 for two kits). Measure after 28 days.
 
 ---
 
@@ -150,7 +150,7 @@ Details: `projects/theme-changes-2026-09/README.md`.
 
 **Rollback:** Reverse-apply `speed-honesty-basket-0925.diff`, then restore the five settings and the Feefo embed listed in the README.
 
-**Result:** Pending publish.
+**Result:** Published 28 Sep 2026 (theme "constructed 🚧"). Live checks passed: the menu link, a sign with an Emerald kit through to checkout, and the tea light card with the half-price second kit (£8.93 for two kits). Measure after 28 days.
 
 ---
 
@@ -177,4 +177,4 @@ Details: `projects/theme-changes-2026-09/README.md`.
 - Set the new kit products to Draft.
 - Theme files are listed in `projects/theme-changes-2026-09/README.md` (28 Sep).
 
-**Result:** Pending publish.
+**Result:** Published 28 Sep 2026 (theme "constructed 🚧"). Live checks passed: the menu link, a sign with an Emerald kit through to checkout, and the tea light card with the half-price second kit (£8.93 for two kits). Measure after 28 days.
