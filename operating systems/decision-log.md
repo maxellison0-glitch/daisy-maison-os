@@ -178,3 +178,37 @@ Details: `projects/theme-changes-2026-09/README.md`.
 - Theme files are listed in `projects/theme-changes-2026-09/README.md` (28 Sep).
 
 **Result:** Published 28 Sep 2026 (theme "constructed 🚧"). Live checks passed: the menu link, a sign with an Emerald kit through to checkout, and the tea light card with the half-price second kit (£8.93 for two kits). Measure after 28 days.
+
+---
+
+### 2026-09-28 — Pamper range launch: soaps, cocktail bath bombs, massage oil
+
+**Decision:**
+- Launch 3 hand-cut soaps at £4.95, with an automatic "any 3 for £12".
+- Launch 4 cocktail bath bomb sets at £12.95, with an automatic "any 2 for £22".
+- Launch Muscle Ease massage oil (100ml) at £12.95.
+- Soap and bath bomb pages use a mix & match picker as the only add-to-basket. They have no gift wrap.
+- In the menu, the new items sit under Gifts UNDER £15. Gift Bundles moves under Home fragrance, Occasions and Street Signs lead with Christmas, and Anniversary is added. The menu stays at 6 top-level items.
+
+**Why:** Low-cost add-on and gift items for the under-£15 shopper, with deals that lift units per order.
+
+**Expected:** Measure after 28 days:
+- the share of soap orders with 3 or more soaps
+- the share of bath bomb orders with 2 or more sets
+- attach rate to personalised orders
+
+**Risk:**
+- The massage oil is rebottled under our name, and Max decided to sell it without a supplier safety report.
+- One colour code on the Emerald Truffle label was unreadable in the photo.
+
+**Rollback:**
+- Set the products to Draft.
+- Disable the two automatic discounts.
+- Restore the menu from the backup noted in `projects/pamper-range-2026-09/README.md`.
+
+**Result:** Published 28 Sep 2026 (theme "Copy of constructed 🚧"). Live checks passed:
+- the soap trio came to £12.00, and "just this soap" took it to £16.00
+- the bath bomb picker showed
+- a sign plus Blush gift wrap got through to checkout
+- the oil added to the basket at £12.95
+- no page errors
