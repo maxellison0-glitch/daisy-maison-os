@@ -137,7 +137,7 @@ Revert the files using the diff in this folder (reverse-apply it). For `config/s
 | Gift Wrap Kit – Midnight Sparkle (new) | `gift-wrap-kit-midnight-sparkle` | XT-304-WK-1 | yes (added back 28 Sep: all five kits are offered equally) |
 
 - Descriptions for the new kits use only what the product photos show.
-- New collection **Gift Wrap Kits** (`/collections/gift-wrap-kits`) holds all five kits in manual order. It is published but not yet in the menu. Menus are shared with live, so the link goes in once Max has checked the draft.
+- New collection **Gift Wrap Kits** (`/collections/gift-wrap-kits`) holds all five kits in manual order. With Max's go-ahead it is now the last top-level item in `main-nav` (desktop header and phone burger menu). Menus are shared with live, so the link is live on both themes. A backup of the menu from before the change is in the session scratchpad. All five kits are also in **Gifts UNDER £15** (`east-of-india`, manual order, so they sit at the end).
 - The automatic discount "Second gift wrap kit half price" now also covers Emerald, Blush and Midnight.
 - The Mr & Mrs Small variant no longer has its own photo, so the gallery no longer jumps to photo 12 of 14. This is live product data.
 
