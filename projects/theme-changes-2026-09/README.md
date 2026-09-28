@@ -134,19 +134,21 @@ Revert the files using the diff in this folder (reverse-apply it). For `config/s
 | Gift Wrap Kit – Christmas (renamed) | `christmas-gift-wrap-kit` | XT-301-WK-1 | yes, in season |
 | Gift Wrap Kit – Emerald & Pampas (new) | `gift-wrap-kit-emerald-pampas` | XT-302-WK-1 | yes |
 | Gift Wrap Kit – Blush Blossom (new) | `gift-wrap-kit-blush-blossom` | XT-303-WK-1 | yes |
-| Gift Wrap Kit – Midnight Sparkle (new) | `gift-wrap-kit-midnight-sparkle` | XT-304-WK-1 | no. Max doesn't want to push it, so it's in admin only |
+| Gift Wrap Kit – Midnight Sparkle (new) | `gift-wrap-kit-midnight-sparkle` | XT-304-WK-1 | yes (added back 28 Sep: all five kits are offered equally) |
 
 - Descriptions for the new kits use only what the product photos show.
-- New collection **Gift Wrap Kits** (`/collections/gift-wrap-kits`) holds Ivory, Christmas, Emerald and Blush in manual order. It is published but not yet in the menu. Menus are shared with live, so the link goes in once Max has checked the draft.
-- The automatic discount "Second gift wrap kit half price" now also covers Emerald and Blush.
+- New collection **Gift Wrap Kits** (`/collections/gift-wrap-kits`) holds all five kits in manual order. It is published but not yet in the menu. Menus are shared with live, so the link goes in once Max has checked the draft.
+- The automatic discount "Second gift wrap kit half price" now also covers Emerald, Blush and Midnight.
 - The Mr & Mrs Small variant no longer has its own photo, so the gallery no longer jumps to photo 12 of 14. This is live product data.
 
 **Draft theme.**
 - `snippets/dm-wrap-kits.liquid` + `assets/daisy-wrap-kits.js`:
   - The Classic/Christmas pair is now a row of colour swatches on every builder that offers the kit.
   - Each colour appears while its product is active. To add one later, put it in the discount and add one line to `dm_wk_extra`.
-  - The best match for the page is pre-selected, shown first and badged "Best match": Christmas pages get Christmas, Mum/Nan/sister pages get Blush, and home/family/engagement/tree pages get Emerald. Other pages (e.g. Mr & Mrs) show all colours equally with nothing pre-selected.
+  - The best match for the page is pre-selected, shown first and badged "Best match": Christmas pages get Christmas, Mum/Nan/sister pages get Blush, and home/family/engagement/tree pages get Emerald, and dad/grandad/husband/brother pages get Midnight. Other pages (e.g. Mr & Mrs) show all colours equally with nothing pre-selected.
   - The half-price second kit can be any colour.
+  - Swatches show each kit's first image, the matching "Add your … gift wrap kit!" hero. Keep a kit's hero as its first image.
+  - Zoom: a magnifier on each swatch, or a tap on the card photo, opens a large view of that kit. Customers can flick through all five colours (arrows, swipe or tabs), tap the photo to magnify 2.4x around their finger, and pick a colour with "Choose <colour>". A tap on the middle of a swatch still just selects it.
   - The builders are untouched. Cards swap the variant; tick-box builders are rewritten at submit, as before.
 - `snippets/dm-pebble-picture-builder.liquid`: the picture-cleaning spray row is switched off (1 sale in 313 eligible orders). A comment in the file says how to turn it back on.
 
@@ -154,5 +156,7 @@ Revert the files using the diff in this folder (reverse-apply it). For `config/s
 - **Christmas heart:** Christmas is pre-selected. Picking Emerald makes the submit hook send the Emerald variant.
 - **Mum pebble picture:** Blush is pre-selected, and there's no spray row.
 - **Mr & Mrs:** no pre-selection. Picking Blush and adding to basket gives the sign plus "Gift Wrap Kit – Blush Blossom" £5.95. No page errors.
+
+- **Zoom (Mum pebble picture and Christmas heart, real touch taps):** the magnifier on Midnight opens the 1200px Midnight hero, and tapping the photo magnifies it. Next, tabs and "Choose Midnight" work; the last switches the kit on as Midnight. Tapping the card photo reopens the view showing "✓ Midnight chosen", and tapping the backdrop closes it. No second theme lightbox opens and there are no page errors.
 
 **Known gap:** `snippets/dm-simple-addons.liquid` has its own "Add gift wrap" button, which adds the Ivory kit only. It is not part of the swatch picker.
