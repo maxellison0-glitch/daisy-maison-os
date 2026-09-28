@@ -87,3 +87,10 @@ Emerald Truffle ingredients: not on AW's product page either (it lists only the 
 - Menu consolidated (Max: too many top-level items). `main-nav` now has 7 top-level items. The new one is "Pamper & Extras", linking to the new smart collection `pamper-gifts` (tag = pamper, template `collection.pamper`, which shows a heading, intro and a panel with both offers).
   - Its children are Handmade Soap, Cocktail Bath Bombs, Massage Oil (product), Gift Wrap Kits and Gift Bundles.
   - The separate top-level Gift Bundles, Handmade Soap, Cocktail Bath Bombs and Gift Wrap Kits items are gone.
+- Menu, final version (Max): no separate pamper menu item. The Pamper & Extras item and the `pamper-gifts` collection are deleted. `main-nav` now has 6 top-level items:
+  - Wedding Gifts
+  - Pebble People
+  - Home fragrance, which now contains Gift Bundles (they're diffuser sets, over £15)
+  - Occasions
+  - Street Signs
+  - Gifts UNDER £15, which contains Handmade Soap, Cocktail Bath Bombs, Massage Oil and Gift Wrap Kits, followed by the existing Just Because to Clearance items
