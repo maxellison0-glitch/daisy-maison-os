@@ -16,7 +16,7 @@ Brief with setup, packaging and ChatGPT prompts: `pamper-range-brief.html`
 | Piña Colada Bath Bomb Set | `pina-colada-bath-bomb-set` | £12.95 | DM-BB-PINACOLADA (EAN 5056422901086) | not tracked |
 | Gin & Tonic Bath Bomb Set | `gin-and-tonic-bath-bomb-set` | £12.95 | DM-BB-GINTONIC (EAN 5056422901048) | not tracked |
 | Martini Bath Bomb Set | `martini-bath-bomb-set` | £12.95 | DM-BB-MARTINI (EAN 5056422901062) | not tracked |
-| Muscle Ease Massage Oil | `muscle-ease-massage-oil` | £12.95 | DM-OIL-ME-100 | not tracked. **DRAFT**: goes live once AW confirms the safety report / Responsible Person for rebottling |
+| Muscle Ease Massage Oil | `muscle-ease-massage-oil` | £12.95 | DM-OIL-ME-100 | not tracked. ACTIVE (Max's call, 28 Sep) |
 
 - Soaps: 4 images each (kraft pouch hero, stack, in hand, ruler), matched by colour: pink = Rose, brown swirl = Emerald Truffle, yellow = Slice of Sunshine.
 - Ingredients in the descriptions come from the AW labels. Emerald Truffle's label was cut off in the photo, so its page says the list is on the pack until Max sends a clear photo.
@@ -76,3 +76,7 @@ Removed from these pages:
 The massage oil keeps `product.pamper.json`: a normal Add to Cart, no picker, no gift wrap, no personalisation badge.
 Tested: on the Emerald Truffle page the trio gives £12.00, "just this soap" then takes it to £16.00, and there are no page errors.
 Emerald Truffle ingredients: not on AW's product page either (it lists only the scent from perfume and patchouli). Its label shows a different recipe from the other two soaps (sucrose, SLS), so the page keeps "full list printed on the pack" rather than copying theirs.
+
+## 28 Sep, later
+- Emerald Truffle ingredients were read from Max's label photo and are now on the product page. "Sodium La…" at the photo's cut-off edge is taken as Sodium Laurate. One colour code after CI 42090 is cut off by the photo edge and is left out until someone reads the end of that line on the pack.
+- Muscle Ease Massage Oil set to Active on Max's instruction.
