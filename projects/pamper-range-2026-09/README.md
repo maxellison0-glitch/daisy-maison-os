@@ -9,14 +9,14 @@ Brief with setup, packaging and ChatGPT prompts: `pamper-range-brief.html`
 
 | Product | Handle | Price | SKU | Stock |
 |---|---|---|---|---|
-| Emerald Truffle Soap | `emerald-truffle-soap` | £4.95 | DM-SOAP-ET-100 | tracked, 13 |
-| Slice of Sunshine Soap | `slice-of-sunshine-soap` | £4.95 | DM-SOAP-SS-100 | tracked, 13 |
-| Rose & Rose Petals Soap | `rose-and-rose-petals-soap` | £4.95 | DM-SOAP-RP-100 | tracked, 13 |
-| Mojito Bath Bomb Set | `mojito-bath-bomb-set` | £12.95 | DM-BB-MOJITO (EAN 5056422901079) | not tracked yet |
-| Piña Colada Bath Bomb Set | `pina-colada-bath-bomb-set` | £12.95 | DM-BB-PINACOLADA (EAN 5056422901086) | not tracked yet |
-| Gin & Tonic Bath Bomb Set | `gin-and-tonic-bath-bomb-set` | £12.95 | DM-BB-GINTONIC (EAN 5056422901048) | not tracked yet |
-| Martini Bath Bomb Set | `martini-bath-bomb-set` | £12.95 | DM-BB-MARTINI (EAN 5056422901062) | not tracked yet |
-| Muscle Ease Massage Oil | `muscle-ease-massage-oil` | £12.95 | DM-OIL-ME-100 | tracked, 9 (1L makes 9–10). **DRAFT**: goes live once AW confirms the safety report / Responsible Person for rebottling |
+| Emerald Truffle Soap | `emerald-truffle-soap` | £4.95 | DM-SOAP-ET-100 | not tracked (stock is managed by the team) |
+| Slice of Sunshine Soap | `slice-of-sunshine-soap` | £4.95 | DM-SOAP-SS-100 | not tracked (stock is managed by the team) |
+| Rose & Rose Petals Soap | `rose-and-rose-petals-soap` | £4.95 | DM-SOAP-RP-100 | not tracked (stock is managed by the team) |
+| Mojito Bath Bomb Set | `mojito-bath-bomb-set` | £12.95 | DM-BB-MOJITO (EAN 5056422901079) | not tracked |
+| Piña Colada Bath Bomb Set | `pina-colada-bath-bomb-set` | £12.95 | DM-BB-PINACOLADA (EAN 5056422901086) | not tracked |
+| Gin & Tonic Bath Bomb Set | `gin-and-tonic-bath-bomb-set` | £12.95 | DM-BB-GINTONIC (EAN 5056422901048) | not tracked |
+| Martini Bath Bomb Set | `martini-bath-bomb-set` | £12.95 | DM-BB-MARTINI (EAN 5056422901062) | not tracked |
+| Muscle Ease Massage Oil | `muscle-ease-massage-oil` | £12.95 | DM-OIL-ME-100 | not tracked. **DRAFT**: goes live once AW confirms the safety report / Responsible Person for rebottling |
 
 - Soaps: 4 images each (kraft pouch hero, stack, in hand, ruler), matched by colour: pink = Rose, brown swirl = Emerald Truffle, yellow = Slice of Sunshine.
 - Ingredients in the descriptions come from the AW labels. Emerald Truffle's label was cut off in the photo, so its page says the list is on the pack until Max sends a clear photo.
@@ -57,3 +57,22 @@ Bath bombs: automatic discount "Bath bombs: any 2 sets for £22" (DiscountAutoma
 - When Max approves:
   - add both collections to the menu and the items to Gifts UNDER £15
   - publish the duplicate theme (the new templates only exist there)
+
+## Layout rebuild (after Max's review, 28 Sep)
+All 3 soaps and all 4 bath bomb sets now use `templates/product.mixmatch.json`:
+1. Photos
+2. Name and price
+3. Intro (`mode: 'intro'`): the description's first paragraph and its facts as chips
+4. Picker: the only add-to-basket on the page. Soaps also get "Or just this soap · £4.95".
+5. Review stars and trust image
+6. Details (`mode: 'details'`): How to use, Good to know and Ingredients as drop-downs, then the Delivery tab
+
+Removed from these pages:
+- the theme quantity box and Add to Cart (two add buttons confused things)
+- gift wrap (bath bombs come boxed; nobody wraps a soap)
+- the "Free Personalisation" badge
+- the empty Related / Recently Viewed sections
+
+The massage oil keeps `product.pamper.json`: a normal Add to Cart, no picker, no gift wrap, no personalisation badge.
+Tested: on the Emerald Truffle page the trio gives £12.00, "just this soap" then takes it to £16.00, and there are no page errors.
+Emerald Truffle ingredients: not on AW's product page either (it lists only the scent from perfume and patchouli). Its label shows a different recipe from the other two soaps (sucrose, SLS), so the page keeps "full list printed on the pack" rather than copying theirs.
