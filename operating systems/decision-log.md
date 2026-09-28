@@ -151,3 +151,30 @@ Details: `projects/theme-changes-2026-09/README.md`.
 **Rollback:** Reverse-apply `speed-honesty-basket-0925.diff`, then restore the five settings and the Feefo embed listed in the README.
 
 **Result:** Pending publish.
+
+---
+
+### 2026-09-28 — Gift wrap range: five colours, picker everywhere, menu link
+
+**Decision:**
+- Sell five gift wrap kits equally: Ivory & Twine, Christmas, Emerald & Pampas, Blush Blossom and Midnight Sparkle.
+- Every gift wrap control on the draft shows the colour picker, including the tea light one-tap card. It has zoom, and the best match for the page is pre-selected.
+- "Gift Wrap Kits" is in the main menu, and the kits are in Gifts UNDER £15.
+- The second kit is half price in any colour.
+- Kept as they are: the family diffuser card, Large street sign prices and the "INCREDIBLE OFFER" wording (Max).
+
+**Why:** Customers pick the wrap that suits the gift, and a £5.95 kit plus a £2.98 second kit lifts AOV on almost every order.
+
+**Expected:** A higher gift wrap attach rate than Ivory-only, and some second-kit baskets. Measure the kit attach rate and the share of orders with two kits after 28 days.
+
+**Risk:**
+- The menu link and collections are live now (menus are shared); the picker goes live when the draft is published.
+- The Christmas kit should be set to Draft after the season. It then drops out of the picker automatically.
+
+**Rollback:**
+- Remove the menu item.
+- Take kits out of the collections.
+- Set the new kit products to Draft.
+- Theme files are listed in `projects/theme-changes-2026-09/README.md` (28 Sep).
+
+**Result:** Pending publish.
