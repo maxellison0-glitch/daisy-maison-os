@@ -1,7 +1,7 @@
 diff -ruN orig/assets/custom.css new/assets/custom.css
 --- orig/assets/custom.css	2026-09-29 15:08:02.029170935 +0000
-+++ new/assets/custom.css	2026-09-29 15:08:02.049079894 +0000
-@@ -1560,3 +1560,35 @@
++++ new/assets/custom.css	2026-09-29 15:50:56.500120892 +0000
+@@ -1560,3 +1560,48 @@
  @media (max-width:480px){
    .dm-cyg__media:has(img[data-dm-zoomable])::after{ left:4px !important; top:36px !important; }
  }
@@ -37,9 +37,22 @@ diff -ruN orig/assets/custom.css new/assets/custom.css
 +  .site-nav-mobile .menu-lv-2__action, .site-nav-mobile .menu-lv-2__action .text,
 +  .site-nav-mobile .menu-lv-3__action, .site-nav-mobile .menu-lv-3__action .text{ font-size: 16px !important; }
 +}
++
++/* Add-on buttons: a green tick on the one that's on, so a chosen extra is
++   obvious before Add to Cart (29 Sep). "No thanks" never gets one. */
++.dm-cyg__card .dm-addon-mode__option.is-active:is([data-dm-addon-mode="single"],[data-dm-addon-mode="double"],[data-heart-combo="heart"],[data-heart-combo="heartbox"]):not([data-dm-wrap-style]){
++  flex-direction: row !important; gap: 5px;
++  border-color: #2e7d4f !important; background: #f1f7f1 !important; box-shadow: inset 0 0 0 1px #2e7d4f !important;
++}
++.dm-cyg__card .dm-addon-mode__option.is-active:is([data-dm-addon-mode="single"],[data-dm-addon-mode="double"],[data-heart-combo="heart"],[data-heart-combo="heartbox"]):not([data-dm-wrap-style]):before{
++  content: "\2713"; font-weight: 900; color: #2e7d4f;
++}
++.dm-cyg__card--wrap-styles .dm-addon-mode__option[data-dm-wrap-style][data-wrap-active] .dm-wrap-style__label:before{
++  content: "\2713\00a0"; font-weight: 900; color: #2e7d4f;
++}
 diff -ruN orig/layout/theme.liquid new/layout/theme.liquid
 --- orig/layout/theme.liquid	2026-09-29 15:08:02.023135680 +0000
-+++ new/layout/theme.liquid	2026-09-29 15:08:02.036803149 +0000
++++ new/layout/theme.liquid	2026-09-29 15:50:56.495791128 +0000
 @@ -386,6 +386,7 @@
          {% render 'global-style' %}
          {% render 'dm-mobile-fixes' %}
@@ -50,7 +63,7 @@ diff -ruN orig/layout/theme.liquid new/layout/theme.liquid
              {%- when 'porcelain-handled-tea-light-holder-good-friends' or 'porcelain-handled-tea-light-holder-you-brighten-my-day' or 'porcelain-handled-tea-light-holder-with-much-love' -%}
 diff -ruN orig/snippets/dm-upsell-accordion.liquid new/snippets/dm-upsell-accordion.liquid
 --- orig/snippets/dm-upsell-accordion.liquid	1970-01-01 00:00:00.000000000 +0000
-+++ new/snippets/dm-upsell-accordion.liquid	2026-09-29 15:08:02.050882550 +0000
++++ new/snippets/dm-upsell-accordion.liquid	2026-09-29 15:50:56.502169719 +0000
 @@ -0,0 +1,171 @@
 +{%- comment -%}
 +  dm-upsell-accordion — folds the optional extras on product pages into tidy
@@ -223,15 +236,3 @@ diff -ruN orig/snippets/dm-upsell-accordion.liquid new/snippets/dm-upsell-accord
 +  (function tick() { enhance(); if (++tries < 30) setTimeout(tick, 500); })();
 +})();
 +</script>
-diff -ruN orig/templates/product.json new/templates/product.json
---- orig/templates/product.json	2026-09-29 15:08:02.023723150 +0000
-+++ new/templates/product.json	2026-09-29 15:08:02.043379949 +0000
-@@ -411,7 +411,7 @@
-         "main_image_arrows_desktop": true,
-         "main_image_arrows_mobile": true,
-         "main_image_counter_mobile": true,
--        "main_image_enable_parallax_mb": false,
-+        "main_image_enable_parallax_mb": true,
-         "main_image_show_zoom_icon_mb": true,
-         "main_image_position": "left",
-         "main_image_layout": "2",

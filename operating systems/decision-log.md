@@ -219,7 +219,8 @@ Details: `projects/theme-changes-2026-09/README.md`.
 - Add to Cart is heavier and taller: 17px, weight 800, 54px tall, same sage.
 - Menu type is bigger: desktop 18px, mobile burger 17px.
 - Every add-on card on the landing pages folds into a one-line row. It opens on tap and shows "✓ Added" once chosen.
-- Mobile parallax is on for the default product template.
+- Mobile parallax stays **off** on the draft, as the team set it. Live has it on, and that's what keeps the gallery showing while you scroll.
+- Gift wrap second kit: the page total now includes the half-price second kit, and the summary names the colour picked. The offer reads "Add a second kit for just ~~£5.95~~ £2.98", and every chosen add-on gets a green ✓.
 
 **Why:** The team felt Add to Cart didn't stand out, and that the menu text was small. There were too many add-on cards stacked above the Add to Cart; on the diffuser they took about 1,000px of scrolling. Gallery images also kept showing while scrolling on phones.
 
@@ -232,13 +233,15 @@ Details: `projects/theme-changes-2026-09/README.md`.
 **Rollback:**
 - Remove the one `dm-upsell-accordion` line from `layout/theme.liquid`.
 - Delete the "Team list, 29 Sep" block at the end of `assets/custom.css`.
-- Turn "Enable Parallax for Mobile?" back off.
+- Restore `assets/daisy-wrap-kits.js` and `snippets/dm-wrap-kits.liquid` from `wrap-kit-total-0929.diff`.
 
 Details are in `projects/theme-changes-2026-09/team-list-0929.md`.
 
 **Result:** Tested on the draft preview on 29 Sep:
 - Mr & Mrs with an easel: basket £17.20.
 - Diffuser with a gift box: basket £20.90.
+- Mr & Mrs with a Christmas kit and a Blush second kit: page and basket both £20.18.
+- Diffuser with the same two kits: page and basket both £23.88.
 - No script errors.
 
 Not published yet. Max publishes.
