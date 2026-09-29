@@ -212,3 +212,33 @@ Details: `projects/theme-changes-2026-09/README.md`.
 - a sign plus Blush gift wrap got through to checkout
 - the oil added to the basket at £12.95
 - no page errors
+
+### 2026-09-29 — Team list: bolder Add to Cart, bigger menu type, add-on accordion, mobile parallax
+
+**Decision:** Four changes from the team meeting, built on the draft "RDD Copy of Copy of constructed 🚧" (208036757843):
+- Add to Cart is heavier and taller: 17px, weight 800, 54px tall, same sage.
+- Menu type is bigger: desktop 18px, mobile burger 17px.
+- Every add-on card on the landing pages folds into a one-line row. It opens on tap and shows "✓ Added" once chosen.
+- Mobile parallax is on for the default product template.
+
+**Why:** The team felt Add to Cart didn't stand out, and that the menu text was small. There were too many add-on cards stacked above the Add to Cart; on the diffuser they took about 1,000px of scrolling. Gallery images also kept showing while scrolling on phones.
+
+**Expected:** Add to Cart is reached sooner, so product-page add-to-cart rate should rise without losing add-on attach rate. Compare 14 days either side of publishing:
+- add-to-cart rate on Mr & Mrs and the diffusers
+- the share of orders with a gift box, Gift Wrap Kit, easel or mounting strips
+
+**Risk:** Add-ons are one tap away instead of always on show, so attach rate could dip. The Gift Wrap Kit colour tiles are the one Max has cared most about showing.
+
+**Rollback:**
+- Remove the one `dm-upsell-accordion` line from `layout/theme.liquid`.
+- Delete the "Team list, 29 Sep" block at the end of `assets/custom.css`.
+- Turn "Enable Parallax for Mobile?" back off.
+
+Details are in `projects/theme-changes-2026-09/team-list-0929.md`.
+
+**Result:** Tested on the draft preview on 29 Sep:
+- Mr & Mrs with an easel: basket £17.20.
+- Diffuser with a gift box: basket £20.90.
+- No script errors.
+
+Not published yet. Max publishes.
