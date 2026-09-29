@@ -75,7 +75,7 @@ The basket was always right, because the kit colour and the second kit are swapp
 
 | File | Change | md5 after |
 |---|---|---|
-| `assets/daisy-wrap-kits.js` | Picking a colour, or picking or removing a second kit, now redraws the Mr & Mrs summary, so it names the colour picked. The second kit is added to every total on the page: the Mr & Mrs summary gets its own green row, and the sticky bar and the heart/diffuser total get it too. Each total keeps the builder's own figure and adds the kit on top, so builder recalculations never double-count. | `60f827cc…` |
+| `assets/daisy-wrap-kits.js` | Picking a colour, or picking or removing a second kit, now redraws the Mr & Mrs summary, so it names the colour picked. The second kit is added to every total on the page: the Mr & Mrs summary gets its own green row, and the sticky bar and the heart/diffuser total get it too. Each total keeps the builder's own figure and adds the kit on top, so builder recalculations never double-count. | `51a3db2b…` |
 | `snippets/dm-wrap-kits.liquid` | The offer becomes a green panel with a HALF PRICE tag: "Wrapping another gift? Add a second kit for just ~~£5.95~~ **£2.98**, any colour." Picking a kit changes the line underneath to "✓ Second kit added: Blush for £2.98. Tap it again to remove." The chosen colour and the chosen second kit get a green tick badge. | `040dd401…` |
 | `assets/custom.css` | A green ✓ on whichever add-on button is on (Add gift wrap kit, Add an easel, Add heart…). "No thanks" never gets one. | `29f4b332…` |
 
@@ -85,3 +85,24 @@ The full change is in `wrap-kit-total-0929.diff`.
 - **Mr & Mrs:** after picking Christmas, the summary shows "Gift Wrap Kit – Christmas £5.95" and the total is £17.20. With a Blush second kit it shows "Second gift wrap kit · Blush (half price) £2.98", and the summary and sticky bar both read **£20.18**. Removing the second kit takes it back to £17.20, and adding it again brings back £20.18. The basket was sign £11.25 + Christmas kit £5.95 + Blush kit £2.98 (automatic discount), total **£20.18**, the same as the page.
 - **Family Reed Diffuser:** with the Christmas kit the total is £20.90, and with a Blush second kit £23.88. The basket came to **£23.88**, the same as the page.
 - No script errors on either page.
+
+**Coverage (checked after Max asked "so you've updated all landing pages like this?").** Both changes load on every product page. The accordion folds the add-on cards wherever they appear. The gift wrap fix now adds the second kit to every builder's total:
+- the Mr & Mrs summary, row and sticky bar
+- `.daisy-street-options__total`, the total box on all the street-sign builders (family, home, house rules, create your own, football, valentine, and the rest) and on the heart and diffuser builders
+- the pebble picture total
+- the teacher pebble "Selected extras"
+
+Totals repaint from a MutationObserver as a microtask, so they're corrected before the screen redraws. The Family Street Sign rewrites its total about 0.5s after a change, and on first try the second kit briefly dropped out.
+
+Builders with no Gift Wrap Kit have no second-kit offer, so nothing changes there: wedding / rainbow / teacher hearts, OOTD, USA road sign, vintage train. The same goes for the soap, bath bomb and oil pages, which have no wrap by Max's decision.
+
+**Tested per builder type (390px phone, draft preview), with a Christmas kit plus a Blush second kit:**
+
+| Page | Page total | Basket |
+|---|---|---|
+| Mr & Mrs | £20.18 | £20.18 |
+| Family Reed Diffuser | £23.88 | £23.88 |
+| Family Street Sign ("Selected add-ons") | £5.95 → £8.93, held at every sample from 0.1s to 2.2s | £23.88 (sign £14.95 + £5.95 + £2.98) |
+| Birthday Blossom pebble picture | £35.90 → £38.88, back to £35.90 when removed | not checked; the test didn't fill the pebble choices |
+
+No script errors on any of them.

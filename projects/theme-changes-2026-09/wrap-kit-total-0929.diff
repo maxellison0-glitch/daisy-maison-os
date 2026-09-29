@@ -1,6 +1,6 @@
 diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
 --- wraporig/assets/daisy-wrap-kits.js	2026-09-29 15:50:56.477795186 +0000
-+++ wrapnew/assets/daisy-wrap-kits.js	2026-09-29 15:50:56.482503860 +0000
++++ wrapnew/assets/daisy-wrap-kits.js	2026-09-29 16:24:08.720344954 +0000
 @@ -63,6 +63,7 @@
    var twoPackId = Number(CLASSIC.twoPackVariantId) || 0;
    var SECOND = !!CFG.secondKit;
@@ -19,7 +19,7 @@ diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
        '<div class="dm-wrap-second__chips" style="--dm-wrap-n:' + SHOWN.length + '">' + SHOWN.map(secondChip).join('') + '</div></div>';
    }
    function secondChip(style) {
-@@ -135,6 +137,85 @@
+@@ -135,6 +137,97 @@
        setClass(btn, 'is-selected', sel);
        setAttr(btn, 'aria-pressed', sel ? 'true' : 'false');
      });
@@ -38,11 +38,15 @@ diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
 +   * The builders total up their own cards, but the second kit only exists as
 +   * an extra basket line (see the header), so no builder counts it. Add it to
 +   * whatever total the page shows: the Mr & Mrs summary gets its own row, and
-+   * every total (summary, sticky bar, heart / diffuser panel) gets the half
-+   * price on top. Each total remembers the builder's own figure, so when the
-+   * builder recalculates we start again from its number, never from ours. */
-+  var TOTALS = '#dm-cyg-total, .dm-sticky-total__current, [data-heart-total]';
++   * every total gets the half price on top. That covers the Mr & Mrs summary
++   * and sticky bar, every street-sign / heart / diffuser builder
++   * (.daisy-street-options__total), the pebble picture and the teacher pebble.
++   * Each is a price-only element. Each total remembers the builder's own
++   * figure, so when the builder recalculates we start again from its number,
++   * never from ours. */
++  var TOTALS = '#dm-cyg-total, .dm-sticky-total__current, .daisy-street-options__total, [data-heart-total], [data-pebble-total], [data-teacher-pebble-total]';
 +  var paintQueued = false;
++  var painting = false;
 +  function secondExtra() {
 +    return (SECOND && state.second && KITS[state.second]) ? halfPrice(kit(state.second)) : 0;
 +  }
@@ -81,19 +85,27 @@ diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
 +  function watchTotal(el) {
 +    if (el.__dmWrapWatched || !window.MutationObserver) return;
 +    el.__dmWrapWatched = true;
-+    new MutationObserver(schedulePaint).observe(el, { childList: true, characterData: true, subtree: true });
++    // Repaint straight from the observer (a microtask, so before the screen
++    // redraws): a builder rewriting its total never shows the old figure.
++    new MutationObserver(function () { if (!painting) paintTotals(); }).observe(el, { childList: true, characterData: true, subtree: true });
 +  }
 +  function paintTotals() {
 +    paintQueued = false;
-+    var extra = secondExtra();
-+    var lines = qs(document, '#dm-cyg-subtotal-lines');
-+    if (lines) { watchTotal(lines); paintRow(lines, extra); }
-+    qsa(document, TOTALS).forEach(function (el) { watchTotal(el); paintTotal(el, extra); });
++    if (painting) return;
++    painting = true;
++    try {
++      var extra = secondExtra();
++      var lines = qs(document, '#dm-cyg-subtotal-lines');
++      if (lines) { watchTotal(lines); paintRow(lines, extra); }
++      qsa(document, TOTALS).forEach(function (el) { watchTotal(el); paintTotal(el, extra); });
++    } finally {
++      painting = false;
++    }
 +  }
 +  function schedulePaint() {
 +    if (paintQueued) return;
 +    paintQueued = true;
-+    (window.requestAnimationFrame || setTimeout)(paintTotals);
++    Promise.resolve().then(paintTotals);
 +  }
 +  // The Mr & Mrs summary is drawn from the cards' data-name / data-price, but
 +  // it only redraws when the sign panel changes. After a colour pick, ask it
@@ -105,7 +117,7 @@ diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
    }
    function syncAllSecond() {
      qsa(document, '.dm-cyg__card--wrap-styles').forEach(function (card) { syncCygCard(card); });
-@@ -147,6 +228,7 @@
+@@ -147,6 +240,7 @@
      var style = chip.getAttribute('data-wrap-second');
      state.second = state.second === style ? null : style;
      syncAllSecond();
@@ -113,7 +125,7 @@ diff -ruN wraporig/assets/daisy-wrap-kits.js wrapnew/assets/daisy-wrap-kits.js
    }, true);
  
    /* ---------------- A) dm-cyg cards ---------------- */
-@@ -290,6 +372,7 @@
+@@ -290,6 +384,7 @@
        }
      }
      syncCygCard(card);
