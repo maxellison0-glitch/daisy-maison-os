@@ -244,4 +244,6 @@ Details are in `projects/theme-changes-2026-09/team-list-0929.md`.
 - Diffuser with the same two kits: page and basket both £23.88.
 - No script errors.
 
-Not published yet. Max publishes.
+Published by Max on 29 Sep 2026, around 18:00 (theme "RDD Copy of Copy of constructed 🚧", 208036757843). All eight changed files on the live theme match the tested versions byte for byte.
+
+Live check on Mr & Mrs (Christmas kit plus a Blush second kit): the summary, total and sticky bar all showed £20.18, and the basket came to £20.18. Removing the second kit dropped it to £17.20. No errors.
