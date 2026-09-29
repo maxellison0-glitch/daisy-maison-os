@@ -106,3 +106,17 @@ Builders with no Gift Wrap Kit have no second-kit offer, so nothing changes ther
 | Birthday Blossom pebble picture | £35.90 → £38.88, back to £35.90 when removed | not checked; the test didn't fill the pebble choices |
 
 No script errors on any of them.
+
+## 6. Final sweep before publishing (29 Sep, evening)
+
+**Also fixed in the sweep:** the soap/bath bomb (`product.mixmatch.json`) and oil (`product.pamper.json`) templates still had mobile parallax on. They now have it off, the same as the team's fix on the default template. That was the only line changed in each. md5 after: `00a5ad5d…` and `be55e613…`.
+
+| Page (draft preview) | Result |
+|---|---|
+| Emerald Truffle soap, phone | The picker button reads "Add 3 soaps · £12.00" at 16px/800. The basket got the three soaps at £4 each = **£12.00**. Parallax off. No errors, no sideways scroll. |
+| Anniversary pebble hanging heart, phone | Gift Box and Gift Wrap Kit are closed rows. Add to Cart is 17px/800. Parallax off. No errors. |
+| Mr & Mrs, desktop 1,440px | Four closed add-on rows, Add to Cart 17px/800, no errors. |
+
+**Already on live, not caused by these changes:** on desktop the page scrolls 10px sideways. The menu list (`ul.list-menu--inline`) is 1,460px wide on a 1,440px screen. Live and the draft measure identically (scrollWidth 1,450 on both), so the bigger menu type didn't cause it. Clipping the nav would also clip the mega-menu drop-downs, so any fix needs care. Not changed.
+
+**Cosmetic:** on the heart and diffuser builders, the Gift Wrap Kit row sits a little indented under the Gift Box row, because it lives inside the builder's extras container.
