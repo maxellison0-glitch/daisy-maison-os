@@ -56,6 +56,11 @@ projects/daisy-street-sign/plan/
 
 !Content Pipeline/
 !Content Pipeline/**
+
+# Soul Soap saying stickers (Label Planet LP15/51SQ sheets)
+!projects/soul-soap-stickers/
+!projects/soul-soap-stickers/**
+projects/soul-soap-stickers/build/
 __pycache__/
 
 # Content Pipeline renders: video, frames and stills. Git keeps every version of
