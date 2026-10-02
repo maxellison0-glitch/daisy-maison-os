@@ -190,3 +190,17 @@ Max asked for a surcharge on more than 5 pebbles.
 3. The real close-up photo.
 4. One or two modern shots.
 5. The wrap-kit images.
+
+**Hero round (Nano Banana 2, 2k, 2 credits each, 10 credits).** Composition references were imported from our CDN:
+- `e30623c4…`: Family Blossom Tree hero.
+- `efa283bd…`: Mum Christmas hero.
+
+| Option | Job | Verdict |
+|---|---|---|
+| A: hands, beach golden hour | `727c5163-81fd-4e5b-8e60-b457aa435b69` | agent-pass, wording checked |
+| B: hands, cottage garden | `9f28fa1c-48f5-483d-bbb9-ee0389b3ce88` | agent-pass, wording checked |
+| C: hands, bright white room | `31904a59-432a-4f64-99da-21d9c08e68be` | agent-pass, wording checked |
+| D: Christmas flat lay (first take) | `c2843ac8-05f7-4c31-8699-ef1e45e56d7a` | **rejected**: no pebble people in the frame |
+| D: Christmas flat lay (redo, prompt changed to insist on the pebbles) | `6e039a2f-c5bd-4bae-93b0-7d44c834f0e6` | agent-pass |
+
+**Running total:** 41 credits. Options A–D went to Max for the team vote. Nothing from this round is on the product yet.
