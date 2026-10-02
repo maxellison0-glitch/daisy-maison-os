@@ -48,7 +48,7 @@ diff -ruN orig/assets/dm-pet-sign.css new/assets/dm-pet-sign.css
 +.pet-sign__submit{font-weight:800!important;letter-spacing:.03em!important}
 diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
 --- orig/assets/dm-pet-sign.js	2026-10-02 07:58:26.404185940 +0000
-+++ new/assets/dm-pet-sign.js	2026-10-02 10:11:44.153039473 +0000
++++ new/assets/dm-pet-sign.js	2026-10-02 10:37:25.020583483 +0000
 @@ -26,8 +26,19 @@
      previewPersonalised: 'Your personalised sign preview.',
      extrasUnavailable: 'A selected extra is unavailable.',
@@ -70,16 +70,34 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
    function clean(value) { return String(value == null ? '' : value).replace(/\s+/g, ' ').trim(); }
    function qs(root, selector) { return root.querySelector(selector); }
    function qsa(root, selector) { return Array.prototype.slice.call(root.querySelectorAll(selector)); }
-@@ -169,6 +180,8 @@
+@@ -143,7 +154,7 @@
+     svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+     svg.style.width = '100%'; svg.style.height = 'auto'; svg.style.display = 'block';
+     var outer = node('path', { d: p.outer }, svg);
+-    node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
++    var inner = node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
+     var holes = (p.holes || []).map(function (hole) {
+       return node('circle', { cx: hole.x, cy: hole.y, r: hole.r, fill: p.PANEL || '#ffffff', 'stroke-width': '0.4' }, svg);
+     });
+@@ -169,6 +180,17 @@
        var layout = layoutText(p, lines.lineOne, lines.lineTwo, measure);
        outer.setAttribute('fill', colour);
        holes.forEach(function (hole) { hole.setAttribute('stroke', colour); });
-+      // Wording takes the border colour, as on every other street-sign preview.
++      // Wording takes the border colour, as on every other street-sign preview,
++      // and nothing gets an outline: the theme's base CSS was stroking the sign
++      // and both lines in its dark text colour (#232323), which drowned line 2.
 +      first.text.setAttribute('fill', colour); second.text.setAttribute('fill', colour);
++      [outer, inner, first.text, second.text].forEach(function (el) {
++        el.setAttribute('stroke', 'none');
++        el.style.setProperty('stroke', 'none', 'important');
++        el.style.setProperty('stroke-width', '0', 'important');
++        el.style.setProperty('paint-order', 'normal', 'important');
++        el.style.setProperty('-webkit-text-stroke', '0', 'important');
++      });
        apply(first, layout.first); apply(second, layout.second);
        svg.setAttribute('aria-label', [lines.lineOne, lines.lineTwo].filter(Boolean).join('. ') || labels.previewPersonalised);
      };
-@@ -181,6 +194,11 @@
+@@ -181,6 +203,11 @@
        var config;
        try { config = JSON.parse(qs(root, '[data-pet-config]').textContent); } catch (_) { return null; }
        var labels = Object.assign({}, LABELS, config.labels || {});
@@ -91,7 +109,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
        var form = qs(root, '[data-pet-form]');
        var lineOne = qs(root, '[data-pet-line-one]'), lineTwo = qs(root, '[data-pet-line-two]');
        var errorNode = qs(root, '[data-pet-error]'), status = qs(root, '[data-pet-status]');
-@@ -193,6 +211,25 @@
+@@ -193,6 +220,25 @@
        var busy = false, uncertain = false, completed = false, transport;
        var renderPreview = createPreview(win, qs(root, '[data-pet-preview]'), labels);
        var wrapCard = qs(root, '[data-pet-wrap]');
@@ -117,7 +135,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
        function values() {
          var size = qs(root, 'input[name="pet-size"]:checked'), colour = qs(root, 'input[name="pet-colour"]:checked');
          var wrap = wrapSelection(config, wrapCard, win.DaisyWrapKits);
-@@ -215,11 +252,20 @@
+@@ -215,11 +261,20 @@
          var extrasPrice = extrasTotal(extras);
          var colour = (config.colours || COLOURS).find(function (c) { return c.value === data.colour && /^#[0-9a-f]{6}$/i.test(c.colour); }) || COLOURS[0];
          var previewBox = qs(root, '[data-pet-preview-box]');
@@ -142,7 +160,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
          text(qs(root, '[data-pet-extras-summary]'), extras.length ? labels.extrasSelected.replace('{count}', String(extras.length)).replace('{amount}', money(extrasPrice)) : labels.extrasNone);
          qsa(root, '[data-pet-extra]').forEach(function (input) {
            var extra = (config.extras || []).find(function (candidate) { return String(candidate.variantId) === input.value; });
-@@ -252,6 +298,7 @@
+@@ -252,6 +307,7 @@
        function submit() {
          if (busy || uncertain) return Promise.resolve(false);
          clearError();
@@ -150,7 +168,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
          var data = values(), invalid = validationKey(data), variant = selected(data);
          if (invalid) { showError(labels[invalid], clean(data.lineTwo).length > 75 ? lineTwo : lineOne); return Promise.resolve(false); }
          if (!variant || !variant.available) { showError(labels.unavailable); return Promise.resolve(false); }
-@@ -289,6 +336,33 @@
+@@ -289,6 +345,33 @@
          submit();
        });
        form.addEventListener('submit', function (event) { event.preventDefault(); submit(); });
@@ -184,7 +202,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
        root.addEventListener('input', function () { if (!busy) { clearError(); render(); } });
        root.addEventListener('change', function () { if (!busy) { clearError(); render(); } });
        // The shared Mr & Mrs picker handles swatch/zoom clicks in capture phase.
-@@ -306,6 +380,7 @@
+@@ -306,6 +389,7 @@
        });
        var controller = { render: render, submit: submit, values: values };
        root.__daisyPetSign = controller;
@@ -192,7 +210,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
        render();
        if (doc.fonts && doc.fonts.load) doc.fonts.load('400 100px "' + FONT + '"').then(function () { if (root.isConnected !== false) render(); }).catch(function () {});
        return controller;
-@@ -317,6 +392,6 @@
+@@ -317,6 +401,6 @@
      doc.addEventListener('shopify:section:load', scan);
      return api;
    }

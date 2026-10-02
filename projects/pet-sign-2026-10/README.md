@@ -128,3 +128,7 @@ At Max's request, the pet sign Small went from £16.95 to **£14.95**. The compa
 ## Preview wording colour, 2 Oct 2026
 
 The pet preview wording was hard-coded black. On every other street-sign preview the wording takes the border colour (`--dm-preview-colour`). It now does here too: in `dm-pet-sign.js`, `render()` sets both text lines' fill to the chosen colour (md5 `7c639577…`). Built on a fresh copy of live, **"Claude – pet preview colours (2 Oct)"** (208260268371), for Max to publish.
+
+## No outlines on coloured signs, 2 Oct 2026
+
+The theme's base CSS was outlining the preview's border and both lines in its dark text colour (#232323). On coloured signs that drew a black outline, and it swamped the small Line 2 so it looked black. `render()` now forces `stroke: none !important` on the plate, panel and both lines. Checked on all five colours, using computed styles and pixels: Sage/Grass/Blue/Grey come out pure colour with 0 dark pixels in Line 2, and Black stays black. dm-pet-sign.js md5 `da191154…`, on "Claude – pet preview colours (2 Oct)" (208260268371).
