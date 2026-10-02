@@ -124,3 +124,7 @@ Max published "Claude – pet landing page (2 Oct)" (208250732883). The four pet
 ## Price change, 2 Oct 2026
 
 At Max's request, the pet sign Small went from £16.95 to **£14.95**. The compare-at stays at £24.95, so the page now shows SAVE £10.00. Medium (£24.94) and Large (£27.94) are unchanged.
+
+## Preview wording colour, 2 Oct 2026
+
+The pet preview wording was hard-coded black. On every other street-sign preview the wording takes the border colour (`--dm-preview-colour`). It now does here too: in `dm-pet-sign.js`, `render()` sets both text lines' fill to the chosen colour (md5 `7c639577…`). Built on a fresh copy of live, **"Claude – pet preview colours (2 Oct)"** (208260268371), for Max to publish.
