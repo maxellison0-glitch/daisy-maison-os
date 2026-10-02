@@ -125,3 +125,14 @@ No faces went into the generator. Every image's wording was checked at full size
 11. Pebble macro.
 12. The existing Christmas-wrapped picture.
 13. The existing wrap-kit contents image.
+
+## Names box, 2 Oct (Max)
+
+Max asked to rename the personalisation to "names to appear underneath" and put it below the first line box.
+- The separate "Name" box under each pebble is gone.
+- In its place is one **"Names to appear underneath"** box, placed below the wording box (the picture's first line). It is optional, with placeholder "e.g. Daddy, Mummy, Ruby".
+- The second picture gets the same box, prefilled from the first.
+- The basket property is `Names to appear underneath`.
+- Intro copy: "Choose your frame colour, pebble characters, wording and the names to appear underneath."
+- Builder snippet md5 `335c2cf2…`.
+- Max asked for no more testing, so this was not tested on the storefront. Only the saved checksum was verified.
