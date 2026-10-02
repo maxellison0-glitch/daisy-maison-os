@@ -8,11 +8,9 @@
   - a beach sunset with three pebble people holding hands;
   - "DADDY ♥ MUMMY ♥ RUBY" beneath.
 
-**Status:** not finished.
-- The product exists, with its gallery.
-- The builder config is on the unpublished copy **"Claude – family beach pebble picture (2 Oct)"** (theme `208280125779`). That copy is a duplicate of live "Claude – pet preview colours (2 Oct)" (`208260268371`).
-- **On the copy, the personalisation builder does not switch on for this product yet** (see "Blocked" below).
-- Not published. Max publishes.
+**Status:** built and tested on the unpublished copy **"Claude – family beach pebble picture (2 Oct)"** (theme `208280125779`), a duplicate of live "Claude – pet preview colours (2 Oct)" (`208260268371`). Not published. Max publishes, then switches the product from Unlisted to Active.
+
+Preview: https://daisymaison.co.uk/products/family-beach-sunset-personalised-pebble-picture?preview_theme_id=208280125779
 
 ## Product (modelled on Family Walk In The Park, its closest family sibling)
 
@@ -47,7 +45,7 @@
 - No matching heart is offered, because there is no beach-family heart product.
 - Full change: `family-beach-0210.diff`.
 
-## Blocked: the builder stays hidden for this product
+## Fixed: the builder stayed hidden at first
 
 Phone tests on the copy (390px, gated loads):
 - **New product:** the gallery, title, price and proof line all render. The builder root renders with valid config JSON, its scripts load, and there are no script errors. But the root keeps its `hidden` attribute, so the page falls back to the plain Add to Cart.
@@ -55,7 +53,17 @@ Phone tests on the copy (390px, gated loads):
 - **Control:** Walk In The Park on the same copy shows the full builder (frame, pebble characters with names, wording, second picture £20, easel, wrap kit).
 - **Admin data:** identical apart from status (Unlisted vs Active) and handle. `/products/<handle>.js` and `.json` both return 200.
 - **Not the cause:** `layout/theme.liquid` does not gate pebble pictures by handle.
-- **Likely cause:** `assets/daisy-pebble-picture.js` only switches on for known handles. My permission check blocked reading that script, so this is untested. It needs Max's OK to read and, if so, a one-line addition on the copy.
+- **Cause:** `assets/daisy-pebble-picture.js` has its own list of allowed handles (`var handles = [...]`) and stops if the page's handle isn't on it. Reading the script was blocked by the permission check until Max asked for the landing page to be finished.
+- **Fix:** the handle was added to that list on the copy (md5 `562e86cd…`).
+- **Lesson:** a new pebble picture needs its handle in **both** `dm-pebble-picture-builder.liquid` (config) **and** `daisy-pebble-picture.js` (allowlist).
+
+**Tested after the fix** (390px phone, copy):
+- The builder shows "Create your family beach pebble picture" and £34.95 / £29.95 / SAVE £5.00.
+- Fields: Frame Colour (White first), 1–8 pebble characters with names, and keep-or-change wording ("Family – Together Is Our Favourite Place To Be").
+- Offers: second picture £20, easel £5.95, gift wrap kit £5.95.
+- Proof line: "Loved by families across the UK".
+- Basket: 1× £29.95, with `Frame Colour: White`, `Change Text?: NO Keep Family – Together is our favourite place to be`, `No. of pebbles: 3 (Inc dog/cat)`, Pebble 1 Adult / Name 1 Daddy, Pebble 2 Adult / Name 2 Mummy, Pebble 3 Child / Name 3 Ruby, and `*SECOND FRAME*: NO Thanks`.
+- No script errors.
 
 ## Images (Higgsfield)
 
@@ -89,19 +97,31 @@ No faces went into the generator. Every image's wording was checked at full size
 | `3b2fb44a-85d4-4e46-bd2a-0f5da230c6f3` | Picture ledge over a sofa | **no**: the frame is shown roughly sofa-width, which misleads on the 21x30cm size |
 | `606c2430-31f2-41b9-819d-05e0a7e801f1` | Hand placing it on a walnut sideboard | yes. Note: a book spine in the background has AI lettering |
 
-**Total spend:** 21 credits (balance before: 1,736).
+**Set 3: Nano Banana 2, 2k, 2 credits each, 10 credits.** Max asked for "less boring backgrounds, no wooden tables, modern, different angles". He also said "Nano Banana 2 only @ 2k" and "no GPT image", so the four GPT images were taken off the product.
+
+| Job | Shot | On product |
+|---|---|---|
+| `cc4aaa79-2ee1-4819-a97a-47318f22cfe2` | Terracotta plinth and wall, low three-quarter angle | yes |
+| `846a32be-ff43-4abf-940f-8c6c8bf3a2bb` | Overhead flat lay on sage linen | yes |
+| `7289a465-ad0b-4901-8a12-74451a5de6fc` | Macro side angle on the pebbles | yes (near the end) |
+| `056ac205-480a-45c3-8486-c19d8ff8ad5b` | Minimal Christmas mantel | yes |
+| `193dcbee-e0b6-40be-99c9-f3fe04a9def7` | Stone windowsill, sea at sunset | yes |
+
+**Total spend:** 31 credits (balance before: 1,736).
 
 **Verdicts.** Every image is `agent-pass` only. None is `max-approved`.
 
-**Gallery order:**
-1. Shelf.
-2. Plinth.
-3. Real close-up photo.
-4. Christmas flat lay.
-5. Hallway.
-6. Hand.
-7. Gift box.
-8. Sideboard.
-9. Roses.
-10. The existing Christmas-wrapped picture.
-11. The existing wrap-kit contents image.
+**Gallery order:** Max asked for set 2's #4 and #2 first, then #3. Set 2's #4 is the sofa-ledge shot I had first left off over scale; Max chose to use it.
+1. Sofa ledge.
+2. Hallway.
+3. Plinth.
+4. Terracotta.
+5. Sea window.
+6. Real close-up photo.
+7. Christmas mantel.
+8. Shelf.
+9. Sage flat lay.
+10. Hand.
+11. Pebble macro.
+12. The existing Christmas-wrapped picture.
+13. The existing wrap-kit contents image.

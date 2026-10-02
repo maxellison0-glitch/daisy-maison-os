@@ -60,3 +60,13 @@
      when 'wedding-church-personalised-pebble-picture'
        assign dm_proof_quote = 'Another beautiful pebble plaque received for a wedding gift. This is the 3rd one I have ordered as a gift and the recipients have loved them.'
        assign dm_proof_line = 'Loved by couples and wedding guests'
+--- a/assets/daisy-pebble-picture.js
++++ b/assets/daisy-pebble-picture.js
+@@ -27,6 +27,7 @@
+     'birthday-blossom-tree-personalised-pebble-picture',
+     'a-little-bit-of-crazy-personalised-pebble-picture',
+     'family-walk-in-the-park-personalised-pebble-picture',
++    'family-beach-sunset-personalised-pebble-picture',
+     'everything-to-me-personalised-pebble-artwork',
+     'wedding-swing-personalised-pebble-picture',
+     'beside-you-personalised-pebble-artwork',
