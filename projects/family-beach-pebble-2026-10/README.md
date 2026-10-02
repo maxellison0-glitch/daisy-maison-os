@@ -136,3 +136,15 @@ Max asked to rename the personalisation to "names to appear underneath" and put 
 - Intro copy: "Choose your frame colour, pebble characters, wording and the names to appear underneath."
 - Builder snippet md5 `335c2cf2…`.
 - Max asked for no more testing, so this was not tested on the storefront. Only the saved checksum was verified.
+
+## Surcharge from 6 pebbles, 2 Oct (Max)
+
+Max asked for a surcharge on more than 5 pebbles.
+- **Product:** the store's existing pebble surcharge, `3-7-8-pebbles-1` "(+£3) 7/8 Pebbles", at £3.00. Max did not give a price, so £3 is assumed.
+- **When:** on this picture only, it is now added for 6, 7 or 8 pebbles (threshold 5).
+- **Second picture:** the surcharge applies per frame, the second picture included.
+- **Basket:** the surcharge line carries `Add-on: Extra pebble people (6-8)`.
+- **Page total:** includes the surcharge, through the cart model's `calculateTotal`.
+- **Selector:** the count options now show the surcharge, "6 (Inc dog/cat) (+£3.00)" and so on. This is a new `showPrice` flag in `daisy-pebble-picture.js`.
+- **Other pebble pictures:** unchanged, because none of them sets the `showPrice` flag. They still add £3 at 7–8 without showing it on the selector.
+- **Checks:** JS md5 `7b8f7f06…` (syntax checked with `node --check`), builder md5 `f6714d98…`. Not storefront-tested, per Max.
