@@ -148,3 +148,45 @@ Max asked for a surcharge on more than 5 pebbles.
 - **Selector:** the count options now show the surcharge, "6 (Inc dog/cat) (+£3.00)" and so on. This is a new `showPrice` flag in `daisy-pebble-picture.js`.
 - **Other pebble pictures:** unchanged, because none of them sets the `showPrice` flag. They still add £3 at 7–8 without showing it on the selector.
 - **Checks:** JS md5 `7b8f7f06…` (syntax checked with `node --check`), builder md5 `f6714d98…`. Not storefront-tested, per Max.
+
+## Hero image plan, 2 Oct (team didn't like sets 1–3)
+
+**Why sets 1–3 missed.** They broke the house hero format. Hero images of the 6 best sellers in Framed Pebble Art (sorted by best-selling):
+
+| Best seller | Hero |
+|---|---|
+| Wedding flower arch | Hands hold the frame, wedding roses blurred behind |
+| Mum flutterby | Christmas kraft flat lay |
+| Family blossom tree | Hands, blurred garden |
+| Engagement love tree | Hands, golden garden bokeh |
+| Christening | Hands, white flowers / garden |
+| Family flutterby | Hands, bright white room |
+
+**The format:**
+- Two hands, with no face, hold the white frame up front-on.
+- The frame fills about 70% of the square, so the wording and names read on a phone. 95% of traffic is mobile.
+- A soft, warm, blurred occasion background behind it.
+- Sets 2–3 went to interiors, plinths and flat lays. The frame was small, the props led, and the result looked off-brand in the collection grid.
+
+**Brief for the new hero (Nano Banana 2, 2k):**
+- References:
+  - The real photos (product).
+  - The Family Blossom Tree hero (composition only; its artwork is not to be copied).
+  - The Mum Christmas hero (layout for the Christmas flat lay).
+- Options:
+  1. Hands, blurred British beach at golden hour (dunes, sea, low sun), which ties to the print.
+  2. Hands, blurred cottage garden, no pink roses.
+  3. Hands, bright white room.
+  4. Christmas kraft flat lay in the Mum-hero layout, for gallery image 2 in gifting season.
+
+**Sign-off in one round:**
+1. Show the team the best-seller sheet next to options 1–3.
+2. Each person picks one, and the most votes becomes the hero.
+3. Objections must be specific ("pebbles look fake", "too dark"), so the next round fixes the actual problem.
+
+**Gallery after the vote:**
+1. The winning hero.
+2. The Christmas flat lay.
+3. The real close-up photo.
+4. One or two modern shots.
+5. The wrap-kit images.
