@@ -27,6 +27,8 @@ projects/homepage-rebuild/**/__pycache__/
 !projects/pamper-range-2026-09/**
 !projects/pet-sign-2026-10/
 !projects/pet-sign-2026-10/**
+!projects/family-beach-pebble-2026-10/
+!projects/family-beach-pebble-2026-10/**
 projects/daisy-street-sign/**/*.pyc
 # Generated output: reproducible from the order text plus the scripts, and the
 # repo syncs with git add -A. Tracking it would grow main by ~130 KB per order
