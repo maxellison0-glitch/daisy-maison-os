@@ -107,3 +107,12 @@ The full change is in `pet-landing-0210.diff`.
 3. **Feefo badges.** The Feefo account reads as closed, so the site-wide "Feefo Rated / Gold Trusted Service 2026" badges may no longer be backed up. Check before an ASA complaint does.
 4. **Christmas order-by date.** It's worth adding to this page once the real cut-off dates are set.
 5. **Pet-sign reviews.** There are none yet. Ask the first buyers for a photo of their dog with the sign; that is the strongest proof this page could have.
+
+## Revised 2 Oct, 08:15: back to Line 1 / Line 2
+
+Max rejected the dog's-name box. Our street-sign pages take Line 1 / Line 2 directly, so this page does too.
+- The name box and the "write your own" toggle are removed.
+- "Main Sign Text" / "Smaller Sign Text (Optional)" are the inputs again, with placeholders "e.g. No Need to Knock" / "e.g. Buddy already knows you're here".
+- The preview still shows the advert's sign as the example until the customer types.
+
+Re-tested on the copy: the preview updated to "ROLO ALREADY KNOWS YOU'RE HERE", and the basket got `Line 1: No Need to Knock`, `Line 2: Rolo already knows you're here`, Small, £16.95. Section md5 `05e2c06f…`, language file `ad399684…`.

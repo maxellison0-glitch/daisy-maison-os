@@ -193,7 +193,7 @@ diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
  });
 diff -ruN orig/locales/en.default.json new/locales/en.default.json
 --- orig/locales/en.default.json	2026-10-02 07:58:26.398137756 +0000
-+++ new/locales/en.default.json	2026-10-02 07:53:41.784619984 +0000
++++ new/locales/en.default.json	2026-10-02 08:09:57.597927520 +0000
 @@ -1222,12 +1222,12 @@
      "slow": "Still checking your basket. Please wait…"
    },
@@ -207,18 +207,11 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
 -    "intro": "Your wording, your pet’s sign. Add up to two lines, choose a colour and pick your size.",
 +    "eyebrow": "Personalised pet sign",
 +    "title": "No Need to Knock Pet Sign",
-+    "intro": "Add your dog’s name and see your sign straight away. Made for the front door, the garden gate or their favourite spot.",
++    "intro": "Your wording, your pet’s sign. Type your two lines, choose a border colour and pick your size.",
      "gallery": {
        "label": "Product photographs",
        "first": "Photo 1 of 2: No need to knock",
-@@ -1237,15 +1237,15 @@
-       "show_first": "Show No need to knock photograph",
-       "show_second": "Show Pussy Palace photograph",
-       "second_alt": "Pussy Palace personalised street sign beside a sleeping cat in a living room",
--      "note": "Photos show example wording. Create your own below."
-+      "note": "Photos show example wording. Add your dog’s name below."
-     },
-     "personalised": "Personalisation included",
+@@ -1243,18 +1243,18 @@
      "fact_one": "Made for your pet",
      "fact_two": "Indoor & outdoor",
      "fact_three": "3mm acrylic",
@@ -229,8 +222,11 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
 +    "name_help": "Two dogs? Add both, e.g. Buddy & Bella.",
      "line_one": "Main sign text",
      "line_two": "Smaller sign text (optional)",
-     "line_one_placeholder": "Type your main wording",
-@@ -1254,7 +1254,7 @@
+-    "line_one_placeholder": "Type your main wording",
+-    "line_two_placeholder": "Type your smaller wording",
++    "line_one_placeholder": "e.g. No Need to Knock",
++    "line_two_placeholder": "e.g. Buddy already knows you're here",
+     "border": "Border colour",
      "size": "Choose your size",
      "add": "Add my sign",
      "review_cart": "Review my basket",
@@ -248,7 +244,7 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
 +      "outdoor_q": "Can it go outside?",
 +      "outdoor_a": "Yes. It’s made from 3mm acrylic with the wording and border printed in UV inks, and it’s suitable for indoor and outdoor use.",
 +      "two_pets_q": "Can I add two dogs?",
-+      "two_pets_a": "Yes. Type both names, for example Buddy & Bella, and your sign will read “Buddy & Bella already know you’re here”. Each line holds up to 75 characters, and you can write your own wording instead if you prefer.",
++      "two_pets_a": "Yes. Add both names in your wording, for example “Buddy & Bella already know you’re here”. Each line holds up to 75 characters.",
 +      "dispatch_q": "How long will it take?",
 +      "dispatch_a": "Standard orders are personalised and dispatched within 5–7 working days. Express orders are made and dispatched within 2–3 working days, and super express orders the next working day if placed before 12pm. During busy periods such as Christmas, dispatch can take 7–14 working days."
      },
@@ -269,7 +265,7 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
        "review": "We could not confirm the basket. Please review it before adding again.",
        "changed": "This size or price has changed. Refresh the page before adding.",
 -      "previewSample": "Sign preview — enter your wording in the fields below.",
-+      "previewSample": "Example — add your dog’s name below to make it yours.",
++      "previewSample": "Example — type your own wording below.",
        "previewPersonalised": "Your sign preview",
 -      "customExpand": "Edit the full wording",
 -      "customCollapse": "Use the pet name design"
@@ -287,7 +283,7 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
 +    "story_gift": "A lovely gift for any dog lover too: a new puppy, a birthday, Christmas, or a thank-you for the dog walker.",
 +    "steps": {
 +      "title": "How it works",
-+      "one": "Add your dog’s name. Your sign preview updates as you type.",
++      "one": "Type your two lines. Your sign preview updates as you type.",
 +      "two": "Choose a border colour and size.",
 +      "three": "We print your sign to order and dispatch it within 5–7 working days."
 +    },
@@ -304,7 +300,7 @@ diff -ruN orig/locales/en.default.json new/locales/en.default.json
    "soap_gift_note": {
 diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
 --- orig/sections/dm-pet-sign.liquid	2026-10-02 07:58:26.402226208 +0000
-+++ new/sections/dm-pet-sign.liquid	2026-10-02 07:53:41.785217738 +0000
++++ new/sections/dm-pet-sign.liquid	2026-10-02 08:09:57.594318076 +0000
 @@ -20,8 +20,9 @@
      <header class="pet-sign__heading">
        <p class="pet-sign__eyebrow">{{ 'pet_sign.eyebrow' | t }}</p>
@@ -334,7 +330,7 @@ diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
              {% endfor %}
            </div>
            <p class="pet-sign__gallery-note">{{ 'pet_sign.gallery.note' | t }}</p>
-@@ -60,17 +61,23 @@
+@@ -60,17 +61,17 @@
      </div>
      <div class="pet-sign__personalise">
        <form id="{{ pet_form_id }}" data-pet-form method="post" novalidate>
@@ -344,13 +340,7 @@ diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
 +          <p class="pet-sign__preview-caption" data-pet-preview-caption>{{ 'pet_sign.labels.previewSample' | t }}</p>
 +          <p class="pet-sign__wording" data-pet-wording></p>
 +        </div>
-+        <div class="pet-sign__name" data-pet-name-box>
-+          <label for="PetName-{{ section.id }}">{{ 'pet_sign.name' | t }}</label>
-+          <input id="PetName-{{ section.id }}" data-pet-name type="text" maxlength="40" autocomplete="off" autocapitalize="words" enterkeyhint="done" placeholder="{{ 'pet_sign.name_placeholder' | t }}">
-+          <p class="pet-sign__helper">{{ 'pet_sign.name_help' | t }}</p>
-+        </div>
-+        <p class="pet-sign__mode"><button type="button" class="pet-sign__text-button" data-pet-custom-toggle aria-expanded="false" aria-controls="PetCustom-{{ section.id }}">{{ 'pet_sign.labels.customExpand' | t }}</button></p>
-+        <div class="pet-sign__custom" id="PetCustom-{{ section.id }}" data-pet-custom hidden>
++        <div class="pet-sign__custom" id="PetCustom-{{ section.id }}" data-pet-custom>
            <label for="PetLineOne-{{ section.id }}">{{ 'pet_sign.line_one' | t }}</label>
            <input id="PetLineOne-{{ section.id }}" data-pet-line-one name="properties[Line 1]" type="text" maxlength="75" autocomplete="off" placeholder="{{ 'pet_sign.line_one_placeholder' | t }}" required>
            <label for="PetLineTwo-{{ section.id }}">{{ 'pet_sign.line_two' | t }}</label>
@@ -364,7 +354,7 @@ diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
          <fieldset class="pet-sign__colours">
            <legend>{{ 'pet_sign.border' | t }}</legend>
            <div class="pet-sign__colour-options">
-@@ -143,20 +150,55 @@
+@@ -143,20 +144,55 @@
            <p class="pet-sign__status" data-pet-status role="status" aria-live="polite"></p>
            <a class="pet-sign__cart-link" data-pet-cart-link href="{{ routes.cart_url }}" hidden>{{ 'pet_sign.review_cart' | t }}</a>
            <p class="pet-sign__delivery">{{ 'pet_sign.delivery_short' | t }}</p>
@@ -400,7 +390,7 @@ diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
 +      <h2>{{ 'pet_sign.story_title' | t }}</h2>
 +      <p>{{ 'pet_sign.story_body' | t }}</p>
 +      <p>{{ 'pet_sign.story_gift' | t }}</p>
-+      <a class="pet-sign__story-link" href="#PetName-{{ section.id }}" data-pet-jump>{{ 'pet_sign.story_link' | t }} <span aria-hidden="true">&rarr;</span></a>
++      <a class="pet-sign__story-link" href="#PetLineOne-{{ section.id }}" data-pet-jump>{{ 'pet_sign.story_link' | t }} <span aria-hidden="true">&rarr;</span></a>
 +    </div>
      <div class="pet-sign__faqs">
        <h2>{{ 'pet_sign.details_title' | t }}</h2>
@@ -420,7 +410,7 @@ diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
    <script type="application/json" data-pet-config>{
      "productId":{{ pet_product.id | json }},
      "productHandle":{{ pet_product.handle | json }},
-@@ -171,7 +213,8 @@
+@@ -171,7 +207,8 @@
      "labels":{
        "extrasNone":{{ 'pet_sign.labels.extrasNone' | t | json }},"extrasSelected":{{ 'pet_sign.labels.extrasSelected' | t | json }},"extrasChanged":{{ 'pet_sign.labels.extrasChanged' | t | json }},"extrasUnavailable":{{ 'pet_sign.labels.extrasUnavailable' | t | json }},
        "added":{{ 'pet_sign.labels.added' | t | json }},"nameTooLong":{{ 'pet_sign.labels.nameTooLong' | t | json }},"lineTooLong":{{ 'pet_sign.labels.lineTooLong' | t | json }},"loading":{{ 'pet_sign.labels.loading' | t | json }},
