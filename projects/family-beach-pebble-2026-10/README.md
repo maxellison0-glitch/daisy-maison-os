@@ -204,3 +204,16 @@ Max asked for a surcharge on more than 5 pebbles.
 | D: Christmas flat lay (redo, prompt changed to insist on the pebbles) | `6e039a2f-c5bd-4bae-93b0-7d44c834f0e6` | agent-pass |
 
 **Running total:** 41 credits. Options A–D went to Max for the team vote. Nothing from this round is on the product yet.
+
+**Max's choice, 2 Oct.** "Use 1-3 as main images".
+
+The gallery now runs:
+1. A, beach hero.
+2. B, garden.
+3. C, white room.
+4. D, Christmas flat lay.
+5. The real close-up photo.
+6. The earlier modern shots: sofa, hallway, plinth, terracotta, sea window, Christmas mantel, shelf, sage, hand, pebble macro.
+7. The two wrap-kit images.
+
+17 images in all.
