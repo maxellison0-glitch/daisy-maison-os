@@ -116,3 +116,7 @@ Max rejected the dog's-name box. Our street-sign pages take Line 1 / Line 2 dire
 - The preview still shows the advert's sign as the example until the customer types.
 
 Re-tested on the copy: the preview updated to "ROLO ALREADY KNOWS YOU'RE HERE", and the basket got `Line 1: No Need to Knock`, `Line 2: Rolo already knows you're here`, Small, £16.95. Section md5 `05e2c06f…`, language file `ad399684…`.
+
+## Published 2 Oct 2026, ~08:18
+
+Max published "Claude – pet landing page (2 Oct)" (208250732883). The four pet files on live match the tested versions. Live check on the ad link: sample preview shown, typing updated the sign, and the basket got Line 1 "No Need to Knock" / Line 2 "Rolo already knows you're here", Small £16.95.
