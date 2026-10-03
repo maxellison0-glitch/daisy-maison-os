@@ -6,7 +6,7 @@ Audited all **783 active products / 959 variants**, the live theme's **1,023 fil
 
 The conversion work is deliberately scoped to the five landing pages in Max's handoff: **407 landing sessions and 30 orders** across 1–2 October (handoff figures, not re-attributed here). Broader catalogue label corrections are audit maintenance, not claimed conversion improvements. The actual theme difference is **281 lines added / 16 removed across 14 files**. Full downloaded theme copies and raw working data are excluded from the source commit.
 
-Built **Codex – price clarity & clean pages – 3 Oct**, theme **208326623571**, as an **unpublished duplicate** of live theme **208291496275** (Claude – cart split fix (2 Oct)). Max publishes it himself. Catalogue/SEO/Globo label corrections are live shared data; the page-layout and theme price-display work is draft only.
+**Published with Max's approval on 3 October 2026 at 16:37:26 BST (15:37:26 UTC).** Theme **208326623571**, **Codex – price clarity & clean pages – 3 Oct**, is now live. The previous theme **208291496275** (Claude – cart split fix (2 Oct)) remains unpublished and available for rollback. Immediately before publication all 14 reviewed file bodies matched, and the previous live theme had not changed since the audited baseline. References to “draft” below describe the reviewed implementation and its pre-publication tests; that implementation is now published.
 
 [Preview Mr & Mrs](https://daisymaison.co.uk/products/mr-mrs-personalised-street-sign-gift?preview_theme_id=208326623571) · [All five screenshot pairs](../projects/price-landing-audit-2026-10-03/screenshots/index.html) · [Draft source patch](../projects/price-landing-audit-2026-10-03/draft-theme.patch)
 

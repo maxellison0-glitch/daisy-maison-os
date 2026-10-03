@@ -3,7 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
-## 2026-10-03 — price corrections live; landing-page draft NOT published
+## 2026-10-03 at 16:37:26 BST — reviewed landing-page theme published
+
+Max approved publication after reviewing the layout and the base-upsell placement. Codex published theme **208326623571**, “Codex – price clarity & clean pages – 3 Oct”, using Shopify admin. Shopify confirms MAIN; previous theme **208291496275** is UNPUBLISHED and retained for rollback. Preflight confirmed all 14 reviewed file bodies matched and no intervening changes to the previous live theme. No additional theme code or selling-price changes were made during publication.
+
+**Measurement start:** 2026-10-03 16:37:26 BST / 15:37:26 UTC. Compare complete equal-length pre/post windows for the five scoped landing pages and track conversion, accessory take rate, checkout abandonment and AOV. Account for Aftersell's existing 50/50 test and traffic mix; this release has no measured conversion lift yet.
+
+## 2026-10-03 — price corrections and pre-publication audit
 
 Executed by Codex under `codex-handoff-2026-10-03-prices-landing-pages.md`. [Full audit and decisions](price-audit-2026-10-03.md). Final catalogue check: 783 active products / 959 variants; all selling prices and compare-at values match the starting snapshot. The Globo incident below was a transient exception, restored before completion.
 
@@ -20,7 +26,7 @@ Executed by Codex under `codex-handoff-2026-10-03-prices-landing-pages.md`. [Ful
 - **Draft basket:** added collapsed, personalised second-sign/picture offers with current variant prices, actual parent line linkage and existing cart-response reconciliation. Large second sign tested at £18.94. Existing accessory offer and 10% discount retained; gift wrap reached checkout at £5.36. No order placed.
 - **Aftersell read-only finding:** existing Street sign ppu funnel splits traffic 50/50 between strips and easel/wrap, each with 10% off. Editor confirms easel/wrap £5.36 from £5.95. No funnel or discount changed. This is a measurement confounder, not a new rollout.
 
-**Measurement start:** not 3 Oct by default. Record the actual publication timestamp when Max publishes the draft. Compare complete equal-length pre/post windows for the five product pages; track eligible-order strips/easel/wrap take rate, conversion, checkout abandonment and AOV. Keep Aftersell's split and traffic/product mix visible. No conversion lift is yet established. Do not track Large as a separate upsell (it is a main variant).
+The draft status in the audit entries above records the original handoff state. Publication and its measurement start are recorded in the later entry at the top. Do not track Large as a separate upsell (it is a main variant).
 
 ## 2026-07-12
 

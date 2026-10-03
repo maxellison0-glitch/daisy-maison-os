@@ -1,0 +1,45 @@
+{
+  "publishedAt": "2026-10-03T15:37:26Z",
+  "publishedAtLondon": "2026-10-03 16:37:26 BST",
+  "approvedBy": "Max in this task after reviewing the draft",
+  "themeId": "208326623571",
+  "themeName": "Codex – price clarity & clean pages – 3 Oct",
+  "previousThemeId": "208291496275",
+  "preflight": {
+    "time": "2026-10-03T15:37:13.598Z",
+    "themeId": "208326623571",
+    "previousThemeId": "208291496275",
+    "fileCount": 14,
+    "allReviewedFilesMatch": true,
+    "previousLiveUpdatedAt": "2026-10-02T18:20:47Z"
+  },
+  "roleVerification": [
+    {
+      "id": "gid://shopify/OnlineStoreTheme/208291496275",
+      "name": "Claude – cart split fix (2 Oct)",
+      "role": "UNPUBLISHED",
+      "createdAt": "2026-10-02T18:09:26Z",
+      "updatedAt": "2026-10-03T15:37:26Z"
+    },
+    {
+      "id": "gid://shopify/OnlineStoreTheme/208326623571",
+      "name": "Codex – price clarity & clean pages – 3 Oct",
+      "role": "MAIN",
+      "createdAt": "2026-10-03T11:14:59Z",
+      "updatedAt": "2026-10-03T15:37:26Z"
+    }
+  ],
+  "publicChecks": [
+    {
+      "handle": "kitchen-personalised-street-sign",
+      "previewExited": true,
+      "result": "Large selection updated both price header and total to £25.94; mounting strips was the sole main add-on; basket gift-wrap note visible."
+    },
+    {
+      "handle": "wedding-flower-arch-personalised-pebble-picture",
+      "previewExited": true,
+      "result": "Public page displayed £22.95 / valid £34.95 comparison, one easel add-on at £5.95 with No thanks selected, required personalisation, delivery, review, and basket gift-wrap note."
+    }
+  ],
+  "limits": "Prior eight cart/checkout scenarios are in the audit. Publication smoke checks did not create an order or modify the user's existing two-item basket. No new theme code or price mutations during publication."
+}

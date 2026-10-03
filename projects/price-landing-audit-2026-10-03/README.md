@@ -1,6 +1,6 @@
 # Daisy Maison price and landing-page review — 3 Oct 2026
 
-**Preview only. Max publishes theme 208326623571.** Current live theme is 208291496275.
+**Published with Max's approval on 3 October 2026 at 16:37:26 BST (15:37:26 UTC).** Live theme: 208326623571. Previous theme 208291496275 is retained as an unpublished rollback option. All 14 reviewed files matched immediately before publication.
 
 - [Read the audit, traffic priorities and price decisions](../../operating%20systems/price-audit-2026-10-03.md).
 - [Open all five before/after screenshot pairs](screenshots/index.html).
@@ -38,4 +38,4 @@ That suppression is for three unchanged legacy scripts; it is not deployed theme
 
 The full live-theme download, validation copy and intermediate generator data are local working material and excluded from Git. The large raw catalogue/metafield/manifests are compressed into `operating systems/price-audit-2026-10-03/catalogue-metadata-evidence.zip`. Human-readable CSVs list the variants, theme price references and Globo options. Correction JSON files preserve exact original/new labels.
 
-No automatic publication or ongoing monitor is configured. Start performance comparison from Max's actual publication timestamp, accounting for Aftersell's existing split and traffic mix.
+Publication was performed in Shopify admin with Max's approval. No ongoing monitor is configured. Start performance comparison from 3 October 2026 at 16:37:26 BST, accounting for Aftersell's existing split and traffic mix.
