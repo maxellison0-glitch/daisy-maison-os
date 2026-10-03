@@ -166,6 +166,14 @@ table values. Section 5 is the DEEP section.
 8. One thing to watch today: BOLD DIRECTIVE first (the action, in a few words),
    then 2-3 sentences of evidence. Nothing more.
 
+COMPARISON RULE (set by Max 3 Oct 2026) — no bare numbers. Every table row
+(summary, funnel, sources, products, every campaign and ad set) shows the same
+metric's 7-day average (or the previous day if seven days are not available)
+and a plain verdict: ✅ better / ⚠️ normal / 🔴 worse. Never use jargon such as
+"run-rate" or "baseline" without saying what it means in a few words. Before
+writing, read yesterday's digest in `digests/` and carry its points forward,
+including anything Max corrected.
+
 FORMATTING — tables carry the data, bold carries the actions. Separate sections
 with horizontal rules. No prose paragraphs restating numbers already in tables.
 
