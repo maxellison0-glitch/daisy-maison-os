@@ -1,0 +1,3 @@
+  - generic: Add a second robin decoration — £11.95
+  - combobox "Add a second robin decoration — £11.95":
+    - option "YES Please (+ £11.95 GBP)"

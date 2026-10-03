@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const model = require('./theme-changes/assets/daisy-street-sign-cart-model.js');
+const prices = {base:1125,compareAt:2895,medium:599,large:899,mainSizes:{standard:1125,medium:1724,large:2024},compareAtSizes:{standard:2895,medium:2895,large:2895},second:995,secondSizes:{standard:995,medium:1594,large:1894}};
+const variants = {main:1,mainSizes:{standard:1,medium:2,large:3},second:4,secondSizes:{standard:4,medium:5,large:6}};
+const state={quantity:1,lineOne:'QA & QA',size:'large',secondSign:false,gifts:[]};
+assert.deepEqual(model.calculateTotal(state,variants,prices),{current:2024,compareAt:2895});
+assert.deepEqual(model.calculateTotal({...state,quantity:2},variants,prices),{current:4048,compareAt:5790});
+assert.equal(model.calculateTotal(state,variants,{...prices,compareAtSizes:{standard:2895,medium:0,large:0}}).compareAt,null);
+const updated={...prices,mainSizes:{standard:1495,medium:2194,large:2794},secondSizes:{standard:995,medium:1675,large:2075}};
+const lines=model.buildCartItems({...state,secondSign:true,secondSize:'medium',secondLineOne:'SECOND'},variants,updated,'qa');
+assert.equal(lines[0].linePrice,2794);
+assert.equal(lines[1].linePrice,1675);
+assert.equal(lines[1].parent_id,3);
+console.log('PASS: actual selected compare-at, quantity, no compare-at, independent price changes and second-sign parent.');

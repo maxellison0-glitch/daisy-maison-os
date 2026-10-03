@@ -1,0 +1,365 @@
+--- 208280125779/assets/daisy-cart-submit.js
++++ live/assets/daisy-cart-submit.js
+@@ -27,26 +27,58 @@
+     }
+ 
+     function completeLines(lines, expected) {
+-      if (!Array.isArray(lines) || lines.length !== expected.length) return false;
++      if (!Array.isArray(lines)) return false;
++
++      var groups = {};
++      lines.forEach(function (line) {
++        var properties = line && line.properties;
++        var attempt = properties && properties['_Daisy cart attempt'];
++        var item = properties && properties['_Daisy cart item'];
++        if (attempt == null || item == null) return;
++        var key = String(attempt) + '::' + String(item);
++        if (!groups[key]) groups[key] = [];
++        groups[key].push(line);
++      });
++
+       var matched = expected.map(function (item) {
+-        return lines.find(function (line) {
+-          return Number(line.variant_id || line.id) === item.id && Number(line.quantity) === item.quantity &&
++        var attempt = item.properties && item.properties['_Daisy cart attempt'];
++        var marker = item.properties && item.properties['_Daisy cart item'];
++        var group = groups[String(attempt) + '::' + String(marker)] || [];
++        if (!group.length) return null;
++
++        var valid = group.every(function (line) {
++          return Number(line.variant_id || line.id) === item.id &&
+             Object.keys(item.properties).every(function (key) {
+               var actual = line.properties && line.properties[key];
+               return String(actual == null ? '' : actual) === String(item.properties[key] == null ? '' : item.properties[key]);
+             });
+         });
++        if (!valid) return null;
++
++        var quantity = group.reduce(function (sum, line) {
++          return sum + Number(line.quantity || 0);
++        }, 0);
++        return quantity === item.quantity ? group : null;
+       });
++
+       return expected.every(function (item, index) {
+-        var line = matched[index];
+-        if (!line) return false;
+-        var parentKey = item.parent_line_key;
++        var group = matched[index];
++        if (!group) return false;
++
++        var parentKeys = item.parent_line_key ? [item.parent_line_key] : [];
+         if (item.parent_id) {
+           var parentIndex = expected.findIndex(function (candidate) { return candidate.id === item.parent_id; });
+-          if (parentIndex < 0 || !matched[parentIndex] || !matched[parentIndex].key) return false;
+-          parentKey = matched[parentIndex].key;
++          var parentGroup = parentIndex >= 0 ? matched[parentIndex] : null;
++          if (!parentGroup) return false;
++          parentKeys = parentGroup.map(function (line) { return line.key; }).filter(Boolean);
++          if (!parentKeys.length) return false;
+         }
+-        return !parentKey || !!(line.parent_relationship && line.parent_relationship.parent_key === parentKey);
++
++        if (!parentKeys.length) return true;
++        return group.every(function (line) {
++          var parentKey = line.parent_relationship && line.parent_relationship.parent_key;
++          return parentKeys.indexOf(parentKey) !== -1;
++        });
+       });
+     }
+ 
+
+--- 208280125779/assets/daisy-pebble-picture.js
++++ live/assets/daisy-pebble-picture.js
+@@ -27,7 +27,6 @@
+     'birthday-blossom-tree-personalised-pebble-picture',
+     'a-little-bit-of-crazy-personalised-pebble-picture',
+     'family-walk-in-the-park-personalised-pebble-picture',
+-    'family-beach-sunset-personalised-pebble-picture',
+     'everything-to-me-personalised-pebble-artwork',
+     'wedding-swing-personalised-pebble-picture',
+     'beside-you-personalised-pebble-artwork',
+@@ -227,8 +226,7 @@
+         '<select ' + prefix + '-count>'
+       ];
+       for (var count = people.min || 1; count <= (people.max || 8); count += 1) {
+-        var extraNote = config.extraPeople && config.extraPeople.showPrice && count > (parseInt(config.extraPeople.threshold, 10) || 6) ? ' (+' + money(config.extraPeople.price, config.currency) + ')' : '';
+-        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)' + extraNote + '</option>');
++        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)</option>');
+       }
+       html.push('</select></label>');
+       for (var index = 1; index <= (people.max || 8); index += 1) {
+
+--- 208280125779/assets/daisy-street-sign-options.js
++++ live/assets/daisy-street-sign-options.js
+@@ -688,7 +688,7 @@
+       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+       if (reduce) { go(); } else { setTimeout(go, 800); }
+     }).catch(function (error) {
+-      if (!error.reviewCart) setLoading(false);
++      setLoading(false);
+       showError(panel, error.message || 'Something went wrong adding these items to basket.');
+       if (error.reviewCart) {
+         var review = document.createElement('a');
+
+--- 208280125779/snippets/dm-pebble-picture-builder.liquid
++++ live/snippets/dm-pebble-picture-builder.liquid
+@@ -171,14 +171,6 @@
+     when 'mum-hands-hearts-personalised-pebble-picture'
+       assign dm_pebble_enabled = true
+       assign dm_pebble_kind = 'mumhands'
+-      assign dm_second_offer_handle = '20-incredible-offer'
+-    when 'family-beach-sunset-personalised-pebble-picture'
+-      comment
+-        Same builder as Family Walk In The Park (people with names, keep-or-change
+-        wording); its own heading and wording are set inside the walkpark block.
+-      endcomment
+-      assign dm_pebble_enabled = true
+-      assign dm_pebble_kind = 'walkpark'
+       assign dm_second_offer_handle = '20-incredible-offer'
+   endcase
+ -%}
+@@ -573,26 +565,6 @@
+               { "key": "(Offer) Names", "source": "Names", "label": "Names on your picture", "type": "text", "required": false, "placeholder": "i.e. Dan & Claire" }
+             ]
+           {%- when 'walkpark' -%}
+-          {%- if product.handle == 'family-beach-sunset-personalised-pebble-picture' -%}
+-            "eyebrow": "Free personalisation",
+-            "heading": "Create your family beach pebble picture",
+-            "copy": "Choose your frame colour, pebble characters, wording and the names to appear underneath.",
+-            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+-            "extraPeople": { "threshold": 5, "showPrice": true, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people (6-8)" },
+-            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+-            "fields": [
+-              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+-              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Family – Together is our favourite place to be", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Turner Family" },
+-              { "key": "Wording", "type": "wordingkey" },
+-              { "key": "Names to appear underneath", "label": "Names to appear underneath", "type": "text", "required": false, "placeholder": "e.g. Daddy, Mummy, Ruby" }
+-            ],
+-            "offerFields": [
+-              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+-              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Family – Together is our favourite place to be", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Turner Family" },
+-              { "key": "(Offer) Wording", "type": "wordingkey" },
+-              { "key": "(Offer) Names to appear underneath", "source": "Names to appear underneath", "label": "Names to appear underneath", "type": "text", "required": false, "placeholder": "e.g. Daddy, Mummy, Ruby" }
+-            ]
+-          {%- else -%}
+             "eyebrow": "Free personalisation",
+             "heading": "Create your family walk in the park pebble picture",
+             "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade picture.",
+@@ -609,7 +581,6 @@
+               { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Hold our hands for a little while Hold our hearts forever", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Turner Family" },
+               { "key": "(Offer) Wording", "type": "wordingkey" }
+             ]
+-          {%- endif -%}
+           {%- when 'weddingswing' -%}
+             "eyebrow": "Free personalisation",
+             "heading": "Create your wedding swing pebble picture",
+
+--- 208280125779/snippets/dm-proof.liquid
++++ live/snippets/dm-proof.liquid
+@@ -152,9 +152,6 @@
+     when 'im-sexy-i-mow-it-personalised-street-sign-2'
+       assign dm_proof_quote = 'Bought a street sign as a wedding gift and got myself one too. A bit quirky but I love it.'
+       assign dm_proof_line = 'Loved by legends of the lawn'
+-    when 'family-beach-sunset-personalised-pebble-picture'
+-      assign dm_proof_quote = 'Delighted with my lovely family pebble picture. Even better than I&rsquo;d dared to hope.'
+-      assign dm_proof_line = 'Loved by families across the UK'
+     when 'wedding-church-personalised-pebble-picture'
+       assign dm_proof_quote = 'Another beautiful pebble plaque received for a wedding gift. This is the 3rd one I have ordered as a gift and the recipients have loved them.'
+       assign dm_proof_line = 'Loved by couples and wedding guests'
+
+--- 208250732883/assets/daisy-cart-submit.js
++++ live/assets/daisy-cart-submit.js
+@@ -27,26 +27,58 @@
+     }
+ 
+     function completeLines(lines, expected) {
+-      if (!Array.isArray(lines) || lines.length !== expected.length) return false;
++      if (!Array.isArray(lines)) return false;
++
++      var groups = {};
++      lines.forEach(function (line) {
++        var properties = line && line.properties;
++        var attempt = properties && properties['_Daisy cart attempt'];
++        var item = properties && properties['_Daisy cart item'];
++        if (attempt == null || item == null) return;
++        var key = String(attempt) + '::' + String(item);
++        if (!groups[key]) groups[key] = [];
++        groups[key].push(line);
++      });
++
+       var matched = expected.map(function (item) {
+-        return lines.find(function (line) {
+-          return Number(line.variant_id || line.id) === item.id && Number(line.quantity) === item.quantity &&
++        var attempt = item.properties && item.properties['_Daisy cart attempt'];
++        var marker = item.properties && item.properties['_Daisy cart item'];
++        var group = groups[String(attempt) + '::' + String(marker)] || [];
++        if (!group.length) return null;
++
++        var valid = group.every(function (line) {
++          return Number(line.variant_id || line.id) === item.id &&
+             Object.keys(item.properties).every(function (key) {
+               var actual = line.properties && line.properties[key];
+               return String(actual == null ? '' : actual) === String(item.properties[key] == null ? '' : item.properties[key]);
+             });
+         });
++        if (!valid) return null;
++
++        var quantity = group.reduce(function (sum, line) {
++          return sum + Number(line.quantity || 0);
++        }, 0);
++        return quantity === item.quantity ? group : null;
+       });
++
+       return expected.every(function (item, index) {
+-        var line = matched[index];
+-        if (!line) return false;
+-        var parentKey = item.parent_line_key;
++        var group = matched[index];
++        if (!group) return false;
++
++        var parentKeys = item.parent_line_key ? [item.parent_line_key] : [];
+         if (item.parent_id) {
+           var parentIndex = expected.findIndex(function (candidate) { return candidate.id === item.parent_id; });
+-          if (parentIndex < 0 || !matched[parentIndex] || !matched[parentIndex].key) return false;
+-          parentKey = matched[parentIndex].key;
++          var parentGroup = parentIndex >= 0 ? matched[parentIndex] : null;
++          if (!parentGroup) return false;
++          parentKeys = parentGroup.map(function (line) { return line.key; }).filter(Boolean);
++          if (!parentKeys.length) return false;
+         }
+-        return !parentKey || !!(line.parent_relationship && line.parent_relationship.parent_key === parentKey);
++
++        if (!parentKeys.length) return true;
++        return group.every(function (line) {
++          var parentKey = line.parent_relationship && line.parent_relationship.parent_key;
++          return parentKeys.indexOf(parentKey) !== -1;
++        });
+       });
+     }
+ 
+
+--- 208250732883/assets/daisy-street-sign-options.js
++++ live/assets/daisy-street-sign-options.js
+@@ -688,7 +688,7 @@
+       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+       if (reduce) { go(); } else { setTimeout(go, 800); }
+     }).catch(function (error) {
+-      if (!error.reviewCart) setLoading(false);
++      setLoading(false);
+       showError(panel, error.message || 'Something went wrong adding these items to basket.');
+       if (error.reviewCart) {
+         var review = document.createElement('a');
+
+--- 208250732883/assets/dm-pet-sign.js
++++ live/assets/dm-pet-sign.js
+@@ -154,7 +154,7 @@
+     svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+     svg.style.width = '100%'; svg.style.height = 'auto'; svg.style.display = 'block';
+     var outer = node('path', { d: p.outer }, svg);
+-    node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
++    var inner = node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
+     var holes = (p.holes || []).map(function (hole) {
+       return node('circle', { cx: hole.x, cy: hole.y, r: hole.r, fill: p.PANEL || '#ffffff', 'stroke-width': '0.4' }, svg);
+     });
+@@ -180,6 +180,17 @@
+       var layout = layoutText(p, lines.lineOne, lines.lineTwo, measure);
+       outer.setAttribute('fill', colour);
+       holes.forEach(function (hole) { hole.setAttribute('stroke', colour); });
++      // Wording takes the border colour, as on every other street-sign preview,
++      // and nothing gets an outline: the theme's base CSS was stroking the sign
++      // and both lines in its dark text colour (#232323), which drowned line 2.
++      first.text.setAttribute('fill', colour); second.text.setAttribute('fill', colour);
++      [outer, inner, first.text, second.text].forEach(function (el) {
++        el.setAttribute('stroke', 'none');
++        el.style.setProperty('stroke', 'none', 'important');
++        el.style.setProperty('stroke-width', '0', 'important');
++        el.style.setProperty('paint-order', 'normal', 'important');
++        el.style.setProperty('-webkit-text-stroke', '0', 'important');
++      });
+       apply(first, layout.first); apply(second, layout.second);
+       svg.setAttribute('aria-label', [lines.lineOne, lines.lineTwo].filter(Boolean).join('. ') || labels.previewPersonalised);
+     };
+
+--- 208260268371/assets/daisy-cart-submit.js
++++ live/assets/daisy-cart-submit.js
+@@ -27,26 +27,58 @@
+     }
+ 
+     function completeLines(lines, expected) {
+-      if (!Array.isArray(lines) || lines.length !== expected.length) return false;
++      if (!Array.isArray(lines)) return false;
++
++      var groups = {};
++      lines.forEach(function (line) {
++        var properties = line && line.properties;
++        var attempt = properties && properties['_Daisy cart attempt'];
++        var item = properties && properties['_Daisy cart item'];
++        if (attempt == null || item == null) return;
++        var key = String(attempt) + '::' + String(item);
++        if (!groups[key]) groups[key] = [];
++        groups[key].push(line);
++      });
++
+       var matched = expected.map(function (item) {
+-        return lines.find(function (line) {
+-          return Number(line.variant_id || line.id) === item.id && Number(line.quantity) === item.quantity &&
++        var attempt = item.properties && item.properties['_Daisy cart attempt'];
++        var marker = item.properties && item.properties['_Daisy cart item'];
++        var group = groups[String(attempt) + '::' + String(marker)] || [];
++        if (!group.length) return null;
++
++        var valid = group.every(function (line) {
++          return Number(line.variant_id || line.id) === item.id &&
+             Object.keys(item.properties).every(function (key) {
+               var actual = line.properties && line.properties[key];
+               return String(actual == null ? '' : actual) === String(item.properties[key] == null ? '' : item.properties[key]);
+             });
+         });
++        if (!valid) return null;
++
++        var quantity = group.reduce(function (sum, line) {
++          return sum + Number(line.quantity || 0);
++        }, 0);
++        return quantity === item.quantity ? group : null;
+       });
++
+       return expected.every(function (item, index) {
+-        var line = matched[index];
+-        if (!line) return false;
+-        var parentKey = item.parent_line_key;
++        var group = matched[index];
++        if (!group) return false;
++
++        var parentKeys = item.parent_line_key ? [item.parent_line_key] : [];
+         if (item.parent_id) {
+           var parentIndex = expected.findIndex(function (candidate) { return candidate.id === item.parent_id; });
+-          if (parentIndex < 0 || !matched[parentIndex] || !matched[parentIndex].key) return false;
+-          parentKey = matched[parentIndex].key;
++          var parentGroup = parentIndex >= 0 ? matched[parentIndex] : null;
++          if (!parentGroup) return false;
++          parentKeys = parentGroup.map(function (line) { return line.key; }).filter(Boolean);
++          if (!parentKeys.length) return false;
+         }
+-        return !parentKey || !!(line.parent_relationship && line.parent_relationship.parent_key === parentKey);
++
++        if (!parentKeys.length) return true;
++        return group.every(function (line) {
++          var parentKey = line.parent_relationship && line.parent_relationship.parent_key;
++          return parentKeys.indexOf(parentKey) !== -1;
++        });
+       });
+     }
+ 
+
+--- 208260268371/assets/daisy-street-sign-options.js
++++ live/assets/daisy-street-sign-options.js
+@@ -688,7 +688,7 @@
+       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+       if (reduce) { go(); } else { setTimeout(go, 800); }
+     }).catch(function (error) {
+-      if (!error.reviewCart) setLoading(false);
++      setLoading(false);
+       showError(panel, error.message || 'Something went wrong adding these items to basket.');
+       if (error.reviewCart) {
+         var review = document.createElement('a');

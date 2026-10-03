@@ -1,0 +1,16 @@
+{
+  "products": 783,
+  "variants": 959,
+  "final_selling_price_differences": 0,
+  "final_compare_at_differences": 0,
+  "uploaded_draft_files_verified": 14,
+  "uploaded_body_mismatches": 0,
+  "title_corrections": 14,
+  "variant_label_corrections": 9,
+  "seo_corrections": 146,
+  "globo_label_corrections": 2,
+  "globo_transient_price_reset_restored": true,
+  "theme": "208326623571",
+  "publication_status": "UNPUBLISHED",
+  "evidence_zip_sha256": "ceb85b10eab03266dfc0edb8d26fc303626179db6a6b3fa76efe6c08b94513eb"
+}

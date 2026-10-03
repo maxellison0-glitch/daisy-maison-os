@@ -1,0 +1,404 @@
+﻿file,line,amount,context,classification
+assets/custom.css,233,9.95,"/* ""Get a 2nd sign"" offer — keep the native layout so the +£9.95 price never",source reference; live reachability must be established
+assets/custom.css,437,3.99,/* Add-on quantity — clean segmented control (single vs £3.99 pair) */,source reference; live reachability must be established
+assets/daisy-always-forever-street-sign.js,12,7.45,"    second:       _p.second       || 745,      // (£7.45) Small Street Sign — base second sign",source reference; live reachability must be established
+assets/daisy-always-forever-street-sign.js,13,10.45,"    largeSecond:  _p.largeSecond  || 1045,     // (+£10.45) Large Street Sign — large second sign all-in",source reference; live reachability must be established
+assets/daisy-always-forever-street-sign.js,24,7.45,"   secondSign:      52007720485203,   // handle: 9-small-street-sign  £7.45",source reference; live reachability must be established
+assets/daisy-always-forever-street-sign.js,25,10.45,"rgeSecondSign: 50201180930387,   // handle: 4-large-decoration-heart  £10.45 (all-in large 2nd sign)",source reference; live reachability must be established
+assets/daisy-always-forever-street-sign.js,195,0.00,"     '<strong class=""daisy-street-options__total"" data-daisy-af-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-create-own-football.js,5,5.99,  // SP.medium/large/mounting/second are in pence (e.g. 599 = £5.99),source reference; live reachability must be established
+assets/daisy-create-own-football.js,269,0.00,"<strong class=""daisy-street-options__total"" data-daisy-football-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-create-own-street-sign.js,404,0.00," '<strong class=""daisy-street-options__total"" data-daisy-create-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-create-own-street-sign.js,468,4.95,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-create-own-street-sign.js,468,9.90,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-create-own-usa-road-sign.js,17,8.99,"S_IDS.largeSign) || 54100431995219,   // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-create-own-usa-road-sign.js,18,2.25,"mountingStrips) || 50706678514003,   // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-create-own-usa-road-sign.js,19,3.99,"gPair) || 54066025759059,   // handle: mounting-strips-two-sign-pack  £3.99",source reference; live reachability must be established
+assets/daisy-create-own-usa-road-sign.js,20,9.95,2473837355347    // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95,source reference; live reachability must be established
+assets/daisy-create-own-usa-road-sign.js,147,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-usa-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-dad-bar-grill.js,179,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-dad-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-family-street-sign.js,407,0.00," '<strong class=""daisy-street-options__total"" data-daisy-create-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-family-street-sign.js,471,4.95,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-family-street-sign.js,471,9.90,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,19,5.99,"IDS.mediumSign) || 54100431962451,   // handle: 6-medium-street-sign  £5.99",source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,20,8.99,"S_IDS.largeSign) || 54100431995219,   // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,21,2.25,"mountingStrips) || 50706678514003,   // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,22,3.99,"gPair) || 54066025759059,   // handle: mounting-strips-two-sign-pack  £3.99",source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,23,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-first-mothers-day-street-sign.js,409,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-md1-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-football-stadium.js,275,0.00,"'<strong class=""daisy-street-options__total"" data-daisy-stadium-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,19,5.99,"_IDS.mediumSign) || 54100431962451,  // handle: 6-medium-street-sign  £5.99",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,20,8.99,"SS_IDS.largeSign) || 54100431995219,  // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,21,9.95,"52473837355347,  // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,22,2.25,".mountingStrips) || 50706678514003,  // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,23,3.99,"ngPair) || 54066025759059,  // handle: mounting-strips-two-sign-pack  £3.99",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,345,8.99,"      // Size — Small is base, Large is canonical £8.99 upgrade",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,412,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-gal-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-galentine-street-sign.js,558,9.95,    // Second sign — canonical £9.95 + size upgrade helpers,source reference; live reachability must be established
+assets/daisy-grandparent-garden.js,267,0.00,"     '<strong class=""daisy-street-options__total"" data-daisy-gg-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,8,5.99,"    medium:   _p.medium   || 599,   // £5.99",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,9,8.99,"    large:    _p.large    || 899,   // £8.99",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,10,10.45,"    second:   _p.second   || 1045,  // £10.45 — half price of £20.95 base",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,10,20.95,"    second:   _p.second   || 1045,  // £10.45 — half price of £20.95 base",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,11,2.25,"    mounting: _p.mounting || 225,   // £2.25 per sign",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,19,5.99,"_IDS.mediumSign) || 54100431962451,  // handle: 6-medium-street-sign  £5.99",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,20,8.99,"SS_IDS.largeSign) || 54100431995219,  // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,21,10.45,"secondSign:     50201180930387,  // handle: 4-large-decoration-heart  £10.45",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,22,2.25,".mountingStrips) || 50706678514003,  // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,332,10.45,        // INCREDIBLE OFFER — second sign for half price (£10.45),source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,388,0.00,"strong class=""daisy-street-options__total"" data-daisy-halloween-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-halloween-street-sign.js,528,10.45,    // Second sign — product-specific half-price helper (£10.45) + size upgrades,source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,19,8.99,"S_IDS.largeSign) || 54100431995219,   // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,20,2.25,"mountingStrips) || 50706678514003,   // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,21,3.99,"gPair) || 54066025759059,   // handle: mounting-strips-two-sign-pack  £3.99",source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,22,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,23,3.95,"51198886478163,   // handle: porcelain-great-adventures-await-pebble  £3.95",source reference; live reachability must be established
+assets/daisy-holiday-street-sign.js,419,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-hol-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-home-street-sign.js,24,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-home-street-sign.js,27,9.95,    // handle: porcelain-tea-light-holder-home-is-where-the-heart-is  £9.95,source reference; live reachability must be established
+assets/daisy-home-street-sign.js,417,0.00,"   '<strong class=""daisy-street-options__total"" data-daisy-home-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-home-street-sign.js,584,9.95,    // Second sign (INCREDIBLE OFFER) — canonical £9.95 helper + size upgrade if needed,source reference; live reachability must be established
+assets/daisy-house-rules-street-sign.js,24,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-house-rules-street-sign.js,27,9.95,    // handle: porcelain-tea-light-holder-home-is-where-the-heart-is  £9.95,source reference; live reachability must be established
+assets/daisy-house-rules-street-sign.js,417,0.00,"     '<strong class=""daisy-street-options__total"" data-daisy-hr-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-house-rules-street-sign.js,583,9.95,    // Second sign (INCREDIBLE OFFER) — canonical £9.95 helper + size upgrade if needed,source reference; live reachability must be established
+assets/daisy-idos-street-sign.js,211,0.00,"   '<strong class=""daisy-street-options__total"" data-daisy-idos-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-london-street-sign.js,154,0.00," '<strong class=""daisy-street-options__total"" data-daisy-london-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-matching-gift.js,204,19.99,tive = false; disable(false); add.textContent = 'Add boxed diffuser — £19.99';,source reference; live reachability must be established
+assets/daisy-matching-gift.js,234,19.99,      disable(false); add.textContent = 'Add boxed diffuser — £19.99';,source reference; live reachability must be established
+assets/daisy-mow-it-options.js,390,0.00," '<strong class=""daisy-street-options__total"" data-daisy-create-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-mow-it-options.js,454,4.95,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-mow-it-options.js,454,9.90,    // Gift wrap: £4.95 → £9.90 when second sign selected,source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,29,19.95,"    a4: 'A4 (+ £19.95)',",source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,30,29.95,"    a3: 'A3 (+ £29.95)',",source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,31,33.95,    a2: 'A2 (+ £33.95)',source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,36,1.50,"    centre: '2 holes at the top centre (+ £1.50)',",source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,37,1.50,"    corners: '2 holes in top corners (+ £1.50)',",source reference; live reachability must be established
+assets/daisy-ootd-cart-model.js,38,3.00,    four: '1 in each of 4 corners (+ £3.00)',source reference; live reachability must be established
+assets/daisy-our-family-mothers-day-sign.js,23,9.95,"52473837355347,  // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-our-family-mothers-day-sign.js,417,0.00,"strong class=""daisy-street-options__total"" data-daisy-family-md-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-our-family-mothers-day-sign.js,573,9.95,    // INCREDIBLE OFFER: canonical £9.95 helper + optional size upgrade for 2nd sign,source reference; live reachability must be established
+assets/daisy-rainbow-heart-options.js,303,10.95,    heartProps['*SECOND HEART*'] = cur.secondHeart ? 'YES Please (+£10.95 GBP)' : 'NO Thanks';,source reference; live reachability must be established
+assets/daisy-retirement-street-sign.js,23,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-retirement-street-sign.js,405,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-ret-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-retirement-street-sign.js,569,9.95,    // Second sign (INCREDIBLE OFFER) — canonical £9.95 helper + size upgrade if needed,source reference; live reachability must be established
+assets/daisy-teacher-pebble.js,191,0.00,"ooter""><span>Selected extras </span><strong data-teacher-pebble-total>\xA30.00</strong></div>',",source reference; live reachability must be established
+assets/daisy-teacher-street-sign.js,265,0.00,"</span><strong class=""daisy-street-options__total"" data-teacher-total>\xA30.00</strong></div>',",source reference; live reachability must be established
+assets/daisy-traditional-road-sign.js,17,5.99,"IDS.mediumSign) || 54100431962451,   // handle: 6-medium-street-sign  £5.99",source reference; live reachability must be established
+assets/daisy-traditional-road-sign.js,18,8.99,"S_IDS.largeSign) || 54100431995219,   // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-traditional-road-sign.js,19,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-traditional-road-sign.js,391,0.00,"   '<strong class=""daisy-street-options__total"" data-daisy-trad-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-traditional-road-sign.js,526,9.95,    // Second sign — canonical £9.95 + size upgrade helpers,source reference; live reachability must be established
+assets/daisy-valentine-street-sign.js,294,0.00,"strong class=""daisy-street-options__total"" data-daisy-valentine-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,33,5.99,"_IDS.mediumSign) || 54100431962451,  // handle: 6-medium-street-sign  £5.99",source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,34,8.99,"SS_IDS.largeSign) || 54100431995219,  // handle: 9-large-street-sign  £8.99",source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,35,9.95,"52473837355347,  // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,36,2.25,".mountingStrips) || 50706678514003,  // handle: 1-95-mounting-strips  £2.25",source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,37,3.99,ngPair) || 54066025759059   // handle: mounting-strips-two-sign-pack  £3.99,source reference; live reachability must be established
+assets/daisy-vintage-train-sign.js,244,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-vts-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-wedding-heart-options.js,314,3,"ibute + '>Large 15 x 15cm <span class=""dm-wedding-heart__size-badge"">+&pound;3</span></button>',",source reference; live reachability must be established
+assets/daisy-wise-woman-street-sign.js,77,0.00,"     '<strong class=""daisy-street-options__total"" data-daisy-ww-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-yes-day-street-sign.js,23,9.95,"2473837355347,   // handle: incredible-offer-get-a-2nd-sign-for-9-95  £9.95",source reference; live reachability must be established
+assets/daisy-yes-day-street-sign.js,407,0.00,"    '<strong class=""daisy-street-options__total"" data-daisy-yes-total>\xA30.00</strong>',",source reference; live reachability must be established
+assets/daisy-yes-day-street-sign.js,570,9.95,    // Second sign (INCREDIBLE OFFER) — canonical £9.95 helper + size upgrade if needed,source reference; live reachability must be established
+assets/dm-soap-gift-note.js,9,1.50,"    add: 'Add note — £1.50', save: 'Save message', remove: 'Remove note', adding: 'Adding your note…',",source reference; live reachability must be established
+assets/dm-soap-upsell.js,12,4.95,"  var defaults = { add: 'Add Sunshine soap — £4.95', adding: 'Adding your soap…', added: 'Your Sunshine soap has been added.', error: 'Your soap could",source reference; live reachability must be established
+assets/dm-soul-soap.js,53,20,"oap', added: 'Selected · {count}', select: 'Choose any five soaps for £20.', remaining: 'Choose {count} more to get each soap for £4.', applied: 'Your five-soap selection is",source reference; live reachability must be established
+assets/dm-soul-soap.js,53,4,"soaps for £20.', remaining: 'Choose {count} more to get each soap for £4.', applied: 'Your five-soap selection is complete.', saving: 'You save {amount}', unavailable: 'Thi",source reference; live reachability must be established
+assets/dm-soul-soap.js,53,20,"en', bundleReady: 'Your 5 soaps are ready', bundleAdd: 'Add 5 soaps — £20', bundleRemaining: 'Choose {count} more soaps', bundleRemainingOne: 'Choose 1 more soap', removeSlo",source reference; live reachability must be established
+layout/theme.liquid,851,0.00,hidden><span>{{ 'daisy_wedding_set.extras_title' | t }}</span><strong>£0.00</strong></p>,source reference; live reachability must be established
+locales/en.default.json,1097,20,"    ""headline"": ""Any 5 soaps for £20"",",source reference; live reachability must be established
+locales/en.default.json,1100,20,"    ""offer"": ""Any 5 soaps for £20"",",source reference; live reachability must be established
+locales/en.default.json,1101,4,"    ""offer_detail"": ""£4 each when you choose 5 or more · save £4.75 on five"",",source reference; live reachability must be established
+locales/en.default.json,1101,4.75,"    ""offer_detail"": ""£4 each when you choose 5 or more · save £4.75 on five"",",source reference; live reachability must be established
+locales/en.default.json,1128,4.95,"    ""price"": ""£4.95"",",source reference; live reachability must be established
+locales/en.default.json,1140,50,"livery_text"": ""Delivery calculated at checkout. Free UK delivery over £50."",",source reference; live reachability must be established
+locales/en.default.json,1141,20,"    ""one"": ""Any five for £20"",",source reference; live reachability must be established
+locales/en.default.json,1153,20,"      ""select"": ""Choose 5 soaps to complete your £20 bundle."",",source reference; live reachability must be established
+locales/en.default.json,1155,20,"      ""applied"": ""All 5 chosen. Your £20 bundle is ready."",",source reference; live reachability must be established
+locales/en.default.json,1173,20,"      ""bundleAdd"": ""Add 5 soaps — £20"",",source reference; live reachability must be established
+locales/en.default.json,1180,15,"    ""gifts"": ""Gifts under £15"",",source reference; live reachability must be established
+locales/en.default.json,1182,20," choose the same design more than once. Stop at five — your bundle is £20."",",source reference; live reachability must be established
+locales/en.default.json,1183,20,"    ""bundle_terms"": ""Five soaps for £20. Save £4.75. Delivery calculated at checkout."",",source reference; live reachability must be established
+locales/en.default.json,1183,4.75,"    ""bundle_terms"": ""Five soaps for £20. Save £4.75. Delivery calculated at checkout."",",source reference; live reachability must be established
+locales/en.default.json,1185,20,"    ""bundle_save"": ""Five little gifts for £20"",",source reference; live reachability must be established
+locales/en.default.json,1190,20,"    ""offer_short"": ""Choose 5 soaps for £20"",",source reference; live reachability must be established
+locales/en.default.json,1191,4.75,"    ""save_five"": ""Save £4.75"",",source reference; live reachability must be established
+locales/en.default.json,1197,4.95,"    ""buy_one"": ""Buy one soap — £4.95"",",source reference; live reachability must be established
+locales/en.default.json,1199,4.95,"    ""single_intro"": ""Choose any design for £4.95."",",source reference; live reachability must be established
+locales/en.default.json,1257,50,"working days, with express options at checkout. Free UK delivery over £50."",",source reference; live reachability must be established
+locales/en.default.json,1298,50,"nsit time is separate from the time needed to make it. UK orders over £50 qualify for free delivery."",",source reference; live reachability must be established
+locales/en.default.json,1366,1.50,"    ""add"": ""Add note — £1.50"",",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,142,9.95,"s on arrival morning.</span></span><span class=""lp-ck-price""><strong>+£9.95</strong><span class=""lp-was"">usually £11.95</span></span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,142,11.95,"ass=""lp-ck-price""><strong>+£9.95</strong><span class=""lp-was"">usually £11.95</span></span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,165,7.95,"card</span></span><span class=""lp-ck-price"" data-price-label=""plush"">+£7.95</span>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,167,7.95,"-on""><input type=""radio"" name=""plushqty"" value=""1"" checked>Just one · £7.95</label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,168,13.95,"ss=""lp-chip""><input type=""radio"" name=""plushqty"" value=""2"">One each · £13.95 <span class=""lp-save"">save £1.95</span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,168,1.95,"ame=""plushqty"" value=""2"">One each · £13.95 <span class=""lp-save"">save £1.95</span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,172,7.95,"l night</span></span><span class=""lp-ck-price"" data-price-label=""pj"">+£7.95</span>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,174,7.95," lp-on""><input type=""radio"" name=""pjqty"" value=""1"" checked>Just one · £7.95</label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,175,13.95,"class=""lp-chip""><input type=""radio"" name=""pjqty"" value=""2"">One each · £13.95 <span class=""lp-save"">save £1.95</span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,175,1.95,""" name=""pjqty"" value=""2"">One each · £13.95 <span class=""lp-save"">save £1.95</span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,179,4.95,". One pack covers both elves.</span></span><span class=""lp-ck-price"">+£4.95</span></label>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,190,9.95,""" role=""status"">Night Shift Set applied — pyjamas + report sheets for £9.95, saving £2.95.</p>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,190,2.95,""">Night Shift Set applied — pyjamas + report sheets for £9.95, saving £2.95.</p>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,193,11.95,"lp-total""><span>Total</span> <strong id=""dm-total"" aria-live=""polite"">£11.95</strong></div>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,234,50,      <li>Free UK delivery on orders over £50. Recyclable protective packaging.</li>,source reference; live reachability must be established
+sections/dm-elf-landing.liquid,242,9.95,"For one each, tick the sibling offer above and the second postcard is £9.95.</p></details>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,251,12.95,"y""><span class=""lp-c-body""><strong>Family Signpost decoration</strong>£12.95</span></a>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,252,15.95,"y""><span class=""lp-c-body""><strong>Family Festive pebble star</strong>£15.95</span></a>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,253,18.95,"""><span class=""lp-c-body""><strong>Santa Stop Here street sign</strong>£18.95</span></a>",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,288,13.95,"label=""plush""]').textContent=(plush.checked&&qtyOf('plushqty')===2)?'+£13.95':'+£7.95';",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,288,7.95,"sh""]').textContent=(plush.checked&&qtyOf('plushqty')===2)?'+£13.95':'+£7.95';",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,289,13.95,"ta-price-label=""pj""]').textContent=(pj.checked&&qtyOf('pjqty')===2)?'+£13.95':'+£7.95';",source reference; live reachability must be established
+sections/dm-elf-landing.liquid,289,7.95,"abel=""pj""]').textContent=(pj.checked&&qtyOf('pjqty')===2)?'+£13.95':'+£7.95';",source reference; live reachability must be established
+sections/dm-soul-soap.liquid,75,20,"oul-final-total""><span>{{ 'soul_soap.five_soaps' | t }}</span><strong>£20</strong></p><p>{{ 'soul_soap.save_five' | t }}</p></div>",source reference; live reachability must be established
+sections/dm-soul-soap.liquid,125,20,"lt"":true},{""type"":""checkbox"",""id"":""show_offer"",""label"":""Show five for £20 bundle"",""default"":true}],""blocks"":[{""type"":""design"",""name"":""Message soap"",""settings"":[{""type"":""text",source reference; live reachability must be established
+sections/header-group.json,277,10,"            ""item"": ""Gifts UNDER £10"",",source reference; live reachability must be established
+sections/header-group.json,401,50,"            ""text"": ""<p>Free UK delivery over £50</p>"",",source reference; live reachability must be established
+sections/main-cart.liquid,426,4.95,"| t }}</button><span class=""dm-basket-checkout-note"">UK delivery from £4.95 · free from {{ settings.calculator_free_shipping_message_price | times: 100 | money_without_trailin",source reference; live reachability must be established
+snippets/dm-gift-soap-preview.liquid,2,15,  Renders the six draft soap cards in the Gifts under £15 preview grid.,source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,222,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,223,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,239,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,241,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,242,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,264,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,265,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,318,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,319,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,336,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,338,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,339,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,453,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,454,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,470,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,472,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,473,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,536,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,537,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,553,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,555,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,556,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,619,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,620,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,631,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,633,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,634,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,684,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,685,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,698,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,700,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,701,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,723,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,724,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,734,10.95,"        ""label"": ""Buy a second one for just £10.95"", ""note"": ""Personalise another heart at a special price"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,735,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,737,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,738,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart (second heart)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,769,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,770,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,780,10.95,"        ""label"": ""Buy a second one for just £10.95"", ""note"": ""Personalise another heart at a special price"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,781,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,783,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,784,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart (second heart)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,815,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,816,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,844,14.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,844,17.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large"" } ] },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,846,10.95,", ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"", ""sizeOptions"": [ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", """,source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,846,10.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,846,13.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large (second heart)"" } ], ",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,851,14.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,851,17.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large"" } ] },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,858,14.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,858,17.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large"" } ] },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,860,10.95," ""offerSizeKey"": ""(Offer) Size "", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"", ""sizeOptions"": [ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", """,source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,860,10.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,860,13.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large (second heart)"" } ], ",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,865,14.95,"[ { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 }, { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,865,17.95,", { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large"" } ] },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,906,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,907,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,919,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,921,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,922,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1035,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1036,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1047,10.95,"        ""label"": ""Buy a second one for just £10.95"", ""note"": ""Personalise another heart at a special price"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1048,10.95," ""offerSizeKey"": ""(Offer) Size "", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1050,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1051,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart (second heart)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1066,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1067,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1079,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1081,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1082,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1097,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1098,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1137,12.95,"        ""label"": ""Add a second diffuser for just \u00a312.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1200,12.95,"        ""label"": ""Add a second diffuser for just \u00a312.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1263,12.95,"        ""label"": ""Add a second diffuser for just \u00a312.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1326,12.95,"        ""label"": ""Add a second diffuser for just \u00a312.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1376,9.95,"        ""note"": ""Their own name and their own elf, for just \u00a39.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1394,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1395,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1407,10.95,"  ""offerSizeKey"": ""(Offer) Size"", ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1409,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1410,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50086348915027, ""helperName"": ""Large Heart (second heart)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1498,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1499,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1725,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1726,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1739,10.95,"        ""label"": ""Buy a second one for just £10.95"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1742,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1744,10.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£10.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1745,13.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£13.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration (second he",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1833,14.95,"  { ""label"": ""Small"", ""note"": ""10 x 10cm"", ""value"": ""Small 10 x 10cm (£14.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1834,17.95,"  { ""label"": ""Large"", ""note"": ""15 x 15cm"", ""value"": ""Large 15 x 15cm (£17.95)"", ""extraPence"": 300, ""helperVariantId"": 50089716711763, ""helperName"": ""Large Decoration"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1987,24.95,"{ ""label"": ""Small"", ""note"": ""38 x 15cm"", ""value"": ""Small 38cm x 15cm (£24.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,1988,34.95,"{ ""label"": ""Large"", ""note"": ""50 x 20cm"", ""value"": ""Large 50cm x 20cm (£34.95)"", ""extraPence"": 1000, ""helperVariantId"": 50189649707347, ""helperName"": ""LARGE PEBBLESCAPE"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2014,24.95,"{ ""label"": ""Small"", ""note"": ""38 x 15cm"", ""value"": ""Small 38cm x 15cm (£24.95)"", ""extraPence"": 0 },",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2015,34.95,"{ ""label"": ""Large"", ""note"": ""50 x 20cm"", ""value"": ""Large 50cm x 20cm (£34.95)"", ""extraPence"": 1000, ""helperVariantId"": 50189649707347, ""helperName"": ""LARGE PEBBLESCAPE"" }",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2237,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2243,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2286,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2291,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2297,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2436,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2442,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2485,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2490,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2496,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2614,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2620,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2652,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2657,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2663,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2750,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2756,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2788,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2793,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2799,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2886,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2892,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2931,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2936,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,2942,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3019,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3025,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3071,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3076,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3082,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3517,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3523,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3566,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3571,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3577,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3685,3,"        ""largeCountSuffix"": "" (Large heart +£3)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3690,5,"        ""xlCountSuffix"": "" (Large heart +£5)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3699,15.95,"            ""value"": ""Small 10 x 10cm (£15.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3705,18.95,"            ""value"": ""Large 15 x 15cm (£18.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3747,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3752,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3758,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3777,3,"          ""largeCountSuffix"": "" (Large heart +£3)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3782,5,"          ""xlCountSuffix"": "" (Large heart +£5)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3875,3,"        ""largeCountSuffix"": "" (Large heart +£3)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3880,5,"        ""xlCountSuffix"": "" (Large heart +£5)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3889,15.95,"            ""value"": ""Small 10 x 10cm (£15.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3895,18.95,"            ""value"": ""Large 15 x 15cm (£18.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3937,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3942,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3948,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3967,3,"          ""largeCountSuffix"": "" (Large heart +£3)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,3972,5,"          ""xlCountSuffix"": "" (Large heart +£5)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4082,15.95,"            ""value"": ""Small 10 x 10cm (£15.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4088,18.95,"            ""value"": ""Large 15 x 15cm (£18.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4120,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4125,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4131,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4192,3,"        ""largeCountSuffix"": "" (Large heart +£3)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4197,5,"        ""xlCountSuffix"": "" (Large heart +£5)""",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4205,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4211,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4244,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4249,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4255,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4354,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4360,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4399,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4404,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4410,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4519,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4525,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4568,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4573,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4579,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4680,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4686,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4718,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4723,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4729,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4799,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4805,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4837,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4842,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4848,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4928,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4934,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4976,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4981,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,4987,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5067,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5073,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5115,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5120,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5126,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5206,14.95,"            ""value"": ""Small 10 x 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5212,17.95,"            ""value"": ""Large 15 x 15cm (£17.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5254,10.95,"        ""offerSizeValue"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5259,10.95,"            ""value"": ""Small 10 x 10cm (£10.95)"",",source reference; live reachability must be established
+snippets/dm-heart-builder.liquid,5265,13.95,"            ""value"": ""Large 15 x 15cm (£13.95)"",",source reference; live reachability must be established
+snippets/dm-heart-gift-box.liquid,8,3.95,"    Small £3.95 variant, large heart → Large £4.95 variant.",source reference; live reachability must be established
+snippets/dm-heart-gift-box.liquid,8,4.95,"    Small £3.95 variant, large heart → Large £4.95 variant.",source reference; live reachability must be established
+snippets/dm-ootd-init.liquid,50,5,     (base + size) instead of the bare £5. Builder logic stays theme-agnostic. */,source reference; live reachability must be established
+snippets/dm-pebble-picture-builder.liquid,273,14.95,            £14.95 heart and the £18.90 heart+box option.,source reference; live reachability must be established
+snippets/dm-pebble-picture-builder.liquid,273,18.90,            £14.95 heart and the £18.90 heart+box option.,source reference; live reachability must be established
+snippets/dm-pebble-picture-builder.liquid,283,14.95,"          ""sizeValue"": ""Small 10 X 10cm (£14.95)"",",source reference; live reachability must be established
+snippets/dm-proof.liquid,203,3,"   <£3 = whisper, £3–7 = nudge, £7+ = spring. CSS lives in custom.css. */",source reference; live reachability must be established
+snippets/dm-proof.liquid,203,3,"   <£3 = whisper, £3–7 = nudge, £7+ = spring. CSS lives in custom.css. */",source reference; live reachability must be established
+snippets/dm-proof.liquid,203,7,"   <£3 = whisper, £3–7 = nudge, £7+ = spring. CSS lives in custom.css. */",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,8,12,"                       ""3 for £12"" badge, a 3-step bar and a live price.",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,20,12,"    Soap: any 3 for £12            (3+ from Handmade Soap, 19.2% off = £4.00 each)",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,20,4.00,"   Soap: any 3 for £12            (3+ from Handmade Soap, 19.2% off = £4.00 each)",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,21,22,"    Bath bombs: any 2 sets for £22 (2+ from Cocktail Bath Bombs, 15.06% off = £11.00 each)",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,21,11.00," bombs: any 2 sets for £22 (2+ from Cocktail Bath Bombs, 15.06% off = £11.00 each)",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,108,12,"    <span class=""dm-pick__badge"">3 for £12</span>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,111,12,      <li>The £12 price drops in automatically in your basket.</li>,source reference; live reachability must be established
+snippets/dm-soap-range.liquid,112,4,      <li>Every soap after that is £4.</li>,source reference; live reachability must be established
+snippets/dm-soap-range.liquid,118,22,"ections['bath-bombs'].url }}"">Cocktail bath bombs</a>: any 2 sets for £22.</li>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,122,22,"    <span class=""dm-pick__badge"">2 for £22</span>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,125,22,      <li>The £22 price drops in automatically in your basket.</li>,source reference; live reachability must be established
+snippets/dm-soap-range.liquid,126,11,      <li>Every set after that is £11.</li>,source reference; live reachability must be established
+snippets/dm-soap-range.liquid,142,12,"soap' %}data-deal-min=""3"" data-deal-each=""400"" data-deal-label=""3 for £12"" data-deal-unit=""soap"" data-deal-type=""soap""{% else %}data-deal-min=""2"" data-deal-each=""1100"" data-",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,142,22,"else %}data-deal-min=""2"" data-deal-each=""1100"" data-deal-label=""2 for £22"" data-deal-unit=""set"" data-deal-type=""bath bomb""{% endif %}>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,145,12,"      <span class=""dm-pick__badge"">3 for £12</span>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,147,12,"      <p class=""dm-pick__sub"">Choose your scents below. Three for £12, and every soap after that is £4.</p>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,147,4,"Choose your scents below. Three for £12, and every soap after that is £4.</p>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,149,22,"      <span class=""dm-pick__badge"">2 for £22</span>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,151,22,"individually wrapped bath bombs in every kraft gift box. Two sets for £22, and every set after that is £11.</p>",source reference; live reachability must be established
+snippets/dm-soap-range.liquid,151,11,"n every kraft gift box. Two sets for £22, and every set after that is £11.</p>",source reference; live reachability must be established
+templates/index.gem-1750345310-template.json,381,50,"            ""description"": ""Free shipping on orders over £50 & next-day delivery available"",",source reference; live reachability must be established
+templates/index.gem-1750345310-template.json,1716,50,"   ""description"": ""<span style=\""line-height: 28px;\""> on orders over £50<\/span>\n<br>"",",source reference; live reachability must be established
+templates/index.gem-backup-default.json,381,50,"            ""description"": ""Free shipping on orders over £50 & next-day delivery available"",",source reference; live reachability must be established
+templates/index.gem-backup-default.json,1716,50,"   ""description"": ""<span style=\""line-height: 28px;\""> on orders over £50<\/span>\n<br>"",",source reference; live reachability must be established
+templates/index.gp-template-bk-default.json,410,50,"   ""description"": ""<span style=\""line-height: 28px;\""> on orders over £50</span>\n<br>"",",source reference; live reachability must be established
+templates/index.gp-template-bk-default.json,1201,50,"            ""description"": ""Free shipping on orders over £50 & next-day delivery available"",",source reference; live reachability must be established
+templates/index.json,787,50,"            ""description"": ""<strong>Free UK delivery</strong> over £50"",",source reference; live reachability must be established
+templates/page.fathersday.json,165,10,"            ""button_4"": ""Gifts Under £10"",",source reference; live reachability must be established
+templates/page.mothersday.json,123,10,"            ""button_2"": ""UNDER £10"",",source reference; live reachability must be established
+templates/product.gem-1750345312-template.json,262,50,"  ""text_description"": ""<p>Enjoy free standard shipping on orders over £50.</p>\n<p>Delivery is estimated within 7 to 10 days unless you choose next day or express delivery.<",source reference; live reachability must be established
+templates/product.gem-backup-default.json,262,50,"  ""text_description"": ""<p>Enjoy free standard shipping on orders over £50.</p>\n<p>Delivery is estimated within 7 to 10 days unless you choose next day or express delivery.<",source reference; live reachability must be established
+templates/product.gp-template-bk-default.json,300,50,"  ""text_description"": ""<p>Enjoy free standard shipping on orders over £50.</p>\n<p>Delivery is estimated within 7 to 10 days unless you choose next day or express delivery.<",source reference; live reachability must be established
+templates/product.json,313,50,"  ""text_description"": ""<p>Enjoy free standard shipping on orders over £50.</p>\n<p>Delivery is estimated within 7 to 10 days unless you choose next day or express delivery.<",source reference; live reachability must be established

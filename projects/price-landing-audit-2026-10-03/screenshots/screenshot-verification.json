@@ -1,0 +1,72 @@
+[
+  {
+    "name": "mr-mrs",
+    "version": "before",
+    "clean": false,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "engagement",
+    "version": "before",
+    "clean": false,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "family",
+    "version": "before",
+    "clean": false,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "create-your-own",
+    "version": "before",
+    "clean": false,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "wedding-pebble",
+    "version": "before",
+    "clean": false,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "mr-mrs",
+    "version": "after",
+    "clean": true,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "engagement",
+    "version": "after",
+    "clean": true,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "family",
+    "version": "after",
+    "clean": true,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "create-your-own",
+    "version": "after",
+    "clean": true,
+    "scroll": 390,
+    "width": 390
+  },
+  {
+    "name": "wedding-pebble",
+    "version": "after",
+    "clean": true,
+    "scroll": 390,
+    "width": 390
+  }
+]

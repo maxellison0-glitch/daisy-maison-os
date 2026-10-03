@@ -1,0 +1,98 @@
+[
+  {
+    "productId": "gid://shopify/Product/9534147526995",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/49580987482451",
+        "before": "8 (Inc Cat/Dog) (+£3)",
+        "after": "8 (Inc Cat/Dog) (+£4.00)",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9534965186899",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/49583254339923",
+        "before": "**INCREDIBLE OFFER** Buy a second one for just £12.95 - YES Please",
+        "after": "**INCREDIBLE OFFER** Buy a second one for just £9.95 - YES Please",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9545181069651",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/49612000297299",
+        "before": "5 (+£2)",
+        "after": "5 (+£0.00)",
+        "optionName": "Title"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/49612000330067",
+        "before": "6 (+£2)",
+        "after": "6 (+£0.00)",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9677043269971",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/50076636250451",
+        "before": "7 (Large heart +£3)",
+        "after": "7 (Large heart +£5.00)",
+        "optionName": "Title"
+      },
+      {
+        "id": "gid://shopify/ProductVariant/50076636283219",
+        "before": "8 (Large heart +£3)",
+        "after": "8 (Large heart +£5.00)",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9685639168339",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/50112262537555",
+        "before": "**INCREDIBLE OFFER** Buy a second one for just £12.95 - YES Please",
+        "after": "**INCREDIBLE OFFER** Buy a second one for just £13.95 - YES Please",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9685666529619",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/50112320373075",
+        "before": "**INCREDIBLE OFFER** Buy a second one for just £12.95 - YES Please",
+        "after": "**INCREDIBLE OFFER** Buy a second one for just £13.95 - YES Please",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  },
+  {
+    "productId": "gid://shopify/Product/9698652881235",
+    "variants": [
+      {
+        "id": "gid://shopify/ProductVariant/50179650027859",
+        "before": "**INCREDIBLE OFFER** Buy a second one for just £3.95 - YES Please",
+        "after": "**INCREDIBLE OFFER** Buy a second one for just £4.95 - YES Please",
+        "optionName": "Title"
+      }
+    ],
+    "success": true
+  }
+]

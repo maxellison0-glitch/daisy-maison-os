@@ -9,7 +9,7 @@
 - Mounting Strips launched April 2025. By June 2026: ~6,559 attach orders, ~£15,660 lifetime revenue, ~£1,100/month and rising.
 - The product costs pennies. Margin is near-100%. Every pricing decision here flows almost entirely to profit.
 - **Price test live 6 Jun 2026:** £1.95 → £2.25 (+15%). Success condition: revenue per day equal or higher than baseline (i.e. the 15% price rise is not cancelled by a >15% drop in attach rate).
-- How pricing is stored: variant price only + product title (e.g. "(£2.25) Mounting Strips"). No hardcoded values in the theme. Globo and Candy Rack both read price live from Shopify — no app config needed when price changes.
+- **Correction, verified 3 Oct 2026:** Shopify's variant price is the charge source, but price text also exists in product/variant titles, SEO metadata, theme source and Globo labels/caches. The old “no hardcoded values / no app config needed” assumption was too broad. Globo can fetch the current price for an option while leaving a stale manual heading; its editor can also retain an old price. Saving the Robin set unexpectedly reset the linked variant to its stale cache; the original price was restored immediately. After app edits, verify both storefront wording and the actual Shopify variant price. Candy Rack is no longer installed. See `price-audit-2026-10-03.md` for evidence and scope.
 - Rollback is two field changes in Shopify Admin. Takes under 2 minutes.
 - Separate Mounting Strips variants exist at £3.90 and £4.95 — these are untouched by the £1.95/£2.25 test.
 

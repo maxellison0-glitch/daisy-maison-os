@@ -1,0 +1,50 @@
+[
+  {
+    "test": "Create Your Own Large without extras",
+    "expected": 2594,
+    "actual": 2594,
+    "passed": true
+  },
+  {
+    "test": "Large second sign from basket",
+    "expected": 1894,
+    "actual": 1894,
+    "passed": true
+  },
+  {
+    "test": "Mr & Mrs Large + strips; required blank blocked; strips deselection restores £20.24",
+    "expected": 2223,
+    "actual": 2223,
+    "passed": true
+  },
+  {
+    "test": "Existing cart gift-wrap offer reaches checkout at £5.36 after 10% accessory discount",
+    "expected": 2759,
+    "actual": 2759,
+    "passed": true
+  },
+  {
+    "test": "Family Medium + strips",
+    "expected": 2293,
+    "actual": 2293,
+    "passed": true
+  },
+  {
+    "test": "Engagement picture + easel",
+    "expected": 3090,
+    "actual": 3090,
+    "passed": true
+  },
+  {
+    "test": "Second Engagement picture from basket; editable wording retained",
+    "expected": 5090,
+    "actual": 5090,
+    "passed": true
+  },
+  {
+    "test": "Wedding picture: adding easel shows £28.90; removing it gives one £22.95 picture",
+    "expected": 2295,
+    "actual": 2295,
+    "passed": true
+  }
+]

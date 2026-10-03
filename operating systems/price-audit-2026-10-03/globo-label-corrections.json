@@ -1,0 +1,20 @@
+[
+  {
+    "set_id": "772537",
+    "option_id": "select-2",
+    "before": "Second keyring £7.95",
+    "after": "Add a second keyring — £8.95",
+    "variant_id": "50201922273619",
+    "actual_price": "8.95",
+    "status": "Saved in Globo; same Existing product variant reselected to refresh cached display price; native storefront already showed £8.95"
+  },
+  {
+    "set_id": "772528",
+    "option_id": "select-13",
+    "before": "Second robin £4.95",
+    "after": "Add a second robin decoration — £11.95",
+    "variant_id": "49588707623251",
+    "actual_price": "11.95",
+    "status": "Saved in Globo; live label confirmed. Globo save temporarily reset the linked Shopify charge to £4.95; immediately restored to original £11.95 and whole catalogue rechecked. See globo-save-side-effect.json."
+  }
+]

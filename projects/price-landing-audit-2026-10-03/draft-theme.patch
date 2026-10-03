@@ -1,0 +1,462 @@
+--- live/assets/daisy-create-own-street-sign.js
++++ draft/assets/daisy-create-own-street-sign.js
+@@ -338,7 +338,7 @@
+       '<div class="daisy-street-options__group">',
+       '<p class="daisy-street-options__group-title">Size</p>',
+       '<div class="daisy-street-options__size-grid">',
+-      createChoice("radio", "daisy-create-own-size", "small",  true,  "Small",  "28 x 12cm", "Included",                   "daisy-street-options__choice--size"),
++      createChoice("radio", "daisy-create-own-size", "small",  true,  "Small",  "28 x 8.5cm", "Included",                   "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-create-own-size", "medium", false, "Medium", "45 x 12cm", "+" + money(SP.medium / 100), "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-create-own-size", "large",  false, "Large",  "57 x 12cm", "+" + money(SP.large / 100),  "daisy-street-options__choice--size"),
+       "</div>",
+@@ -365,7 +365,7 @@
+       "</div>",
+       '<p class="daisy-street-options__group-title" style="margin:10px 0 6px;font-size:12px;">Size</p>',
+       '<div class="daisy-street-options__size-grid">',
+-      createChoice("radio", "daisy-kitchen-offer-size", "small",  true,  "Small",  "28 x 12cm", "Included",                   "daisy-street-options__choice--size"),
++      createChoice("radio", "daisy-kitchen-offer-size", "small",  true,  "Small",  "28 x 8.5cm", "Included",                   "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-kitchen-offer-size", "medium", false, "Medium", "45 x 12cm", "+" + money(SP.medium / 100), "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-kitchen-offer-size", "large",  false, "Large",  "57 x 12cm", "+" + money(SP.large / 100),  "daisy-street-options__choice--size"),
+       "</div>",
+@@ -428,10 +428,10 @@
+       sign:         "street sign",
+       lineOne:      clean(qs(panel, "[data-daisy-create-line-one]")         && qs(panel, "[data-daisy-create-line-one]").value),
+       lineTwo:      clean(qs(panel, "[data-daisy-create-line-two]")         && qs(panel, "[data-daisy-create-line-two]").value),
+-      easel:        !!(qs(panel, 'input[name="daisy-easel-addon"]') && qs(panel, 'input[name="daisy-easel-addon"]').checked),
++      easel:        !window.DaisyCleanProduct && !!(qs(panel, 'input[name="daisy-easel-addon"]') && qs(panel, 'input[name="daisy-easel-addon"]').checked),
+       mounting:     !!(mounting  && mounting.checked),
+-      giftWrap:     !!(giftWrap  && giftWrap.checked),
+-      offer:        !!(offer     && offer.checked),
++      giftWrap:     !window.DaisyCleanProduct && !!(giftWrap  && giftWrap.checked),
++      offer:        !window.DaisyCleanProduct && !!(offer     && offer.checked),
+       offerSize:    offerSize    ? offerSize.value   : "small",
+       offerBorder:  offerBorder  ? offerBorder.value : "sage",
+       offerLineOne: clean(qs(panel, "[data-daisy-kitchen-offer-line-one]")  && qs(panel, "[data-daisy-kitchen-offer-line-one]").value),
+@@ -489,6 +489,10 @@
+       if (cur.offerSize === "large")  total += SP.large  / 100;
+     }
+ 
++    if (window.DaisyCleanProduct) {
++      var selected = window.DaisyCleanProduct.variants.find(function (v) { return v.title.toLowerCase() === cur.size; });
++      if (selected) total = (selected.price + (cur.mounting ? SP.mounting : 0)) / 100;
++    }
+     var totalNode = qs(panel, "[data-daisy-create-total]");
+     if (totalNode) totalNode.textContent = money(total);
+     updateReadyState(panel, cur);
+--- live/assets/daisy-family-street-sign.js
++++ draft/assets/daisy-family-street-sign.js
+@@ -341,7 +341,7 @@
+       '<div class="daisy-street-options__group">',
+       '<p class="daisy-street-options__group-title">Size</p>',
+       '<div class="daisy-street-options__size-grid">',
+-      createChoice("radio", "daisy-create-own-size", "small",  true,  "Small",  "28 x 12cm", "Included",                   "daisy-street-options__choice--size"),
++      createChoice("radio", "daisy-create-own-size", "small",  true,  "Small",  "28 x 8.5cm", "Included",                   "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-create-own-size", "medium", false, "Medium", "45 x 12cm", "+" + money(SP.medium / 100), "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-create-own-size", "large",  false, "Large",  "57 x 12cm", "+" + money(SP.large / 100),  "daisy-street-options__choice--size"),
+       "</div>",
+@@ -368,7 +368,7 @@
+       "</div>",
+       '<p class="daisy-street-options__group-title" style="margin:10px 0 6px;font-size:12px;">Size</p>',
+       '<div class="daisy-street-options__size-grid">',
+-      createChoice("radio", "daisy-family-offer-size", "small",  true,  "Small",  "28 x 12cm", "Included",                   "daisy-street-options__choice--size"),
++      createChoice("radio", "daisy-family-offer-size", "small",  true,  "Small",  "28 x 8.5cm", "Included",                   "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-family-offer-size", "medium", false, "Medium", "45 x 12cm", "+" + money(SP.medium / 100), "daisy-street-options__choice--size"),
+       createChoice("radio", "daisy-family-offer-size", "large",  false, "Large",  "57 x 12cm", "+" + money(SP.large / 100),  "daisy-street-options__choice--size"),
+       "</div>",
+@@ -431,10 +431,10 @@
+       sign:         "street sign",
+       lineOne:      clean(qs(panel, "[data-daisy-create-line-one]")         && qs(panel, "[data-daisy-create-line-one]").value),
+       lineTwo:      clean(qs(panel, "[data-daisy-create-line-two]")         && qs(panel, "[data-daisy-create-line-two]").value),
+-      easel:        !!(qs(panel, 'input[name="daisy-easel-addon"]') && qs(panel, 'input[name="daisy-easel-addon"]').checked),
++      easel:        !window.DaisyCleanProduct && !!(qs(panel, 'input[name="daisy-easel-addon"]') && qs(panel, 'input[name="daisy-easel-addon"]').checked),
+       mounting:     !!(mounting  && mounting.checked),
+-      giftWrap:     !!(giftWrap  && giftWrap.checked),
+-      offer:        !!(offer     && offer.checked),
++      giftWrap:     !window.DaisyCleanProduct && !!(giftWrap  && giftWrap.checked),
++      offer:        !window.DaisyCleanProduct && !!(offer     && offer.checked),
+       offerSize:    offerSize    ? offerSize.value   : "small",
+       offerBorder:  offerBorder  ? offerBorder.value : "black",
+       offerLineOne: clean(qs(panel, "[data-daisy-family-offer-line-one]")  && qs(panel, "[data-daisy-family-offer-line-one]").value),
+@@ -492,6 +492,10 @@
+       if (cur.offerSize === "large")  total += SP.large  / 100;
+     }
+ 
++    if (window.DaisyCleanProduct) {
++      var selected = window.DaisyCleanProduct.variants.find(function (v) { return v.title.toLowerCase() === cur.size; });
++      if (selected) total = (selected.price + (cur.mounting ? SP.mounting : 0)) / 100;
++    }
+     var totalNode = qs(panel, "[data-daisy-create-total]");
+     if (totalNode) totalNode.textContent = money(total);
+     updateReadyState(panel, cur);
+--- live/assets/daisy-pebble-picture.js
++++ draft/assets/daisy-pebble-picture.js
+@@ -408,7 +408,7 @@
+       peopleCount: parseInt((qs(root, '[data-pebble-main-count]') || {}).value, 10) || 1,
+       pebbles: pebbles(root, false),
+       names: names(root, false),
+-      secondFrame: !!(qs(root, '[data-pebble-second-frame]') || {}).checked,
++      secondFrame: !window.DaisyCleanProduct && !!(qs(root, '[data-pebble-second-frame]') || {}).checked,
+       offerValues: values(root, '[data-pebble-offer-value]'),
+       offerPeopleCount: parseInt((qs(root, '[data-pebble-offer-count]') || {}).value, 10) || 1,
+       offerPebbles: pebbles(root, true),
+@@ -745,6 +745,12 @@
+     var form = getForm();
+     var config = root && readConfig(root);
+     if (!root || !form || !config) return;
++    if (window.DaisyCleanProduct) {
++      config.giftWrap = null;
++      config.heartOffer = null;
++      config.spray = null;
++      config.luckySixpence = null;
++    }
+     render(root, config);
+     mountBuilder(root, form);
+     hideGlobo(form, root);
+--- live/assets/daisy-street-sign-cart-model.js
++++ draft/assets/daisy-street-sign-cart-model.js
+@@ -133,7 +133,9 @@
+       return sum + item.linePrice;
+     }, 0);
+     var quantity = Math.max(1, integer(state.quantity, 1));
+-    var compareAt = prices.compareAt > prices.base ? current + ((prices.compareAt - prices.base) * quantity) : null;
++    var selectedPrice = prices.mainSizes ? prices.mainSizes[state.size || 'standard'] : prices.base;
++    var selectedCompare = prices.compareAtSizes ? prices.compareAtSizes[state.size || 'standard'] : (prices.mainSizes ? null : prices.compareAt);
++    var compareAt = selectedCompare > selectedPrice ? current + ((selectedCompare - selectedPrice) * quantity) : null;
+     return { current: current, compareAt: compareAt };
+   }
+ 
+--- live/assets/daisy-street-sign-options.js
++++ draft/assets/daisy-street-sign-options.js
+@@ -207,7 +207,7 @@
+     var signLineTwo = signWording((qs(document, '[data-daisy-line-two]') || {}).value);
+     return qsa(document, '.dm-cyg__card').map(function (card) {
+       var key = card.dataset.addonKey || 'gift';
+-      var mode = model.normaliseAddonMode(secondSign, card.dataset.addonMode || 'none');
++      var mode = window.DaisyCleanProduct && key !== 'mounting' ? 'none' : model.normaliseAddonMode(secondSign, card.dataset.addonMode || 'none');
+       var messageOne = qs(document, '#dm-cyg-msg-text-one') || qs(document, '#dm-cyg-msg-text');
+       var messageTwo = qs(document, '#dm-cyg-msg-text-two');
+       var messageOneValue = clean(messageOne && messageOne.value);
+@@ -266,7 +266,7 @@
+   // payload is identical whether or not blur fired before the customer hit Add
+   // to cart. The blur handler stays purely so the box shows what the sign shows.
+   function state(form, panel) {
+-    var secondSign = !!(qs(panel, '[data-daisy-second-sign]') || {}).checked;
++    var secondSign = !window.DaisyCleanProduct && !!(qs(panel, '[data-daisy-second-sign]') || {}).checked;
+     var quantityInput = qs(form, 'input[name="quantity"]');
+     return {
+       quantity: Math.max(1, integer(quantityInput && quantityInput.value, 1)),
+--- /dev/null
++++ draft/assets/dm-cart-extra-gifts.js
+@@ -0,0 +1,40 @@
++(function () {
++  'use strict';
++  if (window.DaisyCartExtraGifts) return;
++  window.DaisyCartExtraGifts = true;
++  document.addEventListener('submit', async function(event) {
++    var form = event.target.closest('[data-dm-extra-gift]');
++    if (!form) return;
++    event.preventDefault();
++    event.stopImmediatePropagation();
++    if (!form.reportValidity() || form.dataset.busy === 'true') return;
++    var button = form.querySelector('button[type="submit"]');
++    var error = form.querySelector('[data-gift-error]');
++    error.hidden = true;
++    form.dataset.busy = 'true';
++    button.disabled = true;
++    try {
++      var properties = {'_Linked product':form.dataset.title,'_Bundle ID':form.dataset.bundle,'_Custom option flow':'Daisy basket second gift'};
++      form.querySelectorAll('[data-gift-property]').forEach(function(input) {
++        var key = (form.dataset.kind === 'picture' ? '(Offer) ' : '') + input.dataset.giftProperty;
++        properties[key] = input.value.trim();
++      });
++      var select = form.querySelector('select[name="id"]');
++      var line = {id:Number(select.value),quantity:1,properties:properties};
++      if (form.dataset.kind === 'sign') {
++        properties.Offer = 'Second sign';
++        properties.Size = select.selectedOptions[0].dataset.title;
++        line.parent_line_key = form.dataset.parent;
++      }
++      if (!window.DaisyCartSubmit) throw new Error(form.dataset.failure);
++      var submitter = window.DaisyCartSubmit.create({root:form.dataset.root});
++      await submitter.add([line]);
++      window.location.assign(form.dataset.root + 'cart');
++    } catch (failure) {
++      error.textContent = form.dataset.failure;
++      error.hidden = false;
++      button.disabled = !!failure.reviewCart;
++      form.dataset.busy = failure.reviewCart ? 'true' : 'false';
++    }
++  },true);
++})();
+--- /dev/null
++++ draft/assets/dm-clean-product.css
+@@ -0,0 +1,25 @@
++.dm-clean-product .daisy-street-options__group:has([data-daisy-second-sign]),
++.dm-clean-product .daisy-street-options__group:has(input[name="daisy-kitchen-offer"]),
++.dm-clean-product .daisy-street-options__group:has(input[name="daisy-family-offer"]),
++.dm-clean-product .dm-pebble-picture__group:has([data-pebble-second-frame]),
++.dm-clean-product label:has(input[name="daisy-easel-addon"]),
++.dm-clean-product label:has(input[name$="gift-wrap"]),
++.dm-clean-product .dm-wrap-card,
++.dm-clean-sign .dm-cyg__card:not([data-addon-key="mounting"]),
++.dm-clean-product .dm-matching-gift,
++.dm-clean-product .dm-clean-hidden { display:none!important; }
++.dm-clean-product .daisy-street-options__group,
++.dm-clean-product .dm-pebble-picture__group { margin-bottom:18px; }
++.dm-clean-product .dm-cyg__card { margin:12px 0; }
++.dm-clean-product .dm-clean-price { display:flex;align-items:baseline;gap:12px;font-size:24px;font-weight:700; }
++.dm-clean-product .dm-clean-price s { font-size:16px;font-weight:400;color:#666; }
++.dm-clean-product .dm-clean-basket-note { font-size:13px;line-height:1.5;color:#555;margin:8px 0 14px; }
++.dm-clean-product .daisy-street-options__price { white-space:nowrap; }
++.dm-clean-product .daisy-street-options__ready:not(.is-visible) { display:none!important; }
++
++.dm-clean-product [data-daisy-create-ready][aria-hidden="true"],
++.dm-clean-product [data-daisy-kitchen-offer-panel],
++.dm-clean-product [data-daisy-family-offer-panel] { display:none!important; }
++
++.dm-clean-product [data-daisy-second-sign-wrap] { display:none!important; }
++
+--- /dev/null
++++ draft/assets/dm-clean-product.js
+@@ -0,0 +1,63 @@
++(function () {
++  'use strict';
++  var config = window.DaisyCleanProduct;
++  if (!config) return;
++  var sizeSelector = 'input[name="daisy_sign_size"],input[name="daisy-create-own-size"],input[name="daisy-family-size"]';
++  function currentVariant() {
++    var field = document.querySelector(sizeSelector.split(',').map(function(s){return s + ':checked';}).join(','));
++    var size = field && field.value === 'standard' ? 'small' : field && field.value;
++    return config.variants.find(function(v){return v.title.toLowerCase() === size;}) || config.variants[0];
++  }
++  function update() {
++    var variant = currentVariant();
++    document.querySelectorAll(sizeSelector).forEach(function(input) {
++      var title = input.value === 'standard' ? 'small' : input.value;
++      var option = config.variants.find(function(v){return v.title.toLowerCase() === title;});
++      var label = input.closest('label');
++      var price = label && label.querySelector('.daisy-street-options__price');
++      if (price && option && price.textContent !== option.formatted) price.textContent = option.formatted;
++    });
++    document.querySelectorAll('.productView-price').forEach(function(node) {
++      var signature = variant.id + ':' + variant.price + ':' + variant.compare;
++      if (node.dataset.cleanPrice === signature && node.querySelector('.dm-clean-price')) return;
++      node.dataset.cleanPrice = signature;
++      var wrap = document.createElement('div');
++      wrap.className = 'dm-clean-price';
++      var current = document.createElement('span');
++      current.textContent = variant.formatted;
++      wrap.appendChild(current);
++      if (variant.compare > variant.price) {
++        var was = document.createElement('s');
++        was.textContent = variant.was;
++        wrap.appendChild(was);
++      }
++      node.replaceChildren(wrap);
++    });
++    document.querySelectorAll('.productView .sale-badge,.productView .badge--sale').forEach(function(badge){badge.hidden = variant.compare <= variant.price;});
++    var footer = document.querySelector('[data-daisy-create-total]');
++    if (footer && footer.previousElementSibling && footer.previousElementSibling.textContent !== config.totalLabel) footer.previousElementSibling.textContent = config.totalLabel;
++    var button = document.querySelector('#product-add-to-cart, [data-daisy-create-submit], .product-form__submit');
++    if (button && !document.querySelector('.dm-clean-basket-note')) {
++      var note = document.createElement('p');
++      note.className = 'dm-clean-basket-note';
++      note.textContent = config.basketNote;
++      button.parentElement.insertAdjacentElement('afterend', note);
++    }
++  }
++  var pending = false;
++  function schedule() {
++    if (pending) return;
++    pending = true;
++    requestAnimationFrame(function(){pending=false;update();});
++  }
++  document.addEventListener('change', schedule);
++  document.addEventListener('input', schedule);
++  function init() {
++    update();
++    var area = document.querySelector('.productView');
++    if (area) new MutationObserver(schedule).observe(area, {childList:true,subtree:true});
++  }
++  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init);
++  else init();
++})();
++
+--- live/layout/theme.liquid
++++ draft/layout/theme.liquid
+@@ -1,3 +1,10 @@
++{%- liquid
++  assign dm_clean_handles = 'mr-mrs-personalised-street-sign-gift,engagement-proposal-love-tree-personalised-pebble-picture-copy,family-personalised-street-sign,kitchen-personalised-street-sign,wedding-flower-arch-personalised-pebble-picture' | split: ','
++  assign dm_clean_product = false
++  if request.page_type == 'product' and dm_clean_handles contains product.handle
++    assign dm_clean_product = true
++  endif
++-%}
+ <!doctype html>
+ {%- liquid
+     assign dm_offer_only_page = false
+@@ -387,7 +394,7 @@
+         {% render 'global-style' %}
+         {% render 'dm-mobile-fixes' %}
+         {%- if request.page_type == 'product' -%}{% render 'dm-proof' %}{%- endif -%}
+-        {%- if request.page_type == 'product' -%}{% render 'dm-upsell-accordion' %}{%- endif -%}
++        {%- if request.page_type == 'product' -%}{% unless dm_clean_product %}{% render 'dm-upsell-accordion' %}{% endunless %}{%- endif -%}
+         {%- if request.page_type == 'product' -%}
+             {%- case product.handle -%}
+             {%- when 'porcelain-handled-tea-light-holder-good-friends' or 'porcelain-handled-tea-light-holder-you-brighten-my-day' or 'porcelain-handled-tea-light-holder-with-much-love' -%}
+@@ -647,7 +654,8 @@
+ </script>
+ 
+       
+-    </head>
++    {% render 'dm-clean-product' %}
++</head>
+ 
+     <body class="template-{{ request.page_type }} {{layout_body}} {{style_dots}} {{style_text_size_varriant}} {{style_arrows}} {{product_card_layout}} {% if settings.enable_button_disable_arrows %} enable_button_disable_arrows{% endif %}{% if settings.display_text_color_title %} enable_text_color_title{% if settings.style_text_color_varriant == '02' %} style_2_text_color_varriant{% endif %}{% endif %}{% if settings.hide_compare_homepage %} hide_compare_homepage{% endif %} {{ quick_shop_type }}{% if settings.show_image_loading %} show_image_loading{% endif %}{% if settings.show_effect_close %} show_effect_close{% endif %}{% if settings.enable_layout_rtl and enable_iso_rtl %} layout_rtl{% endif %}{% if request.design_mode %} shopify-design-mode{% endif %}{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}{% if settings.enable_following_cursor and settings.following_cursor_style == 'default' %} cursor-fixed__show{% endif %}{% unless settings.enable_currencies %} disable_currencies{% endunless %}{% if settings.enable_button_1_border_outside %} btn_1_br_outside{% endif %}{% if settings.enable_button_2_border_outside %} btn_2_br_outside{% endif %}{% if settings.enable_button_3_border_outside %} btn_3_br_outside{% endif %}{% if settings.show_price_percent %} show_price_percent{% endif %}{% if settings.show_wishlist_full_icon %} icon_wishlist_full{% endif %}" allow-transparency>
+         <div class="body-content-wrapper">
+--- live/locales/en.default.json
++++ draft/locales/en.default.json
+@@ -1405,6 +1405,17 @@
+     "title": "Personalised Pet Street Sign — No Need to Knock",
+     "from_price": "From {{ price }}",
+     "choose": "Personalise"
++  },
++  "dm_clean": {
++    "total": "Total",
++    "basket_note": "Gift wrap and more optional gifts are available in your basket.",
++    "more_gifts": "Add another personalised gift (optional)",
++    "second_gift": "A second gift",
++    "same_design": "Keep the same design and colour choices, and edit the wording for your second gift.",
++    "size_price": "Size and price",
++    "add_second": "Add second gift to basket",
++    "heart": "Personalise a matching heart",
++    "failure": "We couldn't add this gift. Please refresh your basket and try again."
+   }
+ }
+ 
+--- live/sections/main-cart.liquid
++++ draft/sections/main-cart.liquid
+@@ -90,6 +90,7 @@
+             <div class="halo-page-content halo-cart-content" data-cart id="main-cart-items" data-id="{{ section.id }}">
+                 {%- if cart.item_count > 0 -%}
+                     {% render 'dm-cart-upsells', basket_context: true %}
++                    {% render 'dm-cart-extra-gifts' %}
+                     <div class="cart-content-wrapper clearfix">
+                         <div class="cart-content-item" data-cart-content>
+                             <div class="cart">
+--- /dev/null
++++ draft/snippets/dm-cart-extra-gifts.liquid
+@@ -0,0 +1,81 @@
++{% doc %}
++  Offers optional second gifts after the main product has reached the basket.
++{% enddoc %}
++{%- assign sign_handles = 'mr-mrs-personalised-street-sign-gift,family-personalised-street-sign,kitchen-personalised-street-sign' | split: ',' -%}
++{%- assign picture_handles = 'engagement-proposal-love-tree-personalised-pebble-picture-copy,wedding-flower-arch-personalised-pebble-picture' | split: ',' -%}
++{%- for item in cart.items -%}
++  {%- liquid
++    assign gift_kind = ''
++    assign heart_handle = ''
++    if sign_handles contains item.product.handle
++      assign gift_kind = 'sign'
++      assign extra_product = all_products['incredible-offer-get-a-2nd-sign-for-9-95']
++      if item.product.handle == 'mr-mrs-personalised-street-sign-gift'
++        assign heart_handle = 'personalised-wedding-pebble-people-hanging-heart'
++      endif
++    elsif picture_handles contains item.product.handle
++      assign gift_kind = 'picture'
++      assign extra_product = all_products['20-incredible-offer']
++      assign heart_handle = 'personalised-wedding-love-tree-pebble-hanging-heart-copy'
++      if item.product.handle == 'engagement-proposal-love-tree-personalised-pebble-picture-copy'
++        assign heart_handle = 'personalised-engagement-pebble-hanging-heart'
++      endif
++    endif
++  -%}
++  {%- if gift_kind != '' and extra_product.available -%}
++    <details class="dm-cart-gifts">
++      <summary>{{ 'dm_clean.more_gifts' | t }}</summary>
++      <p>{{ item.product.title | escape }}</p>
++      <form data-dm-extra-gift data-kind="{{ gift_kind }}" data-parent="{{ item.key | escape }}" data-bundle="{{ item.properties['_Bundle ID'] | escape }}" data-title="{{ item.product.title | escape }}" data-root="{{ routes.root_url }}" data-failure="{{ 'dm_clean.failure' | t | escape }}">
++        <h3>{{ 'dm_clean.second_gift' | t }}</h3>
++        <p>{{ 'dm_clean.same_design' | t }}</p>
++        <label>{{ 'dm_clean.size_price' | t }}
++          <select name="id" required>
++            {%- for variant in extra_product.variants -%}
++              {%- if variant.available -%}
++                <option value="{{ variant.id }}" data-title="{{ variant.title | escape }}">{% unless variant.title == 'Default Title' %}{{ variant.title | escape }} — {% endunless %}{{ variant.price | money }}</option>
++              {%- endif -%}
++            {%- endfor -%}
++          </select>
++        </label>
++        {%- for property in item.properties -%}
++          {%- liquid
++            assign key = property.first
++            assign first_character = key | slice: 0
++            assign editable = false
++            assign keep = false
++            if key contains 'Line ' or key contains 'Text ' or key == 'Date' or key == 'Names'
++              assign editable = true
++              assign keep = true
++            elsif key contains 'Colour' or key contains 'colour' or key == 'Sign'
++              assign keep = true
++            endif
++          -%}
++          {%- if keep and first_character != '_' -%}
++            <label>{{ key | escape }}
++              <input type="text" data-gift-property="{{ key | escape }}" value="{{ property.last | escape }}" maxlength="100" {% unless editable %}readonly{% endunless %} {% if key == 'Line 1' or key == 'Date' or key == 'Text above pebbles' %}required{% endif %} {% if item.product.handle == 'engagement-proposal-love-tree-personalised-pebble-picture-copy' and key == 'Line 2' %}required{% endif %}>
++            </label>
++          {%- endif -%}
++        {%- endfor -%}
++        <button type="submit" class="button">{{ 'dm_clean.add_second' | t }}</button>
++        <p data-gift-error role="alert" hidden></p>
++      </form>
++      {%- if heart_handle != '' -%}
++        {%- assign heart = all_products[heart_handle] -%}
++        {%- if heart.available -%}
++          <p><a href="{{ heart.url }}">{{ 'dm_clean.heart' | t }} — {{ heart.price_min | money }}</a></p>
++        {%- endif -%}
++      {%- endif -%}
++    </details>
++  {%- endif -%}
++{%- endfor -%}
++<script src="{{ 'dm-cart-extra-gifts.js' | asset_url }}" defer="defer"></script>
++{% stylesheet %}
++  .dm-cart-gifts { margin:16px 0;padding:16px;border:1px solid #ddd;border-radius:10px; }
++  .dm-cart-gifts summary { cursor:pointer;font-weight:600; }
++  .dm-cart-gifts form { display:grid;gap:12px; }
++  .dm-cart-gifts label { display:grid;gap:5px; }
++  .dm-cart-gifts input,.dm-cart-gifts select { width:100%;min-height:44px;padding:10px;border:1px solid #aaa;border-radius:4px; }
++  .dm-cart-gifts input[readonly] { background:#f5f5f5; }
++{% endstylesheet %}
++
+--- /dev/null
++++ draft/snippets/dm-clean-product.liquid
+@@ -0,0 +1,19 @@
++{% doc %}
++  Supplies selected-variant prices and the focused personalisation experience.
++{% enddoc %}
++{%- assign clean_handles = 'mr-mrs-personalised-street-sign-gift,engagement-proposal-love-tree-personalised-pebble-picture-copy,family-personalised-street-sign,kitchen-personalised-street-sign,wedding-flower-arch-personalised-pebble-picture' | split: ',' -%}
++{%- if request.page_type == 'product' and clean_handles contains product.handle -%}
++  <script>
++    window.DaisyCleanProduct = {
++      currency: {{ cart.currency.iso_code | json }},
++      totalLabel: {{ 'dm_clean.total' | t | json }},
++      basketNote: {{ 'dm_clean.basket_note' | t | json }},
++      variants: [{% for variant in product.variants %}{"id":{{ variant.id | json }},"title":{{ variant.title | json }},"price":{{ variant.price | json }},"compare":{{ variant.compare_at_price | default: 0 | json }},"formatted":{{ variant.price | money | json }},"was":{{ variant.compare_at_price | money | json }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
++    };
++    document.documentElement.classList.add('dm-clean-product');
++    document.documentElement.classList.add({% if product.handle contains 'street-sign' %}'dm-clean-sign'{% else %}'dm-clean-pebble'{% endif %});
++  </script>
++  {{ 'dm-clean-product.css' | asset_url | stylesheet_tag }}
++  <script src="{{ 'dm-clean-product.js' | asset_url }}" defer="defer"></script>
++{%- endif -%}
++
+--- live/snippets/dm-street-sign-data.liquid
++++ draft/snippets/dm-street-sign-data.liquid
+@@ -51,6 +51,7 @@
+   },
+   "prices": {
+     {% if dm_native_sizes %}
++      "compareAtSizes": { "standard": {{ dm_small.compare_at_price | default: 0 | json }}, "medium": {{ dm_medium.compare_at_price | default: 0 | json }}, "large": {{ dm_large.compare_at_price | default: 0 | json }} },
+       "mainSizes": { "standard": {{ dm_small.price | json }}, "medium": {{ dm_medium.price | json }}, "large": {{ dm_large.price | json }} },
+       "secondSizes": { "standard": {{ dm_second_small.price | json }}, "medium": {{ dm_second_medium.price | json }}, "large": {{ dm_second_large.price | json }} },
+     {% endif %}

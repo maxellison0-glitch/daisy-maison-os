@@ -1,0 +1,120 @@
+## Validation Summary
+
+**Overall Status:** ⚠️ VALID (with warnings)
+**Total Files:** 14
+
+## Detailed Results
+
+### File 1
+**Artifact ID:** artifact-fc8c3e14-a041-4e32-b5fa-2114ce6079c3
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-family-street-sign.js passed all checks.
+
+### File 2
+**Artifact ID:** artifact-522cb3b5-c05a-4bd9-bd5c-358c5ca443cb
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-create-own-street-sign.js passed all checks.
+
+### File 3
+**Artifact ID:** artifact-f731996e-c8e8-457c-8df4-3a4144f877fe
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-street-sign-options.js passed all checks.
+
+### File 4
+**Artifact ID:** artifact-d182805d-5b8e-44d0-b71f-63a83e55022f
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-pebble-picture.js passed all checks.
+
+### File 5
+**Artifact ID:** artifact-932297d2-9c10-4b87-bc86-88c5c61f8f3e
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-street-sign-cart-model.js passed all checks.
+
+### File 6
+**Artifact ID:** artifact-cf162574-3dd2-4d99-8c3d-59bc9d758c8d
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-street-sign-data.liquid passed all checks.
+
+### File 7
+**Artifact ID:** artifact-629b46cf-766a-47dc-9370-ec7cca6cc2d3
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ⚠️ INFORM
+**Details:** layout/theme.liquid passed all checks (with non-error findings):
+WARNING [line 385, col 171]: The variable 'page_image' is assigned but not used; SUGGESTED FIXES: Remove the unused variable 'page_image'.
+WARNING [line 382, col 65]: Deprecated filter 'img_url', consider using 'image_url'.; SUGGESTED FIXES: Replace 'img_url' with 'image_url'..
+
+### File 8
+**Artifact ID:** artifact-f5c7794e-7ea8-4215-bbac-fd43997ac56b
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-clean-product.liquid passed all checks.
+
+### File 9
+**Artifact ID:** artifact-ce8ae0c9-fd10-4e11-b6c8-d6ab637df9c8
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-clean-product.css passed all checks.
+
+### File 10
+**Artifact ID:** artifact-1199e435-519e-4e79-b8cf-3223508d4065
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-clean-product.js passed all checks.
+
+### File 11
+**Artifact ID:** artifact-800295aa-e78d-4b4a-8788-26c197e12686
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** locales/en.default.json passed all checks.
+
+### File 12
+**Artifact ID:** artifact-df45d2cb-3002-4042-a01c-3588bd29c2f5
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-cart-extra-gifts.liquid passed all checks.
+
+### File 13
+**Artifact ID:** artifact-9ceabcc4-7878-4705-8fd0-d398044d2545
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-cart-extra-gifts.js passed all checks.
+
+### File 14
+**Artifact ID:** artifact-f41b12c1-4dfb-464e-a61c-503af87d2f31
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/main-cart.liquid passed all checks.

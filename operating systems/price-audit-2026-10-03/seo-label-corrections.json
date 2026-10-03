@@ -1,0 +1,2378 @@
+{
+  "changes": [
+    {
+      "ownerId": "gid://shopify/Product/9436221505875",
+      "handle": "no-1-dad-engraved-bottle-opener",
+      "title": "No. 1 DAD' Engraved Bottle Opener",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: No. 1 DAD' Engraved Bottle Opener - Just ¬£4.95 - Daisy Maison",
+      "prices": [
+        "4.95"
+      ],
+      "min": 5.95,
+      "mismatch": true,
+      "after": "SALE ALERT: No. 1 DAD' Engraved Bottle Opener - Daisy Maison",
+      "compareDigest": "f5001e8bc2c078ed2b02d6c2a448171f1260c142dd569ed69c28884072b61a87"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436221505875",
+      "handle": "no-1-dad-engraved-bottle-opener",
+      "title": "No. 1 DAD' Engraved Bottle Opener",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get No. 1 DAD' Engraved Bottle Opener - Just ¬£4.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "4.95"
+      ],
+      "min": 5.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get No. 1 DAD' Engraved Bottle Opener With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "401b50f7e4eaf76ad09c9040230a79e67a42b9f2b5c4fb8e4bb0b9f923d8aa1a"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436225667411",
+      "handle": "wise-woman-street-sign",
+      "title": "Wise Woman' Street Sign",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Wise Woman' Street Sign - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 19.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Wise Woman' Street Sign - Daisy Maison",
+      "compareDigest": "0f25a7ddc9f47ee7215777b06289f63d8e074df1fd4280d2ed3d22f332909b0d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436225667411",
+      "handle": "wise-woman-street-sign",
+      "title": "Wise Woman' Street Sign",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Wise Woman' Street Sign - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 19.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Wise Woman' Street Sign With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "83dc61ca2f1a71a16928bcb040006d3e8ed68fa677f30b11883db6693ef80f50"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436226322771",
+      "handle": "yes-day-personalised-street-sign",
+      "title": "Personalised Engagement Street Sign Gift — Yes Day | Newly Engaged Couple Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: YES Day' Personalised Street Sign Gift - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: YES Day' Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "65d227eedeeb75ad3bc4592e2ebf9f639297a0a7f2a542fd77e2d4dc889cf633"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436226322771",
+      "handle": "yes-day-personalised-street-sign",
+      "title": "Personalised Engagement Street Sign Gift — Yes Day | Newly Engaged Couple Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get YES Day' Personalised Street Sign Gift - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get YES Day' Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "8eed97bd5c55ab32316b1f5431acf88ba0cfddc594e746e5760630e9dc5cd9a9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436227109203",
+      "handle": "always-forever-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Always & Forever | Wedding Anniversary Couple Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Always & Forever\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Always & Forever\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "9f275c9da403b4c82e7e8e482be3be9c13af2de1d5dbc3742278195020c5ecec"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436227109203",
+      "handle": "always-forever-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Always & Forever | Wedding Anniversary Couple Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Always & Forever\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Always & Forever\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "60cecb9e3c05d23141d306179ada01d436fedce44ab4a24b230e5cfd38f81c0b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436228321619",
+      "handle": "family-sleigh-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Family Sleigh | Personalised Family Xmas Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Family Sleigh\" Personalised Christmas Street Sign - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Family Sleigh\" Personalised Christmas Street Sign - Daisy Maison",
+      "compareDigest": "82a034520f013275e9bc5cc7c28fa1e0b0f38438c5e96e74df5907a368121807"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436228321619",
+      "handle": "family-sleigh-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Family Sleigh | Personalised Family Xmas Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Family Sleigh\" Personalised Christmas Street Sign - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Family Sleigh\" Personalised Christmas Street Sign With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "34cbef896f7f24cdad24b7bacdc57946d3d4615186c7e869e0a16e924af9ed03"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436228714835",
+      "handle": "family-village-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Family Village | Personalised Family Xmas Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Family Village\" Personalised Christmas Street Sign - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Family Village\" Personalised Christmas Street Sign - Daisy Maison",
+      "compareDigest": "5941825a43ea3918579977e74f468d7f829bf056cd61ea88f6c75b56d87f28cc"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436228714835",
+      "handle": "family-village-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Family Village | Personalised Family Xmas Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Family Village\" Personalised Christmas Street Sign - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Family Village\" Personalised Christmas Street Sign With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7cec506d6559c939a612835d9501fd3845568fb2cc5b44d7e2ff7231630ac059"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436229304659",
+      "handle": "grandparent-garden-personalised-street-sign",
+      "title": "Personalised Grandparent Gift Street Sign — Garden Sign for Nan & Grandad | Personalised Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Grandparent Garden\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Grandparent Garden\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "4de534d7552d60aefc21b7fb6118b16ffd045bb215d4169e41eef981859c7bc0"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436229304659",
+      "handle": "grandparent-garden-personalised-street-sign",
+      "title": "Personalised Grandparent Gift Street Sign — Garden Sign for Nan & Grandad | Personalised Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Grandparent Garden\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Grandparent Garden\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7d1cc3c12982d20663bb7f0f72cb303af77ec5efb19b815ccf53d08c87ff79fb"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436229697875",
+      "handle": "home-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Home | New Home Housewarming or Moving Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Home\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Home\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "88aa2a445126dbab1eb8ce2a6d466ba10934fcd6b008e6da5dff0423a1c21add"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436229697875",
+      "handle": "home-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Home | New Home Housewarming or Moving Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Home\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Home\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7165009217af91c49aef55869dc5cdc42f50032a4e61a19f43f4bfd588f5e1d9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436230418771",
+      "handle": "kitchen-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Create Your Own Custom Text | Unique Personalised Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Kitchen\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 16.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Kitchen\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "abec7f9b8b17cb8305a3b1399a99f6f6ebf1eb4867d75aac49b0462bc3dc613e"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436230418771",
+      "handle": "kitchen-personalised-street-sign",
+      "title": "Personalised Street Sign Gift — Create Your Own Custom Text | Unique Personalised Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Kitchen\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 16.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Kitchen\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "2416d35ebb0ffdc91375fbc9901cbf164c9b03dfcd1d0a6748e3294f5e80804e"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436231795027",
+      "handle": "santa-stop-here-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Santa Stop Here | Personalised Family Xmas Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Santa Stop Here\" Personalised Christmas Street Sign - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Santa Stop Here\" Personalised Christmas Street Sign - Daisy Maison",
+      "compareDigest": "7754800f9d6875887d7a4d95ef399a51e3dbc4af32c0090df1d5f7487117b779"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436231795027",
+      "handle": "santa-stop-here-personalised-christmas-street-sign",
+      "title": "Personalised Christmas Street Sign Gift — Santa Stop Here | Personalised Family Xmas Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Santa Stop Here\" Personalised Christmas Street Sign - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Santa Stop Here\" Personalised Christmas Street Sign With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "167e1331fc5fc27f323f24b7c46041364cc1bb34dc85a5f5214a2bf013c01bfd"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436232089939",
+      "handle": "this-way-to-the-wedding-personalised-street-sign",
+      "title": "Personalised Wedding Street Sign Gift — This Way to the I Do's | Wedding Day Venue Sign",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"This Way to the I Do's\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"This Way to the I Do's\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "acb179937f22c52887e215948c62ffbebc935e98453996094e245d3b15823171"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436232089939",
+      "handle": "this-way-to-the-wedding-personalised-street-sign",
+      "title": "Personalised Wedding Street Sign Gift — This Way to the I Do's | Wedding Day Venue Sign",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"This Way to the I Do's\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"This Way to the I Do's\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "1b26e5f389f892957e2de1222560d2d43458cfe4fca2bf633d2bb5df466c8315"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233138515",
+      "handle": "always-forever-personalised-pebble-artwork",
+      "title": "Personalised Couple Pebble Picture Gift — Always & Forever | Wedding Anniversary Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Always & Forever Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Always & Forever Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "1850cd46ca0d023e8a5b84ea3e5d9a2a1c556eb2f88f953f6a6f761f70684127"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233138515",
+      "handle": "always-forever-personalised-pebble-artwork",
+      "title": "Personalised Couple Pebble Picture Gift — Always & Forever | Wedding Anniversary Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Always & Forever Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Always & Forever Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "54fb11b731bc5c7a5e4a2f89325cf18ec2b9bab2ed01ecba2106409de4aa7c08"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233367891",
+      "handle": "beach-proposal-personalised-pebble-picture-gift",
+      "title": "Personalised Engagement Pebble Picture Gift — Beach Proposal | Unique Engagement Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Beach Proposal Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Beach Proposal Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "af1123f8bd42c32637c811d2d64036902855421b51321c8874f4660097f74650"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233367891",
+      "handle": "beach-proposal-personalised-pebble-picture-gift",
+      "title": "Personalised Engagement Pebble Picture Gift — Beach Proposal | Unique Engagement Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Beach Proposal Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Beach Proposal Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "f54e356305210e29bdebe4fa0d10e4ac78ca45d6a89b7a0c784cfad4097e52c9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233466195",
+      "handle": "beach-wedding-personalised-pebble-picture",
+      "title": "Personalised Wedding Pebble Picture Gift — Beach Wedding | Unique Wedding Day Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Beach Wedding Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Beach Wedding Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "1c2a91fecc51e3d4889316eb2d30017871d6a99fb16701cab97ad27363c841c9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436233466195",
+      "handle": "beach-wedding-personalised-pebble-picture",
+      "title": "Personalised Wedding Pebble Picture Gift — Beach Wedding | Unique Wedding Day Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Beach Wedding Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Beach Wedding Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "faff9490163447d5467a685561bb56d236aa68b6f1679c1599b012bc1922ebd3"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235268435",
+      "handle": "dad-grandpa-charging-station-wooden-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift - Just ¬£22.95 - Daisy Maison",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift - Daisy Maison",
+      "compareDigest": "778465c90bf4e8bdb77dddb73df0ec1db3fa58fdb7035b7b646e3f33d1cba110"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235268435",
+      "handle": "dad-grandpa-charging-station-wooden-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift - Just ¬£22.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Charging Station' wooden plaque with bottle opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "35efedfec87e5d0d0280a2a1a63c7718d912fd277b2b57d186ce6d84b13268ef"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235366739",
+      "handle": "dad-grandpa-premium-quality-bottle-opener",
+      "title": "Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift - Just ¬£18.95 - Daisy Maison",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift - Daisy Maison",
+      "compareDigest": "33a7ac22932c6704ba3b8a8bd99ed2af5d268355a1ac684fd8fcb084b5937e0f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235366739",
+      "handle": "dad-grandpa-premium-quality-bottle-opener",
+      "title": "Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift - Just ¬£18.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Premium Quality' Personalised, Oak Veneer Bottle Opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "1e7ad2c8dfba8cb32b7be2b2ffd4ecf40fee20512ff701ec315b272365551cd1"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235530579",
+      "handle": "dad-grandpa-superhero-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift - Just ¬£22.95 - Daisy Maison",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift - Daisy Maison",
+      "compareDigest": "e697dad5a6d9bce27e83c87ebf918fa32eed79dbc50ef60855820477b55a803d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436235530579",
+      "handle": "dad-grandpa-superhero-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift - Just ¬£22.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'Superhero' wooden plaque with bottle opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7bb213b90cd532424db8bee817e9e5c24ca5c637a0e18fb710303413ebe6df7c"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436236087635",
+      "handle": "dad-grandpa-youre-welcome-wooden-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift - Just ¬£22.95 - Daisy Maison",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift - Daisy Maison",
+      "compareDigest": "240d08396ce9ae3fcd87d2750ab12cb7a1027912ec1685b2158eb79b18bf6b58"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436236087635",
+      "handle": "dad-grandpa-youre-welcome-wooden-plaque-with-bottle-opener",
+      "title": "Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift - Just ¬£22.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Dad/Grandpa 'You're Welcome' wooden plaque with bottle opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "df816b618b46077c02c190950f55fbfc8bf8482d26cf31bb8837862199e9f32e"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436237693267",
+      "handle": "engagement-proposal-personalised-pebble-artwork",
+      "title": "Personalised Engagement Pebble Picture Gift — Unique Couple Gift | Engagement Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Engagement/Proposal Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Engagement/Proposal Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "6722c3847b5f9e6c8ae31a0c25e208198cdfc14922fd991c84608233ca1fcc73"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436237693267",
+      "handle": "engagement-proposal-personalised-pebble-artwork",
+      "title": "Personalised Engagement Pebble Picture Gift — Unique Couple Gift | Engagement Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Engagement/Proposal Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Engagement/Proposal Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "0770e29446ab9183966126139d27d134b8aedc99674388e701f31a40c648dcd6"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436240281939",
+      "handle": "dad-grandpa-number-one-personalised-oak-veneer-bottle-opener",
+      "title": "Football Shirt Personalised Oak Veneer Bottle Opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Football Shirt Personalised Oak Veneer Bottle Opener Gift - Just ¬£18.95 - Daisy Maison",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Football Shirt Personalised Oak Veneer Bottle Opener Gift - Daisy Maison",
+      "compareDigest": "055716d25dbaa3ac8c9776f28ce56404cd519307dbd78426ee2a29410a14fba2"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436240281939",
+      "handle": "dad-grandpa-number-one-personalised-oak-veneer-bottle-opener",
+      "title": "Football Shirt Personalised Oak Veneer Bottle Opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Football Shirt Personalised Oak Veneer Bottle Opener Gift - Just ¬£18.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Football Shirt Personalised Oak Veneer Bottle Opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "649268ca72c0a626d7a7f6a92f5fd5dd4522c80fdcd03ff00d641284ac08a3e9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436245819731",
+      "handle": "wedding-flower-arch-personalised-pebble-picture",
+      "title": "Personalised Wedding Pebble Picture Gift — On Your Wedding Day | Unique Wedding Day Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: On Your Wedding Day Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: On Your Wedding Day Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "a8b1453b665adceab9482960d513dcf2dfdeae4deb8af6df58197893ee2982fb"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436245819731",
+      "handle": "wedding-flower-arch-personalised-pebble-picture",
+      "title": "Personalised Wedding Pebble Picture Gift — On Your Wedding Day | Unique Wedding Day Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get On Your Wedding Day Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get On Your Wedding Day Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "cceecc20b9e9c0748c653879f2435a94aaf178469707aa93bdd2817b09def21c"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436248965459",
+      "handle": "personalised-create-your-own-football-stadium-street-sign",
+      "title": "Personalised Football Gift Street Sign — Create Your Own Stadium Sign | Football Fan Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Daisy Maison",
+      "compareDigest": "c2b4e00f77d3a901e02daca88e16282372200cd4450fdaf18cee4d632dad203b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436248965459",
+      "handle": "personalised-create-your-own-football-stadium-street-sign",
+      "title": "Personalised Football Gift Street Sign — Create Your Own Stadium Sign | Football Fan Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ce6b04c23244f56f650e908e79add9f1a7e4940173a3b85515f75f3ae9dae48d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436252176723",
+      "handle": "family-christmas-fireplace-candle-decoration-2",
+      "title": "Personalised Family Christmas Fireplace Candle Decoration — Unique Christmas Home Décor Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Family' Christmas Fireplace Candle Decoration - Just ¬£24.95 - Daisy Maison",
+      "prices": [
+        "24.95"
+      ],
+      "min": 28.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Family' Christmas Fireplace Candle Decoration - Daisy Maison",
+      "compareDigest": "d1a43fb4caf24f243a4960f794da5989b8d08e4864b51b4215f5888e59b57a07"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436252176723",
+      "handle": "family-christmas-fireplace-candle-decoration-2",
+      "title": "Personalised Family Christmas Fireplace Candle Decoration — Unique Christmas Home Décor Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Family' Christmas Fireplace Candle Decoration - Just ¬£24.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "24.95"
+      ],
+      "min": 28.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Family' Christmas Fireplace Candle Decoration With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ab4f548fe58977c4f388503e108f98d436f70c7ad000ccbb2c90403c2e0dac6c"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436253126995",
+      "handle": "personalised-grandparent-christmas-fireplace-candle-decoration",
+      "title": "Personalised Grandparent Christmas Fireplace Candle Decoration — Unique Xmas Gift for Nan Grandad UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Grandparent' Christmas Fireplace Candle Decoration - Just ¬£24.95 - Daisy Maison",
+      "prices": [
+        "24.95"
+      ],
+      "min": 28.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Grandparent' Christmas Fireplace Candle Decoration - Daisy Maison",
+      "compareDigest": "c22d57dbfb226f4e8ad2d54e333f0bd135290632591df13b44b5f2aa5936dd7d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436253126995",
+      "handle": "personalised-grandparent-christmas-fireplace-candle-decoration",
+      "title": "Personalised Grandparent Christmas Fireplace Candle Decoration — Unique Xmas Gift for Nan Grandad UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Grandparent' Christmas Fireplace Candle Decoration - Just ¬£24.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "24.95"
+      ],
+      "min": 28.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Grandparent' Christmas Fireplace Candle Decoration With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "12446463d5772a7005630e9bcd830a475ee8d8c76c6dc2f165ce8970f5433da9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436255060307",
+      "handle": "personalised-my-galentine-street-sign-gift",
+      "title": "Personalised Galentine Street Sign Gift — My Galentine | Best Friend Valentine's Day Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'My GALentine' Street Sign Gift - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'My GALentine' Street Sign Gift - Daisy Maison",
+      "compareDigest": "8434e9c4de0c30a99366d68d55b5ffa5f44b12047e2c56388847fc62bcdffe48"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436255060307",
+      "handle": "personalised-my-galentine-street-sign-gift",
+      "title": "Personalised Galentine Street Sign Gift — My Galentine | Best Friend Valentine's Day Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'My GALentine' Street Sign Gift - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'My GALentine' Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ab7a74e38bab99524f17e21d6bde7c4637113c0429237b289cfd614a34b7f815"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436256567635",
+      "handle": "personalised-retirement-street-sign-gift",
+      "title": "Personalised Retirement Street Sign Gift — Unique Retirement or Leaving Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Retirement' Street Sign Gift - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Retirement' Street Sign Gift - Daisy Maison",
+      "compareDigest": "24117138edf791a72d78308511bf083e3fe7696f90b43e21ffcb7a612dbcffa3"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436256567635",
+      "handle": "personalised-retirement-street-sign-gift",
+      "title": "Personalised Retirement Street Sign Gift — Unique Retirement or Leaving Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Retirement' Street Sign Gift - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Retirement' Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "4afc5747afae2d72f25ae9d3ae3436749115744963446de00527caf03dfde537"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436262695251",
+      "handle": "personalised-acrylic-robin-family-tree-decoration",
+      "title": "Personalised Acrylic Robin Family Tree Decoration",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Acrylic Robin Family Tree Decoration - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 15.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Acrylic Robin Family Tree Decoration - Daisy Maison",
+      "compareDigest": "ee9fa3ef19872bf0d283b2977f02adf291eb085252493543b81bb3d7b7aa7d36"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436262695251",
+      "handle": "personalised-acrylic-robin-family-tree-decoration",
+      "title": "Personalised Acrylic Robin Family Tree Decoration",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Acrylic Robin Family Tree Decoration - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 15.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Acrylic Robin Family Tree Decoration With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "94d49b24e85494c9268239778a3f8388873b475cfb509346bba33eaa3dd7c639"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436262728019",
+      "handle": "personalised-acrylic-robin-remembrance-tree-decoration",
+      "title": "Personalised Acrylic Robin Remembrance Tree Decoration",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Acrylic Robin Remembrance Tree Decoration - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 15.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Acrylic Robin Remembrance Tree Decoration - Daisy Maison",
+      "compareDigest": "622f9c38dc617b199bb4fea9dd6b5a83ff5ae08b7e2db7ff0a61ab50bc01e6d8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436262728019",
+      "handle": "personalised-acrylic-robin-remembrance-tree-decoration",
+      "title": "Personalised Acrylic Robin Remembrance Tree Decoration",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Acrylic Robin Remembrance Tree Decoration - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 15.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Acrylic Robin Remembrance Tree Decoration With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "4f3c41a9691dcd36718e347a77819122bcdf3914b42f1d152f662ceb4b918767"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436265611603",
+      "handle": "personalised-dads-bar-london-street-sign",
+      "title": "Personalised Dad Gift Street Sign — Bar & Grill BBQ Sign | Father's Day or Birthday Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Dad 'Bar & Grill' Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Dad 'Bar & Grill' Street Sign Gift - Daisy Maison",
+      "compareDigest": "38a0bdf741aa370e8822ab926101f920bb5f04306671ff8d9023223c74e02833"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436265611603",
+      "handle": "personalised-dads-bar-london-street-sign",
+      "title": "Personalised Dad Gift Street Sign — Bar & Grill BBQ Sign | Father's Day or Birthday Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Dad 'Bar & Grill' Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Dad 'Bar & Grill' Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "144ff9fb3ca66c1e9367a2fb69575f97b036648e19d0aa1d93ca7ca49441abf3"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436266496339",
+      "handle": "personalised-family-acrylic-weekly-wall-planner",
+      "title": "Personalised Family Acrylic Weekly Wall Planner Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Family Acrylic Weekly Wall Planner Gift - Just ¬£22.95 - Daisy Maison",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Family Acrylic Weekly Wall Planner Gift - Daisy Maison",
+      "compareDigest": "ca729b4ef81aeae1d339058465d8d88ba15d01bfe56e277a7b4211702ac2e374"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436266496339",
+      "handle": "personalised-family-acrylic-weekly-wall-planner",
+      "title": "Personalised Family Acrylic Weekly Wall Planner Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Family Acrylic Weekly Wall Planner Gift - Just ¬£22.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "22.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Family Acrylic Weekly Wall Planner Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "8ee928a66a4cb3135c26c20ab0b626a83f617e703256cf097858ae882326110d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436267086163",
+      "handle": "personalised-christmas-street-sign",
+      "title": "Personalised Family Christmas Street Sign Gift — Festive Family Name | Personalised Xmas Decoration",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Festive Street Sign - Just ¬£11.95 - Daisy Maison",
+      "prices": [
+        "11.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Festive Street Sign - Daisy Maison",
+      "compareDigest": "5af7362d99186bba3db3570ae5e40afa25d985b6f06ed0964696ef03a6ea88f7"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436267086163",
+      "handle": "personalised-christmas-street-sign",
+      "title": "Personalised Family Christmas Street Sign Gift — Festive Family Name | Personalised Xmas Decoration",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Festive Street Sign - Just ¬£11.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "11.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Festive Street Sign With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "b630bea5f28c93415b5547b6eaae53b554d72849539a5472f53285f9a1b65e61"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436267610451",
+      "handle": "personalised-football-stadium-street-sign-copy",
+      "title": "Personalised Football Stadium Street Sign Gift — Pick Your Team | Football Fan Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Football Stadium Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Football Stadium Street Sign Gift - Daisy Maison",
+      "compareDigest": "b06b9dd96a3bcccdcf24c7b9e579f4c9379ad8408a31812af1d18b975ecda815"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436267610451",
+      "handle": "personalised-football-stadium-street-sign-copy",
+      "title": "Personalised Football Stadium Street Sign Gift — Pick Your Team | Football Fan Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Football Stadium Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Football Stadium Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "6eacf97acaedac6e502121ed5df1f2b9d30439d30436014a0a2f6c67c6573ff6"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270330195",
+      "handle": "personalised-laser-cut-acrylic-garden-sign",
+      "title": "Personalised Laser Cut Acrylic 'Garden' Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Laser Cut Acrylic 'Garden' Sign Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 49.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Laser Cut Acrylic 'Garden' Sign Gift - Daisy Maison",
+      "compareDigest": "928184df83e4ccc18ff015d6d25330ede5ef362558b124e4de53e25dae45dd36"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270330195",
+      "handle": "personalised-laser-cut-acrylic-garden-sign",
+      "title": "Personalised Laser Cut Acrylic 'Garden' Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Garden' Sign Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 49.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Garden' Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "10d30ab5521fb802e6c656ab34b3b91579f7576f51a8e6e068b6b14153844a4f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270428499",
+      "handle": "personalised-laser-cut-acrylic-greenhouse-sign",
+      "title": "Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift - Daisy Maison",
+      "compareDigest": "4161832df88c6a1f3e18893db745588d0335299c12b286301bb3ea576872de29"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270428499",
+      "handle": "personalised-laser-cut-acrylic-greenhouse-sign",
+      "title": "Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 24.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Greenhouse' Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "4c107b2f391b93f8ecfb6f70f43eb069213acd150e3f2b6894405f4e5634bfc0"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270494035",
+      "handle": "personalised-laser-cut-acrylic-home-bar-sign",
+      "title": "Personalised Laser Cut Acrylic 'Home Bar' Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Laser Cut Acrylic 'Home Bar' Sign Gift - Just ¬£24.95 - Daisy Maison",
+      "prices": [
+        "24.95"
+      ],
+      "min": 44.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Laser Cut Acrylic 'Home Bar' Sign Gift - Daisy Maison",
+      "compareDigest": "4feb5c75bd6f2b14e61fadc9fbf2bfbe3a508481da90a6c41b9aa8ab679eda1e"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270494035",
+      "handle": "personalised-laser-cut-acrylic-home-bar-sign",
+      "title": "Personalised Laser Cut Acrylic 'Home Bar' Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Home Bar' Sign Gift - Just ¬£24.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "24.95"
+      ],
+      "min": 44.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Home Bar' Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "0d21b0b302dd81610bda500261acc91c5dc0ba78e1ab7592cd1d3c772e13f21d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270625107",
+      "handle": "personalised-laser-cut-acrylic-shed-sign",
+      "title": "Personalised Laser Cut Acrylic 'Shed' Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Laser Cut Acrylic 'Shed' Sign Gift - Just ¬£24.95 - Daisy Maison",
+      "prices": [
+        "24.95"
+      ],
+      "min": 44.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Laser Cut Acrylic 'Shed' Sign Gift - Daisy Maison",
+      "compareDigest": "7a39507253490f4305edecafe278192f99206b93200c924110b65f7bf736342d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436270625107",
+      "handle": "personalised-laser-cut-acrylic-shed-sign",
+      "title": "Personalised Laser Cut Acrylic 'Shed' Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Shed' Sign Gift - Just ¬£24.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "24.95"
+      ],
+      "min": 44.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'Shed' Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "5257f4e125ed6d44e2a757dd2424524315c91fc8f8a9941e218071a72a5e5690"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436271116627",
+      "handle": "personalised-london-street-sign",
+      "title": "Personalised London Street Sign Gift — Custom London Street Name | Unique London Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised London Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised London Street Sign Gift - Daisy Maison",
+      "compareDigest": "80eb97efefa9430d8af5556d83e304b21cd2b029394b90d79a6ceef7cc504e30"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436271116627",
+      "handle": "personalised-london-street-sign",
+      "title": "Personalised London Street Sign Gift — Custom London Street Name | Unique London Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised London Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised London Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "bb01fc825497ef1730a81dff1deaafad5478712ac3656b9e7bd85d3bded99c1f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436276097363",
+      "handle": "personalised-traditional-road-sign",
+      "title": "Personalised Traditional Road Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Traditional Road Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Traditional Road Sign Gift - Daisy Maison",
+      "compareDigest": "add95997d8181494b3006dd2598752caf3f8621e7539e26519d0a361d9c4f298"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436276097363",
+      "handle": "personalised-traditional-road-sign",
+      "title": "Personalised Traditional Road Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Traditional Road Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Traditional Road Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "6be9656b029736e8024522b07399a4b5a21d0b0ebd9c0049fcc1de560255a8c2"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436276326739",
+      "handle": "personalised-vintage-style-train-sign-gift",
+      "title": "Personalised Vintage Style Train Sign Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Vintage Style Train Sign Gift - Just ¬£12.95 - Daisy Maison",
+      "prices": [
+        "12.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Vintage Style Train Sign Gift - Daisy Maison",
+      "compareDigest": "9333bf78478c8763f26b60c188949cea4446d8e9ced22da6da42483520f887a6"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436276326739",
+      "handle": "personalised-vintage-style-train-sign-gift",
+      "title": "Personalised Vintage Style Train Sign Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Vintage Style Train Sign Gift - Just ¬£12.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "12.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Vintage Style Train Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "2ee0c8f2db4400724a315bbf1e13c72d5cc4f8430b3dab70acbdcc35629fde27"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436279144787",
+      "handle": "porcelain-handled-tea-light-holder-good-friends",
+      "title": "Porcelain Handled Tea Light Holder - Good friends",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 - Daisy Maison",
+      "prices": [
+        "9.5"
+      ],
+      "min": 11.99,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Daisy Maison",
+      "compareDigest": "5769203e28c86820ab9bec44a5358c3f74b64d68588e6ceab0d2e299f55cd701"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436279144787",
+      "handle": "porcelain-handled-tea-light-holder-good-friends",
+      "title": "Porcelain Handled Tea Light Holder - Good friends",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "9.5"
+      ],
+      "min": 11.99,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "970bafa02ea70031245b6e88fdb1900336cf38611e5037a586f6303334ebe336"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436280947027",
+      "handle": "porcelain-matchbox-little-guardian-angel",
+      "title": "Porcelain Matchbox - Little Guardian Angel",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Daisy Maison",
+      "compareDigest": "23c7adaa958b479acf902f6a9ea9e4906607a70a25f2ca4eaaad95532e73ef5f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436280947027",
+      "handle": "porcelain-matchbox-little-guardian-angel",
+      "title": "Porcelain Matchbox - Little Guardian Angel",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7f1d1b0fe2cc578bb486a59646da3749cd777ecc07fe8092c356a53b3494e391"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281078099",
+      "handle": "porcelain-matchbox-message-bear-big-bear-hug",
+      "title": "Porcelain Matchbox Message Bear - Big bear hug",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Bear - Big bear hug - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Bear - Big bear hug - Daisy Maison",
+      "compareDigest": "134a207e72c3deeb7e8737cb335acc8f0fa2b96727ad2d57ceb2ac6964b3108f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281078099",
+      "handle": "porcelain-matchbox-message-bear-big-bear-hug",
+      "title": "Porcelain Matchbox Message Bear - Big bear hug",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Bear - Big bear hug - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Bear - Big bear hug With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "c6c1ae9bb3d8024c937d5e76c26efa945b5bc16eff7ce97e8816184b23d6455f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281340243",
+      "handle": "porcelain-matchbox-dog-never-walk-alone",
+      "title": "Porcelain Matchbox Message Dog - Never walk alone",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Dog - Never walk alone - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Dog - Never walk alone - Daisy Maison",
+      "compareDigest": "ddbd14ae8a6b56892894b9bfc672039e295cea8199f22b621af22b1b25346abf"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281340243",
+      "handle": "porcelain-matchbox-dog-never-walk-alone",
+      "title": "Porcelain Matchbox Message Dog - Never walk alone",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Dog - Never walk alone - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Dog - Never walk alone With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "0f6e5feca87125e102d1e8b5c522d9ab721a3f611d7d1db590e8a912e566f852"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281405779",
+      "handle": "porcelain-matchbox-elephant-you-are-loved",
+      "title": "Porcelain Matchbox Message Elephant - You are loved",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Elephant - You are loved - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Elephant - You are loved - Daisy Maison",
+      "compareDigest": "bd1a610b0b71b2805dd985ac687e41adae35a33a467770187d96f96fa382e9a9"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281405779",
+      "handle": "porcelain-matchbox-elephant-you-are-loved",
+      "title": "Porcelain Matchbox Message Elephant - You are loved",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Elephant - You are loved - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Elephant - You are loved With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "d39e137ca8b3ff880750999badc03dd12c387970a8b3c8ac3e39e08a923b3343"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281798995",
+      "handle": "porcelain-matchbox-giraffe-daddy",
+      "title": "Porcelain Matchbox Message Giraffe - Daddy",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Giraffe - Daddy - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Giraffe - Daddy - Daisy Maison",
+      "compareDigest": "95002db20b5979ef84d74367df2888be314e952948706639aa06ce4dcab14363"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281798995",
+      "handle": "porcelain-matchbox-giraffe-daddy",
+      "title": "Porcelain Matchbox Message Giraffe - Daddy",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Giraffe - Daddy - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Giraffe - Daddy With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "c8fed0ff379427b7e63acd091c26fcccbcde16bb5c2870bcc794e99109987c64"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281864531",
+      "handle": "porcelain-matchbox-penguin-flipping-love-you",
+      "title": "Porcelain Matchbox Message Penguin - Flipping love you",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Penguin - Flipping love you - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Penguin - Flipping love you - Daisy Maison",
+      "compareDigest": "ee92df47b79527400f4dbbf825600a46f6f09eff7b20a0706bd0b5572a972c20"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281864531",
+      "handle": "porcelain-matchbox-penguin-flipping-love-you",
+      "title": "Porcelain Matchbox Message Penguin - Flipping love you",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Penguin - Flipping love you - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Penguin - Flipping love you With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "072f4a86c3ea2950ddf8afa01a8abfbaaf1e12657aa9193e547ac4eda9a802ce"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281962835",
+      "handle": "porcelain-matchbox-message-star-thanks-teacher",
+      "title": "Personalised Teacher Porcelain Matchbox Star — Thanks Teacher | Unique End of Year Thank You Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Star - Thanks teacher - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Star - Thanks teacher - Daisy Maison",
+      "compareDigest": "6782742b51a1cb1a671913660f2c0b1f32c7a30645a2855bde954278bcdffb3f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436281962835",
+      "handle": "porcelain-matchbox-message-star-thanks-teacher",
+      "title": "Personalised Teacher Porcelain Matchbox Star — Thanks Teacher | Unique End of Year Thank You Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Star - Thanks teacher - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 6.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Star - Thanks teacher With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "e7dfccbd62a0e092943bfdae5543507a3b99a5562b654b5becce5ddf3b007e06"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436282224979",
+      "handle": "proposal-in-paris-personalised-pebble-picture",
+      "title": "Personalised Couple Pebble Picture Gift — Proposal In Paris | Romantic Engagement Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Proposal In Paris Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Proposal In Paris Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "e39075b891fc3674cd9b6ef35d66d0653c0dcebc3cf35c05818329b5a60f3f20"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436282224979",
+      "handle": "proposal-in-paris-personalised-pebble-picture",
+      "title": "Personalised Couple Pebble Picture Gift — Proposal In Paris | Romantic Engagement Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Proposal In Paris Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Proposal In Paris Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "07e7759310bcb650116fb1a680237d7f71b5db321f8fe9be21f49bd6a3db43d5"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436282257747",
+      "handle": "proposal-in-venice-personalised-pebble-picture",
+      "title": "Personalised Couple Pebble Picture Gift — Proposal In Venice | Romantic Engagement Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Proposal In Venice Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Proposal In Venice Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "280762f8150e0eed2732d254cc829351b1b51c6d59fb8b76c5940d2a09a3c77b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436282257747",
+      "handle": "proposal-in-venice-personalised-pebble-picture",
+      "title": "Personalised Couple Pebble Picture Gift — Proposal In Venice | Romantic Engagement Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Proposal In Venice Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Proposal In Venice Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ff1d48f8c6a889da827a622670dc7d725f6ce520693808ec220c5dfc28d443be"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436288057683",
+      "handle": "70th-birthday-personalised-oak-veneer-bottle-opener",
+      "title": "Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift - Just ¬£18.95 - Daisy Maison",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift - Daisy Maison",
+      "compareDigest": "e5c7263c74fdf05543b5a6e10232bff6b8ff3be5b2858192360ea4c4c64d0234"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436288057683",
+      "handle": "70th-birthday-personalised-oak-veneer-bottle-opener",
+      "title": "Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift - Just ¬£18.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "18.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Special 'Birthday' Personalised, Oak Veneer Bottle Opener Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "35fb0c0531c2408dfd7f7bde8836d76b1f06f39cdab8a0ecb2054b58525a4c9b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289663315",
+      "handle": "wedding-church-personalised-pebble-picture",
+      "title": "Personalised Wedding Church Pebble Picture Gift — Unique Wedding Day Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Wedding Church Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Wedding Church Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "3c6bf6f11ac1f43b95fcd4d41e010072926963d0375ceafa9fb45c98728c13e7"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289663315",
+      "handle": "wedding-church-personalised-pebble-picture",
+      "title": "Personalised Wedding Church Pebble Picture Gift — Unique Wedding Day Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Church Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Church Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "e07264e5704f9845398e8c68b46daab5e14b09472870065b907308b25868212a"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289696083",
+      "handle": "wedding-arch-personalised-pebble-picture",
+      "title": "Personalised Wedding Flower Arch Pebble Picture Gift — Unique Wedding Day Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Wedding Flower Arch Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Wedding Flower Arch Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "ff301114eb67674869702dd93a4c2c5599eb411d152d9c13e54ecff201617712"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289696083",
+      "handle": "wedding-arch-personalised-pebble-picture",
+      "title": "Personalised Wedding Flower Arch Pebble Picture Gift — Unique Wedding Day Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Flower Arch Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Flower Arch Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "cd9457a645edf0bd2c9e31ced54ae4449f00d94a561d31a9da4d050ee2dc8568"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289827155",
+      "handle": "wedding-swing-personalised-pebble-picture",
+      "title": "Personalised Wedding Swing Pebble Picture Gift — Unique Wedding Day Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Wedding Swing Personalised Pebble Picture Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Wedding Swing Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "9ea8fc8bc625d2aab1fc674fe0e9b3a80c87283cebf7d70975c34563156efe47"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9436289827155",
+      "handle": "wedding-swing-personalised-pebble-picture",
+      "title": "Personalised Wedding Swing Pebble Picture Gift — Unique Wedding Day Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Swing Personalised Pebble Picture Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Wedding Swing Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "dbdec302d53b90d2b174ae8242f6a9e423897d15dc3ff3bfe84be50bc6faeb26"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9534271226195",
+      "handle": "on-your-wedding-day-personalised-pebble-picture-gift-autumn",
+      "title": "Personalised Autumn Wedding Pebble Picture Gift — On Your Wedding Day | Unique Wedding Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: On Your Wedding Day Personalised Pebble Picture Gift (Autumn) - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: On Your Wedding Day Personalised Pebble Picture Gift (Autumn) - Daisy Maison",
+      "compareDigest": "1a1e8f1015d17b3526f9368884cc042bca738fc6292dca8fd876b8d5b5bef287"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9534271226195",
+      "handle": "on-your-wedding-day-personalised-pebble-picture-gift-autumn",
+      "title": "Personalised Autumn Wedding Pebble Picture Gift — On Your Wedding Day | Unique Wedding Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get On Your Wedding Day Personalised Pebble Picture Gift (Autumn) - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get On Your Wedding Day Personalised Pebble Picture Gift (Autumn) With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ae8e37487566274f47f8da26b4e9bf554d66fef5927743a70014e76d05f3bd95"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9683117703507",
+      "handle": "love-at-christmas-wedding-personalised-pebble-picture",
+      "title": "Personalised Wedding Christmas Pebble Picture Gift — Love At Christmas | Unique Xmas Wedding Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Love At Christmas Wedding Personalised Pebble Picture - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Love At Christmas Wedding Personalised Pebble Picture - Daisy Maison",
+      "compareDigest": "13b20d62aa1e9a5646c87f5a24d20686b4a6ed1b97119f64f970be4749f656f4"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9683117703507",
+      "handle": "love-at-christmas-wedding-personalised-pebble-picture",
+      "title": "Personalised Wedding Christmas Pebble Picture Gift — Love At Christmas | Unique Xmas Wedding Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Love At Christmas Wedding Personalised Pebble Picture - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 22.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Love At Christmas Wedding Personalised Pebble Picture With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "6548b58b4941937eb9604b53ba5156f3b787c357a523ea310bd27e6c27b38e2c"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9683211911507",
+      "handle": "porcelain-hanging-angel-guardian-angel",
+      "title": "Porcelain hanging angel - Guardian angel",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain hanging angel - Guardian angel - Just ¬£7.5 - Daisy Maison",
+      "prices": [
+        "7.5"
+      ],
+      "min": 5.5,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain hanging angel - Guardian angel - Daisy Maison",
+      "compareDigest": "54998e756ebb1dae091c9157368646b5885c59982f702b065baf247c31ada67f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9683211911507",
+      "handle": "porcelain-hanging-angel-guardian-angel",
+      "title": "Porcelain hanging angel - Guardian angel",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain hanging angel - Guardian angel - Just ¬£7.5 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "7.5"
+      ],
+      "min": 5.5,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain hanging angel - Guardian angel With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "d7901e6ff2fe21b4eab852ee2db0aac7e22b297ff97b6971a702b9ebccb1bd59"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9702132711763",
+      "handle": "mr-mrs-personalised-street-sign-gift",
+      "title": "Personalised Mr & Mrs Street Sign Gift — Wedding Anniversary or Couple Present UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Mr & Mrs\" Personalised Street Sign Gift - Just ¬£14.95 - Daisy Maison",
+      "prices": [
+        "14.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Mr & Mrs\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "b825ef7a0aebb9487fd97c559d9f26e81a0b04fbbe92e19500581aae483a525b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9702132711763",
+      "handle": "mr-mrs-personalised-street-sign-gift",
+      "title": "Personalised Mr & Mrs Street Sign Gift — Wedding Anniversary or Couple Present UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Mr & Mrs\" Personalised Street Sign Gift - Just ¬£14.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "14.95"
+      ],
+      "min": 11.25,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Mr & Mrs\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "04d52a9797260534e4f01975ac7784582b03eb9888845acf8a6d3a148d1cf466"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747211256147",
+      "handle": "porcelain-matchbox-message-seal-sealed-with-a-kiss",
+      "title": "Porcelain Matchbox Message Seal – Sealed with a kiss",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7f1d1b0fe2cc578bb486a59646da3749cd777ecc07fe8092c356a53b3494e391"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747211256147",
+      "handle": "porcelain-matchbox-message-seal-sealed-with-a-kiss",
+      "title": "Porcelain Matchbox Message Seal – Sealed with a kiss",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Daisy Maison",
+      "compareDigest": "23c7adaa958b479acf902f6a9ea9e4906607a70a25f2ca4eaaad95532e73ef5f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747223970131",
+      "handle": "porcelain-handled-tea-light-holder-with-much-love",
+      "title": "Porcelain Handled Tea Light Holder – With much love",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "9.5"
+      ],
+      "min": 10.99,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "970bafa02ea70031245b6e88fdb1900336cf38611e5037a586f6303334ebe336"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747223970131",
+      "handle": "porcelain-handled-tea-light-holder-with-much-love",
+      "title": "Porcelain Handled Tea Light Holder – With much love",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 - Daisy Maison",
+      "prices": [
+        "9.5"
+      ],
+      "min": 10.99,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Daisy Maison",
+      "compareDigest": "5769203e28c86820ab9bec44a5358c3f74b64d68588e6ceab0d2e299f55cd701"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747226034515",
+      "handle": "porcelain-handled-tea-light-holder-you-are-my-sunshine-1",
+      "title": "Porcelain Handled Tea Light Holder – You are my sunshine",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "9.5"
+      ],
+      "min": 9.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "970bafa02ea70031245b6e88fdb1900336cf38611e5037a586f6303334ebe336"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9747226034515",
+      "handle": "porcelain-handled-tea-light-holder-you-are-my-sunshine-1",
+      "title": "Porcelain Handled Tea Light Holder – You are my sunshine",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 - Daisy Maison",
+      "prices": [
+        "9.5"
+      ],
+      "min": 9.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Daisy Maison",
+      "compareDigest": "5769203e28c86820ab9bec44a5358c3f74b64d68588e6ceab0d2e299f55cd701"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9858128675155",
+      "handle": "personalised-family-acrylic-weekly-wall-planner-gift-copy",
+      "title": "Personalised Family Acrylic Weekly Wall Planner Gift",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Family Acrylic Weekly Wall Planner Gift - Just ¬£22.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "22.95"
+      ],
+      "min": 12.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Family Acrylic Weekly Wall Planner Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "8ee928a66a4cb3135c26c20ab0b626a83f617e703256cf097858ae882326110d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9858128675155",
+      "handle": "personalised-family-acrylic-weekly-wall-planner-gift-copy",
+      "title": "Personalised Family Acrylic Weekly Wall Planner Gift",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Family Acrylic Weekly Wall Planner Gift - Just ¬£22.95 - Daisy Maison",
+      "prices": [
+        "22.95"
+      ],
+      "min": 12.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Family Acrylic Weekly Wall Planner Gift - Daisy Maison",
+      "compareDigest": "ca729b4ef81aeae1d339058465d8d88ba15d01bfe56e277a7b4211702ac2e374"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9959921353043",
+      "handle": "porcelain-teacher-tea-light-holder-thank-you-for-being-amazing",
+      "title": "Porcelain Tea Light Holder — Thank You for Being Amazing",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "9.5"
+      ],
+      "min": 10.99,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Handled Tea Light Holder - Good friends With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "970bafa02ea70031245b6e88fdb1900336cf38611e5037a586f6303334ebe336"
+    },
+    {
+      "ownerId": "gid://shopify/Product/9959921353043",
+      "handle": "porcelain-teacher-tea-light-holder-thank-you-for-being-amazing",
+      "title": "Porcelain Tea Light Holder — Thank You for Being Amazing",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Just ¬£9.5 - Daisy Maison",
+      "prices": [
+        "9.5"
+      ],
+      "min": 10.99,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Handled Tea Light Holder - Good friends - Daisy Maison",
+      "compareDigest": "5769203e28c86820ab9bec44a5358c3f74b64d68588e6ceab0d2e299f55cd701"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10001126850899",
+      "handle": "matchbox-message-incense-cone-you-are-lovely",
+      "title": "Teacher Matchbox Message Incense Cone — You Are Amazing | Unique End of Year Thank You Gift UK",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Star - Thanks teacher - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message Star - Thanks teacher With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "e7dfccbd62a0e092943bfdae5543507a3b99a5562b654b5becce5ddf3b007e06"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10001126850899",
+      "handle": "matchbox-message-incense-cone-you-are-lovely",
+      "title": "Teacher Matchbox Message Incense Cone — You Are Amazing | Unique End of Year Thank You Gift UK",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message Star - Thanks teacher - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message Star - Thanks teacher - Daisy Maison",
+      "compareDigest": "6782742b51a1cb1a671913660f2c0b1f32c7a30645a2855bde954278bcdffb3f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10054873022803",
+      "handle": "personalised-create-your-own-usa-road-sign",
+      "title": "Personalised USA Street Sign Gift — Create Your Own Custom Road Sign | American Style Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ce6b04c23244f56f650e908e79add9f1a7e4940173a3b85515f75f3ae9dae48d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10054873022803",
+      "handle": "personalised-create-your-own-usa-road-sign",
+      "title": "Personalised USA Street Sign Gift — Create Your Own Custom Road Sign | American Style Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Daisy Maison",
+      "compareDigest": "c2b4e00f77d3a901e02daca88e16282372200cd4450fdaf18cee4d632dad203b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10093071597907",
+      "handle": "personalised-holiday-usa-style-street-sign",
+      "title": "Personalised Holiday Street Sign Gift — Custom Destination Sign | Unique Travel or Holiday Present",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised 'Create Your Own' Football Stadium Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "ce6b04c23244f56f650e908e79add9f1a7e4940173a3b85515f75f3ae9dae48d"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10093071597907",
+      "handle": "personalised-holiday-usa-style-street-sign",
+      "title": "Personalised Holiday Street Sign Gift — Custom Destination Sign | Unique Travel or Holiday Present",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 18.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised 'Create Your Own' Football Stadium Street Sign Gift - Daisy Maison",
+      "compareDigest": "c2b4e00f77d3a901e02daca88e16282372200cd4450fdaf18cee4d632dad203b"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10167479730515",
+      "handle": "porcelain-matchbox-message-lion-be-fearless-you-can-do-it",
+      "title": "Porcelain Matchbox Message Lion–Be fearless you can do it",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Porcelain Matchbox Message - Little Guardian Angel With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7f1d1b0fe2cc578bb486a59646da3749cd777ecc07fe8092c356a53b3494e391"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10167479730515",
+      "handle": "porcelain-matchbox-message-lion-be-fearless-you-can-do-it",
+      "title": "Porcelain Matchbox Message Lion–Be fearless you can do it",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Just ¬£5.95 - Daisy Maison",
+      "prices": [
+        "5.95"
+      ],
+      "min": 3.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Porcelain Matchbox Message - Little Guardian Angel - Daisy Maison",
+      "compareDigest": "23c7adaa958b479acf902f6a9ea9e4906607a70a25f2ca4eaaad95532e73ef5f"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496901251411",
+      "handle": "to-be-named",
+      "title": "3D Framed Stag Artwork",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7210ed19a582bd5f7f765a9fc26481813f6624eb7512e13c8fe0d4550b2ddcc8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496901251411",
+      "handle": "to-be-named",
+      "title": "3D Framed Stag Artwork",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "bd452032f642134206cb648d71ad3a068490e1f2be21e2a3933edc2c23404896"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496926810451",
+      "handle": "3d-framed-stag-artwork-copy",
+      "title": "3D Framed Bull Artwork",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7210ed19a582bd5f7f765a9fc26481813f6624eb7512e13c8fe0d4550b2ddcc8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496926810451",
+      "handle": "3d-framed-stag-artwork-copy",
+      "title": "3D Framed Bull Artwork",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "bd452032f642134206cb648d71ad3a068490e1f2be21e2a3933edc2c23404896"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496936477011",
+      "handle": "3d-framed-bull-artwork",
+      "title": "3D Framed Bull Artwork",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7210ed19a582bd5f7f765a9fc26481813f6624eb7512e13c8fe0d4550b2ddcc8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496936477011",
+      "handle": "3d-framed-bull-artwork",
+      "title": "3D Framed Bull Artwork",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "bd452032f642134206cb648d71ad3a068490e1f2be21e2a3933edc2c23404896"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496944046419",
+      "handle": "friends-are-like-stars-pebble-picture",
+      "title": "Friends are like stars pebble picture",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7210ed19a582bd5f7f765a9fc26481813f6624eb7512e13c8fe0d4550b2ddcc8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496944046419",
+      "handle": "friends-are-like-stars-pebble-picture",
+      "title": "Friends are like stars pebble picture",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "bd452032f642134206cb648d71ad3a068490e1f2be21e2a3933edc2c23404896"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496958333267",
+      "handle": "3d-framed-bull-artwork-copy",
+      "title": "3D Framed Horse Artwork",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Family Blossom Tree Personalised Pebble Picture Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "7210ed19a582bd5f7f765a9fc26481813f6624eb7512e13c8fe0d4550b2ddcc8"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10496958333267",
+      "handle": "3d-framed-bull-artwork-copy",
+      "title": "3D Framed Horse Artwork",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Just ¬£29.95 - Daisy Maison",
+      "prices": [
+        "29.95"
+      ],
+      "min": 34.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Family Blossom Tree Personalised Pebble Picture Gift - Daisy Maison",
+      "compareDigest": "bd452032f642134206cb648d71ad3a068490e1f2be21e2a3933edc2c23404896"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10602280878419",
+      "handle": "personalised-laser-cut-acrylic-bbq-grill-sign-gift-copy",
+      "title": "Personalised Laser Cut BBQ Sign",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'BBQ & Grill' Sign Gift - Just ¬£32.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "32.95"
+      ],
+      "min": 29.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get Personalised Laser Cut Acrylic 'BBQ & Grill' Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "8a29efb3b95736e5532fd108766b4d765e803bdf1fbceeea8c24604eb25ae0b2"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10602280878419",
+      "handle": "personalised-laser-cut-acrylic-bbq-grill-sign-gift-copy",
+      "title": "Personalised Laser Cut BBQ Sign",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: Personalised Laser Cut Acrylic 'BBQ & Grill' Sign Gift - Just ¬£32.95 - Daisy Maison",
+      "prices": [
+        "32.95"
+      ],
+      "min": 29.95,
+      "mismatch": true,
+      "after": "SALE ALERT: Personalised Laser Cut Acrylic 'BBQ & Grill' Sign Gift - Daisy Maison",
+      "compareDigest": "bd7e91aff4dba6b4e515c8e1a1e53b7c602f305efac68dda77bb2367592319bf"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10900019151187",
+      "handle": "personalised-pet-street-sign-no-need-to-knock",
+      "title": "Personalised Pet Street Sign — No Need To Knock",
+      "key": "description_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "Shop Our HUGE Personalised Gifts Sale: Get \"Kitchen\" Personalised Street Sign Gift - Just ¬£19.95 With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "prices": [
+        "19.95"
+      ],
+      "min": 14.95,
+      "mismatch": true,
+      "after": "Shop Our HUGE Personalised Gifts Sale: Get \"Kitchen\" Personalised Street Sign Gift With FAST FREE DELIVERY at Daisy Maison! Order Now!",
+      "compareDigest": "2416d35ebb0ffdc91375fbc9901cbf164c9b03dfcd1d0a6748e3294f5e80804e"
+    },
+    {
+      "ownerId": "gid://shopify/Product/10900019151187",
+      "handle": "personalised-pet-street-sign-no-need-to-knock",
+      "title": "Personalised Pet Street Sign — No Need To Knock",
+      "key": "title_tag",
+      "type": "string",
+      "namespace": "global",
+      "before": "SALE ALERT: \"Kitchen\" Personalised Street Sign Gift - Just ¬£19.95 - Daisy Maison",
+      "prices": [
+        "19.95"
+      ],
+      "min": 14.95,
+      "mismatch": true,
+      "after": "SALE ALERT: \"Kitchen\" Personalised Street Sign Gift - Daisy Maison",
+      "compareDigest": "abec7f9b8b17cb8305a3b1399a99f6f6ebf1eb4867d75aac49b0462bc3dc613e"
+    }
+  ],
+  "outcomes": [
+    {
+      "start": 0,
+      "count": 25,
+      "errors": [],
+      "failed": false
+    },
+    {
+      "start": 25,
+      "count": 25,
+      "errors": [],
+      "failed": false
+    },
+    {
+      "start": 50,
+      "count": 25,
+      "errors": [],
+      "failed": false
+    },
+    {
+      "start": 75,
+      "count": 25,
+      "errors": [],
+      "failed": false
+    },
+    {
+      "start": 100,
+      "count": 25,
+      "errors": [],
+      "failed": false
+    },
+    {
+      "start": 125,
+      "count": 21,
+      "errors": [],
+      "failed": false
+    }
+  ]
+}

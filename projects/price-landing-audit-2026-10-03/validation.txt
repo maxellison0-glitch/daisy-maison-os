@@ -1,0 +1,135 @@
+## Validation Summary
+
+**Overall Status:** ❌ INVALID
+**Total Files:** 14
+
+## Detailed Results
+
+### File 1
+**Artifact ID:** artifact-dd73a29e-9df7-4dd8-a4bb-cad369650bbb
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-family-street-sign.js passed all checks.
+
+### File 2
+**Artifact ID:** artifact-0b583255-53fe-4e53-be1f-c865f3ec1448
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-create-own-street-sign.js passed all checks.
+
+### File 3
+**Artifact ID:** artifact-eec2091f-fab2-4c79-94f3-6c9d71621115
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-street-sign-options.js passed all checks.
+
+### File 4
+**Artifact ID:** artifact-3f192169-78db-4136-aff6-1b00c6bb25a9
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-pebble-picture.js passed all checks.
+
+### File 5
+**Artifact ID:** artifact-8f75d19d-095d-4ea9-87bb-aa80e4696bcc
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/daisy-street-sign-cart-model.js passed all checks.
+
+### File 6
+**Artifact ID:** artifact-2008c6c6-e98a-4858-b7ac-fdf5f1a1154c
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-street-sign-data.liquid passed all checks.
+
+### File 7
+**Artifact ID:** artifact-a445ff20-8a6c-4390-b62c-ae841368be36
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ❌ FAILED
+**Details:** layout/theme.liquid:
+ERROR [line 992, col 42]: The script_tag filter is parser-blocking. Use a <script> tag with async or defer for better performance; SUGGESTED FIXES: Use an HTML script tag with the defer attribute instead OR Use an HTML script tag with the async attribute instead.
+ERROR [line 1148, col 56]: The script_tag filter is parser-blocking. Use a <script> tag with async or defer for better performance; SUGGESTED FIXES: Use an HTML script tag with the defer attribute instead OR Use an HTML script tag with the async attribute instead.
+ERROR [line 1149, col 53]: The script_tag filter is parser-blocking. Use a <script> tag with async or defer for better performance; SUGGESTED FIXES: Use an HTML script tag with the defer attribute instead OR Use an HTML script tag with the async attribute instead.
+WARNING [line 385, col 171]: The variable 'page_image' is assigned but not used; SUGGESTED FIXES: Remove the unused variable 'page_image'.
+WARNING [line 382, col 65]: Deprecated filter 'img_url', consider using 'image_url'.; SUGGESTED FIXES: Replace 'img_url' with 'image_url'..
+ERROR [line 425, col 133]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 425, col 476]: 'assets/daisy-street-sign-times.ttf' does not exist
+ERROR [line 434, col 129]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 434, col 472]: 'assets/daisy-street-sign-times.ttf' does not exist
+ERROR [line 443, col 129]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 443, col 472]: 'assets/daisy-street-sign-times.ttf' does not exist
+ERROR [line 450, col 129]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 450, col 472]: 'assets/daisy-street-sign-times.ttf' does not exist
+ERROR [line 456, col 129]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 456, col 472]: 'assets/daisy-street-sign-times.ttf' does not exist
+ERROR [line 463, col 129]: 'assets/daisy-street-sign-times-latin.woff2' does not exist
+ERROR [line 463, col 472]: 'assets/daisy-street-sign-times.ttf' does not exist
+
+### File 8
+**Artifact ID:** artifact-fa9ae399-cafe-4f2f-a3f8-556fbde81718
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-clean-product.liquid passed all checks.
+
+### File 9
+**Artifact ID:** artifact-dfb9ed54-d079-4135-af53-c099fbb3d032
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-clean-product.css passed all checks.
+
+### File 10
+**Artifact ID:** artifact-37c5da75-db13-4630-ab50-b43268f8f8e3
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-clean-product.js passed all checks.
+
+### File 11
+**Artifact ID:** artifact-2cec45e7-521e-42ae-9c3f-e4fdf606d58d
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** locales/en.default.json passed all checks.
+
+### File 12
+**Artifact ID:** artifact-fa31ad15-99ea-42d2-a871-c10e825c6cc6
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** snippets/dm-cart-extra-gifts.liquid passed all checks.
+
+### File 13
+**Artifact ID:** artifact-a1e7a03e-86ab-41af-b024-fabbd823a289
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** assets/dm-cart-extra-gifts.js passed all checks.
+
+### File 14
+**Artifact ID:** artifact-9638772f-ce37-41ac-a11e-76e7776c61fd
+**Revision:** 1
+*Use same ID & increment revision when retrying on an improvement of this artifact*
+
+**Status:** ✅ SUCCESS
+**Details:** sections/main-cart.liquid passed all checks.

@@ -1,0 +1,8 @@
+{
+  "productId": "9537787134291",
+  "variantId": "49588707623251",
+  "baseline": "11.95",
+  "observedAfterAppSave": "4.95",
+  "restored": "11.95",
+  "cause": "Globo save unexpectedly reset linked Shopify variant to stale cached price; corrected immediately to audit baseline."
+}
