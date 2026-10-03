@@ -1,0 +1,378 @@
+--- live/layout/theme.liquid
++++ new/layout/theme.liquid
+@@ -400,7 +400,7 @@
+                 {% render 'dm-popular-chip' %}
+             {%- endif -%}
+             {%- case product.handle -%}
+-            {%- when 'personalised-graduation-pebble-hanging-heart' or 'personalised-anniversary-pebble-people-hanging-heart' or 'personalised-christening-pebble-hanging-heart' or 'personalised-family-pebble-hanging-heart' or 'personalised-silver-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-mum-pebble-hanging-heart' or 'personalised-new-home-pebble-hanging-heart' or 'personalised-new-home-our-home-pebble-hanging-heart' or 'personalised-hello-baby-pebble-hanging-heart' or 'personalised-new-baby-pebble-hanging-heart-3-colours' or 'personalised-always-forever-pebblescape' or 'personalised-wedding-swing-pebblescape' or 'personalised-engagement-swing-pebblescape' or 'personalised-true-friends-pebblescape-2' or 'personalised-christening-pebblescape' or 'personalised-everything-to-me-pebblescape' or 'personalised-little-moments-pebblescape' or 'personalised-family-blossom-tree-pebblescape' or 'personalised-family-by-the-sea-pebblescape' or 'personalised-family-swing-pebblescape' or 'personalised-true-friends-pebblescape' or 'personalised-home-is-our-happy-place-pebblescape' or 'personalised-laser-cut-acrylic-bbq-grill-sign-gift-copy' or 'dad-grandpa-premium-quality-bottle-opener' or 'personalised-bbq-grill-hanging-sign' or 'personalised-teacher-teaching-assistant-superhero-keyring' or 'personalised-love-at-christmas-christmas-family-pebble-heart-hanging-decoration' or 'personalised-engagement-pebble-hanging-heart-gift-copy' or 'personalised-1st-christmas-new-home-pebble-hanging-heart' or 'personalised-my-1st-christmas-babys-1st-christmas-pebble-hanging-heart' or 'personalised-our-1st-christmas-together-hanging-heart' or 'personalised-pets-1st-christmas-pebble-hanging-heart' or 'personalised-dog-remembrance-christmas-tree-decoration-pebble-hanging-heart' or 'personalised-remembrance-christmas-pebble-hanging-heart' or 'personalised-all-you-do-for-me-pebble-hanging-heart' or 'personalised-thank-you-pebble-people-hanging-heart' or 'personalised-family-christmas-pebble-hanging-heart' or 'personalised-wonderland-family-christmas-pebble-hanging-heart' or 'personalised-sister-pebble-hanging-heart' or 'personalised-always-my-sister-hanging-heart' or 'personalised-forever-friends-pebble-hanging-heart' or 'personalised-anniversary-pebble-people-hanging-heart-copy' or 'personalised-beach-proposal-pebble-hanging-heart-gift' or 'personalised-couple-valentines-edition-pebble-hanging-heart' or 'personalised-flutterby-blossom-tree-pebble-hanging-heart-6-colours' or 'personalised-friendship-pebble-hanging-heart' or 'personalised-mum-blossom-tree-hanging-heart' or 'personalised-grandparent-blossom-tree-hanging-heart' or 'personalised-family-blossom-tree-pebble-hanging-heart' or 'personalised-guardian-angel-remembrance-pebble-people-hanging-heart' or 'personalised-ruby-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-golden-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-everything-to-me-pebble-hanging-heart' or 'personalised-dog-remembrance-pebble-people-hanging-heart' or 'personalised-robins-remembrance-outdoor-pebble-people-hanging' or 'personalised-wedding-love-tree-pebble-hanging-heart-copy' or 'personalised-beach-wedding-pebble-hanging-heart-2' or 'personalised-always-and-forever-hanging-heart' or 'personalised-mr-mrs-christmas-wedding-pebble-people-hanging-heart' or 'first-christmas-as-mummy-daddy-to-personalised-pebble-hanging-heart' or 'first-christmas-as-nanny-grandad-to-personalised-pebble-hanging-heart' or 'personalised-engagement-pebble-hanging-heart' or 'personalised-love-at-christmas-christmas-wedding-pebble-heart-hanging-decoration' or 'personalised-new-baby-stalk-hanging-heart' or 'personalised-birthday-pebble-hanging-heart' or 'personalised-elf-arrival-postcard-with-optional-elf-toy' or 'personalised-mr-mrs-reed-diffuser-gift' or 'personalised-family-reed-diffuser-gift' or 'personalised-christmas-reed-diffuser-gift' or 'personalised-friendship-reed-diffuser-gift' -%}
++            {%- when 'personalised-graduation-pebble-hanging-heart' or 'personalised-anniversary-pebble-people-hanging-heart' or 'personalised-christening-pebble-hanging-heart' or 'personalised-family-pebble-hanging-heart' or 'personalised-silver-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-mum-pebble-hanging-heart' or 'personalised-new-home-pebble-hanging-heart' or 'personalised-new-home-our-home-pebble-hanging-heart' or 'personalised-hello-baby-pebble-hanging-heart' or 'personalised-new-baby-pebble-hanging-heart-3-colours' or 'personalised-always-forever-pebblescape' or 'personalised-wedding-swing-pebblescape' or 'personalised-engagement-swing-pebblescape' or 'personalised-true-friends-pebblescape-2' or 'personalised-christening-pebblescape' or 'personalised-everything-to-me-pebblescape' or 'personalised-little-moments-pebblescape' or 'personalised-family-blossom-tree-pebblescape' or 'personalised-family-by-the-sea-pebblescape' or 'personalised-family-swing-pebblescape' or 'personalised-true-friends-pebblescape' or 'personalised-home-is-our-happy-place-pebblescape' or 'personalised-laser-cut-acrylic-bbq-grill-sign-gift-copy' or 'dad-grandpa-premium-quality-bottle-opener' or 'personalised-bbq-grill-hanging-sign' or 'personalised-teacher-teaching-assistant-superhero-keyring' or 'personalised-love-at-christmas-christmas-family-pebble-heart-hanging-decoration' or 'personalised-engagement-pebble-hanging-heart-gift-copy' or 'personalised-1st-christmas-new-home-pebble-hanging-heart' or 'personalised-my-1st-christmas-babys-1st-christmas-pebble-hanging-heart' or 'personalised-our-1st-christmas-together-hanging-heart' or 'personalised-pets-1st-christmas-pebble-hanging-heart' or 'personalised-dog-remembrance-christmas-tree-decoration-pebble-hanging-heart' or 'personalised-remembrance-christmas-pebble-hanging-heart' or 'personalised-all-you-do-for-me-pebble-hanging-heart' or 'personalised-thank-you-pebble-people-hanging-heart' or 'personalised-family-christmas-pebble-hanging-heart' or 'personalised-wonderland-family-christmas-pebble-hanging-heart' or 'personalised-sister-pebble-hanging-heart' or 'personalised-always-my-sister-hanging-heart' or 'personalised-forever-friends-pebble-hanging-heart' or 'personalised-anniversary-pebble-people-hanging-heart-copy' or 'personalised-beach-proposal-pebble-hanging-heart-gift' or 'personalised-couple-valentines-edition-pebble-hanging-heart' or 'personalised-flutterby-blossom-tree-pebble-hanging-heart-6-colours' or 'personalised-friendship-pebble-hanging-heart' or 'personalised-mum-blossom-tree-hanging-heart' or 'personalised-grandparent-blossom-tree-hanging-heart' or 'personalised-family-blossom-tree-pebble-hanging-heart' or 'personalised-guardian-angel-remembrance-pebble-people-hanging-heart' or 'personalised-ruby-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-golden-wedding-anniversary-pebble-people-hanging-heart' or 'personalised-everything-to-me-pebble-hanging-heart' or 'personalised-dog-remembrance-pebble-people-hanging-heart' or 'personalised-robins-remembrance-outdoor-pebble-people-hanging' or 'personalised-wedding-love-tree-pebble-hanging-heart-copy' or 'personalised-beach-wedding-pebble-hanging-heart-2' or 'personalised-always-and-forever-hanging-heart' or 'personalised-mr-mrs-christmas-wedding-pebble-people-hanging-heart' or 'first-christmas-as-mummy-daddy-to-personalised-pebble-hanging-heart' or 'first-christmas-as-nanny-grandad-to-personalised-pebble-hanging-heart' or 'personalised-engagement-pebble-hanging-heart' or 'personalised-love-at-christmas-christmas-wedding-pebble-heart-hanging-decoration' or 'personalised-new-baby-stalk-hanging-heart' or 'personalised-birthday-pebble-hanging-heart' or 'personalised-elf-arrival-postcard-with-optional-elf-toy' or 'personalised-mr-mrs-reed-diffuser-gift' or 'personalised-family-reed-diffuser-gift' or 'personalised-christmas-reed-diffuser-gift' or 'personalised-friendship-reed-diffuser-gift' or 'personalised-merry-bright-family-christmas-pebble-hanging-decoration' or 'personalised-family-festive-christmas-pebble-star-hanging-decoration' -%}
+                 {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+                 {% render 'dm-heart-builder' %}
+                 {%- if dm_release_diffusers contains product.handle -%}
+--- live/snippets/dm-heart-builder.liquid
++++ new/snippets/dm-heart-builder.liquid
+@@ -169,6 +169,12 @@
+     when 'personalised-wonderland-family-christmas-pebble-hanging-heart'
+       assign dm_heart_enabled = true
+       assign dm_heart_kind = 'wonderlandheart'
++    when 'personalised-merry-bright-family-christmas-pebble-hanging-decoration'
++      assign dm_heart_enabled = true
++      assign dm_heart_kind = 'merrybrightheart'
++    when 'personalised-family-festive-christmas-pebble-star-hanging-decoration'
++      assign dm_heart_enabled = true
++      assign dm_heart_kind = 'festivestar'
+     when 'personalised-love-at-christmas-christmas-family-pebble-heart-hanging-decoration'
+       assign dm_heart_enabled = true
+       assign dm_heart_kind = 'lovexmasfamily'
+@@ -3850,6 +3856,323 @@
+           }
+         ]
+       }
++      {%- when 'merrybrightheart' -%}
++      "heading": "Create your Merry & Bright Christmas heart",
++      "copy": "Choose your pebble family, add your wording, then add to basket. Five or more pebbles needs the large heart.",
++      "pebbles": {
++        "countKey": "Number of pebbles",
++        "pebbleKeyPrefix": "Pebble ",
++        "min": 1,
++        "max": 8,
++        "defaultCount": 3,
++        "types": [
++          "Adult",
++          "Child",
++          "Dog",
++          "Cat"
++        ],
++        "largeFrom": 5,
++        "largeCountSuffix": " (Large heart +£3)",
++        "xlFrom": 7,
++        "xlPricePence": 500,
++        "xlVariantId": 50089350136147,
++        "xlName": "7/8 pebbles",
++        "xlCountSuffix": " (Large heart +£5)"
++      },
++      "size": {
++        "key": "Size 1",
++        "first": true,
++        "options": [
++          {
++            "label": "Small",
++            "note": "10 x 10cm",
++            "value": "Small 10 x 10cm (£15.95)",
++            "extraPence": 0
++          },
++          {
++            "label": "Large",
++            "note": "15 x 15cm",
++            "value": "Large 15 x 15cm (£18.95)",
++            "extraPence": 300,
++            "helperVariantId": 50089716711763,
++            "helperName": "Large Decoration"
++          }
++        ]
++      },
++      "fields": [
++        {
++          "key": "Text above",
++          "label": "Text above",
++          "type": "text",
++          "required": true,
++          "placeholder": "e.g. The Green Family"
++        },
++        {
++          "key": "Text below",
++          "label": "Text below",
++          "type": "text",
++          "required": true,
++          "placeholder": "e.g. Daddy, Mummy, Charlie, Ollie & Charlotte"
++        },
++        {
++          "key": "Add 2026?",
++          "label": "Add 2026 to the design?",
++          "type": "select",
++          "required": true,
++          "values": [
++            "YES Please",
++            "NO Thanks leave blank"
++          ]
++        }
++      ],
++      "offer": {
++        "key": "**INCREDIBLE OFFER**",
++        "yes": "YES Please",
++        "no": "NO Thanks",
++        "variantId": 50201961693523,
++        "pricePence": 1095,
++        "label": "Add a second heart",
++        "note": "Personalise another Merry & Bright heart at a special price",
++        "offerSizeKey": "(Offer) Size",
++        "offerSizeValue": "Small 10 x 10cm (£10.95)",
++        "sizeOptions": [
++          {
++            "label": "Small",
++            "note": "10 x 10cm",
++            "value": "Small 10 x 10cm (£10.95)",
++            "extraPence": 0
++          },
++          {
++            "label": "Large",
++            "note": "15 x 15cm",
++            "value": "Large 15 x 15cm (£13.95)",
++            "extraPence": 300,
++            "helperVariantId": 50089716711763,
++            "helperName": "Large Decoration (second heart)"
++          }
++        ],
++        "pebbles": {
++          "countKey": "(Offer) Number of pebbles",
++          "pebbleKeyPrefix": "(Offer) Pebble ",
++          "min": 1,
++          "max": 8,
++          "defaultCount": 3,
++          "types": [
++            "Adult",
++            "Child",
++            "Dog",
++            "Cat"
++          ],
++          "largeFrom": 5,
++          "largeCountSuffix": " (Large heart +£3)",
++          "xlFrom": 7,
++          "xlPricePence": 500,
++          "xlVariantId": 50089350136147,
++          "xlName": "7/8 pebbles",
++          "xlCountSuffix": " (Large heart +£5)"
++        },
++        "fields": [
++          {
++            "key": "(Offer) Text above",
++            "label": "Second heart — text above",
++            "type": "text",
++            "required": true,
++            "placeholder": "e.g. The Green Family"
++          },
++          {
++            "key": "(Offer) Text below",
++            "label": "Second heart — text below",
++            "type": "text",
++            "required": true,
++            "placeholder": "e.g. Daddy, Mummy, Charlie, Ollie & Charlotte"
++          },
++          {
++            "key": "(Offer) Add 2026?",
++            "label": "Second heart — add 2026?",
++            "type": "select",
++            "required": true,
++            "values": [
++              "YES Please",
++              "NO Thanks leave blank"
++            ]
++          }
++        ]
++      },
++      "giftBox": {
++        "designs": [
++          {
++            "title": "Christmas 2026",
++            "quote": "The most wonderful time of the year",
++            "productTitle": "Celebration & New Beginnings Gift Boxes",
++            "image": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-christmas-2026.png?v=1784299819&width=160",
++            "zoom": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-christmas-2026.png?v=1784299819&width=1200",
++            "small": {
++              "variantId": 54335779570003,
++              "pricePence": 395,
++              "label": "Small (10 × 10 cm)"
++            },
++            "large": {
++              "variantId": 54335779602771,
++              "pricePence": 495,
++              "label": "Large (14 × 18 cm)"
++            }
++          },
++          {
++            "title": "Family Is a Gift",
++            "quote": "Family is a gift that lasts forever",
++            "productTitle": "Family & Love Gift Boxes",
++            "image": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-family-is-a-gift.png?v=1784299899&width=160",
++            "zoom": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-family-is-a-gift.png?v=1784299899&width=1200",
++            "small": {
++              "variantId": 54335779111251,
++              "pricePence": 395,
++              "label": "Small (10 × 10 cm)"
++            },
++            "large": {
++              "variantId": 54335779144019,
++              "pricePence": 495,
++              "label": "Large (14 × 18 cm)"
++            }
++          }
++        ,
++          {
++            "title": "Together They Built a Life",
++            "quote": "And so together they built a life they love",
++            "productTitle": "Family & Love Gift Boxes",
++            "image": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-together-they-built-a-life.png?v=1784299843&width=160",
++            "zoom": "https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-gift-box-together-they-built-a-life.png?v=1784299843&width=1200",
++            "small": { "variantId": 54335779176787, "pricePence": 395, "label": "Small (10 × 10 cm)" },
++            "large": { "variantId": 54335779209555, "pricePence": 495, "label": "Large (14 × 18 cm)" }
++          }
++        ]
++      }
++      {%- when 'festivestar' -%}
++      "heading": "Create your Family Festive Christmas star",
++      "itemNoun": "star",
++      "copy": "Choose your pebble family, add your wording, then add to basket. Five or more pebbles needs the large star.",
++      "pebbles": {
++        "countKey": "Number of pebbles",
++        "pebbleKeyPrefix": "Pebble ",
++        "min": 1,
++        "max": 8,
++        "defaultCount": 3,
++        "types": [
++          "Adult",
++          "Teen",
++          "Child",
++          "Baby",
++          "Dog",
++          "Cat"
++        ],
++        "largeFrom": 5,
++        "largeCountSuffix": " (Large heart)",
++        "xlFrom": 7,
++        "xlPricePence": 500,
++        "xlVariantId": 50089350136147,
++        "xlName": "7/8 pebbles",
++        "xlCountSuffix": " (Large heart)"
++      },
++      "size": {
++        "key": "Size",
++        "first": true,
++        "options": [
++          {
++            "label": "Small",
++            "note": "10 x 10cm",
++            "value": "Small 10 x 10cm (£15.95)",
++            "extraPence": 0
++          },
++          {
++            "label": "Large",
++            "note": "15 x 15cm",
++            "value": "Large 15 x 15cm (£18.95)",
++            "extraPence": 300,
++            "helperVariantId": 50089716711763,
++            "helperName": "Large Decoration"
++          }
++        ]
++      },
++      "fields": [
++        {
++          "key": "Text above",
++          "label": "Text above",
++          "type": "text",
++          "required": true,
++          "placeholder": "e.g. A silent night, a star above, a blessed gift of family & love xx"
++        },
++        {
++          "key": "Text below",
++          "label": "Text below",
++          "type": "text",
++          "required": true,
++          "placeholder": "e.g. Mummy, Daddy, Tia, Freddie, Mark & Stanley"
++        }
++      ],
++      "offer": {
++        "key": "**INCREDIBLE OFFER**",
++        "yes": "YES Please",
++        "no": "NO Thanks",
++        "variantId": 50201961693523,
++        "pricePence": 1095,
++        "label": "Add a second star",
++        "note": "Personalise another Family Festive star at a special price",
++        "offerSizeKey": "(Offer) Size",
++        "offerSizeValue": "Small 10 x 10cm (£10.95)",
++        "sizeOptions": [
++          {
++            "label": "Small",
++            "note": "10 x 10cm",
++            "value": "Small 10 x 10cm (£10.95)",
++            "extraPence": 0
++          },
++          {
++            "label": "Large",
++            "note": "15 x 15cm",
++            "value": "Large 15 x 15cm (£13.95)",
++            "extraPence": 300,
++            "helperVariantId": 50089716711763,
++            "helperName": "Large Decoration (second star)"
++          }
++        ],
++        "pebbles": {
++          "countKey": "(Offer) Number of pebbles",
++          "pebbleKeyPrefix": "(Offer) Pebble ",
++          "min": 1,
++          "max": 8,
++          "defaultCount": 3,
++          "types": [
++            "Adult",
++            "Teen",
++            "Child",
++            "Baby",
++            "Dog",
++            "Cat"
++          ],
++          "largeFrom": 5,
++          "largeCountSuffix": " (Large heart)",
++          "xlFrom": 7,
++          "xlPricePence": 500,
++          "xlVariantId": 50089350136147,
++          "xlName": "7/8 pebbles",
++          "xlCountSuffix": " (Large heart)"
++        },
++        "fields": [
++          {
++            "key": "(Offer) Text above",
++            "label": "Second star — text above",
++            "type": "text",
++            "required": true,
++            "placeholder": "e.g. A silent night, a star above, a blessed gift of family & love xx"
++          },
++          {
++            "key": "(Offer) Text below",
++            "label": "Second star — text below",
++            "type": "text",
++            "required": true,
++            "placeholder": "e.g. Mummy, Daddy, Tia, Freddie, Mark & Stanley"
++          }
++        ]
++      }
+       {%- when 'lovexmasfamily' -%}
+       "heading": "Create your Love at Christmas family heart",
+       "copy": "Choose your pebble family, add your wording, then add to basket. Five or more pebbles needs the large heart.",
+--- live/assets/daisy-street-sign-options.js
++++ new/assets/daisy-street-sign-options.js
+@@ -379,10 +379,15 @@
+       if (block) block.hidden = !sign;
+       if (!sign) return;
+       signNode.dataset.size = secondSign ? current.secondSize : current.size;
++      // The example subtitle belongs to the untouched example only. Once line 1
++      // is theirs, an empty line 2 means a one-line sign (production prints it
++      // with --no-line2), so the sample date switches off instead of reading as
++      // part of their sign, and comes back only if they clear line 1 again.
++      var previewLineTwo = sign.lineTwo ? signWording(sign.lineTwo) : (sign.lineOne ? '' : signWording(SAMPLE_LINE_TWO));
+       renderAccuratePreview(
+         signNode,
+         signWording(sign.lineOne || SAMPLE_LINE_ONE),
+-        signWording(sign.lineTwo || SAMPLE_LINE_TWO)
++        previewLineTwo
+       );
+       // Both states render as finished black engraving — an untouched sign is a
+       // worked example of the real product, not a ghost. The caption below it
+@@ -390,7 +395,7 @@
+       var lineOneGroup = qs(signNode, '[data-dm-accurate-line-one]');
+       if (lineOneGroup) lineOneGroup.setAttribute('opacity', '1');
+       var lineTwoGroup = qs(signNode, '[data-dm-accurate-line-two]');
+-      if (lineTwoGroup) lineTwoGroup.setAttribute('opacity', '0.9');
++      if (lineTwoGroup) lineTwoGroup.setAttribute('opacity', previewLineTwo ? '0.9' : '0');
+ 
+       // The caption sits between the boxes and the sign, so it has to explain
+       // what the sign underneath it is — an example until they have typed

@@ -1,0 +1,238 @@
+diff -ruN orig/assets/custom.css new/assets/custom.css
+--- orig/assets/custom.css	2026-09-29 15:08:02.029170935 +0000
++++ new/assets/custom.css	2026-09-29 15:50:56.500120892 +0000
+@@ -1560,3 +1560,48 @@
+ @media (max-width:480px){
+   .dm-cyg__media:has(img[data-dm-zoomable])::after{ left:4px !important; top:36px !important; }
+ }
++
++/* ── Team list, 29 Sep ─────────────────────────────────────────────────
++   1. Add to Cart stands out: heavier, larger type and a taller pill with a
++      deeper lift. Same sage + ink, so it stays on brand and readable
++      (ink on sage is about 6:1). Covers the theme button, the Mr & Mrs
++      sticky bar and the soap/bath bomb picker button.
++   2. Bigger menu type: desktop bar and the mobile burger drawer. */
++/* The Mr & Mrs page layer (daisy-product-poc.css) sets 15px/700 with a
++   (0,3,3) selector, so the builder pages get a heavier one here. */
++.product-form__submit.button,
++html body .productView-action button.product-form__submit.button[name='add'],
++html body .productView-buttons button.product-form__submit.button[name='add']{
++  font-size: 17px !important;
++  font-weight: 800 !important;
++  letter-spacing: .07em !important;
++  min-height: 54px !important;
++  box-shadow: 0 10px 22px -10px rgba(110,109,88,.85) !important;
++}
++.product-form__submit.button:hover{ box-shadow: 0 12px 26px -10px rgba(95,94,76,.9) !important; }
++.dm-sticky-btn{ font-weight: 800 !important; letter-spacing: .06em !important; }
++.dm-pick__add{ font-size: 16px !important; font-weight: 800 !important; letter-spacing: .04em !important; min-height: 54px !important; }
++
++@media (min-width: 1025px){
++  .menu-lv-1__action, .menu-lv-1__action .text{ font-size: 18px !important; font-weight: 600 !important; }
++  .menu-lv-2__action, .menu-lv-2__action .text{ font-size: 17px !important; }
++  .menu-lv-3__action, .menu-lv-3__action .text{ font-size: 16px !important; }
++}
++@media (max-width: 1024px){
++  .site-nav-mobile .menu-lv-1__action, .site-nav-mobile .menu-lv-1__action .text{ font-size: 17px !important; }
++  .site-nav-mobile .menu-lv-2__action, .site-nav-mobile .menu-lv-2__action .text,
++  .site-nav-mobile .menu-lv-3__action, .site-nav-mobile .menu-lv-3__action .text{ font-size: 16px !important; }
++}
++
++/* Add-on buttons: a green tick on the one that's on, so a chosen extra is
++   obvious before Add to Cart (29 Sep). "No thanks" never gets one. */
++.dm-cyg__card .dm-addon-mode__option.is-active:is([data-dm-addon-mode="single"],[data-dm-addon-mode="double"],[data-heart-combo="heart"],[data-heart-combo="heartbox"]):not([data-dm-wrap-style]){
++  flex-direction: row !important; gap: 5px;
++  border-color: #2e7d4f !important; background: #f1f7f1 !important; box-shadow: inset 0 0 0 1px #2e7d4f !important;
++}
++.dm-cyg__card .dm-addon-mode__option.is-active:is([data-dm-addon-mode="single"],[data-dm-addon-mode="double"],[data-heart-combo="heart"],[data-heart-combo="heartbox"]):not([data-dm-wrap-style]):before{
++  content: "\2713"; font-weight: 900; color: #2e7d4f;
++}
++.dm-cyg__card--wrap-styles .dm-addon-mode__option[data-dm-wrap-style][data-wrap-active] .dm-wrap-style__label:before{
++  content: "\2713\00a0"; font-weight: 900; color: #2e7d4f;
++}
+diff -ruN orig/layout/theme.liquid new/layout/theme.liquid
+--- orig/layout/theme.liquid	2026-09-29 15:08:02.023135680 +0000
++++ new/layout/theme.liquid	2026-09-29 15:50:56.495791128 +0000
+@@ -386,6 +386,7 @@
+         {% render 'global-style' %}
+         {% render 'dm-mobile-fixes' %}
+         {%- if request.page_type == 'product' -%}{% render 'dm-proof' %}{%- endif -%}
++        {%- if request.page_type == 'product' -%}{% render 'dm-upsell-accordion' %}{%- endif -%}
+         {%- if request.page_type == 'product' -%}
+             {%- case product.handle -%}
+             {%- when 'porcelain-handled-tea-light-holder-good-friends' or 'porcelain-handled-tea-light-holder-you-brighten-my-day' or 'porcelain-handled-tea-light-holder-with-much-love' -%}
+diff -ruN orig/snippets/dm-upsell-accordion.liquid new/snippets/dm-upsell-accordion.liquid
+--- orig/snippets/dm-upsell-accordion.liquid	1970-01-01 00:00:00.000000000 +0000
++++ new/snippets/dm-upsell-accordion.liquid	2026-09-29 15:50:56.502169719 +0000
+@@ -0,0 +1,171 @@
++{%- comment -%}
++  dm-upsell-accordion — folds the optional extras on product pages into tidy
++  one-line rows (name, price, thumbnail; tap to open), so the Add to Cart
++  isn't buried under a stack of add-on cards. Team request, 29 Sep.
++
++  Covers every builder's add-on cards (.dm-cyg__card: gift box, gift wrap kit,
++  mounting strips, easel, matching heart, …) and the diffuser's "Fancy another
++  look?" extra tag. "Buying another gift?" on the diffusers is already a
++  <details>, so it is only restyled to match.
++
++  Non-destructive: nothing is moved or re-rendered. The block's own header
++  becomes the toggle and everything that isn't the header, a path to it or
++  the thumbnail is marked .dm-acc__body; CSS hides those while closed. Builder
++  scripts keep finding their inputs and hidden fields still submit.
++
++  - A row starts closed unless something in it is already chosen.
++  - Tapping anywhere on a closed row opens it (the thumbnail still zooms).
++  - A chosen row shows "✓ Added" in its header.
++  - Pressing Add to Cart opens every chosen row first, so any wording a
++    builder asks for is on screen if its validation needs it.
++{%- endcomment -%}
++<style>
++  .dm-acc{ scroll-margin-top: 90px; }
++  .dm-acc--closed .dm-acc__body{ display: none !important; }
++  .dm-acc--closed{ cursor: pointer; }
++  .dm-acc__head{ cursor: pointer; position: relative; padding-right: 30px !important; -webkit-tap-highlight-color: transparent; }
++  .dm-acc__head::after{
++    content: ""; position: absolute; right: 8px; top: 50%; width: 8px; height: 8px;
++    border-right: 2px solid #2b2b2b; border-bottom: 2px solid #2b2b2b;
++    transform: translateY(-75%) rotate(45deg); transition: transform .2s ease;
++  }
++  .dm-acc:not(.dm-acc--closed) .dm-acc__head::after{ transform: translateY(-25%) rotate(-135deg); }
++  .dm-acc__head:focus-visible{ outline: 2px solid #9b9a83; outline-offset: 3px; border-radius: 6px; }
++  .dm-acc__added{ display: none; margin-left: 6px; color: #2e7d4f; font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: none; white-space: nowrap; }
++  .dm-acc--chosen .dm-acc__added{ display: inline; }
++  .dm-acc__hint{ margin-left: 6px; color: #6f6e5c; font-size: 13px; font-weight: 700; letter-spacing: 0; text-transform: none; white-space: nowrap; }
++  .dm-acc--chosen .dm-acc__hint{ display: none; }
++
++  /* Closed rows sit tight so the list reads as a menu */
++  .dm-acc--closed.dm-cyg__card{ padding-top: 10px !important; padding-bottom: 10px !important; min-height: 0 !important; }
++  .dm-acc--closed .dm-cyg__media{ align-items: center !important; }
++  .dm-acc--closed .dm-cyg__thumb{ width: 48px !important; height: 48px !important; }
++  .dm-acc--closed .dm-cyg__thumb--heart{ width: 48px !important; height: 48px !important; }
++  .dm-acc--closed .dm-cyg__media::after{ display: none !important; }
++  .dm-acc .dm-cyg__top{ align-items: center; }
++
++  /* "Fancy another look?" as a matching row */
++  .dm-acc.dm-diffuser-extra-tag{ border: 1px solid #ece6dd !important; border-radius: 12px !important; background: #fcfbf9 !important; padding: 12px 14px !important; }
++  .dm-acc.dm-diffuser-extra-tag > .dm-acc__head{ margin: 0 !important; font-size: 16px !important; }
++  .dm-acc.dm-diffuser-extra-tag:not(.dm-acc--closed) > .dm-acc__head{ margin-bottom: 8px !important; }
++
++  /* "Buying another gift?" (already a <details>) styled as the same row */
++  details.dm-diffuser-secondary-offer{ border: 1px solid #ece6dd !important; border-radius: 12px !important; background: #fcfbf9 !important; padding: 12px 14px !important; }
++  details.dm-diffuser-secondary-offer > summary{ list-style: none; cursor: pointer; position: relative; padding-right: 30px; font-weight: 700; }
++  details.dm-diffuser-secondary-offer > summary::-webkit-details-marker{ display: none; }
++  details.dm-diffuser-secondary-offer > summary::after{
++    content: ""; position: absolute; right: 8px; top: 50%; width: 8px; height: 8px;
++    border-right: 2px solid #2b2b2b; border-bottom: 2px solid #2b2b2b;
++    transform: translateY(-75%) rotate(45deg); transition: transform .2s ease;
++  }
++  details.dm-diffuser-secondary-offer[open] > summary::after{ transform: translateY(-25%) rotate(-135deg); }
++</style>
++<script>
++(function () {
++  // [block selector, header selector inside it]
++  var TARGETS = [
++    ['.dm-cyg__card', '.dm-cyg__top'],
++    ['section.dm-diffuser-extra-tag', '.dm-diffuser-extra-tag__title']
++  ];
++  var NONE_RX = /^(no\b|none|no thanks)/i;
++  var ATC = 'button[name="add"], [data-heart-submit], .product-form__submit, #product-add-to-cart';
++
++  function visible(el) { return !!(el.offsetParent || el.getClientRects().length) && !el.closest('[hidden]'); }
++
++  function chosen(block) {
++    if (block.hasAttribute('data-addon-mode')) return block.getAttribute('data-addon-mode') !== 'none';
++    if (block.hasAttribute('data-heart-boxmode-current')) return block.getAttribute('data-heart-boxmode-current') !== 'none';
++    var ticked = [].some.call(block.querySelectorAll('input[type="checkbox"]:checked'), function (i) {
++      var lab = i.closest('label'); return !NONE_RX.test(((lab && lab.innerText) || '').trim());
++    });
++    if (ticked) return true;
++    return [].some.call(block.querySelectorAll('.dm-addon-mode__option.is-active, .dm-addon-mode__option[aria-pressed="true"]'), function (o) {
++      return !o.closest('.dm-acc__body [hidden], [hidden]') && !NONE_RX.test((o.innerText || '').trim());
++    });
++  }
++
++  // Everything off the path from block to header (and not a thumbnail) is body.
++  function mark(block, head) {
++    var node = head;
++    while (node && node !== block) {
++      var parent = node.parentElement;
++      [].forEach.call(parent.children, function (sib) {
++        if (sib === node || sib.classList.contains('dm-acc__body')) return;
++        if (sib.matches('img.dm-cyg__thumb, .dm-cyg__thumb, style, script')) return;
++        sib.classList.add('dm-acc__body');
++      });
++      node = parent;
++    }
++  }
++
++  function setOpen(block, open) {
++    block.classList.toggle('dm-acc--closed', !open);
++    var head = block.querySelector('.dm-acc__head');
++    if (head) head.setAttribute('aria-expanded', open ? 'true' : 'false');
++  }
++
++  function refresh() {
++    document.querySelectorAll('.dm-acc').forEach(function (b) {
++      mark(b, b.querySelector('.dm-acc__head'));
++      b.classList.toggle('dm-acc--chosen', chosen(b));
++    });
++  }
++
++  function enhance() {
++    TARGETS.forEach(function (t) {
++      document.querySelectorAll(t[0]).forEach(function (block) {
++        if (block.classList.contains('dm-acc') || !block.closest('form, .productView-details, .productView-product')) return;
++        var head = block.querySelector(t[1]);
++        if (!head || !visible(block)) return;
++        block.classList.add('dm-acc');
++        head.classList.add('dm-acc__head');
++        head.setAttribute('role', 'button');
++        head.setAttribute('tabindex', '0');
++        if (!/£\d/.test(head.innerText)) {
++          var m = (block.innerText || '').match(/£\d+(?:\.\d\d)?/);
++          if (m) head.insertAdjacentHTML('beforeend', '<span class="dm-acc__hint">+' + m[0] + '</span>');
++        }
++        head.insertAdjacentHTML('beforeend', '<span class="dm-acc__added">✓ Added</span>');
++        mark(block, head);
++        var on = chosen(block);
++        block.classList.toggle('dm-acc--chosen', on);
++        setOpen(block, on);
++        // Some cards fill in later (the gift wrap colour tiles); fold those in too.
++        if (window.MutationObserver) {
++          var pending = false;
++          new MutationObserver(function () {
++            if (pending) return; pending = true;
++            requestAnimationFrame(function () { pending = false; mark(block, head); });
++          }).observe(block, { childList: true, subtree: true });
++        }
++      });
++    });
++  }
++
++  document.addEventListener('click', function (e) {
++    var t = e.target;
++    var head = t.closest('.dm-acc__head');
++    var closedBlock = t.closest('.dm-acc--closed');
++    if (head || (closedBlock && !t.closest('[data-dm-zoomable], a'))) {
++      var block = head ? head.closest('.dm-acc') : closedBlock;
++      e.preventDefault(); e.stopPropagation();
++      setOpen(block, block.classList.contains('dm-acc--closed'));
++      return;
++    }
++    if (t.closest(ATC)) {
++      refresh();
++      document.querySelectorAll('.dm-acc--chosen.dm-acc--closed').forEach(function (b) { setOpen(b, true); });
++    }
++    setTimeout(refresh, 80);
++  }, true);
++  document.addEventListener('change', function () { setTimeout(refresh, 80); }, true);
++  document.addEventListener('keydown', function (e) {
++    var h = e.target;
++    if ((e.key === 'Enter' || e.key === ' ') && h.classList && h.classList.contains('dm-acc__head')) { e.preventDefault(); h.click(); }
++  });
++
++  // Builders render after load; keep enhancing for the first 15 seconds.
++  var tries = 0;
++  (function tick() { enhance(); if (++tries < 30) setTimeout(tick, 500); })();
++})();
++</script>

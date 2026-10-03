@@ -1,0 +1,375 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_pUXpbm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"dm-trust-badges\"><span>⭐ 5/5 Feefo Rated</span><span>🏆 Gold Trusted Service 2026</span><span>✅ 3,326+ Verified Reviews</span></div>\n\n{% if template.name == 'product' and product.handle == 'mr-mrs-personalised-street-sign-gift' %} <div style=\"display: none;\" id=\"dm-sticky-cart\"\n class=\"dm-sticky-cart\">\n  <span class=\"dm-sticky-title\">Mr &amp; Mrs Street Sign</span>\n  <button class=\"dm-sticky-btn\" onclick=\"document.getElementById('product-add-to-cart').click();\">Add to Cart</button>\n</div>\n<script>\n(function(){\n  var sticky = document.getElementById('dm-sticky-cart');\n  var origBtn = document.getElementById('product-add-to-cart');\n  if(!sticky || !origBtn) return;\n  function checkScroll(){\n    var rect = origBtn.getBoundingClientRect();\n    if(rect.bottom < 0){\n      sticky.classList.add('dm-sticky-visible');\n    } else {\n      sticky.classList.remove('dm-sticky-visible');\n    }\n  }\n  window.addEventListener('scroll', checkScroll, {passive: true});\n})();\n</script>\n{% endif %}"
+          }
+        },
+        "2e8c7c14-a0ad-4930-a1d8-3def05310426": {
+          "type": "breadcrumb",
+          "settings": {
+            "breadcrumb_layout": "full",
+            "breadcrumb_alignment": "left",
+            "breadcrumb_bg": "rgba(0,0,0,0)",
+            "breadcrumb_gradient": "",
+            "breadcrumb_bg_mb": "#f6f6f6",
+            "breadcrumb_gradient_mb": "",
+            "breadcrumb_mg_top_desktop": 10,
+            "breadcrumb_mg_top_mobile": 0,
+            "breadcrumb_mg_bottom_desktop": 20,
+            "breadcrumb_mg_bottom_mobile": 0
+          }
+        },
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 20,
+            "fontsize_text_mb": 18,
+            "color_title": "#232323",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "bd066b80-c8e3-4f3e-8280-b27fbf6e9423": {
+          "type": "description",
+          "settings": {
+            "open_tab_mobile": true,
+            "title": "Description",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "4f95b592-8369-4ab0-b30d-24e463fb6890": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 18,
+            "spacing_top": 0,
+            "spacing_bottom": 17
+          }
+        },
+        "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c": {
+          "type": "hot_stock",
+          "settings": {
+            "hot_stock_style": "2",
+            "spacing_top": 0,
+            "spacing_bottom": 8
+          }
+        },
+        "bd3a641e-98d0-4da1-ab57-d5e4b0391995": {
+          "type": "countdown",
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 20
+          }
+        },
+        "d97e417a-941b-4a5d-bef3-a651adb918d8": {
+          "type": "variant_description",
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 12
+          }
+        },
+        "variant_picker_mhBc6B": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "2",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "spacing_top": 0,
+            "spacing_bottom": 15,
+            "atc_animation": "none",
+            "atc_color": "#ffffff",
+            "atc_border_color": "#ffffff",
+            "atc_bg_color": "#c6a45a",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "#232323",
+            "atc_bg_color_hover": "#3c3c3c",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": ""
+          }
+        },
+        "10093fcf-2053-47e9-bedb-841bb0d046fa": {
+          "type": "trust_image",
+          "settings": {
+            "show_trust_image": true,
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "3d9ea84d-5527-4bce-abe6-5debef3ec955": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Delivery Information",
+            "type": "all",
+            "content": "<section class=\"faq-section\">\n  <h3>Delivery Information </h3>\n  \n  <div class=\"faq-item\">\n    <h3>How long will it take for my order to be made and dispatched?</h3>\n    <p>Our standard dispatch time is 5 – 7 working days (see individual product pages for current lead times as this may vary).</p>\n    <p>Express orders will be made and dispatched within 2-3 working days.</p>\n    <p>Super express orders will be made and dispatched the following working day (if ordered before 12pm).</p>\n    <p>During busier periods (e.g., Mother’s Day/Christmas), our dispatch times can be up to 7-14 working days. These will be updated on our website at the time.</p>\n    <p>Collection from our studio may be available by prior arrangement.</p>\n  </div>\n\n  <div class=\"faq-item\">\n    <h3>How long does shipping take?</h3>\n    <p>We use Royal Mail or Yodel for all deliveries. Tracked 24 aims to deliver items within 1 working day of dispatch, and Tracked 48 aims to deliver items within 2-3 working days of dispatch.</p>\n    <p>Dispatch notifications will be sent via text or email. All delivery times are estimates. Please be advised that delays in the delivery service do occasionally take place; however, we do everything we can to assist in these cases.</p>\n    <p>DAISY MAISON CANNOT BE HELD RESPONSIBLE FOR DELAYS IN ADVERTISED DELIVERY TIMESCALES.</p>\n  </div>\n\n  <div class=\"faq-item\">\n    <h3>How will my order be packaged?</h3>\n    <p>All orders are boxed or suitably packed in padded envelopes. Fragile items are protected from damage using environmentally friendly internal packaging. Where possible, we use recycled packaging materials.</p>\n  </div>\n\n  <div class=\"faq-item\">\n    <h3>Returns & Exchanges</h3>\n    <p>As all of our products are handmade to order, items are non-refundable. In the unlikely event an item contains an error or sustains damage during delivery, we will replace it and cover postage costs for returning the faulty product. Return of items should be made via The Post Office, and packaging must be suitable to ensure damage does not occur during return transit. Where possible, original packaging should be used. Cost of return will be refunded by us immediately. We must be made aware of faulty/damaged items within 48hrs of receipt.</p>\n  </div>\n\n  <div class=\"faq-item\">\n    <h3>Additional information</h3>\n    <p>We cannot take responsibility for incorrect delivery addresses entered at the checkout. Any loss caused by incorrect addresses, financial or otherwise, will be your responsibility, unless the negligence is ours. Orders are delivered by courier and are subject to the terms and conditions of these third parties.</p>\n  </div>\n\n</section>\n\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How long will it take for my order to be made and dispatched?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Our standard dispatch time is 5 – 7 working days (see individual product pages for current lead times as this may vary). Express orders will be made and dispatched within 2-3 working days. Super express orders will be made and dispatched the following working day (if ordered before 12pm). During busier periods (e.g., Mother’s Day/Christmas), our dispatch times can be up to 7-14 working days. These will be updated on our website at the time. Collection from our studio may be available by prior arrangement.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How long does shipping take?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"We use Amazon 24/48 or Yodel 48 for all deliveries. Amazon 24 aims to deliver items within 1 working day of dispatch, and Tracked48 aims to deliver items within 2-3 working days of dispatch. Dispatch notifications will be sent via text or email. All delivery times are estimates. Please be advised that delays in the delivery service do occasionally take place; however, we do everything we can to assist in these cases. DAISY MAISON CANNOT BE HELD RESPONSIBLE FOR DELAYS IN ADVERTISED ROYAL MAIL DELIVERY TIMESCALES.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How will my order be packaged?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"All orders are boxed or suitably packed in padded envelopes. Fragile items are protected from damage using environmentally friendly internal packaging. Where possible, we use recycled packaging materials.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Returns & Exchanges\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"As all of our products are handmade to order, items are non-refundable. In the unlikely event an item contains an error or sustains damage during delivery, we will replace it and cover postage costs for returning the faulty product. Return of items should be made via The Post Office, and packaging must be suitable to ensure damage does not occur during return transit. Where possible, original packaging should be used. Cost of return will be refunded by us immediately. We must be made aware of faulty/damaged items within 48hrs of receipt.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Additional information\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"We cannot take responsibility for incorrect delivery addresses entered at the checkout. Any loss caused by incorrect addresses, financial or otherwise, will be your responsibility, unless the negligence is ours. Orders are delivered by courier and are subject to the terms and conditions of these third parties.\"\n      }\n    }\n  ]\n}\n</script>",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300,
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": ""
+          }
+        },
+        "1180d91b-75f9-49d9-a9db-2b9f5a49408d": {
+          "type": "complementary_products",
+          "settings": {
+            "show_complementary_product": false,
+            "complementary_product_title": "Pairs well with",
+            "complementary_product_arrows": false,
+            "complementary_product_dots": true,
+            "complementary_product_layout": "1",
+            "complementary_product_limit_1": 2,
+            "complementary_product_limit_2": 3,
+            "complementary_product_object": "cover",
+            "spacing_top": 30,
+            "spacing_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_pUXpbm",
+        "2e8c7c14-a0ad-4930-a1d8-3def05310426",
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
+        "bd066b80-c8e3-4f3e-8280-b27fbf6e9423",
+        "4f95b592-8369-4ab0-b30d-24e463fb6890",
+        "5d8b9ff9-6a1c-4850-a6c2-e6cdbb8b7f7c",
+        "bd3a641e-98d0-4da1-ab57-d5e4b0391995",
+        "d97e417a-941b-4a5d-bef3-a651adb918d8",
+        "variant_picker_mhBc6B",
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05",
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
+        "10093fcf-2053-47e9-bedb-841bb0d046fa",
+        "3d9ea84d-5527-4bce-abe6-5debef3ec955",
+        "1180d91b-75f9-49d9-a9db-2b9f5a49408d"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "show_sticky_info": false,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "main_image_arrows_desktop": true,
+        "main_image_arrows_mobile": true,
+        "main_image_counter_mobile": true,
+        "main_image_enable_parallax_mb": true,
+        "main_image_show_zoom_icon_mb": true,
+        "main_image_position": "left",
+        "main_image_layout": "2",
+        "main_image_show_custom_cursor": false,
+        "count_color": "#191919",
+        "icon_color": "#000000",
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "3",
+        "thumbnail_to_show": 4,
+        "show_sidebar": false,
+        "sidebar_collapse": "collapse",
+        "enable_sticky": false,
+        "sidebar_layout": "layout_1",
+        "sidebar_collapse_default": "expand",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_1",
+        "sidebar_heading_font_size": 14,
+        "sidebar_heading_font_weight": "700",
+        "sidebar_heading_text_transform": "uppercase",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 148,
+        "zoomed_image": true,
+        "media_fit": "contain",
+        "product_image_popup": "fancybox",
+        "video_layout": "popup",
+        "show_badge": true,
+        "show_qty": true,
+        "show_subtotal": true,
+        "subtotal_style": "1",
+        "show_sticky_add_to_cart": false,
+        "enable_sticky_add_to_cart_always_mobile": false,
+        "show_sticky_vendor": false,
+        "sticky_atc_layout": "1",
+        "show_tab": true,
+        "tab_layout": "vertical",
+        "tab_layout_mobile": "vertical",
+        "icon_style_layout": "style_1",
+        "title_font_size": 18,
+        "title_font_size_mb": 16,
+        "font_weight_title": "600",
+        "title_text_transform": "none",
+        "title_padding_top_bottom": 15,
+        "tab_border_color": "#000000",
+        "tab_border_color_rgb": "",
+        "show_product_bundle": true,
+        "background_color": "#f8f8f8",
+        "padding_top": 30,
+        "padding_top_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom": 70,
+        "padding_bottom_tablet": 40,
+        "padding_bottom_mobile": 30,
+        "block_title": "Frequently Bought Together",
+        "block_title_align": "center",
+        "block_dots": true,
+        "block_arrows": true,
+        "product_style": "2",
+        "block_image_ratio": "square",
+        "bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text_color": "#232323",
+        "total_btn_color": "#ffffff",
+        "total_btn_border": "#232323",
+        "total_btn_bg": "#232323",
+        "total_btn_bg_gradient": "",
+        "total_btn_color_hover": "#232323",
+        "total_btn_border_hover": "#232323",
+        "total_btn_bg_hover": "#ffffff",
+        "total_btn_bg_gradient_hover": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "display_product_block": true,
+        "product_block_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 40,
+        "mg_top_tablet": 35,
+        "mg_top_mobile": 35,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_block_layout": "slider",
+        "product_bg": "#fafaf9",
+        "style_block_header": "style1",
+        "product_block_title": "Related Products",
+        "enable_border_title": false,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 18,
+        "fontsize_title_mb": 18,
+        "color_title": "#232323",
+        "border_color_title": "#232323",
+        "product_block_title_align": "center",
+        "product_block_limit": 6,
+        "grid_gap": 30,
+        "product_block_per_row": "4",
+        "product_block_swipe_on_mobile": true,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": true,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "product-recently-viewed": {
+      "type": "product-recently-viewed",
+      "settings": {
+        "display_product_recently_viewed": true,
+        "product_recently_viewed_container": "1170",
+        "padding_full_width": 10,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_recently_viewed_layout": "slider",
+        "product_bg": "#fafaf9",
+        "product_bg_gradient": "",
+        "style_block_header": "style1",
+        "product_recently_viewed_title": "Recently Viewed Products",
+        "enable_border_title": false,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 18,
+        "fontsize_title_mb": 18,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "product_recently_viewed_title_align": "center",
+        "product_recently_viewed_limit": 10,
+        "product_recently_viewed_image_ratio": "adapt",
+        "grid_gap": 30,
+        "product_recently_viewed_per_row": "4",
+        "product_recently_viewed_swipe_on_mobile": true,
+        "product_recently_viewed_dots": false,
+        "product_recently_viewed_dots_mb": true,
+        "product_recently_viewed_arrows": true,
+        "product_recently_viewed_arrows_mb": false,
+        "product_recently_viewed_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": false,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "product-recently-viewed"
+  ]
+}

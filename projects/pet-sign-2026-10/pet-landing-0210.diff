@@ -1,0 +1,449 @@
+diff -ruN orig/assets/dm-pet-sign.css new/assets/dm-pet-sign.css
+--- orig/assets/dm-pet-sign.css	2026-10-02 07:58:26.404230236 +0000
++++ new/assets/dm-pet-sign.css	2026-10-02 07:50:32.916433875 +0000
+@@ -114,3 +114,44 @@
+ @media(max-width:1000px) and (min-width:750px){.pet-sign{padding:26px 22px 45px}.pet-sign__layout{column-gap:28px}.pet-sign__colour-options{gap:5px}.pet-sign__colour>span{padding:7px}.pet-sign__below{gap:35px}.pet-sign__size small{font-size:14px}}
+ @media(max-width:749px){.pet-sign{padding:0 0 38px;font-size:17px}.pet-sign__layout{display:flex;flex-direction:column;gap:0}.pet-sign__media{position:static;order:0;width:100%}.pet-sign__hero{border-radius:0;max-height:430px;width:100%;background:#efeee7}.pet-sign__hero img{object-fit:contain}.pet-sign__facts{font-size:14px;gap:5px 12px;padding:0 13px;margin:12px 0 0}.pet-sign__heading{order:1;margin:23px 0 22px;padding:0 20px;width:100%}.pet-sign__eyebrow{font-size:14px;letter-spacing:.055em}.pet-sign h1{font-size:35px;margin-bottom:10px}.pet-sign__intro{font-size:18px;margin-bottom:13px}.pet-sign__personalise{order:2;padding:0 20px;width:100%}.pet-sign__price>[data-pet-price]{font-size:26px}.pet-sign__preview-box{padding:18px 11px 13px;margin-bottom:23px}.pet-sign__preview{min-height:70px}.pet-sign__preview-caption{font-size:14px}.pet-sign__colour-options{gap:6px}.pet-sign__colour>span{padding:7px 8px}.pet-sign__size-options{gap:7px}.pet-sign__size>span{min-height:112px}.pet-sign__size small{font-size:14px}.pet-sign__below{display:block;margin:32px 20px 0;padding-top:30px}.pet-sign__story{margin-bottom:32px}.pet-sign h2{font-size:26px}.pet-sign__faqs summary{font-size:17px}.pet-sign__delivery{font-size:15px}}
+ @media(prefers-reduced-motion:reduce){.pet-sign *{transition:none!important}}
++
++/* ── 2 Oct: advert-matched landing additions ──────────────────────────── */
++.pet-sign__rating{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px;font-size:16px;font-weight:600;color:var(--pet-ink)}
++.pet-sign__stars{color:#d9a441;letter-spacing:2px;font-size:17px}
++.pet-sign__compare{font-size:18px;color:#8a8a7a;font-weight:500}
++.pet-sign__save{display:inline-block;padding:3px 9px;border-radius:999px;background:#2e7d4f;color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
++.pet-sign__name{display:grid;gap:9px;margin:0 0 6px}
++.pet-sign__name input{border-width:2px!important}
++.pet-sign__mode{margin:6px 0 22px}
++.pet-sign__mode .pet-sign__text-button{font-size:16px;font-weight:600;padding:8px 0;min-height:44px;cursor:pointer}
++.pet-sign__preview-box.is-sample{border-style:dashed}
++.pet-sign__preview-box.is-sample .pet-sign__preview-caption{color:var(--pet-ink);font-weight:600}
++.pet-sign__proof-line{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:12px 0 0;font-size:15px;font-weight:600}
++
++/* How it works */
++.pet-sign__steps{margin:0 0 34px}
++.pet-sign__steps ol{list-style:none;margin:0;padding:0;display:grid;gap:12px}
++.pet-sign__steps li{display:flex;align-items:flex-start;gap:14px;margin:0;font-size:17px;line-height:1.5}
++.pet-sign__steps li b{flex:0 0 34px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--pet-ink);color:#fff;font-size:16px}
++
++/* Reviews */
++.pet-sign__reviews{margin:0 0 34px}
++.pet-sign__reviews figure{margin:0 0 12px;padding:16px;border:1px solid var(--pet-line);border-radius:10px;background:#fff}
++.pet-sign__reviews blockquote{margin:0 0 8px;font-size:17px;line-height:1.55;font-style:italic}
++.pet-sign__reviews figcaption{font-size:14px;color:var(--pet-muted)}
++
++/* Story + gift line */
++.pet-sign__story{margin:0 0 34px;padding:22px 18px;border-radius:12px;background:var(--pet-paper)}
++
++/* Sticky add-to-basket bar (phones only) */
++.pet-sign__sticky{display:none}
++@media (max-width: 989px){
++  .pet-sign__thumbnails{display:none!important}
++  .pet-sign__gallery-note{margin-top:4px}
++  .pet-sign__sticky:not([hidden]){display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1002;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--pet-line);box-shadow:0 -6px 18px #0000001a}
++  .pet-sign__sticky-price{margin:0;display:flex;align-items:baseline;gap:8px}
++  .pet-sign__sticky-price strong{font-size:20px;font-weight:800}
++  .pet-sign__sticky-btn{flex:0 0 auto;min-height:50px;padding:12px 22px;border:0;border-radius:999px;background:#b0af9b;color:#232323;font:inherit;font-size:17px;font-weight:800;letter-spacing:.04em;cursor:pointer}
++  .pet-sign__sticky-btn:disabled{opacity:.6}
++}
++.pet-sign__submit{font-weight:800!important;letter-spacing:.03em!important}
+diff -ruN orig/assets/dm-pet-sign.js new/assets/dm-pet-sign.js
+--- orig/assets/dm-pet-sign.js	2026-10-02 07:58:26.404185940 +0000
++++ new/assets/dm-pet-sign.js	2026-10-02 10:37:25.020583483 +0000
+@@ -26,8 +26,19 @@
+     previewPersonalised: 'Your personalised sign preview.',
+     extrasUnavailable: 'A selected extra is unavailable.',
+     extrasChanged: 'An extra’s price or availability has changed. Refresh the page before adding.',
+-    extrasSelected: '{count} selected · +{amount}', extrasNone: 'Choose extras'
++    extrasSelected: '{count} selected · +{amount}', extrasNone: 'Choose extras',
++    nameRequired: 'Add your dog\u2019s name.', previewSample: 'Example \u2014 add your dog\u2019s name below to make it yours.',
++    customExpand: 'Write your own wording instead', customCollapse: 'Use the No Need to Knock design',
++    designLineOne: 'No Need to Knock', designLineTwo: '{name} already knows you\'re here', designLineTwoMany: '{name} already know you\'re here',
++    sampleName: 'Buddy', save: 'Save'
+   };
++  // "Buddy & Bella", "Buddy and Bella", "Buddy, Bella" read as more than one pet.
++  function petLines(name, labels) {
++    var n = clean(name);
++    if (!n) return { lineOne: '', lineTwo: '' };
++    var many = /\s(&|\+|and)\s|,/i.test(n);
++    return { lineOne: labels.designLineOne, lineTwo: (many ? labels.designLineTwoMany : labels.designLineTwo).replace('{name}', n) };
++  }
+   function clean(value) { return String(value == null ? '' : value).replace(/\s+/g, ' ').trim(); }
+   function qs(root, selector) { return root.querySelector(selector); }
+   function qsa(root, selector) { return Array.prototype.slice.call(root.querySelectorAll(selector)); }
+@@ -143,7 +154,7 @@
+     svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+     svg.style.width = '100%'; svg.style.height = 'auto'; svg.style.display = 'block';
+     var outer = node('path', { d: p.outer }, svg);
+-    node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
++    var inner = node('path', { d: p.inner, fill: p.PANEL || '#ffffff' }, svg);
+     var holes = (p.holes || []).map(function (hole) {
+       return node('circle', { cx: hole.x, cy: hole.y, r: hole.r, fill: p.PANEL || '#ffffff', 'stroke-width': '0.4' }, svg);
+     });
+@@ -169,6 +180,17 @@
+       var layout = layoutText(p, lines.lineOne, lines.lineTwo, measure);
+       outer.setAttribute('fill', colour);
+       holes.forEach(function (hole) { hole.setAttribute('stroke', colour); });
++      // Wording takes the border colour, as on every other street-sign preview,
++      // and nothing gets an outline: the theme's base CSS was stroking the sign
++      // and both lines in its dark text colour (#232323), which drowned line 2.
++      first.text.setAttribute('fill', colour); second.text.setAttribute('fill', colour);
++      [outer, inner, first.text, second.text].forEach(function (el) {
++        el.setAttribute('stroke', 'none');
++        el.style.setProperty('stroke', 'none', 'important');
++        el.style.setProperty('stroke-width', '0', 'important');
++        el.style.setProperty('paint-order', 'normal', 'important');
++        el.style.setProperty('-webkit-text-stroke', '0', 'important');
++      });
+       apply(first, layout.first); apply(second, layout.second);
+       svg.setAttribute('aria-label', [lines.lineOne, lines.lineTwo].filter(Boolean).join('. ') || labels.previewPersonalised);
+     };
+@@ -181,6 +203,11 @@
+       var config;
+       try { config = JSON.parse(qs(root, '[data-pet-config]').textContent); } catch (_) { return null; }
+       var labels = Object.assign({}, LABELS, config.labels || {});
++      // Theme translations arrive HTML-escaped ("you&#39;re"). These four go onto
++      // the sign itself, so turn entities back into characters.
++      ['designLineOne', 'designLineTwo', 'designLineTwoMany', 'sampleName'].forEach(function (key) {
++        if (typeof labels[key] === 'string') labels[key] = labels[key].replace(/&#39;|&#x27;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
++      });
+       var form = qs(root, '[data-pet-form]');
+       var lineOne = qs(root, '[data-pet-line-one]'), lineTwo = qs(root, '[data-pet-line-two]');
+       var errorNode = qs(root, '[data-pet-error]'), status = qs(root, '[data-pet-status]');
+@@ -193,6 +220,25 @@
+       var busy = false, uncertain = false, completed = false, transport;
+       var renderPreview = createPreview(win, qs(root, '[data-pet-preview]'), labels);
+       var wrapCard = qs(root, '[data-pet-wrap]');
++      // Dog's-name mode (the advert's design) writes both lines for the customer;
++      // "Write your own wording" reveals the two free-text lines. Either way the
++      // basket gets the same Line 1 / Line 2 properties as before.
++      var nameInput = qs(root, '[data-pet-name]'), nameBox = qs(root, '[data-pet-name-box]');
++      var customBox = qs(root, '[data-pet-custom]'), customToggle = qs(root, '[data-pet-custom-toggle]');
++      var sticky = qs(root, '[data-pet-sticky]'), stickyBtn = qs(root, '[data-pet-sticky-btn]');
++      var custom = !nameInput;
++      function syncFromName() {
++        if (custom || !nameInput) return;
++        var l = petLines(nameInput.value, labels);
++        lineOne.value = l.lineOne; lineTwo.value = l.lineTwo;
++      }
++      function setCustom(on) {
++        custom = !!on || !nameInput;
++        if (customBox) customBox.hidden = !custom;
++        if (nameBox) nameBox.hidden = custom;
++        if (customToggle) { customToggle.setAttribute('aria-expanded', String(custom)); customToggle.textContent = custom ? labels.customCollapse : labels.customExpand; }
++        if (!custom) syncFromName();
++      }
+       function values() {
+         var size = qs(root, 'input[name="pet-size"]:checked'), colour = qs(root, 'input[name="pet-colour"]:checked');
+         var wrap = wrapSelection(config, wrapCard, win.DaisyWrapKits);
+@@ -215,11 +261,20 @@
+         var extrasPrice = extrasTotal(extras);
+         var colour = (config.colours || COLOURS).find(function (c) { return c.value === data.colour && /^#[0-9a-f]{6}$/i.test(c.colour); }) || COLOURS[0];
+         var previewBox = qs(root, '[data-pet-preview-box]');
+-        if (previewBox) previewBox.hidden = !lines.lineOne && !lines.lineTwo;
+-        if (renderPreview) renderPreview(lines, colour.colour);
+-        text(qs(root, '[data-pet-wording]'), [lines.lineOne, lines.lineTwo].filter(Boolean).join('\n'));
+-        text(qs(root, '[data-pet-preview-caption]'), labels.previewPersonalised);
++        // Nothing typed yet: show the advert's sign as a worked example, never hide the preview.
++        var sample = !lines.lineOne && !lines.lineTwo;
++        var shown = sample ? petLines(labels.sampleName, labels) : lines;
++        if (previewBox) { previewBox.hidden = false; previewBox.classList.toggle('is-sample', sample); }
++        if (renderPreview) renderPreview(shown, colour.colour);
++        text(qs(root, '[data-pet-wording]'), sample ? '' : [lines.lineOne, lines.lineTwo].filter(Boolean).join('\n'));
++        text(qs(root, '[data-pet-preview-caption]'), sample ? labels.previewSample : labels.previewPersonalised);
+         qsa(root, '[data-pet-price]').forEach(function (node) { text(node, variant ? money(variant.price) : ''); });
++        var compare = variant && Number(variant.compare_at_price) > Number(variant.price) ? Number(variant.compare_at_price) : 0;
++        qsa(root, '.pet-sign__price [data-pet-compare]').forEach(function (node) { node.hidden = !compare; text(node, compare ? money(compare) : ''); });
++        qsa(root, '.pet-sign__price [data-pet-save]').forEach(function (node) { node.hidden = !compare; text(node, compare ? labels.save + ' ' + money(compare - variant.price) : ''); });
++        text(qs(root, '[data-pet-sticky-total]'), variant ? money(variant.price + extrasPrice) : '');
++        if (nameInput) nameInput.disabled = busy;
++        if (stickyBtn) stickyBtn.disabled = busy || uncertain;
+         text(qs(root, '[data-pet-extras-summary]'), extras.length ? labels.extrasSelected.replace('{count}', String(extras.length)).replace('{amount}', money(extrasPrice)) : labels.extrasNone);
+         qsa(root, '[data-pet-extra]').forEach(function (input) {
+           var extra = (config.extras || []).find(function (candidate) { return String(candidate.variantId) === input.value; });
+@@ -252,6 +307,7 @@
+       function submit() {
+         if (busy || uncertain) return Promise.resolve(false);
+         clearError();
++        if (!custom && nameInput && !clean(nameInput.value)) { showError(labels.nameRequired, nameInput); return Promise.resolve(false); }
+         var data = values(), invalid = validationKey(data), variant = selected(data);
+         if (invalid) { showError(labels[invalid], clean(data.lineTwo).length > 75 ? lineTwo : lineOne); return Promise.resolve(false); }
+         if (!variant || !variant.available) { showError(labels.unavailable); return Promise.resolve(false); }
+@@ -289,6 +345,33 @@
+         submit();
+       });
+       form.addEventListener('submit', function (event) { event.preventDefault(); submit(); });
++      if (nameInput) nameInput.addEventListener('input', syncFromName);
++      if (customToggle) customToggle.addEventListener('click', function (event) {
++        event.preventDefault();
++        if (busy) return;
++        var wasCustom = custom;
++        if (!wasCustom && nameInput && clean(nameInput.value) && !clean(lineOne.value)) syncFromName();
++        setCustom(!wasCustom);
++        clearError(); render();
++        var focusTarget = custom ? lineOne : nameInput;
++        if (focusTarget) focusTarget.focus();
++      });
++      // Phones: a slim bar with the live total and Add to basket once the main
++      // button has scrolled out of view.
++      if (sticky && stickyBtn && win.IntersectionObserver && buttons[0]) {
++        var mainVisible = true;
++        var showSticky = function () { sticky.hidden = mainVisible || (win.scrollY || 0) < 320; };
++        new win.IntersectionObserver(function (entries) { mainVisible = entries[0].isIntersecting; showSticky(); }).observe(buttons[0]);
++        win.addEventListener('scroll', showSticky, { passive: true });
++        stickyBtn.addEventListener('click', function (event) {
++          event.preventDefault();
++          submit().then(function (ok) {
++            if (ok) return;
++            var target = errorNode && !errorNode.hidden ? (custom || !nameInput || clean(nameInput.value) ? errorNode : (nameBox || nameInput)) : null;
++            if (target && target.scrollIntoView) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
++          });
++        });
++      }
+       root.addEventListener('input', function () { if (!busy) { clearError(); render(); } });
+       root.addEventListener('change', function () { if (!busy) { clearError(); render(); } });
+       // The shared Mr & Mrs picker handles swatch/zoom clicks in capture phase.
+@@ -306,6 +389,7 @@
+       });
+       var controller = { render: render, submit: submit, values: values };
+       root.__daisyPetSign = controller;
++      setCustom(false);
+       render();
+       if (doc.fonts && doc.fonts.load) doc.fonts.load('400 100px "' + FONT + '"').then(function () { if (root.isConnected !== false) render(); }).catch(function () {});
+       return controller;
+@@ -317,6 +401,6 @@
+     doc.addEventListener('shopify:section:load', scan);
+     return api;
+   }
+-  return { clean: clean, wording: wording, validationKey: validationKey, validateConfig: validateConfig,
++  return { clean: clean, petLines: petLines, wording: wording, validationKey: validationKey, validateConfig: validateConfig,
+     buildItem: buildItem, buildItems: buildItems, selectedExtras: selectedExtras, extrasTotal: extrasTotal, wrapSelection: wrapSelection, verifyProduct: verifyProduct, verifyExtra: verifyExtra, layoutText: layoutText, boot: boot };
+ });
+diff -ruN orig/locales/en.default.json new/locales/en.default.json
+--- orig/locales/en.default.json	2026-10-02 07:58:26.398137756 +0000
++++ new/locales/en.default.json	2026-10-02 08:09:57.597927520 +0000
+@@ -1222,12 +1222,12 @@
+     "slow": "Still checking your basket. Please wait…"
+   },
+   "pet_sign": {
+-    "meta_title": "Personalised Pet Street Sign — Create Your Own",
++    "meta_title": "No Need to Knock Personalised Pet Sign",
+     "meta_description": "Create a personalised pet street sign with your own wording. Choose your border colour and size and see your sign before adding it to your basket.",
+     "hero_alt": "No need to knock street sign with Buddy the golden retriever by the front door",
+-    "eyebrow": "Create your own",
+-    "title": "Personalised Pet Street Sign",
+-    "intro": "Your wording, your pet’s sign. Add up to two lines, choose a colour and pick your size.",
++    "eyebrow": "Personalised pet sign",
++    "title": "No Need to Knock Pet Sign",
++    "intro": "Your wording, your pet’s sign. Type your two lines, choose a border colour and pick your size.",
+     "gallery": {
+       "label": "Product photographs",
+       "first": "Photo 1 of 2: No need to knock",
+@@ -1243,18 +1243,18 @@
+     "fact_one": "Made for your pet",
+     "fact_two": "Indoor & outdoor",
+     "fact_three": "3mm acrylic",
+-    "name": "Your pet’s name",
++    "name": "Your dog’s name",
+     "name_placeholder": "e.g. Buddy",
+-    "name_help": "Add their name and watch your sign update below.",
++    "name_help": "Two dogs? Add both, e.g. Buddy & Bella.",
+     "line_one": "Main sign text",
+     "line_two": "Smaller sign text (optional)",
+-    "line_one_placeholder": "Type your main wording",
+-    "line_two_placeholder": "Type your smaller wording",
++    "line_one_placeholder": "e.g. No Need to Knock",
++    "line_two_placeholder": "e.g. Buddy already knows you're here",
+     "border": "Border colour",
+     "size": "Choose your size",
+     "add": "Add my sign",
+     "review_cart": "Review my basket",
+-    "delivery_short": "Delivery calculated at checkout. Free UK delivery over £50.",
++    "delivery_short": "Personalised and dispatched within 5–7 working days, with express options at checkout. Free UK delivery over £50.",
+     "no_script": "Please enable JavaScript to personalise your sign before adding it to your basket.",
+     "story_eyebrow": "For the one who hears everything",
+     "story_title": "Their house. Their sign.",
+@@ -1295,10 +1295,16 @@
+       "wording_q": "Can I choose any wording?",
+       "wording_a": "Yes. Enter your main sign text and an optional smaller line. The photos are examples; your sign will use the wording you enter. Check the preview before adding it to your basket.",
+       "delivery_q": "What are the delivery options?",
+-      "delivery_a": "Standard and express tracked delivery options are shown at checkout. Your sign is personalised to order; a tracked service’s transit time is separate from the time needed to make it. UK orders over £50 qualify for free delivery."
++      "delivery_a": "Standard and express tracked delivery options are shown at checkout. Your sign is personalised to order; a tracked service’s transit time is separate from the time needed to make it. UK orders over £50 qualify for free delivery.",
++      "outdoor_q": "Can it go outside?",
++      "outdoor_a": "Yes. It’s made from 3mm acrylic with the wording and border printed in UV inks, and it’s suitable for indoor and outdoor use.",
++      "two_pets_q": "Can I add two dogs?",
++      "two_pets_a": "Yes. Add both names in your wording, for example “Buddy & Bella already know you’re here”. Each line holds up to 75 characters.",
++      "dispatch_q": "How long will it take?",
++      "dispatch_a": "Standard orders are personalised and dispatched within 5–7 working days. Express orders are made and dispatched within 2–3 working days, and super express orders the next working day if placed before 12pm. During busy periods such as Christmas, dispatch can take 7–14 working days."
+     },
+     "labels": {
+-      "extrasNone": "Choose extras",
++      "extrasNone": "Gift wrap, easel or strips",
+       "extrasSelected": "{count} selected · +{amount}",
+       "extrasUnavailable": "A selected extra is unavailable.",
+       "extrasChanged": "An extra’s price or availability has changed. Refresh the page before adding.",
+@@ -1310,15 +1316,39 @@
+       "adding": "Adding your sign…",
+       "slow": "Still adding your sign. Please wait.",
+       "unavailable": "This size is currently unavailable.",
+-      "nameRequired": "Enter your pet’s name.",
++      "nameRequired": "Add your dog’s name.",
+       "lineRequired": "Enter the main wording for your sign.",
+       "error": "Your sign could not be added. Please try again.",
+       "review": "We could not confirm the basket. Please review it before adding again.",
+       "changed": "This size or price has changed. Refresh the page before adding.",
+-      "previewSample": "Sign preview — enter your wording in the fields below.",
++      "previewSample": "Example — type your own wording below.",
+       "previewPersonalised": "Your sign preview",
+-      "customExpand": "Edit the full wording",
+-      "customCollapse": "Use the pet name design"
++      "customExpand": "Write your own wording instead",
++      "customCollapse": "Use the No Need to Knock design"
++    },
++    "rating": "1,400+ five-star reviews on Trustpilot",
++    "save": "Save",
++    "design_line_one": "No Need to Knock",
++    "design_line_two_html": "{name} already knows you're here",
++    "design_line_two_many_html": "{name} already know you're here",
++    "sample_name": "Buddy",
++    "proof_line": "Loved by over 8,300 customers across the UK",
++    "sticky_add": "Add my sign",
++    "story_gift": "A lovely gift for any dog lover too: a new puppy, a birthday, Christmas, or a thank-you for the dog walker.",
++    "steps": {
++      "title": "How it works",
++      "one": "Type your two lines. Your sign preview updates as you type.",
++      "two": "Choose a border colour and size.",
++      "three": "We print your sign to order and dispatch it within 5–7 working days."
++    },
++    "reviews": {
++      "title": "What our customers say",
++      "one": "I was really happy with my personalised Mancave sign… looks good on his shed… Quick delivery and good quality, and bigger than i thought.",
++      "one_meta": "5-star Trustpilot review · personalised sign",
++      "two": "First class service. I forgot to add a wee dog on to picture and i asked in comments if that was possible…. It arrived, its amazeballs….. and has the wee dog. So pleased.",
++      "two_meta": "5-star Trustpilot review · pebble picture",
++      "three": "I ordered a street sign for my kitchen and it looks absolutely amazing I’m so happy.",
++      "three_meta": "Verified 5-star review · personalised street sign"
+     }
+   },
+   "soap_gift_note": {
+diff -ruN orig/sections/dm-pet-sign.liquid new/sections/dm-pet-sign.liquid
+--- orig/sections/dm-pet-sign.liquid	2026-10-02 07:58:26.402226208 +0000
++++ new/sections/dm-pet-sign.liquid	2026-10-02 08:09:57.594318076 +0000
+@@ -20,8 +20,9 @@
+     <header class="pet-sign__heading">
+       <p class="pet-sign__eyebrow">{{ 'pet_sign.eyebrow' | t }}</p>
+       <h1 id="PetSignTitle-{{ section.id }}">{{ 'pet_sign.title' | t }}</h1>
++      <p class="pet-sign__rating"><span class="pet-sign__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{{ 'pet_sign.rating' | t }}</p>
+       <p class="pet-sign__intro">{{ 'pet_sign.intro' | t }}</p>
+-      <p class="pet-sign__price"><span data-pet-price>{{ pet_variant.price | money }}</span><span>{{ 'pet_sign.personalised' | t }}</span></p>
++      <p class="pet-sign__price"><s class="pet-sign__compare" data-pet-compare{% unless pet_variant.compare_at_price > pet_variant.price %} hidden{% endunless %}>{{ pet_variant.compare_at_price | money }}</s><span data-pet-price>{{ pet_variant.price | money }}</span><b class="pet-sign__save" data-pet-save{% unless pet_variant.compare_at_price > pet_variant.price %} hidden{% endunless %}>{{ 'pet_sign.save' | t }} {{ pet_variant.compare_at_price | minus: pet_variant.price | money }}</b><span>{{ 'pet_sign.personalised' | t }}</span></p>
+     </header>
+     <div class="pet-sign__media">
+       <div class="pet-sign__gallery" data-pet-gallery role="region" aria-roledescription="carousel" aria-label="{{ 'pet_sign.gallery.label' | t }}">
+@@ -32,7 +33,7 @@
+               {% if forloop.first %}
+                 {{ pet_image | image_url: width: 1280 | image_tag: widths: '375, 550, 750, 1000, 1280', sizes: '(max-width: 749px) 100vw, 52vw', loading: 'eager', fetchpriority: 'high', alt: pet_image_alt }}
+               {% else %}
+-                {{ pet_image | image_url: width: 1280 | image_tag: widths: '375, 550, 750, 1000, 1280', sizes: '(max-width: 749px) 100vw, 52vw', loading: 'eager', alt: pet_image_alt }}
++                {{ pet_image | image_url: width: 1280 | image_tag: widths: '375, 550, 750, 1000, 1280', sizes: '(max-width: 749px) 100vw, 52vw', loading: 'lazy', alt: pet_image_alt }}
+               {% endif %}
+             </div>
+           {% endfor %}
+@@ -46,7 +47,7 @@
+           <div class="pet-sign__thumbnails" style="flex-wrap:wrap">
+             {% for pet_image in pet_images %}
+               {%- assign pet_image_alt = pet_image.alt | default: pet_product.title -%}
+-              <button type="button" data-pet-gallery-index="{{ forloop.index0 }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ pet_image_alt | escape }} — {{ forloop.index }}">{{ pet_image | image_url: width: 160 | image_tag: loading: 'eager', alt: '' }}</button>
++              <button type="button" data-pet-gallery-index="{{ forloop.index0 }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ pet_image_alt | escape }} — {{ forloop.index }}">{{ pet_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}</button>
+             {% endfor %}
+           </div>
+           <p class="pet-sign__gallery-note">{{ 'pet_sign.gallery.note' | t }}</p>
+@@ -60,17 +61,17 @@
+     </div>
+     <div class="pet-sign__personalise">
+       <form id="{{ pet_form_id }}" data-pet-form method="post" novalidate>
+-        <div class="pet-sign__custom">
++        <div class="pet-sign__preview-box" data-pet-preview-box>
++          <div class="pet-sign__preview" data-pet-preview></div>
++          <p class="pet-sign__preview-caption" data-pet-preview-caption>{{ 'pet_sign.labels.previewSample' | t }}</p>
++          <p class="pet-sign__wording" data-pet-wording></p>
++        </div>
++        <div class="pet-sign__custom" id="PetCustom-{{ section.id }}" data-pet-custom>
+           <label for="PetLineOne-{{ section.id }}">{{ 'pet_sign.line_one' | t }}</label>
+           <input id="PetLineOne-{{ section.id }}" data-pet-line-one name="properties[Line 1]" type="text" maxlength="75" autocomplete="off" placeholder="{{ 'pet_sign.line_one_placeholder' | t }}" required>
+           <label for="PetLineTwo-{{ section.id }}">{{ 'pet_sign.line_two' | t }}</label>
+           <input id="PetLineTwo-{{ section.id }}" data-pet-line-two name="properties[Line 2]" type="text" maxlength="75" autocomplete="off" placeholder="{{ 'pet_sign.line_two_placeholder' | t }}">
+         </div>
+-        <div class="pet-sign__preview-box" data-pet-preview-box hidden>
+-          <div class="pet-sign__preview" data-pet-preview></div>
+-          <p class="pet-sign__preview-caption" data-pet-preview-caption>{{ 'pet_sign.labels.previewPersonalised' | t }}</p>
+-          <p class="pet-sign__wording" data-pet-wording></p>
+-        </div>
+         <fieldset class="pet-sign__colours">
+           <legend>{{ 'pet_sign.border' | t }}</legend>
+           <div class="pet-sign__colour-options">
+@@ -143,20 +144,55 @@
+           <p class="pet-sign__status" data-pet-status role="status" aria-live="polite"></p>
+           <a class="pet-sign__cart-link" data-pet-cart-link href="{{ routes.cart_url }}" hidden>{{ 'pet_sign.review_cart' | t }}</a>
+           <p class="pet-sign__delivery">{{ 'pet_sign.delivery_short' | t }}</p>
++          <p class="pet-sign__proof-line"><span class="pet-sign__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{{ 'pet_sign.proof_line' | t }}</p>
+         </div>
+         <noscript><p>{{ 'pet_sign.no_script' | t }}</p></noscript>
+       </form>
+     </div>
+   </div>
+   <div class="pet-sign__below">
++    <div class="pet-sign__steps">
++      <h2>{{ 'pet_sign.steps.title' | t }}</h2>
++      <ol role="list">
++        <li><b>1</b><span>{{ 'pet_sign.steps.one' | t }}</span></li>
++        <li><b>2</b><span>{{ 'pet_sign.steps.two' | t }}</span></li>
++        <li><b>3</b><span>{{ 'pet_sign.steps.three' | t }}</span></li>
++      </ol>
++    </div>
++    <div class="pet-sign__reviews">
++      <h2>{{ 'pet_sign.reviews.title' | t }}</h2>
++      <p class="pet-sign__rating"><span class="pet-sign__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{{ 'pet_sign.rating' | t }}</p>
++      {%- comment -%}
++        Verbatim 5-star reviews, trimmed with ellipses only, each labelled with the product it is about.
++        One and two: Trustpilot (searched 2 Oct 2026 for pet words; no dog-sign review exists yet).
++        Three: snippets/dm-proof.liquid (kitchen street sign). Do not invent or reword.
++      {%- endcomment -%}
++      <figure><blockquote>{{ 'pet_sign.reviews.one' | t }}</blockquote><figcaption>{{ 'pet_sign.reviews.one_meta' | t }}</figcaption></figure>
++      <figure><blockquote>{{ 'pet_sign.reviews.two' | t }}</blockquote><figcaption>{{ 'pet_sign.reviews.two_meta' | t }}</figcaption></figure>
++      <figure><blockquote>{{ 'pet_sign.reviews.three' | t }}</blockquote><figcaption>{{ 'pet_sign.reviews.three_meta' | t }}</figcaption></figure>
++    </div>
++    <div class="pet-sign__story">
++      <p class="pet-sign__eyebrow">{{ 'pet_sign.story_eyebrow' | t }}</p>
++      <h2>{{ 'pet_sign.story_title' | t }}</h2>
++      <p>{{ 'pet_sign.story_body' | t }}</p>
++      <p>{{ 'pet_sign.story_gift' | t }}</p>
++      <a class="pet-sign__story-link" href="#PetLineOne-{{ section.id }}" data-pet-jump>{{ 'pet_sign.story_link' | t }} <span aria-hidden="true">&rarr;</span></a>
++    </div>
+     <div class="pet-sign__faqs">
+       <h2>{{ 'pet_sign.details_title' | t }}</h2>
++      <details><summary>{{ 'pet_sign.faq.outdoor_q' | t }}</summary><p>{{ 'pet_sign.faq.outdoor_a' | t }}</p></details>
++      <details><summary>{{ 'pet_sign.faq.two_pets_q' | t }}</summary><p>{{ 'pet_sign.faq.two_pets_a' | t }}</p></details>
++      <details><summary>{{ 'pet_sign.faq.dispatch_q' | t }}</summary><p>{{ 'pet_sign.faq.dispatch_a' | t }}</p></details>
+       <details><summary>{{ 'pet_sign.faq.material_q' | t }}</summary><p>{{ 'pet_sign.faq.material_a' | t }}</p></details>
+       <details><summary>{{ 'pet_sign.faq.mounting_q' | t }}</summary><p>{{ 'pet_sign.faq.mounting_a' | t }}</p></details>
+       <details><summary>{{ 'pet_sign.faq.wording_q' | t }}</summary><p>{{ 'pet_sign.faq.wording_a' | t }}</p></details>
+       <details><summary>{{ 'pet_sign.faq.delivery_q' | t }}</summary><p>{{ 'pet_sign.faq.delivery_a' | t }} <a href="{{ pages['faq'].url }}">{{ 'pet_sign.delivery_link' | t }}</a></p></details>
+     </div>
+   </div>
++  <div class="pet-sign__sticky" data-pet-sticky hidden>
++    <p class="pet-sign__sticky-price"><s data-pet-compare hidden></s><strong data-pet-sticky-total>{{ pet_variant.price | money }}</strong></p>
++    <button type="button" class="pet-sign__sticky-btn" data-pet-sticky-btn>{{ 'pet_sign.sticky_add' | t }}</button>
++  </div>
+   <script type="application/json" data-pet-config>{
+     "productId":{{ pet_product.id | json }},
+     "productHandle":{{ pet_product.handle | json }},
+@@ -171,7 +207,8 @@
+     "labels":{
+       "extrasNone":{{ 'pet_sign.labels.extrasNone' | t | json }},"extrasSelected":{{ 'pet_sign.labels.extrasSelected' | t | json }},"extrasChanged":{{ 'pet_sign.labels.extrasChanged' | t | json }},"extrasUnavailable":{{ 'pet_sign.labels.extrasUnavailable' | t | json }},
+       "added":{{ 'pet_sign.labels.added' | t | json }},"nameTooLong":{{ 'pet_sign.labels.nameTooLong' | t | json }},"lineTooLong":{{ 'pet_sign.labels.lineTooLong' | t | json }},"loading":{{ 'pet_sign.labels.loading' | t | json }},
+-      "add":{{ 'pet_sign.labels.add' | t | json }},"adding":{{ 'pet_sign.labels.adding' | t | json }},"slow":{{ 'pet_sign.labels.slow' | t | json }},"unavailable":{{ 'pet_sign.labels.unavailable' | t | json }},"nameRequired":{{ 'pet_sign.labels.nameRequired' | t | json }},"lineRequired":{{ 'pet_sign.labels.lineRequired' | t | json }},"error":{{ 'pet_sign.labels.error' | t | json }},"review":{{ 'pet_sign.labels.review' | t | json }},"changed":{{ 'pet_sign.labels.changed' | t | json }},"previewSample":{{ 'pet_sign.labels.previewSample' | t | json }},"previewPersonalised":{{ 'pet_sign.labels.previewPersonalised' | t | json }},"customExpand":{{ 'pet_sign.labels.customExpand' | t | json }},"customCollapse":{{ 'pet_sign.labels.customCollapse' | t | json }}
++      "add":{{ 'pet_sign.labels.add' | t | json }},"adding":{{ 'pet_sign.labels.adding' | t | json }},"slow":{{ 'pet_sign.labels.slow' | t | json }},"unavailable":{{ 'pet_sign.labels.unavailable' | t | json }},"nameRequired":{{ 'pet_sign.labels.nameRequired' | t | json }},"lineRequired":{{ 'pet_sign.labels.lineRequired' | t | json }},"error":{{ 'pet_sign.labels.error' | t | json }},"review":{{ 'pet_sign.labels.review' | t | json }},"changed":{{ 'pet_sign.labels.changed' | t | json }},"previewSample":{{ 'pet_sign.labels.previewSample' | t | json }},"previewPersonalised":{{ 'pet_sign.labels.previewPersonalised' | t | json }},"customExpand":{{ 'pet_sign.labels.customExpand' | t | json }},"customCollapse":{{ 'pet_sign.labels.customCollapse' | t | json }},
++      "designLineOne":{{ 'pet_sign.design_line_one' | t | json }},"designLineTwo":{{ 'pet_sign.design_line_two_html' | t | json }},"designLineTwoMany":{{ 'pet_sign.design_line_two_many_html' | t | json }},"sampleName":{{ 'pet_sign.sample_name' | t | json }},"save":{{ 'pet_sign.save' | t | json }}
+   }}</script>
+ </section>
+ <script src="{{ 'dm-pet-sign.js' | asset_url }}" defer></script>
