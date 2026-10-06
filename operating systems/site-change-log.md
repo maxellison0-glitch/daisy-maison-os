@@ -6,6 +6,7 @@ not belong here until Max confirms it happened.
 ## 2026-10-06 — Globo off the top-10 revenue pages (draft 208556032339)
 
 - `snippets/dm-mobile-fixes.liquid`: on 10 product IDs (Mr & Mrs sign, Wedding pebble, Engagement love tree, Family sign, Christening, Create-your-own sign, Family Blossom Tree, Wedding hanging heart, Mum Flutterby, New Home — top 60-day net sales, add-ons excluded, Tea Light Holder skipped as it has no Globo) the theme makes `GPOConfigs.options` ignore writes, so Globo renders nothing and adds no Add to cart guard. Our builders already handled all ten; none depend on Globo. Globo's own admin still lists the option sets; remove them there later if wanted.
+- Same draft removes three basket upsells (Max, 6 Oct: too few takes): diffuser offer (`dm-matching-gift`), "Finish your gift" checkout pop-up (`dm-cart-upsells`) and "Add another personalised gift" box (`dm-cart-extra-gifts`). Only their renders in `sections/main-cart.liquid` are commented out; snippets kept. Since 3 Oct: ~2 extra-gift orders, 1–2 diffuser orders, a handful of discounted easels/wraps. Checkout button now goes straight to checkout.
 - Same draft carries the basket gift-box fix. Phone test on the draft: all ten reach basket via the main button; checkout reached through the Aftersell "Finish your gift" pop-up.
 
 ## 2026-10-06 — Together theme published; basket gift-box fix in draft
