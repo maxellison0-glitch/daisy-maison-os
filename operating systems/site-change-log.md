@@ -3,6 +3,12 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-06 — Main "Add to cart" blocked by hidden Globo (fix in draft 208538960211)
+
+- **Bug:** on products where our own builder replaces Globo (street signs, pebble landers), the big Add to cart button did nothing; the sticky button worked. Cause: a Globo Product Options update (extension `globo-product-options-472`) now cancels ATC clicks from a window capture listener when its hidden option set's required fields are empty, before our builders see the tap. Not caused by the 5–6 Oct theme work; it reproduced on the 3 Oct and 2 Oct themes too.
+- **Fix:** `snippets/dm-mobile-fixes.liquid` (product pages) marks the tapped button with Globo's own opt-out (`.gpo-exclude` / `egw-atc-override`) when Globo's form is hidden. Products with visible Globo options are untouched. Tested on the draft: Mr & Mrs (main and sticky), Blossom, Golden Skies and Together all reach `/cart`.
+- **Longer term:** unassign the old Globo option sets from products that use our builders (or turn off the Globo app embed once nothing uses it).
+
 ## 2026-10-06 — Together pebble-picture lander (draft, awaiting publish)
 
 - **Product:** Together Family Pebble Picture (`together-family-pebble-picture`, 10917497110867), created UNLISTED on Online Store only. Same price/settings/description pattern as Same Stars. Images: 4 Nano Banana 2 heroes (2k, 1:1, 10 credits incl. one redo where the A4 frame came out square) then Max's 4 real photos.
