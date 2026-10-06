@@ -1,0 +1,251 @@
+{%- comment -%}
+  dm-proof — per-page social proof content for the occasion-native landing pages.
+  One place to edit review quotes: change the text here, push this file, done.
+  Injects window.DAISY_PROOF = { quote, meta, line } for the current product.
+
+  quote — the hero review shown in the proof box under the price
+  meta  — attribution line under the quote
+  line  — the one-liner in the stars bar above Add to Cart
+
+  Pages without an entry get no injection; builder JS falls back to its default.
+  All quotes are verbatim customer reviews harvested 4 Jul 2026 (Trustpilot /
+  Feefo), lightly trimmed with ellipses only — do not invent or reword quotes.
+  Gap pages (no product-specific review found yet) use the store-wide
+  aggregate line "Loved by over 8,300 customers across the UK" (platform deliberately
+  unnamed) until a matching review is sourced from the Etsy dashboard.
+{%- endcomment -%}
+{%- liquid
+  assign dm_proof_quote = ''
+  assign dm_proof_meta  = 'Verified 5-star review'
+  assign dm_proof_line  = ''
+
+  case product.handle
+    when 'mr-mrs-personalised-street-sign-gift'
+      assign dm_proof_quote = 'Excellent product, beautifully made. The streetsign will be a lasting gift for my sons wedding.'
+      assign dm_proof_line = 'Chosen by 1,600+ couples in the last three months'
+    when 'personalised-dads-bar-london-street-sign'
+      assign dm_proof_quote = 'The print is very good… it will take pride of place above the bar. We love it.'
+      assign dm_proof_line = 'Loved by dads, sons and daughters'
+    when 'personalised-football-stadium-street-sign-copy'
+      assign dm_proof_quote = 'This is my 5th order this year… what a delightful company from start to finish its a 10/10 from me.'
+      assign dm_proof_line = 'Loved by over 8,300 customers across the UK'
+    when 'family-personalised-street-sign'
+      assign dm_proof_quote = 'They have replicated an old sign I&rsquo;d had… I am so pleased especially as my son bought this for me.'
+      assign dm_proof_line = 'Loved by families across the UK'
+    when 'wedding-flower-arch-personalised-pebble-picture'
+      assign dm_proof_quote = 'The first one was a gift for my friends who are getting married and they absolutely loved it so much that I have bought another.'
+      assign dm_proof_line = 'Loved by couples and wedding guests'
+    when 'engagement-proposal-love-tree-personalised-pebble-picture-copy'
+      assign dm_proof_quote = '5* from beginning to end. Beautiful unique item… 100% recommend to anyone looking for a unique personalised gift.'
+      assign dm_proof_line = 'Loved by over 8,300 customers across the UK'
+    when 'on-your-christening-personalised-pebble-picture'
+      assign dm_proof_quote = 'Every item has been lovely… Exquisitely made and always packaged and delivered with care.'
+      assign dm_proof_line = 'Loved by over 8,300 customers across the UK'
+    when 'family-blossom-tree-personalised-pebble-picture-gift-2', 'golden-skies-family-pebble-picture', 'same-stars-family-pebble-picture', 'together-family-pebble-picture'
+      assign dm_proof_quote = 'Delighted with my lovely family pebble picture. Even better than I&rsquo;d dared to hope.'
+      assign dm_proof_line = 'Loved by families across the UK'
+    when 'mum-flutterby-blossom-tree-personalised-pebble-picture'
+      assign dm_proof_quote = 'I absolutely love my pebble picture. Beautifully made… I can&rsquo;t wait to see my mum&rsquo;s face.'
+      assign dm_proof_line = 'Loved by mums (and the kids who spoil them)'
+    when 'kitchen-personalised-street-sign'
+      assign dm_proof_quote = 'I ordered a street sign for my kitchen and it looks absolutely amazing I&rsquo;m so happy.'
+      assign dm_proof_line = 'Loved by gift-givers with something to say'
+    when 'always-forever-personalised-street-sign'
+      assign dm_proof_quote = 'Was a present for my husbands wedding anniversary… Such lovely quality and attention to detail.'
+      assign dm_proof_line = 'Loved by couples marking their milestone'
+    when 'personalised-my-galentine-street-sign-gift'
+      assign dm_proof_quote = 'Outstanding… I have ordered several signs off them and will again.'
+      assign dm_proof_line = 'Loved by best friends everywhere'
+    when 'personalised-wedding-pebble-people-hanging-heart'
+      assign dm_proof_quote = 'Ordered a pebble heart for our nephew&rsquo;s engagement… Just perfect. Excellent quality and quick service.'
+      assign dm_proof_line = 'Loved for engagements and anniversaries'
+    when 'personalised-my-valentine-street-sign'
+      assign dm_proof_quote = 'Highly recommended and gorgeous item given as a Valentine&rsquo;s gift. Outstanding.'
+      assign dm_proof_line = 'Loved by valentines across the UK'
+    when 'yes-day-personalised-street-sign'
+      assign dm_proof_quote = 'Bought the fabulous &lsquo;YES Day&rsquo; sign for my daughter and her fianc&eacute; on their engagement… quality product and original, they love it!'
+      assign dm_proof_line = 'Loved for engagements and celebrations'
+    when 'grandparent-garden-personalised-street-sign'
+      assign dm_proof_quote = 'Garden street sign — great gift for mum&rsquo;s birthday. She&rsquo;ll love it. Thank you.'
+      assign dm_proof_line = 'Loved by nans and grandads everywhere'
+    when 'home-personalised-street-sign'
+      assign dm_proof_quote = 'What a gorgeous gift! Purchased as a gift for my friends house warming present… the personalisation is a lovely touch!'
+      assign dm_proof_line = 'Loved for new homes and fresh starts'
+    when 'personalised-london-street-sign'
+      assign dm_proof_quote = 'OMG I&rsquo;m so pleased about my purchase its absolutely fantastic. I will definitely be ordering again.'
+      assign dm_proof_line = 'Loved by Londoners near and far'
+    when 'this-way-to-the-wedding-personalised-street-sign'
+      assign dm_proof_quote = 'Bought a personalised street sign as a wedding gift and I&rsquo;m thrilled with my purchase as I&rsquo;m sure the happy couple will be.'
+      assign dm_proof_line = 'Loved by couples and wedding guests'
+    when 'personalised-retirement-street-sign-gift'
+      assign dm_proof_quote = 'They are amazing quality and look amazing. The price is fantastic.'
+      assign dm_proof_line = 'Loved for retirements and send-offs'
+    when 'house-rules-personalised-street-sign'
+      assign dm_proof_quote = 'Superb quality at an amazing price… The perfect gift for family & friends.'
+      assign dm_proof_line = 'Loved by families across the UK'
+    when 'always-my-sister-personalised-pebble-picture'
+      assign dm_proof_quote = 'A swing in a garden, with a gorgeous cherry blossom tree and two pebble people on the swing… They look beautiful and the sentiment says it all.'
+      assign dm_proof_line = 'Loved by sisters everywhere'
+    when 'always-forever-personalised-pebble-artwork'
+      assign dm_proof_quote = 'The pebble picture is beautiful and well made. I ordered it for a special wedding anniversary present… I can&rsquo;t wait to give this present.'
+      assign dm_proof_line = 'Loved by couples marking their milestone'
+    when 'engagement-proposal-personalised-pebble-artwork'
+      assign dm_proof_quote = 'I have now bought several as gifts. They&rsquo;re very well made and look beautiful.'
+      assign dm_proof_line = 'Loved for engagements and proposals'
+    when 'to-the-moon-back-personalised-pebble-artwork'
+      assign dm_proof_quote = 'My pebble picture has been done beautifully and arrived safely and on time. Would definitely recommend it.'
+      assign dm_proof_line = 'Loved to the moon and back'
+    when 'our-world-family-personalised-pebble-artwork'
+      assign dm_proof_quote = 'A pebble frame family and dog picture… they are BEAUTIFUL! Had a lot of compliments from family members.'
+      assign dm_proof_line = 'Loved by families (pets included)'
+    when 'beach-wedding-personalised-pebble-picture'
+      assign dm_proof_quote = 'Ordered a name sign &amp; pebble art picture for our friends wedding… Really pleased with them and our friends were so happy.'
+      assign dm_proof_line = 'Loved by couples and wedding guests'
+    when 'personalised-teacher-street-sign'
+      assign dm_proof_quote = 'My daughter has just graduated as a primary school teacher and her name plate for her new class was the perfect present… she absolutely loves it.'
+      assign dm_proof_line = 'Loved by teachers and their classes'
+    when 'personalised-teacher-pebble-people-hanging-heart-gift-new'
+      assign dm_proof_quote = 'Ordered the Teacher pebble people hanging heart, it&rsquo;s gorgeous!! Fast delivery, informed throughout whole process.'
+      assign dm_proof_line = 'Loved for teacher thank-yous'
+    when 'personalised-rainbow-teacher-pebble-people-hanging-heart'
+      assign dm_proof_quote = 'Beautiful, personalised item for my sons teacher. She loved it so much it brought a tear to her eye.'
+      assign dm_proof_line = 'Loved by teachers at the end of term'
+    when 'thank-you-teacher-personalised-pebble-picture'
+      assign dm_proof_quote = 'I was looking for something thoughtful and personalised for my sons teacher and teaching assistants at school and I found the perfect cutest gift. So happy with them!'
+      assign dm_proof_line = 'Loved for end-of-term thank-yous'
+    when 'personalised-teacher-teaching-assistant-superhero-keyring'
+      assign dm_proof_quote = 'Excellent quality superhero keyring for my son&rsquo;s teacher, amazing product, definitely recommend.'
+      assign dm_proof_line = 'Loved by superhero teachers'
+    when 'personalised-dad-standing-number-plate'
+      assign dm_proof_quote = 'Fantastic item. Service great, fast delivery.'
+      assign dm_proof_line = 'Loved by dads and grandads'
+    when 'personalised-christening-pebble-hanging-heart'
+      assign dm_proof_quote = 'Gorgeous pebble heart plaque, personalised &amp; still arrived very quickly. Lovely product &amp; great service.'
+      assign dm_proof_line = 'Loved for christenings and naming days'
+    when 'personalised-graduation-pebble-hanging-heart'
+      assign dm_proof_quote = 'I ordered a personalised hand made hanging heart ornament for two very special people and it is beautiful. I am so happy with it.'
+      assign dm_proof_line = 'Loved for graduations and proud days'
+    when 'true-friends-personalised-pebble-picture'
+      assign dm_proof_quote = 'I had a few questions before ordering my pebble art picture which were answered very quickly… It was lovely and my friend was delighted!!'
+      assign dm_proof_line = 'Loved by best friends everywhere'
+    when 'personalised-teacher-hanging-jigsaw-piece-decoration'
+      assign dm_proof_quote = 'When I received my order, I was truly delighted. My daughter&rsquo;s teacher will absolutely love it!'
+      assign dm_proof_line = 'Loved for end-of-term thank-yous'
+    when 'personalised-teacher-bookmark-available-in-9-colours'
+      assign dm_proof_quote = 'The items I ordered are so lovely. The team went the extra mile to make sure it arrived in time.'
+      assign dm_proof_line = 'Loved by teachers and their classes'
+    when 'personalised-shine-teacher-star-keyring'
+      assign dm_proof_quote = 'Received a lovely personalised teacher gift for my daughter leaving nursery… lovely quality!'
+      assign dm_proof_line = 'Loved for nursery and school goodbyes'
+    when 'personalised-little-moments-pebblescape'
+      assign dm_proof_quote = 'Quick service and lovely framed pebble picture. Thank you!'
+      assign dm_proof_line = 'Loved by families across the UK'
+    when 'mum-personalised-pebble-sketch-picture'
+      assign dm_proof_quote = 'Second purchase from this company. Will buy again and again.'
+      assign dm_proof_line = 'Loved by mums and nans'
+    when 'personalised-traditional-road-sign'
+      assign dm_proof_quote = 'Spot on in every way.'
+      assign dm_proof_line = 'Loved for proper old-school signs'
+    when 'personalised-vintage-style-train-sign-gift'
+      assign dm_proof_quote = 'I purchased an anniversary gift, the personalised street sign and received it in super record time and absolutely delighted with product… it&rsquo;s a perfect gift.'
+      assign dm_proof_line = 'Loved by rail fans and gift-givers'
+    when 'im-sexy-i-mow-it-personalised-street-sign-2'
+      assign dm_proof_quote = 'Bought a street sign as a wedding gift and got myself one too. A bit quirky but I love it.'
+      assign dm_proof_line = 'Loved by legends of the lawn'
+    when 'wedding-church-personalised-pebble-picture'
+      assign dm_proof_quote = 'Another beautiful pebble plaque received for a wedding gift. This is the 3rd one I have ordered as a gift and the recipients have loved them.'
+      assign dm_proof_line = 'Loved by couples and wedding guests'
+  endcase
+-%}
+{%- if dm_proof_quote != blank -%}
+<script>window.DAISY_PROOF={quote:{{ dm_proof_quote | json }},meta:{{ dm_proof_meta | json }},line:{{ dm_proof_line | json }}};</script>
+{%- endif -%}
+<script>
+/* Universal proof runner — every product page, builder or not.
+   Personal review configured: pills become the proof box under the price.
+   No review yet: pills are hidden; the store-wide aggregate line shows once, in the
+   bar above Add to Cart. Builder JS that already renders these skips via the
+   same class-existence guards used here. */
+(function () {
+  function run() {
+    var proof = window.DAISY_PROOF || {};
+    var pills = document.querySelector('.dm-trust-badges');
+    if (proof.quote && !document.querySelector('.dm-product-proof--quote')) {
+      var box = pills || document.createElement('aside');
+      box.className = 'dm-product-proof dm-product-proof--quote';
+      box.setAttribute('aria-label', 'Customer review');
+      box.innerHTML = '<div class="dm-product-proof__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' +
+        '<blockquote class="dm-product-proof__quote">' + proof.quote + '</blockquote>' +
+        '<p class="dm-product-proof__meta">' + (proof.meta || 'Verified customer') + '</p>';
+      var price = document.querySelector('.productView-price');
+      if (price && price.parentNode) price.parentNode.insertBefore(box, price.nextSibling);
+    } else if (!proof.quote && pills) {
+      pills.setAttribute('aria-hidden', 'true');
+      pills.style.setProperty('display', 'none', 'important');
+    }
+    if (!document.querySelector('.dm-product-quote--proof')) {
+      var atc = document.querySelector('#product-add-to-cart') || document.querySelector('form[action*="/cart/add"] button[type="submit"]');
+      var target = atc && (atc.closest('.productView-group') || atc.closest('.product-form__buttons') || atc.parentElement);
+      if (target && target.parentNode) {
+        var bar = document.createElement('aside');
+        bar.className = 'dm-product-quote dm-product-quote--proof';
+        bar.setAttribute('aria-label', 'Customer rating');
+        bar.innerHTML = '<div class="dm-product-quote__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="dm-product-quote__text">' + (proof.line || 'Loved by over 8,300 customers across the UK') + '</p>';
+        target.parentNode.insertBefore(bar, target);
+      }
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+
+/* Selection pop — amplitude tiers by price parsed from the option card.
+   <£3 = whisper, £3–7 = nudge, £7+ = spring. CSS lives in custom.css. */
+(function () {
+  function tierFor(el) {
+    var m = (el.textContent || '').match(/£\s?(\d+(?:\.\d+)?)/);
+    var v = m ? parseFloat(m[1]) : 0;
+    return v >= 7 ? 3 : v >= 3 ? 2 : 1;
+  }
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function pop(el) {
+    if (!el || reduceMotion || el.dataset.dmPopping) return;
+    // Inline !important — the only thing that outranks the theme's
+    // !important transforms, which silently defeat keyframe animations.
+    var tier = tierFor(el);
+    var scale = tier === 3 ? 1.12 : tier === 2 ? 1.07 : 1.04;
+    var up = tier === 3 ? 320 : tier === 2 ? 260 : 200;
+    var popColour = el.getAttribute('data-pop-colour');
+    var shadow = popColour ? '0 10px 24px ' + popColour + '99' : (tier === 3 ? '0 14px 30px rgba(23,23,23,.28)' : tier === 2 ? '0 10px 22px rgba(23,23,23,.2)' : '0 6px 14px rgba(23,23,23,.14)');
+    el.dataset.dmPopping = '1';
+    el.style.setProperty('transition', 'transform ' + up + 'ms cubic-bezier(.34,1.56,.64,1), box-shadow ' + up + 'ms ease-out', 'important');
+    el.style.setProperty('transform', 'scale(' + scale + ')', 'important');
+    el.style.setProperty('box-shadow', shadow, 'important');
+    el.style.setProperty('z-index', '5', 'important');
+    el.style.setProperty('position', 'relative', 'important');
+    setTimeout(function () {
+      el.style.setProperty('transform', 'scale(1)', 'important');
+      el.style.setProperty('box-shadow', 'none', 'important');
+      setTimeout(function () {
+        el.style.removeProperty('transform');
+        el.style.removeProperty('transition');
+        el.style.removeProperty('box-shadow');
+        el.style.removeProperty('z-index');
+        el.style.removeProperty('position');
+        delete el.dataset.dmPopping;
+      }, up + 120);
+    }, up);
+  }
+  document.addEventListener('change', function (e) {
+    var input = e.target;
+    if (!input || !input.matches || !input.matches('input[type="radio"],input[type="checkbox"]')) return;
+    if (!input.checked) return;
+    var card = input.closest('label[class*="__choice"],[class*="__wording-choice"],.dm-cyg__card');
+    if (card) pop(card);
+  }, true);
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.dm-addon-mode__option');
+    if (btn && !btn.classList.contains('is-active')) pop(btn.closest('.dm-cyg__card') || btn);
+  }, true);
+})();
+</script>
