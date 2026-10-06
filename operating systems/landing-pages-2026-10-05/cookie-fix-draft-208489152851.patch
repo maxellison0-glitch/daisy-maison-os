@@ -1,0 +1,21 @@
+--- a/snippets/dm-mobile-fixes.liquid
++++ b/snippets/dm-mobile-fixes.liquid
+@@ -27,4 +27,18 @@
+   }
+ }
+ </style>
++{%- comment -%}
++  Cookie banner (all screen sizes): assets/custom.css restyles Shopify's banner
++  cream with dark text but missed the heading and the Privacy Policy link, which
++  stayed Shopify's white and were invisible on cream. Move into custom.css next
++  time that file is edited.
++{%- endcomment -%}
++<style>
++#shopify-pc__banner h2,
++.shopify-pc__banner h2,
++#shopify-pc__banner .shopify-pc__banner__body a,
++.shopify-pc__banner .shopify-pc__banner__body a {
++  color: #2b2b2b !important;
++}
++</style>
+ {%- if request.page_type == 'product' -%}{% render 'dm-wrap-kits' %}{%- endif -%}

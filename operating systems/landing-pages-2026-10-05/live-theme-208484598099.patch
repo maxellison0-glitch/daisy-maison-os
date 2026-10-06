@@ -1,0 +1,178 @@
+--- a/snippets/dm-pebble-picture-builder.liquid
++++ b/snippets/dm-pebble-picture-builder.liquid
+@@ -1,5 +1,5 @@
+ {%- liquid
+-  assign dm_grey_handles = 'wedding-flower-arch-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,family-flutterby-blossom-tree-personalised-pebble-picture-copy,on-your-christening-personalised-pebble-picture' | split: ','
++  assign dm_grey_handles = 'wedding-flower-arch-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,on-your-christening-personalised-pebble-picture' | split: ','
+   assign dm_grey_remaining = shop.metafields.custom.grey_frames_remaining.value | default: 0 | plus: 0
+   assign dm_frame_values = '["White", "Grey (OUT OF STOCK)"]'
+   if dm_grey_handles contains product.handle and dm_grey_remaining > 0
+@@ -92,6 +92,14 @@
+       assign dm_pebble_enabled = true
+       assign dm_pebble_kind = 'blossom'
+       assign dm_second_offer_handle = '20-incredible-offer'
++    when 'golden-skies-family-pebble-picture'
++      assign dm_pebble_enabled = true
++      assign dm_pebble_kind = 'goldenskies'
++      assign dm_second_offer_handle = '20-incredible-offer'
++    when 'same-stars-family-pebble-picture'
++      assign dm_pebble_enabled = true
++      assign dm_pebble_kind = 'samestars'
++      assign dm_second_offer_handle = '20-incredible-offer'
+     when 'grandparent-flutterby-blossom-tree-personalised-pebble-picture'
+       assign dm_pebble_enabled = true
+       assign dm_pebble_kind = 'flutterby'
+@@ -228,7 +236,7 @@
+       Spray add-on rollout list: builder-enabled pebble pictures with >=1 sale in the
+       30 days to 2026-07-12 (Max's rule). Maintained by agents; add/remove handles here.
+     endcomment
+-    assign dm_spray_handles = 'mum-personalised-pebble-sketch-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,engagement-proposal-personalised-pebble-artwork,on-your-christening-personalised-pebble-picture,mum-flutterby-blossom-tree-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,family-swing-personalised-pebble-picture,wedding-swing-personalised-pebble-picture,on-your-wedding-day-family-personalised-pebble-picture-gift,new-home-personalised-pebble-picture,true-friends-personalised-pebble-picture,wedding-church-personalised-pebble-picture,beach-proposal-personalised-pebble-picture-gift,couple-love-tree-personalised-pebble-picture-6-colour-options,always-forever-personalised-pebble-artwork,birthday-blossom-tree-personalised-pebble-picture,dad-grandad-simple-moments-personalised-pebble-picture,grandparent-flutterby-blossom-tree-personalised-pebble-picture,always-my-sister-personalised-pebble-picture,family-walk-in-the-park-personalised-pebble-picture,beach-wedding-personalised-pebble-picture,grandparent-personalised-pebble-sketch-picture,graduation-personalised-pebble-picture,home-sweet-home-personalised-pebble-picture,our-world-family-personalised-pebble-artwork' | split: ','
++    assign dm_spray_handles = 'mum-personalised-pebble-sketch-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,engagement-proposal-personalised-pebble-artwork,on-your-christening-personalised-pebble-picture,mum-flutterby-blossom-tree-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,family-swing-personalised-pebble-picture,wedding-swing-personalised-pebble-picture,on-your-wedding-day-family-personalised-pebble-picture-gift,new-home-personalised-pebble-picture,true-friends-personalised-pebble-picture,wedding-church-personalised-pebble-picture,beach-proposal-personalised-pebble-picture-gift,couple-love-tree-personalised-pebble-picture-6-colour-options,always-forever-personalised-pebble-artwork,birthday-blossom-tree-personalised-pebble-picture,dad-grandad-simple-moments-personalised-pebble-picture,grandparent-flutterby-blossom-tree-personalised-pebble-picture,always-my-sister-personalised-pebble-picture,family-walk-in-the-park-personalised-pebble-picture,beach-wedding-personalised-pebble-picture,grandparent-personalised-pebble-sketch-picture,graduation-personalised-pebble-picture,home-sweet-home-personalised-pebble-picture,our-world-family-personalised-pebble-artwork' | split: ','
+     assign dm_spray_enabled = false
+     comment
+       28 Sep 2026: spray row switched off on every picture (1 sale in 313 eligible orders, 12 Aug-26 Sep).
+@@ -497,6 +505,40 @@
+               { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Perfectly Imperfect Little Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Ellison Family" },
+               { "key": "(Offer) Wording", "type": "wordingkey" }
+             ]
++          {%- when 'goldenskies' -%}
++            "eyebrow": "Free personalisation",
++            "heading": "Create your Golden Skies family pebble picture",
++            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Golden Skies picture.",
++            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
++            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
++            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
++            "fields": [
++              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under golden skies", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Thank you for all the little things you do" },
++              { "key": "Wording", "type": "wordingkey" }
++            ],
++            "offerFields": [
++              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under golden skies", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Thank you for all the little things you do" },
++              { "key": "(Offer) Wording", "type": "wordingkey" }
++            ]
++          {%- when 'samestars' -%}
++            "eyebrow": "Free personalisation",
++            "heading": "Create your Same Stars family pebble picture",
++            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Same Stars picture.",
++            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
++            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
++            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
++            "fields": [
++              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under the same stars", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Love you to the moon and back" },
++              { "key": "Wording", "type": "wordingkey" }
++            ],
++            "offerFields": [
++              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under the same stars", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Love you to the moon and back" },
++              { "key": "(Offer) Wording", "type": "wordingkey" }
++            ]
+           {%- when 'newhome' -%}
+             "eyebrow": "Free personalisation",
+             "heading": "Create your new home pebble picture",
+@@ -770,6 +812,9 @@
+     .dm-pebble-picture__offer-header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+     .dm-pebble-picture__offer-header strong{font-size:14px}
+     .dm-pebble-picture__field--wording{display:grid;gap:8px}
++    .dm-pebble-picture__extra-note{display:block;margin:6px 0 10px;font-size:13px;line-height:1.4;opacity:.8;text-transform:none!important}
++    .dm-pebble-picture__wording-choice-note{text-transform:none!important}
++    [data-daisy-pebble-picture] input[type="text"],[data-daisy-pebble-picture] select,[data-daisy-pebble-picture] textarea{font-size:16px!important}
+     .dm-pebble-picture__wording-choices{display:grid;gap:8px}
+     .dm-pebble-picture__wording-choice{display:grid!important;gap:3px;padding:12px 14px!important;border:1px solid rgba(0,0,0,.12)!important;border-radius:8px!important;background:#fff!important;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;position:relative!important;box-sizing:border-box!important}
+     .dm-pebble-picture__wording-choice input[type="radio"]{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+--- a/assets/daisy-pebble-picture.js
++++ b/assets/daisy-pebble-picture.js
+@@ -18,6 +18,8 @@
+     'engagement-proposal-love-tree-personalised-pebble-picture-copy',
+     'always-my-sister-personalised-pebble-picture',
+     'family-blossom-tree-personalised-pebble-picture-gift-2',
++    'golden-skies-family-pebble-picture',
++    'same-stars-family-pebble-picture',
+     'grandparent-flutterby-blossom-tree-personalised-pebble-picture',
+     'grandparent-personalised-pebble-sketch-picture',
+     'family-swing-personalised-pebble-picture',
+@@ -219,16 +221,27 @@
+     var people = config.people || {};
+     var prefix = offer ? 'data-pebble-offer' : 'data-pebble-main';
+     if (people.mode === 'variable') {
++      // The extra-people charge is one flat add-on (config.extraPeople) once the
++      // count passes the threshold; say so on the options and under the select.
++      var extra = config.extraPeople;
++      var maxCount = people.max || 8;
++      var threshold = extra ? (parseInt(extra.threshold, 10) || 6) : maxCount;
++      var extraPrice = extra ? money(extra.price, config.currency).replace(/\.00$/, '') : '';
+       var html = [
+         '<div class="dm-pebble-picture__people" ' + prefix + '-people>',
+         '<label class="dm-pebble-picture__field">',
+         '<span class="dm-pebble-picture__label">Number of pebble characters</span>',
+         '<select ' + prefix + '-count>'
+       ];
+-      for (var count = people.min || 1; count <= (people.max || 8); count += 1) {
+-        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)</option>');
++      for (var count = people.min || 1; count <= maxCount; count += 1) {
++        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)' + (extra && count > threshold ? ' +' + extraPrice : '') + '</option>');
+       }
+-      html.push('</select></label>');
++      html.push('</select>');
++      if (extra && maxCount > threshold) {
++        var extraRange = threshold + 1 === maxCount ? String(maxCount) : (threshold + 1) + ' or ' + maxCount;
++        html.push('<span class="dm-pebble-picture__extra-note">Up to ' + threshold + ' pebble characters included. Choose ' + extraRange + ' for <span style="white-space:nowrap">+' + extraPrice + '</span>.</span>');
++      }
++      html.push('</label>');
+       for (var index = 1; index <= (people.max || 8); index += 1) {
+         html.push('<div class="dm-pebble-picture__person-row" data-pebble-person="' + index + '">');
+         html.push(
+@@ -758,6 +771,15 @@
+     qsa(document, '.productView-quantity').forEach(function (el) { el.hidden = true; });
+     initAddons(root, config);
+     renderProof(form);
++    // Phone keyboards: label Return as "Done" and let it close the keyboard
++    // instead of leaving it open (or submitting the form).
++    qsa(root, 'input[type="text"]').forEach(function (input) { input.setAttribute('enterkeyhint', 'done'); });
++    root.addEventListener('keydown', function (event) {
++      if (event.key === 'Enter' && event.target.matches('input[type="text"]')) {
++        event.preventDefault();
++        event.target.blur();
++      }
++    });
+     root.addEventListener('input', function () { update(root, config); });
+     root.addEventListener('change', function () { update(root, config); });
+     form.addEventListener('submit', function (event) {
+--- a/snippets/dm-proof.liquid
++++ b/snippets/dm-proof.liquid
+@@ -41,7 +41,7 @@
+     when 'on-your-christening-personalised-pebble-picture'
+       assign dm_proof_quote = 'Every item has been lovely… Exquisitely made and always packaged and delivered with care.'
+       assign dm_proof_line = 'Loved by over 8,300 customers across the UK'
+-    when 'family-blossom-tree-personalised-pebble-picture-gift-2'
++    when 'family-blossom-tree-personalised-pebble-picture-gift-2', 'golden-skies-family-pebble-picture', 'same-stars-family-pebble-picture'
+       assign dm_proof_quote = 'Delighted with my lovely family pebble picture. Even better than I&rsquo;d dared to hope.'
+       assign dm_proof_line = 'Loved by families across the UK'
+     when 'mum-flutterby-blossom-tree-personalised-pebble-picture'
+--- a/snippets/product-page-right-thumbs.liquid
++++ b/snippets/product-page-right-thumbs.liquid
+@@ -1,6 +1,6 @@
+ {%- liquid
+     assign daisy_fast_gallery = false
+-    assign dm_speed_handles = 'dad-grandparent-walk-in-the-park-personalised-pebble-picture|engagement-proposal-love-tree-personalised-pebble-picture-copy|family-autumn-leaves-personalised-pebble-picture|family-blossom-tree-personalised-pebble-picture-gift-2|family-flutterby-blossom-tree-personalised-pebble-picture-copy|family-personalised-street-sign|family-swing-personalised-pebble-picture|first-christmas-as-mummy-daddy-to-personalised-pebble-hanging-heart|first-christmas-as-nanny-grandad-to-personalised-pebble-hanging-heart|gift-box-thanks-for-being-amazing|grandparent-festive-personalised-pebble-sketch-picture|grandparent-personalised-pebble-sketch-picture|kitchen-personalised-street-sign|mr-mrs-personalised-street-sign-gift|mum-flutterby-blossom-tree-personalised-pebble-picture|mum-grandparent-making-memories-personalised-pebble-picture|new-home-mini-pebble-pic-copy|on-your-christening-personalised-pebble-picture|on-your-wedding-day-personalised-pebble-picture-gift-autumn|personalised-family-christmas-pebble-hanging-heart|personalised-family-festive-christmas-pebble-star-hanging-decoration|personalised-hocus-pocus-street-sign|personalised-love-at-christmas-christmas-wedding-pebble-heart-hanging-decoration|personalised-merry-bright-family-christmas-pebble-hanging-decoration|personalised-mr-mrs-christmas-wedding-pebble-people-hanging-heart|personalised-mr-mrs-first-christmas-street-sign|personalised-mr-mrs-reed-diffuser-gift|personalised-my-valentine-street-sign|personalised-number-plate-sign-gift|personalised-our-1st-christmas-together-hanging-heart|personalised-remembrance-christmas-pebble-hanging-heart|personalised-teacher-pebble-picture-1|personalised-watercolour-flower-sister-a4-print|personalised-wedding-pebble-people-hanging-heart|personalised-wonderland-family-christmas-pebble-hanging-heart|porcelain-handled-tea-light-holder-good-friends|porcelain-teacher-tea-light-holder-thank-you-for-being-amazing|this-way-to-the-wedding-personalised-street-sign|wedding-flower-arch-personalised-pebble-picture|wise-woman-street-sign' | split: '|'
++    assign dm_speed_handles = 'dad-grandparent-walk-in-the-park-personalised-pebble-picture|engagement-proposal-love-tree-personalised-pebble-picture-copy|family-autumn-leaves-personalised-pebble-picture|family-blossom-tree-personalised-pebble-picture-gift-2|golden-skies-family-pebble-picture|same-stars-family-pebble-picture|family-flutterby-blossom-tree-personalised-pebble-picture-copy|family-personalised-street-sign|family-swing-personalised-pebble-picture|first-christmas-as-mummy-daddy-to-personalised-pebble-hanging-heart|first-christmas-as-nanny-grandad-to-personalised-pebble-hanging-heart|gift-box-thanks-for-being-amazing|grandparent-festive-personalised-pebble-sketch-picture|grandparent-personalised-pebble-sketch-picture|kitchen-personalised-street-sign|mr-mrs-personalised-street-sign-gift|mum-flutterby-blossom-tree-personalised-pebble-picture|mum-grandparent-making-memories-personalised-pebble-picture|new-home-mini-pebble-pic-copy|on-your-christening-personalised-pebble-picture|on-your-wedding-day-personalised-pebble-picture-gift-autumn|personalised-family-christmas-pebble-hanging-heart|personalised-family-festive-christmas-pebble-star-hanging-decoration|personalised-hocus-pocus-street-sign|personalised-love-at-christmas-christmas-wedding-pebble-heart-hanging-decoration|personalised-merry-bright-family-christmas-pebble-hanging-decoration|personalised-mr-mrs-christmas-wedding-pebble-people-hanging-heart|personalised-mr-mrs-first-christmas-street-sign|personalised-mr-mrs-reed-diffuser-gift|personalised-my-valentine-street-sign|personalised-number-plate-sign-gift|personalised-our-1st-christmas-together-hanging-heart|personalised-remembrance-christmas-pebble-hanging-heart|personalised-teacher-pebble-picture-1|personalised-watercolour-flower-sister-a4-print|personalised-wedding-pebble-people-hanging-heart|personalised-wonderland-family-christmas-pebble-hanging-heart|porcelain-handled-tea-light-holder-good-friends|porcelain-teacher-tea-light-holder-thank-you-for-being-amazing|this-way-to-the-wedding-personalised-street-sign|wedding-flower-arch-personalised-pebble-picture|wise-woman-street-sign' | split: '|'
+     if dm_speed_handles contains product.handle
+         assign daisy_fast_gallery = true
+     endif
+--- a/snippets/product-badge.liquid
++++ b/snippets/product-badge.liquid
+@@ -46,7 +46,11 @@
+         endif
+     endif
+ 
+-    if settings.show_new_badge
++    comment
++      5 Oct 2026: "New" badge switched off at Max's request (it stacked on the SALE badge).
++      To bring it back, change "if false" below back to "if settings.show_new_badge".
++    endcomment
++    if false
+         assign new_badge = false
+         assign new_badge_type = settings.new_badge_type
+         if new_badge_type == 'auto'

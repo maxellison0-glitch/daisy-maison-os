@@ -3,6 +3,18 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-05 — Golden Skies and Same Stars pebble-picture landers live
+
+Max published theme **208484598099** “Claude – Same Stars landing + extra-pebble price – 5 Oct” in Shopify admin (previous: 208480764243 Golden Skies, before that 208326623571 Codex 3 Oct, both retained for rollback). Theme diff against the 3 Oct theme: `landing-pages-2026-10-05/live-theme-208484598099.patch`.
+
+- **Golden Skies Family Pebble Picture** (`golden-skies-family-pebble-picture`, 10914052637011) and **Same Stars Family Pebble Picture** (`same-stars-family-pebble-picture`, 10914092253523) are exact copies of the Family Blossom Tree lander: builder kinds `goldenskies` / `samestars` cloned from `blossom` (frame incl. grey, 1–8 pebbles with names, wording keep/change, second picture, easel, gift wrap), same proof quote, fast gallery, grey-frame and spray lists. Only wording differs (defaults “Always under golden skies” / “Always under the same stars”). Cart property keys match Blossom. New landers: add the handle in the same four files (builder snippet, `assets/daisy-pebble-picture.js` handle list, `dm-proof`, `product-page-right-thumbs`).
+- **Product data (live):** £29.95 with £34.95 compare-at, sell when out of stock, 1.1 kg, Blossom-structure description and SEO. Both in Framed Pebble Art (manual sort: Golden Skies 3rd, Same Stars 4th) and Pebble People.
+- **All pebble builders:** the 7/8-pebble options now say “+£3” with the line “Up to 6 pebble characters included. Choose 7 or 8 for +£3.” (price read from `3-7-8-pebbles-1`, one flat add-on). Inputs 16px (no iOS zoom), Return = “Done” and closes the keyboard, theme capitalisation removed from that note and the wording preview.
+- **“New” badge off site-wide** (`snippets/product-badge.liquid`, `if false`).
+- **Cookie banner:** heading and Privacy Policy link were white on cream since the 2 Oct `custom.css` restyle. Fix is in draft **208489152851** “Claude – cookie banner text fix – 5 Oct” (`landing-pages-2026-10-05/cookie-fix-draft-208489152851.patch`) — **not yet published** as of 6 Oct.
+- Leftovers, harmless: unused theme files `assets/daisy-pebble-picture-v2.js`, `snippets/dm-product-badge-src.liquid` (live) and `assets/dm-write-test.css` (cookie draft). Temporary upload files removed from Shopify Files.
+- Tooling note: URL-based `themeFilesUpsert` overwrites silently drop at random; new files and `themeFilesCopy` (new file → copy over) or TEXT bodies are reliable.
+
 ## 2026-10-03 at 16:37:26 BST — reviewed landing-page theme published
 
 Max approved publication after reviewing the layout and the base-upsell placement. Codex published theme **208326623571**, “Codex – price clarity & clean pages – 3 Oct”, using Shopify admin. Shopify confirms MAIN; previous theme **208291496275** is UNPUBLISHED and retained for rollback. Preflight confirmed all 14 reviewed file bodies matched and no intervening changes to the previous live theme. No additional theme code or selling-price changes were made during publication.
