@@ -3,6 +3,11 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-06 — Together theme published; basket gift-box fix in draft
+
+- Max published **208538960211** (Together lander + cookie fix + Globo add-to-cart fix). Together product set ACTIVE, on all six channels, added to Framed Pebble Art (5th, after Same Stars) and Pebble People.
+- **Basket:** `snippets/dm-cart-extra-gifts.liquid` (3 Oct) showed one "Add another personalised gift (optional)" box per qualifying basket line (6 signs → 6 boxes). Now once per product. In draft **208556032339** "Claude – basket gift box fix – 6 Oct"; Max publishes.
+
 ## 2026-10-06 — Main "Add to cart" blocked by hidden Globo (fix in draft 208538960211)
 
 - **Bug:** on products where our own builder replaces Globo (street signs, pebble landers), the big Add to cart button did nothing; the sticky button worked. Cause: a Globo Product Options update (extension `globo-product-options-472`) now cancels ATC clicks from a window capture listener when its hidden option set's required fields are empty, before our builders see the tap. Not caused by the 5–6 Oct theme work; it reproduced on the 3 Oct and 2 Oct themes too.
