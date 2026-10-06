@@ -42,6 +42,37 @@
 }
 </style>
 {%- comment -%}
+  Globo OFF on the top-10 revenue pages (6 Oct 2026). These products use our
+  own builders, but the Globo app still printed its hidden option set on them
+  and its update started blocking the main Add to cart. Globo writes its
+  option sets into GPOConfigs.options further down the page; on these
+  products we make that store ignore writes, so Globo renders nothing and
+  registers no Add to cart guard. To take another product off Globo, add its
+  ID here (only if our own builder handles it). To undo, remove the ID.
+  Mr & Mrs sign, Wedding pebble, Engagement love tree, Family sign,
+  Christening, Create-your-own sign, Family Blossom Tree, Wedding hanging
+  heart, Mum Flutterby, New Home.
+{%- endcomment -%}
+{%- liquid
+  assign dm_no_globo_ids = '9702132711763,9436245819731,9436237529427,9436228845907,9436245721427,9436230418771,9705618571603,9436276982099,9436243624275,9436245524819' | split: ','
+  assign dm_pid = ''
+  if request.page_type == 'product'
+    assign dm_pid = product.id | append: ''
+  endif
+-%}
+{%- if dm_pid != '' and dm_no_globo_ids contains dm_pid -%}
+<script>
+(function(){
+  var g = window.GPOConfigs = window.GPOConfigs || {};
+  var none = new Proxy([], { set: function(){ return true; }, defineProperty: function(){ return true; } });
+  try {
+    Object.defineProperty(g, 'options', { configurable: false, enumerable: true, get: function(){ return none; }, set: function(){} });
+    Object.defineProperty(g, 'productOptionSetMap', { configurable: false, enumerable: true, get: function(){ return {}; }, set: function(){} });
+  } catch (e) {}
+})();
+</script>
+{%- endif -%}
+{%- comment -%}
   Add-to-cart guard (product pages, all screen sizes): Globo Product Options
   still renders its hidden option set on products that now use our own
   builders (street signs, pebble pictures, etc.). Since Globo's Oct 2026
