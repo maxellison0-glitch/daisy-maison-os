@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-06 — Together pebble-picture lander (draft, awaiting publish)
+
+- **Product:** Together Family Pebble Picture (`together-family-pebble-picture`, 10917497110867), created UNLISTED on Online Store only. Same price/settings/description pattern as Same Stars. Images: 4 Nano Banana 2 heroes (2k, 1:1, 10 credits incl. one redo where the A4 frame came out square) then Max's 4 real photos.
+- **Theme draft 208538960211** “Claude – Together lander + cookie fix – 6 Oct” = live theme + builder kind `together` (default wording “Together side by side”) in the four handle-keyed files + the cookie-banner fix in `dm-mobile-fixes`. Files in `landing-pages-2026-10-05/theme-files/`.
+- **On publish:** set product ACTIVE, publish to the other five channels, add to Framed Pebble Art (after Same Stars) and Pebble People.
+- **Upload route that works:** Shopify-CDN (`cdn.shopify.com/.../files/`) URLs as `themeFilesUpsert` bodies silently fail; `raw.githubusercontent.com` URLs from this (public) repo save immediately, overwrites included. Supersedes the 5 Oct tooling note. Drafts 208489152851 (cookie fix only) is superseded.
+
 ## 2026-10-05 — Golden Skies and Same Stars pebble-picture landers live
 
 Max published theme **208484598099** “Claude – Same Stars landing + extra-pebble price – 5 Oct” in Shopify admin (previous: 208480764243 Golden Skies, before that 208326623571 Codex 3 Oct, both retained for rollback). Theme diff against the 3 Oct theme: `landing-pages-2026-10-05/live-theme-208484598099.patch`.
