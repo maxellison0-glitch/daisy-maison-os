@@ -1,0 +1,76 @@
+{%- comment -%}
+  dm-mobile-fixes — small, targeted MOBILE-ONLY CSS overrides (<=767px), so
+  desktop rendering is never touched. ~95% of Daisy Maison traffic is mobile.
+
+  Fix 1 (iOS auto-zoom): personalisation text inputs render at 14px (Globo app
+  default) / 13.5px (our gift-note field). iOS Safari auto-zooms the page when a
+  field with font-size < 16px is focused, which jars the customer on EVERY tap
+  into a builder field. Raising these to 16px on phones stops the zoom. This is
+  the single highest-friction mobile issue on the personalisation flow.
+
+  Also hosts the gift-wrap-kits registry render (product pages only) because
+  layout/theme.liquid renders this snippet in <head> after daisy-cart-submit.js
+  and before every product builder — exactly the load order the wrap-kit
+  script needs. Move the render into theme.liquid the next time that file is
+  edited; nothing else depends on it living here.
+{%- endcomment -%}
+<style>
+@media (max-width: 767px) {
+  .gpo-input,
+  .gpo-text,
+  .gpo-textarea,
+  .gpo-dimension-input,
+  .dm-gn-text,
+  .daisy-street-options__field input[type="text"],
+  .daisy-street-options__field textarea {
+    font-size: 16px !important;
+  }
+}
+</style>
+{%- comment -%}
+  Cookie banner (all screen sizes): assets/custom.css restyles Shopify's banner
+  cream with dark text but missed the heading and the Privacy Policy link, which
+  stayed Shopify's white and were invisible on cream. Move into custom.css next
+  time that file is edited.
+{%- endcomment -%}
+<style>
+#shopify-pc__banner h2,
+.shopify-pc__banner h2,
+#shopify-pc__banner .shopify-pc__banner__body a,
+.shopify-pc__banner .shopify-pc__banner__body a {
+  color: #2b2b2b !important;
+}
+</style>
+{%- comment -%}
+  Add-to-cart guard (product pages, all screen sizes): Globo Product Options
+  still renders its hidden option set on products that now use our own
+  builders (street signs, pebble pictures, etc.). Since Globo's Oct 2026
+  update it listens for clicks on the whole window and, because its hidden
+  required fields are empty, cancels the main "Add to cart" tap before our
+  builder sees it (the sticky button was unaffected). When Globo's form is
+  not visible, this marks the tapped button with Globo's own opt-out
+  (.gpo-exclude / egw-atc-override) just before the click, so Globo ignores
+  it. Products where Globo is visible are untouched.
+{%- endcomment -%}
+{%- if request.page_type == 'product' -%}
+<script>
+(function(){
+  function globoHidden(){
+    var apps=document.querySelectorAll('.gpo-app');
+    if(!apps.length)return false;
+    for(var i=0;i<apps.length;i++){if(apps[i].getClientRects().length&&!apps[i].closest('[hidden]'))return false;}
+    return true;
+  }
+  function mark(event){
+    var t=event.target;if(t&&t.nodeType!==1)t=t.parentElement;
+    var b=t&&t.closest&&t.closest('#product-add-to-cart,.dm-sticky-btn,button[name="add"],[type="submit"]');
+    if(!b||b.closest('.gpo-app')||!globoHidden())return;
+    b.classList.add('gpo-exclude');b.setAttribute('egw-atc-override','');
+  }
+  ['pointerdown','touchstart','mousedown','keydown','click'].forEach(function(type){
+    window.addEventListener(type,mark,{capture:true,passive:true});
+  });
+})();
+</script>
+{%- endif -%}
+{%- if request.page_type == 'product' -%}{% render 'dm-wrap-kits' %}{%- endif -%}
