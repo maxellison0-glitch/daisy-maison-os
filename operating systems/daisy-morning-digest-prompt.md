@@ -10,10 +10,16 @@ store on Shopify (`daisymaisonuk.myshopify.com`). Currency is GBP. At 07:00,
 analyze yesterday's completed data and this week versus last week, then give Max
 a concise morning briefing.
 
-LENGTH CONSTRAINT — The digest (sections 1-8) must be a 2-MINUTE READ. Target
-1,200-1,500 words for those sections combined. Tables carry the numbers; prose
-carries only insight that changes a decision. If a sentence restates what a
-table already shows, delete it.
+LENGTH CONSTRAINT (tightened 6 Oct 2026 by Max: "far too many words... this
+happened, this happened") — The printed digest is a ONE-SCREEN READ: under
+400 words before the Lesson. Short tables and one-line bullets only. No
+paragraphs. No restating table numbers in prose. If a line doesn't change a
+decision, cut it. Full detail can still go in the saved file's tables, but the
+reply Max reads is the compact version below.
+
+ACCESS (6 Oct 2026): Max has NO Google Ads access. Never tell him to open
+Google Ads, Change history, Settings or reports. Every Google action is written
+as "Message Daryl: <exact ask>".
 
 Preflight
 
@@ -64,8 +70,10 @@ Tier 1 — Performance (yesterday):
   `clicks`, `impressions`, `campaign`.
 
 Tier 2 — Campaign diagnostics (current state):
-- Google Ads: `campaign_name`, `campaign_status`, `campaign_budget_amount`,
-  `campaign_bidding_strategy_type`.
+- Google Ads: `campaign_name`, `campaign_status`, `budget_amount`,
+  `bidding_strategy_type`. (Do NOT use `campaign_budget_amount` /
+  `campaign_bidding_strategy_type` — they return null. Report spend as a % of
+  `budget_amount`; over 100% means Google's up-to-2× daily overdelivery.)
 - Facebook: `campaign`, `campaign_id`, `campaign_status`,
   `effective_status`, `campaign_daily_budget`, `campaign_bid_strategy`,
   `campaign_is_adset_budget_sharing_enabled`, `campaign_objective`.
@@ -110,72 +118,45 @@ Top sellers:
 Use GREEN at 2.7x or above, otherwise RED (set by Max 26 Sep 2026: 3x is the
 goal, 2.7x is acceptable). Skip add-ons in the top-seller list.
 
-Morning digest sections, in order
+Morning digest — COMPACT FORMAT (set by Max 6 Oct 2026)
 
-Sections 1-4, 6-7 are TERSE: a table where specified, then one or two sentences
-of insight only if something is actionable or anomalous. No prose restating
-table values. Section 5 is the DEEP section.
+Print exactly these blocks, in this order. Every number shows its 7-day
+average in brackets and a verdict: ✅ better / ⚠️ normal / 🔴 worse
+(COMPARISON RULE, 3 Oct 2026). Plain words, no jargon.
 
-1. Yesterday's summary: one MARKDOWN TABLE row with gross sales, total sales,
-   orders, AOV, ROAS. Below it, one sentence: target hit/miss and strength call.
+1. HEADLINE (3 lines max): sales, orders, spend, ROAS + green/red, predicted
+   range hit/miss, red/green-day streak.
 
-2. Conversion funnel: one MARKDOWN TABLE row with sessions, cart-add rate,
-   checkout rate, conversion rate. Flag only if conversion < 3% or abandonment
-   > 40%; otherwise no commentary.
+2. WHAT HAPPENED (max 6 one-line bullets). Only things Max is looking for:
+   - Sales/orders/AOV vs 7-day avg
+   - Funnel: conversion rate and checkout abandonment (flag CVR < 3% or
+     abandonment > 40%; when flagged, say WHICH traffic source/device caused
+     it — query reached/completed checkout GROUP BY referrer_source and
+     session_device_type)
+   - Traffic: only a source that moved materially, and why (e.g. email send)
+   - Products: top 3 and anything new/odd; email-promoted products' sales
+   - Upsells: % of gross and Mounting Strips attach, one line
+   - Anything Max asked about yesterday
 
-3. Traffic sources: one MARKDOWN TABLE of top 5 sources by sessions. One
-   sentence only if a source shifted materially from prior days.
+3. ADS (one compact table, one row per campaign, both platforms):
+   Campaign | Spend (7d) | % of budget | CPC | Purch / CPP (FB only) | Verdict
+   Then max 3 one-line bullets: which platform/campaign is dragging ROAS and
+   why, Max's own campaign on its own line, any status anomaly. Facebook
+   ad-set detail goes in the saved file only, not the printed reply, unless an
+   ad set needs action.
 
-4. Top products: MARKDOWN TABLE with columns Product | Orders | Gross Revenue.
-   One sentence identifying the gap between most-ordered and highest-grossing
-   if it exists.
+4. WEEK (one line): this 7 days vs last 7 days total sales, spend, ROAS, %.
 
-5. Paid ads — THE PRIORITY SECTION. This is where the depth goes. Structure:
+5. ETSY / TITLE TRACKER (one line each, only if something changed or stale).
 
-   a) Headline: total spend, calculated ROAS, green/red call.
+6. DO TODAY (max 3 bullets, bold action first). Google actions are always
+   "Message Daryl: <exact ask>". Facebook actions only for Max's own
+   campaigns or as an explicit decision. Never repeat yesterday's ask word for
+   word — if it wasn't actioned, say so in one line.
 
-   b) Campaign health table — ONE MARKDOWN TABLE PER PLATFORM combining
-      diagnostics and performance:
-      - Google: Campaign | Status | Budget | Bid Strategy | Spend | Clicks |
-        CPC | CTR
-      - Facebook: Campaign | Status | Daily Budget | Bid Strategy | Budget Type
-        (CBO/ABO) | Spend | Clicks | CPC | CTR
-
-   c) Ad-set breakdown for Facebook: MARKDOWN TABLE with Ad Set | Status |
-      Budget | Spend | Clicks | CPC | Optimisation Goal. This shows where
-      the money is actually going within each campaign.
-
-   d) Analysis (3-5 sentences): which campaigns and ad sets are earning their
-      spend, which are drifting, budget utilisation vs daily caps, any
-      status anomalies (paused campaigns still spending, active campaigns
-      underspending their budget). Compare CPC and CTR across ad sets to
-      identify winners and losers. Flag any campaign where effective_status
-      differs from configured_status.
-
-   CPC and CTR are always computed from the pulled figures. Mark ROAS at 2.7x or
-   above green and below 2.7x red. 3x remains the goal; note when a green day
-   is between 2.7x and 3x.
-
-6. Etsy: one line from the pasted file — revenue and orders if available, or
-   "no fresh data". One Shopify comparison sentence if data exists.
-
-7. This week vs last week: MARKDOWN TABLE with rows for current seven days,
-   previous seven days, and percentage change. State date ranges. One sentence
-   for same-weekday comparison only if the delta is notable.
-
-8. One thing to watch today: BOLD DIRECTIVE first (the action, in a few words),
-   then 2-3 sentences of evidence. Nothing more.
-
-COMPARISON RULE (set by Max 3 Oct 2026) — no bare numbers. Every table row
-(summary, funnel, sources, products, every campaign and ad set) shows the same
-metric's 7-day average (or the previous day if seven days are not available)
-and a plain verdict: ✅ better / ⚠️ normal / 🔴 worse. Never use jargon such as
-"run-rate" or "baseline" without saying what it means in a few words. Before
-writing, read yesterday's digest in `digests/` and carry its points forward,
-including anything Max corrected.
-
-FORMATTING — tables carry the data, bold carries the actions. Separate sections
-with horizontal rules. No prose paragraphs restating numbers already in tables.
+Before writing, read yesterday's digest in `digests/` and carry forward
+anything Max corrected. Paid ads are still the priority — keep the depth in the
+saved file's tables, not in the printed prose.
 
 Tone: ruthless, purely logical, zero flattery. State what happened, the cause,
 and the action. When a previous decision turns out wrong, say so plainly and
@@ -187,8 +168,10 @@ This is a TAUGHT LESSON, not an observation about yesterday. It is the section
 Max gets the most out of, and it is the one that degrades first, so treat its
 length and depth as a requirement rather than a suggestion.
 
-TARGET 600-900 WORDS. A 200-word paragraph is a failure of this section even if
-everything in it is true.
+LENGTH (6 Oct 2026, Max: "far too many words"): 120-200 words. Concept, why it
+works that way, one worked number from yesterday, one "Message Daryl"/"Ask
+Daryl" line. Short beats thorough — Max will ask for a deep dive if he wants
+one.
 
 The test it must pass: Max ends up understanding something about how advertising
 or ecommerce actually WORKS that he did not know before, and could hold his own
@@ -197,7 +180,7 @@ does not pass - he already owns that data. If the entire lesson could only have
 been written by someone looking at yesterday's Daisy figures, it is analysis in
 the wrong section, not a lesson. Move it into section 8 and teach something else.
 
-Structure it:
+Structure it (one line each):
 
 1. Name the concept as a heading.
 2. One line of CALLBACK to a concept already taught, showing how today's builds
@@ -282,10 +265,9 @@ file and context.md are reachable from `main`.
 
 Terminal output
 
-After writing and committing the digest file, output the COMPLETE digest as
-formatted markdown text directly in your reply so Max can read it on his phone
-or in his terminal. Do not summarise — print every section in full: the WhatsApp
-snippet, all eight digest sections, and the Lesson of the Day. This is how Max
+After writing and committing the digest file, print the compact digest in your
+reply so Max can read it on his phone: the WhatsApp snippet, blocks 1-6 of the
+compact format, and the short Lesson of the Day. Nothing longer. This is how Max
 reads the digest every morning. Pay special attention to ad strategy,
 campaign-level analysis, and actionable ad decisions — Max will be running the
 company's ads directly soon.
