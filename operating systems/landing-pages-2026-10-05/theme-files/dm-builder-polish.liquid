@@ -9,68 +9,49 @@
 {%- endcomment -%}
 <style>
 /* Declutter: the pill eyebrow and the pebble intro sentence repeat the heading. */
-.dm-pebble-picture__eyebrow,
-.daisy-street-options__eyebrow,
-.dm-pebble-picture__copy { display: none !important; }
+html body .dm-pebble-picture__eyebrow, html body .daisy-street-options__eyebrow, html body .dm-pebble-picture__copy { display: none !important; }
 
 /* Headings */
-.dm-pebble-picture__title,
-.daisy-street-options__title { font-size: 21px !important; line-height: 1.25 !important; margin: 0 0 10px !important; color: #1f1f1f !important; }
-.daisy-street-options__copy { font-size: 15px !important; line-height: 1.4 !important; color: #444 !important; margin-bottom: 8px !important; }
+html body .dm-pebble-picture__title, html body .daisy-street-options__title { font-size: 21px !important; line-height: 1.25 !important; margin: 0 0 10px !important; color: #1f1f1f !important; }
+html body .daisy-street-options__copy { font-size: 15px !important; line-height: 1.4 !important; color: #444 !important; margin-bottom: 8px !important; }
 
 /* No forced Title Case anywhere in the builders */
-.dm-pebble-picture__field, .dm-pebble-picture__label,
-.dm-pebble-picture__wording-choice, .dm-pebble-picture__wording-choice-title,
-.dm-pebble-picture__offer, .dm-pebble-picture__offer-inner, .dm-pebble-picture__offer-header,
-.daisy-street-options__field, .daisy-street-options__label,
-.dm-sign-fields__required, .dm-sign-fields__hint,
-.daisy-street-options__choice, .daisy-street-options__choice-main,
-.daisy-street-options__choice-title, .daisy-street-options__choice-note,
-.daisy-street-options__price { text-transform: none !important; }
+html body .dm-pebble-picture__field, html body .dm-pebble-picture__label, html body .dm-pebble-picture__wording-choice, html body .dm-pebble-picture__wording-choice-title, html body .dm-pebble-picture__offer, html body .dm-pebble-picture__offer-inner, html body .dm-pebble-picture__offer-header, html body .daisy-street-options__field, html body .daisy-street-options__label, html body .dm-sign-fields__required, html body .dm-sign-fields__hint, html body .daisy-street-options__choice, html body .daisy-street-options__choice-main, html body .daisy-street-options__choice-title, html body .daisy-street-options__choice-note, html body .daisy-street-options__price { text-transform: none !important; }
 
 /* Labels: 16px, dark, bold enough to scan */
-.dm-pebble-picture__label,
-.daisy-street-options__label {
+html body .dm-pebble-picture__label, html body .daisy-street-options__label {
   display: block !important; font-size: 16px !important; font-weight: 600 !important;
   color: #1f1f1f !important; margin: 0 0 6px !important; letter-spacing: 0 !important;
 }
-.dm-sign-fields__required { font-size: 16px !important; }
+html body .dm-sign-fields__required { font-size: 16px !important; }
 
 /* Section titles: sentence case 17px instead of tiny spaced capitals */
-.dm-pebble-picture__group-title,
-.daisy-street-options__group-title {
+html body .dm-pebble-picture__group-title, html body .daisy-street-options__group-title {
   font-size: 17px !important; font-weight: 700 !important; letter-spacing: 0 !important;
   text-transform: none !important; color: #1f1f1f !important; margin: 0 0 6px !important;
 }
 
 /* Small print never below 14px */
-.dm-pebble-picture__extra-note,
-.dm-sign-fields__hint,
-.dm-sign-block__caption,
-.dm-pebble-picture__wording-choice-note,
-.daisy-street-options__choice-note { font-size: 14px !important; line-height: 1.4 !important; color: #444 !important; letter-spacing: 0 !important; text-transform: none !important; }
-.dm-pebble-picture__extra-note { margin: 6px 0 4px !important; display: block; }
-.dm-sign-block__caption { margin: 4px 0 8px !important; }
+html body .dm-pebble-picture__extra-note, html body .dm-sign-fields__hint, html body .dm-sign-block__caption, html body .dm-pebble-picture__wording-choice-note, html body .daisy-street-options__choice-note { font-size: 14px !important; line-height: 1.4 !important; color: #444 !important; letter-spacing: 0 !important; text-transform: none !important; }
+html body .dm-pebble-picture__extra-note { margin: 6px 0 4px !important; display: block; }
+html body .dm-sign-block__caption { margin: 4px 0 8px !important; }
 
 /* Choice cards and prices readable */
-.dm-pebble-picture__wording-choice-title,
-.daisy-street-options__choice-title { font-size: 16px !important; }
-.daisy-street-options__price,
-.dm-pebble-picture__total { font-size: 16px !important; }
+html body .dm-pebble-picture__wording-choice-title, html body .daisy-street-options__choice-title { font-size: 16px !important; }
+html body .daisy-street-options__price, html body .dm-pebble-picture__total { font-size: 16px !important; }
 
 /* Inputs: 16px text, comfortable 48px tap height */
-.dm-pebble-picture select, .dm-pebble-picture input[type="text"],
-.daisy-street-options select, .daisy-street-options input[type="text"], .daisy-street-options textarea {
+html body .dm-pebble-picture select, html body .dm-pebble-picture input[type="text"], html body .daisy-street-options select, html body .daisy-street-options input[type="text"], html body .daisy-street-options textarea {
   font-size: 16px !important; min-height: 48px !important;
 }
 
 /* Tighter rhythm: one consistent 12px gap between fields */
-.dm-pebble-picture__group { gap: 10px !important; padding-top: 0 !important; }
-.dm-pebble-picture__grid, .dm-pebble-picture__people { display: grid !important; gap: 12px !important; }
-.dm-pebble-picture__person-row { gap: 8px !important; padding: 10px 0 0 !important; border-top: 1px solid #eee; }
-.dm-pebble-picture__wording-choice { padding: 10px 14px !important; }
-.dm-pebble-picture__offer { padding: 10px 14px !important; }
-.daisy-street-options__grid { gap: 12px !important; }
-.daisy-street-options__group { padding: 6px 0 2px !important; }
-.daisy-street-options__choice { padding: 10px 10px !important; }
+html body .dm-pebble-picture__group { gap: 10px !important; padding-top: 0 !important; }
+html body .dm-pebble-picture__grid, html body .dm-pebble-picture__people { display: grid !important; gap: 12px !important; }
+html body .dm-pebble-picture__person-row { gap: 8px !important; padding: 10px 0 0 !important; border-top: 1px solid #eee; }
+html body .dm-pebble-picture__wording-choice { padding: 10px 14px !important; }
+html body .dm-pebble-picture__offer { padding: 10px 14px !important; }
+html body .daisy-street-options__grid { gap: 12px !important; }
+html body .daisy-street-options__group { padding: 6px 0 2px !important; }
+html body .daisy-street-options__choice { padding: 10px 10px !important; }
 </style>
