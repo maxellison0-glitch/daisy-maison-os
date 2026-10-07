@@ -573,12 +573,12 @@
             "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
             "fields": [
               { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Our New Home" },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family Est. 2010", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Our Family Est. 2010" },
               { "key": "Wording", "type": "wordingkey" }
             ],
             "offerFields": [
               { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our New Home" },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family Est. 2010", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our Family Est. 2010" },
               { "key": "(Offer) Wording", "type": "wordingkey" }
             ]
           {%- when 'newhome' -%}
