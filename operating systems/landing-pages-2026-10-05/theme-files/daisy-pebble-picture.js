@@ -144,8 +144,8 @@
   function readConfig(root) {
     try { return JSON.parse(qs(root, '[data-daisy-pebble-picture-config]').textContent); } catch (error) { return null; }
   }
-  function choiceOptions(values, selected) {
-    return ['<option value="">Please select</option>'].concat((values || []).map(function (value) {
+  function choiceOptions(values, selected, placeholder) {
+    return ['<option value="">' + escapeHtml(placeholder || 'Please select') + '</option>'].concat((values || []).map(function (value) {
       return '<option value="' + escapeHtml(value) + '"' + (value === selected ? ' selected' : '') + '>' + escapeHtml(value) + '</option>';
     })).join('');
   }
@@ -212,7 +212,7 @@
       '<span class="dm-pebble-picture__label">' + escapeHtml(field.label || field.key) + (field.required ? ' *' : '') + '</span>'
     ];
     if (field.type === 'select') {
-      label.push('<select ' + dataAttr + '="' + escapeHtml(field.source || field.key) + '"' + required + '>' + choiceOptions(field.values) + '</select>');
+      label.push('<select ' + dataAttr + '="' + escapeHtml(field.source || field.key) + '"' + required + '>' + choiceOptions(field.values, '', 'Select ' + String(field.label || field.key).replace(/\s*\*$/, '').toLowerCase()) + '</select>');
     } else {
       label.push('<input type="text" ' + dataAttr + '="' + escapeHtml(field.source || field.key) + '"' + required + placeholder + '>');
     }
@@ -232,11 +232,11 @@
       var html = [
         '<div class="dm-pebble-picture__people" ' + prefix + '-people>',
         '<label class="dm-pebble-picture__field">',
-        '<span class="dm-pebble-picture__label">Number of pebble characters</span>',
+        '<span class="dm-pebble-picture__label">Number of pebbles (including pets)</span>',
         '<select ' + prefix + '-count>'
       ];
       for (var count = people.min || 1; count <= maxCount; count += 1) {
-        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)' + (extra && count > threshold ? ' +' + extraPrice : '') + '</option>');
+        html.push('<option value="' + count + '">' + count + (extra && count > threshold ? ' (+' + extraPrice + ')' : '') + '</option>');
       }
       html.push('</select>');
       if (extra && maxCount > threshold) {
@@ -250,7 +250,7 @@
           '<label class="dm-pebble-picture__field">',
           '<span class="dm-pebble-picture__label">Pebble ' + index + '</span>',
           '<select ' + prefix + '-pebble="' + index + '" data-required="true">',
-          choiceOptions(['Adult', 'Teen', 'Child', 'Baby', 'Dog', 'Cat']),
+          choiceOptions(['Adult', 'Teen', 'Child', 'Baby', 'Dog', 'Cat'], '', 'Select pebble'),
           '</select>',
           '</label>'
         );
@@ -258,7 +258,7 @@
           html.push(
             '<label class="dm-pebble-picture__field">',
             '<span class="dm-pebble-picture__label">Name</span>',
-            '<input type="text" ' + prefix + '-name="' + index + '" placeholder="Optional" autocomplete="off">',
+            '<input type="text" ' + prefix + '-name="' + index + '" placeholder="Fill in name for pebble ' + index + '" autocomplete="off">',
             '</label>'
           );
         }
@@ -274,7 +274,7 @@
       var wfHtml = [
         '<div class="dm-pebble-picture__people" ' + prefix + '-people>',
         '<label class="dm-pebble-picture__field">',
-        '<span class="dm-pebble-picture__label">Number of pebble characters</span>',
+        '<span class="dm-pebble-picture__label">Number of pebbles (including pets)</span>',
         '<select ' + prefix + '-count>'
       ];
       for (var wfCount = people.min || 3; wfCount <= (people.max || 6); wfCount += 1) {
@@ -287,7 +287,7 @@
           '<label class="dm-pebble-picture__field">',
           '<span class="dm-pebble-picture__label">Pebble ' + (fixedCount + vi) + '</span>',
           '<select ' + prefix + '-pebble="' + vi + '" data-required="true">',
-          choiceOptions(extraOptions),
+          choiceOptions(extraOptions, '', 'Select pebble'),
           '</select>',
           '</label>'
         );
@@ -295,7 +295,7 @@
           wfHtml.push(
             '<label class="dm-pebble-picture__field">',
             '<span class="dm-pebble-picture__label">Name</span>',
-            '<input type="text" ' + prefix + '-name="' + vi + '" placeholder="Optional" autocomplete="off">',
+            '<input type="text" ' + prefix + '-name="' + vi + '" placeholder="Fill in name for pebble ' + (fixedCount + vi) + '" autocomplete="off">',
             '</label>'
           );
         }

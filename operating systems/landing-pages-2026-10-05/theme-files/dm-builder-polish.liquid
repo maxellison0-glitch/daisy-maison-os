@@ -1,0 +1,76 @@
+{%- comment -%}
+  Builder readability pass (7 Oct 2026). Our customers skew older: measured
+  against Globo's form, our builders used ~2.5x the height per field with
+  smaller text (12px labels, 10-11px small print, theme Title Case). This
+  makes every label 16px sentence case, small print >= 14px, inputs 16px
+  (also stops iOS zoom) and tightens spacing. Covers the pebble picture
+  builder and the street sign builders. Rendered on product pages from
+  dm-mobile-fixes.
+{%- endcomment -%}
+<style>
+/* Declutter: the pill eyebrow and the pebble intro sentence repeat the heading. */
+.dm-pebble-picture__eyebrow,
+.daisy-street-options__eyebrow,
+.dm-pebble-picture__copy { display: none !important; }
+
+/* Headings */
+.dm-pebble-picture__title,
+.daisy-street-options__title { font-size: 21px !important; line-height: 1.25 !important; margin: 0 0 10px !important; color: #1f1f1f !important; }
+.daisy-street-options__copy { font-size: 15px !important; line-height: 1.4 !important; color: #444 !important; margin-bottom: 8px !important; }
+
+/* No forced Title Case anywhere in the builders */
+.dm-pebble-picture__field, .dm-pebble-picture__label,
+.dm-pebble-picture__wording-choice, .dm-pebble-picture__wording-choice-title,
+.dm-pebble-picture__offer, .dm-pebble-picture__offer-inner, .dm-pebble-picture__offer-header,
+.daisy-street-options__field, .daisy-street-options__label,
+.dm-sign-fields__required, .dm-sign-fields__hint,
+.daisy-street-options__choice, .daisy-street-options__choice-main,
+.daisy-street-options__choice-title, .daisy-street-options__choice-note,
+.daisy-street-options__price { text-transform: none !important; }
+
+/* Labels: 16px, dark, bold enough to scan */
+.dm-pebble-picture__label,
+.daisy-street-options__label {
+  display: block !important; font-size: 16px !important; font-weight: 600 !important;
+  color: #1f1f1f !important; margin: 0 0 6px !important; letter-spacing: 0 !important;
+}
+.dm-sign-fields__required { font-size: 16px !important; }
+
+/* Section titles: sentence case 17px instead of tiny spaced capitals */
+.dm-pebble-picture__group-title,
+.daisy-street-options__group-title {
+  font-size: 17px !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  text-transform: none !important; color: #1f1f1f !important; margin: 0 0 6px !important;
+}
+
+/* Small print never below 14px */
+.dm-pebble-picture__extra-note,
+.dm-sign-fields__hint,
+.dm-sign-block__caption,
+.dm-pebble-picture__wording-choice-note,
+.daisy-street-options__choice-note { font-size: 14px !important; line-height: 1.4 !important; color: #444 !important; letter-spacing: 0 !important; text-transform: none !important; }
+.dm-pebble-picture__extra-note { margin: 6px 0 4px !important; display: block; }
+.dm-sign-block__caption { margin: 4px 0 8px !important; }
+
+/* Choice cards and prices readable */
+.dm-pebble-picture__wording-choice-title,
+.daisy-street-options__choice-title { font-size: 16px !important; }
+.daisy-street-options__price,
+.dm-pebble-picture__total { font-size: 16px !important; }
+
+/* Inputs: 16px text, comfortable 48px tap height */
+.dm-pebble-picture select, .dm-pebble-picture input[type="text"],
+.daisy-street-options select, .daisy-street-options input[type="text"], .daisy-street-options textarea {
+  font-size: 16px !important; min-height: 48px !important;
+}
+
+/* Tighter rhythm: one consistent 12px gap between fields */
+.dm-pebble-picture__group { gap: 10px !important; padding-top: 0 !important; }
+.dm-pebble-picture__grid, .dm-pebble-picture__people { display: grid !important; gap: 12px !important; }
+.dm-pebble-picture__person-row { gap: 8px !important; padding: 10px 0 0 !important; border-top: 1px solid #eee; }
+.dm-pebble-picture__wording-choice { padding: 10px 14px !important; }
+.dm-pebble-picture__offer { padding: 10px 14px !important; }
+.daisy-street-options__grid { gap: 12px !important; }
+.daisy-street-options__group { padding: 6px 0 2px !important; }
+.daisy-street-options__choice { padding: 10px 10px !important; }
+</style>
