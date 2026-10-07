@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-07 — 'Home' modern pebble lander (draft 208643621203)
+
+- **Product** `personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift` (10919278969171, live, created by the team): added description + SEO in the Together pattern, compare-at £34.95, sell when out of stock (untracked), 1.1 kg, Pebble People + Modern Pebble Pictures, Framed Pebble Art after Together. No Globo on it (checked live).
+- **Theme draft 208643621203** "Claude – Home lander – 7 Oct" = live 208556032339 + builder kind `modernhome` (Together clone, default wording "Our Family") with an optional **Second line** field (design has a second line, e.g. "Est. 2010"), in the four handle-keyed files; the four modern landers added to the Globo-off list. Phone test on the draft: 4 named pebbles + second line → `/cart` with every property → checkout.
+- Still on the Shop app channel (can't unpublish via API) — Shop-app orders skip personalisation (order DM41567).
+- Unused leftover: unlisted placeholder product 10919279690067 `modern-family-pebble-picture` (created 6 Oct, awaiting Max's keep/delete).
+
 ## 2026-10-06 — Globo off the top-10 revenue pages (draft 208556032339)
 
 - `snippets/dm-mobile-fixes.liquid`: on 10 product IDs (Mr & Mrs sign, Wedding pebble, Engagement love tree, Family sign, Christening, Create-your-own sign, Family Blossom Tree, Wedding hanging heart, Mum Flutterby, New Home — top 60-day net sales, add-ons excluded, Tea Light Holder skipped as it has no Globo) the theme makes `GPOConfigs.options` ignore writes, so Globo renders nothing and adds no Add to cart guard. Our builders already handled all ten; none depend on Globo. Globo's own admin still lists the option sets; remove them there later if wanted.
