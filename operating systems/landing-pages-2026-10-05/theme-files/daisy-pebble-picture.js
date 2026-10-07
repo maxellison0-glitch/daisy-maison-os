@@ -21,6 +21,7 @@
     'golden-skies-family-pebble-picture',
     'same-stars-family-pebble-picture',
     'together-family-pebble-picture',
+    'personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift',
     'grandparent-flutterby-blossom-tree-personalised-pebble-picture',
     'grandparent-personalised-pebble-sketch-picture',
     'family-swing-personalised-pebble-picture',
