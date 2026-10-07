@@ -3,6 +3,14 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-07 — Desktop gallery + builder readability (same draft 208648110419)
+
+- **Desktop/tablet gallery bug:** from 768px the theme stacked every image (Mr & Mrs: 14 images = 8,650px) beside a sticky details column taller than the screen, so Add to cart was unreachable until all images were scrolled past. New `snippets/dm-desktop-gallery.liquid`: one image at a time, arrows, "n / N" counter, thumbnails switch the image. Phones unchanged.
+- **Pebble builder wording:** "Number of pebbles (including pets)" with 1–8 ("(+£3)" on 7/8), each pebble "Select pebble" + "Fill in name for pebble N", selects "Select frame colour". Cart values unchanged ("4 (Inc dog/cat)" etc.).
+- **Readability pass** `snippets/dm-builder-polish.liquid` (pebble + street-sign builders): measured vs Globo (109px/field, 14px labels) ours used ~250–300px/field with 10–12px text. Now 16px sentence-case labels, small print ≥14px, 16px/48px inputs (no iOS zoom), eyebrow pills and the pebble intro sentence removed. Selectors use `html:root body[class]` to outrank `daisy-product-poc.css`.
+- Tested on the draft: pebble (Home) and Mr & Mrs add to basket with all properties → checkout.
+- Known, not ours: theme header script logs a caught TypeError (sticky-header missing); theme.js logs a JSON parse error from a background request.
+
 ## 2026-10-07 — Globo off all 142 builder products (draft 208648110419)
 
 - Max published the Home lander theme (now "Live -- tested 07/10", 208643621203).
