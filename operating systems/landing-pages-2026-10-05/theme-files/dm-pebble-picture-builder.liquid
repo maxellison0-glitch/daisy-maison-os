@@ -574,14 +574,12 @@
             "fields": [
               { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
               { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Our New Home" },
-              { "key": "Wording", "type": "wordingkey" },
-              { "key": "Second line", "label": "Second line under the wording (optional)", "type": "text", "required": false, "placeholder": "e.g. Est. 2010 or The Smith Family" }
+              { "key": "Wording", "type": "wordingkey" }
             ],
             "offerFields": [
               { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
               { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our New Home" },
-              { "key": "(Offer) Wording", "type": "wordingkey" },
-              { "key": "(Offer) Second line", "source": "Second line", "label": "Second line under the wording (optional)", "type": "text", "required": false, "placeholder": "e.g. Est. 2010 or The Smith Family" }
+              { "key": "(Offer) Wording", "type": "wordingkey" }
             ]
           {%- when 'newhome' -%}
             "eyebrow": "Free personalisation",
