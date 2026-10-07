@@ -51,10 +51,11 @@
   ID here (only if our own builder handles it). To undo, remove the ID.
   Mr & Mrs sign, Wedding pebble, Engagement love tree, Family sign,
   Christening, Create-your-own sign, Family Blossom Tree, Wedding hanging
-  heart, Mum Flutterby, New Home.
+  heart, Mum Flutterby, New Home; plus the four modern landers (Golden
+  Skies, Same Stars, Together, Home).
 {%- endcomment -%}
 {%- liquid
-  assign dm_no_globo_ids = '9702132711763,9436245819731,9436237529427,9436228845907,9436245721427,9436230418771,9705618571603,9436276982099,9436243624275,9436245524819' | split: ','
+  assign dm_no_globo_ids = '9702132711763,9436245819731,9436237529427,9436228845907,9436245721427,9436230418771,9705618571603,9436276982099,9436243624275,9436245524819,10914052637011,10914092253523,10917497110867,10919278969171' | split: ','
   assign dm_pid = ''
   if request.page_type == 'product'
     assign dm_pid = product.id | append: ''
