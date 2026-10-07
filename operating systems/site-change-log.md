@@ -3,6 +3,12 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-07 — Globo off all 142 builder products (draft 208648110419)
+
+- Max published the Home lander theme (now "Live -- tested 07/10", 208643621203).
+- Globo's `productOptionSetMap` lists 526 products (338 public). Checking each public page for our builder markers: **142** have our own builder (68 hearts, 35 pebble pictures, 39 signs/other), **196** rely on Globo only and are untouched. The 142 product IDs are now in the Globo-off list in `snippets/dm-mobile-fixes.liquid`; list with option-set IDs in `landing-pages-2026-10-05/globo-off-products.csv` (134 option sets; 11 are shared with Globo-only products — remove products, don't delete those sets).
+- Draft **208648110419** "Claude – Globo off all builder products – 7 Oct". Phone check on the draft: all 142 load with no Globo and our form present; two Globo-only controls still show Globo. (Bulk checking triggers Shopify 429 rate limits — re-check slowly.)
+
 ## 2026-10-07 — 'Home' modern pebble lander (draft 208643621203)
 
 - **Product** `personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift` (10919278969171, live, created by the team): added description + SEO in the Together pattern, compare-at £34.95, sell when out of stock (untracked), 1.1 kg, Pebble People + Modern Pebble Pictures, Framed Pebble Art after Together. No Globo on it (checked live).
