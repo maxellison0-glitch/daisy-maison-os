@@ -24,8 +24,11 @@ far below £38, so either the sends went to segments well under the full list,
 or most of them used the 10,000 free emails. Shopify's API shows each send
 (marketingEvents) but not how many people it went to.
 
+**Gmail is not to be used for this (Max, 8 Oct 2026).** The figures above were
+read once from Gmail before that instruction; the digest must not repeat it.
+
 **How the digest costs a send:** use the Messaging line on the bill that covers
-it, split across that cycle's sends in proportion to recipients if known,
+it (when Max provides it), split across that cycle's sends in proportion to recipients if known,
 otherwise equally (mark as estimate). Until that bill arrives, use the last
 cycle's average cost per send, marked as an estimate.
 
