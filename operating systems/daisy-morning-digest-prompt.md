@@ -55,6 +55,9 @@ Run these queries, in parallel where possible:
 5. `FROM sales SHOW gross_sales, orders GROUP BY product_title SINCE yesterday UNTIL yesterday ORDER BY orders DESC LIMIT 8`
 6. `FROM sales SHOW gross_sales, total_sales, orders SINCE -7d UNTIL yesterday`
 7. `FROM sales SHOW gross_sales, total_sales, orders SINCE -14d UNTIL -8d`
+8. `FROM sales SHOW total_sales, orders GROUP BY order_utm_campaign WHERE order_utm_medium = 'email' TIMESERIES day SINCE -14d UNTIL yesterday`
+   (email sales, added 8 Oct 2026 by Max — tracks each send's sales on send day
+   AND the tail that keeps coming in on later days)
 
 Paid advertising via Windsor
 
@@ -93,6 +96,15 @@ Calculations
 
 - ROAS = Shopify `total_sales` divided by combined Google and Facebook spend.
   Do not use platform-attributed revenue. Round to two decimals.
+- EMAIL (8 Oct 2026, Max): an email send costs ~GBP 38 (Max's figure, an
+  estimate). On a send day add it to spend: overall-spend ROAS = total_sales ÷
+  (Google + Facebook + email cost). Green/red uses this number. Also show
+  ad-only ROAS = (total_sales − that day's email-tagged sales) ÷ ad spend, so
+  an email day can't make the ads look better than they were.
+- Email ROAS per campaign = its cumulative email-tagged total_sales since send
+  ÷ GBP 38. Keep reporting each campaign's running total until it goes 3 days
+  with no sales. Email-tagged sales are last-click only, so treat them as a
+  floor.
 - AOV = Shopify `total_sales` divided by orders.
 - Percentages use one decimal place.
 - Strong gross sales: GBP 1,000 or more. Weak: under GBP 600.
@@ -136,6 +148,8 @@ average in brackets and a verdict: ✅ better / ⚠️ normal / 🔴 worse
    - Traffic: only a source that moved materially, and why (e.g. email send)
    - Products: top 3 and anything new/odd; email-promoted products' sales
    - Upsells: % of gross and Mounting Strips attach, one line
+   - Email: any send yesterday plus any still-earning campaign — sales
+     yesterday, running total, email ROAS (one line)
    - Anything Max asked about yesterday
 
 3. ADS (one compact table, one row per campaign, both platforms):
