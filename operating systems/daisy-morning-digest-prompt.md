@@ -103,8 +103,10 @@ Calculations
   Cost of a send = max(0, recipients − free emails left this month) × rate,
   converted to GBP. Get recipients from `operating systems/email-sends.md`.
   If a send has no recipient count there, use the subscribed list size
-  (Admin GraphQL `customersCount(query: "email_subscription_status:subscribed",
-  limit: null)`) as the upper bound, mark the cost as an ESTIMATE, and ask Max
+  (Admin GraphQL `customerSegmentMembers(first: 1, query:
+  "email_subscription_status = 'SUBSCRIBED'") { totalCount }` — NOT
+  `customersCount`, whose filter is ignored and returns every customer) as the
+  upper bound, mark the cost as an ESTIMATE, and ask Max
   for the "Sent" number in the DO TODAY block.
   On a send day add that cost to spend: overall-spend ROAS = total_sales ÷
   (Google + Facebook + email cost). Green/red uses this number. Also show
