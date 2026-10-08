@@ -96,15 +96,24 @@ Calculations
 
 - ROAS = Shopify `total_sales` divided by combined Google and Facebook spend.
   Do not use platform-attributed revenue. Round to two decimals.
-- EMAIL (8 Oct 2026, Max): an email send costs ~GBP 38 (Max's figure, an
-  estimate). On a send day add it to spend: overall-spend ROAS = total_sales ÷
+- EMAIL (8 Oct 2026, Max): each send's cost is worked out, not a flat figure.
+  Shopify Email billing: 10,000 free emails per calendar month, then USD 1 per
+  1,000 (USD 0.65 per 1,000 past 300,000 in the month). Emails count per
+  recipient. Abandoned-checkout emails are free.
+  Cost of a send = max(0, recipients − free emails left this month) × rate,
+  converted to GBP. Get recipients from `operating systems/email-sends.md`.
+  If a send has no recipient count there, use the subscribed list size
+  (Admin GraphQL `customersCount(query: "email_subscription_status:subscribed",
+  limit: null)`) as the upper bound, mark the cost as an ESTIMATE, and ask Max
+  for the "Sent" number in the DO TODAY block.
+  On a send day add that cost to spend: overall-spend ROAS = total_sales ÷
   (Google + Facebook + email cost). Green/red uses this number. Also show
   ad-only ROAS = (total_sales − that day's email-tagged sales) ÷ ad spend, so
   an email day can't make the ads look better than they were.
 - Email ROAS per campaign = its cumulative email-tagged total_sales since send
-  ÷ GBP 38. Keep reporting each campaign's running total until it goes 3 days
-  with no sales. Email-tagged sales are last-click only, so treat them as a
-  floor.
+  ÷ that send's cost. Keep reporting each campaign's running total until it
+  goes 3 days with no sales. Email-tagged sales are last-click only, so treat
+  them as a floor.
 - AOV = Shopify `total_sales` divided by orders.
 - Percentages use one decimal place.
 - Strong gross sales: GBP 1,000 or more. Weak: under GBP 600.
