@@ -102,10 +102,10 @@ Calculations
   recipient. Abandoned-checkout emails are free.
   Cost of a send = max(0, recipients − free emails left this month) × rate,
   converted to GBP. Get recipients from `operating systems/email-sends.md`.
-  Ground truth is the "Messaging" line on the monthly Shopify bill (Gmail,
-  from:billing@shopify.com, arrives on the 7th, in GBP); read it, never
-  mark or archive the email, and record it in email-sends.md. List each
-  cycle's sends with Admin GraphQL `marketingEvents` (type NEWSLETTER).
+  Do NOT use Gmail for this (Max, 8 Oct 2026). Shopify only: list each
+  send with Admin GraphQL `marketingEvents` (type NEWSLETTER). The Shopify API
+  does not expose recipient counts or bills, so recipients come from Max via
+  email-sends.md.
   If a send has no recipient count there, use the subscribed list size
   (Admin GraphQL `customerSegmentMembers(first: 1, query:
   "email_subscription_status = 'SUBSCRIBED'") { totalCount }` — NOT
