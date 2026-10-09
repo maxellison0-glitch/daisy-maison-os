@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-09 — Storybook engagement pebble picture (theme 208801857875)
+
+- **Fence range collapsed:** the 4 fence products were one design, so all 16 fence photos now sit on Our Little Family (ACTIVE, 10927920578899), and The Good Life (10927915991379) + Friends (10927918973267) stay DRAFT until the team swaps in new designs/titles.
+- **Product 10927937290579** (was Together Always) re-titled by the team to "Personalised Engagement Pebble Picture Gift — The Storybook Collection" with 2 new photos. Handle → `storybook-engagement-pebble-picture`; description/SEO rewritten for the proposal picnic design ("The Beginning of Always", names, date); alt text added; collections Framed Pebble Art + Personalised Engagement Gifts (left Pebble People).
+- **Theme 208801857875** "Claude – Storybook engagement – 9 Oct" (from live 208785637715, uploaded after processing finished, md5s verified): old Together Always handle replaced by kind `storybookengagement` — Frame Colour, wording keep/own (default "The Beginning of Always"), Names, Date; review line "Loved for engagements and proposals". Phone test on preview: builder, no Globo, add to basket with all properties, checkout opens, 0 errors.
+- **Process for the next two:** team changes photos + title → handle/description/SEO/collections (Framed Pebble Art + category) + builder per the new artwork → theme copy → publish → ACTIVE.
+
 ## 2026-10-09 — Fence pebble picture range: 4 products + landers (theme 208785637715, live 9 Oct)
 
 - **LIVE 9 Oct:** Max published theme 208785637715; all 4 products set ACTIVE straight after (still not on Shop). Pre-publish checks on the preview, phone: builder + default wording + review line, no Globo (none of the 4 IDs are in Globo's option-set map), add to basket with all personalisation properties, checkout opens, 0 page errors. Extra pebbles on Together Always: 8 pebbles → £3 "7/8 Pebbles" add-on line, basket £32.95, all 8 pebbles + names carried. Desktop: arrows gallery, centred price, 0 errors. Post-publish: all 4 return 200 on the live theme with builder + review line.
