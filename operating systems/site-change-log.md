@@ -3,7 +3,11 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
-## 2026-10-09 — Storybook engagement pebble picture (theme 208801857875)
+## 2026-10-09 — Storybook range: engagement, christening, new baby (theme 208801857875)
+
+- **Christening** 10927915991379 (was The Good Life) → `storybook-christening-pebble-picture`; **New Baby** 10927918973267 (was Friends) → `storybook-new-baby-pebble-picture`. Team changed titles/photos; descriptions, SEO, alt text rewritten; collections Framed Pebble Art + Personalised Christening & New Baby Gifts (left Pebble People).
+- **Builders follow image 1, examples = image 1 wording:** christening = pebbles 1–8 (+£3 over 6), keep/own "On Your Christening Day", Name(s) "Lily Blossom Walker", Church or venue (optional) "St Christopher’s Church, Springfield", Date "9th November 2026". New baby = pebbles 1–8, keep/own "How Wonderful Life Is Now You’re In The World", Baby’s name "Beau Wren". Engagement examples already image 1 (Yazmin + Luke, 14th October 2026).
+- Same theme 208801857875, renamed "Claude – Storybook range (3) – 9 Oct"; md5s verified. Phone test on preview, all 3: builder, no Globo, add to basket with all properties, checkout opens, 0 errors. All 3 UNLISTED until the theme is published, then ACTIVE.
 
 - **Fence range collapsed:** the 4 fence products were one design, so all 16 fence photos now sit on Our Little Family (ACTIVE, 10927920578899), and The Good Life (10927915991379) + Friends (10927918973267) stay DRAFT until the team swaps in new designs/titles.
 - **Product 10927937290579** (was Together Always) re-titled by the team to "Personalised Engagement Pebble Picture Gift — The Storybook Collection" with 2 new photos. Handle → `storybook-engagement-pebble-picture`; description/SEO rewritten for the proposal picnic design ("The Beginning of Always", names, date); alt text added; collections Framed Pebble Art + Personalised Engagement Gifts (left Pebble People).
