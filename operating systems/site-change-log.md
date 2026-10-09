@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-09 — Fence pebble picture range: 4 products + landers (draft 208785637715)
+
+- **Products (UNLISTED until the theme is live; set ACTIVE after publish):** The Good Life `the-good-life-pebble-picture` (10927915991379), Friends Make the World Beautiful `friends-make-the-world-beautiful-pebble-picture` (10927918973267), Our Little Family `our-little-family-pebble-picture` (10927920578899), Together Always `together-always-family-pebble-picture` (10927937290579). Same settings as Together/Home: £29.95 / compare-at £34.95, untracked + CONTINUE, 1.1 kg, Daisy Maison vendor, Framed Pebble Art + Pebble People, description/SEO in the house pattern (SEO line says "Free UK Delivery Over £50", not "FAST FREE DELIVERY"). Published to Online Store, POS, Facebook & Instagram, Google & YouTube, TikTok — **not Shop** (Shop-app orders skip personalisation).
+- **Images:** Higgsfield Nano Banana Pro 2K square from Max's photos (photos themselves not used on the products): close hero first, modern take, pebble close-up, room shot, then the shared white gift-wrap image. The gift-wrap image is the existing shared file (MediaImage 62448711139667), not a copy — never productSet these products' files without it.
+- **Theme draft 208785637715** "Claude – Fence range landers – 9 Oct" (from live 208648110419): builder kinds `goodlife` / `friendsworld` / `littlefamily` / `togetheralways` cloned from `together` (default wording = the print's wording), handles in the JS list, grey + spray lists, fast gallery; proof quotes reuse existing verbatim reviews that had been used once (Always Forever, True Friends, To the Moon, Engagement artwork). Also restores Home to the fast-gallery list — live had lost it because the Home theme copy was still processing when the file was uploaded and the copy overwrote it. **Rule: upload only after `processing: false`, then re-verify.**
+- Flagged, not changed: Family Blossom Tree SEO title/description contain "¬£" mojibake.
+
 ## 2026-10-07 — Desktop gallery + builder readability (same draft 208648110419)
 
 - **Desktop/tablet gallery bug:** from 768px the theme stacked every image (Mr & Mrs: 14 images = 8,650px) beside a sticky details column taller than the screen, so Add to cart was unreachable until all images were scrolled past. New `snippets/dm-desktop-gallery.liquid`: one image at a time, arrows, "n / N" counter, thumbnails switch the image. Phones unchanged.
