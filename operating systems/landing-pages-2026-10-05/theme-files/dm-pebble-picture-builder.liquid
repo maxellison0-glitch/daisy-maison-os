@@ -1,5 +1,5 @@
 {%- liquid
-  assign dm_grey_handles = 'wedding-flower-arch-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,the-good-life-pebble-picture,friends-make-the-world-beautiful-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-flutterby-blossom-tree-personalised-pebble-picture-copy,on-your-christening-personalised-pebble-picture' | split: ','
+  assign dm_grey_handles = 'wedding-flower-arch-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,storybook-christening-pebble-picture,storybook-new-baby-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-flutterby-blossom-tree-personalised-pebble-picture-copy,on-your-christening-personalised-pebble-picture' | split: ','
   assign dm_grey_remaining = shop.metafields.custom.grey_frames_remaining.value | default: 0 | plus: 0
   assign dm_frame_values = '["White", "Grey (OUT OF STOCK)"]'
   if dm_grey_handles contains product.handle and dm_grey_remaining > 0
@@ -104,13 +104,13 @@
       assign dm_pebble_enabled = true
       assign dm_pebble_kind = 'together'
       assign dm_second_offer_handle = '20-incredible-offer'
-    when 'the-good-life-pebble-picture'
+    when 'storybook-christening-pebble-picture'
       assign dm_pebble_enabled = true
-      assign dm_pebble_kind = 'goodlife'
+      assign dm_pebble_kind = 'storybookchristening'
       assign dm_second_offer_handle = '20-incredible-offer'
-    when 'friends-make-the-world-beautiful-pebble-picture'
+    when 'storybook-new-baby-pebble-picture'
       assign dm_pebble_enabled = true
-      assign dm_pebble_kind = 'friendsworld'
+      assign dm_pebble_kind = 'storybooknewbaby'
       assign dm_second_offer_handle = '20-incredible-offer'
     when 'our-little-family-pebble-picture'
       assign dm_pebble_enabled = true
@@ -260,7 +260,7 @@
       Spray add-on rollout list: builder-enabled pebble pictures with >=1 sale in the
       30 days to 2026-07-12 (Max's rule). Maintained by agents; add/remove handles here.
     endcomment
-    assign dm_spray_handles = 'mum-personalised-pebble-sketch-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,engagement-proposal-personalised-pebble-artwork,on-your-christening-personalised-pebble-picture,mum-flutterby-blossom-tree-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,the-good-life-pebble-picture,friends-make-the-world-beautiful-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-swing-personalised-pebble-picture,wedding-swing-personalised-pebble-picture,on-your-wedding-day-family-personalised-pebble-picture-gift,new-home-personalised-pebble-picture,true-friends-personalised-pebble-picture,wedding-church-personalised-pebble-picture,beach-proposal-personalised-pebble-picture-gift,couple-love-tree-personalised-pebble-picture-6-colour-options,always-forever-personalised-pebble-artwork,birthday-blossom-tree-personalised-pebble-picture,dad-grandad-simple-moments-personalised-pebble-picture,grandparent-flutterby-blossom-tree-personalised-pebble-picture,always-my-sister-personalised-pebble-picture,family-walk-in-the-park-personalised-pebble-picture,beach-wedding-personalised-pebble-picture,grandparent-personalised-pebble-sketch-picture,graduation-personalised-pebble-picture,home-sweet-home-personalised-pebble-picture,our-world-family-personalised-pebble-artwork' | split: ','
+    assign dm_spray_handles = 'mum-personalised-pebble-sketch-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,engagement-proposal-personalised-pebble-artwork,on-your-christening-personalised-pebble-picture,mum-flutterby-blossom-tree-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,storybook-christening-pebble-picture,storybook-new-baby-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-swing-personalised-pebble-picture,wedding-swing-personalised-pebble-picture,on-your-wedding-day-family-personalised-pebble-picture-gift,new-home-personalised-pebble-picture,true-friends-personalised-pebble-picture,wedding-church-personalised-pebble-picture,beach-proposal-personalised-pebble-picture-gift,couple-love-tree-personalised-pebble-picture-6-colour-options,always-forever-personalised-pebble-artwork,birthday-blossom-tree-personalised-pebble-picture,dad-grandad-simple-moments-personalised-pebble-picture,grandparent-flutterby-blossom-tree-personalised-pebble-picture,always-my-sister-personalised-pebble-picture,family-walk-in-the-park-personalised-pebble-picture,beach-wedding-personalised-pebble-picture,grandparent-personalised-pebble-sketch-picture,graduation-personalised-pebble-picture,home-sweet-home-personalised-pebble-picture,our-world-family-personalised-pebble-artwork' | split: ','
     assign dm_spray_enabled = false
     comment
       28 Sep 2026: spray row switched off on every picture (1 sale in 313 eligible orders, 12 Aug-26 Sep).
@@ -580,39 +580,47 @@
               { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Together side by side", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our little family" },
               { "key": "(Offer) Wording", "type": "wordingkey" }
             ]
-          {%- when 'goodlife' -%}
+          {%- when 'storybookchristening' -%}
             "eyebrow": "Free personalisation",
-            "heading": "Create your ‘The Good Life’ pebble picture",
-            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade ‘The Good Life’ picture.",
+            "heading": "Create your christening pebble picture",
+            "copy": "Choose your frame colour and pebble family, keep our wording or write your own, then add the name(s), church and date.",
             "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
             "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
-            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
             "fields": [
               { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "The Good Life", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Mr & Mrs Smith" },
-              { "key": "Wording", "type": "wordingkey" }
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "On Your Christening Day", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. On Your Baptism Day" },
+              { "key": "Wording", "type": "wordingkey" },
+              { "key": "Name(s)", "label": "Name(s)", "type": "text", "required": true, "placeholder": "e.g. Lily Blossom Walker" },
+              { "key": "Church / venue", "label": "Church or venue (optional)", "type": "text", "required": false, "placeholder": "e.g. St Christopher’s Church, Springfield" },
+              { "key": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 9th November 2026" }
             ],
             "offerFields": [
               { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "The Good Life", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Mr & Mrs Smith" },
-              { "key": "(Offer) Wording", "type": "wordingkey" }
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "On Your Christening Day", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. On Your Baptism Day" },
+              { "key": "(Offer) Wording", "type": "wordingkey" },
+              { "key": "(Offer) Name(s)", "source": "Name(s)", "label": "Name(s)", "type": "text", "required": true, "placeholder": "e.g. Lily Blossom Walker" },
+              { "key": "(Offer) Church / venue", "source": "Church / venue", "label": "Church or venue (optional)", "type": "text", "required": false, "placeholder": "e.g. St Christopher’s Church, Springfield" },
+              { "key": "(Offer) Date", "source": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 9th November 2026" }
             ]
-          {%- when 'friendsworld' -%}
+          {%- when 'storybooknewbaby' -%}
             "eyebrow": "Free personalisation",
-            "heading": "Create your ‘Friends Make the World Beautiful’ pebble picture",
-            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade ‘Friends make the World Beautiful’ picture.",
+            "heading": "Create your new baby pebble picture",
+            "copy": "Choose your frame colour and pebble family, keep our wording or write your own, then add your baby’s name.",
             "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
             "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
-            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
             "fields": [
               { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Friends make the World Beautiful", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Best Friends Forever" },
-              { "key": "Wording", "type": "wordingkey" }
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "How Wonderful Life Is Now You’re In The World", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Welcome to the World" },
+              { "key": "Wording", "type": "wordingkey" },
+              { "key": "Baby’s name", "label": "Baby’s name", "type": "text", "required": true, "placeholder": "e.g. Beau Wren" }
             ],
             "offerFields": [
               { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
-              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Friends make the World Beautiful", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Best Friends Forever" },
-              { "key": "(Offer) Wording", "type": "wordingkey" }
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "How Wonderful Life Is Now You’re In The World", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Welcome to the World" },
+              { "key": "(Offer) Wording", "type": "wordingkey" },
+              { "key": "(Offer) Baby’s name", "source": "Baby’s name", "label": "Baby’s name", "type": "text", "required": true, "placeholder": "e.g. Beau Wren" }
             ]
           {%- when 'littlefamily' -%}
             "eyebrow": "Free personalisation",
