@@ -25,7 +25,7 @@
     'the-good-life-pebble-picture',
     'friends-make-the-world-beautiful-pebble-picture',
     'our-little-family-pebble-picture',
-    'together-always-family-pebble-picture',
+    'storybook-engagement-pebble-picture',
     'grandparent-flutterby-blossom-tree-personalised-pebble-picture',
     'grandparent-personalised-pebble-sketch-picture',
     'family-swing-personalised-pebble-picture',
