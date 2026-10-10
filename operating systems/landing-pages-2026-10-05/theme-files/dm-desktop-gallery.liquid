@@ -1,0 +1,88 @@
+{%- comment -%}
+  Desktop/tablet product gallery carousel (7 Oct 2026).
+  From 768px up the theme stacks every product image down the left column
+  while the details column is sticky. With many images (Mr & Mrs has 14 =
+  8,600px) and a details column taller than the screen, Add to cart sat below
+  the fold until the customer had scrolled past every image. Here the stacked
+  images become one image at a time with arrows; the existing thumbnails
+  switch the image. Phones (<768px) keep the theme's swipe slider untouched.
+  Rendered on product pages from dm-mobile-fixes.
+{%- endcomment -%}
+<style>
+@media (min-width: 768px) {
+  .template-product .productView-images .productView-nav:not(.slick-initialized) {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: auto !important;
+  }
+  .template-product .productView-images .productView-nav:not(.slick-initialized)::-webkit-scrollbar { display: none; }
+  .template-product .productView-images .productView-nav:not(.slick-initialized) > .productView-image {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    scroll-snap-align: start;
+  }
+  .dm-gallery-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    width: 48px; height: 48px; border-radius: 50%; border: 1px solid #ddd;
+    background: rgba(255,255,255,.95); color: #222; font-size: 26px; line-height: 1;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+  .dm-gallery-arrow--prev { left: 12px; }
+  .dm-gallery-arrow--next { right: 12px; }
+  .dm-gallery-count {
+    position: absolute; bottom: 12px; right: 12px; z-index: 3;
+    background: rgba(0,0,0,.6); color: #fff; font-size: 14px; padding: 3px 10px; border-radius: 12px;
+  }
+}
+@media (max-width: 767px) { .dm-gallery-arrow, .dm-gallery-count { display: none !important; } }
+</style>
+<script>
+(function () {
+  function init() {
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
+    var nav = document.querySelector('.productView-images .productView-nav');
+    if (!nav || nav.classList.contains('slick-initialized') || nav.dataset.dmCarousel) return;
+    var slides = Array.prototype.filter.call(nav.children, function (c) { return c.classList.contains('productView-image'); });
+    var n = slides.length;
+    if (n < 2) return;
+    nav.dataset.dmCarousel = '1';
+    var holder = nav.parentElement;
+    if (getComputedStyle(holder).position === 'static') holder.style.position = 'relative';
+    function current() { return Math.round(nav.scrollLeft / Math.max(1, nav.clientWidth)); }
+    function go(i) { i = (i + n) % n; nav.scrollTo({ left: i * nav.clientWidth, behavior: 'smooth' }); }
+    function button(cls, label, symbol, step) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'dm-gallery-arrow ' + cls; b.setAttribute('aria-label', label); b.innerHTML = symbol;
+      b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(current() + step); });
+      holder.appendChild(b);
+    }
+    button('dm-gallery-arrow--prev', 'Previous image', '&#8249;', -1);
+    button('dm-gallery-arrow--next', 'Next image', '&#8250;', 1);
+    var count = document.createElement('span');
+    count.className = 'dm-gallery-count';
+    holder.appendChild(count);
+    function update() { count.textContent = (current() + 1) + ' / ' + n; }
+    nav.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+    update();
+    // Existing thumbnails switch the big image instead of scrolling the page.
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('.productView-thumbnail-wrapper .productView-thumbnail');
+      if (!t) return;
+      var idx = parseInt(t.getAttribute('data-slick-index'), 10);
+      if (isNaN(idx)) return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      go(((idx % n) + n) % n);
+    }, true);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('load', init);
+})();
+</script>
