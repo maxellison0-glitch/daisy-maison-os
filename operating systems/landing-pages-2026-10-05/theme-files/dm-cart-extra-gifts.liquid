@@ -1,0 +1,88 @@
+{% doc %}
+  Offers optional second gifts after the main product has reached the basket.
+{% enddoc %}
+{%- assign sign_handles = 'mr-mrs-personalised-street-sign-gift,family-personalised-street-sign,kitchen-personalised-street-sign' | split: ',' -%}
+{%- assign picture_handles = 'engagement-proposal-love-tree-personalised-pebble-picture-copy,wedding-flower-arch-personalised-pebble-picture' | split: ',' -%}
+{%- comment -%} One offer per product, not one per basket line (6 test signs showed 6 boxes). {%- endcomment -%}
+{%- assign dm_gift_seen = ',' -%}
+{%- for item in cart.items -%}
+  {%- liquid
+    assign gift_kind = ''
+    assign dm_gift_key = ',' | append: item.product.handle | append: ','
+    if dm_gift_seen contains dm_gift_key
+      continue
+    endif
+    assign heart_handle = ''
+    if sign_handles contains item.product.handle
+      assign gift_kind = 'sign'
+      assign extra_product = all_products['incredible-offer-get-a-2nd-sign-for-9-95']
+      if item.product.handle == 'mr-mrs-personalised-street-sign-gift'
+        assign heart_handle = 'personalised-wedding-pebble-people-hanging-heart'
+      endif
+    elsif picture_handles contains item.product.handle
+      assign gift_kind = 'picture'
+      assign extra_product = all_products['20-incredible-offer']
+      assign heart_handle = 'personalised-wedding-love-tree-pebble-hanging-heart-copy'
+      if item.product.handle == 'engagement-proposal-love-tree-personalised-pebble-picture-copy'
+        assign heart_handle = 'personalised-engagement-pebble-hanging-heart'
+      endif
+    endif
+  -%}
+  {%- if gift_kind != '' and extra_product.available -%}
+    {%- assign dm_gift_seen = dm_gift_seen | append: item.product.handle | append: ',' -%}
+    <details class="dm-cart-gifts">
+      <summary>{{ 'dm_clean.more_gifts' | t }}</summary>
+      <p>{{ item.product.title | escape }}</p>
+      <form data-dm-extra-gift data-kind="{{ gift_kind }}" data-parent="{{ item.key | escape }}" data-bundle="{{ item.properties['_Bundle ID'] | escape }}" data-title="{{ item.product.title | escape }}" data-root="{{ routes.root_url }}" data-failure="{{ 'dm_clean.failure' | t | escape }}">
+        <h3>{{ 'dm_clean.second_gift' | t }}</h3>
+        <p>{{ 'dm_clean.same_design' | t }}</p>
+        <label>{{ 'dm_clean.size_price' | t }}
+          <select name="id" required>
+            {%- for variant in extra_product.variants -%}
+              {%- if variant.available -%}
+                <option value="{{ variant.id }}" data-title="{{ variant.title | escape }}">{% unless variant.title == 'Default Title' %}{{ variant.title | escape }} — {% endunless %}{{ variant.price | money }}</option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+        </label>
+        {%- for property in item.properties -%}
+          {%- liquid
+            assign key = property.first
+            assign first_character = key | slice: 0
+            assign editable = false
+            assign keep = false
+            if key contains 'Line ' or key contains 'Text ' or key == 'Date' or key == 'Names'
+              assign editable = true
+              assign keep = true
+            elsif key contains 'Colour' or key contains 'colour' or key == 'Sign'
+              assign keep = true
+            endif
+          -%}
+          {%- if keep and first_character != '_' -%}
+            <label>{{ key | escape }}
+              <input type="text" data-gift-property="{{ key | escape }}" value="{{ property.last | escape }}" maxlength="100" {% unless editable %}readonly{% endunless %} {% if key == 'Line 1' or key == 'Date' or key == 'Text above pebbles' %}required{% endif %} {% if item.product.handle == 'engagement-proposal-love-tree-personalised-pebble-picture-copy' and key == 'Line 2' %}required{% endif %}>
+            </label>
+          {%- endif -%}
+        {%- endfor -%}
+        <button type="submit" class="button">{{ 'dm_clean.add_second' | t }}</button>
+        <p data-gift-error role="alert" hidden></p>
+      </form>
+      {%- if heart_handle != '' -%}
+        {%- assign heart = all_products[heart_handle] -%}
+        {%- if heart.available -%}
+          <p><a href="{{ heart.url }}">{{ 'dm_clean.heart' | t }} — {{ heart.price_min | money }}</a></p>
+        {%- endif -%}
+      {%- endif -%}
+    </details>
+  {%- endif -%}
+{%- endfor -%}
+<script src="{{ 'dm-cart-extra-gifts.js' | asset_url }}" defer="defer"></script>
+{% stylesheet %}
+  .dm-cart-gifts { margin:16px 0;padding:16px;border:1px solid #ddd;border-radius:10px; }
+  .dm-cart-gifts summary { cursor:pointer;font-weight:600; }
+  .dm-cart-gifts form { display:grid;gap:12px; }
+  .dm-cart-gifts label { display:grid;gap:5px; }
+  .dm-cart-gifts input,.dm-cart-gifts select { width:100%;min-height:44px;padding:10px;border:1px solid #aaa;border-radius:4px; }
+  .dm-cart-gifts input[readonly] { background:#f5f5f5; }
+{% endstylesheet %}
+

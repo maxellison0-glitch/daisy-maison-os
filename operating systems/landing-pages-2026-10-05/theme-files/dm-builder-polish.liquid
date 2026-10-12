@@ -1,0 +1,87 @@
+{%- comment -%}
+  Builder readability pass (7 Oct 2026). Our customers skew older: measured
+  against Globo's form, our builders used ~2.5x the height per field with
+  smaller text (12px labels, 10-11px small print, theme Title Case). This
+  makes every label 16px sentence case, small print >= 14px, inputs 16px
+  (also stops iOS zoom) and tightens spacing. Covers the pebble picture
+  builder, the street sign builders (incl. family / create-your-own /
+  native signs) and the hanging-heart builders; also centres the price. Rendered on product pages from
+  dm-mobile-fixes.
+{%- endcomment -%}
+<style>
+/* Declutter: the pill eyebrow and the pebble intro sentence repeat the heading. */
+html:root body[class] .dm-pebble-picture__eyebrow, html:root body[class] .daisy-street-options__eyebrow, html:root body[class] .dm-pebble-picture__copy { display: none !important; }
+
+/* Headings */
+html:root body[class] .dm-pebble-picture__title, html:root body[class] .daisy-street-options__title { font-size: 21px !important; line-height: 1.25 !important; margin: 0 0 10px !important; color: #1f1f1f !important; }
+html:root body[class] .daisy-street-options__copy { font-size: 15px !important; line-height: 1.4 !important; color: #444 !important; margin-bottom: 8px !important; }
+
+/* No forced Title Case anywhere in the builders */
+html:root body[class] .dm-pebble-picture__field, html:root body[class] .dm-pebble-picture__label, html:root body[class] .dm-pebble-picture__wording-choice, html:root body[class] .dm-pebble-picture__wording-choice-title, html:root body[class] .dm-pebble-picture__offer, html:root body[class] .dm-pebble-picture__offer-inner, html:root body[class] .dm-pebble-picture__offer-header, html:root body[class] .daisy-street-options__field, html:root body[class] .daisy-street-options__label, html:root body[class] .dm-sign-fields__required, html:root body[class] .dm-sign-fields__hint, html:root body[class] .daisy-street-options__choice, html:root body[class] .daisy-street-options__choice-main, html:root body[class] .daisy-street-options__choice-title, html:root body[class] .daisy-street-options__choice-note, html:root body[class] .daisy-street-options__price { text-transform: none !important; }
+
+/* Labels: 16px, dark, bold enough to scan */
+html:root body[class] .dm-pebble-picture__label, html:root body[class] .daisy-street-options__label {
+  display: block !important; font-size: 16px !important; font-weight: 600 !important;
+  color: #1f1f1f !important; margin: 0 0 6px !important; letter-spacing: 0 !important;
+}
+html:root body[class] .dm-sign-fields__required { font-size: 16px !important; }
+
+/* Section titles: sentence case 17px instead of tiny spaced capitals */
+html:root body[class] .dm-pebble-picture__group-title, html:root body[class] .daisy-street-options__group-title {
+  font-size: 17px !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  text-transform: none !important; color: #1f1f1f !important; margin: 14px 0 6px !important;
+}
+
+/* Small print never below 14px */
+html:root body[class] .dm-pebble-picture__extra-note, html:root body[class] .dm-sign-fields__hint, html:root body[class] .dm-sign-block__caption, html:root body[class] .dm-pebble-picture__wording-choice-note, html:root body[class] .daisy-street-options__choice-note { font-size: 14px !important; line-height: 1.4 !important; color: #444 !important; letter-spacing: 0 !important; text-transform: none !important; }
+html:root body[class] .dm-pebble-picture__extra-note { margin: 6px 0 4px !important; display: block; }
+html:root body[class] .dm-sign-block__caption { margin: 4px 0 8px !important; }
+
+/* Choice cards and prices readable */
+html:root body[class] .dm-pebble-picture__wording-choice-title, html:root body[class] .daisy-street-options__choice-title { font-size: 16px !important; }
+html:root body[class] .daisy-street-options__price, html:root body[class] .dm-pebble-picture__total { font-size: 16px !important; }
+
+/* Inputs: 16px text, comfortable 48px tap height */
+html:root body[class] .dm-pebble-picture select, html:root body[class] .dm-pebble-picture input[type="text"], html:root body[class] .daisy-street-options select, html:root body[class] .daisy-street-options input[type="text"], html:root body[class] .daisy-street-options textarea {
+  font-size: 16px !important; min-height: 48px !important;
+}
+
+/* Tighter rhythm: one consistent 12px gap between fields */
+html:root body[class] .dm-pebble-picture__group { gap: 10px !important; padding-top: 0 !important; }
+html:root body[class] .dm-pebble-picture__grid, html:root body[class] .dm-pebble-picture__people { display: grid !important; gap: 12px !important; }
+html:root body[class] .dm-pebble-picture__person-row { gap: 8px !important; padding: 10px 0 0 !important; border-top: 1px solid #eee; }
+html:root body[class] .dm-pebble-picture__wording-choice { padding: 10px 14px !important; }
+html:root body[class] .dm-pebble-picture__offer { padding: 10px 14px !important; }
+html:root body[class] .daisy-street-options__grid { gap: 12px !important; }
+html:root body[class] .daisy-street-options__group { padding: 6px 0 2px !important; }
+html:root body[class] .daisy-street-options__choice { padding: 10px 10px !important; }
+
+/* ---- Consistent alignment: price centred under the centred title on every page ---- */
+html:root body[class] .productView-price .dm-clean-price { justify-content: center !important; align-items: baseline !important; gap: 8px; flex-wrap: wrap; }
+
+/* ---- Hanging heart builders (wedding / teacher / generic) ---- */
+html:root body[class] .dm-wedding-heart__eyebrow, html:root body[class] .dm-teacher-heart__eyebrow { display: none !important; }
+html:root body[class] .dm-wedding-heart__label, html:root body[class] .dm-teacher-heart__label { font-size: 16px !important; font-weight: 600 !important; color: #1f1f1f !important; text-transform: none !important; }
+html:root body[class] .dm-wedding-heart__size-btn, html:root body[class] .dm-wedding-heart__config-btn,
+html:root body[class] .dm-teacher-heart__size-btn, html:root body[class] .dm-teacher-heart__config-btn { font-size: 15px !important; text-transform: none !important; }
+html:root body[class] .dm-wedding-heart__size-badge { font-size: 13px !important; }
+html:root body[class] .dm-wedding-heart__offer-text, html:root body[class] .dm-wedding-heart__offer-price { font-size: 15px !important; text-transform: none !important; }
+html:root body[class] .dm-wedding-heart__addons-title { font-size: 17px !important; font-weight: 700 !important; letter-spacing: 0 !important; text-transform: none !important; color: #1f1f1f !important; }
+html:root body[class] .dm-gb-tag { font-size: 12px !important; }
+html:root body[class] .dm-gb-eyebrow { font-size: 13px !important; letter-spacing: 0 !important; text-transform: none !important; }
+html:root body[class] .dm-gb-quote { font-size: 14px !important; }
+html:root body[class] .dm-gb-btn { font-size: 15px !important; }
+html:root body[class] .dm-acc__hint { font-size: 14px !important; }
+
+/* ---- Family / Create-your-own / native signs ---- */
+html:root body[class] .daisy-create-own-options__swatch-label { font-size: 12px !important; }
+html:root body[class] .dm-clean-basket-note { font-size: 14px !important; }
+html:root body[class] .dm-native-intro { font-size: 15px !important; color: #444 !important; }
+html:root body[class] .dm-native-field > span { font-size: 16px !important; font-weight: 600 !important; color: #1f1f1f !important; text-transform: none !important; }
+
+/* ---- 16px inputs (no iOS zoom) in every builder ---- */
+html:root body[class] .dm-wedding-heart input[type="text"], html:root body[class] .dm-teacher-heart input[type="text"],
+html:root body[class] [data-daisy-heart-builder] input[type="text"], html:root body[class] [data-daisy-heart-builder] select,
+html:root body[class] .dm-native-panel input, html:root body[class] .dm-native-panel select,
+html:root body[class] .dm-direct-sign-editor input[type="text"], html:root body[class] .dm-direct-sign-editor select { font-size: 16px !important; min-height: 48px !important; }
+</style>

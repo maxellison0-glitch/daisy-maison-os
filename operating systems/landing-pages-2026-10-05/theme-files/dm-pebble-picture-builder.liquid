@@ -1,0 +1,970 @@
+{%- liquid
+  assign dm_grey_handles = 'wedding-flower-arch-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,storybook-christening-pebble-picture,storybook-new-baby-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-flutterby-blossom-tree-personalised-pebble-picture-copy,on-your-christening-personalised-pebble-picture' | split: ','
+  assign dm_grey_remaining = shop.metafields.custom.grey_frames_remaining.value | default: 0 | plus: 0
+  assign dm_frame_values = '["White", "Grey (OUT OF STOCK)"]'
+  if dm_grey_handles contains product.handle and dm_grey_remaining > 0
+  assign dm_frame_values = '["White", "Grey"]'
+  endif
+  assign dm_pebble_enabled = false
+  assign dm_pebble_kind = ''
+  assign dm_second_offer_handle = ''
+  assign dm_extra_people_handle = '3-7-8-pebbles-1'
+  comment
+    Matching-heart upsell. Set per handle (NOT per kind — 'wedding' also covers
+    the church picture, which has no matching heart). The free gift box is a
+    property on the heart's cart line, never its own line item.
+  endcomment
+  assign dm_heart_offer_handle = ''
+  assign dm_heart_box_id = 0
+  assign dm_heart_card_image = ''
+  comment
+    Which of this picture's own fields feeds the heart's above-the-pebbles slot.
+    Everything else is Line 1 -> Line 1, Line 2 -> Line 2 on every page.
+  endcomment
+  assign dm_heart_top_source = ''
+
+  case product.handle
+    when 'always-forever-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'always'
+      assign dm_second_offer_handle = '10-95-incredible-offer-copy'
+    when 'our-world-family-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'family'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'to-the-moon-back-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'moon'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'wedding-flower-arch-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'wedding'
+      assign dm_second_offer_handle = '20-incredible-offer'
+      assign dm_heart_offer_handle = 'personalised-wedding-love-tree-pebble-hanging-heart-copy'
+      assign dm_heart_box_id = 54335779242323
+      assign dm_heart_top_source = 'Text above pebbles'
+      assign dm_heart_card_image = 'https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-wedding-love-tree-heart-gift-box.png?v=1784562886'
+    when 'wedding-church-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'wedding'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'mum-flutterby-blossom-tree-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'flutterby'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'family-flutterby-blossom-tree-personalised-pebble-picture-copy'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'blossom'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'beach-wedding-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'beachwedding'
+      assign dm_second_offer_handle = '10-95-incredible-offer-copy'
+    when 'beach-proposal-personalised-pebble-picture-gift'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'beachproposal'
+      assign dm_second_offer_handle = 'option-set-767508-select-2'
+    when 'graduation-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'gradpebble'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'wedding-swing-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'weddingswing'
+      assign dm_second_offer_handle = '10-95-incredible-offer-copy'
+    when 'on-your-christening-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'christening'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'engagement-proposal-love-tree-personalised-pebble-picture-copy'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'engagement'
+      assign dm_second_offer_handle = '20-incredible-offer'
+      assign dm_heart_offer_handle = 'personalised-engagement-pebble-hanging-heart'
+      assign dm_heart_box_id = 54357900099923
+      assign dm_heart_top_source = 'Date'
+      assign dm_heart_card_image = 'https://cdn.shopify.com/s/files/1/0897/0017/2115/files/daisy-maison-engagement-love-tree-heart-gift-box.png?v=1784563604'
+    when 'always-my-sister-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'sister'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'family-blossom-tree-personalised-pebble-picture-gift-2'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'blossom'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'golden-skies-family-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'goldenskies'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'same-stars-family-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'samestars'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'together-family-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'together'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'storybook-christening-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'storybookchristening'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'storybook-new-baby-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'storybooknewbaby'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'our-little-family-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'littlefamily'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'storybook-engagement-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'storybookengagement'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'modernhome'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'grandparent-flutterby-blossom-tree-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'flutterby'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'grandparent-personalised-pebble-sketch-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'flutterby'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'family-swing-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'blossom'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'engagement-proposal-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'engagementart'
+      assign dm_second_offer_handle = '10-95-incredible-offer-copy'
+    when 'new-home-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'newhome'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'mum-personalised-pebble-sketch-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'flutterby'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'birthday-blossom-tree-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'birthday'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'a-little-bit-of-crazy-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'crazy'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'family-walk-in-the-park-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'walkpark'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'everything-to-me-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'everythingme'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'beside-you-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'besideyou'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'heart-strings-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'heartstrings'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'true-friends-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'truefriends'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'simple-moments-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'simplemoments'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'dad-grandad-simple-moments-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'simplemoments'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'mum-nanny-our-world-personalised-pebble-artwork'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'family'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'home-sweet-home-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'homesweethome'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'couple-love-tree-personalised-pebble-picture-6-colour-options'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'couplovetree'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'on-your-wedding-day-family-personalised-pebble-picture-gift'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'weddingfamily'
+      assign dm_second_offer_handle = '20-incredible-offer'
+    when 'mum-hands-hearts-personalised-pebble-picture'
+      assign dm_pebble_enabled = true
+      assign dm_pebble_kind = 'mumhands'
+      assign dm_second_offer_handle = '20-incredible-offer'
+  endcase
+-%}
+
+{%- if dm_pebble_enabled -%}
+  {%- liquid
+    assign dm_main_variant = product.selected_or_first_available_variant
+    assign dm_second_variant = all_products[dm_second_offer_handle].selected_or_first_available_variant
+    assign dm_heart_product = all_products[dm_heart_offer_handle]
+    assign dm_heart_variant = dm_heart_product.selected_or_first_available_variant
+    comment
+      Matching gift box: the real small "From This Day Forward" box at its real
+      price, offered as a third choice on the heart card. Looked up by id so the
+      price tracks the catalogue.
+    endcomment
+    for dm_box_candidate in all_products['family-love-gift-boxes'].variants
+      if dm_box_candidate.id == dm_heart_box_id and dm_box_candidate.available
+        assign dm_heart_box = dm_box_candidate
+      endif
+    endfor
+    assign dm_extra_people_variant = all_products[dm_extra_people_handle].selected_or_first_available_variant
+    assign dm_gift_wrap_variant = all_products['gift-wrapping'].selected_or_first_available_variant
+    assign dm_easel_variant = all_products['wooden-display-easel'].selected_or_first_available_variant
+    comment
+      Easel thumbnail cascade: an image named after this product's handle wins,
+      else the generic pebble scene (any 'pebble' file that is not a
+      handle-specific one), else the product's featured image.
+    endcomment
+    assign dm_easel_image = all_products['wooden-display-easel'].featured_image
+    for dm_easel_candidate in all_products['wooden-display-easel'].images
+      if dm_easel_candidate.src contains 'pebble'
+        unless dm_easel_candidate.src contains 'personalised'
+          assign dm_easel_image = dm_easel_candidate
+        endunless
+      endif
+    endfor
+    assign dm_easel_exact = false
+    for dm_easel_candidate in all_products['wooden-display-easel'].images
+      if dm_easel_candidate.src contains product.handle
+        assign dm_easel_image = dm_easel_candidate
+        assign dm_easel_exact = true
+        break
+      endif
+    endfor
+    assign dm_easel_thumb = dm_easel_image | image_url: width: 160
+    assign dm_easel_zoom = dm_easel_image | image_url: width: 1200
+    unless dm_easel_exact
+      if product.handle contains 'family'
+        assign dm_easel_thumb = 'dm-easel-family-pebble-160.jpg' | asset_url
+        assign dm_easel_zoom = 'dm-easel-family-pebble.jpg' | asset_url
+      endif
+    endunless
+    assign dm_lucky_sixpence_variant = all_products['lucky-sixpence-boxed-old-new-borrowed-blue'].selected_or_first_available_variant
+    comment
+      Spray add-on rollout list: builder-enabled pebble pictures with >=1 sale in the
+      30 days to 2026-07-12 (Max's rule). Maintained by agents; add/remove handles here.
+    endcomment
+    assign dm_spray_handles = 'mum-personalised-pebble-sketch-picture,family-flutterby-blossom-tree-personalised-pebble-picture-copy,engagement-proposal-personalised-pebble-artwork,on-your-christening-personalised-pebble-picture,mum-flutterby-blossom-tree-personalised-pebble-picture,family-blossom-tree-personalised-pebble-picture-gift-2,golden-skies-family-pebble-picture,same-stars-family-pebble-picture,together-family-pebble-picture,storybook-christening-pebble-picture,storybook-new-baby-pebble-picture,our-little-family-pebble-picture,storybook-engagement-pebble-picture,personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift,family-swing-personalised-pebble-picture,wedding-swing-personalised-pebble-picture,on-your-wedding-day-family-personalised-pebble-picture-gift,new-home-personalised-pebble-picture,true-friends-personalised-pebble-picture,wedding-church-personalised-pebble-picture,beach-proposal-personalised-pebble-picture-gift,couple-love-tree-personalised-pebble-picture-6-colour-options,always-forever-personalised-pebble-artwork,birthday-blossom-tree-personalised-pebble-picture,dad-grandad-simple-moments-personalised-pebble-picture,grandparent-flutterby-blossom-tree-personalised-pebble-picture,always-my-sister-personalised-pebble-picture,family-walk-in-the-park-personalised-pebble-picture,beach-wedding-personalised-pebble-picture,grandparent-personalised-pebble-sketch-picture,graduation-personalised-pebble-picture,home-sweet-home-personalised-pebble-picture,our-world-family-personalised-pebble-artwork' | split: ','
+    assign dm_spray_enabled = false
+    comment
+      28 Sep 2026: spray row switched off on every picture (1 sale in 313 eligible orders, 12 Aug-26 Sep).
+      To bring it back, add after this comment: if dm_spray_handles contains product.handle / assign dm_spray_enabled = true / endif.
+    endcomment
+    assign dm_spray_product = all_products['daisy-maison-picture-cleaning-spray']
+    assign dm_spray_variant = dm_spray_product.variants | where: 'sku', 'DM-SPRAY-SS-495' | first
+    unless dm_spray_variant
+      assign dm_spray_variant = dm_spray_product.selected_or_first_available_variant
+    endunless
+  -%}
+  <div class="dm-pebble-picture" data-daisy-pebble-picture data-pebble-kind="{{ dm_pebble_kind }}" data-people-count="2" data-second-frame="false" hidden>
+    <script type="application/json" data-daisy-pebble-picture-config>
+      {
+        "handle": {{ product.handle | json }},
+        "title": {{ product.title | json }},
+        "variantId": {{ dm_main_variant.id | json }},
+        "currency": {{ localization.country.currency.iso_code | default: cart.currency.iso_code | default: shop.currency | json }},
+        "image": {{ product.featured_image | image_url: width: 720 | json }},
+        "giftWrap": { "variantId": {{ dm_gift_wrap_variant.id | json }}, "price": {{ dm_gift_wrap_variant.price | json }}, "thumb": {{ all_products['gift-wrapping'].featured_image | image_url: width: 160 | json }}, "zoom": {{ all_products['gift-wrapping'].featured_image | image_url: width: 1200 | json }} },
+        "easel": { "variantId": {{ dm_easel_variant.id | json }}, "price": {{ dm_easel_variant.price | json }}, "thumb": {{ dm_easel_thumb | json }}, "zoom": {{ dm_easel_zoom | json }} },
+        {%- if dm_spray_enabled %}
+        "spray": { "variantId": {{ dm_spray_variant.id | json }}, "price": {{ dm_spray_variant.price | json }}, "thumb": {{ dm_spray_product.featured_image | image_url: width: 160 | json }}, "zoom": {{ dm_spray_product.featured_image | image_url: width: 1200 | json }} },
+        {%- endif %}
+        {%- comment -%}
+          Personalisation is copied straight across, slot for slot: whatever the
+          customer typed above the pebbles on the picture goes above the pebbles
+          on the heart, line 1 to line 1, line 2 to line 2. Read at add-to-cart
+          (not on tick) so late edits to the picture carry through.
+        {%- endcomment -%}
+        {%- if dm_heart_offer_handle != '' and dm_heart_variant %}
+        "heartOffer": {
+          "variantId": {{ dm_heart_variant.id | json }},
+          "price": {{ dm_heart_variant.price | json }},
+          "name": "Matching Pebble Hanging Heart",
+          {%- if dm_heart_box %}
+          "box": { "variantId": {{ dm_heart_box.id | json }}, "price": {{ dm_heart_box.price | json }}, "name": {{ dm_heart_box.title | prepend: 'Gift Box - ' | json }} },
+          {%- endif %}
+          {%- comment -%}
+            Card artwork is the heart-in-gift-box shot (also gallery slot 2), not
+            the heart product's own featured image — it has to sell both the
+            £14.95 heart and the £18.90 heart+box option.
+          {%- endcomment -%}
+          {%- if dm_heart_card_image != '' %}
+          "thumb": {{ dm_heart_card_image | append: '&width=320' | json }},
+          "zoom": {{ dm_heart_card_image | append: '&width=1600' | json }},
+          {%- else %}
+          "thumb": {{ dm_heart_product.featured_image | image_url: width: 320 | json }},
+          "zoom": {{ dm_heart_product.featured_image | image_url: width: 1600 | json }},
+          {%- endif %}
+          "sizeKey": "Size of heart",
+          "sizeValue": "Small 10 X 10cm (£14.95)",
+          "fields": [
+            { "key": "Date to appear above pebble people", "source": {{ dm_heart_top_source | json }}, "label": "Text above the pebbles", "required": true },
+            { "key": "Text to appear below pebble people (Line 1)", "source": "Line 1", "label": "Line 1 beneath the pebbles", "required": true },
+            { "key": "Text to appear below pebble people (Line 2)", "source": "Line 2", "label": "Line 2 beneath the pebbles", "required": false }
+          ]
+        },
+        {%- endif %}
+        "prices": {
+          "base": {{ dm_main_variant.price | json }},
+          "compareAt": {{ dm_main_variant.compare_at_price | default: dm_main_variant.price | json }}
+        },
+        {%- case dm_pebble_kind -%}
+          {%- when 'always' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your pebble picture",
+            "copy": "Choose the frame, pebble people and wording for your handmade Always & Forever picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "people": { "mode": "fixed", "count": 2, "fields": ["Left pebble", "Right pebble"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Left pebble", "label": "Left pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "Right pebble", "label": "Right pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "Line 1", "label": "Personalisation to appear beneath the pebble people Line 1", "type": "text", "required": true, "placeholder": "e.g. Max & Daisy" },
+              { "key": "Line 2", "label": "Personalisation to appear beneath the pebble people Line 2", "type": "text", "required": false, "placeholder": "Optional smaller text" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Left pebble", "source": "Left pebble", "label": "Left pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "(Offer) Right pebble", "source": "Right pebble", "label": "Right pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Personalisation to appear beneath the pebble people Line 1", "type": "text", "required": true, "placeholder": "e.g. Max & Daisy" },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Text 2", "type": "text", "required": true, "placeholder": "Second frame smaller text" }
+            ]
+          {%- when 'family' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your family pebble picture",
+            "copy": "Choose the frame, wording and up to 8 pebble characters for your Our World family picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised family frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble ", "propertyKeys": ["Pebble 1", "Pebble 2", "Pebble 3", "Pebble 4", "Pebble 5", "Pebble 6", "Pebble 7", "Pebble 8"], "offerPropertyKeys": ["(Offer) Pebble 1", "(Offer) Pebble 2", "(Offer) Pebble 3", "(Offer) Pebble 4", "(Offer) Pebble 5", "(Offer) Pebble 6", "(Offer) Pebble 7", "(Offer) Pebble 8"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Personalisation to go beneath pebbles (line 1)", "type": "text", "required": true, "placeholder": "e.g. Our World" },
+              { "key": "Line 2", "label": "Personalisation to go beneath pebbles (line 2)", "type": "text", "required": false },
+              { "key": "Line 3", "label": "Personalisation to go beneath pebbles (line 3)", "type": "text", "required": false }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Personalisation to go beneath pebbles (line 1)", "type": "text", "required": true },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Personalisation to go beneath pebbles (line 2)", "type": "text", "required": false },
+              { "key": "(Offer) Line 3", "source": "Line 3", "label": "Personalisation to go beneath pebbles (line 3)", "type": "text", "required": false }
+            ]
+          {%- when 'moon' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your moon & back picture",
+            "copy": "Choose the frame, two pebble people and optional names beneath the artwork.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "people": { "mode": "fixed", "count": 2, "fields": ["Pebble 1", "Pebble 2"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Pebble 1", "label": "Pebble 1", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "Pebble 2", "label": "Pebble 2", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "Line 1", "label": "Love you to the moon & back", "type": "toggletext", "required": false, "default": "Love you to the moon & back", "placeholder": "Change the wording" },
+              { "key": "Names", "label": "Names to appear beneath", "type": "text", "required": false, "placeholder": "e.g. Mum & Daisy" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Pebble 1", "source": "Pebble 1", "label": "Pebble 1", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "(Offer) Pebble 2", "source": "Pebble 2", "label": "Pebble 2", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Love you to the moon & back", "type": "toggletext", "required": false, "default": "Love you to the moon & back", "placeholder": "Change the wording" },
+              { "key": "(Offer) Names", "source": "Names", "label": "Names to appear beneath", "type": "text", "required": false }
+            ]
+          {%- when 'wedding' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your wedding pebble picture",
+            "copy": "Choose your frame colour and personalise the text above and below your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame — perfect for the venue or as an extra gift", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Text above pebbles", "label": "Text to appear above pebble people", "type": "text", "required": true, "placeholder": "e.g. on your wedding day" },
+              { "key": "Line 1", "label": "Text beneath pebble people (line 1)", "type": "text", "required": true, "placeholder": "e.g. Emma & James" },
+              { "key": "Line 2", "label": "Text beneath pebble people (line 2)", "type": "text", "required": false, "placeholder": "e.g. Married 14th June 2026" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Text above pebbles", "source": "Text above pebbles", "label": "Text above pebble people", "type": "text", "required": true, "placeholder": "e.g. on your wedding day" },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Text beneath pebble people (line 1)", "type": "text", "required": true, "placeholder": "e.g. Emma & James" },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Text beneath pebble people (line 2)", "type": "text", "required": false, "placeholder": "e.g. Married 14th June 2026" }
+            ]
+          {%- when 'gradpebble' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your graduation pebble picture",
+            "copy": "Choose your frame colour and personalise the text beneath your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Text beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. Sharon" },
+              { "key": "Line 2", "label": "Text beneath pebble people (Line 2)", "type": "text", "required": true, "placeholder": "e.g. Congratulations on your Graduation!" },
+              { "key": "Line 3", "label": "Text beneath pebble people (Line 3)", "type": "text", "required": false, "placeholder": "e.g. Class of 2026" }
+            ]
+          {%- when 'beachproposal' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your beach proposal pebble picture",
+            "copy": "Choose your frame colour and personalise the text beneath your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Text beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. The beginning of us" },
+              { "key": "Line 2", "label": "Text beneath pebble people (Line 2)", "type": "text", "required": true, "placeholder": "e.g. Mark & Alex" },
+              { "key": "Line 3", "label": "Text beneath pebble people (Line 3)", "type": "text", "required": false, "placeholder": "e.g. 09/06/26 Fistral Beach" }
+            ]
+          {%- when 'beachwedding' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your beach wedding pebble picture",
+            "copy": "Choose your frame colour and personalise the text beneath your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Text to appear beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. From this day forward" },
+              { "key": "Line 2", "label": "Text to appear beneath pebble people (Line 2)", "type": "text", "required": false, "placeholder": "e.g. Tom & Rebecca" },
+              { "key": "Line 3", "label": "Text to appear beneath pebble people (Line 3)", "type": "text", "required": false, "placeholder": "e.g. 29th October 2021" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Text beneath pebble people (Line 1)", "type": "text", "required": true },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Text beneath pebble people (Line 2)", "type": "text", "required": false },
+              { "key": "(Offer) Line 3", "source": "Line 3", "label": "Text beneath pebble people (Line 3)", "type": "text", "required": false }
+            ]
+          {%- when 'flutterby' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your blossom tree pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Flutterby picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "For all the little things you do we love you x", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "Your wording here" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "For all the little things you do we love you x", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "Your wording here" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'christening' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your christening pebble picture",
+            "copy": "Choose the frame, pebble characters and wording for your On Your Christening Day picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised christening frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble ", "propertyKeys": ["Pebble 1", "Pebble 2", "Pebble 3", "Pebble 4", "Pebble 5", "Pebble 6", "Pebble 7", "Pebble 8"], "offerPropertyKeys": ["(Offer) Pebble 1", "(Offer) Pebble 2", "(Offer) Pebble 3", "(Offer) Pebble 4", "(Offer) Pebble 5", "(Offer) Pebble 6", "(Offer) Pebble 7", "(Offer) Pebble 8"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Wording", "label": "On Your Christening Day", "type": "toggletext", "changeKey": "Change Text?", "yesValue": "YES I will add my own words", "noValue": "NO KEEP On Your Christening Day", "required": false, "default": "On Your Christening Day", "placeholder": "Your own wording" },
+              { "key": "Line 1", "label": "Name(s) to appear beneath the pebbles", "type": "text", "required": true, "placeholder": "e.g. Sophie Grace Watkins" },
+              { "key": "Line 2", "label": "Church / venue", "type": "text", "required": true, "placeholder": "e.g. St Mary's Church" },
+              { "key": "Line 3", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 14th June 2026" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Wording", "source": "Wording", "label": "Wording", "type": "toggletext", "changeKey": "(Offer) Change Text?", "yesValue": "YES I will add my own words", "noValue": "NO KEEP On Your Christening Day", "required": false, "default": "On Your Christening Day", "placeholder": "Your own wording" },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Name(s) beneath the pebbles", "type": "text", "required": true },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Church / venue", "type": "text", "required": true },
+              { "key": "(Offer) Line 3", "source": "Line 3", "label": "Date", "type": "text", "required": true }
+            ]
+          {%- when 'engagement' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your engagement pebble picture",
+            "copy": "Choose your frame colour and add the date and personalised wording for your love tree picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 14th February 2026" },
+              { "key": "Line 1", "label": "Wording for your picture", "type": "text", "required": true, "placeholder": "e.g. The beginning of always" },
+              { "key": "Line 2", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Max & Daisy" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Date", "source": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 14th February 2026" },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Wording for your picture", "type": "text", "required": true, "placeholder": "e.g. The beginning of always" },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Max & Daisy" }
+            ]
+          {%- when 'sister' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your always my sister pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always my sister forever my friend", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. My sister, my best friend" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always my sister forever my friend", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. My sister, my best friend" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'blossom' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your family blossom tree pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade blossom tree picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Perfectly Imperfect Little Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Ellison Family" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Perfectly Imperfect Little Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Ellison Family" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'goldenskies' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your Golden Skies family pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Golden Skies picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under golden skies", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Thank you for all the little things you do" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under golden skies", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Thank you for all the little things you do" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'samestars' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your Same Stars family pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Same Stars picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under the same stars", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Love you to the moon and back" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Always under the same stars", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Love you to the moon and back" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'together' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your ‘Together’ family pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade ‘Together’ picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Together side by side", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Our little family" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Together side by side", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our little family" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'storybookchristening' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your christening pebble picture",
+            "copy": "Choose your frame colour and pebble family, keep our wording or write your own, then add the name(s), church and date.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "On Your Christening Day", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. On Your Baptism Day" },
+              { "key": "Wording", "type": "wordingkey" },
+              { "key": "Name(s)", "label": "Name(s)", "type": "text", "required": true, "placeholder": "e.g. Lily Blossom Walker" },
+              { "key": "Church / venue", "label": "Church or venue (optional)", "type": "text", "required": false, "placeholder": "e.g. St Christopher’s Church, Springfield" },
+              { "key": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 9th November 2026" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "On Your Christening Day", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. On Your Baptism Day" },
+              { "key": "(Offer) Wording", "type": "wordingkey" },
+              { "key": "(Offer) Name(s)", "source": "Name(s)", "label": "Name(s)", "type": "text", "required": true, "placeholder": "e.g. Lily Blossom Walker" },
+              { "key": "(Offer) Church / venue", "source": "Church / venue", "label": "Church or venue (optional)", "type": "text", "required": false, "placeholder": "e.g. St Christopher’s Church, Springfield" },
+              { "key": "(Offer) Date", "source": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 9th November 2026" }
+            ]
+          {%- when 'storybooknewbaby' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your new baby pebble picture",
+            "copy": "Choose your frame colour and pebble family, keep our wording or write your own, then add your baby’s name.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "How Wonderful Life Is Now You’re In The World", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Welcome to the World" },
+              { "key": "Wording", "type": "wordingkey" },
+              { "key": "Baby’s name", "label": "Baby’s name", "type": "text", "required": true, "placeholder": "e.g. Beau Wren" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "How Wonderful Life Is Now You’re In The World", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Welcome to the World" },
+              { "key": "(Offer) Wording", "type": "wordingkey" },
+              { "key": "(Offer) Baby’s name", "source": "Baby’s name", "label": "Baby’s name", "type": "text", "required": true, "placeholder": "e.g. Beau Wren" }
+            ]
+          {%- when 'littlefamily' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your ‘Our Little Family’ pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade ‘Our Little Family’ picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Little Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Smith Family" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Little Family", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Smith Family" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'storybookengagement' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your engagement pebble picture",
+            "copy": "Choose your frame colour, keep our wording or write your own, then add your names and date.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "The Beginning of Always", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. She Said Yes" },
+              { "key": "Wording", "type": "wordingkey" },
+              { "key": "Names", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Yazmin + Luke" },
+              { "key": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 14th October 2026" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "The Beginning of Always", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. She Said Yes" },
+              { "key": "(Offer) Wording", "type": "wordingkey" },
+              { "key": "(Offer) Names", "source": "Names", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Yazmin + Luke" },
+              { "key": "(Offer) Date", "source": "Date", "label": "Date", "type": "text", "required": true, "placeholder": "e.g. 14th October 2026" }
+            ]
+          {%- when 'modernhome' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your ‘Home’ family pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade ‘Home’ picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family Est. 2010", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Our Family Est. 2010" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Our Family Est. 2010", "keepPrefix": "No keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Our Family Est. 2010" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'newhome' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your new home pebble picture",
+            "copy": "Choose your frame colour, pebble characters and wording for your handmade New Home picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour",   "label": "Frame Colour",                                        "type": "select", "required": true,  "values": {{ dm_frame_values }} },
+              { "key": "Wording 1",      "label": "Text to appear above pebble people",                  "type": "text",   "required": true,  "placeholder": "e.g. Our New Home" },
+              { "key": "House No/ Name", "label": "Add house number or name (to appear above door)",     "type": "text",   "required": true,  "placeholder": "e.g. 31" },
+              { "key": "Wording 2",      "label": "Text to appear beneath pebble people",                "type": "text",   "required": false, "placeholder": "e.g. The Williams Family" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour",   "source": "Frame Colour",   "label": "Frame Colour",                                        "type": "select", "required": true  },
+              { "key": "(Offer) Wording 1",      "source": "Wording 1",      "label": "Text to appear above pebble people",                  "type": "text",   "required": true  },
+              { "key": "(Offer) House No/ Name", "source": "House No/ Name", "label": "Add house number or name (to appear above door)",     "type": "text",   "required": true  },
+              { "key": "(Offer) Wording 2",      "source": "Wording 2",      "label": "Text to appear beneath pebble people",                "type": "text",   "required": false }
+            ]
+          {%- when 'birthday' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your birthday blossom tree pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and your birthday wording.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Wording", "label": "Wording", "type": "text", "required": true, "placeholder": "e.g. Samantha... Blossoming into your 40th Birthday x" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Wording", "source": "Wording", "label": "Wording", "type": "text", "required": true, "placeholder": "e.g. Samantha... Blossoming into your 40th Birthday x" }
+            ]
+          {%- when 'crazy' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your pebble picture",
+            "copy": "Choose your frame colour, pebble characters and add your family name for your handmade picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Family Name", "label": "Family name to appear", "type": "text", "required": true, "placeholder": "e.g. Mellows" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Family Name", "source": "Family Name", "label": "Family name to appear", "type": "text", "required": true }
+            ]
+          {%- when 'everythingme' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your pebble picture",
+            "copy": "Choose your frame colour, two pebble characters and add names for your Everything To Me picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "people": { "mode": "fixed", "count": 2, "fields": ["Left pebble", "Right pebble"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Left pebble", "label": "Left pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "Right pebble", "label": "Right pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "Names", "label": "Names to appear on your picture", "type": "text", "required": false, "placeholder": "i.e. Dan & Claire" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Left pebble", "source": "Left pebble", "label": "Left pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "(Offer) Right pebble", "source": "Right pebble", "label": "Right pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby", "Dog", "Cat"] },
+              { "key": "(Offer) Names", "source": "Names", "label": "Names on your picture", "type": "text", "required": false, "placeholder": "i.e. Dan & Claire" }
+            ]
+          {%- when 'walkpark' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your family walk in the park pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": ["Grey (OUT OF STOCK)", "White"] },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Hold our hands for a little while Hold our hearts forever", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Turner Family" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": ["Grey (OUT OF STOCK)", "White"] },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Hold our hands for a little while Hold our hearts forever", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Turner Family" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'weddingswing' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your wedding swing pebble picture",
+            "copy": "Choose your frame colour and personalise the text beneath your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Text to appear beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. From this day forward" },
+              { "key": "Line 2", "label": "Text to appear beneath pebble people (Line 2)", "type": "text", "required": false, "placeholder": "e.g. Tom & Rebecca" },
+              { "key": "Line 3", "label": "Text to appear beneath pebble people (Line 3)", "type": "text", "required": false, "placeholder": "e.g. 29th October 2021" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Text beneath pebble people (Line 1)", "type": "text", "required": true },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Text beneath pebble people (Line 2)", "type": "text", "required": false },
+              { "key": "(Offer) Line 3", "source": "Line 3", "label": "Text beneath pebble people (Line 3)", "type": "text", "required": false }
+            ]
+          {%- when 'besideyou' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your pebble picture",
+            "copy": "Choose your frame colour, pebble characters and add names for your handmade picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour",  "label": "Frame Colour",                "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Names",         "label": "Names to appear beneath your picture", "type": "text", "required": true, "placeholder": "e.g. Tom & Emily" },
+              { "key": "Right Pebble", "label": "Right Pebble (front of bike)", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "Left Pebble",  "label": "Left Pebble",                 "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour",  "source": "Frame Colour",  "label": "Frame Colour",                "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Names",         "source": "Names",         "label": "Names to appear beneath your picture", "type": "text", "required": true },
+              { "key": "(Offer) Right Pebble", "source": "Right Pebble", "label": "Right Pebble (front of bike)", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "(Offer) Left Pebble",  "source": "Left Pebble",  "label": "Left Pebble",                 "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] }
+            ]
+          {%- when 'engagementart' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your engagement pebble picture",
+            "copy": "Choose your frame colour and add personalised wording, names and date beneath your pebble people.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Line 1", "label": "Personalisation to appear beneath pebble people (line 1)", "type": "text", "required": true, "placeholder": "eg. The Beginning of Always..." },
+              { "key": "Line 2", "label": "Personalisation to appear beneath pebble people (line 2)", "type": "text", "required": false, "placeholder": "eg. Nikki & Matt" },
+              { "key": "Line 3", "label": "Personalisation to appear beneath pebble people (line 3)", "type": "text", "required": false, "placeholder": "eg. 14/02/25" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Personalisation to appear beneath pebble people (line 1)", "type": "text", "required": true },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Personalisation to appear beneath pebble people (line 2)", "type": "text", "required": false },
+              { "key": "(Offer) Line 3", "source": "Line 3", "label": "Personalisation to appear beneath pebble people (line 3)", "type": "text", "required": false }
+            ]
+          {%- when 'heartstrings' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your Heart Strings pebble picture",
+            "copy": "Choose your frame colour, two pebble characters and the names and date for your handmade Heart Strings picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "people": { "mode": "fixed", "count": 2, "fields": ["Left pebble", "Right pebble"] },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true,  "values": {{ dm_frame_values }} },
+              { "key": "Left pebble",  "label": "Left pebble",  "type": "select", "required": true,  "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "Right pebble", "label": "Right pebble", "type": "select", "required": true,  "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "Line 1", "label": "Names to appear on your picture", "type": "text", "required": true,  "placeholder": "i.e. Carly & Mike" },
+              { "key": "Line 2", "label": "Date",                            "type": "text", "required": false, "placeholder": "i.e. 20th December 2020" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Left pebble",  "source": "Left pebble",  "label": "Left pebble",  "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "(Offer) Right pebble", "source": "Right pebble", "label": "Right pebble", "type": "select", "required": true, "values": ["Adult", "Teen", "Child", "Baby"] },
+              { "key": "(Offer) Line 1",  "source": "Line 1", "label": "Names to appear on your picture", "type": "text", "required": true,  "placeholder": "i.e. Carly & Mike" },
+              { "key": "(Offer) Line 2 ", "source": "Line 2", "label": "Date",                            "type": "text", "required": false, "placeholder": "i.e. 21st December 2020" }
+            ]
+          {%- when 'truefriends' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your true friends pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade True Friends picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "True friends are never apart maybe in distance but never in heart", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. Forever my friend" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "True friends are never apart maybe in distance but never in heart", "keepPrefix": "NO KEEP ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. Forever my friend" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'simplemoments' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your simple moments pebble picture",
+            "copy": "Choose your frame colour, wording and pebble characters for your handmade Simple Moments picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour",             "type": "select", "required": true,  "values": ["White", "Grey"] },
+              { "key": "Text",         "label": "Wording above pebbles?",   "type": "select", "required": false, "values": ["Next to you... that is where I/We want to be", "The best memories are made in the simplest moments", "Add my own words"] },
+              { "key": "Wording",      "label": "Personalisation to appear above pebble characters", "type": "text", "required": false, "placeholder": "e.g. The Brown Family" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour",           "type": "select", "required": true,  "values": ["White", "Grey"] },
+              { "key": "(Offer) Text",         "source": "Text",         "label": "Wording above pebbles?", "type": "select", "required": false, "values": ["Next to you... that is where I/We want to be", "The best memories are made in the simplest moments", "Add my own words"] },
+              { "key": "(Offer) Wording",      "source": "Wording",      "label": "Personalisation to appear above pebble characters", "type": "text", "required": false }
+            ]
+          {%- when 'weddingfamily' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your On Your Wedding Day (Family) pebble picture",
+            "copy": "Choose your frame colour, wording, number of pebble characters and personalisation for your handmade picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "luckySixpence": { "variantId": {{ dm_lucky_sixpence_variant.id | json }}, "price": {{ dm_lucky_sixpence_variant.price | json }}, "name": "Lucky Sixpence", "note": "A boxed lucky sixpence keepsake for the wedding day.", "thumb": {{ dm_lucky_sixpence_variant.image | default: all_products['lucky-sixpence-boxed-old-new-borrowed-blue'].featured_image | image_url: width: 160 | json }}, "zoom": {{ dm_lucky_sixpence_variant.image | default: all_products['lucky-sixpence-boxed-old-new-borrowed-blue'].featured_image | image_url: width: 1200 | json }} },
+            "people": { "mode": "weddingfamily", "min": 3, "max": 6, "fixedCount": 2, "fixedOptions": ["Bride/Groom"], "extraOptions": ["Teen", "Child", "Baby", "Dog", "Cat"], "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Wording", "label": "Wording on your picture", "type": "toggletext", "changeKey": "Change Text?", "yesValue": "YES I will add my own words", "noValue": "NO KEEP On Your Wedding Day", "default": "On Your Wedding Day", "placeholder": "e.g. From This Day Forward" },
+              { "key": "Line 1", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Mr & Mrs Dobson" },
+              { "key": "Line 2", "label": "Date", "type": "text", "required": false, "placeholder": "e.g. 17th August 2025" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Wording", "source": "Wording", "label": "Wording on your picture", "type": "toggletext", "changeKey": "(Offer) Change Text?", "yesValue": "YES I will add my own words", "noValue": "NO KEEP On Your Wedding Day", "default": "On Your Wedding Day", "placeholder": "e.g. From This Day Forward" },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Names", "type": "text", "required": true, "placeholder": "e.g. Mr & Mrs Dobson" },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Date", "type": "text", "required": false, "placeholder": "e.g. 17th August 2025" }
+            ]
+          {%- when 'homesweethome' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your home sweet home pebble picture",
+            "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade Home Sweet Home picture.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 7, "names": true, "namePrefix": "Name ", "offerNamePrefix": "(Offer) Name ", "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "Change Text?", "label": "Change wording above pebbles?", "type": "wordingpair", "default": "Home Sweet Home", "keepPrefix": "NO Keep ", "yesValue": "YES I will add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Ellison Family" },
+              { "key": "Wording", "type": "wordingkey" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
+              { "key": "(Offer) Change Text?", "label": "Change wording above pebbles?", "type": "wordingpair", "default": "Home Sweet Home", "keepPrefix": "NO Keep ", "yesValue": "YES I will add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Ellison Family" },
+              { "key": "(Offer) Wording", "type": "wordingkey" }
+            ]
+          {%- when 'couplovetree' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your couple love tree pebble picture",
+            "copy": "Choose your frame colour, tree colour and text for your handmade Couple Love Tree pebble picture.",
+            "secondOffer": { "key": "**INCREDIBLE OFFER**", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "people": { "mode": "fixed", "count": 2, "fields": [] },
+            "fields": [
+              { "key": "Frame Colour 1", "label": "Frame Colour", "type": "select", "required": true, "values": ["White", "Grey (SOLD OUT)"] },
+              { "key": "Tree Colour 1", "label": "Tree Colour", "type": "select", "required": true, "values": ["Pink", "Red", "Blue", "Green", "Yellow", "Grey"] },
+              { "key": "Text", "label": "Text to appear beneath pebble people", "type": "text", "required": false, "placeholder": "e.g. The Ellison Family" }
+            ],
+            "offerFields": [
+              { "key": "Frame Colour 2", "source": "Frame Colour 1", "label": "Frame Colour", "type": "select", "required": true, "values": ["White", "Grey (SOLD OUT)"] },
+              { "key": "Tree Colour 2", "source": "Tree Colour 1", "label": "Tree Colour", "type": "select", "required": true, "values": ["Pink", "Red", "Blue", "Green", "Yellow", "Grey"] },
+              { "key": "Text 2", "source": "Text", "label": "Text to appear beneath pebble people", "type": "text", "required": false }
+            ]
+          {%- when 'mumhands' -%}
+            "eyebrow": "Free personalisation",
+            "heading": "Create your Mum Hands & Hearts pebble picture",
+            "copy": "Choose your frame colour, pebble characters, the name for the heart and your personalised wording.",
+            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Buy a second one for just {{ dm_second_variant.price | money_without_trailing_zeros }}", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
+            "extraPeople": { "threshold": 6, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people" },
+            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
+            "fields": [
+              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": ["White", "Grey"] },
+              { "key": "Name", "label": "Name to appear in heart", "type": "text", "required": true, "placeholder": "e.g. Mother" },
+              { "key": "Line 1", "label": "Text to appear beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. Love You So Much Mummy" },
+              { "key": "Line 2", "label": "Text to appear beneath pebble people (Line 2)", "type": "text", "required": false, "placeholder": "e.g. From Sophie, Ellie & Tom" }
+            ],
+            "offerFields": [
+              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": ["White", "Grey"] },
+              { "key": "(Offer) Name", "source": "Name", "label": "Name to appear in heart", "type": "text", "required": true, "placeholder": "e.g. Mother" },
+              { "key": "(Offer) Line 1", "source": "Line 1", "label": "Text to appear beneath pebble people (Line 1)", "type": "text", "required": true, "placeholder": "e.g. Love You So Much Mummy" },
+              { "key": "(Offer) Line 2", "source": "Line 2", "label": "Text to appear beneath pebble people (Line 2)", "type": "text", "required": false, "placeholder": "e.g. From Sophie, Ellie & Tom" }
+            ]
+        {%- endcase -%}
+      }
+    </script>
+  </div>
+  <style>
+    [data-daisy-pebble-picture] [hidden]{display:none!important}
+    .dm-pebble-picture__group{display:grid;gap:12px}
+    .dm-pebble-picture__second{display:grid;gap:12px}
+    .dm-pebble-picture__offer{display:block!important}
+    .dm-pebble-picture__offer-inner{display:flex;flex-direction:column;gap:4px}
+    .dm-pebble-picture__offer-header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .dm-pebble-picture__offer-header strong{font-size:14px}
+    .dm-pebble-picture__field--wording{display:grid;gap:8px}
+    .dm-pebble-picture__extra-note{display:block;margin:6px 0 10px;font-size:13px;line-height:1.4;opacity:.8;text-transform:none!important}
+    .dm-pebble-picture__wording-choice-note{text-transform:none!important}
+    [data-daisy-pebble-picture] input[type="text"],[data-daisy-pebble-picture] select,[data-daisy-pebble-picture] textarea{font-size:16px!important}
+    .dm-pebble-picture__wording-choices{display:grid;gap:8px}
+    .dm-pebble-picture__wording-choice{display:grid!important;gap:3px;padding:12px 14px!important;border:1px solid rgba(0,0,0,.12)!important;border-radius:8px!important;background:#fff!important;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;position:relative!important;box-sizing:border-box!important}
+    .dm-pebble-picture__wording-choice input[type="radio"]{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+    .dm-pebble-picture__wording-choice-title{font-size:14px!important;font-weight:600!important;line-height:1.3!important;color:#111!important;display:block!important}
+    .dm-pebble-picture__wording-choice-note{font-size:12px;color:rgba(0,0,0,.5);font-style:italic}
+    .dm-pebble-picture__wording-choice--selected{border-color:var(--dm-sage,#849672)!important;background:#f3f5ec!important;box-shadow:inset 0 0 0 1px var(--dm-sage,#849672)!important}
+    .dm-pebble-picture__wording-choice:hover:not(.dm-pebble-picture__wording-choice--selected){border-color:rgba(0,0,0,.25)!important}
+    .dm-pebble-picture__field--wording [data-pebble-wording-wrap]{display:grid;gap:6px}
+    .dm-cyg__top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px}
+    .dm-cyg__note{margin:0 0 8px;font-size:12px;color:rgba(0,0,0,.55);line-height:1.4}
+    .dm-cyg__subtotal-total{display:flex;justify-content:space-between}
+    .productView-quantity{display:none!important}
+    .dm-pebble-picture__person-row{display:grid;gap:8px}
+  </style>
+  {{ 'daisy-pebble-picture-cart-model.js' | asset_url | script_tag }}
+  {{ 'daisy-pebble-picture.js' | asset_url | script_tag }}
+{%- endif -%}
