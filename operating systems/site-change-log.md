@@ -3,6 +3,20 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
+
+Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
+
+- **Second-item offer switched back on** for the 5 pages hidden on 3 Oct (Mr & Mrs, Family, Create Your Own signs; Engagement Love Tree, Wedding Flower Arch pebbles). Second item has its own size/wording; add-ons offer "one / both".
+- **One add-on per page** on Max's Google Ads list (8 signs, 17 pebble pictures, 5 hearts/decorations): signs = mounting strips, pebbles = easel, hearts = gift box. Removed from those pages: matching heart, gift wrap kit, Lucky Sixpence, easel on signs. All removed add-ons default to off.
+- **New second-heart offer** on Family and Christening pebble hearts: Small £10.95 / Large £13.95 (same as other hearts), mirrors pebbles + both wording lines, 5 pebbles forces Large.
+- Basket-tested (no orders placed): 8 signs, 5 pebble pages, Family + Christening hearts, Festive star, Good Friends tea light (no offer). Wedding heart second-heart fields confirmed; its basket test was blocked by Cloudflare.
+- **Known issue not fixed:** New Home pebble — second picture's Frame Colour dropdown is empty (pre-existing config gap), so the offer can't be completed there. One-line fix given to Max.
+- **Not on site:** Mum Flutterby Blossom Tree, Grandparent Pebble Sketch, Engagement Pebble Artwork (on Max's Google Ads list) return 404 — products deleted.
+- Tea light second-item discount not built — waiting on Max's 10% / 20% decision.
+
+**Measurement start:** compare upsell take rate, AOV, conversion and checkout abandonment from the publish time against 3–11 Oct.
+
 ## 2026-10-03 at 16:37:26 BST — reviewed landing-page theme published
 
 Max approved publication after reviewing the layout and the base-upsell placement. Codex published theme **208326623571**, “Codex – price clarity & clean pages – 3 Oct”, using Shopify admin. Shopify confirms MAIN; previous theme **208291496275** is UNPUBLISHED and retained for rollback. Preflight confirmed all 14 reviewed file bodies matched and no intervening changes to the previous live theme. No additional theme code or selling-price changes were made during publication.
