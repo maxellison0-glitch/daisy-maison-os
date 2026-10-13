@@ -9,6 +9,25 @@ wording is the spec.
 
 ---
 
+## Round 4 — 13 Oct 2026: website main images have no people
+
+Asked for a square Mr & Mrs listing image from a real emoji sign, the agent
+generated held shots (a man in a suit holding the sign) because this file says
+held beats wall-mounted. Max, same session:
+
+> "look at our main images none of them look like that. no humans for this"
+
+**Listing and website product images: the sign alone in a styled setting —
+wall, shelf, mantel, gatepost, fence — never a person.** Check the live
+featured images before choosing a format. The held-beats-wall-mounted finding
+below is about social content and still stands there.
+
+The recipe behind the live mains is recovered in
+`../recipes/higgsfield/INDEX.md`; worked example in
+`../active/DM-C017-synthetic-sign-turn/working/batches/product/DM-CARL-EMILY-emoji-website/`.
+
+---
+
 ## Round 3 — 12 Aug 2026: the presenter-logic rule, and the hook is not optional
 
 The automated morning slot posted Freya holding "I'M SEXY & I MOW IT /

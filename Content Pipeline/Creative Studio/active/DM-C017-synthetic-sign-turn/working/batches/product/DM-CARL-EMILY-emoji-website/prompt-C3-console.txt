@@ -1,0 +1,10 @@
+# ref 2 = job a6d7a1d5 (David & Victoria main)
+# model nano_banana_pro, 1:1, 2k, ref 1 = media 7b9dae8e (real sign crop)
+
+Take the exact street sign from reference image 1 — do not alter its shape, angled corners, thick black border, white background, serif font, layout or any text. It reads "CARL & EMILY" in large black serif capitals with a small red heart touching the ampersand, and below it, in small regular-weight capitals, "CONGRATULATIONS ON YOUR WEDDING DAY 17.10.2026", with a small full-colour bouquet emoji before it and a small full-colour champagne-bottle emoji after it. Keep both emojis exactly as printed. Line 2 stays small. The panel is smooth with no mounting holes. Ignore reference image 1's cardboard background.
+
+The exact size is 57x12 cm. Reference image 2 is for size and scene proportions only: use its sign scale and wall placement exactly, not its wording or colours.
+
+The sign is mounted straight and level on a bright white wall above a slim marble-topped console. On the console: a hand-tied wedding bouquet of pink, lilac and pale yellow flowers laid on its side, a bottle of champagne and two filled flutes. Sleek premium interior, warm golden side lighting, soft natural shadows. Full sign fully visible with natural space around it.
+
+Sign is the hero — fully visible, sharp, completely legible, shot face-on. No letters cropped. No people. Flat matte acrylic, no shine, no glare. Shot on Sony A7 IV, 85mm f/1.8, film grain, no CGI, photorealistic.

@@ -1,0 +1,12 @@
+# model nano_banana_pro, 1:1, 2k, count 4. Single ref = D3w (local warm grade of D3), media 64bd3a0d-9373-4e0e-9a75-6d36247ee4cc
+# Max on D3w: "get rid of the ugly ass white mantelpiece i don't like it. Looks uncanny to me"
+
+EDIT REFERENCE IMAGE 1. Keep the same camera position, lens, framing and crop. The sign spans about 68% of the frame width and sits just above the middle of the frame. Keep exactly that size and position. Do not pull the camera back or zoom out.
+
+LOCKED - do not change: the street sign. Every character of "CARL & EMILY", the small red heart on the ampersand, the line "CONGRATULATIONS ON YOUR WEDDING DAY 17.10.2026" with its small bouquet emoji before it and small champagne-bottle emoji after it, the black border, the shaped ends, the thin pale edge, and its exact size, position and angle. Also keep the room behind it (sofa, throw, oak shelves, brass lamp, black window), the flowers in the stoneware jug, the champagne bucket, the flutes, the candle, the fairy lights and the warm golden light and colour.
+
+MAKE ONE CHANGE: remove the white painted fire surround and mantelpiece completely. Replace it with a single chunky solid oak beam mantel shelf, about 15cm thick, warm honey-brown with visible natural grain, small splits and slightly uneven, hand-finished edges. It is fixed straight into a smooth plastered chimney breast painted the same soft chalky stone-grey as the walls. No white paint, no columns, no corbels, no moulding, no surround. Below the beam, at the bottom of the frame, a simple plastered recess holds a black cast-iron wood-burning stove on a dark slate hearth, its glass door showing a small, low, real fire. The sign, flowers, candle, bucket, flutes and fairy lights now rest on the oak beam in the same places in the frame.
+
+It must look like a real photograph of a real home: natural wood texture, faint noise in the darker areas, gentle lens vignette, slightly imperfect plaster. Avoid CGI, symmetry, HDR and oversaturation.
+
+No people. No text, logo or caption anywhere except the sign's own printing.
