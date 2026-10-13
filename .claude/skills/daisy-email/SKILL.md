@@ -15,18 +15,26 @@ email is scheduled unless Max confirms he scheduled it.
 Read first: `operating systems/email-playbook.md` (cadence, segments, what worked)
 and the last rows of `operating systems/email-sends.md`.
 
-## Brand tokens (match the website)
+## Brand tokens
+
+Header: `operating systems/email-assets/email-header-festive-1200x300.png` (mid-Oct to Christmas) or
+`operating systems/email-assets/daisy-maison-logo-evergreen.png` (rest of year). Both use the existing
+website wordmark, recoloured.
 
 | Token | Value | Use |
 |---|---|---|
-| Ink | `#232323` | Headlines, body text |
-| Sage | `#8C8B74` | Buttons, accent rules, offer strip text |
-| Sage light | `#B0AF9B` | Secondary buttons, dividers |
-| Linen | `#F3F2EE` | Section backgrounds, offer strip |
-| White | `#FFFFFF` | Email background |
-| Font | Raleway (Shopify Email: pick the closest sans; headings uppercase with letter-spacing) | |
+| Evergreen | `#2F3B2E` | Headings, buttons (white text), logo |
+| Sage | `#8C8B74` | Website colour; small text, dividers. Never behind white text (fails contrast) |
+| Linen | `#F3F2EE` | Section and offer backgrounds |
+| Berry | `#8E3B33` | Offer words only, once per email |
+| Brass | `#B39462` | Thin rules and the star. Never text |
+| Ink | `#232323` | Body text |
 
-Rules: one accent colour (sage) per email; white background; buttons are solid sage
+Fonts: inside Shopify Email use Georgia for headings and Helvetica/Arial for body
+(inboxes can't load custom fonts). In graphics (Canva, banners, social): Fraunces for
+headlines, Raleway for small uppercase labels and body.
+
+Rules: white email background; one berry accent per email; buttons solid evergreen
 with white uppercase text; no more than one emoji, and only in the subject line.
 
 ## The four house templates
