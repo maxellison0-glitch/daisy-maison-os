@@ -25,7 +25,15 @@ Family `6692efb2-306d-4050-b27a-435d003c18bb`, Grandma's Garden
 - Mount the sign on a wall or rest it on a mantel. A tabletop easel in a square
   frame made the model reshape the sign to suit the prop (rejected 13 Oct).
 - Check bottle and product labels: the model will print real brands
-  (Moët & Chandon) or garble them. A one-change edit fixes it for ~1 credit.
+  (Moët & Chandon) or garble them. A one-change edit fixes it for 2 credits.
+- When restyling a room around a sign Max likes, the model pulls the camera
+  back and the sign shrinks (3 of 4 takes, 13 Oct). Measure sign width against
+  the frame before showing anything. Max judges size by eye.
+- Do not ask the model for "warmer"; it went cooler every time. Grade warmth
+  locally for 0 credits with a linear-light white-balance shift.
+- AI tells Max named on the mantel scene: a second fireplace in the
+  background, a florist-dome bouquet, duplicated props (two identical
+  champagne buckets). Ask for one of each, loose flowers, and real flaws.
 
 Worked example and full prompts:
 `../../active/DM-C017-synthetic-sign-turn/working/batches/product/DM-CARL-EMILY-emoji-website/`
