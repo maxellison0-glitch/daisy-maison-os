@@ -126,8 +126,12 @@ override anything older:
    "whenever we're using Freya as a character, she can hold signs, and that is her
    reference photo… that is what we're trying to achieve."
 
-Also settled there: **held beats wall-mounted** (a person anchors the scale the
-model otherwise gets wrong), **black beats sage** when the sign must read as an
+**Exception, 13 Oct 2026: website / listing images have no people** — the sign
+alone in a styled setting, like the live mains (Max: "no humans for this").
+Recipe in `recipes/higgsfield/INDEX.md`.
+
+Also settled there: **held beats wall-mounted** for social content (a person
+anchors the scale the model otherwise gets wrong), **black beats sage** when the sign must read as an
 object, and **sage is not a hero colourway** — rejected on both plates it appeared
 on, for contrast, independently of size.
 
