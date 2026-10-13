@@ -1,6 +1,7 @@
 # DM-CARL-EMILY emoji sign — square website images, 13 Oct 2026
 
-State: **agent-pass** on C1e, C2, C3e. NOT max-approved, not uploaded to Shopify.
+State: **D3w is the current candidate** (Max picked the C2 mantel, round 3 restyled it).
+Not max-approved as final, not uploaded to Shopify.
 
 Target: a new square image for the Mr & Mrs street sign listing
 (`mr-mrs-personalised-street-sign-gift`) showing the colour-emoji
@@ -52,7 +53,7 @@ glare. Shot on Sony A7 IV, 50/85mm f/1.8, film grain, no CGI."
 **`nano_banana_flash` no longer exists on Higgsfield** (13 Oct: "unknown
 model"). `nano_banana_pro` stood in; its jobs report as `nano_banana_2`.
 
-## Jobs — 10 generations, 20 credits
+## Jobs — 14 generations, 28 credits
 
 Nano Banana Pro at 2k is **2 credits per image**, confirmed in the account's
 transaction log. The `get_cost` preflight for `count: 2` returned `2`. That
@@ -96,9 +97,47 @@ Prompts: `prompt-C1-shelf.txt` … `prompt-C4-venue.txt`, `prompt-label-edit.txt
 - No mounting holes (`SIGN_HOLES=0` rule).
 - Full sign in frame, shaped ends intact, no people, no third-party branding.
 
-Not checked against a Max verdict: prop scale. Flutes and bottles read a
-little small against a 57cm sign on all three, as they do on the live
-Taylor & Travis and David & Victoria mains.
+Prop scale: flutes and bottles read a little small against a 57cm sign on
+C1e and C3e, as they do on the live Taylor & Travis and David & Victoria
+mains. Max confirmed it in round 3: "the others looked weird to me still".
+
+### Round 3 — Max's pick, restyled
+
+Max on C2: "this ones cute but it looks ai generated the flowers the
+fireplace. Make it a tad warmer and more modern/uk at the same time. **Size is
+bang on for realism** (the others looked weird to me still). Use this as the
+ref image."
+
+Diagnosis: C2 has two fireplaces, the one under the sign and a second one
+burning across the room, plus a saturated florist-dome bouquet and two
+identical champagne buckets. Those duplicates read as AI.
+
+Edit of C2 (job `634ffebb`, passed by job ID at 2048px; Max's attachment was
+a 1092px copy of the same image). `nano_banana_pro`, 1:1, 2k, count 4, 8
+credits. Prompt: `prompt-D-mantel-restyle.txt`. It locks the sign, removes the
+second fireplace, restyles the room as a renovated Victorian terrace in the
+house interior style, uses a loose stoneware-jug arrangement and one bucket,
+and adds real-world flaws.
+
+| File | Job | Sign width / frame | R/B warmth | Verdict |
+|---|---|---:|---:|---|
+| `C2-mantel.png` (Max's pick) | `634ffebb-ec58-4a7e-9cb6-50919a0d69fe` | 67% | 1.465 | reference |
+| `D1-mantel-restyle.png` | `5dd52274-daf1-4e0b-b9b1-6f4dadb86b60` | ~56% | 1.421 | reject: sign shrank |
+| `D2-mantel-restyle.png` | `24c696b6-135d-42b3-bc8b-54081304e892` | ~55% | 1.274 | reject: sign shrank, cooler |
+| `D3-mantel-restyle.png` | `c812b3be-4c4a-4674-9578-af6633066db7` | 68% | 1.381 | **agent-pass**: size held, sign exact |
+| `D4-mantel-restyle.png` | `60481a76-df39-40ce-ac0b-924801475c40` | ~56% | 1.361 | reject: sign shrank |
+| `D3w-mantel-restyle-WARM.png` | local grade of D3, 0 credits | 68% | 1.551 | **candidate** |
+
+Lesson: "keep the same framing" did not hold on 3 of 4 takes. The model
+pulled the camera back to show the new room. Measure sign width against the
+frame on every restyle, because Max calls size by eye.
+
+Lesson: asking the edit for "a touch warmer" made every take cooler. The new
+dusk window brought blue in. Warmth is done locally and for free: a linear-light
+white-balance shift (R ×1.08, B ×0.84, soft highlight shoulder) applied to the
+whole frame. Sign panel goes from 196/179/171 to 203/179/158, a warm white
+under lamp light. No layout or lettering is touched.
+D3w SHA-256 `9783dc8f83f3436771ef78ef82f184badca9ffa634c5f2f3bdeb0dea1bfb6428`.
 
 Images are gitignored (`Content Pipeline/**/*.png|jpg`); the job IDs above
 re-download them from Higgsfield.
