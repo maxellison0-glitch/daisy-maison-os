@@ -3,6 +3,14 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-13 — Storybook builders moved onto Max's live theme (draft 209130881363)
+
+- Live theme is now Max's "working copy - Max" (209047290195); theme 208801857875 was never published. Its builder = fence version + Max's fix (newhome offer Frame Colour values), kept.
+- Old Storybook christening product deleted by the team; new one 10949653135699 (`personalised-christening-pebble-picture-gift-storybook-collection-christening-baptism-gift-confirmation-gift`) was ACTIVE at £0.00, tracked 0 stock/DENY, 0 kg, no description/SEO, not in Framed Pebble Art, on Shop. Fixed to £29.95/£34.95, untracked + CONTINUE, 1.1 kg, description + SEO, + Framed Pebble Art; set UNLISTED until the builder is live. Shop channel still on (MCP can't unpublish).
+- Draft 209130881363 "Claude – Storybook builders on Max copy – 13 Oct" (copy of live, uploaded after processing, md5s verified, commit 5b37b1a): personalisation keys now Line 1/2/3 with image-1 examples — engagement L1 names (Yazmin + Luke), L2 date; christening L1 name(s), L2 church (optional), L3 date; new baby L1 baby's name (Beau Wren). Family (Our Little Family listing, retitled Storybook) default wording "Together Always" (its new image 1) with per-pebble example names Grandpa, Grandma, Lucy… (new `namePlaceholders` in JS).
+- Phone test on draft, all 4: builder, no Globo, £29.95, add to basket with all properties, checkout opens, 0 errors. Engagement: second picture £20 incredible offer line with its own personalisation; easel £5.95 + gift wrap £5.95 add-ons in basket (£41.85).
+- Next: Max publishes 209130881363 → engagement, new baby, christening ACTIVE. Wedding (5th Storybook product) not created yet.
+
 ## 2026-10-09 — Storybook range: engagement, christening, new baby (theme 208801857875)
 
 - **Christening** 10927915991379 (was The Good Life) → `storybook-christening-pebble-picture`; **New Baby** 10927918973267 (was Friends) → `storybook-new-baby-pebble-picture`. Team changed titles/photos; descriptions, SEO, alt text rewritten; collections Framed Pebble Art + Personalised Christening & New Baby Gifts (left Pebble People).
