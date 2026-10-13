@@ -26,6 +26,7 @@
     'storybook-new-baby-pebble-picture',
     'our-little-family-pebble-picture',
     'storybook-engagement-pebble-picture',
+    'personalised-wedding-pebble-picture-gift-storybook-collection-wedding-gift',
     'grandparent-flutterby-blossom-tree-personalised-pebble-picture',
     'grandparent-personalised-pebble-sketch-picture',
     'family-swing-personalised-pebble-picture',
