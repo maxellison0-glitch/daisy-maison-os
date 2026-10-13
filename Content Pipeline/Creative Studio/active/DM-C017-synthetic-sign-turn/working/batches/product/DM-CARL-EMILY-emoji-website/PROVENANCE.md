@@ -52,7 +52,12 @@ glare. Shot on Sony A7 IV, 50/85mm f/1.8, film grain, no CGI."
 **`nano_banana_flash` no longer exists on Higgsfield** (13 Oct: "unknown
 model"). `nano_banana_pro` stood in; its jobs report as `nano_banana_2`.
 
-## Jobs — 9 generations, ~9 credits (preflight: 2 credits per 2 images)
+## Jobs — 10 generations, 20 credits
+
+Nano Banana Pro at 2k is **2 credits per image**, confirmed in the account's
+transaction log. The `get_cost` preflight for `count: 2` returned `2`. That
+figure is per image, not per pair, so it reads as half the true price. Quote
+from a completed job's transaction, as `daisy-video-generation` already warns.
 
 ### Round 1 — rejected / discarded
 
