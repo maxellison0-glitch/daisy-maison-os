@@ -22,7 +22,7 @@
     'same-stars-family-pebble-picture',
     'together-family-pebble-picture',
     'personalised-family-pebble-picture-gift-same-stars-unique-mothers-day-christmas-birthday-gift',
-    'storybook-christening-pebble-picture',
+    'personalised-christening-pebble-picture-gift-storybook-collection-christening-baptism-gift-confirmation-gift',
     'storybook-new-baby-pebble-picture',
     'our-little-family-pebble-picture',
     'storybook-engagement-pebble-picture',
@@ -259,10 +259,12 @@
           '</label>'
         );
         if (people.names) {
+          // Optional per-pebble examples taken from the names printed on image 1.
+          var nameExample = (people.namePlaceholders || [])[index - 1];
           html.push(
             '<label class="dm-pebble-picture__field">',
             '<span class="dm-pebble-picture__label">Name</span>',
-            '<input type="text" ' + prefix + '-name="' + index + '" placeholder="Fill in name for pebble ' + index + '" autocomplete="off">',
+            '<input type="text" ' + prefix + '-name="' + index + '" placeholder="Fill in name for pebble ' + index + (nameExample ? ', e.g. ' + escapeHtml(nameExample) : '') + '" autocomplete="off">',
             '</label>'
           );
         }
