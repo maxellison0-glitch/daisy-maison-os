@@ -27,8 +27,11 @@ Family `6692efb2-306d-4050-b27a-435d003c18bb`, Grandma's Garden
 - Check bottle and product labels: the model will print real brands
   (Moët & Chandon) or garble them. A one-change edit fixes it for 2 credits.
 - When restyling a room around a sign Max likes, the model pulls the camera
-  back and the sign shrinks (3 of 4 takes, 13 Oct). Measure sign width against
-  the frame before showing anything. Max judges size by eye.
+  back and the sign shrinks (3 of 4 takes, 13 Oct). State the sign's width as
+  a share of the frame ("about 68%") and say "do not pull the camera back".
+  That held 4 of 4. Measure anyway; Max judges size by eye.
+- Max dislikes white painted fire surrounds ("uncanny"). A chunky oak beam
+  over a wood burner reads modern UK.
 - Do not ask the model for "warmer"; it went cooler every time. Grade warmth
   locally for 0 credits with a linear-light white-balance shift.
 - AI tells Max named on the mantel scene: a second fireplace in the

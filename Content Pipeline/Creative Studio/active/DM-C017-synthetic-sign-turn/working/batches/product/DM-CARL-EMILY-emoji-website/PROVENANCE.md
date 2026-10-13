@@ -1,6 +1,6 @@
 # DM-CARL-EMILY emoji sign — square website images, 13 Oct 2026
 
-State: **D3w is the current candidate** (Max picked the C2 mantel, round 3 restyled it).
+State: **E3 is the current candidate**. Max picked the C2 mantel; round 3 restyled the room and round 4 replaced the white mantelpiece.
 Not max-approved as final, not uploaded to Shopify.
 
 Target: a new square image for the Mr & Mrs street sign listing
@@ -53,7 +53,7 @@ glare. Shot on Sony A7 IV, 50/85mm f/1.8, film grain, no CGI."
 **`nano_banana_flash` no longer exists on Higgsfield** (13 Oct: "unknown
 model"). `nano_banana_pro` stood in; its jobs report as `nano_banana_2`.
 
-## Jobs — 14 generations, 28 credits
+## Jobs — 18 generations, 36 credits
 
 Nano Banana Pro at 2k is **2 credits per image**, confirmed in the account's
 transaction log. The `get_cost` preflight for `count: 2` returned `2`. That
@@ -138,6 +138,30 @@ white-balance shift (R ×1.08, B ×0.84, soft highlight shoulder) applied to the
 whole frame. Sign panel goes from 196/179/171 to 203/179/158, a warm white
 under lamp light. No layout or lettering is touched.
 D3w SHA-256 `9783dc8f83f3436771ef78ef82f184badca9ffa634c5f2f3bdeb0dea1bfb6428`.
+
+### Round 4 — the white mantelpiece goes
+
+Max on D3w: "get rid of the ugly ass white mantelpiece i don't like it. Looks
+uncanny to me"
+
+Edit of D3w (uploaded as media `64bd3a0d-9373-4e0e-9a75-6d36247ee4cc`), so
+the model inherits the warm grade. `nano_banana_pro`, 1:1, 2k, count 4, 8
+credits. Prompt: `prompt-E-oak-beam.txt`. It swaps the white surround for a
+chunky oak beam set into a plastered chimney breast, with a black wood
+burner on a slate hearth below. The prompt states the sign's frame width
+("about 68%") and says "do not pull the camera back". **All 4 held the
+size** (~69%), against 1 of 4 in round 3 when no number was given.
+
+| File | Job | Verdict |
+|---|---|---|
+| `E1-oak-beam.png` | `a41a0d2d-a23a-4bdf-ab4c-6f057ac528f0` | agent-pass: stove top stops under the beam, no flue |
+| `E2-oak-beam.png` | `ff3b695a-0ed6-4e43-a1fd-1313bd1db6e0` | agent-pass: as E1 |
+| `E3-oak-beam.png` | `de22224e-ea1d-4f07-bf51-c30d0eeeea7e` | **candidate**: whole stove on its hearth, flue stub rising behind the beam |
+| `E4-oak-beam.png` | `50d1e2f4-c64e-44f3-bc90-6b4f2c71f351` | agent-pass: stove cropped by the bottom edge |
+
+Every sign exact. Sign panel white measures the same as D3w (~235/197/167),
+so no regrade. Whole-frame R/B rose to ~1.72 from the honey oak, not from
+the light.
 
 Images are gitignored (`Content Pipeline/**/*.png|jpg`); the job IDs above
 re-download them from Higgsfield.
