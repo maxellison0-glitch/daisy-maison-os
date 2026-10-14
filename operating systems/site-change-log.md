@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-14 — Storybook hanging hearts (draft 209130881363)
+
+- 4 team-created drafts: Engagement 10958298579283, Family 10958777057619, New Baby 10960311910739, Christening 10960370925907 (handles `personalised-*-pebble-heart-gift-the-storybook-collection-*`). All were £0.00 with stock tracked at 0 and no description or SEO. Fixed to £14.95 (was £18.95, same as the other hearts), untracked + CONTINUE, 72 g, description + SEO. New Baby + Christening hearts added to Personalised Christening & New Baby Gifts; Christening also to Pebble Hanging Hearts + New Baby & Christening (the team had set the others). All set UNLISTED until the theme is published.
+- Builder: the existing native heart builder (`assets/daisy-heart-builder.js`), not the pebble picture builder. Its configs live in the theme-only 261 KB `snippets/dm-heart-builder.liquid`, which isn't in the repo, so the 4 configs go in new `dm-storybook-hearts.liquid`. That snippet is rendered from the end of `dm-pebble-picture-builder.liquid`, which every product form renders (sometimes twice), so the builder JS is loaded once by a guarded module.
+- Each heart: Small/Large (+£3). Family, new baby and christening also get 1–8 pebbles (5+ forces large, 7/8 = +£5, as on the family blossom heart). Line 1/2/(3) examples are taken from image 1, plus the £10.95 second heart (own size, pebbles and lines), matching gift boxes (engagement / family / new baby sets) and the Gift Wrap Kit (via the existing head patch). Proof quotes added.
+- Phone test on draft, all 4: builder shows, no Globo, right examples, add to basket with all properties, 0 errors. Family 7 pebbles + second heart = £30.90 (£14.95 + £5 + £10.95).
+
 ## 2026-10-13 — Storybook builders moved onto Max's live theme (draft 209130881363)
 
 - Live theme is now Max's "working copy - Max" (209047290195); theme 208801857875 was never published. Its builder = fence version + Max's fix (newhome offer Frame Colour values), kept.
