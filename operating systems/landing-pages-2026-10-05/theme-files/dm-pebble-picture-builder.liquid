@@ -993,3 +993,6 @@
   {{ 'daisy-pebble-picture-cart-model.js' | asset_url | script_tag }}
   {{ 'daisy-pebble-picture.js' | asset_url | script_tag }}
 {%- endif -%}
+
+{%- comment -%} Storybook hanging hearts use the native heart builder; configs live in dm-storybook-hearts. {%- endcomment -%}
+{%- render 'dm-storybook-hearts' -%}
