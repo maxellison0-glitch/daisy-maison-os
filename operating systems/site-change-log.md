@@ -3,6 +3,14 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-15 — Storybook range LIVE
+
+- Owner published "Storybook ready – Max copy + builders – 13 Oct" (209130881363); it is now MAIN. Previous live theme "working copy - Max" (209047290195) is unpublished and still there to roll back to. Live hadn't been edited since the copy was taken (live updated 13 Oct 08:49, copy made 13:00).
+- Set ACTIVE: pictures engagement 10927937290579, new baby 10927918973267, christening 10949653135699, wedding 10950231327059; hearts engagement 10958298579283, family 10958777057619, new baby 10960311910739, christening 10960370925907, wedding 10964125057363. Family picture 10927920578899 was already active.
+- Live phone check, all 10: 200, builder shows, no Globo, no frame dropdown, £29.95 (pictures) / £14.95 (hearts), and the gift box picker on all 5 hearts.
+- One console error on every page, including the homepage: "Cannot read properties of null (reading 'appendChild')" from the GTM loader `load.t.daisymaison.co.uk/sCOxdynysqb.js` (GTM-TCZZV8JS). It's not from our files. GTM, GA4 (G-CL4S7QF7GH), Google Ads (AW-435412150) and the Meta pixel all still fire, the same as on the old theme.
+- Still to do in admin (not possible over the API): take the personalised Storybook products off the Shop sales channel.
+
 ## 2026-10-15 — Storybook pictures: white frames only (draft 209130881363)
 
 - Owner decision: no frame colour choice on the 5 Storybook pictures (family, engagement, new baby, christening, wedding); every frame is white.
