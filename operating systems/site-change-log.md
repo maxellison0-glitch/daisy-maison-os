@@ -3,6 +3,18 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-15 — Storybook hearts: wedding heart + gift box line-up (draft 209130881363)
+
+- 5th heart: Wedding 10964125057363 (`personalised-wedding-pebble-heart-gift-storybook-collection-wedding-gift-anniversary-gift`). Team-created draft; same data fix as the other hearts (£14.95, was £18.95; untracked; 72 g; description + SEO), set UNLISTED. Collections were already set by the team. Builder kind `sbwedheart`, with examples from image 1: Couple (Bride & Groom default / Bride & Bride / Groom & Groom), Line 1 "On Your Wedding Day", Line 2 "Mr + Mrs Walker", Line 3 "18/12/26"; no pebble count (couple fixed).
+- Gift boxes set to the owner's list, top to bottom:
+  - Wedding: From This Day Forward, Always & Forever, Together They Built a Life
+  - New Baby: New Baby, Together They Built a Life
+  - Christening: Celebrate You, Family Is a Gift, New Baby
+  - Engagement: Always & Forever, Together They Built a Life
+  - Family: For All the Little Things, Together They Built a Life, Family Is a Gift
+- From This Day Forward = Family & Love Gift Boxes 54335779242323 (small) / 54335779275091 (large).
+- Phone check, all 5: the box thumbnails load in that order, and the zoom opens a 1200px image full-width. Wedding + Always & Forever small box added to the basket = £18.90 with box design, size and "for heart 1" properties.
+
 ## 2026-10-14 — Storybook hanging hearts (draft 209130881363)
 
 - 4 team-created drafts: Engagement 10958298579283, Family 10958777057619, New Baby 10960311910739, Christening 10960370925907 (handles `personalised-*-pebble-heart-gift-the-storybook-collection-*`). All were £0.00 with stock tracked at 0 and no description or SEO. Fixed to £14.95 (was £18.95, same as the other hearts), untracked + CONTINUE, 72 g, description + SEO. New Baby + Christening hearts added to Personalised Christening & New Baby Gifts; Christening also to Pebble Hanging Hearts + New Baby & Christening (the team had set the others). All set UNLISTED until the theme is published.
