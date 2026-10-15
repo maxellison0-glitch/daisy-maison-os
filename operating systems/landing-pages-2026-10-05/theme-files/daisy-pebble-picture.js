@@ -158,6 +158,11 @@
     var dataAttr = offer ? 'data-pebble-offer-value' : 'data-pebble-value';
     var required = field.required ? ' data-required="true"' : '';
     var placeholder = field.placeholder ? ' placeholder="' + escapeHtml(field.placeholder) + '"' : '';
+    // A fixed value the customer doesn't choose (e.g. Storybook frames are always White);
+    // still sent with the order like any other field.
+    if (field.type === 'fixed') {
+      return '<input type="hidden" ' + dataAttr + '="' + escapeHtml(field.source || field.key) + '" value="' + escapeHtml(field.value || '') + '">';
+    }
     if (field.type === 'toggletext') {
       var defaultVal = escapeHtml(field.default || '');
       var radioName = (offer ? 'offer' : 'main') + '-wording-' + (field.source || field.key).replace(/\W+/g, '-').toLowerCase();
@@ -320,6 +325,8 @@
     var offerSelect = (config.offerFields || []).filter(function (f) { return f.type === 'select'; });
     var offerToggle = (config.offerFields || []).filter(function (f) { return f.type === 'toggletext' || f.type === 'wordingpair'; });
     var offerText = (config.offerFields || []).filter(function (f) { return f.type === 'text'; });
+    var mainFixed = (config.fields || []).filter(function (f) { return f.type === 'fixed'; });
+    var offerFixed = (config.offerFields || []).filter(function (f) { return f.type === 'fixed'; });
     root.innerHTML = qs(root, '[data-daisy-pebble-picture-config]').outerHTML + [
       '<p class="dm-pebble-picture__eyebrow">' + escapeHtml(config.eyebrow) + '</p>',
       '<h2 class="dm-pebble-picture__title">' + escapeHtml(config.heading) + '</h2>',
@@ -327,6 +334,7 @@
       '<div class="dm-pebble-picture__layout">',
       '<div class="dm-pebble-picture__panel">',
       '<div class="dm-pebble-picture__group"><h3 class="dm-pebble-picture__group-title">Personalisation</h3>',
+      mainFixed.map(function (field) { return renderField(field, false); }).join(''),
       '<div class="dm-pebble-picture__grid">' + mainSelect.map(function (field) { return renderField(field, false); }).join('') + '</div>',
       renderVariablePeople(config, false),
       mainToggle.map(function (field) { return renderField(field, false); }).join(''),
@@ -336,6 +344,7 @@
       '<label class="dm-pebble-picture__offer"><input type="checkbox" data-pebble-second-frame><div class="dm-pebble-picture__offer-inner"><div class="dm-pebble-picture__offer-header"><strong>' + escapeHtml(config.secondOffer.label) + '</strong><em>' + escapeHtml(config.secondOffer.priceLabel) + '</em></div><small>' + escapeHtml(config.secondOffer.note) + '</small></div></label>',
       '<div class="dm-pebble-picture__second" data-pebble-second-wrap hidden aria-hidden="true">',
       '<h3 class="dm-pebble-picture__group-title">Second frame</h3>',
+      offerFixed.map(function (field) { return renderField(field, true); }).join(''),
       '<div class="dm-pebble-picture__grid">' + offerSelect.map(function (field) { return renderField(field, true); }).join('') + '</div>',
       renderVariablePeople(config, true),
       offerToggle.map(function (field) { return renderField(field, true); }).join(''),
