@@ -106,7 +106,7 @@
       status.className = 'dm-sbh-status' + (removed ? ' is-removed' : '');
     } else if (mode === 'single') {
       var m = pick('main');
-      status.textContent = '✓ ' + m.title + ' gift box added (+' + m.price + '). Tap it again to remove.';
+      status.textContent = '✓ ' + m.title + ' gift box added (+⁠' + m.price + '). Tap it again to remove.';
       status.className = 'dm-sbh-status is-added';
     } else {
       var a = pick('main'), b = pick('offer');
