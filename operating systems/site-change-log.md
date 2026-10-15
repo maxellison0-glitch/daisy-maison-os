@@ -13,6 +13,14 @@ not belong here until Max confirms it happened.
   - Engagement: Always & Forever, Together They Built a Life
   - Family: For All the Little Things, Together They Built a Life, Family Is a Gift
 - From This Day Forward = Family & Love Gift Boxes 54335779242323 (small) / 54335779275091 (large).
+- Gift box simplified (owner: too many taps). On the 5 Storybook hearts only:
+  - The card is no longer an accordion, and the "No box / Box heart 1" buttons are gone.
+  - The box photos show straight away in one row, under "Tap the design you like to add a gift box to your pebble heart".
+  - Tap a photo to add that box (dark border + "✓ Added" badge, green "… gift box added (+£3.95). Tap it again to remove." line, and the total updates). Tap it again to remove it ("Gift box removed from your order").
+  - The zoom icon only zooms.
+  - With the second heart on, a "Second heart" row appears; tapping it boxes both hearts.
+  - Works by driving the builder's own box mode from `dm-storybook-hearts.liquid`; `daisy-heart-builder.js` is unchanged, so other heart pages are untouched.
+  - Phone + desktop tested. Add, zoom, remove and re-add, large heart (£4.95 box), and second heart with both boxes all work. The basket gets both box lines with heart 1 / heart 2 properties (£37.80).
 - Phone check, all 5: the box thumbnails load in that order, and the zoom opens a 1200px image full-width. Wedding + Always & Forever small box added to the basket = £18.90 with box design, size and "for heart 1" properties.
 
 ## 2026-10-14 — Storybook hanging hearts (draft 209130881363)
