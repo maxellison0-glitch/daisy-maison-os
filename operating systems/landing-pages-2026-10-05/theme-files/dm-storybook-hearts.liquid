@@ -7,7 +7,8 @@
   a guarded module. The module runs after the gift-wrap patch module in <head>,
   which adds the Gift Wrap Kit extra to the first [data-daisy-heart-config].
   Size, 7/8-pebble and second-heart prices follow the family blossom heart; gift
-  box designs and their order are the owner's list (15 Oct). Fold into
+  box designs and their order are the owner's list (15 Oct); the gift box card
+  shows the designs straight away (tap to add, tap again to remove). Fold into
   dm-heart-builder.liquid at that file's next edit.
 {%- endcomment -%}
 {%- liquid
@@ -52,9 +53,122 @@
     }
   </script>
 </div>
+<style>
+  /* Gift box (Storybook hearts, 15 Oct): no accordion and no "No box / Box heart 1"
+     step. The designs show straight away; tapping one adds that box, tapping it
+     again removes it, and a status line confirms either way. */
+  html:root body[class] .dm-sbh-boxes .dm-addon-mode { display: none !important; }
+  html:root body[class] .dm-sbh-boxes [data-heart-box-picker="main"][hidden] { display: block !important; }
+  html:root body[class] .dm-sbh-boxes.dm-sbh-offer-on [data-heart-box-picker="offer"][hidden] { display: block !important; }
+  html:root body[class] .dm-sbh-boxes [data-heart-box-picker] > p { margin: 12px 0 6px !important; font-size: 14px !important; font-weight: 600 !important; text-align: center; }
+  html:root body[class] .dm-sbh-boxes:not(.dm-sbh-offer-on) [data-heart-box-picker] > p { display: none !important; }
+  html:root body[class] .dm-sbh-prompt { margin: 2px 0 10px !important; font-size: 15px !important; line-height: 1.35; color: #1f1f1f; text-align: center; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(92px, 160px)) !important; justify-content: center; gap: 10px !important; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-choice[data-heart-boxdesign] { position: relative; display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 6px !important; width: auto !important; min-height: 0 !important; margin: 0 !important; padding: 6px 6px 10px !important; border: 2px solid #e4ddd4 !important; border-radius: 12px !important; background: #fff !important; box-shadow: none !important; color: #232323 !important; text-align: center !important; cursor: pointer; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-thumb-wrap { position: relative; display: block !important; width: 100% !important; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-thumb { display: block; width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px !important; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-choice strong { display: block; font-size: 13px !important; line-height: 1.25; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-choice small { display: none !important; }
+  html:root body[class] .dm-sbh-boxes .dm-wedding-heart__box-choice b { font-size: 13px !important; font-weight: 600 !important; }
+  html:root body[class] .dm-sbh-boxes:not([data-heart-boxmode-current="none"]) [data-heart-box-picker="main"] .dm-wedding-heart__box-choice.is-active[data-heart-boxdesign],
+  html:root body[class] .dm-sbh-boxes[data-heart-boxmode-current="double"] [data-heart-box-picker="offer"] .dm-wedding-heart__box-choice.is-active[data-heart-boxdesign] { border-color: #1a1a1a !important; background: #f3f5ec !important; }
+  html:root body[class] .dm-sbh-boxes:not([data-heart-boxmode-current="none"]) [data-heart-box-picker="main"] .dm-wedding-heart__box-choice.is-active[data-heart-boxdesign]::after,
+  html:root body[class] .dm-sbh-boxes[data-heart-boxmode-current="double"] [data-heart-box-picker="offer"] .dm-wedding-heart__box-choice.is-active[data-heart-boxdesign]::after { content: "¹3  Added"; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); padding: 4px 10px; border-radius: 999px; background: #1a1a1a; color: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; pointer-events: none; }
+  html:root body[class] .dm-sbh-status { margin: 12px 0 0 !important; padding: 10px 12px; border-radius: 10px; background: #f6f4f0; color: #5a5a5a; font-size: 14px !important; line-height: 1.35; text-align: center; }
+  html:root body[class] .dm-sbh-status.is-added { background: #e8f3e8; color: #1e6b2a; font-weight: 600; }
+  html:root body[class] .dm-sbh-status.is-removed { background: #f6f4f0; color: #232323; font-weight: 600; }
+</style>
 <script type="module">
 (function () {
   if (document.querySelector('script[data-dm-sb-heart-js]')) return;
+
+  function render(grp, changed) {
+    var mode = grp.getAttribute('data-heart-boxmode-current') || 'none';
+    var offerInput = document.querySelector('input[name="daisy-heart-offer"]');
+    var offerOn = !!(offerInput && offerInput.checked);
+    grp.classList.toggle('dm-sbh-offer-on', offerOn);
+    var p1 = grp.querySelector('[data-heart-box-picker="main"] > p');
+    var p2 = grp.querySelector('[data-heart-box-picker="offer"] > p');
+    if (p1) p1.textContent = 'Heart 1';
+    if (p2) p2.textContent = 'Second heart';
+    function pick(scope) {
+      var b = grp.querySelector('[data-heart-boxdesign-scope="' + scope + '"].is-active');
+      if (!b) return { title: '', price: '' };
+      var i = b.getAttribute('data-heart-boxdesign');
+      var price = grp.querySelector('[data-heart-boxprice-scope="' + scope + '"][data-heart-boxprice="' + i + '"]');
+      return { title: ((b.querySelector('strong') || {}).textContent || '').trim(), price: price ? price.textContent.trim() : '' };
+    }
+    var status = grp.querySelector('.dm-sbh-status');
+    var last = grp.getAttribute('data-sbh-last') || 'none';
+    if (mode === 'none') {
+      var removed = changed && last !== 'none';
+      status.textContent = removed ? 'Gift box removed from your order' : 'No gift box added yet';
+      status.className = 'dm-sbh-status' + (removed ? ' is-removed' : '');
+    } else if (mode === 'single') {
+      var m = pick('main');
+      status.textContent = '✓ ' + m.title + ' gift box added (+' + m.price + '). Tap it again to remove.';
+      status.className = 'dm-sbh-status is-added';
+    } else {
+      var a = pick('main'), b = pick('offer');
+      status.textContent = '✓ Gift boxes added: ' + a.title + ' for heart 1 and ' + b.title + ' for the second heart. Tap a box again to remove it.';
+      status.className = 'dm-sbh-status is-added';
+    }
+    grp.setAttribute('data-sbh-last', mode);
+  }
+
+  function enhance(grp) {
+    if (grp.classList.contains('dm-sbh-boxes')) return;
+    // 'dm-acc' tells the add-ons accordion (dm-upsell-accordion) to leave this card open.
+    grp.classList.add('dm-sbh-boxes', 'dm-acc');
+    grp.classList.remove('dm-acc--closed');
+    var inner = grp.querySelector('.dm-cyg__inner') || grp;
+    var top = inner.querySelector('.dm-cyg__top');
+    var prompt = document.createElement('p');
+    prompt.className = 'dm-sbh-prompt';
+    prompt.textContent = 'Tap the design you like to add a gift box to your pebble heart';
+    if (top) top.insertAdjacentElement('afterend', prompt); else inner.insertBefore(prompt, inner.firstChild);
+    var status = document.createElement('p');
+    status.className = 'dm-sbh-status';
+    status.setAttribute('aria-live', 'polite');
+    inner.appendChild(status);
+    render(grp, false);
+  }
+
+  // Runs before the builder's own panel listener: set the box mode from the tap,
+  // then the builder selects the design and reprices.
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t.closest && t.closest('.dm-sbh-boxes [data-heart-boxdesign]');
+    if (!btn) { var g0 = document.querySelector('.dm-sbh-boxes'); if (g0) setTimeout(function () { render(g0, false); }, 60); return; }
+    if (t.closest('[data-dm-zoomable]')) return;
+    var grp = btn.closest('.dm-sbh-boxes');
+    var mode = grp.getAttribute('data-heart-boxmode-current') || 'none';
+    var on = btn.classList.contains('is-active');
+    var next;
+    if (btn.getAttribute('data-heart-boxdesign-scope') === 'offer') next = (mode === 'double' && on) ? 'single' : 'double';
+    else next = mode === 'none' ? 'single' : (on ? 'none' : mode);
+    grp.setAttribute('data-heart-boxmode-current', next);
+    setTimeout(function () { render(grp, true); }, 30);
+  }, true);
+
+  // Second heart switched off while both hearts are boxed: keep heart 1's box only.
+  document.addEventListener('change', function (e) {
+    var grp = document.querySelector('.dm-sbh-boxes');
+    if (!grp) return;
+    if (e.target.name === 'daisy-heart-offer' && !e.target.checked && grp.getAttribute('data-heart-boxmode-current') === 'double') {
+      grp.setAttribute('data-heart-boxmode-current', 'single');
+    }
+    setTimeout(function () { render(grp, false); }, 60);
+  }, true);
+
+  // Catch the gift box card as the builder renders it, before the accordion folds it.
+  var mo = new MutationObserver(function () {
+    var grp = document.querySelector('[data-heart-boxmode-group]:not(.dm-sbh-boxes)');
+    if (grp) { enhance(grp); mo.disconnect(); }
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
+  setTimeout(function () { mo.disconnect(); }, 20000);
+
   var s = document.createElement('script');
   s.src = {{ 'daisy-heart-builder.js' | asset_url | json }};
   s.setAttribute('data-dm-sb-heart-js', '');
