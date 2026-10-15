@@ -3,6 +3,13 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-15 — Storybook pictures: white frames only (draft 209130881363)
+
+- Owner decision: no frame colour choice on the 5 Storybook pictures (family, engagement, new baby, christening, wedding); every frame is white.
+- Builder: the Frame Colour dropdown is replaced, in the main and second-picture fields, by a new `fixed` field type in `daisy-pebble-picture.js`, which sends a hidden value with the order. Every order still carries `Frame Colour=White` / `(Offer) Frame Colour=White` for the workshop. Intro copy no longer says "choose your frame colour". Other pebble pictures keep their dropdown.
+- Descriptions: "Quality wooden frame in white or grey" → "Quality white wooden frame" on all 5 (live now, including the active family picture).
+- Phone test, all 5: no frame dropdown, basket + checkout fine, Frame Colour=White on every line, including the £20 second picture.
+
 ## 2026-10-15 — Storybook hearts: wedding heart + gift box line-up (draft 209130881363)
 
 - 5th heart: Wedding 10964125057363 (`personalised-wedding-pebble-heart-gift-storybook-collection-wedding-gift-anniversary-gift`). Team-created draft; same data fix as the other hearts (£14.95, was £18.95; untracked; 72 g; description + SEO), set UNLISTED. Collections were already set by the team. Builder kind `sbwedheart`, with examples from image 1: Couple (Bride & Groom default / Bride & Bride / Groom & Groom), Line 1 "On Your Wedding Day", Line 2 "Mr + Mrs Walker", Line 3 "18/12/26"; no pebble count (couple fixed).
