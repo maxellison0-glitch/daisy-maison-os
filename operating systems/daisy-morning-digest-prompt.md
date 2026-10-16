@@ -54,7 +54,10 @@ Run these queries, in parallel where possible:
 4. `FROM sessions SHOW sessions GROUP BY referrer_name SINCE yesterday UNTIL yesterday`
 5. `FROM sales SHOW gross_sales, orders GROUP BY product_title SINCE yesterday UNTIL yesterday ORDER BY orders DESC LIMIT 8`
 6. `FROM sales SHOW gross_sales, total_sales, orders SINCE -7d UNTIL yesterday`
-7. `FROM sales SHOW gross_sales, total_sales, orders SINCE -14d UNTIL -8d`
+7. `FROM sales SHOW gross_sales, total_sales, orders SINCE -14d UNTIL -7d`
+   (fixed 16 Oct 2026: `UNTIL -8d` stops at the START of that day, so it
+   silently returned 6 days, not 7, and every WEEK line from at least 15 Oct
+   compared 7 days against 6. Always check both windows are 7 days.)
 8. `FROM sales SHOW total_sales, orders GROUP BY order_utm_campaign WHERE order_utm_medium = 'email' TIMESERIES day SINCE -14d UNTIL yesterday`
    (email sales, added 8 Oct 2026 by Max — tracks each send's sales on send day
    AND the tail that keeps coming in on later days)
