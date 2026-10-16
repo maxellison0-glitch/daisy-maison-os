@@ -56,6 +56,19 @@ Two sends a week to ~19k ≈ 152k a month ≈ USD 142 (about £110). One email l
 the pebble glow-up (£282.72) covers that alone, so the gate is: an average email
 must bring in over £15 per 1,000 sent.
 
+## Fatigue check (16 Oct 2026)
+
+Campaign emails 2–15 Oct: 7 sends in 14 days to the same ~19k–51k people.
+Email-tagged sales by send: 2 Oct £38.31 · 5 Oct ×2 £0 · **7 Oct £282.72**
+(pebble glow-up) · 9 Oct £96.29 · 13 Oct £42.80 · 15 Oct £66.81. The abandoned
+cart flow, on its own, made £128.38 / 5 orders since 1 Sep.
+Read: one strong, focused new range beat everything else, and every send since
+has been lower while sends kept coming every ~2 days. **Rule from 16 Oct: no
+more than 2 campaign sends a week to Engaged + Customers in total, whoever
+builds them.** Extra sends go to narrower segments (customers-only, Christmas
+2025 buyers, clickers of the last send), never to the same 19k.
+Agent prompt and specs: `email-builds/AGENT-PROMPT-shopify-email.md`.
+
 ## Christmas calendar (draft, adjust weekly)
 
 | Week of | Main email (Tue/Wed) | Second (Sat) |
