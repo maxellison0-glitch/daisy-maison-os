@@ -17,9 +17,17 @@ paragraphs. No restating table numbers in prose. If a line doesn't change a
 decision, cut it. Full detail can still go in the saved file's tables, but the
 reply Max reads is the compact version below.
 
-ACCESS (6 Oct 2026): Max has NO Google Ads access. Never tell him to open
-Google Ads, Change history, Settings or reports. Every Google action is written
-as "Message Daryl: <exact ask>".
+ACCESS (6 Oct 2026): Max does not operate Google Ads. Never tell him to open
+Google Ads, Change history, Settings or reports.
+
+NO RELAYING TO DARYL (18 Oct 2026, Max: "These are the things you need to check
+yourself. There's no such thing as me asking Daryl questions for you."). Never
+write "Message Daryl", "Ask Daryl" or any question for Max to pass on, anywhere
+in the digest. If something needs explaining, YOU investigate it with Windsor
+(campaign status, budget, bid strategy, impressions, clicks, ad sets) and
+Shopify, and state what you found. If the cause isn't visible in your data, say
+so in one line in the saved detail, give the most likely explanation from the
+numbers, and keep watching it. It is never a task for Max.
 
 Preflight
 
@@ -181,9 +189,9 @@ average in brackets and a verdict: ✅ better / ⚠️ normal / 🔴 worse
 
 5. ETSY / TITLE TRACKER (one line each, only if something changed or stale).
 
-6. DO TODAY (max 3 bullets, bold action first). Google actions are always
-   "Message Daryl: <exact ask>". Facebook actions only for Max's own
-   campaigns or as an explicit decision. Never repeat yesterday's ask word for
+6. DO TODAY (max 3 bullets, bold action first). Only things Max himself can
+   act on. No "Message Daryl" items (see NO RELAYING TO DARYL). Facebook
+   actions only for Max's own campaigns or as an explicit decision. Never repeat yesterday's ask word for
    word — if it wasn't actioned, say so in one line.
 
 Before writing, read yesterday's digest in `digests/` and carry forward
@@ -201,8 +209,8 @@ Max gets the most out of, and it is the one that degrades first, so treat its
 length and depth as a requirement rather than a suggestion.
 
 LENGTH (6 Oct 2026, Max: "far too many words"): 120-200 words. Concept, why it
-works that way, one worked number from yesterday, one "Message Daryl"/"Ask
-Daryl" line. Short beats thorough — Max will ask for a deep dive if he wants
+works that way, one worked number from yesterday, one "What to watch for"
+line. Short beats thorough — Max will ask for a deep dive if he wants
 one.
 
 The test it must pass: Max ends up understanding something about how advertising
@@ -222,11 +230,9 @@ Structure it (one line each):
 4. Explain the mechanism — not just what it is, but why it behaves that way.
    Where a thing can go wrong, say what the failure looks like from the outside.
 5. A WORKED EXAMPLE using yesterday's real Daisy numbers. Show the arithmetic.
-6. "ASK DARYL THIS" — one specific, precise question the lesson has equipped
-   Max to ask. Note what a good answer versus an evasive answer sounds like.
-   Only ask Daryl things that require his judgment or access to the Ads Manager
-   UI — never for data that Windsor already provides (campaign status, budgets,
-   bid strategies, spend breakdowns, ad set structure).
+6. "WHAT TO WATCH FOR" — one line on what this concept looks like in Daisy's
+   own numbers when it goes right or wrong. Claude flags it in the digest when
+   it shows up. Never a question for Max to put to Daryl.
 7. "You should now be able to..." — one sentence naming the concrete new
    capability.
 
