@@ -2,9 +2,28 @@
 
 One row per Shopify Email campaign. The morning digest uses this file to
 work out each send's real cost (see the EMAIL rule in
-`daisy-morning-digest-prompt.md`). Fill in **Recipients** from Shopify →
-Marketing → the campaign's "Sent" number. Fill in **Billed** when the Shopify
+`daisy-morning-digest-prompt.md`). Fill in **Billed** when the Shopify
 bill line is known; it overrides the calculated figure.
+
+**HOW RECIPIENTS ARE KNOWN (Max, 17–19 Oct 2026): Claude, not Max.** Claude
+picks the Shopify segment for every send and logs it here (Segment column)
+before or on send day. The digest then counts that segment's members itself
+and writes the number into Recipients. Never ask Max for a "Sent" number.
+Count method (tested 19 Oct 2026): Admin GraphQL mutation
+`customerSegmentMembersQueryCreate(input: {segmentId: "<gid>"})`, then query
+`customerSegmentMembersQuery(id: "<returned id>") { done currentCount }` until
+`done: true`. (The synchronous `customerSegmentMembers(query: ...)` form
+rejects `shopify_email.opened MATCHES` segments, so use the segment ID.)
+Counts are taken after the send, so mark them "≈ segment count <date>".
+No segment logged = full subscribed list as the upper bound, marked ESTIMATE.
+
+Segment IDs:
+- DM Email – Engaged (opened 30d): gid://shopify/Segment/1186234859859 (18,116 on 19 Oct 2026)
+- DM Email – Customers (ordered 12m): gid://shopify/Segment/1186234892627
+- DM Email – Christmas 2025 buyers: gid://shopify/Segment/1186234925395
+- DM Email – Engaged, never bought: gid://shopify/Segment/1186234958163
+- DM Email – Quiet (no open 90d): gid://shopify/Segment/1186234990931
+- Email subscribers (full list): gid://shopify/Segment/1072653762899
 
 Billing: 10,000 free emails per calendar month, then USD 1 per 1,000
 (USD 0.65 per 1,000 past 300,000). Abandoned-checkout emails are free.
@@ -16,7 +35,10 @@ Billing: 10,000 free emails per calendar month, then USD 1 per 1,000
 | 2026-10-05 18:00 | For the friend you don't see enough | not visible via API | 7 Sep–7 Oct bill | share of £8.95 | Shopify bill 7 Oct (Gmail) |
 | 2026-10-07 19:00 | Our pebble pictures just got a glow up ✨ | not visible via API | 7 Oct–7 Nov bill | unknown until 7 Nov bill | Max said ~£38 (estimate) |
 | 2026-10-09 19:48 | Well, these have been popular this week! 👀 | not recorded | 7 Oct–7 Nov bill | £37.80 ESTIMATE (upper bound) | digest 10 Oct |
-| 2026-10-13 19:00 (planned) | Their first Christmas, in pebbles | DM Email – Engaged (opened 30d) + Customers (12m), ~19,000 | 7 Oct–7 Nov bill | ≤ USD 19 est. | build sheet in email kit; confirm Sent number after send |
+| 2026-10-13 19:00 (planned) | Their first Christmas, in pebbles | DM Email – Engaged (opened 30d) + Customers (12m), ~19,000 | 7 Oct–7 Nov bill | ≤ USD 19 est. | build sheet in email kit; segment as planned, not confirmed |
+| 2026-10-15 19:30 | NEW! A launch-day treat for just you 🎁 | segment not logged → full list upper bound | 7 Oct–7 Nov bill | £37.36 ESTIMATE (upper bound) | digest 16 Oct |
+| 2026-10-17 10:36 | Free delivery this weekend 🚚 | DM Email – Engaged (opened 30d), ≈ 18,116 (segment count 19 Oct) | 7 Oct–7 Nov bill | ≈ USD 18.12 ≈ £13.29 est. | segment chosen by Claude in chat 17 Oct; Max confirmed sent |
+| 2026-10-18 18:00 | Free delivery ends midnight! 🎁 | segment not logged → full list upper bound | 7 Oct–7 Nov bill | £37.15 ESTIMATE (upper bound) | digest 19 Oct |
 
 **Billing evidence (checked 8 Oct 2026):** Shopify bills arrive from
 billing@shopify.com on the 7th, in GBP, with a "Messaging" line. 7 Sep bill:

@@ -42,6 +42,8 @@ Read Daisy context first, in this order:
 2. `%USERPROFILE%\AA Daisy Maison OS\operating systems\learnings.md`
 3. `%USERPROFILE%\AA Daisy Maison OS\operating systems\mounting-strips-price-test.md`
 4. `%USERPROFILE%\AA Daisy Maison OS\operating systems\etsy-latest.md`
+5. `%USERPROFILE%\AA Daisy Maison OS\operating systems\approvals.md`
+6. `%USERPROFILE%\AA Daisy Maison OS\operating systems\email-sends.md`
 
 The Mounting Strips experiment raised the price from GBP 1.95 to GBP 2.25 on
 6 June 2026. Surface it only for a meaningful signal: attach-rate movement over
@@ -114,15 +116,17 @@ Calculations
   Cost of a send = max(0, recipients − free emails left this month) × rate,
   converted to GBP. Get recipients from `operating systems/email-sends.md`.
   Do NOT use Gmail for this (Max, 8 Oct 2026). Shopify only: list each
-  send with Admin GraphQL `marketingEvents` (type NEWSLETTER). The Shopify API
-  does not expose recipient counts or bills, so recipients come from Max via
-  email-sends.md.
-  If a send has no recipient count there, use the subscribed list size
-  (Admin GraphQL `customerSegmentMembers(first: 1, query:
-  "email_subscription_status = 'SUBSCRIBED'") { totalCount }` — NOT
-  `customersCount`, whose filter is ignored and returns every customer) as the
-  upper bound, mark the cost as an ESTIMATE, and ask Max
-  for the "Sent" number in the DO TODAY block.
+  send with Admin GraphQL `marketingEvents` (type NEWSLETTER).
+  RECIPIENTS ARE CLAUDE'S JOB (19 Oct 2026, Max). NEVER ask Max for a "Sent"
+  number. Claude picks the segment for every send and logs it in
+  email-sends.md. For any send with a logged segment but no count yet, count
+  the segment yourself (async `customerSegmentMembersQueryCreate` with the
+  segment ID, then `customerSegmentMembersQuery { done currentCount }` — method
+  and segment IDs are in email-sends.md), write "≈ <count> (segment count
+  <date>)" into its Recipients cell, and commit it with the digest.
+  If no segment was logged, use the subscribed list size (segment "Email
+  subscribers", same async method) as the upper bound and mark the cost
+  ESTIMATE. Say nothing to Max about it beyond the "(est.)" tag.
   On a send day add that cost to spend: overall-spend ROAS = total_sales ÷
   (Google + Facebook + email cost). Green/red uses this number. Also show
   ad-only ROAS = (total_sales − that day's email-tagged sales) ÷ ad spend, so
@@ -189,9 +193,28 @@ average in brackets and a verdict: ✅ better / ⚠️ normal / 🔴 worse
 
 5. ETSY / TITLE TRACKER (one line each, only if something changed or stale).
 
-6. DO TODAY (max 3 bullets, bold action first). Only things Max himself can
-   act on. No "Message Daryl" items (see NO RELAYING TO DARYL). Facebook
-   actions only for Max's own campaigns or as an explicit decision. Never repeat yesterday's ask word for
+6. CHANGES I MADE (19 Oct 2026, Max: "if you are to make changes, you have
+   to mention it in the morning digest"). Every change Claude made since the
+   last digest, one line each: what, old → new, why, and what would prove it
+   right or wrong (and when it gets judged). If none: "No changes." Never make
+   a change that isn't reported here.
+
+7. NEEDS YOUR YES (19 Oct 2026, Max). Proposed changes Claude wants to make
+   but needs Max's permission for. Numbered, max 3, one line each: what
+   exactly, cost/budget, why (from the data), what it should achieve. Max
+   replies "yes 1", "no 2" etc. Base proposals on budget, spend, the website
+   and diversification (new channels, new creative, offers, email, Etsy).
+   Log every proposal in `operating systems/approvals.md`; read it first and
+   carry out anything Max has approved since the last run (then report it in
+   CHANGES I MADE). Don't re-propose the same thing every day: an unanswered
+   proposal stays pending for 3 days, then drops off with one line.
+   If nothing needs approval: "Nothing today."
+   What needs a yes vs what Claude just does is set in approvals.md.
+
+8. DO TODAY (max 3 bullets, bold action first). Only things Max himself can
+   act on. No "Message Daryl" items (see NO RELAYING TO DARYL), no requests
+   for data Claude can get itself. Facebook actions only for Max's own
+   campaigns or as an explicit decision. If nothing: "Nothing for you." Never repeat yesterday's ask word for
    word — if it wasn't actioned, say so in one line.
 
 Before writing, read yesterday's digest in `digests/` and carry forward
@@ -284,7 +307,7 @@ Update `%USERPROFILE%\AA Daisy Maison OS\operating systems\context.md`:
 
 If the digest or context changed, from the Daisy OS repository run:
 
-`git add -- "digests/digest_YYYY-MM-DD.md" "operating systems/context.md"`
+`git add -- "digests/digest_YYYY-MM-DD.md" "operating systems/context.md" "operating systems/approvals.md" "operating systems/email-sends.md"`
 `git commit -m "Update Daisy morning digest context"`
 `git push`
 
@@ -304,7 +327,7 @@ file and context.md are reachable from `main`.
 Terminal output
 
 After writing and committing the digest file, print the compact digest in your
-reply so Max can read it on his phone: the WhatsApp snippet, blocks 1-6 of the
+reply so Max can read it on his phone: the WhatsApp snippet, blocks 1-8 of the
 compact format, and the short Lesson of the Day. Nothing longer. This is how Max
 reads the digest every morning. Pay special attention to ad strategy,
 campaign-level analysis, and actionable ad decisions — Max will be running the
