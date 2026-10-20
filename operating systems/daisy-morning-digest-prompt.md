@@ -81,7 +81,9 @@ For each platform, pull TWO tiers of data:
 
 Tier 1 — Performance (yesterday):
 - Google Ads connector `google_ads`, account `880-835-8049`: `spend`, `clicks`,
-  `impressions`, `campaign_name`.
+  `impressions`, `campaign_name`, `conversions`, `conversion_value` (added 20 Oct
+  2026 after Max asked why Google showed no purchases: fill the Purch column for
+  Google too, with Google-attributed value; Shopify ROAS stays the headline).
 - Facebook Ads connector `facebook`, account `1574764016252349`: `spend`,
   `clicks`, `impressions`, `campaign`.
 
@@ -183,7 +185,7 @@ average in brackets and a verdict: ✅ better / ⚠️ normal / 🔴 worse
    - Anything Max asked about yesterday
 
 3. ADS (one compact table, one row per campaign, both platforms):
-   Campaign | Spend (7d) | % of budget | CPC | Purch / CPP (FB only) | Verdict
+   Campaign | Spend (7d) | % of budget | CPC | Purch / CPP (both platforms) | Verdict
    Then max 3 one-line bullets: which platform/campaign is dragging ROAS and
    why, Max's own campaign on its own line, any status anomaly. Facebook
    ad-set detail goes in the saved file only, not the printed reply, unless an

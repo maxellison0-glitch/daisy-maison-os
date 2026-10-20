@@ -39,6 +39,7 @@ Billing: 10,000 free emails per calendar month, then USD 1 per 1,000
 | 2026-10-15 19:30 | NEW! A launch-day treat for just you 🎁 | segment not logged → full list upper bound | 7 Oct–7 Nov bill | £37.36 ESTIMATE (upper bound) | digest 16 Oct |
 | 2026-10-17 10:36 | Free delivery this weekend 🚚 | DM Email – Engaged (opened 30d), ≈ 18,116 (segment count 19 Oct) | 7 Oct–7 Nov bill | ≈ USD 18.12 ≈ £13.29 est. | segment chosen by Claude in chat 17 Oct; Max confirmed sent |
 | 2026-10-18 18:00 | Free delivery ends midnight! 🎁 | segment not logged → full list upper bound | 7 Oct–7 Nov bill | £37.15 ESTIMATE (upper bound) | digest 19 Oct |
+| 2026-10-22 19:00 (planned) | Your family, in pebbles, for Christmas | DM Email – Engaged (opened 30d), ≈ 18,116 (segment count 19 Oct) | 7 Oct–7 Nov bill | ≈ USD 18 ≈ £13 est. | approved by Max 20 Oct (A2); build sheet email-builds/2026-10-22-christmas-pebble-pictures.md |
 
 **Billing evidence (checked 8 Oct 2026):** Shopify bills arrive from
 billing@shopify.com on the 7th, in GBP, with a "Messaging" line. 7 Sep bill:
