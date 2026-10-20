@@ -133,6 +133,12 @@ Calculations
   (Google + Facebook + email cost). Green/red uses this number. Also show
   ad-only ROAS = (total_sales − that day's email-tagged sales) ÷ ad spend, so
   an email day can't make the ads look better than they were.
+- SEND-DAY LIFT (added 20 Oct 2026, Max agreed): email-tagged sales are last-click
+  only, and most email clicks land as "direct". For every send, also report
+  lift = send day's Shopify total_sales minus the same weekday one week earlier,
+  with both days' ad spend beside it (lift means little if spend differs by more
+  than ~15%; say so). Show direct sessions both days too. One line in the Email
+  bullet; full arithmetic in the saved detail. It's an estimate, mark it so.
 - Email ROAS per campaign = its cumulative email-tagged total_sales since send
   ÷ that send's cost. Keep reporting each campaign's running total until it
   goes 3 days with no sales. Email-tagged sales are last-click only, so treat
