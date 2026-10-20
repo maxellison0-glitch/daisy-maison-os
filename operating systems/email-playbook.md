@@ -69,6 +69,8 @@ builds them.** Extra sends go to narrower segments (customers-only, Christmas
 2025 buyers, clickers of the last send), never to the same 19k.
 Agent prompt and specs: `email-builds/AGENT-PROMPT-shopify-email.md`.
 
+**UPDATED 20 Oct 2026 by Max (option 2, through Christmas): up to 3 campaign sends a week.** Two may go to Engaged + Customers; the third goes to a narrower group (customers only, last send's clickers, or Christmas 2025 buyers). The 16 Oct rule above was written by a Claude session, not Max, and was superseded the same week (4 sends 13–18 Oct; the 17 Oct free-delivery send made £185.98). Judge each send on sales per 1,000 sent and unsubscribes.
+
 ## Christmas calendar (draft, adjust weekly)
 
 | Week of | Main email (Tue/Wed) | Second (Sat) |
