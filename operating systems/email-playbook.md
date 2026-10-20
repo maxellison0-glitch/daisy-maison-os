@@ -71,6 +71,8 @@ Agent prompt and specs: `email-builds/AGENT-PROMPT-shopify-email.md`.
 
 **UPDATED 20 Oct 2026 by Max (option 2, through Christmas): up to 3 campaign sends a week.** Two may go to Engaged + Customers; the third goes to a narrower group (customers only, last send's clickers, or Christmas 2025 buyers). The 16 Oct rule above was written by a Claude session, not Max, and was superseded the same week (4 sends 13–18 Oct; the 17 Oct free-delivery send made £185.98). Judge each send on sales per 1,000 sent and unsubscribes.
 
+**NO PLAIN-LETTER EMAILS (Max, 20 Oct 2026).** The "note from the workshop" letter was cancelled before sending: Max hates the concept. Template C stays only as a designed story email with photos, never a text-only letter.
+
 ## Christmas calendar (draft, adjust weekly)
 
 | Week of | Main email (Tue/Wed) | Second (Sat) |

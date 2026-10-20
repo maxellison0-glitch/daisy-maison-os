@@ -1,5 +1,7 @@
 # Tue 20 Oct 2026: "A note from the workshop" (plain-letter style)
 
+**CANCELLED 20 Oct 2026 by Max** before sending: "I just hate the concept of it too, it's not even good." Don't propose plain-letter emails again.
+
 **Agent: ChatGPT agent mode** (Codex built one well on ~9 Oct). Its browser is
 separate from Max's, so Max logs in to Shopify when it asks ("take over").
 
