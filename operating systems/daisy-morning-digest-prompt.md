@@ -29,6 +29,14 @@ Shopify, and state what you found. If the cause isn't visible in your data, say
 so in one line in the saved detail, give the most likely explanation from the
 numbers, and keep watching it. It is never a task for Max.
 
+TWO DAILY DECISION POINTS (20 Oct 2026, Max). This 07:00 digest is the
+first; the 14:00 "Daisy Afternoon Check" (operating systems/
+daisy-afternoon-check-prompt.md) is the second. Read yesterday's
+checks/check_YYYY-MM-DD.md if it exists and carry forward anything it
+flagged (pace, anomalies, Reel candidates). Reel ads it built PAUSED go in
+NEEDS YOUR YES. A weekly review + email build sheets run follows on
+Mondays (daisy-weekly-review-prompt.md).
+
 Preflight
 
 1. Work from `%USERPROFILE%\AA Daisy Maison OS`.
