@@ -39,6 +39,7 @@ Unanswered after 3 days = dropped (one line in the digest), not nagged.
 
 | ID | Proposed (date) | Change | Cost | Why | Status |
 |---|---|---|---|---|---|
+| A3 | 2026-10-20 | 7-day test: automatic free standard delivery (no code) Mon 26 Oct – Sun 1 Nov; if it wins, step 2 builds delivery into bestseller prices | ~£200/day shipping income given up (12–18 Oct: £1,408.65 / 262 orders = £5.38 per order) | Max's idea. Standard delivery £4.95 adds ~23% to a £23.61 average basket. The 17–18 Oct code weekend was not a clean test (10 code uses; abandonment 40.4% / 44.8%). Break-even ≈ +20% orders. Judge on orders, abandonment, CVR vs 19–25 Oct | Pending (drops 23 Oct) |
 | A1 | 2026-10-20 | Pause ad set test_creatives (120254265156800416) in [RDD] TOF-WEDDING | £0 — CBO £90 shifts to TOF-MAIN / test_creatives_2 | 4 days £98.31 / 2 purchases, CPP £49.16 vs campaign 7d £10.32; Mon £15.62 / 0. Daryl's campaign, so needs a yes. Proof: TOF CPP < £12 by Fri 23 Oct | APPROVED 20 Oct 11:00 (see Decided) |
 | A2 | 2026-10-20 | Shopify Email send Thu 22 Oct to DM Email – Engaged (opened 30d), ≈18,116, theme Christmas pebble hanging hearts | ≈ USD 18 ≈ £13 est. | 17 Oct send 4.99x est.; Christmas pebble hearts/decorations 17 orders 12–18 Oct. Target ≥ £40 email-tagged in 3 days | APPROVED 20 Oct (see Decided) |
 
