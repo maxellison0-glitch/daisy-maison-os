@@ -39,6 +39,8 @@ Unanswered after 3 days = dropped (one line in the digest), not nagged.
 
 | ID | Proposed (date) | Change | Cost | Why | Status |
 |---|---|---|---|---|---|
+| A1 | 2026-10-20 | Pause ad set test_creatives (120254265156800416) in [RDD] TOF-WEDDING | £0 — CBO £90 shifts to TOF-MAIN / test_creatives_2 | 4 days £98.31 / 2 purchases, CPP £49.16 vs campaign 7d £10.32; Mon £15.62 / 0. Daryl's campaign, so needs a yes. Proof: TOF CPP < £12 by Fri 23 Oct | Pending (drops 23 Oct) |
+| A2 | 2026-10-20 | Shopify Email send Thu 22 Oct to DM Email – Engaged (opened 30d), ≈18,116, theme Christmas pebble hanging hearts | ≈ USD 18 ≈ £13 est. | 17 Oct send 4.99x est.; Christmas pebble hearts/decorations 17 orders 12–18 Oct. Target ≥ £40 email-tagged in 3 days | Pending (drops 23 Oct) |
 
 ## Decided
 
