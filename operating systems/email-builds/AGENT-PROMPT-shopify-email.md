@@ -6,9 +6,12 @@ watch and stop it. ChatGPT/Codex also built one well on ~9 Oct. Claude in Chrome
 is preferred because the Shopify Email editor is a fiddly drag-and-drop canvas,
 and a session that is already logged in and visible is the safer place for it.
 
-**How to use:** copy everything inside the fenced block below into Claude in
-Chrome, with Shopify admin open. Only the CAMPAIGN SPEC section changes each
-week; Claude (in the repo) rewrites it. The rest is the fixed recipe.
+**How to use (updated 20 Oct 2026):** paste the fenced block below into Claude
+in Chrome with Shopify admin open, and replace BUILD SHEET FILE at the bottom
+with the file name Claude gives you (e.g. `2026-10-22-christmas-pebble-pictures.md`).
+The agent reads the spec straight from GitHub in Max's logged-in browser, so
+nothing needs copying by hand. Claude (in the repo) writes one build sheet per
+send in `operating systems/email-builds/`.
 
 **Template reuse:** the agent builds by DUPLICATING a previous campaign, so the
 header, fonts, colours and footer carry over. When one comes out right, note its
@@ -23,13 +26,24 @@ doesn't match what you see in Shopify (a price, a product, a page), STOP and
 tell me instead of guessing.
 
 HARD RULES
-- Never click Send or Schedule. You finish with a saved draft and a test email.
+- Never click Send or Schedule until I type "go" in this chat after your report.
+  When I do, schedule it for the send time in the spec (UK time), not now.
 - Never change products, prices, themes or settings outside the steps below.
 - Never write a customer review or a number that isn't in the spec.
 - Brand: white email background. Headings Georgia, colour #2F3B2E. Body
   Helvetica/Arial, #232323. Buttons solid #2F3B2E with white UPPERCASE text.
   Offer/highlight block background #F3F2EE. The colour #8E3B33 is used ONCE,
   only on the offer words. At most one emoji, and only in the subject line.
+
+STEP 0: read the spec
+  Open https://github.com/maxellison0-glitch/daisy-maison-os/blob/main/operating%20systems/email-builds/
+  followed by the BUILD SHEET FILE named at the bottom of this prompt. The spec
+  is the fenced block in that file (Template, Segment(s), Send, Subject,
+  Preview text, Blocks). Lines in [SQUARE BRACKETS] are checks for you to do
+  or gaps to ask me about, never text to paste into the email.
+  If the file says DUPLICATE FROM, use that; otherwise duplicate the newest
+  campaign listed under "Proven templates" at the bottom of
+  operating systems/email-builds/AGENT-PROMPT-shopify-email.md.
 
 STEP 1 (only if the spec has a DISCOUNT section): create the discount
   Shopify admin → Discounts → Create discount → choose the type in the spec.
@@ -70,10 +84,17 @@ STEP 6: report back in this format
   - Blocks in order (one line each):
   - Anything that didn't match the spec or that you couldn't do:
   - Test email sent to:
-Then stop.
+Then stop and wait for me.
 
-================ CAMPAIGN SPEC ================
-(paste the current spec below this line)
+STEP 7 (after I type "go" and you've scheduled it): log it
+  On GitHub open operating systems/email-sends.md → pencil (Edit). Find the
+  row for this send (or add one at the bottom of the table, same columns):
+  Send date "YYYY-MM-DD HH:MM", Campaign = subject line, Recipients =
+  "<count Shopify showed> (Shopify, at scheduling)" plus the segment names.
+  Leave Cost as it is. Commit directly to main with the message
+  "Log email send <date>". Tell me when done.
+
+BUILD SHEET FILE: <paste file name here>
 ```
 
 ## Proven templates
