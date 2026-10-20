@@ -44,6 +44,8 @@ STEP 0: read the spec
   If the file says DUPLICATE FROM, use that; otherwise duplicate the newest
   campaign listed under "Proven templates" at the bottom of
   operating systems/email-builds/AGENT-PROMPT-shopify-email.md.
+  If the spec has no CAMPAIGN NAME, use the subject line plus the send date.
+  If it has no TEST TO, send the test to the Shopify account's own email.
 
 STEP 1 (only if the spec has a DISCOUNT section): create the discount
   Shopify admin → Discounts → Create discount → choose the type in the spec.
