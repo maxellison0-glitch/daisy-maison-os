@@ -11,6 +11,44 @@ the output has passed. There are no counter-examples.
 
 ---
 
+## 0. THE SHOPIFY PHOTO LIBRARY — use it every time (added 24 Sep 2026)
+
+`reference-masters/shopify-signs/`
+
+**Max's rule: take the product images from Shopify. Every street sign image on
+the store is visually correct — correct shape, correct colourway, correct
+proportions. Use them as the literal image reference inside Higgsfield every
+time.**
+
+25 real product photos downloaded from the live Shopify CDN. These show the
+actual scalloped sign shape that customers receive. They replace text
+descriptions of the sign shape, which produce rectangles.
+
+### How to pick a reference
+
+- **Sign on its own (no human):** use the Shopify product photo directly as the
+  image reference. Generation only changes the wording.
+- **Sign with a human presenter:** TWO references required:
+  1. The Shopify product photo (sign shape + colourway)
+  2. The character lock (ALAN-LOCK or FREYA-LOCK)
+
+Best starting references for everyday posts:
+- `house-rules-close.jpg` — clearest close-up of scalloped shape
+- `wise-woman.jpg` — real photo, black on cream
+- `home-happy-place.jpg` — clean, standard layout
+
+See `reference-masters/shopify-signs/README.md` for the full index.
+
+### Shape rejection gate
+
+If the generation produces a sign that doesn't match the Shopify photo's shape:
+- Rectangle instead of scalloped → **REJECT**
+- Wrong proportions → **REJECT**
+- Mounting holes visible → **REJECT**
+- Colourway that doesn't exist (navy, burgundy, forest green, slate) → **REJECT**
+
+---
+
 ## 1. The locked masters
 
 ### Street sign — approved manufactured-object master
@@ -21,9 +59,9 @@ the truths a model cannot invent: real material and sheet depth, the shaped end
 areas, the true black border width, mounting holes, surface reflectance, hand
 contact and finger occlusion, contact shadows, grain and lens character.
 
-**This is reference 1 for every street-sign image, forever.** It is the locked
-authority for the *object*. It is never regenerated, never replaced by a
-description, and never omitted "just this once".
+**This is reference 1 for every street-sign image, forever.** For the sign
+shape and colourway specifically, the Shopify product photos (§0 above) are the
+primary source — they show the finished product as customers see it.
 
 Supporting construction references, add as many as apply:
 - `.../real-product-reference-pack/instagram-DPjdseCDbDR/selected/01-front-frame-240-t08.000.jpg` — front

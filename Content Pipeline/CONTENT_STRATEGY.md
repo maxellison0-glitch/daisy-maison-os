@@ -36,44 +36,56 @@ Examples of a locked pair:
 
 ---
 
-## 2b. THE SLOT GATE — blocking, for every automated posting slot
+## 2a. ONE POST PER DAY
 
-*Added 12 Aug 2026 after the morning slot shipped a bare sign photo. Max:
-"if you're picking a sign, you pick line 1, line 2, and then you pick an
-on-screen hook to match it. You are literally creating content. You're not
-just creating a sign and posting what you're doing... Not just posting a
-sign. That's not good enough, and it's not what I built you for."*
+*Changed 24 Sep 2026. Max: three slots are dead. One post per day.*
 
-Every automated slot answers these IN ORDER, before generating anything.
-A failed answer stops the slot — regenerate the concept, not the image.
+One post. Pick the best concept, execute it properly, don't rush three
+mediocre ones. Quality over volume.
 
-1. **Pick the trio as one creative decision: line 1 + line 2 + on-screen
+---
+
+## 2b. THE SLOT GATE — blocking, for every automated post
+
+*Added 12 Aug 2026 after the morning slot shipped a bare sign photo.
+Tightened 24 Sep 2026 after repeated names, wrong sign shapes, and
+colourway repetition.*
+
+Every automated post answers these IN ORDER, before generating anything.
+A failed answer stops the post — regenerate the concept, not the image.
+
+1. **Read `USED_SIGNS.md` first.** Check every name, wording, colourway
+   and hook against the dedupe registry. If it's there, pick something
+   else. Add every concept to the registry the moment it's chosen —
+   including rejections.
+2. **Pick the trio as one creative decision: line 1 + line 2 + on-screen
    hook.** The hook is chosen WITH the sign, before any generation — not
    discovered afterwards, not skipped. Test per the Match Law: cover the
    sign; does the hook make you need to see it?
-2. **Presenter logic.** Whoever is in frame must make sense holding that
-   sign. Max, 11–12 Aug, on Freya holding "DAVE'S GARDEN / I'M SEXY & I
-   MOW IT": *"Why would a female hold up that sign?"* A first-person sign
-   belongs to the named person; if someone else holds it, the hook must
-   frame them as the gift-giver ("made this for my dad...") or the concept
-   is broken.
-3. **Why am I posting this?** Name the engine, the audience, and the
+3. **Sign shape accuracy.** The product is a SCALLOPED street sign, not a
+   rectangle. The real sign has shaped/curved ends (area/hull ~0.993). Use
+   the actual product photo as reference — never generate a generic
+   rectangular sign. If the generation produces the wrong shape, reject it
+   and regenerate with stronger shape guidance.
+4. **Colourway rotation.** Only five real colourways exist: BLACK, GREY,
+   SAGE, GRASS, BLUE. Never use the same colourway two days running.
+   Rotate through all five before repeating any. Navy, burgundy, forest
+   green and slate are NOT products — never use them.
+5. **Name variety.** Never reuse a name from `USED_SIGNS.md`. Vary
+   cultural background, length and feel. Do not default to the same stock
+   of names.
+6. **Presenter logic.** Whoever is in frame must make sense holding that
+   sign. A first-person sign belongs to the named person; if someone else
+   holds it, the hook must frame them as the gift-giver.
+7. **Why am I posting this?** Name the engine, the audience, and the
    scroll-stop mechanic out loud in the worklog. "It's a funny sign" is
    not an answer.
-4. **Check the record before picking.** Read the last 7 days of
-   `PUBLISH_LOG.md` and `Creative Studio/reference-masters/VERDICTS.md`.
-   Never repeat a concept, wording or product Max has rejected, and never
-   re-run yesterday's post with a new coat of paint.
-5. **Composite the on-screen hook onto the image.** Per
-   `PUBLISH_READINESS.md`'s hard gate (28 Jul): a bare photo NEVER ships —
-   the caption is collapsed behind a tap and does not count. Render the
-   pill per `VIDEO_CAPTION_SYSTEM.md` locally (the DM-C020 Chromium →
-   composite method, zero credits) and burn it in before JPEG conversion.
-   Open the final file and confirm the text is on it.
-6. **Log everything, including rejections, the moment they happen.** The
-   12 Aug repeat happened because the 11 Aug rejection was never written
-   down. A verdict that isn't in `VERDICTS.md` or `PUBLISH_LOG.md` does
-   not exist for the next slot.
+8. **Composite the on-screen hook onto the image.** A bare photo NEVER
+   ships. Render the pill per `VIDEO_CAPTION_SYSTEM.md` locally and burn
+   it in before JPEG conversion.
+9. **Log everything, including rejections, the moment they happen.** A
+   verdict that isn't in `USED_SIGNS.md` or `PUBLISH_LOG.md` does not
+   exist for the next post.
 
 ---
 
