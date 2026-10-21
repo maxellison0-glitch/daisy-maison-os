@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {},
+      "block_order": [],
+      "custom_css": [
+        "nav.breadcrumb.breadcrumb- {padding-top: 7px; padding-bottom: 7px; font-size: x-small;}"
+      ],
+      "settings": {
+        "show_breadcrumb": true,
+        "breadcrumb_alignment": "center",
+        "breadcrumb_color": "#acacac",
+        "breadcrumb_bg": "rgba(0,0,0,0)",
+        "breadcrumb_gradient": "",
+        "breadcrumb_color_mb": "",
+        "breadcrumb_bg_mb": "#ffffff",
+        "breadcrumb_gradient_mb": "",
+        "show_page_title": false,
+        "page_title_alignment": "center",
+        "container": "1170",
+        "padding_full_width": 50,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "layout": "1"
+      }
+    },
+    "dm_soap_top": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'dm-soap-range', mode: 'collection' %}"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {},
+      "block_order": [],
+      "custom_css": [
+        ".card {background-color: #ffffff; border: 1px solid #e0e0e0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}"
+      ],
+      "settings": {
+        "colors_bg": "#f8f8f8",
+        "colors_bg_gradient": "",
+        "container": "1170",
+        "padding_full_width": 0,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "show_sidebar": false,
+        "sidebar_collapse": "none",
+        "enable_sticky": false,
+        "sidebar_layout": "layout_2",
+        "sidebar_collapse_default": "close",
+        "sidebar_type": "vertical",
+        "sidebar_position": "right",
+        "show_filter": false,
+        "show_toolbar": true,
+        "show_sorting": true,
+        "show_item_per_page": false,
+        "show_view_as": false,
+        "products_per_page": "30",
+        "layout": "3",
+        "show_infinite_scrolling": "infinite",
+        "show_banner": false,
+        "show_banner_1": false,
+        "show_banner_2": false,
+        "show_banner_3": false,
+        "product_space_between_vert_desk": 12,
+        "product_space_between_vert_mb": 5,
+        "product_space_between_horiz_desk": 12,
+        "product_space_between_horiz_mb": 5
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "dm_soap_top",
+    "product-grid"
+  ]
+}

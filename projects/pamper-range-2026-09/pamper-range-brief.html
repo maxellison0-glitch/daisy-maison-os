@@ -1,0 +1,352 @@
+<title>Pamper Range Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Raleway:wght@400;600;700&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+:root{
+  --bg:#f7f6f1; --surface:#ffffff; --ink:#2b2b2a; --muted:#6c6b62; --line:#e4ddd4;
+  --sage:#b0af9b; --sage-deep:#5f6449; --sage-wash:#eef0e6; --kraft:#b8905a; --kraft-wash:#f6eee2;
+  --warn:#9a4a1c; --warn-wash:#fbeee4; --ok:#3f6b3a; --ok-wash:#e8f1e4; --code:#f2f1ea;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1c18; --surface:#23241f; --ink:#ecebe4; --muted:#a8a79c; --line:#3a3b33;
+    --sage:#b9bba0; --sage-deep:#c9ccad; --sage-wash:#2c2f25; --kraft:#d4ae7a; --kraft-wash:#2e281f;
+    --warn:#f0a778; --warn-wash:#35251b; --ok:#9fd08f; --ok-wash:#223020; --code:#2a2b25;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1c18; --surface:#23241f; --ink:#ecebe4; --muted:#a8a79c; --line:#3a3b33;
+  --sage:#b9bba0; --sage-deep:#c9ccad; --sage-wash:#2c2f25; --kraft:#d4ae7a; --kraft-wash:#2e281f;
+  --warn:#f0a778; --warn-wash:#35251b; --ok:#9fd08f; --ok-wash:#223020; --code:#2a2b25;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.6 Raleway,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding-inline:18px;padding-block:28px 64px;display:grid;gap:34px}
+h1,h2,h3{font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,6vw,38px)}
+h2{font-size:25px}
+h3{font-size:19px}
+p{margin:0}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-deep)}
+.lede{color:var(--muted);max-width:62ch}
+header{display:grid;gap:10px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+nav a{font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+nav a:hover,nav a:focus-visible{border-color:var(--sage-deep);outline:none}
+section{display:grid;gap:14px;scroll-margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:4px}
+.step b{font-size:14px}
+.step span{font-size:13.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.tag.ok{background:var(--ok-wash);color:var(--ok)}
+.tag.wait{background:var(--warn-wash);color:var(--warn)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:0}
+td code,p code,li code{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12.5px}
+.callout{border-left:3px solid var(--warn);background:var(--warn-wash);padding:14px 16px;border-radius:0 12px 12px 0;display:grid;gap:8px}
+.callout.soft{border-left-color:var(--sage-deep);background:var(--sage-wash)}
+ul,ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.product{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:14px}
+.product .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.price{font-family:"Libre Caslon Text",Georgia,serif;font-size:20px;font-variant-numeric:tabular-nums}
+dl{display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:8px 14px;margin:0;font-size:14.5px}
+dt{font-weight:700;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding-top:2px}
+dd{margin:0}
+@media (max-width:520px){dl{grid-template-columns:1fr}dt{padding-top:6px}}
+.prompt{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.prompt .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.prompt .bar b{font-size:14px}
+.prompt pre{margin:0;padding:14px;background:var(--code);font:400 12.8px/1.55 "IBM Plex Mono",ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto}
+button.copy{font:700 12.5px Raleway,Arial,sans-serif;padding:7px 14px;border-radius:999px;border:1px solid var(--sage-deep);background:var(--sage-deep);color:var(--bg);cursor:pointer;flex:0 0 auto}
+button.copy:focus-visible{outline:2px solid var(--kraft);outline-offset:2px}
+button.copy.done{background:var(--ok-wash);color:var(--ok);border-color:var(--ok)}
+.small{font-size:13.5px;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Daisy Maison · new range · 28 Sep 2026</span>
+  <h1>Pamper range: setup, packaging and image prompts</h1>
+  <p class="lede">Setup for the AW Aromatics stock in your photos: what each product becomes, its packaging and label sizes, what has to happen before it can go on sale, and the ChatGPT prompts that turn each one into hero images. When the images are done, send them back and I'll build the product pages.</p>
+  <nav>
+    <a href="#order">Launch order</a><a href="#legal">Before you sell</a><a href="#oil">Massage oil</a><a href="#soap">Soap slices</a><a href="#bombs">Bath bombs</a><a href="#bundle">Bundle</a><a href="#photos">Photos</a><a href="#prompts">Prompts</a><a href="#back">Send back</a>
+  </nav>
+</header>
+
+<section id="order">
+  <h2>Launch order</h2>
+  <div class="steps">
+    <div class="step"><span class="tag ok">Ready now</span><b>Cocktail bath bomb trios</b><span>Already boxed, labelled and barcoded by AW. Sell them as they are.</span></div>
+    <div class="step"><span class="tag wait">Needs labels</span><b>Soap slices</b><span>Cut, seal and band them. Each slice needs its own ingredients label.</span></div>
+    <div class="step"><span class="tag wait">Needs AW's answer</span><b>Massage oil</b><span>Rebottling under your name needs a safety report first. Ask AW today.</span></div>
+  </div>
+</section>
+
+<section id="stock">
+  <h2>What you've got</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th>AW code</th><th>Pack</th><th>Best before</th></tr></thead>
+    <tbody>
+      <tr><td>Muscle Ease Blend massage oil</td><td><code>MOB-04</code></td><td>1 L bulk bottle</td><td>07/2028</td></tr>
+      <tr><td>Emerald Truffle soap loaf</td><td><code>SLHCS-57</code></td><td>13 × 100 g slices</td><td>check label</td></tr>
+      <tr><td>Slice of Sunshine soap loaf (orange)</td><td><code>SLHCS-06</code></td><td>13 × 100 g slices</td><td>31/07/2028</td></tr>
+      <tr><td>Rose &amp; Rose Petals soap loaf</td><td><code>SLHCS-13</code></td><td>13 × 100 g slices</td><td>31/05/2028</td></tr>
+      <tr><td>Gin &amp; Tonic bath bomb trio</td><td><code>CBBUL-01</code></td><td>3 bombs, 450 g, boxed</td><td>09/06/28</td></tr>
+      <tr><td>Piña Colada bath bomb trio</td><td><code>CBBUL-06</code></td><td>3 bombs, 450 g, boxed</td><td>09/06/28</td></tr>
+      <tr><td>Mojito bath bomb trio</td><td><code>CBBUL-04</code></td><td>3 bombs, 450 g, boxed</td><td>09/06/28</td></tr>
+      <tr><td>Martini bath bomb trio</td><td><code>CBBUL-03</code></td><td>3 bombs, 450 g, boxed</td><td>09/06/28</td></tr>
+      <tr><td>Black glass dropper bottles</td><td>n/a</td><td>look like 100 ml; glass pipette, black cap</td><td>n/a</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="legal">
+  <h2>Before you sell</h2>
+  <div class="callout">
+    <p><b>Once you cut a soap loaf or rebottle the oil, you're making a new pack.</b> Every slice and bottle you sell then needs the full cosmetic label. That covers:</p>
+    <ul>
+      <li>the name and what it is</li>
+      <li>net weight or volume</li>
+      <li>the full ingredients list</li>
+      <li>warnings</li>
+      <li>a batch code and best-before date</li>
+      <li>the name and UK address of the Responsible Person</li>
+    </ul>
+    <p>The bath bomb boxes already carry all of this, so they're fine as they are. Just don't cover or remove AW's label.</p>
+  </div>
+  <div class="callout soft">
+    <p><b>Email AW these two questions before you print anything:</b></p>
+    <ol>
+      <li>"Can you supply a safety report (CPSR) that covers me slicing your soap loaves, and rebottling MOB-04 into 100 ml glass, under my brand? Will you stay the Responsible Person, or will I be?"</li>
+      <li>"Please send the full ingredients and warnings for MOB-04, SLHCS-57, SLHCS-06 and SLHCS-13. Part of the oil label is cut off in my photo."</li>
+    </ol>
+    <p>If you become the Responsible Person, each product also has to be notified on GOV.UK ("Submit cosmetic product notifications") before it goes on sale.</p>
+  </div>
+  <ul>
+    <li><b>No treatment claims.</b> "Muscle Ease" is AW's name for the blend. Describe it as a fresh massage blend for after exercise, and never say it "relieves pain" or "reduces inflammation".</li>
+    <li><b>Nothing that looks edible.</b> Keep cocktail glasses, real drinks and food props out of every image. Cosmetics that look like food are a safety issue, and alcohol imagery can get Meta ads restricted.</li>
+    <li><b>Emerald Truffle:</b> its patchouli comes from the perfume ("derived from parfum" on the label), so don't write "with patchouli oil". Say "emerald truffle scent".</li>
+  </ul>
+</section>
+
+<section id="oil">
+  <div class="product">
+    <div class="top"><h3>Personalised Massage Oil, Muscle Ease Blend, 100 ml</h3><span class="price">£14.95</span></div>
+    <dl>
+      <dt>What it is</dt><dd>100 ml of MOB-04 in your black glass dropper bottle, with a personalised front label. It's made the same way as your reed diffusers (also £14.95), so the two sit together as one range.</dd>
+      <dt>Blend</dt><dd>Grapeseed oil with lavender, mint (<i>Mentha arvensis</i>) and eucalyptus essential oils. Confirm the full list with AW.</dd>
+      <dt>Yield</dt><dd>1 L fills 9 to 10 bottles once you allow for spills. Order more oil before you run ads.</dd>
+      <dt>Bottle</dt><dd>Black glass, 100 ml (check the base or your invoice), glass pipette, black cap. The neck is probably 18 mm (DIN 18). A pipette is slow for massage oil. An 18 mm black disc-top or lotion pump is easier to use and costs pennies, but it's optional.</dd>
+      <dt>Seal for posting</dt><dd>PVC shrink band over the cap (18 mm neck; shrink it with a hairdryer), then bubble wrap. Dropper tops can weep in transit.</dd>
+      <dt>Front label</dt><dd>About 45 × 60 mm, personalised: Daisy Maison logo, name line, message line, then "Massage Oil · Muscle Ease Blend · 100 ml". Measure the straight side of your bottle first; a 100 ml bottle is usually about 45 mm across.</dd>
+      <dt>Back label</dt><dd>About 45 × 60 mm, the legal panel: ingredients, warnings, batch code, best before, Responsible Person with UK address, and 100 ml. Use the warnings on AW's label: harmful if swallowed, avoid contact with eyes, seek medical advice if swallowed. Add "For external use only", "Patch test before use" and "Keep out of reach of children", plus anything else AW's safety report lists.</dd>
+      <dt>Label stock</dt><dd>Oil-proof white or kraft polypropylene (vinyl). Oil turns paper labels see-through.</dd>
+      <dt>Personalisation</dt><dd>Line 1: a name, up to 14 characters (e.g. "Dad"). Line 2: a message, up to 28 characters (e.g. "For after the long run").</dd>
+      <dt>Who it's for</dt><dd>Father's Day, birthdays, runners, gym-goers, gardeners, partners. Avoid pregnancy and new-mum angles (mint and eucalyptus) unless AW's safety report says otherwise.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="soap">
+  <div class="product">
+    <div class="top"><h3>Soap Slices: Emerald Truffle, Slice of Sunshine, Rose &amp; Rose Petals</h3><span class="price">£4.95 each · trio £12.95</span></div>
+    <dl>
+      <dt>Yield</dt><dd>3 loaves × 13 = 39 slices of about 100 g.</dd>
+      <dt>Cutting</dt><dd>Cut along AW's 100 g scoring with a soap or cheese wire (or a long, sharp knife) and weigh every slice. Label them "100 g" only if each one weighs at least that. Keep light slices as samples or freebies.</dd>
+      <dt>Seal</dt><dd>These are glycerin soaps (the ingredients start with water and glycerin), so they sweat in open air. Shrink-wrap each slice with a heat gun, or seal it in a clear cello bag, before adding the band.</dd>
+      <dt>Belly band</dt><dd>Kraft, 40 mm wide. The length is the distance round the slice plus 15 mm overlap (measure it; probably 180–230 mm). Front: Daisy Maison, the scent name, "Cut by hand · 100 g". Back: ingredients, batch, best before, Responsible Person.</dd>
+      <dt>Trio box</dt><dd>One of each scent in a kraft box sized to three slices stacked side by side. Measure the slices before ordering.</dd>
+      <dt>True to the label</dt><dd>Slice of Sunshine: orange scent, topped with dried orange slices. Rose &amp; Rose Petals: made with real rose petals. Emerald Truffle: emerald truffle scent, with a soft shimmer from mica (only claim the shimmer if you can see it).</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="bombs">
+  <div class="product">
+    <div class="top"><h3>Cocktail Bath Bomb Trios</h3><span class="price">£12.95</span></div>
+    <dl>
+      <dt>Format</dt><dd>One product with four choices, each sold in AW's kraft box: 3 × 150 g bombs (450 g), labelled and barcoded.</dd>
+      <dt>Gin &amp; Tonic</dt><dd>Gentleman's Drink G&amp;T (white), G&amp;T + Cucumber (green), G&amp;T + Lime (yellow). Contains spearmint leaf, rosemary leaf and black pepper.</dd>
+      <dt>Piña Colada</dt><dd>Caribbean Dream (white and yellow), Strawberry Piña (yellow and red), Pear Piña Colada (yellow and green).</dd>
+      <dt>Mojito</dt><dd>Revolution de Cuba (green), Blackberry Mojito (red and brown), Pink Grapefruit Mojito (orange). Contains spearmint leaf.</dd>
+      <dt>Martini</dt><dd>Shaken Not Stirred (white), French Martini with raspberry (white and red), Espresso Martini (brown). Contains coffee.</dd>
+      <dt>All four</dt><dd>Made with shea butter. Made in the UK. On-pack warnings: children should be supervised; stop use if irritation occurs.</dd>
+      <dt>Gift touch</dt><dd>A free personalised kraft tag tied on with twine (the same tags and twine as the gift wrap kits), with a name and a short message. Keep AW's label uncovered.</dd>
+      <dt>Posting</dt><dd>Bath bombs crumble and shed scent. Bubble-wrap the box and keep it away from personalised paper items in the parcel.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="bundle">
+  <div class="product">
+    <div class="top"><h3>Pamper Night In Gift Set (optional)</h3><span class="price">£29.95</span></div>
+    <dl>
+      <dt>Contents</dt><dd>Personalised massage oil, any cocktail bath bomb trio and one soap slice. Bought separately they come to £32.85.</dd>
+      <dt>Where</dt><dd>On the Gift Bundles page, and offered as an upgrade on each of the three product pages.</dd>
+    </dl>
+  </div>
+  <p class="small">All prices are suggestions based on the diffusers (£14.95) and Gifts UNDER £15. Check them against your unit costs.</p>
+</section>
+
+<section id="photos">
+  <h2>Photos ChatGPT needs from you</h2>
+  <p>ChatGPT has to work from the real, finished product. Without photos it invents one you don't sell, which means refunds and rejected ads. For each finished item (bottle labelled, slice banded, box with its tag), shoot in daylight on a plain white or cream surface, without flash:</p>
+  <ul>
+    <li>front, straight on</li>
+    <li>45° angle</li>
+    <li>top-down</li>
+    <li>the label, close enough to read</li>
+    <li>one in your hand, for scale</li>
+  </ul>
+  <p>Also attach one of the gift wrap kit hero images (e.g. the Midnight one) as the style reference, and a photo of a reed diffuser label so the new labels match it.</p>
+</section>
+
+<section id="prompts">
+  <h2>ChatGPT prompts</h2>
+  <p class="small">Paste prompt 0 once at the start of a new chat, then one product prompt at a time, each with its photos attached. Each product has two steps: A designs the label or tag artwork, B makes the hero images.</p>
+
+  <div class="prompt"><div class="bar"><b>0 · Brand and rules (paste first)</b><button class="copy" type="button">Copy</button></div><pre>You are the product photographer and packaging designer for Daisy Maison, a UK personalised gift shop (daisymaison.co.uk). Almost all customers shop on their phones and are buying a gift for someone they love.
+
+I'll attach photos of the real product, one of our existing hero images as the style reference, and a photo of one of our reed diffuser labels.
+
+HERO IMAGE STYLE (match the attached hero exactly):
+- square 1:1, high resolution
+- warm cream marble surface, soft natural daylight from the upper left, gentle shadows
+- eucalyptus sprigs tucked into the top corners, a fold of soft beige linen in one lower corner
+- at the top: "DAISY MAISON" in small, widely spaced serif capitals, with a small outline heart below, between two thin lines
+- headline in a classic serif (like Playfair Display), dark charcoal, sentence case
+- thin hand-drawn black curved arrows pointing to each part, each with a short serif label
+- footer in italic serif between two thin rules: "Thoughtful details for a more meaningful gift"
+
+LABEL AND TAG STYLE: match the attached reed diffuser label (same fonts, layout feel and colours) so the new products look like the same family.
+
+RULES YOU MUST NEVER BREAK:
+1. Never change the product. Shape, colour, size, cap, box, label wording and contents must match my photos exactly. Only the background, props and lighting may change.
+2. Write only the text I give you, spelled exactly as written, in UK English. No extra words, prices, stars, badges, discount stickers, "bestseller", "organic", "vegan", "natural" or any health or pain-relief claims.
+3. No drinks, cocktail glasses, food or edible-looking props anywhere near the bath bombs or soap. No faces. Hands are fine.
+4. The product is the hero: sharp, centred, filling about 60% of the frame.
+5. Never write ingredient lists, warnings or other legal text. I set those myself.
+6. If anything in my photos is unclear (a colour, a word on a label), ask me instead of guessing.
+
+Reply "Ready" and wait for the first product.</pre></div>
+
+  <div class="prompt"><div class="bar"><b>1 · Personalised massage oil</b><button class="copy" type="button">Copy</button></div><pre>Product 1: Personalised Massage Oil, Muscle Ease Blend, 100 ml.
+Attached: photos of the real bottle (black glass, glass pipette dropper, black cap). The oil is pale golden.
+
+STEP A: front label artwork
+Design the personalised front label, portrait, printed at 45 mm wide × 60 mm tall (make it 3:4, and I'll set the exact size in Canva). It goes on black glass, so use a cream or kraft label with charcoal text, matching the reed diffuser label. Text, top to bottom:
+- "DAISY MAISON" with the small heart
+- "Dad" (the personalised name: large, serif)
+- "For after the long run" (the personalised message: small, italic)
+- "Massage Oil · Muscle Ease Blend · 100 ml"
+Show me 3 options and wait for me to pick one.
+
+STEP B: hero images (wait for my OK after each one)
+Use my photo of the bottle with the chosen label on it. Don't redraw the label.
+1. Hero: the bottle standing centre, the dropper lying beside it with one golden drop on the marble, a sprig of lavender and a few eucalyptus leaves nearby.
+   Headline: "Personalised massage oil"
+   Arrow labels: "Your name on the label", "Glass dropper", "100 ml", "Lavender, mint & eucalyptus"
+2. Lifestyle: the bottle on a wooden bedside table beside a folded cream towel and a small lit candle, warm evening light, a cosy UK bedroom softly out of focus. No text.
+3. Label close-up: tight on the front label so the name and message read clearly. No other text.
+4. Scale: a hand holding the bottle by the shoulder on the marble. No text.
+5. Gift: the bottle beside a flat-pack gift wrap kit and a kraft gift tag, ready to wrap. Headline: "Ready to gift"</pre></div>
+
+  <div class="prompt"><div class="bar"><b>2 · Soap slices</b><button class="copy" type="button">Copy</button></div><pre>Product 2: Soap slices, 100 g each, in three scents: Emerald Truffle, Slice of Sunshine (topped with dried orange slices) and Rose &amp; Rose Petals (topped with dried rose petals).
+Attached: photos of each real slice, sealed and unwrapped.
+
+STEP A: belly band artwork
+Design a kraft paper band that wraps round each slice: 40 mm tall and about 200 mm long (make it a long, thin strip; I'll set the exact size in Canva). Only the front panel carries text, centred:
+- "DAISY MAISON" with the small heart
+- the scent name: "Emerald Truffle" / "Slice of Sunshine" / "Rose &amp; Rose Petals"
+- "Cut by hand · 100 g"
+Leave the rest of the strip plain kraft (my legal label goes there). Show me the three scents side by side, same layout.
+
+STEP B: hero images (wait for my OK after each one)
+Use my photos of the banded slices. Don't redraw the band.
+For each scent:
+1. Hero: the banded slice centre, with one unwrapped slice beside it showing the top.
+   Headline: "Emerald Truffle soap" / "Slice of Sunshine soap" / "Rose &amp; Rose Petals soap"
+   Arrow labels:
+   - Emerald Truffle: "Cut by hand", "Emerald truffle scent", "100 g slice"
+   - Slice of Sunshine: "Cut by hand", "Topped with dried orange", "100 g slice"
+   - Rose &amp; Rose Petals: "Cut by hand", "Made with rose petals", "100 g slice"
+2. Lifestyle: the unwrapped slice on a simple ceramic soap dish beside a bathroom basin, soft daylight. No food, no text.
+Then one trio image: all three banded slices fanned out. Headline: "The soap trio". Arrow labels: the three scent names.</pre></div>
+
+  <div class="prompt"><div class="bar"><b>3 · Cocktail bath bomb trios</b><button class="copy" type="button">Copy</button></div><pre>Product 3: Cocktail bath bomb trios, 3 × 150 g bath bombs in a kraft box, in four sets.
+Attached: photos of each real box (closed and open) and the bombs.
+What's in each set:
+- Gin &amp; Tonic: Gentleman's Drink G&amp;T (white), G&amp;T + Cucumber (green), G&amp;T + Lime (yellow)
+- Piña Colada: Caribbean Dream (white and yellow), Strawberry Piña (yellow and red), Pear Piña Colada (yellow and green)
+- Mojito: Revolution de Cuba (green), Blackberry Mojito (red and brown), Pink Grapefruit Mojito (orange)
+- Martini: Shaken Not Stirred (white), French Martini (white and red), Espresso Martini (brown)
+
+STEP A: personalised gift tag artwork
+Design a kraft luggage-style gift tag, portrait, with a hole at the top for twine. It's printed at 50 × 90 mm (make it 5:9; I'll set the exact size in Canva). Text:
+- "DAISY MAISON" with the small heart
+- "For Sarah" (the personalised name)
+- "Enjoy your night in x" (the personalised message, italic)
+Show me 3 options and wait for me to pick one.
+
+STEP B: hero images (wait for my OK after each one)
+Use my photos of the boxes and bombs. Keep the bomb colours exactly as photographed.
+For each set:
+1. Hero: the open box with the three bombs showing and the lid leaning behind.
+   Headline: "Gin &amp; Tonic bath bomb trio" (or Piña Colada / Mojito / Martini)
+   Arrow labels: the three bomb names for that set, plus "3 × 150 g"
+2. Lifestyle: one bomb fizzing in a freestanding bath, the box on a wooden bath rack, candles, warm evening light. No drinks, no glasses, no people, no text.
+3. Gift: the closed box tied with twine and the kraft gift tag, next to a gift wrap kit. Headline: "A night in, gift wrapped"
+Then one range image: all four closed boxes in a row. Headline: "Choose your cocktail". Arrow labels: "Gin &amp; Tonic", "Piña Colada", "Mojito", "Martini".</pre></div>
+
+  <div class="prompt"><div class="bar"><b>4 · Pamper Night In gift set (optional)</b><button class="copy" type="button">Copy</button></div><pre>Product 4: Pamper Night In gift set: one personalised massage oil, one cocktail bath bomb trio and one soap slice.
+Use the same real product photos as before. Don't change any product.
+1. Hero: the three together on the marble.
+   Headline: "Pamper night in gift set"
+   Arrow labels: "Personalised massage oil", "Cocktail bath bomb trio", "Hand-cut soap slice"
+2. Gift: all three wrapped with a gift wrap kit and a kraft tag.
+   Headline: "Everything for a night in"</pre></div>
+</section>
+
+<section id="back">
+  <h2>What to send me back</h2>
+  <ul>
+    <li>The images you're happy with, named like <code>bathbomb-mojito-1.png</code>, uploaded to Shopify Files or sent here.</li>
+    <li>Your final prices, stock counts and the measurements (bottle, slice, box).</li>
+    <li>AW's answers on the safety report and Responsible Person, plus the full ingredient lists.</li>
+  </ul>
+  <p>I'll then build the products on your new draft copy:</p>
+  <ul>
+    <li>the four products, with personalisation fields and the flavour and scent choices</li>
+    <li>a Pamper collection, and the new items added to Gifts UNDER £15</li>
+    <li>the landing pages, with the gift wrap picker on every one</li>
+    <li>the set on the Gift Bundles page</li>
+  </ul>
+</section>
+
+<footer>Everything in "What you've got" and the ingredient notes comes from the labels in your photos. Label sizes are starting points, so measure your own bottle, slices and boxes before ordering labels.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.prompt').forEach(function (box) {
+  var btn = box.querySelector('button.copy');
+  var pre = box.querySelector('pre');
+  btn.addEventListener('click', function () {
+    var text = pre.innerText;
+    function done() { btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1800); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected, press copy';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+    else fallback();
+  });
+});
+</script>

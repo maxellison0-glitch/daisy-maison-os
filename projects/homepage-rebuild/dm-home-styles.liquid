@@ -1,0 +1,90 @@
+{%- comment -%}
+  Daisy Maison homepage layout fixes (homepage rebuild, Sep 2026).
+  Lives in templates/index.json as the "dm_home_styles" custom-liquid section,
+  first in the order so it applies before the hero paints. Homepage only:
+  every rule is scoped to .template-index or to a homepage section id.
+  Source of truth: daisy-maison-os/projects/homepage-rebuild/dm-home-styles.liquid
+{%- endcomment -%}
+<style>
+/* 1. Sentence case for the hero and section headings (the theme capitalises every word) */
+.template-index [id^="halo-image-banner-"] .banner-heading,
+.template-index .halo-block-header .title,
+.template-index .halo-block-header .title .text{text-transform:none!important}
+
+/* 2. Hero on phones: edge-to-edge photo, headline card under it instead of covering it */
+@media (max-width:767px){
+  .template-index [id^="halo-image-banner-"] .container-1170{padding-left:0!important;padding-right:0!important}
+  .template-index [id^="halo-image-banner-"] .banner-heading{--heading_line_height_tab:32px!important}
+  .template-index [id^="halo-image-banner-"] .img-box--mobile .image{padding-top:80%!important}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{
+    position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
+    transform:none!important;width:100%!important;max-width:none!important;max-height:none!important;
+    overflow:visible!important;border-radius:0!important;margin:0!important;padding:18px 20px 22px!important}
+}
+
+/* 2b. Hero on tablets and desktop: photo on the left, words on the right, so each slide shows its own photo */
+@media (min-width:768px){
+  .template-index [id^="halo-image-banner-"] .item--largeImg .banner-item{display:flex!important;align-items:center;background:#fff9f2}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .img-box--mobile{flex:0 0 50%;max-width:50%}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .img-box--mobile .image{padding-top:75%!important}
+  .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{
+    position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;
+    transform:none!important;flex:1 1 50%;width:auto!important;max-width:520px!important;max-height:none!important;
+    overflow:visible!important;margin:0 auto!important;padding:32px 40px!important;background:none!important}
+}
+@media (min-width:768px) and (max-width:1024px){
+  .template-index [id^="halo-image-banner-"] .item--largeImg .content-box--absolute{padding:20px 16px!important}
+}
+
+/* 3. Hero: the second button reads as a small text link under the main button */
+.template-index [id^="halo-image-banner-"] .banner-action .banner-button.banner-button-2,
+.template-index [id^="halo-image-banner-"] .banner-action .banner-button.banner-button-2:hover{
+  background:none!important;border-color:transparent!important;box-shadow:none!important;color:#5a4a3a!important;
+  width:auto!important;max-width:none!important;min-width:0!important;height:auto!important;min-height:0!important;
+  display:block!important;padding:0!important;margin:12px auto 0!important;font-size:14px!important;line-height:1.4!important;
+  text-transform:none!important;letter-spacing:0!important;border-radius:0!important;transform:none!important}
+.template-index [id^="halo-image-banner-"] .banner-button-2 span{text-decoration:underline;text-underline-offset:3px}
+
+/* 4. Product cards on the homepage: no sale badges, no struck-through prices */
+.template-index .sections-product-block .badge.sale-badge,
+.template-index .sections-product-block .card-price .price__compare,
+.template-index .sections-product-block .card-price .price__saved{display:none!important}
+.template-index .sections-product-block .price--on-sale .price-item--sale,
+.template-index .sections-product-block .price--on-sale .price-item--sale .money{color:var(--product-price-color)!important}
+.template-index .sections-product-block .card-title{display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+
+/* 5. Tile rows: three across on phones and small tablets (Ella only offers one or two) */
+@media (max-width:992px){
+  .spotlight-block[id$="__spotlight_block_JFKrLj"] .halo-row.scroll-snap-mobile .halo-item,
+  .spotlight-block[id$="__dm_occasion_row_2"] .halo-row.scroll-snap-mobile .halo-item{flex:0 0 30%!important;max-width:none!important;scroll-snap-stop:normal!important}
+}
+@media (max-width:767px){
+  .spotlight-block[id$="__dm_recipient_row_1"] .halo-row.column-mb-2 .halo-item,
+  .spotlight-block[id$="__dm_recipient_row_2"] .halo-row.column-mb-2 .halo-item{width:33.3333%!important}
+  .template-index .spotlight-block .spotlight-inner .title.custom-text-style{margin-top:8px!important;margin-bottom:0!important;line-height:1.25!important}
+}
+
+/* 6. Proof strip: 2 x 2 on phones, no slider */
+@media (max-width:767px){
+  .custom-service-block[class*="__16393870238958f868"] .halo-row{display:flex!important;flex-wrap:wrap!important;row-gap:10px}
+  .custom-service-block[class*="__16393870238958f868"] .halo-row .halo-item{width:50%!important}
+  .custom-service-block[class*="__16393870238958f868"] .halo-row .halo-item+.halo-item{margin-top:0!important}
+  .custom-service-block[class*="__16393870238958f868"] .halo-item>a{height:100%}
+}
+
+/* 7. How it works: picture left, words right on phones */
+@media (max-width:767px){
+  .custom-service-block[class*="__dm_how_it_works"] .halo-item>a{display:flex!important;flex-direction:row!important;align-items:center!important;gap:14px;text-align:left!important}
+  .custom-service-block[class*="__dm_how_it_works"] .policies-icon{flex:0 0 40%;max-width:40%;margin:0!important}
+  .custom-service-block[class*="__dm_how_it_works"] .policies-content{flex:1 1 auto;text-align:left!important}
+}
+.custom-service-block[class*="__dm_how_it_works"] .policies-icon img{width:100%!important;height:auto!important;border-radius:10px;display:block}
+
+/* 8. Made in Lancashire panel: sentence-case heading */
+.template-index .rich-text .heading{text-transform:none!important}
+
+/* 9. Reviews: product photo as a small square, product name links to the product */
+.customer-review-block[class*="__dm_reviews"] .review__item-image{max-width:140px!important;margin:0 auto 12px!important}
+.customer-review-block[class*="__dm_reviews"] .review__item-image img{border-radius:10px}
+.customer-review-block[class*="__dm_reviews"] .heading a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+</style>

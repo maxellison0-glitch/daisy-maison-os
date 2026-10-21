@@ -1,0 +1,84 @@
+--- a/snippets/dm-pebble-picture-builder.liquid
++++ b/snippets/dm-pebble-picture-builder.liquid
+@@ -172,6 +172,14 @@
+       assign dm_pebble_enabled = true
+       assign dm_pebble_kind = 'mumhands'
+       assign dm_second_offer_handle = '20-incredible-offer'
++    when 'family-beach-sunset-personalised-pebble-picture'
++      comment
++        Same builder as Family Walk In The Park (people with names, keep-or-change
++        wording); its own heading and wording are set inside the walkpark block.
++      endcomment
++      assign dm_pebble_enabled = true
++      assign dm_pebble_kind = 'walkpark'
++      assign dm_second_offer_handle = '20-incredible-offer'
+   endcase
+ -%}
+ 
+@@ -565,6 +573,26 @@
+               { "key": "(Offer) Names", "source": "Names", "label": "Names on your picture", "type": "text", "required": false, "placeholder": "i.e. Dan & Claire" }
+             ]
+           {%- when 'walkpark' -%}
++          {%- if product.handle == 'family-beach-sunset-personalised-pebble-picture' -%}
++            "eyebrow": "Free personalisation",
++            "heading": "Create your family beach pebble picture",
++            "copy": "Choose your frame colour, pebble characters, wording and the names to appear underneath.",
++            "secondOffer": { "key": "*SECOND FRAME*", "variantId": {{ dm_second_variant.id | json }}, "price": {{ dm_second_variant.price | json }}, "yes": "YES Please", "no": "NO Thanks", "label": "Get a second picture", "note": "Add another personalised frame", "priceLabel": {{ dm_second_variant.price | money | json }} },
++            "extraPeople": { "threshold": 5, "showPrice": true, "variantId": {{ dm_extra_people_variant.id | json }}, "price": {{ dm_extra_people_variant.price | json }}, "property": "Extra pebble people (6-8)" },
++            "people": { "mode": "variable", "min": 1, "max": 8, "countKey": "No. of pebbles", "offerCountKey": "(Offer) No. of pebbles", "fieldPrefix": "Pebble ", "offerFieldPrefix": "(Offer) Pebble " },
++            "fields": [
++              { "key": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "Change Text?", "label": "Wording", "type": "wordingpair", "default": "Family – Together is our favourite place to be", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "Wording", "placeholder": "e.g. The Turner Family" },
++              { "key": "Wording", "type": "wordingkey" },
++              { "key": "Names to appear underneath", "label": "Names to appear underneath", "type": "text", "required": false, "placeholder": "e.g. Daddy, Mummy, Ruby" }
++            ],
++            "offerFields": [
++              { "key": "(Offer) Frame Colour", "source": "Frame Colour", "label": "Frame Colour", "type": "select", "required": true, "values": {{ dm_frame_values }} },
++              { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Family – Together is our favourite place to be", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Turner Family" },
++              { "key": "(Offer) Wording", "type": "wordingkey" },
++              { "key": "(Offer) Names to appear underneath", "source": "Names to appear underneath", "label": "Names to appear underneath", "type": "text", "required": false, "placeholder": "e.g. Daddy, Mummy, Ruby" }
++            ]
++          {%- else -%}
+             "eyebrow": "Free personalisation",
+             "heading": "Create your family walk in the park pebble picture",
+             "copy": "Choose your frame colour, pebble characters (with names) and wording for your handmade picture.",
+@@ -581,6 +609,7 @@
+               { "key": "(Offer) Change Text?", "label": "Wording", "type": "wordingpair", "default": "Hold our hands for a little while Hold our hearts forever", "keepPrefix": "NO Keep ", "yesValue": "Yes I'll add my own words", "wordingKey": "(Offer) Wording", "placeholder": "e.g. The Turner Family" },
+               { "key": "(Offer) Wording", "type": "wordingkey" }
+             ]
++          {%- endif -%}
+           {%- when 'weddingswing' -%}
+             "eyebrow": "Free personalisation",
+             "heading": "Create your wedding swing pebble picture",
+--- a/snippets/dm-proof.liquid
++++ b/snippets/dm-proof.liquid
+@@ -152,6 +152,9 @@
+     when 'im-sexy-i-mow-it-personalised-street-sign-2'
+       assign dm_proof_quote = 'Bought a street sign as a wedding gift and got myself one too. A bit quirky but I love it.'
+       assign dm_proof_line = 'Loved by legends of the lawn'
++    when 'family-beach-sunset-personalised-pebble-picture'
++      assign dm_proof_quote = 'Delighted with my lovely family pebble picture. Even better than I&rsquo;d dared to hope.'
++      assign dm_proof_line = 'Loved by families across the UK'
+     when 'wedding-church-personalised-pebble-picture'
+       assign dm_proof_quote = 'Another beautiful pebble plaque received for a wedding gift. This is the 3rd one I have ordered as a gift and the recipients have loved them.'
+       assign dm_proof_line = 'Loved by couples and wedding guests'
+--- a/assets/daisy-pebble-picture.js
++++ b/assets/daisy-pebble-picture.js
+@@ -27,6 +27,7 @@
+     'birthday-blossom-tree-personalised-pebble-picture',
+     'a-little-bit-of-crazy-personalised-pebble-picture',
+     'family-walk-in-the-park-personalised-pebble-picture',
++    'family-beach-sunset-personalised-pebble-picture',
+     'everything-to-me-personalised-pebble-artwork',
+     'wedding-swing-personalised-pebble-picture',
+     'beside-you-personalised-pebble-artwork',
+@@ -226,7 +227,8 @@
+         '<select ' + prefix + '-count>'
+       ];
+       for (var count = people.min || 1; count <= (people.max || 8); count += 1) {
+-        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)</option>');
++        var extraNote = config.extraPeople && config.extraPeople.showPrice && count > (parseInt(config.extraPeople.threshold, 10) || 6) ? ' (+' + money(config.extraPeople.price, config.currency) + ')' : '';
++        html.push('<option value="' + count + '">' + count + ' (Inc dog/cat)' + extraNote + '</option>');
+       }
+       html.push('</select></label>');
+       for (var index = 1; index <= (people.max || 8); index += 1) {

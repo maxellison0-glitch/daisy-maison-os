@@ -1,0 +1,247 @@
+--- a/layout/theme.liquid
++++ b/layout/theme.liquid
+@@ -413,7 +413,7 @@
+         {%- if request.page_type == 'product' -%}
+             {%- assign dm_direct_street_sign_handles = 'always-forever-personalised-street-sign,personalised-retirement-street-sign-gift,yes-day-personalised-street-sign,home-personalised-street-sign,house-rules-personalised-street-sign,personalised-create-your-own-usa-road-sign,personalised-1st-mothers-day-street-sign-gift-copy,personalised-holiday-usa-style-street-sign,personalised-my-galentine-street-sign-gift,personalised-traditional-road-sign,personalised-dads-bar-london-street-sign,personalised-football-stadium-street-sign-copy,personalised-create-your-own-football-stadium-street-sign,personalised-london-street-sign,this-way-to-the-wedding-personalised-street-sign,grandparent-garden-personalised-street-sign,personalised-teacher-street-sign,personalised-our-family-street-sign-mothers-day-gift,personalised-vintage-style-train-sign-gift,personalised-halloween-street-sign' | split: ',' -%}
+             {%- if dm_direct_street_sign_handles contains product.handle -%}
+-                <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++                <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+                 <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+             {%- endif -%}
+         {%- endif -%}
+@@ -422,7 +422,7 @@
+             {{ 'daisy-product-poc.css' | asset_url | stylesheet_tag }}
+             {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+             {{ 'daisy-size-toggle.css' | asset_url | stylesheet_tag }}
+-            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+             
+             <script src="{{ 'daisy-street-sign-cart-model.js' | asset_url }}" defer></script>
+             <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+@@ -431,27 +431,27 @@
+         {%- if request.page_type == 'product' and product.handle == 'im-sexy-i-mow-it-personalised-street-sign-2' -%}
+             {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+             {% render 'dm-ss-prices' %}
+-            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+             <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+             <script src="{{ 'daisy-mow-it-options.js' | asset_url }}" defer></script>
+         {%- endif -%}
+         {%- if request.page_type == 'product' and product.handle == 'family-personalised-street-sign' -%}
+             {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+             {% render 'dm-ss-prices' %}
+-            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+             <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+             <script src="{{ 'daisy-family-street-sign.js' | asset_url }}" defer></script>
+         {%- elsif request.page_type == 'product' and product.handle == 'kitchen-personalised-street-sign' -%}
+             {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+             {% render 'dm-ss-prices' %}
+-            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+             <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+             <script src="{{ 'daisy-create-own-street-sign.js' | asset_url }}" defer></script>
+         {%- elsif request.page_type == 'product' and product.handle == 'personalised-my-valentine-street-sign' -%}
+             {{ 'daisy-street-sign-options.css' | asset_url | stylesheet_tag }}
+             {{ 'daisy-valentine-arcade.css' | asset_url | stylesheet_tag }}
+             {% render 'dm-ss-prices' %}
+-            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype')}</style>
++            <style>@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times-latin.woff2' | asset_url }}) format('woff2');unicode-range:U+0020-007E,U+00A0-017F,U+0218-021B,U+02C6-02C7,U+02D8-02DD,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2116,U+2122,U+2153-215E,U+2212,U+2665,U+FB01-FB02}@font-face{font-family:'DaisyStreetSignTimes';font-style:normal;font-weight:400;font-display:swap;src:url({{ 'daisy-street-sign-times.ttf' | asset_url }}) format('truetype');unicode-range:U+0180-0217,U+021C-02C5,U+02C8-02D7,U+02DE-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-052F,U+0531-0556,U+0559-055F,U+0561-0587,U+0589-058A,U+058D-058F,U+0591-05C7,U+05D0-05EA,U+05F0-05F4,U+0600-061C,U+061E-06FF,U+0750-077F,U+08A0-08B4,U+08B6-08BD,U+08D4-08FF,U+1D00-1DCA,U+1DFE-1F15,U+1F18-1F1D,U+1F20-1F45,U+1F48-1F4D,U+1F50-1F57,U+1F59,U+1F5B,U+1F5D,U+1F5F-1F7D,U+1F80-1FB4,U+1FB6-1FC4,U+1FC6-1FD3,U+1FD6-1FDB,U+1FDD-1FEF,U+1FF2-1FF4,U+1FF6-1FFE,U+2000-200F,U+2028-202F,U+203B-2043,U+2045-2064,U+2066-2071,U+2074-208E,U+2090-209C,U+20A0-20AB,U+20AD-20BF,U+20F0,U+2100-2115,U+2117-2121,U+2123-2152,U+215F-218B,U+2190-2195,U+21A8,U+2202,U+2206,U+220F,U+2211,U+2215,U+2219-221A,U+221E-221F,U+2229,U+222B,U+2248,U+2260-2261,U+2264-2265,U+2302,U+2310,U+2320-2321,U+2500,U+2502,U+250C,U+2510,U+2514,U+2518,U+251C,U+2524,U+252C,U+2534,U+253C,U+2550-256C,U+2580,U+2584,U+2588,U+258C,U+2590-2593,U+25A0-25A1,U+25AA-25AC,U+25B2,U+25BA,U+25BC,U+25C4,U+25CA-25CC,U+25CF,U+25D8-25D9,U+25E6,U+263A-263C,U+2640,U+2642,U+2660,U+2663,U+2666,U+266A-266B,U+266F,U+2C60-2C7F,U+2E00-2E42,U+A717-A7AE,U+A7B0-A7B7,U+A7F7-A7FF,U+AB30-AB65,U+F301,U+FB00,U+FB03-FB06,U+FB13-FB17,U+FB1D-FB36,U+FB38-FB3C,U+FB3E,U+FB40-FB41,U+FB43-FB44,U+FB46-FBC1,U+FBD3-FBFF,U+FC5E-FC63,U+FCF2-FCF4,U+FD3C-FD3F,U+FDF2,U+FDF4,U+FDFA-FDFD,U+FE20-FE23,U+FE70-FE74,U+FE76-FEFC,U+FFFC}</style>
+             <script src="{{ 'daisy-street-sign-preview-data.js' | asset_url }}" defer></script>
+             <script src="{{ 'daisy-valentine-street-sign.js' | asset_url }}" defer></script>
+         {%- elsif request.page_type == 'product' and product.handle == 'always-forever-personalised-street-sign' -%}
+--- a/sections/image-banner.liquid
++++ b/sections/image-banner.liquid
+@@ -237,6 +237,9 @@
+                 <div class="halo-block-content{% if fontsize_title == 60 %} disable_space_item{% endif %}" style="--arrows_position: {{ arrows_position }}">
+                     <div class="halo-banner-wrapper {% if section.settings.display_type == 'slide' %}slideshow is-slide{% endif %}"{% if section.blocks.size > 1 and section.settings.display_type == 'slide' %} data-image-banner-slide data-arrows={{ section.settings.enable_arrows}} data-dots={{ section.settings.enable_dots}} data-autoplay={{ section.settings.enable_autoplay}} data-autoplay-speed=1000{% endif %}>
+                         {%- for block in section.blocks -%}
++                            {%- comment -%} Daisy Maison: on phones the first slide of a top-of-page banner loads straight away (it is the page's main photo). Later slides and the desktop photo stay lazy, so phones never download the hidden desktop image. {%- endcomment -%}
++                            {%- assign dm_img_loading = 'lazy' -%}{%- assign dm_img_priority = 'auto' -%}
++                            {%- if forloop.first and section.index != blank and section.index <= 3 -%}{%- assign dm_img_loading = 'eager' -%}{%- assign dm_img_priority = 'high' -%}{%- endif -%}
+                             {%- if section.settings.display_type == 'slide' -%}<div>{%- endif -%}
+                             {%- liquid
+                                 if block.type == 'largeImg'
+@@ -490,14 +493,14 @@
+                                             {%- if mobile_image != blank -%}
+                                                 <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} {% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless mobile_image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ mobile_image.alt | default: shop.name | escape }}">
+                                                     {%- assign height_mb = mobile_image.width | divided_by: mobile_image.aspect_ratio | round -%}
+-                                                    {{ mobile_image | image_url: width: 750 | image_tag: loading: 'lazy',class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
++                                                    {{ mobile_image | image_url: width: 750 | image_tag: loading: dm_img_loading, fetchpriority: dm_img_priority,class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
+                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                                 </a>
+                                             {%- else -%}
+                                                 {%- if image != blank -%}
+                                                     <a class="image image-mobile image-adapt adaptive_height{% if enable_custom_image %} enable_custom_image{% endif %}"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image.aspect_ratio | times: 200 | append: '%' }}{% else %}{{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ image.alt | default: shop.name | escape }}">
+                                                     {%- assign height_mb = image.width | divided_by: image.aspect_ratio | round -%}
+-                                                    {{ image | image_url: width: 750 | image_tag: loading: 'lazy', class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
++                                                    {{ image | image_url: width: 750 | image_tag: loading: dm_img_loading, fetchpriority: dm_img_priority, class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
+                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                                     </a>
+                                                 {%- else -%}
+@@ -930,14 +933,14 @@
+                                             {%- if mobile_image != blank -%}
+                                                 <a class="image image-mobile image-adapt adaptive_height"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} {% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless mobile_image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 120 | append: '%' }}{% else %}{{ 1 | divided_by: mobile_image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ mobile_image.alt | default: shop.name | escape }}">
+                                                     {%- assign height_mb = mobile_image.width | divided_by: mobile_image.aspect_ratio | round -%}
+-                                                    {{ mobile_image | image_url: width: 750 | image_tag: loading: 'lazy',class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
++                                                    {{ mobile_image | image_url: width: 750 | image_tag: loading: dm_img_loading, fetchpriority: dm_img_priority,class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750'}}
+                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                                 </a>
+                                             {%- else -%}
+                                                 {%- if image != blank -%}
+                                                     <a class="image image-mobile image-adapt adaptive_height a"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %} style="padding-top: {% unless image.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image.aspect_ratio | times: 200 | append: '%' }}{% else %}{{ 1 | divided_by: image.aspect_ratio | times: 100 | append: '%' }}{% endunless %}" title="{{ image.alt | default: shop.name | escape }}">
+                                                     {%- assign height_mb = image.width | divided_by: image.aspect_ratio | round -%}
+-                                                    {{ image | image_url: width: 750 | image_tag: loading: 'lazy', class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
++                                                    {{ image | image_url: width: 750 | image_tag: loading: dm_img_loading, fetchpriority: dm_img_priority, class: lazy, height: height_mb, sizes: "100vw", widths: '375, 550, 750' }}
+                                                     {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                                     </a>
+                                                 {%- else -%}
+--- a/sections/header-utility.liquid
++++ b/sections/header-utility.liquid
+@@ -143,8 +143,10 @@
+ <script defer> 
+     if (window.innerWidth < 1025) {
+         let addCustomTextMenuMobile = () => {
+-            let html = `<div class="customer-service-text">${document.querySelector('.header-utility__content .customer-service-text').innerHTML}</div>`
+-            document.querySelector('.wrapper-links').innerHTML = html
++            let source = document.querySelector('.header-utility__content .customer-service-text')
++            let target = document.querySelector('.wrapper-links')
++            if (!source || !target) return
++            target.innerHTML = `<div class="customer-service-text">${source.innerHTML}</div>`
+         }
+         
+         window.addEventListener('load', () => {
+--- a/sections/main-cart.liquid
++++ b/sections/main-cart.liquid
+@@ -53,7 +53,10 @@
+             {%- if show_page_title -%}
+                 <h1 class="page-header text-{{ page_title_alignment }}">{{ 'sections.cart.title' | t }}</h1>
+             {%- endif -%}
+-            {% render 'dm-matching-gift' %}
++            {%- comment -%} Daisy Maison: the Mr & Mrs matching-set card stays above the basket; the occasion diffuser card is shown below it, after the customer's own items and totals. {%- endcomment -%}
++            {%- capture dm_gift_cards -%}{% render 'dm-matching-gift' %}{%- endcapture -%}
++            {%- assign dm_gift_parts = dm_gift_cards | split: '<aside id="dm-occasion-gift"' -%}
++            {{ dm_gift_parts[0] }}
+             {%- if settings.show_calculator_free_shipping_message -%}
+                 {{ 'component-calculator-shipping.css' | asset_url | stylesheet_tag }}
+                 {%- capture dm_shipping_markup -%}{% render 'free-shipping-component' %}{%- endcapture -%}
+@@ -373,10 +376,16 @@
+                                         <li class="shipTotal"><p class="cart-total-value form-text">{% if cart.taxes_included %}Tax included. {% endif %}Delivery added at checkout.</p></li>  
+                                     {%- endif -%}
+                                 </ul>
++                                {%- if additional_checkout_buttons -%}
++                                    <div class="dm-basket-express">
++                                        <p class="dm-basket-express__label">Express checkout</p>
++                                        {{ content_for_additional_checkout_buttons }}
++                                    </div>
++                                {%- endif -%}
+                                 <div class="dm-basket-delivery">
+                                     <strong>Made for you, sent from the UK</strong>
+                                     <p>Made to order. Dispatch: 5–7 working days, or 2–3 with Express.</p>
+-                                    <p class="dm-basket-delivery__note">Delivery time is in addition to despatch. Final delivery cost is shown at checkout.</p>
++                                    <p class="dm-basket-delivery__note">Delivery time is in addition to dispatch. Final delivery cost is shown at checkout.</p>
+                                     <a href="{{ shop.shipping_policy.url | default: '/policies/shipping-policy' }}">Delivery information</a>
+                                 </div>
+                                 {%- if section.settings.enable_sticky_button_checkout_mb -%}
+@@ -411,7 +420,7 @@
+                                         {%- if section.settings.enable_sticky_button_checkout_mb -%}
+                                             <a class="button button-1 button-checkout button-disable" href="javascript:void(0)">{{ 'sections.cart.proceed_to_checkout' | t }}</a>
+                                         {%- endif -%}
+-                                        <button type="submit" name="checkout" class="button button-1 button-checkout button-enable" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout">{{ 'sections.cart.proceed_to_checkout' | t }}</button><span class="dm-basket-checkout-note">Delivery calculated at checkout</span>
++                                        <button type="submit" name="checkout" class="button button-1 button-checkout button-enable" {% if settings.show_global_checkbox %} disabled="disabled" {% endif %} id="cart-checkout" data-href="{{ routes.cart_url | split: '/cart' | first }}/checkout">{{ 'sections.cart.proceed_to_checkout' | t }}</button><span class="dm-basket-checkout-note">UK delivery from £4.95 · free from {{ settings.calculator_free_shipping_message_price | times: 100 | money_without_trailing_zeros }}</span>
+                                         {%- if continue_button_action == "1" -%}
+                                             <a class="button button-2 button-continue"href="{{ custom_button_link | default: routes.all_products_collection_url }}" role="button">{{ 'general.continue_shopping' | t }}</a>
+                                         {%- else -%}
+@@ -435,6 +444,9 @@
+                     </div>
+                 {%- endif -%}
+             </div>
++            {%- if dm_gift_parts.size > 1 -%}
++                <div class="dm-basket-after"><aside id="dm-occasion-gift"{{ dm_gift_parts[1] }}</div>
++            {%- endif -%}
+             <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+             <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
+         </div>
+@@ -449,6 +461,9 @@
+     </cart-items>
+ </cart-coupon-discount>
+ <style type="text/css" media="screen">
++    .dm-basket-after{margin-top:24px}
++    .dm-basket-express{margin:16px 0 6px}
++    .dm-basket-express__label{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;color:#71685d}
+     #CartSection-{{ section.id }} .cart-container {padding-top: {{ padding_top }};padding-bottom: {{ padding_bottom }}}
+     #CartSection-{{ section.id }} .cart-container.container-full {padding-left: {{ side_padding_full_width }};padding-right: {{ side_padding_full_width }}}
+     @media (max-width: 1024px) {#CartSection-{{ section.id }} .cart-container {padding-top: {{ padding_top_tablet }};padding-bottom: {{ padding_bottom_tablet }}}}
+--- a/templates/product.json
++++ b/templates/product.json
+@@ -225,11 +225,13 @@
+           "type": "custom_liquid",
+           "settings": {
+             "custom_liquid": "<!-- Standalone Countdown Price Display - Add via Custom Code Element -->\n{% if product.compare_at_price > product.price %}\n<div class=\"price-countdown-widget\" \n     data-current-price=\"{{ product.price | divided_by: 100.0 }}\"\n     data-compare-price=\"{{ product.compare_at_price | divided_by: 100.0 }}\"\n     data-product-id=\"{{ product.id }}\">\n  <style>\n    .price-countdown-widget {\n      background: #fff;\n      border: 2px solid #8B2635;\n      border-radius: 8px;\n      padding: 15px;\n      margin: 20px 0;\n      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n      position: relative;\n      box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n    }\n    \n    .price-countdown-widget::before {\n      content: '🔥';\n      position: absolute;\n      top: -10px;\n      right: 15px;\n      font-size: 20px;\n      background: white;\n      padding: 0 5px;\n    }\n    \n    .pcd-price-row {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n      margin-bottom: 12px;\n      flex-wrap: wrap;\n    }\n    \n    .pcd-sale-price {\n      font-size: 24px;\n      font-weight: bold;\n      color: #8B2635;\n    }\n    \n    .pcd-original-price {\n      font-size: 18px;\n      text-decoration: line-through;\n      color: #999;\n    }\n    \n    .pcd-savings-badge {\n      background: #C9A961;\n      color: white;\n      padding: 4px 10px;\n      border-radius: 20px;\n      font-size: 14px;\n      font-weight: bold;\n      display: inline-block;\n    }\n    \n    .pcd-urgency-message {\n      color: #333;\n      font-size: 14px;\n      margin-bottom: 8px;\n      font-weight: 500;\n    }\n    \n    .pcd-countdown-container {\n      background: linear-gradient(135deg, #8B2635 0%, #6B1F2A 100%);\n      color: white;\n      padding: 10px;\n      border-radius: 6px;\n      text-align: center;\n    }\n    \n    .pcd-countdown-label {\n      font-size: 12px;\n      text-transform: uppercase;\n      letter-spacing: 1px;\n      opacity: 0.9;\n      margin-bottom: 8px;\n    }\n    \n    .pcd-countdown-timer {\n      font-size: 20px;\n      font-weight: bold;\n      font-variant-numeric: tabular-nums;\n      letter-spacing: 2px;\n    }\n    \n    .pcd-timer-row {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      margin: 4px 0;\n    }\n    \n    .pcd-time-unit {\n      display: inline-block;\n      margin: 0 12px;\n    }\n    \n    .pcd-time-value {\n      display: inline-block;\n      min-width: 30px;\n      background: rgba(255,255,255,0.1);\n      padding: 2px 6px;\n      border-radius: 4px;\n      margin-right: 4px;\n    }\n    \n    .pcd-time-label {\n      font-size: 11px;\n      opacity: 0.8;\n      text-transform: lowercase;\n    }\n    \n    @media (max-width: 480px) {\n      .price-countdown-widget {\n        padding: 12px;\n      }\n      \n      .pcd-price-row {\n        gap: 8px;\n      }\n      \n      .pcd-sale-price {\n        font-size: 20px;\n      }\n      \n      .pcd-original-price {\n        font-size: 16px;\n      }\n      \n      .pcd-countdown-timer {\n        font-size: 16px;\n      }\n      \n      .pcd-time-unit {\n        margin: 0 8px;\n      }\n    }\n    \n    @keyframes pulse-urgent {\n      0% { transform: scale(1); }\n      50% { transform: scale(1.02); }\n      100% { transform: scale(1); }\n    }\n    \n    .pcd-urgent {\n      animation: pulse-urgent 2s infinite;\n    }\n  </style>\n  \n  <div class=\"pcd-price-row\">\n    <span class=\"pcd-sale-price\">{{ product.price | money }}</span>\n    <span class=\"pcd-original-price\">{{ product.compare_at_price | money }}</span>\n    <span class=\"pcd-savings-badge\">Save {{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%</span>\n  </div>\n  \n  <div class=\"pcd-urgency-message\">\n    ⚡ Price increases in <span class=\"pcd-days-remaining\"></span> - don't miss out!\n  </div>\n  \n  <div class=\"pcd-countdown-container\">\n    <div class=\"pcd-countdown-label\">Sale Price Ends In:</div>\n    <div class=\"pcd-countdown-timer\">\n      <div class=\"pcd-timer-row\">\n        <span class=\"pcd-time-unit\">\n          <span class=\"pcd-time-value pcd-days\">00</span>\n          <span class=\"pcd-time-label\">days</span>\n        </span>\n        <span class=\"pcd-time-unit\">\n          <span class=\"pcd-time-value pcd-hours\">00</span>\n          <span class=\"pcd-time-label\">hrs</span>\n        </span>\n      </div>\n      <div class=\"pcd-timer-row\">\n        <span class=\"pcd-time-unit\">\n          <span class=\"pcd-time-value pcd-minutes\">00</span>\n          <span class=\"pcd-time-label\">mins</span>\n        </span>\n        <span class=\"pcd-time-unit\">\n          <span class=\"pcd-time-value pcd-seconds\">00</span>\n          <span class=\"pcd-time-label\">secs</span>\n        </span>\n      </div>\n    </div>\n  </div>\n\n  <script>\n  (function() {\n    function initCountdown() {\n      const widget = document.querySelector('.price-countdown-widget');\n      if (!widget) return;\n      \n      // Countdown functionality\n      function getNextMonday() {\n        const now = new Date();\n        const dayOfWeek = now.getDay();\n        const daysUntilMonday = dayOfWeek === 0 ? 1 : (8 - dayOfWeek);\n        \n        const nextMonday = new Date(now);\n        nextMonday.setDate(now.getDate() + daysUntilMonday);\n        nextMonday.setHours(0, 0, 0, 0);\n        \n        if (dayOfWeek === 1 && now.getHours() === 0 && now.getMinutes() === 0) {\n          nextMonday.setDate(nextMonday.getDate() + 7);\n        }\n        \n        return nextMonday;\n      }\n      \n      function updateCountdown() {\n        const now = new Date();\n        const target = getNextMonday();\n        const timeRemaining = target - now;\n        \n        if (timeRemaining <= 0) {\n          setTimeout(updateCountdown, 1000);\n          return;\n        }\n        \n        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));\n        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));\n        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);\n        \n        // Update countdown display\n        widget.querySelector('.pcd-days').textContent = String(days).padStart(2, '0');\n        widget.querySelector('.pcd-hours').textContent = String(hours).padStart(2, '0');\n        widget.querySelector('.pcd-minutes').textContent = String(minutes).padStart(2, '0');\n        widget.querySelector('.pcd-seconds').textContent = String(seconds).padStart(2, '0');\n        \n        // Update days remaining text\n        const daysText = days === 0 ? 'today' : days === 1 ? '1 day' : `${days} days`;\n        widget.querySelector('.pcd-days-remaining').textContent = daysText;\n        \n        // Add urgent class if less than 1 day\n        const container = widget.querySelector('.pcd-countdown-container');\n        if (days === 0) {\n          container.classList.add('pcd-urgent');\n        } else {\n          container.classList.remove('pcd-urgent');\n        }\n      }\n      \n      updateCountdown();\n      setInterval(updateCountdown, 1000);\n    }\n    \n    // Initialize immediately\n    initCountdown();\n  })();\n  </script>\n</div>\n{% endif %}"
+-          }
++          },
++          "disabled": true
+         },
+         "feefo_product_reviews_product_stars_zThR7X": {
+           "type": "shopify://apps/feefo-product-reviews/blocks/product-stars/b69c206e-8df3-4642-a8bf-d681d74dfe91",
+-          "settings": {}
++          "settings": {},
++          "disabled": true
+         },
+         "683f2b15-db3b-4f63-8d0f-e688cc678581": {
+           "type": "customer_viewing",
+@@ -238,7 +240,8 @@
+             "customer_viewing_time": 30,
+             "spacing_top": 0,
+             "spacing_bottom": 22
+-          }
++          },
++          "disabled": true
+         },
+         "10093fcf-2053-47e9-bedb-841bb0d046fa": {
+           "type": "trust_image",
+@@ -491,7 +494,8 @@
+       ],
+       "settings": {
+         "include_margins": true
+-      }
++      },
++      "disabled": true
+     },
+     "product-recommendations": {
+       "type": "product-recommendations",
+--- a/locales/en.default.json
++++ b/locales/en.default.json
+@@ -97,11 +97,11 @@
+   },
+   "calculator_free_shipping_message": {
+     "general": {
+-      "free_shipping_message": "Free shipping for all orders over",
+-      "free_shipping_message_1": "You qualify for free shipping!",
++      "free_shipping_message": "Free UK delivery on orders of",
++      "free_shipping_message_1": "Your order qualifies for free UK delivery",
+       "free_shipping_message_2": "Only",
+       "free_shipping_message_3": "away from",
+-      "free_shipping_message_4": "free shipping",
++      "free_shipping_message_4": "free UK delivery",
+       "free_shipping_1": "Free",
+       "free_shipping_2": "TBD"
+     }
+@@ -671,7 +671,7 @@
+       "caption": "Cart items",
+       "checkout": "Checkout",
+       "proceed_to_checkout": "Proceed To Checkout",
+-      "my_cart": "Shopping Cart",
++      "my_cart": "Your cart",
+       "items": "items",
+       "item": "item",
+       "view_cart": "View Cart",
+@@ -693,7 +693,7 @@
+       "cart_quantity_error_alert_2": "The quantity of this product is insufficient.",
+       "quick_cart": "Quick Cart",
+       "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
+-      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
++      "taxes_included_but_shipping_at_checkout": "Tax included. Delivery calculated at checkout.",
+       "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+       "taxes_included_shipping_at_checkout_without_policy": "Taxes included. Discounts and shipping calculated at checkout.",
