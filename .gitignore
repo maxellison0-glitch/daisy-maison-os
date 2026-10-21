@@ -54,6 +54,9 @@ projects/daisy-street-sign/plan/
 !projects/daisy-scroll-story/
 !projects/daisy-scroll-story/**
 
+!projects/email-program/
+!projects/email-program/**
+
 !Content Pipeline/
 !Content Pipeline/**
 __pycache__/
