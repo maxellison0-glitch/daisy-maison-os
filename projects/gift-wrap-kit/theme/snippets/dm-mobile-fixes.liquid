@@ -1,0 +1,30 @@
+{%- comment -%}
+  dm-mobile-fixes — small, targeted MOBILE-ONLY CSS overrides (<=767px), so
+  desktop rendering is never touched. ~95% of Daisy Maison traffic is mobile.
+
+  Fix 1 (iOS auto-zoom): personalisation text inputs render at 14px (Globo app
+  default) / 13.5px (our gift-note field). iOS Safari auto-zooms the page when a
+  field with font-size < 16px is focused, which jars the customer on EVERY tap
+  into a builder field. Raising these to 16px on phones stops the zoom. This is
+  the single highest-friction mobile issue on the personalisation flow.
+
+  Also hosts the gift-wrap-kits registry render (product pages only) because
+  layout/theme.liquid renders this snippet in <head> after daisy-cart-submit.js
+  and before every product builder — exactly the load order the wrap-kit
+  script needs. Move the render into theme.liquid the next time that file is
+  edited; nothing else depends on it living here.
+{%- endcomment -%}
+<style>
+@media (max-width: 767px) {
+  .gpo-input,
+  .gpo-text,
+  .gpo-textarea,
+  .gpo-dimension-input,
+  .dm-gn-text,
+  .daisy-street-options__field input[type="text"],
+  .daisy-street-options__field textarea {
+    font-size: 16px !important;
+  }
+}
+</style>
+{%- if request.page_type == 'product' -%}{% render 'dm-wrap-kits' %}{%- endif -%}

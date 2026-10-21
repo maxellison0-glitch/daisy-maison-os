@@ -1,0 +1,335 @@
+{%- comment -%} Daisy Maison Elf Arrival landing page — native personalisation, sibling-first offer, consistent twin-pack add-ons, clear selected states. {%- endcomment -%}
+<div class="dm-lp">
+<style>
+  .dm-lp{--g:#1f4d3a;--r:#b3202e;--cream:#fbf7ef;--sel:#eef3e7;--bd:#d9d2c3;--ink:#2b2b2b;--mut:#5a5a5a;color:var(--ink);font-size:15px;line-height:1.5;max-width:1200px;margin:0 auto;padding:16px 16px 48px;touch-action:manipulation}
+  .dm-lp *,.dm-lp *:before,.dm-lp *:after{box-sizing:border-box}
+  .dm-lp img{max-width:100%;height:auto;display:block}
+  .dm-lp h1{font-size:25px;line-height:1.15;color:var(--g);margin:0 0 8px;text-wrap:balance}
+  .dm-lp h2{font-size:20px;color:var(--g);margin:0 0 12px;text-wrap:balance}
+  .dm-lp .lp-grid{display:grid;gap:24px}
+  @media(min-width:990px){.dm-lp .lp-grid{grid-template-columns:1.05fr .95fr;align-items:start}.dm-lp .lp-buy{position:sticky;top:24px}}
+  .dm-lp .lp-media-main{border-radius:16px;overflow:hidden;border:1px solid var(--bd);background:#fff}
+  .dm-lp .lp-thumbs{display:flex;gap:8px;margin-top:10px}
+  .dm-lp .lp-thumbs button{padding:0;border:2px solid var(--bd);border-radius:10px;overflow:hidden;background:#fff;cursor:pointer;width:64px;height:64px;flex:0 0 auto}
+  .dm-lp .lp-thumbs button[aria-current="true"]{border-color:var(--g);box-shadow:0 0 0 1px var(--g)}
+  .dm-lp .lp-thumbs button:focus-visible,.dm-lp input:focus-visible,.dm-lp .lp-cta:focus-visible,.dm-lp summary:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+  .dm-lp .lp-thumbs img{width:100%;height:100%;object-fit:cover}
+  .dm-lp .lp-eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--r);margin:0 0 4px}
+  .dm-lp .lp-sub{margin:0 0 12px;color:var(--mut);font-size:14px}
+  .dm-lp .lp-trust{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 14px;padding:0;list-style:none;font-size:13px;font-weight:700;color:var(--g)}
+  .dm-lp fieldset{border:0;margin:0 0 14px;padding:0}
+  .dm-lp legend{font-weight:800;color:var(--g);font-size:15px;margin-bottom:8px;padding:0}
+  .dm-lp .lp-field{margin:0 0 8px}
+  .dm-lp .lp-field label{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+  .dm-lp .lp-field input{width:100%;min-height:46px;padding:10px 12px;border:1.5px solid var(--bd);border-radius:10px;font-size:16px;background:#fff;color:var(--ink)}
+  .dm-lp .lp-field.lp-err input{border-color:var(--r)}
+  .dm-lp .lp-errmsg{display:none;color:var(--r);font-size:12px;font-weight:700;margin-top:3px}
+  .dm-lp .lp-field.lp-err .lp-errmsg{display:block}
+  .dm-lp .lp-offer{border:2px dashed var(--g);border-radius:14px;background:#fff;padding:12px 14px;margin:0 0 14px;transition:background .15s,border-style .15s}
+  .dm-lp .lp-offer.lp-sel{background:var(--sel);border-style:solid;box-shadow:inset 0 0 0 1px var(--g)}
+  .dm-lp .lp-offer-chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--g);color:#fff;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+  .dm-lp .lp-offer-row{display:flex;align-items:center;gap:10px;cursor:pointer}
+  .dm-lp .lp-offer-row input{width:22px;height:22px;accent-color:var(--g);flex:0 0 auto;margin:0}
+  .dm-lp .lp-offer-row .lp-ck-name{font-size:14px;font-weight:700}
+  .dm-lp .lp-offer-row .lp-ck-sub{display:block;font-size:12px;font-weight:400;color:var(--mut)}
+  .dm-lp .lp-offer-row .lp-ck-price{margin-left:auto;text-align:right;white-space:nowrap}
+  .dm-lp .lp-offer-row .lp-ck-price strong{color:var(--g)}
+  .dm-lp .lp-offer-row .lp-was{display:block;font-size:11px;color:var(--mut)}
+  .dm-lp .lp-offer.lp-sel .lp-tick{display:inline}
+  .dm-lp .lp-tick{display:none;color:var(--g);font-weight:800}
+  .dm-lp .lp-offer-fields{margin-top:12px;padding-top:12px;border-top:1px dashed var(--g)}
+  .dm-lp .lp-check{display:flex;align-items:center;gap:10px;border:1.5px solid var(--bd);border-radius:12px;background:#fff;padding:10px 12px;margin:0 0 6px;cursor:pointer;transition:border-color .15s,background .15s;flex-wrap:wrap}
+  .dm-lp .lp-check:hover{border-color:var(--g)}
+  .dm-lp .lp-check.lp-sel{border-color:var(--g);background:var(--sel);box-shadow:inset 0 0 0 1px var(--g)}
+  .dm-lp .lp-check input[type="checkbox"]{width:22px;height:22px;accent-color:var(--g);flex:0 0 auto;margin:0}
+  .dm-lp .lp-check img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:0 0 auto}
+  .dm-lp .lp-check .lp-ck-name{font-size:14px;font-weight:700;color:var(--ink);min-width:0}
+  .dm-lp .lp-check .lp-ck-sub{display:block;font-size:12px;font-weight:400;color:var(--mut)}
+  .dm-lp .lp-check .lp-ck-price{margin-left:auto;font-weight:800;color:var(--g);white-space:nowrap}
+  .dm-lp .lp-check.lp-sel .lp-ck-price:before{content:"✓ ";font-weight:800}
+  .dm-lp .lp-qty{display:none;width:100%;gap:8px;margin-top:8px}
+  .dm-lp .lp-qty.lp-show{display:flex}
+  .dm-lp .lp-chip{flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid var(--bd);border-radius:10px;padding:10px 8px;font-size:13px;font-weight:700;cursor:pointer;background:#fff;text-align:center;transition:border-color .15s,background .15s}
+  .dm-lp .lp-chip input{accent-color:var(--g);margin:0;width:16px;height:16px}
+  .dm-lp .lp-chip .lp-save{color:var(--g);font-weight:800;font-size:12px}
+  .dm-lp .lp-chip.lp-on{border-color:var(--g);background:var(--sel);color:var(--g);box-shadow:inset 0 0 0 1px var(--g)}
+  .dm-lp .lp-bundlenote{display:none;margin:2px 0 8px;padding:8px 12px;border-radius:10px;background:var(--sel);border:1px solid var(--g);color:var(--g);font-size:13px;font-weight:700}
+  .dm-lp .lp-total{display:flex;justify-content:space-between;align-items:baseline;margin:12px 0 10px;font-size:16px}
+  .dm-lp .lp-total strong{font-size:24px;color:var(--ink)}
+  .dm-lp .lp-cta{width:100%;min-height:52px;border:0;border-radius:12px;background:var(--g);color:#fff;font-size:16px;font-weight:800;cursor:pointer;transition:background .15s}
+  .dm-lp .lp-cta:hover{background:#16382a}
+  .dm-lp .lp-cta[disabled]{opacity:.7;cursor:default}
+  .dm-lp .lp-formerr{display:none;margin:10px 0 0;padding:10px 12px;border-radius:10px;background:#fdf0f0;border:1px solid var(--r);color:var(--r);font-size:13px;font-weight:700}
+  .dm-lp .lp-reassure{margin:12px 0 0;font-size:13px;color:var(--mut);padding-left:0;list-style:none}
+  .dm-lp .lp-reassure li{margin:0 0 4px}
+  .dm-lp .lp-section{margin:40px 0 0}
+  .dm-lp .lp-steps{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+  @media(min-width:768px){.dm-lp .lp-steps{grid-template-columns:1fr 1fr 1fr}}
+  .dm-lp .lp-steps li{border:1px solid var(--bd);border-radius:12px;background:#fff;padding:14px}
+  .dm-lp .lp-steps .lp-n{display:inline-block;width:28px;height:28px;border-radius:50%;background:var(--r);color:#fff;font-weight:800;text-align:center;line-height:28px;margin-bottom:8px}
+  .dm-lp .lp-verse{border:2px dashed var(--r);border-radius:14px;background:var(--cream);padding:18px}
+  .dm-lp .lp-verse p{margin:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;line-height:1.6}
+  .dm-lp .lp-cols{display:grid;gap:20px}
+  @media(min-width:768px){.dm-lp .lp-cols{grid-template-columns:1fr 1fr}}
+  .dm-lp .lp-cols ul{margin:0;padding-left:18px}
+  .dm-lp .lp-cols li{margin:0 0 6px}
+  .dm-lp details{border:1px solid var(--bd);border-radius:10px;background:#fff;padding:10px 12px;margin:0 0 8px}
+  .dm-lp summary{font-weight:700;color:var(--g);cursor:pointer}
+  .dm-lp details p{margin:8px 0 0}
+  .dm-lp .lp-cross{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .dm-lp .lp-cross a{text-decoration:none;color:var(--ink);border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:#fff;transition:border-color .15s}
+  .dm-lp .lp-cross a:hover{border-color:var(--g)}
+  .dm-lp .lp-cross .lp-c-body{padding:10px 12px;font-size:13px}
+  .dm-lp .lp-cross .lp-c-body strong{display:block;color:var(--g)}
+  .dm-lp .lp-trustbar{margin:40px 0 0;padding:14px 16px;border-radius:12px;background:var(--g);color:#fff;font-size:14px}
+  .dm-lp .lp-trustbar a{color:var(--cream);font-weight:700}
+  @media(prefers-reduced-motion:reduce){.dm-lp *{transition:none!important}}
+</style>
+
+{%- assign m1 = product.media[0] -%}
+{%- comment -%} Christmas Gift Wrap Kit add-on: read live from the product so price/id track admin; the row only renders while the kit is active + purchasable. {%- endcomment -%}
+{%- assign dm_wrap = all_products['christmas-gift-wrap-kit'] -%}
+{%- assign dm_wrap_v = dm_wrap.selected_or_first_available_variant -%}
+{%- assign dm_wrap_img = dm_wrap.images[1] | default: dm_wrap.featured_image -%}
+{%- assign dm_wrap_live = false -%}
+{%- if dm_wrap.available and dm_wrap_v.available and dm_wrap_img -%}{%- assign dm_wrap_live = true -%}{%- endif -%}
+<div class="lp-grid">
+  <div class="lp-media">
+    <div class="lp-media-main">
+      <img id="dm-main-img" src="{{ m1 | image_url: width: 1200 }}" width="1200" height="1200" alt="{{ m1.alt | default: product.title | escape }}" fetchpriority="high">
+    </div>
+    <div class="lp-thumbs" role="group" aria-label="Product photos">
+      {%- for media in product.media limit: 5 -%}
+      <button type="button" data-full="{{ media | image_url: width: 1200 }}" aria-label="View photo {{ forloop.index }}" {% if forloop.first %}aria-current="true"{% endif %}>
+        <img src="{{ media | image_url: width: 128 }}" width="64" height="64" alt="" loading="lazy">
+      </button>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="lp-buy">
+    <p class="lp-eyebrow">Daisy Maison Elf Postcard</p>
+    <h1>The morning their elf arrives, holding a postcard with their name on it.</h1>
+    <p class="lp-sub">A personalised acrylic arrival postcard for your family's Christmas elf. Hand-drawn in Blackpool, made to be found on the first morning of December.</p>
+    <ul class="lp-trust">
+      <li>✓ Free personalisation</li>
+      <li>✓ 3&nbsp;mm acrylic, UV printed</li>
+      <li>✓ Trustpilot Excellent</li>
+    </ul>
+
+    <form id="dm-elf-form" novalidate>
+      <fieldset>
+        <legend>Personalise the postcard</legend>
+        <div class="lp-field" data-req>
+          <label for="dm-child">Child's name, or names</label>
+          <input id="dm-child" name="child" type="text" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Lottie &amp; Arlo…">
+          <p class="lp-errmsg">Please add the name for the top of the postcard.</p>
+        </div>
+        <div class="lp-field" data-req>
+          <label for="dm-elf">Your elf's name</label>
+          <input id="dm-elf" name="elf" type="text" autocomplete="off" spellcheck="false" maxlength="40" placeholder="Tinsel, Jingle, Pip…">
+          <p class="lp-errmsg">Please add your elf's name for the signature.</p>
+        </div>
+        <div class="lp-field" data-req>
+          <label for="dm-addr">Family name and address, as you want it printed</label>
+          <input id="dm-addr" name="addr" type="text" autocomplete="off" maxlength="120" placeholder="The Hammond Family, 14 Meadow Lane, Durham…">
+          <p class="lp-errmsg">Please add the address for the left of the postcard.</p>
+        </div>
+      </fieldset>
+
+      <div class="lp-offer" id="dm-offer-box">
+        <span class="lp-offer-chip">Sibling offer</span>
+        <label class="lp-offer-row"><input type="checkbox" id="dm-sib"><span class="lp-ck-name">Add a second postcard, one for each child <span class="lp-tick">✓ Added</span><span class="lp-ck-sub">Their own name, their own elf signature. No arguments on arrival morning.</span></span><span class="lp-ck-price"><strong>+£9.95</strong><span class="lp-was">usually £11.95</span></span></label>
+        <div class="lp-offer-fields" id="dm-sib-fields" hidden>
+          <div class="lp-field" data-req2>
+            <label for="dm-child2">Second postcard: child's name</label>
+            <input id="dm-child2" type="text" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Their brother or sister's name…">
+            <p class="lp-errmsg">Please add the name for the second postcard.</p>
+          </div>
+          <div class="lp-field" data-req2>
+            <label for="dm-elf2">Second postcard: elf's name</label>
+            <input id="dm-elf2" type="text" autocomplete="off" spellcheck="false" maxlength="40" placeholder="Same elf, or their own…">
+            <p class="lp-errmsg">Please add the elf's name for the second postcard.</p>
+          </div>
+          <div class="lp-field" data-req2>
+            <label for="dm-addr2">Second postcard: family name and address</label>
+            <input id="dm-addr2" type="text" autocomplete="off" maxlength="120" placeholder="Usually the same address…">
+            <p class="lp-errmsg">Please add the address for the second postcard.</p>
+          </div>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Build the set</legend>
+
+        <label class="lp-check" data-row="plush"><input type="checkbox" id="dm-add-plush"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/hf_20260903_122754_34134686-23c0-4059-92b7-aedfb87978ec.png?v=1788438813&amp;width=128" width="44" height="44" alt="" loading="lazy"><span class="lp-ck-name">Plush Elf Friend<span class="lp-ck-sub">12" soft-bodied elf, slots through the postcard</span></span><span class="lp-ck-price" data-price-label="plush">+£7.95</span>
+          <span class="lp-qty" data-qty="plush" role="radiogroup" aria-label="How many plush elves">
+            <label class="lp-chip lp-on"><input type="radio" name="plushqty" value="1" checked>Just one · £7.95</label>
+            <label class="lp-chip"><input type="radio" name="plushqty" value="2">One each · £13.95 <span class="lp-save">save £1.95</span></label>
+          </span>
+        </label>
+
+        <label class="lp-check" data-row="pj"><input type="checkbox" id="dm-add-pj"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/hf_20260903_152443_1d242ff8-403c-41fc-82d0-b3e4d417a03f.png?v=1788449630&amp;width=128" width="44" height="44" alt="" loading="lazy"><span class="lp-ck-name">Elf Pyjamas, red print<span class="lp-ck-sub">Bedtime on arrival night</span></span><span class="lp-ck-price" data-price-label="pj">+£7.95</span>
+          <span class="lp-qty" data-qty="pj" role="radiogroup" aria-label="How many pyjama sets">
+            <label class="lp-chip lp-on"><input type="radio" name="pjqty" value="1" checked>Just one · £7.95</label>
+            <label class="lp-chip"><input type="radio" name="pjqty" value="2">One each · £13.95 <span class="lp-save">save £1.95</span></label>
+          </span>
+        </label>
+
+        <label class="lp-check" data-row="sheets"><input type="checkbox" id="dm-add-sheets"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/hf_20260903_153243_90468dd8-ef7e-4b86-bff0-fa43ac5ffb55.png?v=1788449677&amp;width=128" width="44" height="44" alt="" loading="lazy"><span class="lp-ck-name">Santa Report Sheets, 5 pack<span class="lp-ck-sub">Nice or naughty, filled in overnight. One pack covers both elves.</span></span><span class="lp-ck-price">+£4.95</span></label>
+
+        {%- if dm_wrap_live -%}
+        <label class="lp-check" data-row="wrap"><input type="checkbox" id="dm-add-wrap"><img src="{{ dm_wrap_img | image_url: width: 128 }}" width="44" height="44" alt="" loading="lazy"><span class="lp-ck-name">Christmas Gift Wrap Kit<span class="lp-ck-sub">Kraft paper, red &amp; white twine, pine sprig and a gift tag. Sealed flat, ready to wrap it up.</span></span><span class="lp-ck-price" data-price-label="wrap">+£{{ dm_wrap_v.price | money_without_currency }}</span>
+          <span class="lp-qty" data-qty="wrap" role="radiogroup" aria-label="How many gift wrap kits">
+            <label class="lp-chip lp-on"><input type="radio" name="wrapqty" value="1" checked>Just one · £{{ dm_wrap_v.price | money_without_currency }}</label>
+            <label class="lp-chip"><input type="radio" name="wrapqty" value="2">One each · £{{ dm_wrap_v.price | times: 1.5 | round | money_without_currency }} <span class="lp-save">2nd half price</span></label>
+          </span>
+        </label>
+        {%- endif -%}
+
+        <p class="lp-bundlenote" id="dm-bundle-note" role="status">Night Shift Set applied — pyjamas + report sheets for £9.95, saving £2.95.</p>
+      </fieldset>
+
+      <div class="lp-total"><span>Total</span> <strong id="dm-total" aria-live="polite">£11.95</strong></div>
+      <button type="submit" class="lp-cta" id="dm-cta">Add to basket</button>
+      <p class="lp-formerr" id="dm-form-err" role="alert"></p>
+    </form>
+
+    <ul class="lp-reassure">
+      <li>🧝 Already have an elf? The slots fit most 12" soft-bodied elves, and the postcard stands on its own beside them.</li>
+      <li>📦 Made to order in the UK. Dispatched tracked in 5 to 7 working days, express 2 to 3 at checkout.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="lp-section">
+  <h2>How it works</h2>
+  <ol class="lp-steps">
+    <li><span class="lp-n">1</span><strong>Personalise above.</strong> Child's name, your elf's name, and the address you want printed.</li>
+    <li><span class="lp-n">2</span><strong>We print it in the UK.</strong> Made to order on 3&nbsp;mm acrylic with UV inks, then dispatched tracked.</li>
+    <li><span class="lp-n">3</span><strong>Their elf arrives holding it.</strong> Slots for arms and legs mean the elf holds the postcard on its own.</li>
+  </ol>
+</div>
+
+<div class="lp-section lp-verse">
+  <p class="lp-eyebrow">What the postcard says</p>
+  <p>Season's greetings, I'm here to play.<br>I'll be here watching you until Christmas Day.<br>I'll be taking note of all the nice things you do,<br>to report to Santa and his clever elves too.<br>Each morning you must search left and right,<br>to see what I was up to whilst your eyes were closed tight.<br>If you're good and as nice as can be,<br>you'll find your presents under the tree.<br><span style="color:#b3202e">Love, <em>your elf's name</em></span></p>
+</div>
+
+<div class="lp-section lp-cols">
+  <div>
+    <h2>Personalisation guide</h2>
+    <ul>
+      <li><strong>Names at the top:</strong> one child or several, for example "Lottie &amp; Arlo".</li>
+      <li><strong>Your elf's name at the bottom:</strong> Tinsel, Jingle, Snowdrop, Pip, Twinkle, or whatever your family calls them.</li>
+      <li><strong>Address on the left:</strong> family name and address, exactly as you would like it printed.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Size and dispatch</h2>
+    <ul>
+      <li>Approximately 10 x 16&nbsp;cm, 3&nbsp;mm acrylic, UV printed so it will not fade or tear.</li>
+      <li>Arm and leg slots 1.7&nbsp;cm, sized for most 12" soft-bodied elf toys.</li>
+      <li>Dispatched in 5 to 7 working days, express 2 to 3. Tracked Royal Mail or Yodel.</li>
+      <li>Free UK delivery on orders over £50. Recyclable protective packaging.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="lp-section">
+  <h2>Questions</h2>
+  <details><summary>Will it fit the elf we already have?</summary><p>The slots suit most 12" soft-bodied elves with slim arms and legs. If yours is larger, the postcard also stands on its own beside the elf.</p></details>
+  <details><summary>Can two children share one postcard?</summary><p>Yes. Put both names at the top. For one each, tick the sibling offer above and the second postcard is £9.95.</p></details>
+  <details><summary>When should I order for a 1 December arrival?</summary><p>Order by mid November and standard dispatch arrives comfortably before 1 December. After that, choose express dispatch at checkout.</p></details>
+  <details><summary>Do you sell a girl elf?</summary><p>Our Plush Elf Friend is the classic red boy elf. The postcard slots fit most 12" girl elves too, so she is very welcome to hold it.</p></details>
+  <details><summary>Can the verse be changed?</summary><p>The verse is part of the hand-drawn design and stays the same. The names and address are yours.</p></details>
+</div>
+
+<div class="lp-section">
+  <h2>Complete the Christmas magic</h2>
+  <div class="lp-cross">
+    <a href="/products/family-signpost-christmas-hanging-decoration"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/Family-Sign-Post.jpg?v=1725219889&amp;width=400" width="400" height="400" alt="Family Signpost Christmas hanging decoration" loading="lazy"><span class="lp-c-body"><strong>Family Signpost decoration</strong>£12.95</span></a>
+    <a href="/products/personalised-family-festive-christmas-pebble-star-hanging-decoration"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/Large-Star-3.jpg?v=1725220601&amp;width=400" width="400" height="400" alt="Personalised Family Festive pebble star hanging decoration" loading="lazy"><span class="lp-c-body"><strong>Family Festive pebble star</strong>£15.95</span></a>
+    <a href="/products/santa-stop-here-personalised-christmas-street-sign"><img src="https://cdn.shopify.com/s/files/1/0897/0017/2115/files/Santa-Stop-Here-Red.jpg?v=1725219464&amp;width=400" width="400" height="400" alt="Santa Stop Here personalised Christmas street sign" loading="lazy"><span class="lp-c-body"><strong>Santa Stop Here street sign</strong>£18.95</span></a>
+  </div>
+</div>
+
+<p class="lp-trustbar">Buy with confidence from an established family business, <a href="https://uk.trustpilot.com/review/daisymaison.co.uk" rel="noopener" target="_blank">rated Excellent on Trustpilot</a> and loved by more than 8,300 customers across the UK.</p>
+
+<script>
+(function(){
+  var form=document.getElementById('dm-elf-form');if(!form)return;
+  var BASE=1195, POSTCARD={{ product.selected_or_first_available_variant.id }};
+  var V_SECOND=54848138936659, V_SHEETS=54847925584211, V_BUNDLE=54847925846355;
+  var PLUSH={one:{v:54846943887699,p:795},two:{v:54848333971795,p:1395}};
+  var PJ={one:{v:54847808667987,p:795},two:{v:54848335380819,p:1395}};
+  var WRAP={ v: {{ dm_wrap_v.id | default: 0 }}, p: {{ dm_wrap_v.price | default: 0 }} };
+  var totalEl=document.getElementById('dm-total'), note=document.getElementById('dm-bundle-note');
+  var sib=document.getElementById('dm-sib'), sibFields=document.getElementById('dm-sib-fields'), offerBox=document.getElementById('dm-offer-box');
+  var plush=document.getElementById('dm-add-plush'), pj=document.getElementById('dm-add-pj'), sheets=document.getElementById('dm-add-sheets');
+  var wrap=document.getElementById('dm-add-wrap'), wrapRow=document.querySelector('[data-row="wrap"]'), wrapLabel=document.querySelector('[data-price-label="wrap"]');
+  var mainImg=document.getElementById('dm-main-img');
+  document.querySelectorAll('.lp-thumbs button').forEach(function(b){b.addEventListener('click',function(){mainImg.removeAttribute('srcset');mainImg.src=b.getAttribute('data-full');document.querySelectorAll('.lp-thumbs button').forEach(function(x){x.removeAttribute('aria-current')});b.setAttribute('aria-current','true');});});
+  function qtyOf(name){if(!sib.checked)return 1;var r=document.querySelector('input[name="'+name+'"][value="2"]');return r&&r.checked?2:1}
+  function bundleActive(){return pj.checked&&qtyOf('pjqty')===1&&sheets.checked}
+  function recalc(){
+    var t=BASE;
+    if(sib.checked)t+=995;
+    if(plush.checked)t+=(qtyOf('plushqty')===2?PLUSH.two.p:PLUSH.one.p);
+    if(wrap&&wrap.checked)t+=(qtyOf('wrapqty')===2?WRAP.p+Math.round(WRAP.p/2):WRAP.p);
+    if(bundleActive()){t+=995;note.style.display='block'}else{note.style.display='none';if(pj.checked)t+=(qtyOf('pjqty')===2?PJ.two.p:PJ.one.p);if(sheets.checked)t+=495}
+    offerBox.classList.toggle('lp-sel',sib.checked);
+    document.querySelector('[data-row="plush"]').classList.toggle('lp-sel',plush.checked);
+    document.querySelector('[data-row="pj"]').classList.toggle('lp-sel',pj.checked);
+    document.querySelector('[data-row="sheets"]').classList.toggle('lp-sel',sheets.checked);
+    if(wrapRow)wrapRow.classList.toggle('lp-sel',!!(wrap&&wrap.checked));
+    if(wrapLabel)wrapLabel.textContent='+£'+(((wrap&&wrap.checked&&qtyOf('wrapqty')===2)?WRAP.p+Math.round(WRAP.p/2):WRAP.p)/100).toFixed(2);
+    document.querySelectorAll('.lp-qty').forEach(function(q){q.classList.toggle('lp-show',sib.checked)});
+    document.querySelector('[data-price-label="plush"]').textContent=(plush.checked&&qtyOf('plushqty')===2)?'+£13.95':'+£7.95';
+    document.querySelector('[data-price-label="pj"]').textContent=(pj.checked&&qtyOf('pjqty')===2)?'+£13.95':'+£7.95';
+    document.querySelectorAll('.lp-chip').forEach(function(c){c.classList.toggle('lp-on',c.querySelector('input').checked)});
+    totalEl.textContent='£'+(t/100).toFixed(2);
+  }
+  [sib,plush,pj,sheets,wrap].filter(Boolean).forEach(function(c){c.addEventListener('change',recalc)});
+  document.querySelectorAll('.lp-qty input').forEach(function(r){r.addEventListener('change',function(){
+    var row=r.closest('.lp-check').querySelector('input[type="checkbox"]');
+    if(!row.checked){row.checked=true}
+    recalc();
+  })});
+  sib.addEventListener('change',function(){
+    sibFields.hidden=!sib.checked;
+    if(!sib.checked){document.querySelectorAll('.lp-qty input[value="1"]').forEach(function(r){r.checked=true})}
+    recalc();
+  });
+  recalc();
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('dm-form-err');err.style.display='none';
+    var bad=null;
+    var checks=[['dm-child',true],['dm-elf',true],['dm-addr',true],['dm-child2',sib.checked],['dm-elf2',sib.checked],['dm-addr2',sib.checked]];
+    checks.forEach(function(p){
+      var el=document.getElementById(p[0]),wrap=el.closest('.lp-field');
+      var isBad=p[1]&&!el.value.trim();
+      wrap.classList.toggle('lp-err',isBad);
+      if(isBad&&!bad)bad=el;
+    });
+    if(bad){bad.focus();return}
+    var items=[{id:POSTCARD,quantity:1,properties:{"Child's name(s)":document.getElementById('dm-child').value.trim(),"Elf's name":document.getElementById('dm-elf').value.trim(),"Address":document.getElementById('dm-addr').value.trim()}}];
+    if(sib.checked)items.push({id:V_SECOND,quantity:1,properties:{"Child's name(s)":document.getElementById('dm-child2').value.trim(),"Elf's name":document.getElementById('dm-elf2').value.trim(),"Address":document.getElementById('dm-addr2').value.trim()}});
+    if(plush.checked)items.push({id:(qtyOf('plushqty')===2?PLUSH.two.v:PLUSH.one.v),quantity:1});
+    if(wrap&&wrap.checked&&WRAP.v)items.push({id:WRAP.v,quantity:(qtyOf('wrapqty')===2?2:1),properties:{'Add-on':'Christmas Gift Wrap Kit'}});
+    if(bundleActive()){items.push({id:V_BUNDLE,quantity:1})}else{if(pj.checked)items.push({id:(qtyOf('pjqty')===2?PJ.two.v:PJ.one.v),quantity:1});if(sheets.checked)items.push({id:V_SHEETS,quantity:1})}
+    var btn=document.getElementById('dm-cta');btn.disabled=true;btn.textContent='Adding…';
+    fetch('/cart/add.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:items})}).then(function(r){if(!r.ok)throw r;window.location.href='/cart'}).catch(function(){btn.disabled=false;btn.textContent='Add to basket';err.textContent='Something went wrong adding to the basket. Please try again.';err.style.display='block'});
+  });
+})();
+</script>
+</div>
+
+{% schema %}
+{
+  "name": "DM Elf Landing",
+  "settings": [],
+  "presets": [{ "name": "DM Elf Landing" }]
+}
+{% endschema %}

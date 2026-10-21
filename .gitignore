@@ -96,3 +96,7 @@ Content Pipeline/**/*.pyc
 # Content Pipeline/tools/video/setup-render-env.sh for rebuilding those.
 node_modules/
 .hyperframes-cache/
+
+# Christmas gift wrap kit project (theme files, decision record, Globo audit)
+!projects/gift-wrap-kit/
+!projects/gift-wrap-kit/**
