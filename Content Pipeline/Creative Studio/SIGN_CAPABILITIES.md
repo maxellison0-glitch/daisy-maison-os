@@ -26,7 +26,10 @@ and the official swatch chart, archived at
 | Grey | Mid grey |
 
 Border + lettering carry the colour; the field is cream/off-white across
-the five. **Validated:** Blue, end-to-end (recolour of the real photo →
+the five. **The SVG from `build.py` defines exactly what the sign looks
+like — border, lettering, colours, layout. Use it as the printing
+reference. Do not invent colours or border styles.**
+**Validated:** Blue, end-to-end (recolour of the real photo →
 Freya hero), with one flag: the border band rendered slightly slimmer
 than the black original. **Declared, untested:** the other three
 non-black colours (same method, ~2 credits each to prove); field/
