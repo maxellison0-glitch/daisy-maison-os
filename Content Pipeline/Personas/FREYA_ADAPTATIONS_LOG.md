@@ -213,3 +213,68 @@ Format:
   distribution rather than hooks, honest that the live-commission mechanic is
   untested on a follower graph this quiet and could return four comments.
 - Signed: Freya · Alan
+
+## 2026-08-10
+
+- Gap acknowledged first: **this is the first automated run since 28 July —
+  12 days unlogged.** No claim is made about what happened in between beyond
+  what today's live pulls show. Do not read the gap as "nothing happened";
+  read it as "not measured here."
+- Learned: (A) 9 Aug, pulled live from Shopify: 67 orders, £1,811.45 total
+  sales, AOV £27.04, 1,303 sessions, CVR 4.07%, checkout abandonment 40.4%
+  (over the digest's 40% flag line). No-referrer orders were 19/67 (30.8% of
+  revenue) — dark social still running strong, consistent with 26–28 Jul.
+  Mr & Mrs Street Sign held 37.3% of orders, same concentration as 3 Aug.
+  (A) **ROAS 2.19x on 9 Aug** (£828.04 combined FB+Google spend against
+  £1,811.45 total sales) — below the 3x floor and below the 27 Jul "2.30 noise
+  ceiling," and down from 3.21x on 3 Aug per the digest. Two movers: Facebook
+  TOF-WEDDING spend nearly doubled (£123→£226.94) against the digest's own
+  "no reason to change" call, and a new, unidentified Facebook campaign
+  ("EOI - Multiple," £96.83/day) not present in the 3 Aug digest. Google's
+  PMAX CSS DEC stayed disciplined at £350.20, inside guidance. (A) Higgsfield
+  balance is **429.12 credits**, plan Max — recent actual burn ~28.5/day
+  (7–10 Aug), under the nominal 60/day budget.
+- Corrected: nothing carried forward was wrong today; the correction is
+  process, not a number — see "Changing" below.
+- New failure mode, not a repeat of an old one: **the reference-account sweep
+  read nothing today, and for the first time the block is on our own side.**
+  Every external host (TreatBox, Crafty Bonobo, Little Perfections, Instagram,
+  TikTok) returned `EGRESS_BLOCKED` at this session's own network proxy —
+  confirmed via `$HTTPS_PROXY/__agentproxy/status` across four transport
+  paths, not a target-side 429/403 like every prior gap in this log. Full
+  entry in `REFERENCE_TRACKER.md`. Flag to whoever owns session egress policy;
+  none of our existing rate-limit workarounds touch this.
+- Changing: nothing structural — today's session ran as designed (research →
+  three matched-pair ideas → brief), and the guardrail held: **no credits were
+  spent and nothing was generated or published.** Freya's three ideas are
+  proposals for Max, not finished assets. The one process note: Slot 3's
+  synthetic pick (football/number-plate family) is explicitly outside the only
+  currently-validated synthetic family (white wedding, per
+  `CONTENT_STRATEGY.md` §5) — flagged to Max rather than quietly generated,
+  and real film is the offered fallback if he has physical stock.
+- Where Alan and Freya's reads pulled against each other: Alan's ROAS red flag
+  argues for caution on anything that costs money right now; Freya's picks
+  already lean that way unprompted — Slot 1 is real film at zero credits, and
+  it's her pick of the day specifically because dark-social/tag-bait reach
+  doesn't depend on either the throttled Instagram algorithm or ad spend. No
+  real disagreement to resolve; the data and the creative pick pointed the
+  same direction independently, which is itself worth noting rather than
+  assuming it always will.
+- Testing tomorrow: pending which of today's three slots Max approves and how
+  they perform — no falsifiable call is being set until there's an approved,
+  published post to measure. (A) falsifiable once ROAS is confirmed as more
+  than a one-day dip: if 10 Aug (full day) or 11 Aug closes below 2.30 again,
+  that's two-from-two below the noise ceiling and the "EOI - Multiple"
+  campaign should be paused pending Max/Daryl identifying what it is.
+- Gaps, named: 12-day logging gap (28 Jul–9 Aug) not backfilled, only
+  acknowledged; full reference-account sweep unreadable today (session egress
+  block, see above); 10 Aug figures are partial-day only; no Instagram/TikTok
+  read today, ours or competitors' (last successful 28 Jul).
+- Confidence: (A) high on the Shopify/ad-spend figures pulled live today, low
+  on whether the ROAS dip is a trend or a one-day bounce (same caution as the
+  27–28 Jul "one bounce is not a law" lesson) — needs at least one more day
+  before acting. (F) high on Slot 1 as the right lead (zero cost, zero
+  validation debt, matches what the account's own dark-social data says
+  works); honest that Slot 3 carries real production risk if anyone tries to
+  synthesize it without validation first.
+- Signed: Freya · Alan
