@@ -1,0 +1,8 @@
+# model nano_banana_pro, 1:1, 2k, single ref = the job being edited (C1 -> 23a9f7de, C3 -> a10fbf44)
+# C3 wording shown; C1 says "neck label plain gold" and "wall, shelf, bouquet, coupes, light, shadows"
+
+EDIT REFERENCE IMAGE 1. Keep it the same photograph.
+
+MAKE EXACTLY ONE CHANGE: the champagne bottle's labels become plain and unbranded. Replace the front label with a plain cream label with no words, letters, logo or crest, and make the neck foil plain gold with no red seal and no text. Keep the bottle's shape, size, position, glass colour and lighting identical.
+
+Do not change anything else. The street sign stays exactly as it is: every letter of "CARL & EMILY", the red heart, the line "CONGRATULATIONS ON YOUR WEDDING DAY 17.10.2026", both small emojis, the black border and shaped ends, its size and position. The wall, console, bouquet, glasses, light, crop and grain stay identical. No new text, logo or caption anywhere.

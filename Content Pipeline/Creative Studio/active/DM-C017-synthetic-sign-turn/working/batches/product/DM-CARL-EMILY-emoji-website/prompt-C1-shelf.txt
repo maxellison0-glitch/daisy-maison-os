@@ -1,0 +1,10 @@
+# ref 2 = job f9284022 (Taylor & Travis main)
+# model nano_banana_pro, 1:1, 2k, ref 1 = media 7b9dae8e (real sign crop)
+
+Take the exact street sign from reference image 1 — do not alter its shape, angled corners, thick black border, white background, serif font, layout or any text. It reads "CARL & EMILY" in large black serif capitals with a small red heart touching the ampersand, and below it, in small regular-weight capitals, "CONGRATULATIONS ON YOUR WEDDING DAY 17.10.2026", with a small full-colour bouquet emoji before it and a small full-colour champagne-bottle emoji after it. Keep both emojis exactly as printed. Line 2 stays small. The panel is smooth with no mounting holes. Ignore reference image 1's cardboard background.
+
+The exact size is 57x12 cm. Reference image 2 is for size and scene proportions only: use its sign scale and placement above the shelf exactly, not its wording, wall colour or props.
+
+The sign is mounted straight and level on a soft warm-white plaster wall above a pale oak floating shelf, the shelf the same distance below the sign as in reference image 2. On the shelf: a loose hand-tied bouquet of pink, lilac and pale yellow garden flowers in a glass vase, a bottle of champagne and two filled champagne coupes. Warm golden late-afternoon light. A newlywed couple's first home, calm, elegant and Pinterest-worthy.
+
+Sign is the hero — fully visible, sharp, completely legible, shot face-on. No letters cropped. No people. Flat matte acrylic, no shine, no glare. Shot on Sony A7 IV, 50mm f/1.8, film grain, no CGI, photorealistic.

@@ -1,0 +1,18 @@
+# model nano_banana_pro, 1:1, 2k, count 4. Single ref = job 634ffebb (C2-mantel, Max's pick 13 Oct)
+# Max: "cute but it looks ai generated the flowers the fireplace. Make it a tad warmer and more modern/uk. Size is bang on for realism."
+
+EDIT REFERENCE IMAGE 1. Keep the same camera position, lens, framing and crop.
+
+LOCKED - do not change in any way: the street sign. Every character of "CARL & EMILY", the small red heart on the ampersand, the line "CONGRATULATIONS ON YOUR WEDDING DAY 17.10.2026" with its small bouquet emoji before it and small champagne-bottle emoji after it, the black border, the shaped ends, the thin pale edge, and the sign's exact size, position and angle resting on the white mantelpiece. Its size in the frame is correct. Do not enlarge, shrink, move or redraw it. Keep the white mantel shelf it rests on at the same height.
+
+RESTYLE EVERYTHING AROUND THE SIGN as a real, lived-in modern British home on an ordinary evening: an architect-renovated Victorian terrace. NOT a rustic cottage, NOT a show home.
+
+- Background: there is NO second fireplace. Behind the mantel, softly out of focus, is the rest of the living room: an oatmeal linen sofa with a wool throw, a brushed-brass floor lamp glowing, an alcove of pale oak shelves with a few real, uneven books and one stoneware pot, walls in a soft chalky stone-grey heritage paint above white shaker panelling, and a black steel-framed Crittall-style window at dusk.
+- Flowers: replace the pink and lilac roses with a loose, slightly imperfect seasonal arrangement in a small stoneware jug: white and blush garden roses, some fully open and one past its best, eucalyptus and a few wild stems at uneven heights, a single fallen petal on the mantel. Muted natural colours. Not a florist's perfect dome.
+- Champagne: one bottle in a single brushed-steel bucket with two flutes. Plain, unbranded labels with no legible text.
+- Keep a thin string of warm fairy lights along the mantel and one candle in a glass holder.
+- Light: a touch warmer than the reference: warm lamp and candle glow, soft golden 2700K light, gentle real shadows. Natural, not orange, not glowing.
+
+It must look like a real photograph taken in someone's home, not a render: gentle lens vignette, faint natural noise in the darker areas, real-world imperfections such as a slightly uneven fairy-light wire, a cable trailing off the mantel and a small scuff on the paintwork. Avoid CGI, symmetry, HDR, oversaturation and perfect styling.
+
+No people. No text, logo or caption anywhere except the sign's own printing.
