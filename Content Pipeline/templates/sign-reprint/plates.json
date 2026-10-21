@@ -92,5 +92,31 @@
       0.9
     ],
     "note": "Freya holding the sign, hallway, BLACK. Max's passed realism format (phone-snapshot rule). Box derived from the top border's straight run (136->779 at y=568) against the SVG silhouette's own top-edge fraction (830/912 wide, inset 4.50% each side): width 707, and the independently measured top/bottom edges (563/718) give height 155. 707/155 = 4.56 = the canonical ratio exactly, so this sign is held flat-on with no foreshortening - that agreement is the check that the box is right. HANDS: the fingers overlap the shaped ends and the printed border only; the panel interior is clear, so the eroded panel mask never paints over skin. damp is low and the band short because the strip above the sign is her shirt and the doorway, not a wall - it is a weaker light witness than a real wall plane."
+  },
+  "freya_kitchen": {
+    "image": "../../Creative Studio/reference-masters/PLATE-beach-hut-BLUE-freya-kitchen-PHONE-MASTER.png",
+    "box": [
+      100,
+      549,
+      803,
+      704
+    ],
+    "colourway": "BLUE",
+    "wall_band": 46,
+    "damp": 0.0,
+    "crop45": [
+      0,
+      40,
+      896,
+      1160
+    ],
+    "wordmark_y": 0.3,
+    "ink_tint": [
+      1.05,
+      1.04,
+      0.9
+    ],
+    "note": "Freya holding the sign, kitchen, BLUE. Max-PASSED plate (Round 2 F2, 'the most realistic-looking one') with the phone-snapshot pass. Box measured 30 Sep 2026 from the blue border mask: outer x 100->803 at the mid rows (shaped-end tips), top edge y~549, bottom y~705; 703/154 = 4.56, canonical, so held flat-on. Fingers overlap the shaped ends only. Band above the sign is her shirt, a weak light witness, so damp stays low as on freya_hallway. damp is 0, not 0.3: the band above this sign is her neck and chest, so any wall-gradient synthesis painted a pink skin cast into the middle of the panel (seen and rejected on the first run, 30 Sep). mask_safety is 0.5 (tested 3.0 default, -2.5 and 0.5 on 30 Sep; -2.5 bit into the photographed border and doubled it): this plate's printed border measures ~13px against the 15.3px the canonical 12.4mm implies (the accepted narrower-border tolerance on colour edits), so the default erosion left a 5px strip of old panel that read as an inset outline at the shaped ends.",
+    "mask_safety": 0.5
   }
 }

@@ -385,7 +385,7 @@ def reprint(plate_cfg, line1, line2, heart=False, fit=486, focus=0.45):
 
     face = render_face(line1, line2, w, h,
                        colourway=plate_cfg.get("colourway"), heart=heart, fit=fit)
-    mask = panel_mask(face, w, h)
+    mask = panel_mask(face, w, h, safety=plate_cfg.get("mask_safety", 3.0))
 
     region = plate.crop((x0, y0, x1, y1))
     plate_np = np.asarray(region, dtype=float)
