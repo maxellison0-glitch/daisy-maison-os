@@ -1,5 +1,7 @@
 # Thu 22 Oct 2026: Christmas pebble pictures (Template A)
 
+**REPLACED 22 Oct 2026, not sent.** Max: "Christmas lowkey failed miserably." Tonight's send is `2026-10-22-couples-bestsellers.md` instead.
+
 Approved by Max 20 Oct 2026 ("yes" to proposal A2). Built by Claude; Shopify
 Email has no API for creating or scheduling campaigns, so someone clicks it in
 (about 10 minutes). Nothing is scheduled until someone confirms it.
