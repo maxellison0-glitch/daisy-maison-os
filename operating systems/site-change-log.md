@@ -36,6 +36,8 @@ The second-decoration counter works the same way.
 - `assets/daisy-heart-builder.js` (draft): new opt-in `pebbles.stepNotes` support. Without it, products render exactly as before. The offer counter title "Second heart pebbles" now uses `noun(config)`, which still renders "heart" everywhere except Christmas Walk ("decoration").
 - Tested in headless Chromium at 390px on a local harness: the note shows and hides at 3/5/6/7/8/4, totals £15.95/£18.95/£20.95, no JS errors. Live Wonderland on the draft theme with the new JS: no note, 7 pebbles = £20.95, no errors.
 
+2026-10-23 ~16:05 BST (Max: "1 box does not need a dropdown"): the theme's add-on accordion folded the gift box cards behind a closed header. Christmas Walk now opts out with `giftBox.open: true`; daisy-heart-builder.js adds `dm-acc-off`, the same opt-out the diffusers use. The cards show straight away: "No gift box, thanks", then the Christmas 2026 box picture, price and Select button. Tested at 390px with the theme's real accordion script: without the flag the cards are hidden (closed); with it, 2 cards are visible. One tap = single box, total £15.95 → £19.90. Other products are unchanged (no flag).
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
