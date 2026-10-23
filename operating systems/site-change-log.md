@@ -43,6 +43,11 @@ The second-decoration counter works the same way.
 - New opt-in `giftBoxFirst: true` changes the order to Personalisation → Gift Box → Incredible Offer → Total. Reasoning: the box completes decoration 1 as a gift while the customer is still on it, and the offer (+£10.95, the bigger basket lift) becomes the last decision right above the total and Add to cart. Trade-off: the "2 gift boxes" card appears above the offer once the offer is ticked, so it is not in view at that moment. If offer take-up drops after publishing, revert this.
 - Wonderland checked on the draft with the new JS: order is still Personalisation → Offer → Gift box, the box is still folded, no errors.
 
+CORRECTION 2026-10-23 ~16:15 BST (Max: "taking up way too much space… incredible offer is below it too, they won't even see the upsell"):
+- `giftBoxFirst` REMOVED from Christmas Walk. The Incredible Offer is back ABOVE the gift box. **Lesson: never move the upsell below an add-on. Max wants the offer seen first.**
+- The gift box is now `style: "row"` (new in daisy-heart-builder.js): one compact row with a 64px box picture on the left, "Add a Christmas 2026 gift box" and +£3.95 (£4.95 large) in the middle, and an Add pill on the right. Tap to add (it turns to "✓ Added"), tap again to remove. There's no separate "No gift box" bar. When the offer is ticked, a second row appears: "Christmas 2026 gift boxes for both decorations".
+- Tested at 390px: order Personalisation → Incredible offer → Add-ons; £15.95 → £19.90 → £15.95; offer plus both boxes = £34.80. No JS errors. Wonderland on the draft is unchanged (no toggle, no rows, its box still opens from the folded header).
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
