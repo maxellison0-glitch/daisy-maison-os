@@ -3,6 +3,16 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-23 ~16:20 BST — Family Christmas Bench landing page (same build as Christmas Walk; DRAFT theme 210012406099, Max publishes)
+
+**Product** `personalised-family-christmas-decoration-the-storybook-collection-personalised-pebble-christmas-tree-keepsake-unique-christmas-gift` (id 11012512678227, still DRAFT). It has the same layout as the Christmas Walk: wording at the top ("The Smith Family at Christmas"), names at the bottom, up to 8 pebbles including cats and dogs. Settings copied from Wonderland/Christmas Walk: £15.95 (compare-at £19.95), 0.072 kg, taxable, inventory not tracked, the same 6 manual collections, description and SEO with the name swapped. No SKU yet.
+
+**Theme (draft 210012406099)**:
+- `layout/theme.liquid`: Bench handle added to the heart-builder list.
+- `snippets/dm-heart-builder.liquid`: handle → kind `xmasbenchheart`, plus `render 'dm-heart-xmasbench-config'`.
+- New `snippets/dm-heart-xmasbench-config.liquid`: an exact copy of the Christmas Walk config except the heading ("Create your Family Christmas Bench decoration"), the offer note, and the placeholders ("e.g. The Smith Family at Christmas" / "e.g. John, Lucy, Socks"). So it has the Incredible Offer ABOVE the gift box, the compact Christmas 2026 gift box row, step notes at 5+ and 7+ pebbles, no "Add 2026?", and "decoration" wording. Property keys are Wonderland's.
+- All checksums match local. Tested at 390px: £15.95 → £19.90 → £15.95; offer plus both boxes = £34.80; no JS errors. Wonderland on the draft is unchanged.
+
 ## 2026-10-23 ~15:20 BST — Family Christmas Walk landing page built like Wonderland (DRAFT theme, Max publishes)
 
 **Product** `personalised-family-christmas-walk-decoration-the-storybook-collection-personalised-pebble-christmas-tree-keepsake-unique-christmas-gift` (id 11016863973715, still DRAFT). Copied from Wonderland (9436262629715): price £15.95, compare-at £19.95, weight 0.072 kg, taxable, inventory not tracked. Description and SEO title/description copied with the product name swapped, and the "-¬£50" encoding glitch fixed to "£50". Joined the same 6 manual collections: Christmas, Christmas Gifts Top Picks, Christmas Hanging Decorations, Occasions, Pebble Hanging Hearts, Pebble People. No SKU set; Wonderland's is XT-537-WFC, so the new SKU is Max's call.
