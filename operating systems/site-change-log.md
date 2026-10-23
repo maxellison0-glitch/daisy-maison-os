@@ -18,6 +18,12 @@ not belong here until Max confirms it happened.
 
 **Before publishing:** the draft was duplicated at ~15:10 BST on 23 Oct. Any change made to live after that is missing from the draft.
 
+CORRECTION 2026-10-23 ~15:30 BST (Max): "build like Wonderland" did not mean copying Wonderland's customer wording. This product has the wording at the TOP and the names at the BOTTOM. Updated `dm-heart-xmaswalk-config.liquid` (draft theme only):
+- Field labels: "Wording at the top" (e.g. The Harrison Family at Christmas) and "Names at the bottom" (e.g. Dad, Mum, George, Charlie, Poppy, Lily, Milo, Buddy). The offer fields use the same wording.
+- `itemNoun: "decoration"` and `companionName: "Second decoration"`, because it's round, not a heart. This is the same pattern as the diffusers.
+- Large-size suffixes now say "decoration".
+- Property KEYS are still Wonderland's ("Text above", "Text below", "Add 2026?", "Size 1", "**INCREDIBLE OFFER**"), so fulfilment reads orders the same way. Visible differences on order lines: "Gift box for: Decoration 1" and "Add-on: Second decoration".
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
