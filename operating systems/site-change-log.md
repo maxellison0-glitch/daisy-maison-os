@@ -28,6 +28,14 @@ CORRECTION 2026-10-23 ~15:35 BST (Max): removed the "Add 2026?" field from the m
 
 2026-10-23 ~15:50 BST (Max: "implement and we see how it looks"): the builder intro line now shows the pebble price ladder on BOTH Christmas Walk and Wonderland (draft theme only): "1–4 pebbles: small £15.95 or large £18.95 · 5–6 pebbles: large £18.95 · 7–8 pebbles: large £20.95." Reason: at 7–8 pebbles the total jumps £5 while the Large card still says +£3, and nothing on the page explained it. Wonderland change is inside the `wonderlandheart` block only; other kinds sharing the old sentence are untouched. Checked: the draft renders the new Wonderland copy, and nothing else in its config changed. **The prices are typed into the copy, so update the line if a price changes.**
 
+CORRECTION 2026-10-23 ~16:00 BST (Max: "overwhelming and clunky on mobile, get rid"): the price ladder copy is REVERTED on both pages. Replaced, on **Christmas Walk only** (Max: leave Wonderland unless told), by a note under the pebble counter that appears only when it applies:
+- 5–6 pebbles: "5 or more pebbles need our large size (15 × 15cm): +£3."
+- 7–8 pebbles: "7 or 8 pebbles need the large size plus extra pebbles: +£5 in total."
+- 1–4 pebbles: hidden.
+The second-decoration counter works the same way.
+- `assets/daisy-heart-builder.js` (draft): new opt-in `pebbles.stepNotes` support. Without it, products render exactly as before. The offer counter title "Second heart pebbles" now uses `noun(config)`, which still renders "heart" everywhere except Christmas Walk ("decoration").
+- Tested in headless Chromium at 390px on a local harness: the note shows and hides at 3/5/6/7/8/4, totals £15.95/£18.95/£20.95, no JS errors. Live Wonderland on the draft theme with the new JS: no note, 7 pebbles = £20.95, no errors.
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
