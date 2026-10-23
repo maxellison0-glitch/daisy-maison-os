@@ -26,6 +26,8 @@ generator*, and *organic social posts publish autonomously; paid media needs Max
 
 ## Spend rules
 
+**EVERY IMAGE: Nano Banana 2.1, 2k, 2048×2048.** Added 23 Oct 2026 by Max, after a batch went out on GPT Image 2.5 (default "flare" variant) at 4:5: *"NEW RULE ANYTHING — Nano Banana 2.1, Quality 2k, Size 2048x2048."* Every still, every time: `model: "nano_banana_2_1"`, `resolution: "2k"`, `aspect_ratio: "1:1"`. No other model, ratio or resolution unless Max names one for that job. Don't follow the tool's own default model suggestion.
+
 **SHOW GENERATIONS THE MOMENT THEY FINISH.** Added 23 Oct 2026 by Max: *"just show me, no point in product accuracy until I see it."* When a generation completes, display it straight away (show_generation_by_ids). Don't download it and run your own accuracy review first. Max judges the result; comment on it only after he has seen it.
 
 **Never estimate a cost. Call `get_cost` and quote the number it returns.**
