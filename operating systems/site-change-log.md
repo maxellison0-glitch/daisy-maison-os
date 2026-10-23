@@ -26,6 +26,8 @@ CORRECTION 2026-10-23 ~15:30 BST (Max): "build like Wonderland" did not mean cop
 
 CORRECTION 2026-10-23 ~15:35 BST (Max): removed the "Add 2026?" field from the main and the offer decoration, because this design has no year. Gift box switched to `style: "cards"`: picture cards visible from the start ("No gift box, thanks" / "Christmas 2026 gift box" / "2 Christmas 2026 gift boxes"), the same card look as the Gift Wrap Kit, with a 400px image. Same variants and prices (small £3.95 / large £4.95). No badge was added, because there's no data behind a "Most popular" claim. Draft theme only.
 
+2026-10-23 ~15:50 BST (Max: "implement and we see how it looks"): the builder intro line now shows the pebble price ladder on BOTH Christmas Walk and Wonderland (draft theme only): "1–4 pebbles: small £15.95 or large £18.95 · 5–6 pebbles: large £18.95 · 7–8 pebbles: large £20.95." Reason: at 7–8 pebbles the total jumps £5 while the Large card still says +£3, and nothing on the page explained it. Wonderland change is inside the `wonderlandheart` block only; other kinds sharing the old sentence are untouched. Checked: the draft renders the new Wonderland copy, and nothing else in its config changed. **The prices are typed into the copy, so update the line if a price changes.**
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
