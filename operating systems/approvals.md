@@ -49,3 +49,5 @@ Unanswered after 3 days = dropped (one line in the digest), not nagged.
 |---|---|---|---|---|
 | A1 | 2026-10-20 11:00 | Pause test_creatives (120254265156800416) in [RDD] TOF-WEDDING | yes ("time to do the proposed changes") | Paused 20 Oct ~11:00 via Windsor pause_adset (success). TOF-WEDDING CBO stays £90/day. Judge Fri 23 Oct: TOF CPP ≤ £12 and ≥ 8 purchases/day over Tue–Thu; if test_creatives_2 absorbs the budget at CPP > £20, propose pausing it. Reverse with enable_adset. |
 | A2 | 2026-10-20 | Thu 22 Oct 19:00 email to DM Email – Engaged (opened 30d) | "absolutely yes" (if Claude makes it) | Build sheet written 20 Oct: email-builds/2026-10-22-christmas-pebble-pictures.md. Range changed hearts → Christmas pebble pictures (hearts already sent 13 Oct). Needs clicking into Shopify Email (no API). |
+
+A1 judged 2026-10-23 (morning digest): FAILED. TOF-WEDDING Tue–Thu 20–22 Oct £270.82 / 16 purchases = CPP £16.93 (target ≤ £12, ≥ 8/day; got 5.3/day). Pre-pause 14–18 Oct £10.81. test_creatives stays paused (£71.75 / 0 purchases 17–19 Oct). test_creatives_2 3-day CPP £14.58, under the £20 pause trigger, so no follow-up proposal. Closed.
