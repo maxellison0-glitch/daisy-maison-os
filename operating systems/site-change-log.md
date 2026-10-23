@@ -38,6 +38,11 @@ The second-decoration counter works the same way.
 
 2026-10-23 ~16:05 BST (Max: "1 box does not need a dropdown"): the theme's add-on accordion folded the gift box cards behind a closed header. Christmas Walk now opts out with `giftBox.open: true`; daisy-heart-builder.js adds `dm-acc-off`, the same opt-out the diffusers use. The cards show straight away: "No gift box, thanks", then the Christmas 2026 box picture, price and Select button. Tested at 390px with the theme's real accordion script: without the flag the cards are hidden (closed); with it, 2 cards are visible. One tap = single box, total £15.95 → £19.90. Other products are unchanged (no flag).
 
+2026-10-23 ~16:10 BST (Max: "centre it… consider the Incredible Offer positioning"), Christmas Walk only:
+- The single gift box card is centred: `.dm-boxcards--open` uses a flex row, so the "No gift box" bar is full width and the box card is centred (max 240px). When the offer is ticked, the "2 gift boxes" card sits beside it.
+- New opt-in `giftBoxFirst: true` changes the order to Personalisation → Gift Box → Incredible Offer → Total. Reasoning: the box completes decoration 1 as a gift while the customer is still on it, and the offer (+£10.95, the bigger basket lift) becomes the last decision right above the total and Add to cart. Trade-off: the "2 gift boxes" card appears above the offer once the offer is ticked, so it is not in view at that moment. If offer take-up drops after publishing, revert this.
+- Wonderland checked on the draft with the new JS: order is still Personalisation → Offer → Gift box, the box is still folded, no errors.
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
