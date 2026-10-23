@@ -3,6 +3,21 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-23 ~15:20 BST — Family Christmas Walk landing page built like Wonderland (DRAFT theme, Max publishes)
+
+**Product** `personalised-family-christmas-walk-decoration-the-storybook-collection-personalised-pebble-christmas-tree-keepsake-unique-christmas-gift` (id 11016863973715, still DRAFT). Copied from Wonderland (9436262629715): price £15.95, compare-at £19.95, weight 0.072 kg, taxable, inventory not tracked. Description and SEO title/description copied with the product name swapped, and the "-¬£50" encoding glitch fixed to "£50". Joined the same 6 manual collections: Christmas, Christmas Gifts Top Picks, Christmas Hanging Decorations, Occasions, Pebble Hanging Hearts, Pebble People. No SKU set; Wonderland's is XT-537-WFC, so the new SKU is Max's call.
+
+**Theme** draft **210012406099** "Christmas Walk builder – 23 Oct (draft)", duplicated from live 209801642323. UNPUBLISHED; Max publishes. 3 files:
+- `layout/theme.liquid`: added the new handle to the line-412 heart-builder handle list, straight after Wonderland's.
+- `snippets/dm-heart-builder.liquid`: new handle → kind `xmaswalkheart`, plus `{%- when 'xmaswalkheart' -%}{%- render 'dm-heart-xmaswalk-config' -%}`.
+- `snippets/dm-heart-xmaswalk-config.liquid` (new): a copy of the `wonderlandheart` config. Three differences only: heading "Create your Family Christmas Walk heart", offer note "Personalise another Family Christmas Walk heart at a special price", and a gift box list holding ONLY Christmas 2026 (small 54335779570003 / large 54335779602771, same image). Cart property keys and values are unchanged, so fulfilment reads them the same way.
+- Why a separate snippet: dm-heart-builder.liquid is 255KB, against Shopify's 256KB per-file limit, and an inline copy was silently rejected. **Any future kind must go in its own snippet the same way.**
+- Upload method that works: stagedUploadsCreate PUT, then themeFilesUpsert `type: URL` pointing at the staged resourceUrl. A cdn.shopify.com Files URL silently fails.
+- Checks: all 3 file checksums match the local edited copies. Wonderland's rendered config on the draft theme is byte-identical to live.
+- Leftovers: two harmless comment-only test snippets on the draft (`snippets/zz-upsert-test.liquid`, `snippets/zz-url-staged.liquid`), never rendered. Delete them in admin; the API blocks theme-file deletes.
+
+**Before publishing:** the draft was duplicated at ~15:10 BST on 23 Oct. Any change made to live after that is missing from the draft.
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
