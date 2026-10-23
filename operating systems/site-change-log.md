@@ -24,6 +24,8 @@ CORRECTION 2026-10-23 ~15:30 BST (Max): "build like Wonderland" did not mean cop
 - Large-size suffixes now say "decoration".
 - Property KEYS are still Wonderland's ("Text above", "Text below", "Add 2026?", "Size 1", "**INCREDIBLE OFFER**"), so fulfilment reads orders the same way. Visible differences on order lines: "Gift box for: Decoration 1" and "Add-on: Second decoration".
 
+CORRECTION 2026-10-23 ~15:35 BST (Max): removed the "Add 2026?" field from the main and the offer decoration, because this design has no year. Gift box switched to `style: "cards"`: picture cards visible from the start ("No gift box, thanks" / "Christmas 2026 gift box" / "2 Christmas 2026 gift boxes"), the same card look as the Gift Wrap Kit, with a 400px image. Same variants and prices (small £3.95 / large £4.95). No badge was added, because there's no data behind a "Most popular" claim. Draft theme only.
+
 ## 2026-10-12 ~16:50 BST — Incredible Offer back on landing pages (theme "working copy - Max" published by Max)
 
 Live theme **209047290195** "working copy - Max" (previous live 208785637715 kept for rollback). Changed files: `snippets/dm-clean-product.liquid`, `assets/dm-clean-product.css`, `assets/dm-clean-product.js`, `snippets/dm-heart-builder.liquid`.
