@@ -26,6 +26,8 @@ generator*, and *organic social posts publish autonomously; paid media needs Max
 
 ## Spend rules
 
+**SHOW GENERATIONS THE MOMENT THEY FINISH.** Added 23 Oct 2026 by Max: *"just show me, no point in product accuracy until I see it."* When a generation completes, display it straight away (show_generation_by_ids). Don't download it and run your own accuracy review first. Max judges the result; comment on it only after he has seen it.
+
 **Never estimate a cost. Call `get_cost` and quote the number it returns.**
 Prices differ by duration, resolution, audio and model tier, and a guess has
 already been wrong.
