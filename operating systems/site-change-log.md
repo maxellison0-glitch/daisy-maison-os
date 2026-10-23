@@ -3,6 +3,15 @@
 Compact, dated confirmation of website and Shopify changes. Planned work does
 not belong here until Max confirms it happened.
 
+## 2026-10-23 ~16:30 BST — Christmas Bench family PEBBLE PICTURE landing page (DRAFT theme 210012406099, Max publishes)
+
+**Product** `christmas-bench-family-pebble-picture-gift-the-storybook-collection-unique-christmas-gift-grandparent-gift` (id 11012074275155, still DRAFT). Copied from "Our Little Family" (`our-little-family-pebble-picture`, kind `littlefamily`): £29.95 (compare-at £34.95), 1.1 kg, taxable, not tracked, sell-when-out-of-stock (as on the template). Description is the template's, adapted to the bench scene. Collections: Christmas, Christmas Gifts Top Picks, Christmas Pebble Pictures, Framed Pebble Art, Pebble People. The template's Mother's Day and birthday collections are left off because this is a Christmas design. No SKU yet.
+
+**Theme (draft)** — the pebble picture builder is a separate system from the hearts:
+- `snippets/dm-pebble-picture-builder.liquid`: the new handle maps to kind `xmasbenchpicture` (second offer `20-incredible-offer`), plus a config block copied from `littlefamily`. **White frame only, per Max:** `{"key":"Frame Colour","type":"fixed","value":"White"}` is a hidden input with no frame choice shown, and the white frame is included in the price. The design has customer wording at the TOP, so the template's "Change Text?/Wording" pair (default wording) is replaced with one required text field: key `Wording`, label "Wording at the top", placeholder "e.g. The Duncan Family at Christmas". Names come one per pebble (`Name N`) and print along the bottom. Up to 8 pebbles, Adult/Teen/Child/Baby/Dog/Cat, 7–8 pebbles +£3. The second picture offer is £20. Gift wrap and easel come from the builder, as on every picture.
+- `assets/daisy-pebble-picture.js`: handle added to the `handles` list (without it the builder doesn't start).
+- Tested on a local harness at 390px: no frame select; hidden Frame Colour: White; total £29.95. The add-to-cart payload has `Frame Colour: White`, `Wording`, `No. of pebbles: 3 (Inc dog/cat)`, `Pebble N` / `Name N`, and `*SECOND FRAME*: NO Thanks`. No JS errors. "Our Little Family" renders an identical config on the draft (only the theme asset path differs).
+
 ## 2026-10-23 ~16:20 BST — Family Christmas Bench landing page (same build as Christmas Walk; DRAFT theme 210012406099, Max publishes)
 
 **Product** `personalised-family-christmas-decoration-the-storybook-collection-personalised-pebble-christmas-tree-keepsake-unique-christmas-gift` (id 11012512678227, still DRAFT). It has the same layout as the Christmas Walk: wording at the top ("The Smith Family at Christmas"), names at the bottom, up to 8 pebbles including cats and dogs. Settings copied from Wonderland/Christmas Walk: £15.95 (compare-at £19.95), 0.072 kg, taxable, inventory not tracked, the same 6 manual collections, description and SEO with the name swapped. No SKU yet.
